@@ -17,7 +17,7 @@ Fairchild A-10 simulation config.
     <fuel-fraction>1.0</fuel-fraction>
     <description>Fairchild A-10 - with external ferry tanks (YASim FDM)</description>
     <virtual-cockpit archive="y">true</virtual-cockpit>
-    <chase-distance-m type="double" archive="y">-20.0</chase-distance-m>
+    <chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
 
     <view n="0">
       <internal archive="y">true</internal>
@@ -64,6 +64,12 @@ Fairchild A-10 simulation config.
       </electrical>
     </systems>
 
+<!--sub models -->
+    <submodels>
+      <serviceable type="bool">1</serviceable>
+      <path>Aircraft/A-10/A-10-submodels.xml</path>
+    </submodels>
+
 <!-- Shift the camera target point back -->
     <view n="1">
       <config>
@@ -106,8 +112,8 @@ Fairchild A-10 simulation config.
   </sim>
 
   <input>
-
     <keyboard>
+
       <key n="100">
         <name>d</name>
         <desc>Retract Slats.</desc>
@@ -127,8 +133,17 @@ Fairchild A-10 simulation config.
           <step type="double">0.25</step>
         </binding>
       </key>
-    </keyboard>
 
+      <key n="75">
+        <name>K</name>
+        <desc>Toggle trajectory markers</desc>
+        <binding n="0">
+          <command>nasal</command>
+          <script>A10.toggle_traj_mkr()</script>
+        </binding>
+      </key>
+
+    </keyboard>
   </input>
 
   <autopilot>

@@ -1,12 +1,14 @@
 autotakeoff = func {
+  ato_start();      # Initiation stuff.
+  ato_mode();       # Take-off/Climb-out mode handler.
+  ato_spddep();     # Speed dependent actions.
+  
+  # Re-schedule the next call
   if(getprop("/autopilot/locks/auto-take-off") != "Enabled") {
     print("Auto Take-Off disabled");
   } else {
     settimer(autotakeoff, 0.5);
   }
-  ato_start();      # Initiation stuff.
-  ato_mode();       # Take-off/Climb-out mode handler.
-  ato_spddep();     # Speed dependent actions.
 }
 #--------------------------------------------------------------------
 ato_start = func {
@@ -17,6 +19,7 @@ ato_start = func {
       hdgdeg = getprop("/orientation/heading-deg");
       setprop("/autopilot/settings/ground-roll-heading-deg", hdgdeg);
       setprop("/autopilot/settings/true-heading-deg", hdgdeg);
+      setprop("/autopilot/settings/target-speed-kt", 320);
       setprop("/controls/flight/flaps", 0.64);
       setprop("/autopilot/locks/altitude", "ground-roll");
       setprop("/autopilot/locks/speed", "speed-with-throttle");
@@ -160,11 +163,12 @@ autoland = func {
     # Brakes on, Rudder heading hold on & disable IL mode.
     setprop("/controls/gear/brake-left", 0.4);
     setprop("/controls/gear/brake-right", 0.4);
-    setprop("/autopilot/settings/ground-roll-heading-deg", hdgdeg);
-    setprop("/autopilot/locks/rudder-control", "rudder-hold");
+#    setprop("/autopilot/settings/ground-roll-heading-deg", hdgdeg);
+#    setprop("/autopilot/locks/rudder-control", "rudder-hold");
     setprop("/autopilot/locks/auto-landing", "Disabled");
     setprop("/autopilot/locks/auto-take-off", "Enabled");
-    setprop("/autopilot/locks/altitude", "Off");
+    setprop("/autopilot/locks/altitude", "none");
+    setprop("/autopilot/settings/ground-roll-heading-deg", -999.9);
     interpolate("/controls/flight/elevator-trim", 0, 6.0);
   }
 }
@@ -190,3 +194,12 @@ zero_ext_tanks_sub = func {
   setprop("/consumables/fuel/tank[4]/selected", "false");
   setprop("/consumables/fuel/tank[5]/selected", "false");
 }
+#--------------------------------------------------------------------
+toggle_traj_mkr = func {
+  if(getprop("ai/submodels/trajectory-markers") < 1) {
+    setprop("ai/submodels/trajectory-markers", 1);
+  } else {
+    setprop("ai/submodels/trajectory-markers", 0);
+  }
+}
+#--------------------------------------------------------------------

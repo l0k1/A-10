@@ -68,6 +68,14 @@ are based upon a few photographs I was able to find showing the
 aircraft in what appeared to be the final approach stages, and 
 whatever info I was able to find.
 
+Keyboard mapping
+----------------
+The following additional/non-standard keyboard mappings are set up
+for this aircraft
+
+Key               Action
+'K' (Shift-k)     Toggle trajactory markers on & off
+
 Panels
 ------
 Currently, there are two simple 2D panels for the model, neither
@@ -229,30 +237,5 @@ temporarily reduce speed, and then increase it again (using the
 AP Speed Controller) or force a climb by pulling back on the
 stick.
 
-Auto Take-Off & Landing Example circuit
----------------------------------------
-Starting at KSFO, runway 28L, press Ctrl-p to display the 'vfr'
-panel and switch the nav1 frequency to 111.7 (this should
-already be set as the stand-by frequency).
 
-Press s to switch to the 'mini' panel and reduce the set speed
-on the AP Speed Controller to 300kt.
-
-Enter KSQL and KSFO as way-points, press Ctrl-h twice to disable
-the true-heading mode and re-centre the ailerons using the
-stick.
-
-Release the parking brake (either click on the 'BRAKE'
-instrument or press Shift-b) end then click 'TO'.
-
-Once the aircraft has climbed into the air, started turning
-towards KSQL and engaged Mach hold and Mach Climb, click on the
-yellow 'K' to set KIAS mode on the Speed Controller, and click
-on 'AH' on the Altitude Controller to engage Altitude-hold.
-
-After the aircraft has passed KSQL and has turned enough to be
-closing on KSFO click 'IL' on the Altitude Controller to
-initiate the automatic landing sequence.
-
-
-Lee Elliott.     2004/04/28
+Lee Elliott.     2004/11/14
