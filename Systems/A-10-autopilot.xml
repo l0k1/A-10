@@ -446,7 +446,7 @@
       <prop>/velocities/vertical-speed-fps</prop>
     </input>
     <reference>
-      <prop>/radios/nav[0]/gs-rate-of-climb</prop>
+      <prop>/instrumentation/nav[0]/gs-rate-of-climb</prop>
     </reference>
      <output>
       <prop>/controls/flight/elevator-trim</prop>
@@ -859,7 +859,7 @@
       <value>nav1-hold-fa</value>
     </enable>
     <input>
-      <prop>/radios/nav[0]/heading-needle-deflection</prop>
+      <prop>/instrumentation/nav[0]/heading-needle-deflection</prop>
     </input>
     <reference>
       <value>0.0</value>
