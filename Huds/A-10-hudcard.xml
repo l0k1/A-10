@@ -1,0 +1,285 @@
+<PropertyList>
+
+ <cards>
+
+  <c1>
+   <name>Gyrocompass</name>
+   <x>220</x>
+   <y>430</y>
+   <width>200</width>
+   <height>28</height>
+   <loadfn>heading</loadfn>
+   <options>4</options>	<!-- HUDS_TOP -->	<!--  Read ReadMe.xmlhud for Values  -->
+   <maxValue>360.0</maxValue>
+   <minValue>0.0</minValue>
+   <disp_scaling>1.0</disp_scaling>
+   <major_divs>5</major_divs>
+   <minor_divs>1</minor_divs>
+   <modulator>360</modulator>
+   <value_span>25.0</value_span>
+   <type>tape</type>
+   <tick_bottom>false</tick_bottom>
+   <tick_top>false</tick_top>
+   <tick_right>true</tick_right>
+   <tick_left>true</tick_left>
+   <cap_bottom>true</cap_bottom>
+   <cap_top>false</cap_top>
+   <cap_right>false</cap_right>
+   <cap_left>false</cap_left>
+   <marker_offset>0.0</marker_offset>
+   <enable_pointer>true</enable_pointer>
+   <pointer_type>fixed</pointer_type>
+   <tick_type>line</tick_type>
+   <tick_length>variable</tick_length>
+   <working>true</working>
+  </c1>
+
+  <c2>
+   <name>AMSL</name>
+   <x>565</x>
+   <y>140</y> 
+   <width>35</width>
+   <height>200</height>
+   <loadfn>altitude</loadfn>
+   <options>6</options> <!-- HUDS_LEFT | HUDS_VERT -->
+   <maxValue>5000.0</maxValue>
+   <minValue>-1000.0</minValue>
+   <disp_scaling>1.0</disp_scaling>
+   <major_divs>100</major_divs>
+   <minor_divs>25</minor_divs>
+   <modulator>0</modulator>
+   <value_span>250.0</value_span>
+   <type>tape</type>
+   <tick_bottom>true</tick_bottom>
+   <tick_top>true</tick_top>
+   <tick_right>false</tick_right>
+   <tick_left>false</tick_left>
+   <cap_bottom>false</cap_bottom>
+   <cap_top>false</cap_top>
+   <cap_right>true</cap_right>
+   <cap_left>false</cap_left>
+   <marker_offset>0.0</marker_offset>
+   <enable_pointer>true</enable_pointer>
+   <pointer_type>fixed</pointer_type>
+   <tick_type>line</tick_type>
+   <tick_length>variable</tick_length>
+   <working>true</working>
+  </c2>
+
+  <c3>
+   <name>RadioAltimeter</name>
+   <x>438</x>
+   <y>165</y>
+   <width>25</width>
+   <height>150</height>
+   <loadfn>agl</loadfn>
+   <options>6</options> <!-- HUDS_LEFT | HUDS_VERT -->
+   <maxValue>1000.0</maxValue>
+   <minValue>0.0</minValue>
+   <disp_scaling>1.0</disp_scaling>
+   <major_divs>25</major_divs>
+   <minor_divs>5</minor_divs>
+   <modulator>0</modulator>
+   <value_span>200.0</value_span>
+   <type>tape</type>
+   <tick_bottom>true</tick_bottom>
+   <tick_top>true</tick_top>
+   <tick_right>false</tick_right>
+   <tick_left>false</tick_left>
+   <cap_bottom>false</cap_bottom>
+   <cap_top>false</cap_top>
+   <cap_right>true</cap_right>
+   <cap_left>false</cap_left>
+   <marker_offset>0.0</marker_offset>
+   <enable_pointer>true</enable_pointer>
+   <pointer_type>fixed</pointer_type>
+   <tick_type>line</tick_type>
+   <tick_length>variable</tick_length>
+   <working>true</working>
+  </c3>
+
+  <c4>
+   <name>KIAS</name>
+   <x>40</x>
+   <y>140</y>
+   <width>28</width>
+   <height>200</height>
+   <loadfn>speed</loadfn>
+   <options>10</options> <!-- HUDS_RIGHT | HUDS_VERT -->
+   <maxValue>200.0</maxValue>
+   <minValue>0.0</minValue>
+   <disp_scaling>1.0</disp_scaling>
+   <major_divs>10</major_divs>
+   <minor_divs>5</minor_divs>
+   <modulator>0</modulator>
+   <value_span>50.0</value_span>
+   <type>tape</type>
+   <tick_bottom>true</tick_bottom>
+   <tick_top>true</tick_top>
+   <tick_right>false</tick_right>
+   <tick_left>false</tick_left>
+   <cap_bottom>false</cap_bottom>
+   <cap_top>false</cap_top>
+   <cap_right>false</cap_right>
+   <cap_left>true</cap_left>
+   <marker_offset>0.0</marker_offset>
+   <enable_pointer>true</enable_pointer>
+   <pointer_type>fixed</pointer_type>
+   <tick_type>line</tick_type>
+   <tick_length>variable</tick_length>
+   <working>true</working>
+  </c4>
+
+  <g1>
+   <name>Gauge1</name>
+   <x>270</x>
+   <y>310</y>
+   <width>100</width>
+   <height>20</height>
+   <loadfn>aileronval</loadfn>
+   <options>136</options> <!-- HUDS_BOTTOM | HUDS_NOTEXT -->
+   <maxValue>+1.0</maxValue>
+   <minValue>-1.0</minValue>
+   <disp_scaling>100.0</disp_scaling>
+   <major_divs>50</major_divs>
+   <minor_divs>0</minor_divs>
+   <modulator>0</modulator>
+   <value_span>2.0</value_span>	<!-- (maxValue - minValue) -->
+   <type>gauge</type>
+   <tick_bottom>false</tick_bottom>
+   <tick_top>false</tick_top>
+   <tick_right>true</tick_right>
+   <tick_left>true</tick_left>
+   <cap_bottom>false</cap_bottom>
+   <cap_top>true</cap_top>
+   <cap_right>false</cap_right>
+   <cap_left>false</cap_left>
+   <marker_offset>0.0</marker_offset>
+   <enable_pointer>true</enable_pointer>
+   <pointer_type>fixed</pointer_type>
+   <working>true</working>
+  </g1>
+
+  <g2>
+   <name>Gauge2</name>
+   <x>182</x>
+   <y>190</y>
+   <width>20</width>
+   <height>100</height>
+   <loadfn>elevatorval</loadfn>
+   <options>138</options>	<!-- HUDS_RIGHT | HUDS_VERT | HUDS_NOTEXT -->
+   <disp_scaling>-100.0</disp_scaling>
+   <maxValue>+1.0</maxValue>
+   <minValue>-1.0</minValue>
+   <major_divs>50</major_divs>
+   <minor_divs>0</minor_divs>
+   <modulator>0</modulator>
+   <value_span>2.0</value_span>	<!-- (maxValue - minValue) -->
+   <marker_offset>0.0</marker_offset>
+   <type>gauge</type>
+   <tick_bottom>true</tick_bottom>
+   <tick_top>true</tick_top>
+   <tick_right>false</tick_right>
+   <tick_left>false</tick_left>
+   <cap_bottom>false</cap_bottom>
+   <cap_top>false</cap_top>
+   <cap_right>false</cap_right>
+   <cap_left>true</cap_left>
+   <enable_pointer>true</enable_pointer>
+   <pointer_type>fixed</pointer_type>
+   <working>true</working>
+  </g2>
+
+  <g3>
+   <name>Gauge3</name>
+   <x>270</x>
+   <y>150</y>
+   <width>100</width>
+   <height>20</height>
+   <loadfn>rudderval</loadfn>
+   <options>132</options> <!-- HUDS_TOP | HUDS_NOTEXT -->
+   <maxValue>+1.0</maxValue>
+   <minValue>-1.0</minValue>
+   <disp_scaling>100.0</disp_scaling>
+   <major_divs>50</major_divs>
+   <minor_divs>0</minor_divs>
+   <modulator>0</modulator>
+   <value_span>2.0</value_span>	<!-- (maxValue - minValue) -->
+   <type>gauge</type>
+   <tick_bottom>false</tick_bottom>
+   <tick_top>false</tick_top>
+   <tick_right>true</tick_right>
+   <tick_left>true</tick_left>
+   <cap_bottom>true</cap_bottom>
+   <cap_top>false</cap_top>
+   <cap_right>false</cap_right>
+   <cap_left>false</cap_left>
+   <marker_offset>0.0</marker_offset>
+   <enable_pointer>true</enable_pointer>
+   <pointer_type>fixed</pointer_type>
+   <working>true</working>
+  </g3>
+
+  <g4>
+   <name>Gauge4</name>
+   <x>15</x>
+   <y>165</y>
+   <width>20</width>
+   <height>150</height>
+   <loadfn>throttleval</loadfn>
+   <options>134</options> <!-- HUDS_VERT | HUDS_LEFT | HUDS_NOTEXT -->
+   <maxValue>1.0</maxValue>
+   <minValue>0.0</minValue>
+   <disp_scaling>100.0</disp_scaling>
+   <major_divs>50</major_divs>
+   <minor_divs>0</minor_divs>
+   <modulator>0</modulator>
+   <value_span>1.0</value_span>	<!-- (maxValue - minValue) -->
+   <type>gauge</type>
+   <tick_bottom>true</tick_bottom>
+   <tick_top>true</tick_top>
+   <tick_right>false</tick_right>
+   <tick_left>false</tick_left>
+   <cap_bottom>false</cap_bottom>
+   <cap_top>false</cap_top>
+   <cap_right>true</cap_right>
+   <cap_left>false</cap_left>
+   <marker_offset>0.0</marker_offset>
+   <enable_pointer>true</enable_pointer>
+   <pointer_type>fixed</pointer_type>
+   <working>true</working>
+  </g4>
+
+  <g5>
+   <name>Gauge5</name>
+   <x>172</x>
+   <y>190</y>
+   <width>10</width>
+   <height>100</height>
+   <loadfn>elevatortrimval</loadfn>
+   <options>134</options>	<!-- HUDS_LEFT | HUDS_VERT | HUDS_NOTEXT -->
+   <disp_scaling>-100.0</disp_scaling>
+   <maxValue>+1.0</maxValue>
+   <minValue>-1.0</minValue>
+   <major_divs>50</major_divs>
+   <minor_divs>0</minor_divs>
+   <modulator>0</modulator>
+   <value_span>2.0</value_span>	<!-- (maxValue - minValue) -->
+   <marker_offset>0.0</marker_offset>
+   <type>gauge</type>
+   <tick_bottom>true</tick_bottom>
+   <tick_top>true</tick_top>
+   <tick_right>false</tick_right>
+   <tick_left>false</tick_left>
+   <cap_bottom>false</cap_bottom>
+   <cap_top>false</cap_top>
+   <cap_right>false</cap_right>
+   <cap_left>false</cap_left>
+   <enable_pointer>true</enable_pointer>
+   <pointer_type>fixed</pointer_type>
+   <working>true</working>
+  </g5>
+
+ </cards>
+
+</PropertyList>

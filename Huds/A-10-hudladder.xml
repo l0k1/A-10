@@ -1,0 +1,34 @@
+<PropertyList>
+
+ <ladders>
+
+  <l1>
+  <name>Pitch Ladder</name>
+  <x>260</x>
+  <y>150</y>
+  <width>120</width>
+  <height>180</height>
+  <compression_factor>2.68</compression_factor>
+  <loadfn>roll</loadfn>
+  <loadfn1>pitch</loadfn1>
+  <span_units>45.0</span_units>
+  <division_units>10.0</division_units>
+  <screen_hole>70</screen_hole>
+  <lbl_pos>0</lbl_pos>
+  <enable_energy_worm>true</enable_energy_worm>
+  <enable_frl>false</enable_frl>
+  <enable_target_spot>true</enable_target_spot>
+  <enable_velocity_vector>true</enable_velocity_vector>
+  <enable_drift_marker>true</enable_drift_marker>
+  <enable_alpha_bracket>true</enable_alpha_bracket>
+  <enable_energy_marker>true</enable_energy_marker>
+  <enable_climb_dive_marker>false</enable_climb_dive_marker>
+  <enable_glide_slope_marker>true</enable_glide_slope_marker>
+  <glide_slope>0.0</glide_slope>
+  <enable_waypoint_marker>true</enable_waypoint_marker>
+  <working>true</working>
+  </l1>
+
+ </ladders>
+
+</PropertyList>

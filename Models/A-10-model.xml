@@ -1,0 +1,731 @@
+<?xml version="1.0"?>
+
+<!-- A10 model config file (cl & fl configs) -->
+<!-- Lee Elliott 2004/06/25 -->
+
+<PropertyList>
+ <path>A10-004-014g.ac</path>
+
+<!-- Select the external loads as appropriate -->
+<!-- Select Weapons Load -->
+ <animation>
+  <type>select</type>
+  <object-name>MV01</object-name>
+  <object-name>MV02</object-name>
+  <object-name>MV03</object-name>
+  <object-name>MV04</object-name>
+  <object-name>MVCluster01</object-name>
+  <object-name>MVCluster02</object-name>
+  <object-name>MVCluster03</object-name>
+  <object-name>MVCluster04</object-name>
+  <object-name>SW01</object-name>
+  <object-name>SW02</object-name>
+  <condition>
+   <equals>
+    <property>sim/aicraft</property>
+    <value>A-10wl</value>
+   </equals>
+  </condition>
+ </animation>
+
+<!-- Select extermal tanks -->
+ <animation>
+  <type>select</type>
+  <object-name>FTank1</object-name>
+  <object-name>FTank2</object-name>
+  <object-name>FTank3</object-name>
+  <condition>
+   <equals>
+    <property>sim/aircraft</property>
+    <value>A-10fl</value>
+   </equals>
+  </condition>
+ </animation>
+
+<!-- De-select pilot when in view 0 -->
+ <animation>
+  <type>select</type>
+  <object-name>CPT-Pilot-Head</object-name>
+  <object-name>CPT-Pilot-Body</object-name>
+  <object-name>CPT-Helmet</object-name>
+  <object-name>CPT-Visor</object-name>
+  <object-name>CPT-Face-Mask</object-name>
+  <condition>
+   <not>
+   <equals>
+    <property>sim/current-view/view-number</property>
+    <value>0</value>
+   </equals>
+   </not>
+  </condition>
+ </animation>
+
+<!-- Canopy -->
+ <animation>
+  <type>rotate</type>
+  <object-name>BCanopyFrame</object-name>
+  <object-name>BCanopyFrameInner</object-name>
+  <object-name>BCanopyGlass</object-name>
+  <property>canopy/position-norm</property>
+  <factor>50</factor>
+  <center>
+   <x-m>4.65</x-m>
+   <y-m>0.0</y-m>
+   <z-m>1.4</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+<!-- Rudder bits -->
+ <animation>
+  <type>rotate</type>
+  <object-name>LRudder-L</object-name>
+  <object-name>LRudder-R</object-name>
+  <object-name>LRudder-S</object-name>
+  <property>surface-positions/rudder-pos-norm</property>
+  <factor>-20</factor>
+  <center>
+   <x-m>15.18</x-m>
+   <y-m>-2.87</y-m>
+   <z-m>0.14</z-m>
+  </center>
+  <axis>
+   <x>-0.1</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>RRudder-L</object-name>
+  <object-name>RRudder-R</object-name>
+  <object-name>RRudder-S</object-name>
+  <property>surface-positions/rudder-pos-norm</property>
+  <factor>-20</factor>
+  <center>
+   <x-m>15.18</x-m>
+   <y-m>2.87</y-m>
+   <z-m>0.14</z-m>
+  </center>
+  <axis>
+   <x>-0.1</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation>
+
+<!-- Elevator bits -->
+ <animation>
+  <type>rotate</type>
+  <object-name>LElevator</object-name>
+  <object-name>LElevatorTrimTab</object-name>
+  <property>surface-positions/left-elevator-pos-norm</property>
+  <factor>30</factor>
+  <center>
+   <x-m>15.27</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.4</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>RElevator</object-name>
+  <object-name>RElevatorTrimTab</object-name>
+  <property>surface-positions/right-elevator-pos-norm</property>
+  <factor>30</factor>
+  <center>
+   <x-m>15.27</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.4</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+<!-- Alieron bits -->
+ <animation>
+  <type>rotate</type>
+  <object-name>LUAileron</object-name>
+  <object-name>LLAileron</object-name>
+  <object-name>LAileronTrimTab</object-name>
+  <property>surface-positions/left-aileron-pos-norm</property>
+  <factor>30</factor>
+  <center>
+   <x-m>8.90</x-m>
+   <y-m>-6.0</y-m>
+   <z-m>0.26</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>-0.115</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>RUAileron</object-name>
+  <object-name>RLAileron</object-name>
+  <object-name>RAileronTrimTab</object-name>
+  <property>surface-positions/right-aileron-pos-norm</property>
+  <factor>-30</factor>
+  <center>
+   <x-m>8.90</x-m>
+   <y-m>6</y-m>
+   <z-m>0.26</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>-0.115</z>
+  </axis>
+ </animation>
+
+<!-- Flap bits -->
+ <animation>
+  <type>translate</type>
+  <object-name>LIFlap-F</object-name>
+  <object-name>LIFlap-R</object-name>
+  <property>surface-positions/left-flap-pos-norm</property>
+  <factor>0.70</factor>
+  <axis>
+   <x>1.00</x>
+   <y>0.00</y>
+   <z>-0.23</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>LIFlap-F</object-name>
+  <object-name>LIFlap-R</object-name>
+  <property>surface-positions/left-flap-pos-norm</property>
+  <factor>30</factor>
+  <center>
+   <x-m>8.90</x-m>
+   <y-m>0</y-m>
+   <z-m>0.10</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>translate</type>
+  <object-name>LOFlap-F</object-name>
+  <object-name>LOFlap-R</object-name>
+  <property>surface-positions/left-flap-pos-norm</property>
+  <factor>0.60</factor>
+  <axis>
+   <x>1.00</x>
+   <y>0.00</y>
+   <z>-0.22</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>LOFlap-F</object-name>
+  <object-name>LOFlap-R</object-name>
+  <property>surface-positions/left-flap-pos-norm</property>
+  <factor>30</factor>
+  <center>
+   <x-m>8.90</x-m>
+   <y-m>0</y-m>
+   <z-m>0.10</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>translate</type>
+  <object-name>RIFlap-F</object-name>
+  <object-name>RIFlap-R</object-name>
+  <property>surface-positions/left-flap-pos-norm</property>
+  <factor>0.70</factor>
+  <axis>
+   <x>1.00</x>
+   <y>0.00</y>
+   <z>-0.23</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>RIFlap-F</object-name>
+  <object-name>RIFlap-R</object-name>
+  <property>surface-positions/left-flap-pos-norm</property>
+  <factor>-30</factor>
+  <center>
+   <x-m>8.90</x-m>
+   <y-m>0</y-m>
+   <z-m>0.10</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>translate</type>
+  <object-name>ROFlap-F</object-name>
+  <object-name>ROFlap-R</object-name>
+  <property>surface-positions/left-flap-pos-norm</property>
+  <factor>0.60</factor>
+  <axis>
+   <x>1.00</x>
+   <y>0.00</y>
+   <z>-0.22</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>ROFlap-F</object-name>
+  <object-name>ROFlap-R</object-name>
+  <property>surface-positions/left-flap-pos-norm</property>
+  <factor>-30</factor>
+  <center>
+   <x-m>8.90</x-m>
+   <y-m>0</y-m>
+   <z-m>0.10</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+<!-- Spoiler/Airbrake bits -->
+<!-- Left Upper-->
+ <animation>
+  <type>rotate</type>
+  <object-name>LUAileron</object-name>
+  <object-name>LAileronTrimTab</object-name>
+  <property>surface-positions/left-spoiler-pos-norm</property>
+  <factor>-60</factor>
+  <center>
+   <x-m>8.90</x-m>
+   <y-m>-6.0</y-m>
+   <z-m>0.26</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>-0.115</z>
+  </axis>
+ </animation>
+
+<!-- Left Lower-->
+ <animation>
+  <type>rotate</type>
+  <object-name>LLAileron</object-name>
+  <property>surface-positions/left-spoiler-pos-norm</property>
+  <factor>60</factor>
+  <center>
+   <x-m>8.90</x-m>
+   <y-m>-6.0</y-m>
+   <z-m>0.26</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>-0.115</z>
+  </axis>
+ </animation>
+
+<!-- Right Upper -->
+ <animation>
+  <type>rotate</type>
+  <object-name>RUAileron</object-name>
+  <object-name>RAileronTrimTab</object-name>
+  <property>surface-positions/right-spoiler-pos-norm</property>
+  <factor>60</factor>
+  <center>
+   <x-m>8.90</x-m>
+   <y-m>6</y-m>
+   <z-m>0.26</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>-0.115</z>
+  </axis>
+ </animation>
+
+<!-- Right Lower -->
+ <animation>
+  <type>rotate</type>
+  <object-name>RLAileron</object-name>
+  <property>surface-positions/right-spoiler-pos-norm</property>
+  <factor>-60</factor>
+  <center>
+   <x-m>8.90</x-m>
+   <y-m>6</y-m>
+   <z-m>0.26</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>-0.115</z>
+  </axis>
+ </animation>
+
+<!-- Landing Gear -->
+<!-- Nose -->
+<!-- Select/Deslect u/c and doors -->
+ <animation>
+  <type>select</type>
+  <object-name>UC-NoseStrutTop</object-name>
+  <object-name>UC-NoseStrutBottom</object-name>
+  <object-name>UC-FTyre</object-name>
+  <object-name>UC-FStrutLowerDamper</object-name>
+  <object-name>UC-FStrutUpperDamper</object-name>
+  <object-name>UC-FStrutUpperBrace</object-name>
+  <object-name>UC-NoseWheelWell</object-name>
+  <condition>
+   <greater-than>
+    <property>gear/gear[0]/position-norm</property>
+    <value>0.0</value>
+   </greater-than>
+  </condition>
+ </animation>
+
+<!-- Extend/Retract -->
+<!-- Gear -->
+ <animation>
+  <type>rotate</type>
+  <object-name>UC-NoseStrutTop</object-name>
+  <object-name>UC-NoseStrutBottom</object-name>
+  <object-name>UC-FTyre</object-name>
+  <object-name>UC-FStrutLowerDamper</object-name>
+  <object-name>UC-FStrutUpperDamper</object-name>
+  <object-name>UC-FStrutUpperBrace</object-name>
+  <property>gear/gear[0]/position-norm</property>
+  <interpolation>
+    <entry>
+      <ind>0.0</ind>
+      <dep>100.0</dep>
+    </entry>
+    <entry>
+      <ind>0.5</ind>
+      <dep>100.0</dep>
+    </entry>
+    <entry>
+      <ind>1.0</ind>
+      <dep>10.0</dep>
+    </entry>
+  </interpolation>
+  <center>
+   <x-m>3.38</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.19</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+<!-- Front Door -->
+ <animation>
+  <type>rotate</type>
+  <object-name>UC-NoseWheelDoorFront</object-name>
+  <property>gear/gear[0]/position-norm</property>
+  <interpolation>
+    <entry>
+      <ind>0.0</ind>
+      <dep>0.0</dep>
+    </entry>
+    <entry>
+      <ind>0.5</ind>
+      <dep>90.0</dep>
+    </entry>
+    <entry>
+      <ind>1.0</ind>
+      <dep>90.0</dep>
+    </entry>
+  </interpolation>
+  <center>
+   <x-m>3.38</x-m>
+   <y-m>0.56</y-m>
+   <z-m>-0.36</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+<!-- Rear Door -->
+ <animation>
+  <type>rotate</type>
+  <object-name>UC-NoseWheelDoorRear</object-name>
+  <property>gear/gear[0]/position-norm</property>
+  <interpolation>
+    <entry>
+      <ind>0.0</ind>
+      <dep>0.0</dep>
+    </entry>
+    <entry>
+      <ind>1.0</ind>
+      <dep>-85.0</dep>
+    </entry>
+  </interpolation>
+  <center>
+   <x-m>3.58</x-m>
+   <y-m>-0.30</y-m>
+   <z-m>-0.35</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+<!-- Steering -->
+ <animation>
+  <type>rotate</type>
+  <object-name>UC-NoseStrutBottom</object-name>
+  <object-name>UC-FTyre</object-name>
+  <object-name>UC-FStrutLowerDamper</object-name>
+  <object-name>UC-FStrutUpperDamper</object-name>
+  <property>surface-positions/rudder-pos-norm</property>
+  <factor>-20</factor>
+  <center>
+   <x-m>3.09</x-m>
+   <y-m>0.35</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation>
+
+<!-- Compression -->
+ <animation>
+  <type>translate</type>
+  <object-name>UC-NoseStrutBottom</object-name>
+  <object-name>UC-FTyre</object-name>
+  <object-name>UC-FStrutLowerDamper</object-name>
+  <property>gear/gear[0]/compression-norm</property>
+  <factor>0.5</factor>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>UC-FStrutLowerDamper</object-name>
+  <property>gear/gear[0]/compression-norm</property>
+  <factor>35</factor>
+  <center>
+   <x-m>3.10</x-m>
+   <y-m>0</y-m>
+   <z-m>-1.53</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>UC-FStrutUpperDamper</object-name>
+  <property>gear/gear[0]/compression-norm</property>
+  <factor>-35</factor>
+  <center>
+   <x-m>3.10</x-m>
+   <y-m>0</y-m>
+   <z-m>-0.96</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+<!-- Left Main -->
+<!-- Extend/Retract -->
+<!-- Gear -->
+ <animation>
+  <type>rotate</type>
+  <object-name>UC-LeftMainTop</object-name>
+  <object-name>UC-LeftMainBottom</object-name>
+  <object-name>UC-LeftTyre</object-name>
+  <object-name>UC-LeftMainLowerDamper</object-name>
+  <object-name>UC-LeftMainUpperDamper</object-name>
+  <property>gear/gear[1]/position-norm</property>
+  <interpolation>
+    <entry>
+      <ind>0.0</ind>
+      <dep>73.0</dep>
+    </entry>
+    <entry>
+      <ind>1.0</ind>
+      <dep>-10.0</dep>
+    </entry>
+  </interpolation>
+  <center>
+   <x-m>8.00</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.25</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>-0.04</z>
+  </axis>
+ </animation>
+
+<!-- Rear Door -->
+ <animation>
+  <type>rotate</type>
+  <object-name>UC-LeftWHousingDoor</object-name>
+  <property>gear/gear[1]/position-norm</property>
+  <interpolation>
+    <entry>
+      <ind>0.0</ind>
+      <dep>0.0</dep>
+    </entry>
+    <entry>
+      <ind>1.0</ind>
+      <dep>-100.0</dep>
+    </entry>
+  </interpolation>
+  <center>
+   <x-m>8.40</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.35</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+<!-- Compression -->
+ <animation>
+  <type>translate</type>
+  <object-name>UC-LeftMainBottom</object-name>
+  <object-name>UC-LeftTyre</object-name>
+  <property>gear/gear[1]/compression-norm</property>
+  <factor>0.7</factor>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation>
+
+<!-- Right Main -->
+<!-- Extend/Retract -->
+<!-- Gear -->
+ <animation>
+  <type>rotate</type>
+  <object-name>UC-RightMainTop</object-name>
+  <object-name>UC-RightMainBottom</object-name>
+  <object-name>UC-RightTyre</object-name>
+  <object-name>UC-RightMainLowerDamper</object-name>
+  <object-name>UC-RightMainUpperDamper</object-name>
+  <property>gear/gear[2]/position-norm</property>
+  <interpolation>
+    <entry>
+      <ind>0.0</ind>
+      <dep>73.0</dep>
+    </entry>
+    <entry>
+      <ind>1.0</ind>
+      <dep>-10.0</dep>
+    </entry>
+  </interpolation>
+  <center>
+   <x-m>8.00</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.25</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0.04</z>
+  </axis>
+ </animation>
+
+<!-- Rear Door -->
+ <animation>
+  <type>rotate</type>
+  <object-name>UC-RightWHousingDoor</object-name>
+  <property>gear/gear[2]/position-norm</property>
+  <interpolation>
+    <entry>
+      <ind>0.0</ind>
+      <dep>0.0</dep>
+    </entry>
+    <entry>
+      <ind>1.0</ind>
+      <dep>-100.0</dep>
+    </entry>
+  </interpolation>
+  <center>
+   <x-m>8.40</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.35</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+<!-- Compression -->
+ <animation>
+  <type>translate</type>
+  <object-name>UC-RightMainBottom</object-name>
+  <object-name>UC-RightTyre</object-name>
+  <property>gear/gear[2]/compression-norm</property>
+  <factor>0.7</factor>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation>
+
+</PropertyList>

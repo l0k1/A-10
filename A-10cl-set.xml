@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+Fairchild A-10 simulation config.
+
+2004-09-29 Lee Elliott  A-10@overthetop.freeserve.co.uk
+************************************************************************
+-->
+
+<PropertyList>
+  <sim>
+    <flight-model>yasim</flight-model>
+    <aero>A-10-yasim</aero>
+    <fuel-fraction>1.0</fuel-fraction>
+
+    <description>Fairchild A-10 - Clean configuration (YASim FDM)</description>
+
+    <virtual-cockpit archive="y">true</virtual-cockpit>
+
+    <view n="0">
+      <internal archive="y">true</internal>
+      <config>
+        <x-offset-m archive="y">0.0</x-offset-m>
+        <y-offset-m archive="y">1.51</y-offset-m>
+        <z-offset-m archive="y">3.20</z-offset-m>
+        <pitch-offset-deg>0</pitch-offset-deg>
+        <default-field-of-view-deg>55</default-field-of-view-deg>
+      </config>
+    </view>
+
+    <chase-distance-m type="double" archive="y">-20.0</chase-distance-m>
+
+    <current-view>
+      <field-of-view>55.0</field-of-view>
+    </current-view>
+
+    <sound>
+      <audible>true</audible>
+      <path>Aircraft/A-10/Sounds/A-10-sound.xml</path>
+    </sound>
+
+    <panel>
+      <path>Aircraft/A-10/Panels/A-10-vfr-panel.xml</path>
+    </panel>
+    <panel_2>
+      <path>Aircraft/A-10/Panels/A-10-mini-panel.xml</path>
+    </panel_2>
+
+    <hud>
+      <path>Aircraft/A-10/Huds/A-10-hud1.xml</path>
+      <visibility>true</visibility>
+    </hud>
+
+    <model>
+      <path>Aircraft/A-10/Models/A-10-model.xml</path>
+    </model>
+
+    <systems>
+      <autopilot>
+        <path>Aircraft/A-10/Systems/A-10-autopilot.xml</path>
+      </autopilot>
+      <electrical>
+        <path>Aircraft/A-10/Systems/A-10-electrical.xml</path>
+      </electrical>
+    </systems>
+
+<!-- Shift the camera target point back -->
+    <view n="1">
+      <config>
+        <target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
+      </config>
+    </view>
+
+    <view n="2">
+      <config>
+        <x-offset-m archive="y" type="double">3.4</x-offset-m>
+        <z-offset-m archive="y">-19.7</z-offset-m>
+        <target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
+      </config>
+    </view>
+
+    <view n="3">
+      <config>
+        <target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
+      </config>
+    </view>
+
+    <view n="5">
+      <config>
+        <target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
+      </config>
+    </view>
+
+<!-- Flap settings -->
+    <flaps>
+      <setting>0.00</setting>
+      <setting>0.08</setting>
+      <setting>0.16</setting>
+      <setting>0.32</setting>
+      <setting>0.48</setting>
+      <setting>0.64</setting>
+      <setting>0.82</setting>
+      <setting>1.00</setting>
+    </flaps>
+
+  </sim>
+
+  <input>
+    <keyboard>
+      <key n="100">
+        <name>d</name>
+        <desc>Retract Slats.</desc>
+        <binding>
+          <command>property-adjust</command>
+          <property>/controls/flight/slats</property>
+          <step type="double">-0.25</step>
+        </binding>
+      </key>
+
+      <key n="102">
+        <name>f</name>
+        <desc>Extend Slats.</desc>
+        <binding>
+          <command>property-adjust</command>
+          <property>/controls/flight/slats</property>
+          <step type="double">0.25</step>
+        </binding>
+      </key>
+
+    </keyboard>
+  </input>
+
+  <autopilot>
+    <settings>
+      <target-agl-ft type="float">800</target-agl-ft>
+      <target-altitude-ft type="float">3000</target-altitude-ft>
+      <target-aoa-deg type="float">11</target-aoa-deg>
+      <target-pitch-deg type="float">7</target-pitch-deg>]
+      <take-off-pitch-deg type="float">9</take-off-pitch-deg>
+      <climb-out-pitch-deg type="float">9.5</climb-out-pitch-deg>
+      <ground-roll-heading-deg type="float">-999.9</ground-roll-heading-deg>
+      <target-speed-kt type="float">320.0</target-speed-kt>
+      <target-mach type="float">0.5</target-mach>
+      <target-approach-AoA-deg type="float">9.0</target-approach-AoA-deg>
+    </settings>
+
+    <locks>
+      <auto-take-off type="string">Enabled</auto-take-off>
+      <auto-landing type="string">Enabled</auto-landing>
+      <rudder-control type="string">Initialised</rudder-control>
+      <approach-AoA-lock type="string">Initialised</approach-AoA-lock>
+    </locks>
+  </autopilot>
+
+<!-- Start with the Parking Brake on -->
+  <controls>
+    <gear>
+      <brake-parking type="double">1.0</brake-parking>
+    </gear>
+  </controls>
+
+<!-- Engine indexes -->
+  <engines>
+    <engine n="0">
+      <engine-num type="int">0</engine-num>
+    </engine>
+    <engine n="1">
+      <engine-num type="int">1</engine-num>
+    </engine>
+  </engines>
+
+<!-- Fuel Tank indexes -->
+  <consumables>
+    <fuel>
+      <tank n="0">
+        <tank-num type="int">0</tank-num>
+      </tank>
+      <tank n="1">
+        <tank-num type="int">1</tank-num>
+      </tank>
+      <tank n="2">
+        <tank-num type="int">2</tank-num>
+      </tank>
+      <tank n="3">
+        <tank-num type="int">3</tank-num>
+      </tank>
+      <tank n="4">
+        <tank-num type="int">4</tank-num>
+      </tank>
+      <tank n="5">
+        <tank-num type="int">5</tank-num>
+      </tank>
+    </fuel>
+  </consumables>
+
+  <nasal>
+    <A10>
+      <file>Aircraft/A-10/Nasal/A-10.nas</file>
+      <script>zero_ext_tanks();</script>
+    </A10>
+  </nasal>
+
+</PropertyList>

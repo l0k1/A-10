@@ -1,0 +1,45 @@
+<PropertyList>
+
+ <labels>
+
+  <lat>
+   <name>lattitude</name>
+   <x>110</x>
+   <y>430</y>
+   <width>1</width>
+   <height>10</height>
+   <data_source>latitude</data_source>
+   <label_format>%s%</label_format>
+   <pre_label_string>blank</pre_label_string>
+   <post_label_string>blank</post_label_string>
+   <scale_data>1.0</scale_data>
+   <options>4</options>
+   <justification>1</justification>
+   <blinking>0</blinking>
+   <working>true</working>
+   <latitude>true</latitude>
+   <longitude>false</longitude>
+  </lat>
+
+  <lon>
+   <name>longitude</name>
+   <x>530</x>
+   <y>430</y>
+   <width>1</width>
+   <height>10</height>
+   <data_source>longitude</data_source>
+   <label_format>%s%</label_format>
+   <pre_label_string>blank</pre_label_string>
+   <post_label_string>blank</post_label_string>
+   <scale_data>1.0</scale_data>
+   <options>4</options>
+   <justification>1</justification>
+   <blinking>0</blinking>
+   <working>true</working>
+   <latitude>false</latitude>
+   <longitude>true</longitude>
+  </lon>
+
+</labels>
+
+</PropertyList>

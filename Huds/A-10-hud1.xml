@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<!--
+Preliminary Default Hud.
+November 2000
+Neetha Girish <neetha@ada.ernet.in>
+
+Based on Default Panel by David Megginson, david@megginson.com.
+
+This is a Hud configuration file for the open-source flight
+simulator FlightGear (www.flightgear.org).  The file is an XML-encoded
+FlightGear property list defining the Hud.
+
+Each instrument is, itself, defined in an XML-encoded property list
+in a separate file.
+
+-->
+
+<PropertyList>
+
+ <name>Default Aircraft Hud</name>
+
+ <instruments>
+
+  <hudladder>
+   <path>Aircraft/A-10/Huds/A-10-hudladder.xml</path>
+  </hudladder>
+
+  <hudcard>
+  <path>Aircraft/A-10/Huds/A-10-hudcard.xml</path>
+  </hudcard>
+
+
+<instrlabel>
+   <path>Aircraft/A-10/Huds/A-10-instrlabel.xml</path>
+  </instrlabel>
+
+  <fgTBI>
+   <path>Aircraft/A-10/Huds/A-10-fgtbi.xml</path>
+  </fgTBI>
+
+ </instruments>
+
+</PropertyList>
