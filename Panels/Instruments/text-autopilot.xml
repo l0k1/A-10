@@ -631,7 +631,7 @@
    <condition>
     <equals>
      <property>/autopilot/locks/altitude</property>
-     <value>vfps-hold-ls</value>
+     <value>Touch Down</value>
     </equals>
    </condition>
    <name>Instrument Landing Engaged (Touch Down Phase)</name>

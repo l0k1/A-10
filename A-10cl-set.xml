@@ -11,6 +11,10 @@ Fairchild A-10 simulation config.
 
   <sim>
 
+    <startup>
+      <splash-texture>Aircraft/A-10/A-10-splash.rgb</splash-texture>
+    </startup>
+
     <flight-model>yasim</flight-model>
     <status>beta</status>
     <aero>A-10-yasim</aero>
