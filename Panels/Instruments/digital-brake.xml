@@ -5,7 +5,7 @@
 
 <PropertyList>
 
- <name>Digital Flap display</name>
+ <name>Digital Brake display</name>
  <w-base>40</w-base>
  <h-base>10</h-base>
 
@@ -42,7 +42,7 @@
    <chunks>
     <chunk>
      <type>literal</type>
-     <text>FLP: </text>
+     <text>BRK: </text>
     </chunk>
    </chunks>
    <transformations>
@@ -58,40 +58,7 @@
   </layer>
 
   <layer>
-   <condition>
-    <equals>
-     <property>/autopilot/locks/auto-flap-control</property>
-     <value>Engaged</value>
-    </equals>
-   </condition>
-   <name>Title (Auto Flap)</name>
-   <type>text</type>
-   <point-size>14</point-size>
-   <color>
-    <red>1.0</red>
-    <green>0.0</green>
-    <blue>0.0</blue>
-   </color>
-   <chunks>
-    <chunk>
-     <type>literal</type>
-     <text>FLP: </text>
-    </chunk>
-   </chunks>
-   <transformations>
-    <transformation>
-     <type>x-shift</type>
-     <offset>0</offset>
-    </transformation>
-    <transformation>
-     <type>y-shift</type>
-     <offset>0</offset>
-    </transformation>
-   </transformations>
-  </layer>
-
-  <layer>
-   <name>Left Flap pos display</name>
+   <name>Left Brake display</name>
    <type>text</type>
    <font>led</font>
    <point-size>5</point-size>
@@ -103,7 +70,7 @@
    <chunks>
     <chunk>
      <type>number-value</type>
-     <property>/surface-positions/left-flap-pos-norm</property>
+     <property>/controls/gear/brake-left</property>
      <format>%01.2f</format>
     </chunk>
    </chunks>
@@ -120,7 +87,7 @@
   </layer>
 
   <layer>
-   <name>Right Flap pos display</name>
+   <name>Right Brake display</name>
    <type>text</type>
    <font>led</font>
    <point-size>5</point-size>
@@ -132,7 +99,7 @@
    <chunks>
     <chunk>
      <type>number-value</type>
-     <property>/surface-positions/right-flap-pos-norm</property>
+     <property>/controls/gear/brake-right</property>
      <format>%01.2f</format>
     </chunk>
    </chunks>

@@ -58,7 +58,7 @@
   </layer>
 
   <layer>
-   <name>Vsi display</name>
+   <name>AoA display</name>
    <type>text</type>
    <font>led</font>
    <point-size>7</point-size>
@@ -77,7 +77,7 @@
    <transformations>
     <transformation>
      <type>x-shift</type>
-     <offset>65</offset>
+     <offset>60</offset>
     </transformation>
     <transformation>
      <type>y-shift</type>

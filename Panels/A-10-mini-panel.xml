@@ -242,6 +242,14 @@ Hacked by Lee Elliott for the A-10 mock panel
    <h>10</h>
   </instrument>
 
+  <instrument include="Instruments/digital-brake.xml">
+   <name>Brake display</name>
+   <x>430</x>
+   <y>100</y>
+   <w>40</w>
+   <h>10</h>
+  </instrument>
+
 <!-- Engine monitors -->
   <instrument include="Instruments/digital-engine.xml">
    <name>Engine 0 display</name>

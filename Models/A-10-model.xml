@@ -4,7 +4,7 @@
 <!-- Lee Elliott 2004/06/25 -->
 
 <PropertyList>
- <path>A10-004-014g.ac</path>
+ <path>A10-004-014h.ac</path>
 
 <!-- Select the external loads as appropriate -->
 <!-- Select Weapons Load -->
@@ -491,6 +491,10 @@
   <interpolation>
     <entry>
       <ind>0.0</ind>
+      <dep>0.0</dep>
+    </entry>
+    <entry>
+      <ind>0.5</ind>
       <dep>0.0</dep>
     </entry>
     <entry>

@@ -8,14 +8,15 @@ Fairchild A-10 simulation config.
 -->
 
 <PropertyList>
+
   <sim>
+
     <flight-model>yasim</flight-model>
     <aero>A-10-yasim</aero>
     <fuel-fraction>1.0</fuel-fraction>
-
     <description>Fairchild A-10 - Clean configuration (YASim FDM)</description>
-
     <virtual-cockpit archive="y">true</virtual-cockpit>
+    <chase-distance-m type="double" archive="y">-20.0</chase-distance-m>
 
     <view n="0">
       <internal archive="y">true</internal>
@@ -27,8 +28,6 @@ Fairchild A-10 simulation config.
         <default-field-of-view-deg>55</default-field-of-view-deg>
       </config>
     </view>
-
-    <chase-distance-m type="double" archive="y">-20.0</chase-distance-m>
 
     <current-view>
       <field-of-view>55.0</field-of-view>
@@ -106,6 +105,7 @@ Fairchild A-10 simulation config.
   </sim>
 
   <input>
+
     <keyboard>
       <key n="100">
         <name>d</name>
@@ -128,28 +128,30 @@ Fairchild A-10 simulation config.
       </key>
 
     </keyboard>
+
   </input>
 
   <autopilot>
+
     <settings>
       <target-agl-ft type="float">800</target-agl-ft>
       <target-altitude-ft type="float">3000</target-altitude-ft>
-      <target-aoa-deg type="float">11</target-aoa-deg>
+      <target-aoa-deg type="float">8</target-aoa-deg>
       <target-pitch-deg type="float">7</target-pitch-deg>]
       <take-off-pitch-deg type="float">9</take-off-pitch-deg>
       <climb-out-pitch-deg type="float">9.5</climb-out-pitch-deg>
       <ground-roll-heading-deg type="float">-999.9</ground-roll-heading-deg>
       <target-speed-kt type="float">320.0</target-speed-kt>
       <target-mach type="float">0.5</target-mach>
-      <target-approach-AoA-deg type="float">9.0</target-approach-AoA-deg>
     </settings>
 
     <locks>
       <auto-take-off type="string">Enabled</auto-take-off>
       <auto-landing type="string">Enabled</auto-landing>
       <rudder-control type="string">Initialised</rudder-control>
-      <approach-AoA-lock type="string">Initialised</approach-AoA-lock>
+      <AoA-lock type="string">Initialised</AoA-lock>
     </locks>
+
   </autopilot>
 
 <!-- Start with the Parking Brake on -->

@@ -723,7 +723,7 @@
    </binding>
    <binding>
     <command>property-assign</command>
-    <property>/autopilot/locks/approach-AoA-lock</property>
+    <property>/autopilot/locks/AoA-lock</property>
     <value type="string">Disabled</value>
    </binding>
   </action>

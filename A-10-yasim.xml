@@ -125,18 +125,18 @@
 </jet>
 
 <!-- Internal tanks -->
-<tank x="-8.0" y="-2.0" z="0.0" jet="true" capacity="2000"/>
-<tank x="-8.0" y="2.0" z="0.0" jet="true" capacity="2000"/>
-<tank x="-8.0" y="0" z="0.63" jet="true" capacity="6700"/>
+<tank x="-8.3" y="-2.0" z="0.0" jet="true" capacity="2000"/>
+<tank x="-8.3" y="2.0" z="0.0" jet="true" capacity="2000"/>
+<tank x="-8.3" y="0" z="0.63" jet="true" capacity="6700"/>
 <!-- Ferry Tanks -->
-<tank x="-7.36" y="1.29" z="-0.86" jet="true" capacity="4032"/>
-<tank x="-7.36" y="0" z="-0.86" jet="true" capacity="4032"/>
-<tank x="-7.36" y="-1.29" z="-0.86" jet="true" capacity="4032"/>
+<tank x="-7.6" y="1.29" z="-0.86" jet="true" capacity="4032"/>
+<tank x="-7.6" y="0" z="-0.86" jet="true" capacity="4032"/>
+<tank x="-7.6" y="-1.29" z="-0.86" jet="true" capacity="4032"/>
 
 <!-- Undercarriage -->
 <!-- nose -->
 <gear x="-2.9" y="0.4" z="-2.24" retract-time="7" compression="0.7"
-      spring="0.6" damp="1.0">
+      spring="1.4" damp="1.4">
   <control-input axis="/controls/flight/rudder" control="STEER"
       square="true"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -145,8 +145,8 @@
 </gear>
 
 <!-- left main -->
-<gear x="-8.15" y="2.5" z="-2.22" retract-time="7" compression="0.7"
-      spring="1.6" damp="1.0">
+<gear x="-8.3" y="2.5" z="-2.22" retract-time="7" compression="0.7"
+      spring="1.6" damp="1.4">
   <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -155,8 +155,8 @@
 </gear>
 
 <!-- right main -->
-<gear x="-8.15" y="-2.5" z="-2.22" retract-time="7" compression="0.7"
-      spring="1.6" damp="1.0">
+<gear x="-8.3" y="-2.5" z="-2.22" retract-time="7" compression="0.7"
+      spring="1.6" damp="1.4">
   <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -175,6 +175,6 @@
 <ballast x="-2.8" y="0" z="0.74" mass="2000"/> <!-- Armored cockpit -->
 <ballast x="-3.0" y="0" z="0.0" mass="4000"/> <!-- Gun -->
 <ballast x="-6.0" y="0" z="0.0" mass="1000"/> <!-- avionics -->
-<ballast x="-4.0" y="0" z="0.0" mass="3000"/> <!-- trim ballast -->
+<ballast x="-4.0" y="0" z="0.0" mass="2500"/> <!-- trim ballast -->
 
 </airplane>

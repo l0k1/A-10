@@ -45,7 +45,7 @@ ato_spddep = func {
   # This script controls speed dependent actions.
   airspeed = getprop("/velocities/airspeed-kt");
   if(airspeed < 150) {
-    # Do not do anything until airspeed > 110kt.
+    # Do not do anything until airspeed > 150kt.
   } else {
     if(airspeed < 160) {
       setprop("/controls/flight/flaps", 0.48);
@@ -101,9 +101,9 @@ autoland = func {
   # Depending on alt...
   # Glide Slope Phase
   if(agl > 60) {
-    setprop("/autopilot/locks/altitude", "Glide Slope");
+    setprop("/autopilot/locks/altitude", "gs1-hold");
     if(kias < 155) {
-      setprop("/autopilot/locks/approach-AoA-lock", "Engaged");
+      setprop("/autopilot/locks/AoA-lock", "Engaged");
     } else {
       if(kias < 170) {
         setprop("/controls/flight/flaps", 1.0);
@@ -143,16 +143,16 @@ autoland = func {
     }
   } else {
     # Touch Down Phase
-    setprop("/autopilot/locks/approach-AoA-lock", "Off");
+    setprop("/autopilot/locks/AoA-lock", "Off");
     setprop("/autopilot/locks/altitude", "Touch Down");
     setprop("/autopilot/locks/speed", "Off");
+    setprop("/autopilot/locks/heading", "wing-leveler");
   }
   if(agl < 0.1) {
     # Disable the AP nav1 heading hold, deploy the spoilers and cut the
     # throttles.
     setprop("/autopilot/locks/heading", "Off");
     setprop("/controls/flight/spoilers", 1);
-    setprop("/autopilot/locks/heading", "wing-leveler");
     setprop("/controls/engines/engine[0]/throttle", 0);
     setprop("/controls/engines/engine[1]/throttle", 0);
   }
