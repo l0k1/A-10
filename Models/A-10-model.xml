@@ -22,7 +22,7 @@
   <object-name>SW02</object-name>
   <condition>
    <equals>
-    <property>sim/aicraft</property>
+    <property>sim/aircraft</property>
     <value>A-10wl</value>
    </equals>
   </condition>
