@@ -75,6 +75,7 @@ for this aircraft
 
 Key               Action
 'K' (Shift-k)     Toggle trajactory markers on & off
+'U' (Shift-u)     Update Drop view position
 
 Panels
 ------
@@ -222,6 +223,9 @@ an approach AoA of 9 degrees is achieved.
 Once the a/c drops below 50ft agl the AP controller switches
 to touch-down mode and will try to set the a/c down at around
 0.1 vfps (currently it's between 2-3 vfps).
+
+Note: When the aircraft drops below 200ft agl the heading hold 
+lock is disabled so any final corrections are up to you.
 
 MC Mode
 -------

@@ -97,14 +97,14 @@ autoland = func {
   if(getprop("/autopilot/settings/target-speed-kt") > 240) {
     setprop("/autopilot/settings/target-speed-kt", 240);
   }
-  if(getprop("/autopilot/locks/heading") != "nav1-hold") {
-    setprop("/autopilot/locks/heading", "nav1-hold");
-  }
-
+  
   # Depending on alt...
   # Glide Slope Phase
-  if(agl > 60) {
+  if(agl > 200) {
     setprop("/autopilot/locks/altitude", "gs1-hold");
+    if(getprop("/autopilot/locks/heading") != "nav1-hold") {
+      setprop("/autopilot/locks/heading", "nav1-hold");
+    }
     if(kias < 155) {
       setprop("/autopilot/locks/AoA-lock", "Engaged");
     } else {
@@ -146,10 +146,11 @@ autoland = func {
     }
   } else {
     # Touch Down Phase
-    setprop("/autopilot/locks/AoA-lock", "Off");
+    setprop("/autopilot/locks/AoA-lock", "off");
     setprop("/autopilot/locks/altitude", "Touch Down");
-    setprop("/autopilot/locks/speed", "Off");
-    setprop("/autopilot/locks/heading", "wing-leveler");
+    setprop("/autopilot/locks/speed", "off");
+#    setprop("/autopilot/locks/heading", "wing-leveler");
+    setprop("/autopilot/locks/heading", "off");
   }
   if(agl < 0.1) {
     # Disable the AP nav1 heading hold, deploy the spoilers and cut the
@@ -179,6 +180,7 @@ zero_ext_tanks = func {
   # a child script to actually zero the tanks after a delay of 5
   # seconds.
   settimer(zero_ext_tanks_sub, 5);
+  start_up();
 }
 #--------------------------------------------------------------------
 zero_ext_tanks_sub = func {
@@ -201,5 +203,27 @@ toggle_traj_mkr = func {
   } else {
     setprop("ai/submodels/trajectory-markers", 0);
   }
+}
+#--------------------------------------------------------------------
+initialise_drop_view_pos = func {
+  eyelatdeg = getprop("/position/latitude-deg");
+  eyelondeg = getprop("/position/longitude-deg");
+  eyealtft = getprop("/position/altitude-ft") + 20;
+  setprop("/sim/view[6]/latitude-deg", eyelatdeg);
+  setprop("/sim/view[6]/longitude-deg", eyelondeg);
+  setprop("/sim/view[6]/altitude-ft", eyealtft);
+}
+#--------------------------------------------------------------------
+update_drop_view_pos = func {
+  eyelatdeg = getprop("/position/latitude-deg");
+  eyelondeg = getprop("/position/longitude-deg");
+  eyealtft = getprop("/position/altitude-ft") + 20;
+  interpolate("/sim/view[6]/latitude-deg", eyelatdeg, 5);
+  interpolate("/sim/view[6]/longitude-deg", eyelondeg, 5);
+  interpolate("/sim/view[6]/altitude-ft", eyealtft, 5);
+}
+#--------------------------------------------------------------------
+start_up = func {
+  settimer(initialise_drop_view_pos, 5);
 }
 #--------------------------------------------------------------------

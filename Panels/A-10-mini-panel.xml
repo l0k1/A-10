@@ -244,7 +244,7 @@ Hacked by Lee Elliott for the A-10 mock panel
 
   <instrument include="Instruments/digital-brake.xml">
    <name>Brake display</name>
-   <x>430</x>
+   <x>424</x>
    <y>100</y>
    <w>40</w>
    <h>10</h>
@@ -295,10 +295,19 @@ Hacked by Lee Elliott for the A-10 mock panel
     <tf-select>autopilot/locks/altitude</tf-select>
     <mc-select>autopilot/locks/altitude</mc-select>
    </params>
-   <x>530</x>
+   <x>524</x>
    <y>125</y>
    <w>200</w>
    <h>16</h>
+  </instrument>
+
+<!-- Wind Speed & Direction -->
+  <instrument include="Instruments/digital-wind-speed-direction.xml">
+   <name>Wind Speed and Direction display</name>
+   <x>583</x>
+   <y>99</y>
+   <w>110</w>
+   <h>34</h>
   </instrument>
 
 </instruments>

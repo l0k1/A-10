@@ -24,6 +24,8 @@ Fairchild A-10 simulation config.
     <virtual-cockpit archive="y">true</virtual-cockpit>
     <chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
 
+    <number-views type="int" archive="y">7</number-views>
+    
     <view n="0">
       <internal archive="y">true</internal>
       <config>
@@ -35,6 +37,30 @@ Fairchild A-10 simulation config.
       </config>
     </view>
 
+    <view n="6">
+      <name>Drop View</name>
+      <type>lookat</type>
+      <config>
+        <eye-lat-deg-path>/sim/view[6]/latitude-deg</eye-lat-deg-path>
+        <eye-lon-deg-path>/sim/view[6]/longitude-deg</eye-lon-deg-path>
+        <eye-alt-ft-path>/sim/view[6]/altitude-ft</eye-alt-ft-path>
+        <eye-roll-deg-path>/sim/view[6]/roll-deg</eye-roll-deg-path>
+        <eye-pitch-deg-path>/sim/view[6]/pitch-deg</eye-pitch-deg-path>
+        <eye-heading-deg-path>/sim/view[6]/heading-deg</eye-heading-deg-path>
+
+        <at-model type="bool">true</at-model>
+        <at-model-idx type="int">0</at-model-idx>
+
+        <ground-level-nearplane-m type="double">1.0f</ground-level-nearplane-m>
+        <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+
+        <x-offset-m type="double">0</x-offset-m>
+        <y-offset-m type="double">0</y-offset-m>
+        <z-offset-m type="double">0</z-offset-m>
+        <target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
+      </config>
+    </view>
+    
     <current-view>
       <field-of-view>55.0</field-of-view>
     </current-view>
@@ -147,6 +173,17 @@ Fairchild A-10 simulation config.
           <script>A10.toggle_traj_mkr()</script>
         </binding>
       </key>
+      
+<!-- Update Drop View position -->
+       <key n="85">
+        <name>U</name>
+        <desc>Update Drop View position</desc>
+        <binding n="0">
+          <command>nasal</command>
+          <script>A10.update_drop_view_pos()</script>
+        </binding>
+      </key>
+      
     </keyboard>
 
   </input>
