@@ -140,6 +140,26 @@ Fairchild A-10 simulation config.
       <setting>1.00</setting>
     </flaps>
 
+    <help>
+      <title>Fairchild A-10</title>
+      <key>
+        <name>d/f</name>
+        <desc>retract/extend slats</desc>
+      </key>
+      <key>
+        <name>j/k</name>
+        <desc>decrease/increase spoilers</desc>
+      </key>
+      <key>
+        <name>K</name>
+        <desc>toggle trajectory markers</desc>
+      </key>
+      <key>
+        <name>U</name>
+        <desc>update drop view position</desc>
+      </key>
+    </help>
+
   </sim>
 
   <input>
