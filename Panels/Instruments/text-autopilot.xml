@@ -21,7 +21,7 @@
   <layer>
    <name>background</name>
    <texture>
-    <path>Aircraft/A-10/Panels/Instruments/Textures/trans-green-bg.rgb</path>
+    <path>Aircraft/A-10/Panels/Instruments/Textures/trans-dgrey-bg.rgb</path>
    </texture>
     <w>240</w>
     <h>16</h>
@@ -119,20 +119,21 @@
    </transformations>
   </layer>
 
+<!-- Auto take-off -->
   <layer>
    <condition>
     <equals>
      <property>/autopilot/locks/auto-take-off</property>
-     <value>Disabled</value>
+     <value>disabled</value>
     </equals>
    </condition>
-   <name>Take-Off - Disabled</name>
+   <name>Take-Off - disabled</name>
    <type>text</type>
    <point-size>16</point-size>
    <color>
-    <red>0.0</red>
-    <green>0.3</green>
-    <blue>0.0</blue>
+    <red>0.4</red>
+    <green>0.4</green>
+    <blue>0.4</blue>
    </color>
    <chunks>
     <chunk>
@@ -156,10 +157,10 @@
    <condition>
     <equals>
      <property>/autopilot/locks/auto-take-off</property>
-     <value>Enabled</value>
+     <value>enabled</value>
     </equals>
    </condition>
-   <name>Take-Off - Enabled</name>
+   <name>Take-Off - enabled</name>
    <type>text</type>
    <point-size>16</point-size>
    <color>
@@ -188,16 +189,83 @@
   <layer>
    <condition>
     <equals>
-     <property>/autopilot/locks/auto-landing</property>
-     <value>Disabled</value>
+     <property>/autopilot/locks/auto-take-off</property>
+     <value>engaged</value>
     </equals>
    </condition>
-   <name>Instrument Landing - Disabled</name>
+   <name>Take-Off - engaged</name>
+   <type>text</type>
+   <point-size>16</point-size>
+   <color>
+    <red>1.0</red>
+    <green>0.0</green>
+    <blue>0.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>literal</type>
+     <text>TO</text>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>31</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>-6</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+<!-- Auto landing -->
+  <layer>
+   <condition>
+    <equals>
+     <property>/autopilot/locks/auto-landing</property>
+     <value>disabled</value>
+    </equals>
+   </condition>
+   <name>Instrument Landing - disabled</name>
+   <type>text</type>
+   <point-size>16</point-size>
+   <color>
+    <red>0.4</red>
+    <green>0.4</green>
+    <blue>0.4</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>literal</type>
+     <text>IL</text>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>63</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>-6</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+   <condition>
+    <equals>
+     <property>/autopilot/locks/auto-landing</property>
+     <value>enabled</value>
+    </equals>
+   </condition>
+   <name>Instrument Landing - enabled</name>
    <type>text</type>
    <point-size>16</point-size>
    <color>
     <red>0.0</red>
-    <green>0.3</green>
+    <green>1.0</green>
     <blue>0.0</blue>
    </color>
    <chunks>
@@ -222,15 +290,15 @@
    <condition>
     <equals>
      <property>/autopilot/locks/auto-landing</property>
-     <value>Enabled</value>
+     <value>engaged</value>
     </equals>
    </condition>
-   <name>Instrument Landing - Enabled</name>
+   <name>Instrument Landing - engaged</name>
    <type>text</type>
    <point-size>16</point-size>
    <color>
-    <red>0.0</red>
-    <green>1.0</green>
+    <red>1.0</red>
+    <green>0.0</green>
     <blue>0.0</blue>
    </color>
    <chunks>
@@ -259,13 +327,13 @@
      <value>mach-with-throttle</value>
     </not-equals>
    </condition>
-   <name>Mach Climb Disabled</name>
+   <name>Mach Climb disabled</name>
    <type>text</type>
    <point-size>16</point-size>
    <color>
-    <red>0.0</red>
-    <green>0.3</green>
-    <blue>0.0</blue>
+    <red>0.4</red>
+    <green>0.4</green>
+    <blue>0.4</blue>
    </color>
    <chunks>
     <chunk>
@@ -292,7 +360,7 @@
      <value>mach-with-throttle</value>
     </equals>
    </condition>
-   <name>Mach Climb - Enabled</name>
+   <name>Mach Climb - enabled</name>
    <type>text</type>
    <point-size>16</point-size>
    <color>
@@ -331,7 +399,7 @@
    <point-size>16</point-size>
    <color>
     <red>1.0</red>
-    <green>0.5</green>
+    <green>0.0</green>
     <blue>0.0</blue>
    </color>
    <chunks>
@@ -365,7 +433,7 @@
    <point-size>16</point-size>
    <color>
     <red>1.0</red>
-    <green>0.5</green>
+    <green>0.0</green>
     <blue>0.0</blue>
    </color>
    <chunks>
@@ -399,7 +467,7 @@
    <point-size>16</point-size>
    <color>
     <red>1.0</red>
-    <green>0.5</green>
+    <green>0.0</green>
     <blue>0.0</blue>
    </color>
    <chunks>
@@ -420,245 +488,6 @@
    </transformations>
   </layer>
 
-<!-- Take Off -->
-<!-- Ground Roll Phase -->
-  <layer>
-   <condition>
-    <equals>
-     <property>/autopilot/locks/altitude</property>
-     <value>ground-roll</value>
-    </equals>
-   </condition>
-   <name>Rotate Engaged</name>
-   <type>text</type>
-   <point-size>16</point-size>
-   <color>
-    <red>1.0</red>
-    <green>1.0</green>
-    <blue>0.0</blue>
-   </color>
-   <chunks>
-    <chunk>
-     <type>literal</type>
-     <text>TO</text>
-    </chunk>
-   </chunks>
-   <transformations>
-    <transformation>
-     <type>x-shift</type>
-     <offset>31</offset>
-    </transformation>
-    <transformation>
-     <type>y-shift</type>
-     <offset>-6</offset>
-    </transformation>
-   </transformations>
-  </layer>
-
-<!-- Rotate Phase -->
-  <layer>
-   <condition>
-    <equals>
-     <property>/autopilot/locks/altitude</property>
-     <value>take-off</value>
-    </equals>
-   </condition>
-   <name>Rotate Engaged</name>
-   <type>text</type>
-   <point-size>16</point-size>
-   <color>
-    <red>1.0</red>
-    <green>0.0</green>
-    <blue>0.0</blue>
-   </color>
-   <chunks>
-    <chunk>
-     <type>literal</type>
-     <text>TO</text>
-    </chunk>
-   </chunks>
-   <transformations>
-    <transformation>
-     <type>x-shift</type>
-     <offset>31</offset>
-    </transformation>
-    <transformation>
-     <type>y-shift</type>
-     <offset>-6</offset>
-    </transformation>
-   </transformations>
-  </layer>
-
-<!-- Climb Out Phase -->
-  <layer>
-   <condition>
-    <equals>
-     <property>/autopilot/locks/altitude</property>
-     <value>climb-out</value>
-    </equals>
-   </condition>
-   <name>Climb Out Engaged</name>
-   <type>text</type>
-   <point-size>16</point-size>
-   <color>
-    <red>1.0</red>
-    <green>0.5</green>
-    <blue>0.0</blue>
-   </color>
-   <chunks>
-    <chunk>
-     <type>literal</type>
-     <text>TO</text>
-    </chunk>
-   </chunks>
-   <transformations>
-    <transformation>
-     <type>x-shift</type>
-     <offset>31</offset>
-    </transformation>
-    <transformation>
-     <type>y-shift</type>
-     <offset>-6</offset>
-    </transformation>
-   </transformations>
-  </layer>
-
-<!-- Instrument Landing -->
-<!-- nav1 hold Phase -->
-  <layer>
-   <condition>
-    <equals>
-     <property>/autopilot/locks/heading</property>
-     <value>nav1-hold</value>
-    </equals>
-   </condition>
-   <name>Instrument Landing Engaged (nav1-hold Phase)</name>
-   <type>text</type>
-   <point-size>16</point-size>
-   <color>
-    <red>1.0</red>
-    <green>1.0</green>
-    <blue>0.0</blue>
-   </color>
-   <chunks>
-    <chunk>
-     <type>literal</type>
-     <text>IL</text>
-    </chunk>
-   </chunks>
-   <transformations>
-    <transformation>
-     <type>x-shift</type>
-     <offset>63</offset>
-    </transformation>
-    <transformation>
-     <type>y-shift</type>
-     <offset>-6</offset>
-    </transformation>
-   </transformations>
-  </layer>
-
-<!-- nav1 final approach hold Phase -->
-  <layer>
-   <condition>
-    <equals>
-     <property>/autopilot/locks/heading</property>
-     <value>nav1-hold-fa</value>
-    </equals>
-   </condition>
-   <name>Instrument Landing Engaged (nav1-hold Phase)</name>
-   <type>text</type>
-   <point-size>16</point-size>
-   <color>
-    <red>0.0</red>
-    <green>0.0</green>
-    <blue>1.0</blue>
-   </color>
-   <chunks>
-    <chunk>
-     <type>literal</type>
-     <text>IL</text>
-    </chunk>
-   </chunks>
-   <transformations>
-    <transformation>
-     <type>x-shift</type>
-     <offset>63</offset>
-    </transformation>
-    <transformation>
-     <type>y-shift</type>
-     <offset>-6</offset>
-    </transformation>
-   </transformations>
-  </layer>
-
-<!-- Glide Slope Phase -->
-  <layer>
-   <condition>
-    <equals>
-     <property>/autopilot/locks/altitude</property>
-     <value>gs1-hold</value>
-    </equals>
-   </condition>
-   <name>Instrument Landing Engaged (Glide Slope Phase)</name>
-   <type>text</type>
-   <point-size>16</point-size>
-   <color>
-    <red>1.0</red>
-    <green>0.5</green>
-    <blue>0.0</blue>
-   </color>
-   <chunks>
-    <chunk>
-     <type>literal</type>
-     <text>IL</text>
-    </chunk>
-   </chunks>
-   <transformations>
-    <transformation>
-     <type>x-shift</type>
-     <offset>63</offset>
-    </transformation>
-    <transformation>
-     <type>y-shift</type>
-     <offset>-6</offset>
-    </transformation>
-   </transformations>
-  </layer>
-
-<!-- Touch Down Phase -->
-  <layer>
-   <condition>
-    <equals>
-     <property>/autopilot/locks/altitude</property>
-     <value>Touch Down</value>
-    </equals>
-   </condition>
-   <name>Instrument Landing Engaged (Touch Down Phase)</name>
-   <type>text</type>
-   <point-size>16</point-size>
-   <color>
-    <red>1.0</red>
-    <green>0.0</green>
-    <blue>0.0</blue>
-   </color>
-   <chunks>
-    <chunk>
-     <type>literal</type>
-     <text>IL</text>
-    </chunk>
-   </chunks>
-   <transformations>
-    <transformation>
-     <type>x-shift</type>
-     <offset>63</offset>
-    </transformation>
-    <transformation>
-     <type>y-shift</type>
-     <offset>-6</offset>
-    </transformation>
-   </transformations>
-  </layer>
 
 <!-- Mach Climb Engaged -->
   <layer>
@@ -714,17 +543,17 @@
    <binding>
     <command>property-assign</command>
     <property>/autopilot/locks/auto-take-off</property>
-    <value type="string">Enabled</value>
+    <value type="string">enabled</value>
    </binding>
    <binding>
     <command>property-assign</command>
     <property>/autopilot/locks/auto-landing</property>
-    <value type="string">Disabled</value>
+    <value type="string">disabled</value>
    </binding>
    <binding>
     <command>property-assign</command>
-    <property>/autopilot/locks/AoA-lock</property>
-    <value type="string">Disabled</value>
+    <property>/autopilot/locks/aoa</property>
+    <value type="string">disabled</value>
    </binding>
   </action>
 
@@ -744,7 +573,7 @@
    <binding>
     <command>property-assign</command>
     <property>/autopilot/locks/auto-landing</property>
-    <value type="string">Enabled</value>
+    <value type="string">enabled</value>
    </binding>
   </action>
 

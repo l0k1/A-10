@@ -244,7 +244,7 @@ Hacked by Lee Elliott for the A-10 mock panel
 
   <instrument include="Instruments/digital-brake.xml">
    <name>Brake display</name>
-   <x>424</x>
+   <x>428</x>
    <y>100</y>
    <w>40</w>
    <h>10</h>
@@ -295,9 +295,9 @@ Hacked by Lee Elliott for the A-10 mock panel
     <tf-select>autopilot/locks/altitude</tf-select>
     <mc-select>autopilot/locks/altitude</mc-select>
    </params>
-   <x>524</x>
+   <x>533</x>
    <y>125</y>
-   <w>200</w>
+   <w>210</w>
    <h>16</h>
   </instrument>
 
@@ -309,6 +309,30 @@ Hacked by Lee Elliott for the A-10 mock panel
    <w>110</w>
    <h>34</h>
   </instrument>
+  
+    <instrument include="Instruments/digital-roll.xml">
+      <name>Roll display</name>
+      <x>6</x>
+      <y>45</y>
+      <w>40</w>
+      <h>10</h>
+    </instrument>
+
+    <instrument include="Instruments/digital-pitch.xml">
+      <name>Pitch display</name>
+      <x>6</x>
+      <y>25</y>
+      <w>40</w>
+      <h>10</h>
+    </instrument>
+
+    <instrument include="Instruments/digital-rnd.xml">
+      <name>Pitch display</name>
+      <x>110</x>
+      <y>45</y>
+      <w>40</w>
+      <h>10</h>
+    </instrument>
 
 </instruments>
 

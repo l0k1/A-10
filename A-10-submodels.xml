@@ -16,10 +16,31 @@
     <yaw-offset>0.0</yaw-offset>
     <pitch-offset>0.0</pitch-offset>
     <eda>1000000000.00</eda>
-    <life>1200</life>
+    <life>900</life>
     <buoyancy>32</buoyancy>
     <wind>false</wind>
-    <aero-stabilised>false</aero-stabilised>
+    <aero-stabilised>true</aero-stabilised>
+  </submodel>
+
+  <submodel>
+    <name>GAU-8/A API round</name>
+    <model>Aircraft/A-10/Models/GAU-8A-API-round.xml</model>
+    <trigger>ai/submodels/GAU-8A</trigger>
+    <speed>3388</speed>
+    <repeat>true</repeat>
+    <delay>0.014285714</delay>
+    <count>1350</count>
+    <x-offset>0.1</x-offset>
+    <y-offset>0</y-offset>
+    <z-offset>-0.9</z-offset>
+    <yaw-offset>0.0</yaw-offset>
+    <pitch-offset>0.0</pitch-offset>
+    <eda>0.0122</eda>
+    <weight>2.0</weight>
+    <life>60</life>
+    <buoyancy>0</buoyancy>
+    <wind>true</wind>
+    <aero-stabilised>true</aero-stabilised>
   </submodel>
 
 </PropertyList>

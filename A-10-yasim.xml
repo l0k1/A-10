@@ -5,154 +5,170 @@
       Lee Elliott. leee-fgfs@spatial.freeserve.co.uk
 -->
 
-<airplane mass="37700">
+<!--
+     Aircraft mass comprises pilot, oxygen, unusable fuel & oil, gun and
+     six pylons.  The solve weight used in the approach and cruise
+     configurations represent a full ammunition load (1350 x 2lbs)
+-->
+<airplane mass="24959">
 
 <!-- Approach configuration -->
-<approach speed="120" aoa="8" fuel="0.2">
-  <control-setting axis="/controls/engines/engine[0]/throttle" value="0.5"/>
-  <control-setting axis="/controls/engines/engine[1]/throttle" value="0.5"/>
-  <control-setting axis="/controls/flight/flaps" value="1.0"/>
-  <control-setting axis="/controls/gear/gear-down" value="1"/>
-</approach>
+  <approach speed="120" aoa="8" fuel="0.2">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.5"/>
+    <control-setting axis="/controls/engines/engine[1]/throttle" value="0.5"/>
+    <control-setting axis="/controls/flight/flaps" value="1.0"/>
+    <control-setting axis="/controls/flight/spoilers" value="0.5"/>
+    <control-setting axis="/controls/gear/gear-down" value="1"/>
+    <solve-weight idx="0" weight="2700"/>
+  </approach>
 
 <!-- Cruise configuration -->
-<cruise speed="380" alt="0" fuel="0.9">
-  <control-setting axis="/controls/engines/engine[0]/throttle" value="1.0"/>
-  <control-setting axis="/controls/engines/engine[1]/throttle" value="1.0"/>
-  <control-setting axis="/controls/flight/flaps" value="0.0"/>
-  <control-setting axis="/controls/gear/gear-down" value="0"/>
-</cruise>
+  <cruise speed="380" alt="15000" fuel="0.8">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="1.0"/>
+    <control-setting axis="/controls/engines/engine[1]/throttle" value="1.0"/>
+    <control-setting axis="/controls/flight/flaps" value="0.0"/>
+    <control-setting axis="/controls/gear/gear-down" value="0"/>
+    <solve-weight idx="0" weight="2700"/>
+  </cruise>
 
-<cockpit x="-3.25" y="0.0" z="1.2"/>
+  <cockpit x="-3.25" y="0.0" z="1.2"/>
 
-<fuselage ax="0" ay="0" az="0" bx="-16.16" by="0" bz="0"
-          width="1.4" taper="0.9"/>
+  <fuselage ax="0" ay="0" az="0" bx="-16.16" by="0" bz="0"
+            width="1.4" taper="0.9"/>
 
 <!-- Left Engine -->
 
-<fuselage ax="-9.44" ay="1.50" az="1.3" bx="-12.73" by="1.50" bz="1.18"
-          width="1.5"/>
+  <fuselage ax="-9.44" ay="1.50" az="1.3" bx="-12.73" by="1.50" bz="1.18"
+            width="1.5"/>
 
 <!-- Right Engine -->
 
-<fuselage ax="-9.44" ay="-1.50" az="1.3" bx="-12.73" by="-1.50" bz="1.18"
-          width="1.5"/>
+  <fuselage ax="-9.44" ay="-1.50" az="1.3" bx="-12.73" by="-1.50" bz="1.18"
+            width="1.5"/>
 
-<wing x="-8.32" y="0.63" z="0.0" taper="0.7" incidence="-1.0"
-      length="8.31" chord="3.23" sweep="0.0" dihedral="3.0"
-      camber="0.0">
-  <stall aoa="15" width="3" peak="1.3"/>
-  <flap0 start="0.04" end="0.51" lift="1.3" drag="1.3"/>
-  <flap1 start="0.54" end="0.86" lift="1.3" drag="1.3"/>
-  <spoiler start="0.54" end="0.86" lift="1.0" drag="20.0"/>
+  <wing x="-8.32" y="0.63" z="0.0" taper="0.7" incidence="-1.0"
+        length="8.31" chord="3.23" sweep="0.0" dihedral="3.0"
+        camber="0.0">
+    <stall aoa="15" width="3" peak="1.3"/>
+    <flap0 start="0.04" end="0.51" lift="1.3" drag="1.3"/>
+    <flap1 start="0.54" end="0.86" lift="1.3" drag="1.3"/>
+    <spoiler start="0.54" end="0.86" lift="0.6" drag="10.0"/>
 
-  <control-input axis="/controls/flight/flaps" control="FLAP0"/>
-  <control-input axis="/controls/flight/aileron" control="FLAP1"
-                 src0="-1" src1="1" dst0="-0.4" dst1="0.4"
-                 split="true"/>
-  <control-input axis="/controls/flight/aileron-trim" control="FLAP1"
-                 src0="-1" src1="1" dst0="-0.4" dst1="0.4"
-                 split="true"/>
-  <control-input axis="/controls/flight/spoilers" control="SPOILER"/>
+    <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+    <control-input axis="/controls/flight/aileron" control="FLAP1"
+                   src0="-1" src1="1" dst0="-0.4" dst1="0.4"
+                   split="true"/>
+    <control-input axis="/controls/flight/aileron-trim" control="FLAP1"
+                   src0="-1" src1="1" dst0="-0.4" dst1="0.4"
+                   split="true"/>
+    <control-input axis="/controls/flight/spoilers" control="SPOILER"/>
 
-  <control-output control="FLAP0" side="left"
-                  prop="/surface-positions/left-flap-pos-norm"/>
-  <control-output control="FLAP0" side="right"
-                  prop="/surface-positions/right-flap-pos-norm"/>
-  <control-output control="FLAP1" side="left"
-                  prop="/surface-positions/left-aileron-pos-norm"/>
-  <control-output control="FLAP1" side="right"
-                  prop="/surface-positions/right-aileron-pos-norm"/>
-  <control-output control="SPOILER" side="left"
-                  prop="/surface-positions/left-spoiler-pos-norm"/>
-  <control-output control="SPOILER" side="right"
-                  prop="/surface-positions/right-spoiler-pos-norm"/>
+    <control-output control="FLAP0" side="left"
+                    prop="/surface-positions/left-flap-pos-norm"/>
+    <control-output control="FLAP0" side="right"
+                    prop="/surface-positions/right-flap-pos-norm"/>
+    <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
 
-  <control-speed control="FLAP0" transition-time="25"/>
-  <control-speed control="FLAP1" transition-time="0.75"/>
-  <control-speed control="SPOILER" transition-time="1.0"/>
+    <control-output control="FLAP1" side="left"
+                    prop="/surface-positions/left-aileron-pos-norm"/>
+    <control-output control="FLAP1" side="right"
+                    prop="/surface-positions/right-aileron-pos-norm"/>
+    <control-output control="FLAP1" prop="/surface-positions/aileron-pos-norm"/>
 
-</wing>
+    <control-output control="SPOILER" side="left"
+                    prop="/surface-positions/left-spoiler-pos-norm"/>
+    <control-output control="SPOILER" side="right"
+                    prop="/surface-positions/right-spoiler-pos-norm"/>
+    <control-output control="SPOILER" prop="/surface-positions/spoiler-pos-norm"/>
 
-<hstab x="-14.88" y="0.42" z="0.41" taper="0.0" effectiveness="2"
-       length="2.38" chord="1.95" sweep="0.0" dihedral="0.0"
-       camber="-0.0">
-  <stall aoa="15" width="3" peak="1.3"/>
-  <flap0 start="0" end="1" lift="1.8" drag="1.7"/>
-  <control-input axis="/controls/flight/elevator" control="FLAP0"
-                 square="true"/>
-  <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
-  <control-output control="FLAP0" side="left"
-                  prop="/surface-positions/left-elevator-pos-norm"/>
-  <control-output control="FLAP0" side="right"
-                  prop="/surface-positions/right-elevator-pos-norm"/>
-  <control-speed control="FLAP0" transition-time="0.75"/>
-</hstab>
+    <control-speed control="FLAP0" transition-time="15"/>
+    <control-speed control="FLAP1" transition-time="0.5"/>
+    <control-speed control="SPOILER" transition-time="1.0"/>
 
-<vstab x="-14.88" y="2.85" z="0.0" taper="0.6" effectiveness="2"
-       length="2.8" chord="2.14" sweep="0.0">
-  <stall aoa="16" width="5" peak="1.5"/>
-  <flap0 start="0" end="1" lift="1.3" drag="1.3"/>
-  <control-input axis="/controls/flight/rudder" control="FLAP0"
-                 square="true" invert="true"/>
-  <control-input axis="/controls/flight/rudder-trim" control="FLAP0"
-                 invert="true"/>
-  <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
-  <control-speed control="FLAP0" transition-time="0.75"/>
-</vstab>
+  </wing>
 
-<vstab x="-14.88" y="-2.85" z="0.0" taper="0.6" effectiveness="2"
-       length="2.8" chord="2.14" sweep="0.0">
-  <stall aoa="16" width="5" peak="1.5"/>
-  <flap0 start="0" end="1" lift="1.3" drag="1.3"/>
-  <control-input axis="/controls/flight/rudder" control="FLAP0"
-                 square="true" invert="true"/>
-  <control-input axis="/controls/flight/rudder-trim" control="FLAP0"
-                 invert="true"/>
-  <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
-  <control-speed control="FLAP0" transition-time="0.75"/>
-</vstab>
+  <hstab x="-14.88" y="0.42" z="0.41" taper="0.0" effectiveness="2"
+         length="2.38" chord="1.95" sweep="0.0" dihedral="0.0"
+         camber="-0.0">
+    <stall aoa="15" width="3" peak="1.3"/>
+    <flap0 start="0" end="1" lift="1.8" drag="1.7"/>
+    <control-input axis="/controls/flight/elevator" control="FLAP0"
+                   square="true"/>
+    <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+
+    <control-output control="FLAP0" side="left"
+                    prop="/surface-positions/left-elevator-pos-norm"/>
+    <control-output control="FLAP0" side="right"
+                    prop="/surface-positions/right-elevator-pos-norm"/>
+    <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+
+    <control-speed control="FLAP0" transition-time="0.75"/>
+  </hstab>
+
+  <vstab x="-14.88" y="2.85" z="0.0" taper="0.6" effectiveness="2"
+         length="2.8" chord="2.14" sweep="0.0">
+    <stall aoa="16" width="5" peak="1.5"/>
+    <flap0 start="0" end="1" lift="1.3" drag="1.3"/>
+    <control-input axis="/controls/flight/rudder" control="FLAP0"
+                   square="true" invert="true"/>
+    <control-input axis="/controls/flight/rudder-trim" control="FLAP0"
+                   invert="true"/>
+    <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
+    <control-speed control="FLAP0" transition-time="0.75"/>
+  </vstab>
+
+  <vstab x="-14.88" y="-2.85" z="0.0" taper="0.6" effectiveness="2"
+         length="2.8" chord="2.14" sweep="0.0">
+    <stall aoa="16" width="5" peak="1.5"/>
+    <flap0 start="0" end="1" lift="1.3" drag="1.3"/>
+    <control-input axis="/controls/flight/rudder" control="FLAP0"
+                   square="true" invert="true"/>
+    <control-input axis="/controls/flight/rudder-trim" control="FLAP0"
+                   invert="true"/>
+    <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
+    <control-speed control="FLAP0" transition-time="0.75"/>
+ </vstab>
 
 <!-- 2 x GE TF34-100 -->
-<jet x="-10.8" y="-1.5" z="1.27" mass="1440" thrust="9065" tsfc="0.371">
-  <actionpt x="-12.5" y="-1.5" z="1.15"/>
-  <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
-</jet>
+  <jet x="-10.8" y="-1.5" z="1.27" mass="1440" thrust="9065" tsfc="0.371">
+    <actionpt x="-12.5" y="-1.5" z="1.15"/>
+    <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+  </jet>
 
-<jet x="-10.8" y="1.5" z="1.27" mass="1440" thrust="9065" tsfc="0.371">
-  <control-input axis="/controls/engines/engine[1]/throttle" control="THROTTLE"/>
-  <actionpt x="-12.5" y="1.5" z="1.15"/>
-</jet>
+  <jet x="-10.8" y="1.5" z="1.27" mass="1440" thrust="9065" tsfc="0.371">
+    <control-input axis="/controls/engines/engine[1]/throttle" control="THROTTLE"/>
+    <actionpt x="-12.5" y="1.5" z="1.15"/>
+  </jet>
 
 <!-- Internal tanks -->
-<tank x="-8.3" y="-2.0" z="0.0" jet="true" capacity="2000"/>
-<tank x="-8.3" y="2.0" z="0.0" jet="true" capacity="2000"/>
-<tank x="-8.3" y="0" z="0.63" jet="true" capacity="6700"/>
+  <tank x="-8.3" y="2.0" z="0.0" jet="true" capacity="2000"/>
+  <tank x="-8.3" y="-0" z="0.63" jet="true" capacity="6700"/>
+  <tank x="-8.3" y="-2.0" z="0.0" jet="true" capacity="2000"/>
 <!-- Ferry Tanks -->
-<tank x="-7.6" y="1.29" z="-0.86" jet="true" capacity="4032"/>
-<tank x="-7.6" y="0" z="-0.86" jet="true" capacity="4032"/>
-<tank x="-7.6" y="-1.29" z="-0.86" jet="true" capacity="4032"/>
+  <tank x="-7.6" y="1.29" z="-0.86" jet="true" capacity="4032"/>
+  <tank x="-7.6" y="0" z="-0.86" jet="true" capacity="4032"/>
+  <tank x="-7.6" y="-1.29" z="-0.86" jet="true" capacity="4032"/>
 
 <!-- Undercarriage -->
 <!-- nose -->
-<gear x="-2.9" y="0.4" z="-2.24" retract-time="7" compression="0.7"
-      spring="1.4" damp="1.4">
-  <control-input axis="/controls/flight/rudder" control="STEER"
-      square="true"/>
-  <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
-  <control-speed control="EXTEND" transition-time="7"/>
-  <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
-</gear>
+  <gear x="-2.9" y="0.4" z="-2.15" retract-time="7" compression="0.7"
+        spring="1.4" damp="1.4">
+    <control-input axis="/controls/flight/rudder" control="STEER"
+        square="true"/>
+    <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+    <control-speed control="EXTEND" transition-time="7"/>
+    <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+  </gear>
 
 <!-- left main -->
-<gear x="-8.3" y="2.5" z="-2.22" retract-time="7" compression="0.7"
-      spring="1.6" damp="1.4">
-  <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
-  <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
-  <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
-  <control-speed control="EXTEND" transition-time="7"/>
-  <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
-</gear>
+  <gear x="-8.3" y="2.5" z="-2.22" retract-time="7" compression="0.7"
+        spring="1.6" damp="1.4">
+    <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+    <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+    <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+    <control-speed control="EXTEND" transition-time="7"/>
+    <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
+  </gear>
 
 <!-- right main -->
 <gear x="-8.3" y="-2.5" z="-2.22" retract-time="7" compression="0.7"
@@ -173,8 +189,17 @@
 
 <!-- Ballast -->
 <ballast x="-2.8" y="0" z="0.74" mass="2000"/> <!-- Armored cockpit -->
-<ballast x="-3.0" y="0" z="0.0" mass="4000"/> <!-- Gun -->
+<ballast x="-2.0" y="0" z="0.0" mass="1300"/> <!-- Gun (minus ammunition -->
 <ballast x="-6.0" y="0" z="0.0" mass="1000"/> <!-- avionics -->
 <ballast x="-4.0" y="0" z="0.0" mass="2500"/> <!-- trim ballast -->
+
+<!--
+    GAU-8/a ammunition drum.
+    1350 rounds x 2.05lb total weight per round.  I've allowed 0.05lb
+    for the case, which is kept on-board after firing, so the total weight
+    for ammo is 1350 x 2lb = 2700lb
+-->
+  <weight x="-4.0" y="0" z="-0.0" size="0.9"
+          mass-prop="/yasim/weights/ammunition-weight-lbs"/>
 
 </airplane>

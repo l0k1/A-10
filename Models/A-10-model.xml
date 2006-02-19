@@ -1,43 +1,42 @@
 <?xml version="1.0"?>
 
-<!-- A10 model config file (cl & fl configs) -->
+<!-- A10 model config file -->
 <!-- Lee Elliott 2004/06/25 -->
 
 <PropertyList>
- <path>A10-004-014h.ac</path>
+ <path>A10-004-014i.ac</path>
 
 <!-- Select the external loads as appropriate -->
-<!-- Select Weapons Load -->
+<!-- Select extermal tanks -->
  <animation>
   <type>select</type>
-  <object-name>MV01</object-name>
-  <object-name>MV02</object-name>
-  <object-name>MV03</object-name>
-  <object-name>MV04</object-name>
-  <object-name>MVCluster01</object-name>
-  <object-name>MVCluster02</object-name>
-  <object-name>MVCluster03</object-name>
-  <object-name>MVCluster04</object-name>
-  <object-name>SW01</object-name>
-  <object-name>SW02</object-name>
+  <object-name>FTank3</object-name>
   <condition>
    <equals>
-    <property>sim/aircraft</property>
-    <value>A-10wl</value>
+    <property>/consumables/fuel/tank[3]/selected</property>
+    <value>1</value>
    </equals>
   </condition>
  </animation>
 
-<!-- Select extermal tanks -->
  <animation>
   <type>select</type>
   <object-name>FTank1</object-name>
-  <object-name>FTank2</object-name>
-  <object-name>FTank3</object-name>
   <condition>
    <equals>
-    <property>sim/aircraft</property>
-    <value>A-10fl</value>
+    <property>/consumables/fuel/tank[4]/selected</property>
+    <value>1</value>
+   </equals>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>FTank2</object-name>
+  <condition>
+   <equals>
+    <property>/consumables/fuel/tank[5]/selected</property>
+    <value>1</value>
    </equals>
   </condition>
  </animation>
