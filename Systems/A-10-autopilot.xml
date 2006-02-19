@@ -394,11 +394,11 @@
     </output>
     <config>
       <Ts>0.02</Ts>
-      <Kp>1.0</Kp>
+      <Kp>0.5</Kp>
       <beta>1.0</beta>
       <alpha>0.01</alpha>
       <gamma>0.0</gamma>
-      <Ti>18.0</Ti>
+      <Ti>20.0</Ti>
       <Td>0.0000000000000000000000000000000000001</Td>
       <u_min>-30.0</u_min>
       <u_max>180.0</u_max>
