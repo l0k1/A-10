@@ -7,7 +7,7 @@
     <model>Aircraft/A-10/Models/Trajectory-Marker.xml</model>
     <trigger>ai/submodels/trajectory-markers</trigger>
     <speed>0</speed>
-    <repeat>false</repeat>
+    <repeat>true</repeat>
     <delay>1.0</delay>
     <count>-1</count>
     <x-offset>-20.0</x-offset>
