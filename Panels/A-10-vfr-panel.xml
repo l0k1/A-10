@@ -30,7 +30,6 @@ override those by providing <w>..</w> and <h>..</h> properties with the
 <x>...</x> and <y>...</y> properties.
 
 Hacked by Lee Elliott for the A-10 mock panel
-<leee-fgfs@spatial.freeserve.co.uk>
 -->
 
 <!DOCTYPE PropertyList SYSTEM "panel.dtd">
