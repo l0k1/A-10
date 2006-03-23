@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>A-10-panel-r3.ac</path>
+
+ <animation> 
+  <object-name>eng-inst-adjustable</object-name>
+  <object-name>flood-adjustable</object-name>
+  <object-name>console-adjustable</object-name>
+  <object-name>aux-inst-adjustable</object-name>
+  <object-name>formation-adjustable</object-name>
+  <object-name>fly-inst-adjustable</object-name>
+  <type>material</type>
+  <emission> 
+   <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+   <red>0.25</red>
+   <green>0.17</green>
+   <blue>0.05</blue>
+  </emission>
+ </animation>
+
+  <animation> 
+   <object-name>mount</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.45</red>
+        <green>0.34</green>
+        <blue>0.18</blue>
+      </emission>
+  </animation>
+
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>5</max-m>
+ </animation>
+
+</PropertyList>

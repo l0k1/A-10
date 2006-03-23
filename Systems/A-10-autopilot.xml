@@ -39,13 +39,13 @@
       <prop>/controls/flight/aileron</prop>
     </output>
     <config>
-      <Ts>0.02</Ts>
-      <Kp>0.4</Kp>
+      <Ts>0.01</Ts>
+      <Kp>0.6</Kp>
       <beta>1.0</beta>
       <alpha>0.1</alpha>
       <gamma>0.0</gamma>
       <Ti>0.5</Ti>
-      <Td>0.002</Td>
+      <Td>0.00000000000000000000000000000000000000001</Td>
       <u_min>-1.0</u_min>
       <u_max>1.0</u_max>
     </config>
@@ -82,12 +82,12 @@
     </output>
     <config>
       <Ts>0.02</Ts>
-      <Kp>0.4</Kp>
+      <Kp>0.1</Kp>
       <beta>1.0</beta>
       <alpha>0.1</alpha>
       <gamma>0.0</gamma>
-      <Ti>4.0</Ti>
-      <Td>0.2</Td>
+      <Ti>8.0</Ti>
+      <Td>0.0001</Td>
       <u_min>-1.0</u_min>
       <u_max>1.0</u_max>
     </config>
@@ -224,13 +224,13 @@
       <prop>/controls/flight/elevator-trim</prop>
     </output>
     <config>
-      <Ts>0.02</Ts>
-      <Kp>0.4</Kp>
+      <Ts>0.01</Ts>
+      <Kp>0.6</Kp>
       <beta>1.0</beta>
       <alpha>0.1</alpha>
       <gamma>0.0</gamma>
       <Ti>0.5</Ti>
-      <Td>0.001</Td>
+      <Td>0.00000000000000000000000000000000000000001</Td>
       <u_min>-1.0</u_min>
       <u_max>1.0</u_max>
     </config>
@@ -246,7 +246,7 @@
     <type>noise-spike</type>
     <input>/autopilot/settings/target-climb-rate-fps</input>
     <output>/autopilot/internal/target-climb-rate-fps-filtered</output>
-    <max-rate-of-change>8.0</max-rate-of-change>
+    <max-rate-of-change>20.0</max-rate-of-change>
   </filter>
 
   <pid-controller>
@@ -628,7 +628,7 @@
       <Ti>16.0</Ti>        <!-- integrator time -->
       <Td>0.00001</Td>    <!-- derivator time -->
       <u_min>90.0</u_min> <!-- minimum output clamp -->
-      <u_max>150.0</u_max>  <!-- maximum output clamp -->
+      <u_max>160.0</u_max>  <!-- maximum output clamp -->
     </config>
    </pid-controller>
 

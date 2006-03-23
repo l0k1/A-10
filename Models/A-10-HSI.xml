@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+ <!-- horizontal situation indicator -->
+ <name>HSI</name>
+ <path>A-10-HSI.ac</path>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>HSI-compass-card</object-name>
+  <property>orientation/heading-magnetic-deg</property>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <!--<animation>
+  <type>rotate</type>
+  <object-name>course-knob</object-name>
+  <property>orientation/heading-magnetic-deg</property>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>heading-knob</object-name>
+  <property>orientation/heading-magnetic-deg</property>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>-->
+
+  <animation>
+   <object-name>HSI-bkg</object-name>
+   <object-name>course-knob</object-name>
+   <object-name>heading-set-knob</object-name>
+   <type>material</type>
+     <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.44</red>
+        <green>0.27</green>
+        <blue>0.15</blue>
+      </emission>
+  </animation>
+
+  <animation>
+   <object-name>HSI-compass-card</object-name>
+   <type>material</type>
+     <emission> 
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+        <red>0.60</red>
+        <green>0.30</green>
+        <blue>0.23</blue>
+      </emission>
+  </animation>
+
+
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>5</max-m>
+ </animation>
+
+</PropertyList>
+
+

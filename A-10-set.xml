@@ -4,6 +4,7 @@
 Fairchild A-10 simulation config.
 
 2006-02-02 Lee Elliott
+2006-02-26 Alexis Bory xiii@g2ms.com (3D cockpit)
 ************************************************************************
 -->
 
@@ -17,7 +18,7 @@ Fairchild A-10 simulation config.
 
     <flight-model>yasim</flight-model>
     <status>beta</status>
-    <author>Lee Elliott</author>
+    <author>Lee Elliott - Alexis Bory</author>
     <aero>A-10-yasim</aero>
     <fuel-fraction>1.0</fuel-fraction>
     <description>Fairchild A-10 (YASim FDM)</description>
@@ -27,12 +28,14 @@ Fairchild A-10 simulation config.
     <number-views type="int" archive="y">7</number-views>
     
     <view n="0">
+      <name>Cockpit View</name>
+      <type>lookfrom</type>
       <internal archive="y">true</internal>
       <config>
         <x-offset-m archive="y">0.0</x-offset-m>
-        <y-offset-m archive="y">1.51</y-offset-m>
+        <y-offset-m archive="y">1.48</y-offset-m>
         <z-offset-m archive="y">3.20</z-offset-m>
-        <pitch-offset-deg>0</pitch-offset-deg>
+        <pitch-offset-deg>-12</pitch-offset-deg>
         <default-field-of-view-deg>55</default-field-of-view-deg>
       </config>
     </view>
@@ -60,11 +63,41 @@ Fairchild A-10 simulation config.
         <target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
       </config>
     </view>
-    
+<!--
     <current-view>
-      <field-of-view>55.0</field-of-view>
+      <field-of-view>55</field-of-view>
+      <pitch-offset-deg>-12</pitch-offset-deg>
     </current-view>
+-->
+<!-- Shift the camera target point back -->
+    <view n="1">
+      <config>
+        <target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
+        <pitch-offset-deg>0</pitch-offset-deg>
+      </config>
+    </view>
 
+    <view n="2">
+      <config>
+        <x-offset-m archive="y" type="double">6.0</x-offset-m>
+        <z-offset-m archive="y">-19.7</z-offset-m>
+        <target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
+      </config>
+    </view>
+
+    <view n="3">
+      <config>
+        <target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
+      </config>
+    </view>
+
+    <view n="5">
+      <config>
+        <target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
+      </config>
+    </view>
+
+<!-- Sound -->
     <sound>
       <audible>true</audible>
       <path>Aircraft/A-10/Sounds/A-10-sound.xml</path>
@@ -101,33 +134,6 @@ Fairchild A-10 simulation config.
       <path>Aircraft/A-10/A-10-submodels.xml</path>
     </submodels>
 
-<!-- Shift the camera target point back -->
-    <view n="1">
-      <config>
-        <target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
-      </config>
-    </view>
-
-    <view n="2">
-      <config>
-        <x-offset-m archive="y" type="double">6.0</x-offset-m>
-        <z-offset-m archive="y">-19.7</z-offset-m>
-        <target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
-      </config>
-    </view>
-
-    <view n="3">
-      <config>
-        <target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
-      </config>
-    </view>
-
-    <view n="5">
-      <config>
-        <target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
-      </config>
-    </view>
-
 <!-- Flap settings -->
     <flaps>
       <setting>0.00</setting>
@@ -139,6 +145,13 @@ Fairchild A-10 simulation config.
       <setting>0.82</setting>
       <setting>1.00</setting>
     </flaps>
+
+     <aoa-indexer>
+       <too-slow-deg>9.5</too-slow-deg>  <!-- target +1.5 deg -->
+       <slow-deg>8.5</slow-deg>          <!-- target +0.5 deg -->         
+       <fast-deg>7.5</fast-deg>          <!-- target -0.5 deg -->         
+       <too-fast-deg>6.5</too-fast-deg>  <!-- target -1.5 deg -->         
+     </aoa-indexer>
 
     <help>
       <title>Fairchild A-10</title>
@@ -272,10 +285,54 @@ Fairchild A-10 simulation config.
     </settings>
   </autopilot>
 
+  <A-10-nav>
+    <A-10-nav-selector-hars type="bool">false</A-10-nav-selector-hars>
+    <A-10-nav-selector-vlocs type="bool">false</A-10-nav-selector-vlocs>
+    <A-10-nav-selector-tils type="bool">false</A-10-nav-selector-tils>
+    <A-10-nav-selector-nav_crs type="bool">false</A-10-nav-selector-nav_crs>
+    <A-10-nav-selector-man type="bool">false</A-10-nav-selector-man>
+    <A-10-nav-selector-ils type="bool">false</A-10-nav-selector-ils>
+    <A-10-nav-selector-tcn type="bool">false</A-10-nav-selector-tcn>
+    <A-10-nav-selector-ptr type="bool">true</A-10-nav-selector-ptr> <!-- true=able, false=stow -->
+  </A-10-nav>
+  <instrumentation>
+   <nav>
+    <A-10-nav-selector type="int">1</A-10-nav-selector>
+    <A-10-nav-mode type="int">0</A-10-nav-mode>
+    <A-10-nav-selected-preset type="int">1</A-10-nav-selected-preset>
+    <A-10-nav-load-state type="int">0</A-10-nav-load-state>
+    <presets>
+     <preset n="1" type="float">10</preset>
+     <preset n="2" type="float">10</preset>
+     <preset n="3" type="float">10</preset>
+     <preset n="4" type="float">10</preset>
+     <preset n="5" type="float">10</preset>
+     <preset n="6" type="float">10</preset>
+     <preset n="7" type="float">10</preset>
+     <preset n="8" type="float">10</preset>
+     <preset n="9" type="float">10</preset>
+     <preset n="10" type="float">10</preset>
+     <preset n="11" type="float">10</preset>
+     <preset n="12" type="float">10</preset>
+     <preset n="13" type="float">10</preset>
+     <preset n="14" type="float">10</preset>
+     <preset n="15" type="float">10</preset>
+     <preset n="16" type="float">10</preset>
+     <preset n="17" type="float">10</preset>
+     <preset n="18" type="float">10</preset>
+     <preset n="19" type="float">10</preset>
+     <preset n="20" type="float">10</preset>
+    </presets>
+   </nav>
+  </instrumentation>
+
 <!-- Start with the Parking Brake on -->
   <controls>
     <gear>
       <brake-parking type="double">1.0</brake-parking>
+<!-- landing gear handle animation -->
+<!-- init with landing gear up - 0.0 -->
+      <A-10-landing-gear-hdl-anim type= "float">0.0</A-10-landing-gear-hdl-anim>
     </gear>
   </controls>
 
@@ -310,6 +367,9 @@ Fairchild A-10 simulation config.
       <tank n="5">
         <tank-num type="int">5</tank-num>
       </tank>
+      <tank n="6">
+        <tank-num type="int">6</tank-num>
+      </tank>
     </fuel>
   </consumables>
   
@@ -322,10 +382,28 @@ Fairchild A-10 simulation config.
 
 <!-- Nasal files & scripts -->
   <nasal>
+    <pilot-g>
+      <file>Aircraft/A-10/Nasal/pilot-g.nas</file>
+    </pilot-g>
     <A10>
       <file>Aircraft/A-10/Nasal/A-10.nas</file>
       <script>zero_ext_tanks();</script>
     </A10>
+    <A10_gauges>
+      <file>Aircraft/A-10/Nasal/fuel-gauges.nas</file>
+      <script>internal_fuel_by_side_totalizer();</script>
+    </A10_gauges>
+    <!-- <nav_ac_state>
+      <file>Aircraft/A-10/Nasal/nav_ac_state.nas</file>
+    </nav_ac_state> -->
+    <nav_mode_selector>
+      <file>Aircraft/A-10/Nasal/nav_mode_selector.nas</file>
+      <script>nav_mode_selector.freq_startup();</script>
+     </nav_mode_selector>
+    <landing_gear_handle>
+      <file>Aircraft/A-10/Nasal/landing_gear_handle.nas</file>
+    </landing_gear_handle>
+
   </nasal>
 
 </PropertyList>

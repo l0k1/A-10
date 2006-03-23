@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+
+ <path>detail-cpt.ac</path>
+
+<!-- panels-light-weak -->
+  <animation> 
+   <object-name>CPT-auto-alt-body</object-name>
+   <object-name>CPT-red-thing</object-name>
+   <type>material</type>
+    <emission> 
+    <factor-prop>/controls/lighting/panel-norm</factor-prop>
+     <red>0.45</red>
+     <green>0.34</green>
+     <blue>0.18</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+   <object-name>CPT-video-frame-l</object-name>
+   <object-name>CPT-video-frame-r</object-name>
+   <object-name>CPT-video-screen</object-name>
+   <type>material</type>
+    <emission> 
+    <factor-prop>/controls/lighting/panel-norm</factor-prop>
+     <red>0.45</red>
+     <green>0.34</green>
+     <blue>0.18</blue>
+    </emission>
+  </animation>
+
+</PropertyList>

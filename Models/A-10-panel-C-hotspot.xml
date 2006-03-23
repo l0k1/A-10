@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+
+<PropertyList> 
+ <name>A-10 C Panel Hotspots</name>
+ <background>Aircraft/A-10/Models/transparent-bg.rgb</background>
+ <w>1024</w>
+ <h>768</h>
+ <y-offset>0</y-offset>
+
+ <instruments> 
+  <instrument> 
+   <name>R panel</name>
+         <y>384</y>
+          <w>1024</w>
+          <h>768</h>
+          <w-base>1024</w-base>
+          <h-base>1024</h-base>
+          <x>512</x>
+   
+
+   <layers> 
+
+    <layer> 
+     <name>background</name>
+     <texture> 
+      <path>Aircraft/A-10/Models/transparent-bg.rgb</path>
+      <x1>0.0</x1>
+      <y1>0.0</y1>
+      <x2>1.0</x2>
+      <y2>1.0</y2>
+     </texture>
+    </layer>
+
+   <!--<layer>
+    <name>grid</name>
+    <texture>
+     <path>Aircraft/A-10/Models/hotspotgrid.rgb</path>
+     <x1>0.0</x1>
+     <y1>0.0</y1>
+     <x2>1.0</x2>
+     <y2>1.0</y2>
+    </texture>
+   </layer>-->
+
+  </layers>
+
+<!-- define hotspot actions below -->
+<actions> 
+
+
+
+<!-- nav-mode-selector -->
+  <!-- PTR switch -->
+           <action> 
+              <name>PTR-switch-toggle</name>
+              <button>0</button>
+              <x>-178</x>
+              <y>-408</y>
+              <w>155</w>
+              <h>48</h>
+              <binding> 
+                <command>property-toggle</command>
+                <property>/A-10-nav/A-10-nav-selector-ptr</property>
+              </binding>
+            </action>
+
+
+          </actions> 
+
+   </instrument>
+  </instruments>
+
+
+</PropertyList>

@@ -1,0 +1,287 @@
+<?xml version="1.0"?>
+
+  <PropertyList> 
+    <path>A-10-ld-gear-panel.ac</path>
+
+<!-- flaps guauge -->
+    <animation>
+      <name>flaps</name>
+      <type>rotate</type>
+      <object-name>needle</object-name>
+  <property>surface-positions/left-flap-pos-norm</property>
+      <interpolation> 
+        <entry><ind>0</ind><dep>0</dep></entry>
+        <entry><ind>0.333</ind><dep>30</dep></entry>
+        <entry><ind>0.666</ind><dep>60</dep></entry>
+        <entry><ind>1</ind><dep>90</dep></entry>
+      </interpolation>
+      <center>
+       <x-m>0.0000</x-m>
+       <y-m>-0.0167</y-m>
+       <z-m>-0.0314</z-m>
+      </center>
+      <axis> 
+        <x>-1</x>
+        <y>0</y>
+        <z>0</z>
+      </axis>
+    </animation>
+
+<!-- gear warning lights -->
+  <!-- nose -->
+  <animation>
+   <type>select</type>
+   <object-name>n-gear-warn</object-name>
+   <condition>
+   <and>
+    <greater-than>
+     <property>/gear/gear[0]/position-norm</property>
+     <value>0</value>
+    </greater-than>
+    <less-than>
+     <property>/gear/gear[0]/position-norm</property>
+     <value>1</value>
+    </less-than>
+   </and>
+   </condition>
+  </animation>
+  <!-- left -->
+  <animation>
+   <type>select</type>
+   <object-name>l-gear-warn</object-name>
+   <condition>
+   <and>
+    <greater-than>
+     <property>/gear/gear[1]/position-norm</property>
+     <value>0</value>
+    </greater-than>
+    <less-than>
+     <property>/gear/gear[1]/position-norm</property>
+     <value>1</value>
+    </less-than>
+   </and>
+   </condition>
+  </animation>
+  <!-- right -->
+  <animation>
+   <type>select</type>
+   <object-name>r-gear-warn</object-name>
+   <condition>
+   <and>
+    <greater-than>
+     <property>/gear/gear[2]/position-norm</property>
+     <value>0</value>
+    </greater-than>
+    <less-than>
+     <property>/gear/gear[2]/position-norm</property>
+     <value>1</value>
+    </less-than>
+   </and>
+   </condition>
+  </animation>
+
+<!-- gear safe lights -->
+  <!-- nose -->
+  <animation>
+   <type>select</type>
+   <object-name>n-gear-safe</object-name>
+   <condition>
+    <equals>
+     <property>/gear/gear[0]/position-norm</property>
+     <value>1</value>
+    </equals>
+   </condition>
+  </animation>
+  <!-- left -->
+  <animation>
+   <type>select</type>
+   <object-name>l-gear-safe</object-name>
+   <condition>
+    <equals>
+     <property>/gear/gear[1]/position-norm</property>
+     <value>1</value>
+    </equals>
+   </condition>
+  </animation>
+  <!-- right -->
+  <animation>
+   <type>select</type>
+   <object-name>r-gear-safe</object-name>
+   <condition>
+    <equals>
+     <property>/gear/gear[2]/position-norm</property>
+     <value>1</value>
+    </equals>
+   </condition>
+  </animation>
+
+<!-- ld-gear-handle -->
+  <animation>
+    <name>ld-gear-handle</name>
+    <type>rotate</type>
+    <object-name>ld-gear-handle</object-name>
+    <property>/controls/gear/A-10-landing-gear-hdl-anim</property>
+    <factor>52</factor>
+      <center>
+       <x-m>-0.0121</x-m>
+       <y-m>0.0327</y-m>
+       <z-m>-0.0177</z-m>
+      </center>
+      <axis> 
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+      </axis>
+    </animation>
+  
+
+
+
+<!-- lighting -->
+
+  <animation> 
+   <object-name>mount</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.45</red>
+        <green>0.34</green>
+        <blue>0.18</blue>
+      </emission>
+  </animation>
+
+  <animation>
+   <object-name>face</object-name>
+   <type>material</type>
+     <emission> 
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+        <red>0.50</red>
+        <green>0.25</green>
+        <blue>0.18</blue>
+      </emission>
+  </animation>
+
+  <animation>
+   <object-name>needle</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+        <red>0.75</red>
+        <green>0.55</green>
+        <blue>0.35</blue>
+      </emission>
+  </animation>
+
+
+  <animation> 
+   <object-name>anti-skid-button</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.10</red>
+        <green>0.05</green>
+        <blue>0.025</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+   <object-name>light-land-switch</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.10</red>
+        <green>0.05</green>
+        <blue>0.025</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+   <object-name>ld-gear-handle</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.10</red>
+        <green>0.05</green>
+        <blue>0.025</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+   <object-name>override-button</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.10</red>
+        <green>0.05</green>
+        <blue>0.025</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+    <object-name>l-gear-warn</object-name>
+    <type>material</type>
+    <emission> 
+      <red>1.0</red>
+      <green>1.0</green>
+      <blue>1.0</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <object-name>n-gear-warn</object-name>
+    <type>material</type>
+    <emission> 
+      <red>1.0</red>
+      <green>1.0</green>
+      <blue>1.0</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <object-name>r-gear-warn</object-name>
+    <type>material</type>
+    <emission> 
+      <red>1.0</red>
+      <green>1.0</green>
+      <blue>1.0</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <object-name>l-gear-safe</object-name>
+    <type>material</type>
+    <emission> 
+      <red>1.0</red>
+      <green>1.0</green>
+      <blue>1.0</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <object-name>n-gear-safe</object-name>
+    <type>material</type>
+    <emission> 
+      <red>1.0</red>
+      <green>1.0</green>
+      <blue>1.0</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <object-name>r-gear-safe</object-name>
+    <type>material</type>
+    <emission> 
+      <red>1.0</red>
+      <green>1.0</green>
+      <blue>1.0</blue>
+    </emission>
+  </animation>
+
+
+    <!-- *** LoD *** -->
+    <animation> 
+      <type>range</type>
+      <min-m>0</min-m>
+      <max-m>5</max-m>
+    </animation>
+  </PropertyList>

@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+
+  <PropertyList> 
+    <path>A-10-hud-panel.ac</path>
+
+
+<!-- lighting -->
+
+  <animation> 
+   <object-name>mount</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.45</red>
+        <green>0.34</green>
+        <blue>0.18</blue>
+      </emission>
+  </animation>
+
+  <animation>
+   <object-name>mode-selector</object-name>
+   <type>material</type>
+     <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.25</red>
+        <green>0.17</green>
+        <blue>0.08</blue>
+      </emission>
+  </animation>
+
+  <animation>
+   <object-name>function-knob</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.25</red>
+        <green>0.17</green>
+        <blue>0.08</blue>
+      </emission>
+  </animation>
+
+  <animation>
+   <object-name>depr-knob</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.25</red>
+        <green>0.17</green>
+        <blue>0.08</blue>
+     </emission>
+  </animation>
+
+  <animation>
+   <object-name>inten-knob</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.25</red>
+        <green>0.17</green>
+        <blue>0.08</blue>
+      </emission>
+  </animation>
+
+  <animation>
+   <object-name>malf-warning-light-button</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.25</red>
+        <green>0.17</green>
+        <blue>0.08</blue>
+      </emission>
+  </animation>
+
+
+    <!-- *** LoD *** -->
+    <animation> 
+      <type>range</type>
+      <min-m>0</min-m>
+      <max-m>5</max-m>
+    </animation>
+  </PropertyList>

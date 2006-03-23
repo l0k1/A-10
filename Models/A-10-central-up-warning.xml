@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <name>central-up-warning</name>
+ <path>A-10-central-up-warning.ac</path>
+
+ <animation>
+  <type>select</type>
+  <object-name>alt-warning</object-name>
+   <condition>
+    <less-than>
+     <property>/position/altitude-agl-ft</property>
+     <value>200</value>
+    </less-than>
+
+    <equals>
+     <property>/gear/gear[0]/position-norm</property>
+     <value>0</value>
+    </equals>
+
+   </condition>  
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>canopy-warning</object-name>
+   <condition>
+    <greater-than>
+     <property>/canopy/position-norm</property>
+     <value>0</value>
+    </greater-than>
+   </condition>  
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>steering-engaged</object-name>
+   <condition>
+    <less-than>
+     <property>/velocities/airspeed-kt</property>
+<!-- we should have /controls/gear/steering-engaged in the properties,
+could be fun with another keyb short-cut during landing :))) -->
+     <value>95</value>
+    </less-than>
+
+    <equals>
+     <property>/gear/gear[0]/position-norm</property>
+     <value>1</value>
+    </equals>
+
+   </condition>  
+ </animation>
+
+<!-- lighting -->
+
+  <animation> 
+   <object-name>mount</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.45</red>
+        <green>0.34</green>
+        <blue>0.18</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+   <object-name>gun-steering-marker-canopy</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.45</red>
+        <green>0.34</green>
+        <blue>0.18</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+   <object-name>button</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.25</red>
+        <green>0.18</green>
+        <blue>0.9</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+  <object-name>alt-warning</object-name>
+   <type>material</type>
+    <emission> 
+        <red>1.0</red>
+        <green>1.0</green>
+        <blue>1.0</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+  <object-name>canopy-warning</object-name>
+   <type>material</type>
+    <emission> 
+        <red>1.0</red>
+        <green>1.0</green>
+        <blue>1.0</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+  <object-name>steering-engaged</object-name>
+   <type>material</type>
+    <emission> 
+        <red>1.0</red>
+        <green>1.0</green>
+        <blue>1.0</blue>
+      </emission>
+  </animation>
+
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>30</max-m>
+ </animation>
+
+</PropertyList>
+
+

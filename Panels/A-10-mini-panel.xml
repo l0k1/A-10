@@ -333,6 +333,32 @@ Hacked by Lee Elliott for the A-10 mock panel
       <h>10</h>
     </instrument>
 
-</instruments>
+    <instrument include="Instruments/elevator-surface-positions.xml">
+      <name>Elevator surface positions display</name>
+      <params>
+        <pt0-select>autopilot/internal/target-elevator-deflection-norm</pt0-select>
+        <pt1-select>surface-positions/left-elevator-pos-norm</pt1-select>
+        <pt2-select>surface-positions/right-elevator-pos-norm</pt2-select>
+      </params>
+      <x>980</x>
+      <y>180</y>
+      <w>64</w>
+      <h>64</h>
+    </instrument>
+
+    <instrument include="Instruments/aileron-surface-positions.xml">
+      <name>Aileron surface positions display</name>
+      <params>
+        <pt0-select>autopilot/internal/target-aileron-deflection-norm</pt0-select>
+        <pt1-select>surface-positions/left-aileron-pos-norm</pt1-select>
+        <pt2-select>surface-positions/right-aileron-pos-norm</pt2-select>
+      </params>
+      <x>980</x>
+      <y>250</y>
+      <w>64</w>
+      <h>64</h>
+    </instrument>
+
+  </instruments>
 
 </PropertyList>

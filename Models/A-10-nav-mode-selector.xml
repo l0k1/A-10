@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+
+
+
+<PropertyList>
+<path>A-10-nav-mode-selector.ac</path>
+
+<!-- get values for HARS, VLOCS, TILS, NAV CRS, MAN, ILS, TCN switches/indicators state so we can show/hide the triangular indexes-->
+
+ <animation>
+  <type>select</type>
+  <object-name>index-hars</object-name>
+  <condition>
+   <equals>
+    <property>/A-10-nav/A-10-nav-selector-hars</property>
+    <value>1</value>
+   </equals>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>index-vlocs</object-name>
+  <condition>
+   <equals>
+    <property>/A-10-nav/A-10-nav-selector-vlocs</property>
+    <value>1</value>
+   </equals>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>index-tils</object-name>
+  <condition>
+   <equals>
+    <property>/A-10-nav/A-10-nav-selector-tils</property>
+    <value>1</value>
+   </equals>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>index-nav_crs</object-name>
+  <condition>
+   <equals>
+    <property>/A-10-nav/A-10-nav-selector-nav_crs</property>
+    <value>1</value>
+   </equals>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>index-man</object-name>
+  <condition>
+   <equals>
+    <property>/A-10-nav/A-10-nav-selector-man</property>
+    <value>1</value>
+   </equals>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>index-ils</object-name>
+  <condition>
+   <equals>
+    <property>/A-10-nav/A-10-nav-selector-ils</property>
+    <value>1</value>
+   </equals>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>index-tcn</object-name>
+  <condition>
+   <equals>
+    <property>/A-10-nav/A-10-nav-selector-tcn</property>
+    <value>1</value>
+   </equals>
+  </condition>
+ </animation>
+
+
+<!-- homing FM light stay enlightened until further NAV system implementation -->
+  <animation>
+   <object-name>homing-light-fm</object-name> 
+   <type>material</type>
+    <emission> 
+        <red>0.65</red>
+        <green>0.65</green>
+        <blue>0.65</blue>
+      </emission>
+  </animation>
+
+
+<!-- get values for PTR switch so we can move it on the left (able) or the right (stow). will stay in the middle if /nav/nav-selector-ptr isn't defined. -->
+
+<!-- should stay on "stow" until further NAV system implementation -->
+
+  <animation>
+	<object-name>ptr-switch</object-name>
+     <type>rotate</type>
+ 	 <property>/A-10-nav/A-10-nav-selector-ptr</property>
+     <interpolation>
+	  <entry><ind>0</ind><dep>-30</dep></entry>
+	  <entry><ind>1</ind><dep>30</dep></entry>
+     </interpolation>
+	 <center>
+      <x-m>0.0</x-m>
+      <y-m>-0.0110</y-m>
+      <z-m>0.0078</z-m>
+	 </center>
+	 <axis>
+	  <x>0</x>
+	  <y>0</y>
+	  <z>1</z>
+	 </axis>
+  </animation>
+
+
+
+
+
+
+<!-- lighting -->
+
+
+  <animation>
+   <object-name>mount</object-name> 
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.49</red>
+        <green>0.35</green>
+        <blue>0.25</blue>
+      </emission>
+  </animation>
+
+  <animation>
+   <object-name>ptr-switch</object-name> 
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.49</red>
+        <green>0.35</green>
+        <blue>0.25</blue>
+      </emission>
+  </animation>
+
+  <animation>
+   <object-name>index-hars</object-name> 
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.49</red>
+        <green>0.35</green>
+        <blue>0.25</blue>
+      </emission>
+  </animation>
+  <animation>
+   <object-name>index-vlocs</object-name> 
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.49</red>
+        <green>0.35</green>
+        <blue>0.25</blue>
+      </emission>
+  </animation>
+  <animation>
+   <object-name>index-tils</object-name> 
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.49</red>
+        <green>0.35</green>
+        <blue>0.25</blue>
+      </emission>
+  </animation>
+  <animation>
+   <object-name>index-nav_crs</object-name> 
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.49</red>
+        <green>0.35</green>
+        <blue>0.25</blue>
+      </emission>
+  </animation>
+  <animation>
+   <object-name>index-man</object-name> 
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.49</red>
+        <green>0.35</green>
+        <blue>0.25</blue>
+      </emission>
+  </animation>
+  <animation>
+   <object-name>index-ils</object-name> 
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.49</red>
+        <green>0.35</green>
+        <blue>0.25</blue>
+      </emission>
+  </animation>
+  <animation>
+   <object-name>index-tcn</object-name> 
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.49</red>
+        <green>0.35</green>
+        <blue>0.25</blue>
+      </emission>
+  </animation>
+
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>5</max-m>
+ </animation>
+
+</PropertyList>

@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>A-10-ai.ac</path>
+
+	
+ <animation>
+  <type>rotate</type>
+  <object-name>sphere</object-name>
+  <property>/orientation/roll-deg</property>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>sphere</object-name>
+  <property>/orientation/pitch-deg</property>
+  <center>
+   <x-m>-0.0522</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0023</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+<!-- ADI's bars in steering mode -->
+ <animation>
+  <type>translate</type>
+  <object-name>yaw-steering-bar</object-name>
+  <condition>
+   <equals>
+   <property>/A-10-nav/A-10-nav-selector-ptr</property>
+   <value>true</value>
+   </equals>
+  </condition>
+  <property>controls/flight/aileron</property>
+  <factor>0.025</factor>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>translate</type>
+  <object-name>pitch-steering-bar</object-name>
+  <condition>
+   <equals>
+   <property>/A-10-nav/A-10-nav-selector-ptr</property>
+   <value>true</value>
+   </equals>
+  </condition>
+  <property>controls/flight/elevator</property>
+  <factor>0.03</factor>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation>
+
+<!-- ADI's bars in homing mode -->
+
+ <animation>
+  <type>translate</type>
+  <object-name>yaw-steering-bar</object-name>
+  <condition>
+   <equals>
+   <property>/A-10-nav/A-10-nav-selector-ptr</property>
+   <value>false</value>
+   </equals>
+  </condition>
+  <condition>
+   <equals>
+   <property>/A-10-nav/A-10-nav-mode</property>
+   <value>3</value>
+   </equals>
+  </condition>
+  <property>/instrumentation/nav[0]/heading-needle-deflection</property>
+  <factor>0.0025</factor>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+	
+ <animation>
+  <type>rotate</type>
+  <object-name>slip-ball</object-name>
+  <property>/instrumentation/slip-skid-ball/indicated-slip-skid</property>
+  <factor>1.6</factor>
+  <min-deg>-11</min-deg>
+  <max-deg>11</max-deg>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0.0279031</z-m> 
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+   </axis>
+  </animation>
+
+<!-- lighting -->
+
+  <animation> 
+   <object-name>mount</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.45</red>
+        <green>0.34</green>
+        <blue>0.18</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+   <object-name>ring-slip</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+        <red>0.45</red>
+        <green>0.34</green>
+        <blue>0.18</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+   <object-name>ai-ring</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+        <red>0.45</red>
+        <green>0.34</green>
+        <blue>0.18</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+   <object-name>sphere</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+        <red>0.55</red>
+        <green>0.30</green>
+        <blue>0.12</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+   <object-name>reticl</object-name>
+   <type>material</type>
+    <emission> 
+     <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <red>0.50</red>
+      <green>0.35</green>
+      <blue>0.20</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+   <object-name>slip-ball</object-name>
+   <type>material</type>
+    <emission> 
+     <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <red>0.50</red>
+      <green>0.35</green>
+      <blue>0.20</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+   <object-name>glide-slope-index</object-name>
+   <type>material</type>
+    <emission> 
+     <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <red>0.50</red>
+      <green>0.35</green>
+      <blue>0.20</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+   <object-name>yaw-steering-bar</object-name>
+   <type>material</type>
+    <emission> 
+     <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <red>0.38</red>
+      <green>0.15</green>
+      <blue>0.05</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+   <object-name>pitch-steering-bar</object-name>
+   <type>material</type>
+    <emission> 
+     <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <red>0.38</red>
+      <green>0.15</green>
+      <blue>0.05</blue>
+    </emission>
+  </animation>
+
+
+</PropertyList>

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+ <!-- horizontal situation indicator -->
+ <name>HSI</name>
+ <path>A-10-HSI-2.ac</path>
+
+
+ <!--<animation>
+  <type>rotate</type>
+  <object-name>HSI-headind-marker</object-name>
+  <property>controls/autoflight/heading-select</property>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>-->
+
+<!-- lighting -->
+
+
+
+  <animation>
+   <object-name>HSI-course-card</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+        <red>0.70</red>
+        <green>0.49</green>
+        <blue>0.26</blue>
+      </emission>
+  </animation>
+
+
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>5</max-m>
+ </animation>
+
+</PropertyList>
+
+

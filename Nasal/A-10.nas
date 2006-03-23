@@ -303,12 +303,21 @@ ap_common_aileron_monitor = func {
               setprop("/autopilot/locks/ca-nav1-hold", "off");
               setprop("/autopilot/locks/ca-nav1-fa-hold", "engaged");
             } else {
-              setprop("/autopilot/locks/common-aileron-control", "off");
-              setprop("/autopilot/locks/ca-roll-hold", "off");
-              setprop("/autopilot/locks/ca-true-heading-hold", "off");
-              setprop("/autopilot/locks/ca-dg-heading-hold", "off");
-              setprop("/autopilot/locks/ca-nav1-hold", "off");
-              setprop("/autopilot/locks/ca-nav1-fa-hold", "off");
+              if(curr_hh_state == "testing") {
+                setprop("/autopilot/locks/common-aileron-control", "engaged");
+                setprop("/autopilot/locks/ca-roll-hold", "off");
+                setprop("/autopilot/locks/ca-true-heading-hold", "off");
+                setprop("/autopilot/locks/ca-dg-heading-hold", "off");
+                setprop("/autopilot/locks/ca-nav1-hold", "off");
+                setprop("/autopilot/locks/ca-nav1-fa-hold", "off");
+              } else {
+                setprop("/autopilot/locks/common-aileron-control", "off");
+                setprop("/autopilot/locks/ca-roll-hold", "off");
+                setprop("/autopilot/locks/ca-true-heading-hold", "off");
+                setprop("/autopilot/locks/ca-dg-heading-hold", "off");
+                setprop("/autopilot/locks/ca-nav1-hold", "off");
+                setprop("/autopilot/locks/ca-nav1-fa-hold", "off");
+              }
             }
           }
         }
@@ -366,13 +375,23 @@ ap_common_elevator_monitor = func {
             setprop("/autopilot/locks/ce-terrain-follow-hold", "off");
             setprop("/autopilot/locks/ce-vfps-hold", "off");
           } else {
-            setprop("/autopilot/locks/common-elevator-control", "off");
-            setprop("/autopilot/locks/ce-altitude-hold", "off");
-            setprop("/autopilot/locks/ce-aoa-hold", "off");
-            setprop("/autopilot/locks/ce-mach-climb-hold", "off");
-            setprop("/autopilot/locks/ce-pitch-hold", "off");
-            setprop("/autopilot/locks/ce-terrain-follow-hold", "off");
-            setprop("/autopilot/locks/ce-vfps-hold", "off");
+            if(curr_ah_state == "testing") {
+              setprop("/autopilot/locks/common-elevator-control", "engaged");
+              setprop("/autopilot/locks/ce-altitude-hold", "off");
+              setprop("/autopilot/locks/ce-aoa-hold", "off");
+              setprop("/autopilot/locks/ce-mach-climb-hold", "off");
+              setprop("/autopilot/locks/ce-pitch-hold", "off");
+              setprop("/autopilot/locks/ce-terrain-follow-hold", "off");
+              setprop("/autopilot/locks/ce-vfps-hold", "off");
+            } else {
+              setprop("/autopilot/locks/common-elevator-control", "off");
+              setprop("/autopilot/locks/ce-altitude-hold", "off");
+              setprop("/autopilot/locks/ce-aoa-hold", "off");
+              setprop("/autopilot/locks/ce-mach-climb-hold", "off");
+              setprop("/autopilot/locks/ce-pitch-hold", "off");
+              setprop("/autopilot/locks/ce-terrain-follow-hold", "off");
+              setprop("/autopilot/locks/ce-vfps-hold", "off");
+            }
           }
         }
       }
@@ -393,15 +412,15 @@ zero_ext_tanks = func {
 zero_ext_tanks_sub = func {
   # This script is called for the 'clean' configuration A-10 to zero
   # the fuel levels in the external ferry tanks.
-  setprop("/consumables/fuel/tank[3]/level-gal_us", 0);
   setprop("/consumables/fuel/tank[4]/level-gal_us", 0);
   setprop("/consumables/fuel/tank[5]/level-gal_us", 0);
-  setprop("/consumables/fuel/tank[3]/level-lbs", 0);
+  setprop("/consumables/fuel/tank[6]/level-gal_us", 0);
   setprop("/consumables/fuel/tank[4]/level-lbs", 0);
   setprop("/consumables/fuel/tank[5]/level-lbs", 0);
-  setprop("/consumables/fuel/tank[3]/selected", "false");
+  setprop("/consumables/fuel/tank[6]/level-lbs", 0);
   setprop("/consumables/fuel/tank[4]/selected", "false");
   setprop("/consumables/fuel/tank[5]/selected", "false");
+  setprop("/consumables/fuel/tank[6]/selected", "false");
 }
 #--------------------------------------------------------------------
 toggle_traj_mkr = func {
@@ -441,9 +460,29 @@ update_drop_view_pos = func {
   interpolate("/sim/view[6]/altitude-ft", eyealtft, 5);
 }
 #--------------------------------------------------------------------
+altimeter_monitor = func {
+  ind_alt = getprop("/instrumentation/altimeter/indicated-altitude-ft");
+  alt_ftx5 = int(ind_alt / 10000);
+  ind_alt = ind_alt - (alt_ftx5 * 10000);
+  alt_ftx4 = int(ind_alt / 1000);
+  ind_alt = ind_alt - (alt_ftx4 * 1000);
+  alt_ftx3 = int(ind_alt / 100);
+  ind_alt = ind_alt - (alt_ftx3 * 100);
+  alt_ftx2 = int(ind_alt / 10);
+
+  setprop("/instrumentation/altimeter/indicated-altitude-ft-x2", alt_ftx2);
+  setprop("/instrumentation/altimeter/indicated-altitude-ft-x3", alt_ftx3);
+  setprop("/instrumentation/altimeter/indicated-altitude-ft-x4", alt_ftx4);
+  setprop("/instrumentation/altimeter/indicated-altitude-ft-x5", alt_ftx5);
+
+  settimer(altimeter_monitor, 0.2);
+  
+}
+#--------------------------------------------------------------------
 start_up = func {
   settimer(initialise_drop_view_pos, 5);
   settimer(ap_common_aileron_monitor, 0.5);
   settimer(ap_common_elevator_monitor, 0.5);
+  settimer(altimeter_monitor, 0.5);
 }
 #--------------------------------------------------------------------

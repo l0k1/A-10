@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+
+<!--
+IVSI (Instantaneous Vertical Speed Indicator),
+David Culp, 16 Feb 2003, davidculp2@attbi.com,
+based on the:
+
+6K foot per minute Vertical velocity indicator instrument.
+
+December 2001
+John Check j4strngs@rockfish.net
+
+This is an instrument configuration file for the open-source flight
+simulator FlightGear (www.flightgear.org).  The file is an XML-encoded
+FlightGear property list defining the instrument's layers and actions.
+
+Each instrument is composed of layers stacked on top of each other.
+A layer may be a texture (with transparent parts to show the layers
+underneath), text, or a special layer that switches between two
+others (say, to turn an indicator light on or off).  Each layer can
+move independently in proportion to a property value, and text
+can be generated from property values as well: all of the layer's
+movements are defined as transformations.
+
+Actions are hotspots on the instrument that will respond to a mouse
+click.  Actions always modify the values of properties, either by
+adjusting them, toggling them, or swaping them with other
+properties' values.
+-->
+
+<PropertyList>
+<path>A-10-ivsi.ac</path>
+
+
+<!-- fix misc.rgb -->
+<animation>
+ <name>needle</name>
+ <type>rotate</type>
+ <object-name>needle</object-name>
+ <property>/velocities/vertical-speed-fps</property>
+ <min>-100.0</min>
+ <max>100.0</max>
+ <scale>1.0</scale>
+
+     <interpolation>
+     <entry><ind>-100.000</ind><dep>106.0</dep></entry>
+     <entry><ind> -83.333</ind><dep>126.0</dep></entry>
+     <entry><ind> -66.667</ind><dep>146.0</dep></entry>
+     <entry><ind> -50.000</ind><dep>166.0</dep></entry>
+     <entry><ind> -33.333</ind><dep>191.0</dep></entry>
+     <entry><ind> -16.667</ind><dep>223.5</dep></entry>
+     <entry><ind>   0.000</ind><dep>270.0</dep></entry>
+     <entry><ind>  16.667</ind><dep>313.5</dep></entry>
+     <entry><ind>  33.333</ind><dep>348.3</dep></entry>
+     <entry><ind>  40.92088198</ind><dep>360.0</dep></entry>
+     <entry><ind>  40.92088199</ind><dep>  0.0</dep></entry> 
+     <entry><ind>  50.000</ind><dep> 14.0</dep></entry>
+     <entry><ind>  66.667</ind><dep> 34.0</dep></entry>
+     <entry><ind>  83.333</ind><dep> 54.5</dep></entry>
+     <entry><ind> 100.000</ind><dep> 74.0</dep></entry>
+     </interpolation>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center> 
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+<!-- lighting -->
+
+  <animation> 
+   <object-name>mount</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.45</red>
+        <green>0.34</green>
+        <blue>0.18</blue>
+      </emission>
+  </animation>
+ 
+  <animation>
+   <object-name>face</object-name> 
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+        <red>0.50</red>
+        <green>0.25</green>
+        <blue>0.18</blue>
+      </emission>
+  </animation>
+  <animation>
+   <object-name>needle-w</object-name> 
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+        <red>0.75</red>
+        <green>0.55</green>
+        <blue>0.35</blue>
+      </emission>
+  </animation>
+
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>5</max-m>
+ </animation>
+
+</PropertyList>

@@ -24,15 +24,6 @@ views in a typical 3-view drawing rarely align correctly or measure
 consistently.  For example, when the model is scaled to the correct
 length, the wing-span is likely to be a little out.
 
-The 3d model includes two external load configurations - one with
-ferry fuel tanks and another with a hypothetical weapon load.  The
-external loads are selected according to the --aircraft parameter:
-for the 'clean' configuration (A-10cl) no external loads are selected
-or visibile, while for the 'ferry' configuration (A-10fl) the fuel
-tanks are selected.  There is currently no fdm or set file for the
-weapon load configuration.
-
-The 3d model is currently coloured but un-textured.
 
 Flight Data Model
 -----------------
@@ -59,10 +50,6 @@ While the low altitude performance seems more or less acceptable, it
 cant reach it's sevice ceiling of 45,000ft and I have done little
 testing of the single engine loiter/cruise modes.
 
-Both the 'clean' and 'ferry' configurations use the same YASim fdm,
-the fuel levels in the external fuel tanks being reduced to zero for
-the 'clean' configuration.
-
 The approach parameters have required even more guesswork.  They
 are based upon a few photographs I was able to find showing the
 aircraft in what appeared to be the final approach stages, and 
@@ -74,10 +61,40 @@ The following additional/non-standard keyboard mappings are set up
 for this aircraft
 
 Key               Action
+'d'               Retract slats
+'e'               Fire GAU-8/A cannon
+'f'               Extend slats
 'K' (Shift-k)     Toggle trajactory markers on & off
 'U' (Shift-u)     Update Drop view position
 
-Panels
+3D Panel
+--------
+CAUTION: SHADOWS
+Curently shadows are not well handled for the 3D cockpit.
+You may need to disable shadows feature if necessary.
+
+Altimeter:
+Mouse clicking inGH adjustable with the left button.
+
+Lighting of the panel and instruments:
+Look for the extreme bottom of the right console, there is one
+of the several lighting sub-panel of the A-10. Curently Ctrl-C
+key doesn't show correctly the hot spots, but, 'FLY INST' works
+and adjusts the instruments lighting. 'CONSOLE' works too and 
+adjusts the instruments mount's lighting.
+
+Radio and navigation system:
+See README.nav-system - FIXME -
+
+Fuel gauges:
+The fuel gauges panel at the bottom right of the main panel as a
+combined display. The two needles display the internal amount of
+fuel, left needle is left internal fuselage tank plus left
+internal wing tank, same for the right side. the digital counter
+displays the total of both side's internal tanks plus (if needed)
+the total of the three external tanks. 
+
+2D Panels
 ------
 Currently, there are two simple 2D panels for the model, neither
 of which are in any way accurate - they are simply holders for

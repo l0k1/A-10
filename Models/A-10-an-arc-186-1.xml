@@ -1,0 +1,281 @@
+<?xml version="1.0"?>
+
+
+
+<PropertyList>
+<path>A-10-an-arc-186.ac</path>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>ring-0001</object-name>
+  <property>/instrumentation/nav/frequencies/alt-selected-mhz-x0001</property>
+  <interpolation>
+   <entry><ind>0</ind><dep>0</dep></entry>
+   <entry><ind>25</ind><dep>90</dep></entry>
+   <entry><ind>50</ind><dep>180</dep></entry>
+   <entry><ind>75</ind><dep>270</dep></entry>
+  </interpolation>
+      <center>
+       <x-m>-0.0030</x-m>
+       <y-m>0.0454</y-m>
+       <z-m>0.0019</z-m>
+      </center>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>ring-01</object-name>
+  <property>/instrumentation/nav/frequencies/alt-selected-mhz-x01</property>
+  <interpolation>
+   <entry><ind>0</ind><dep>0</dep></entry>
+   <entry><ind>1</ind><dep>36</dep></entry>
+   <entry><ind>2</ind><dep>72</dep></entry>
+   <entry><ind>3</ind><dep>108</dep></entry>
+   <entry><ind>4</ind><dep>144</dep></entry>
+   <entry><ind>5</ind><dep>180</dep></entry>
+   <entry><ind>6</ind><dep>216</dep></entry>
+   <entry><ind>7</ind><dep>252</dep></entry>
+   <entry><ind>8</ind><dep>288</dep></entry>
+   <entry><ind>9</ind><dep>324</dep></entry>
+  </interpolation>
+      <center>
+       <x-m>-0.0030</x-m>
+       <y-m>0.0237</y-m>
+       <z-m>0.0019</z-m>
+      </center>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>ring-1</object-name>
+  <property>/instrumentation/nav/frequencies/alt-selected-mhz-x1</property>
+  <interpolation>
+   <entry><ind>0</ind><dep>0</dep></entry>
+   <entry><ind>1</ind><dep>36</dep></entry>
+   <entry><ind>2</ind><dep>72</dep></entry>
+   <entry><ind>3</ind><dep>108</dep></entry>
+   <entry><ind>4</ind><dep>144</dep></entry>
+   <entry><ind>5</ind><dep>180</dep></entry>
+   <entry><ind>6</ind><dep>216</dep></entry>
+   <entry><ind>7</ind><dep>252</dep></entry>
+   <entry><ind>8</ind><dep>288</dep></entry>
+   <entry><ind>9</ind><dep>324</dep></entry>
+  </interpolation>
+      <center>
+       <x-m>-0.0030</x-m>
+       <y-m>0.0021</y-m>
+       <z-m>0.0019</z-m>
+      </center>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation>
+
+
+ <animation>
+  <type>rotate</type>
+  <object-name>ring-10</object-name>
+  <property>/instrumentation/nav/frequencies/alt-selected-mhz-x10</property>
+  <interpolation>
+   <entry><ind>1</ind><dep>24</dep></entry>
+   <entry><ind>2</ind><dep>48</dep></entry>
+   <entry><ind>3</ind><dep>72</dep></entry>
+   <entry><ind>4</ind><dep>96</dep></entry>
+   <entry><ind>5</ind><dep>120</dep></entry>
+   <entry><ind>6</ind><dep>144</dep></entry>
+   <entry><ind>7</ind><dep>168</dep></entry>
+   <entry><ind>8</ind><dep>192</dep></entry>
+   <entry><ind>9</ind><dep>216</dep></entry>
+   <entry><ind>10</ind><dep>240</dep></entry>
+   <entry><ind>11</ind><dep>264</dep></entry>
+   <entry><ind>12</ind><dep>288</dep></entry>
+   <entry><ind>13</ind><dep>312</dep></entry>
+   <entry><ind>14</ind><dep>336</dep></entry>
+   <entry><ind>15</ind><dep>360</dep></entry>
+  </interpolation>
+      <center>
+       <x-m>-0.0010</x-m>
+       <y-m>-0.0208</y-m>
+       <z-m>0.0019</z-m>
+      </center>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation>
+
+<!-- preset -->
+
+ <animation>
+  <type>textranslate</type>
+  <object-name>pressets</object-name>
+  <property>/instrumentation/nav/A-10-nav-selected-preset</property>
+  <factor>0.0245</factor>
+  <offset>-1</offset>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+<!-- selector knob -->
+
+ <animation>
+  <type>rotate</type>
+  <object-name>freq-select-knob</object-name>
+  <property>/instrumentation/nav/A-10-nav-selector</property>
+  <interpolation>
+   <entry><ind>1</ind><dep>0</dep></entry>
+   <entry><ind>2</ind><dep>62</dep></entry>
+   <entry><ind>3</ind><dep>98</dep></entry>
+   <entry><ind>4</ind><dep>157</dep></entry>
+  </interpolation>
+  <center>
+   <x-m>0.0179</x-m>
+   <y-m>-0.0495</y-m>
+   <z-m>0.0019</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>-1</z>
+  </axis>
+ </animation>
+
+<!-- mode knob -->
+
+ <animation>
+  <type>rotate</type>
+  <object-name>mode-knob</object-name>
+  <property>/instrumentation/nav/A-10-nav-mode</property>
+  <interpolation>
+   <entry><ind>0</ind><dep>0</dep></entry>
+   <entry><ind>1</ind><dep>36</dep></entry>
+   <entry><ind>2</ind><dep>75</dep></entry>
+  </interpolation>
+  <center>
+   <x-m>0.0179</x-m>
+   <y-m>0.0524</y-m>
+   <z-m>0.0019</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>-1</z>
+  </axis>
+ </animation>
+
+<!-- load button -->
+
+ <animation>
+  <type>translate</type>
+  <object-name>load-button</object-name>
+  <property>/instrumentation/nav/A-10-nav-load-state</property>
+  <interpolation>
+   <entry><ind>0</ind><dep>0.0020</dep></entry>
+   <entry><ind>1</ind><dep>-0.0030</dep></entry>
+   </interpolation>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation>
+
+
+<!-- lighting-->
+
+  <animation>
+   <object-name>ring-0001</object-name> 
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+        <red>0.75</red>
+        <green>0.55</green>
+        <blue>0.35</blue>
+      </emission>
+  </animation>
+
+  <animation>
+   <object-name>ring-01</object-name> 
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+        <red>0.75</red>
+        <green>0.55</green>
+        <blue>0.35</blue>
+      </emission>
+  </animation>
+
+  <animation>
+   <object-name>ring-1</object-name> 
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+        <red>0.75</red>
+        <green>0.55</green>
+        <blue>0.35</blue>
+      </emission>
+  </animation>
+
+  <animation>
+   <object-name>ring-10</object-name> 
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+        <red>0.75</red>
+        <green>0.55</green>
+        <blue>0.35</blue>
+      </emission>
+  </animation>
+
+  <animation>
+   <object-name>pressets</object-name> 
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+        <red>0.75</red>
+        <green>0.55</green>
+        <blue>0.35</blue>
+      </emission>
+  </animation>
+
+  <animation>
+   <object-name>mount</object-name> 
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.49</red>
+        <green>0.35</green>
+        <blue>0.25</blue>
+      </emission>
+  </animation>
+
+
+
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>5</max-m>
+ </animation>
+
+</PropertyList>
