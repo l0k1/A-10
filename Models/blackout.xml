@@ -16,7 +16,7 @@
 	
 	<animation> 
       <type>material</type>
-      <object-name>INS_redout_sphere</object-name>
+      <object-name>INS_redout_sphere</object-name>
       <transparency> 
         <alpha-prop>accelerations/pilot-g-damped</alpha-prop>
         <factor>-0.5</factor>
