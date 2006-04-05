@@ -1,0 +1,311 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <name>armament-panel</name>
+ <path>A-10-armament-panel.ac</path>
+
+ <animation>
+  <type>textranslate</type>
+  <object-name>rds-rem-x1</object-name>
+  <property>/ai/submodels/submodel[1]/count</property>
+  <factor>0.1</factor>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+
+ <animation>
+  <type>textranslate</type>
+  <object-name>rds-rem-x10</object-name>
+  <property>/ai/submodels/submodel[1]/count</property>
+  <factor>0.01</factor>
+  <step>10</step>
+  <scroll>0.5</scroll>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>textranslate</type>
+  <object-name>rds-rem-x100</object-name>
+  <property>/ai/submodels/submodel[1]/count</property>
+  <factor>0.001</factor>
+  <step>100</step>
+  <scroll>0.5</scroll>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+
+ <animation>
+  <type>textranslate</type>
+  <object-name>rds-rem-x1000</object-name>
+  <property>/ai/submodels/submodel[1]/count</property>
+  <factor>0.0001</factor>
+  <step>1000</step>
+  <scroll>0.5</scroll>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+<!-- lighting -->
+
+  <animation> 
+   <object-name>mount</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.45</red>
+        <green>0.34</green>
+        <blue>0.18</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+   <object-name>gun-rate-switch</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.10</red>
+        <green>0.05</green>
+        <blue>0.025</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+   <object-name>mech-fuzing-knob</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.10</red>
+        <green>0.05</green>
+        <blue>0.025</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+   <object-name>panel-lights-knob</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.10</red>
+        <green>0.05</green>
+        <blue>0.025</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+   <object-name>eo-pwr-switch</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.10</red>
+        <green>0.05</green>
+        <blue>0.025</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+   <object-name>master-arm-switch</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.10</red>
+        <green>0.05</green>
+        <blue>0.025</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+   <object-name>rds-rem-reset-button</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.10</red>
+        <green>0.05</green>
+        <blue>0.025</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+   <object-name>test-lamp-button</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.10</red>
+        <green>0.05</green>
+        <blue>0.025</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+   <object-name>jettison</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.10</red>
+        <green>0.05</green>
+        <blue>0.025</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+   <object-name>release-mode-knob</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.10</red>
+        <green>0.05</green>
+        <blue>0.025</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+   <object-name>panel-lights-knob</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.10</red>
+        <green>0.05</green>
+        <blue>0.025</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+   <object-name>aim-9-knob</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.10</red>
+        <green>0.05</green>
+        <blue>0.025</blue>
+      </emission>
+  </animation>
+
+
+  <animation>
+   <object-name>rds-rem-x1000</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+        <red>0.85</red>
+        <green>0.60</green>
+        <blue>0.45</blue>
+      </emission>
+  </animation>
+  <animation>
+   <object-name>rds-rem-x100</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+        <red>0.85</red>
+        <green>0.60</green>
+        <blue>0.45</blue>
+      </emission>
+  </animation>
+  <animation>
+   <object-name>rds-rem-x10</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+        <red>0.85</red>
+        <green>0.60</green>
+        <blue>0.45</blue>
+      </emission>
+  </animation>
+  <animation>
+   <object-name>rds-rem-x1</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+        <red>0.85</red>
+        <green>0.60</green>
+        <blue>0.45</blue>
+      </emission>
+  </animation>
+
+
+  <animation>
+   <object-name>rip-qty-x10</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+        <red>0.75</red>
+        <green>0.55</green>
+        <blue>0.35</blue>
+      </emission>
+  </animation>
+  <animation>
+   <object-name>rip-qty-x1</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+        <red>0.75</red>
+        <green>0.55</green>
+        <blue>0.35</blue>
+      </emission>
+  </animation>
+  <animation>
+   <object-name>rip-intvl-x10</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+        <red>0.75</red>
+        <green>0.55</green>
+        <blue>0.35</blue>
+      </emission>
+  </animation>
+  <animation>
+   <object-name>rip-intvl-x1</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+        <red>0.75</red>
+        <green>0.55</green>
+        <blue>0.35</blue>
+      </emission>
+  </animation>
+
+
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>5</max-m>
+ </animation>
+
+</PropertyList>
+
+

@@ -5,24 +5,13 @@
 
 <PropertyList>
  <!-- <path>A10-004-014h.ac</path> -->
- <path>A10-004-014j.ac</path>
+ <path>A10-004-014k.ac</path>
 
 <!-- Select the external loads as appropriate -->
 <!-- Select extermal tanks -->
  <animation>
   <type>select</type>
   <object-name>FTank3</object-name>
-  <condition>
-   <equals>
-    <property>/consumables/fuel/tank[3]/selected</property>
-    <value>1</value>
-   </equals>
-  </condition>
- </animation>
-
- <animation>
-  <type>select</type>
-  <object-name>FTank1</object-name>
   <condition>
    <equals>
     <property>/consumables/fuel/tank[4]/selected</property>
@@ -33,10 +22,21 @@
 
  <animation>
   <type>select</type>
-  <object-name>FTank2</object-name>
+  <object-name>FTank1</object-name>
   <condition>
    <equals>
     <property>/consumables/fuel/tank[5]/selected</property>
+    <value>1</value>
+   </equals>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>FTank2</object-name>
+  <condition>
+   <equals>
+    <property>/consumables/fuel/tank[6]/selected</property>
     <value>1</value>
    </equals>
   </condition>
@@ -85,6 +85,27 @@
    </top-left>
   </panel>
 
+
+ <panel>
+   <name>Panel-L</name>
+   <path>Aircraft/A-10/Models/A-10-panel-L-hotspot.xml</path>
+   <bottom-left>
+    <x-m>2.4354</x-m>
+    <y-m>-0.4885</y-m>
+    <z-m>0.8445</z-m>
+   </bottom-left>
+   <bottom-right>
+    <x-m>2.4354</x-m>
+    <y-m>-0.0690</y-m>
+    <z-m>0.8445</z-m>
+   </bottom-right>
+   <top-left>
+    <x-m>2.4019</x-m>
+    <y-m>-0.4885</y-m>
+    <z-m>1.3153</z-m>
+   </top-left>
+  </panel>
+
   <panel>
    <name>Panel-l2</name>
    <path>Aircraft/A-10/Models/A-10-panel-l2-hotspot.xml</path>
@@ -128,6 +149,15 @@
  
 <!-- instruments -->
 
+  <model> 
+   <path>Aircraft/A-10/Models/A-10-hud.xml</path>
+    <offsets> 
+     <x-m>2.2800</x-m>
+     <y-m>0.0000</y-m>
+     <z-m>1.4100</z-m>
+    </offsets>
+  </model>
+ 
   <model> 
    <path>Aircraft/A-10/Models/A-10-detail-cpt.xml</path>
     <offsets> 
@@ -188,7 +218,7 @@
    <path>Aircraft/A-10/Models/A-10-asi.xml</path>
     <offsets> 
      <x-m>2.4185</x-m>
-     <y-m>-0.1115</y-m>
+     <y-m>-0.1125</y-m>
      <z-m>1.1330</z-m>
      <pitch-deg>-5</pitch-deg>
     </offsets>
@@ -200,6 +230,16 @@
      <x-m>2.4000</x-m>
      <y-m>-0.1881</y-m>
      <z-m>1.1195</z-m>
+     <pitch-deg>-5</pitch-deg>
+    </offsets>
+  </model>
+ 
+   <model> 
+   <path>Aircraft/A-10/Models/A-10-armament-panel.xml</path>
+    <offsets> 
+     <x-m>2.4080</x-m>
+     <y-m>-0.1881</y-m>
+     <z-m>0.9980</z-m>
      <pitch-deg>-5</pitch-deg>
     </offsets>
   </model>
@@ -305,6 +345,16 @@
   </model>
  
   <model> 
+   <path>Aircraft/A-10/Models/A-10-master-caution.xml</path>
+    <offsets> 
+     <x-m>2.3970</x-m>
+     <y-m>-0.1857</y-m>
+     <z-m>1.2295</z-m>
+     <pitch-deg>-5</pitch-deg>
+    </offsets>
+  </model>
+ 
+  <model> 
    <path>Aircraft/A-10/Models/A-10-hud-panel.xml</path>
     <offsets> 
      <x-m>2.3969</x-m>
@@ -329,7 +379,7 @@
     <offsets> 
      <x-m>2.4104</x-m>
      <y-m>-0.2850</y-m>
-     <z-m>0.8730</z-m>
+     <z-m>0.8770</z-m>
      <pitch-deg>-5</pitch-deg>
     </offsets>
   </model>
@@ -477,7 +527,7 @@
   </axis>
  </animation>
 
-<!-- Alieron bits -->
+<!-- Aileron bits -->
  <animation>
   <type>rotate</type>
   <object-name>LUAileron</object-name>

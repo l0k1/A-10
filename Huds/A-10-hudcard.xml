@@ -5,7 +5,7 @@
   <c1>
    <name>Gyrocompass</name>
    <x>270</x>
-   <y>103</y>
+   <y>141</y>
    <width>100</width>
    <height>13</height>
    <loadfn>heading</loadfn>
@@ -38,7 +38,7 @@
   <g3>
    <name>Gauge3</name>
    <x>270</x>
-   <y>97</y>
+   <y>137</y>
    <width>100</width>
    <height>7</height>
    <loadfn>rudderval</loadfn>

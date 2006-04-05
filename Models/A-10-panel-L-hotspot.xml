@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+
+<PropertyList> 
+ <name>A-10 L Panel Hotspots</name>
+ <background>Aircraft/A-10/Models/transparent-bg.rgb</background>
+ <w>1024</w>
+ <h>768</h>
+ <y-offset>0</y-offset>
+
+ <instruments> 
+  <instrument> 
+   <name>R panel</name>
+         <y>384</y>
+          <w>1024</w>
+          <h>768</h>
+          <w-base>1024</w-base>
+          <h-base>1024</h-base>
+          <x>512</x>
+   
+
+   <layers> 
+
+    <layer> 
+     <name>background</name>
+     <texture> 
+      <path>Aircraft/A-10/Models/transparent-bg.rgb</path>
+      <x1>0.0</x1>
+      <y1>0.0</y1>
+      <x2>1.0</x2>
+      <y2>1.0</y2>
+     </texture>
+    </layer>
+
+   <!--<layer>
+    <name>grid</name>
+    <texture>
+     <path>Aircraft/A-10/Models/hotspotgrid.rgb</path>
+     <x1>0.0</x1>
+     <y1>0.0</y1>
+     <x2>1.0</x2>
+     <y2>1.0</y2>
+    </texture>
+   </layer>-->
+
+  </layers>
+
+<!-- define hotspot actions below -->
+<actions> 
+
+
+
+<!-- hud-depression -->
+           <action> 
+              <name>depression-up</name>
+              <button>0</button>
+              <x>85</x>
+              <y>187</y>
+              <w>37</w>
+              <h>30</h>
+              <binding> 
+                <command>property-adjust</command>
+                <property>A-10-hud/depr</property>
+                <step>-0.05</step>
+                <min>-1.0</min>
+                <max>1.0</max>
+                <wrap>false</wrap>
+              </binding>
+            </action>
+            <action> 
+              <name>depression-down</name>
+              <button>0</button>
+              <x>85</x>
+              <y>220</y>
+              <w>37</w>
+              <h>30</h>
+              <binding> 
+                <command>property-adjust</command>
+                <property>A-10-hud/depr</property>
+                <step>0.05</step>
+                <min>-1.0</min>
+                <max>1.0</max>
+                <wrap>false</wrap>
+              </binding>
+            </action>
+
+<!-- hud-intensity -->
+           <action> 
+              <name>intensity-up</name>
+              <button>0</button>
+              <x>-85</x>
+              <y>187</y>
+              <w>37</w>
+              <h>30</h>
+              <binding> 
+                <command>property-adjust</command>
+                <property>A-10-hud/intens</property>
+                <step>-0.1</step>
+                <min>0.0</min>
+                <max>1.0</max>
+                <wrap>false</wrap>
+              </binding>
+            </action>
+            <action> 
+              <name>intensity-up</name>
+              <button>0</button>
+              <x>-85</x>
+              <y>220</y>
+              <w>37</w>
+              <h>30</h>
+              <binding> 
+                <command>property-adjust</command>
+                <property>A-10-hud/intens</property>
+                <step>0.1</step>
+                <min>0.0</min>
+                <max>1.0</max>
+                <wrap>false</wrap>
+              </binding>
+            </action>
+
+
+          </actions> 
+
+   </instrument>
+  </instruments>
+
+
+</PropertyList>

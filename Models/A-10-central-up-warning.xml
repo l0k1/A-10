@@ -77,13 +77,24 @@ could be fun with another keyb short-cut during landing :))) -->
   </animation>
 
   <animation> 
-   <object-name>button</object-name>
+   <object-name>button-dim</object-name>
    <type>material</type>
     <emission> 
       <factor-prop>/controls/lighting/panel-norm</factor-prop>
-        <red>0.25</red>
-        <green>0.18</green>
-        <blue>0.9</blue>
+        <red>0.30</red>
+        <green>0.16</green>
+        <blue>0.08</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+   <object-name>button-audio</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.30</red>
+        <green>0.16</green>
+        <blue>0.08</blue>
       </emission>
   </animation>
 

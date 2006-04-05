@@ -1,13 +1,14 @@
 AC3Db
-MATERIAL "ac3dmat0" rgb 0 0 0  amb 0 0 0  emis 0 0 0  spec 0.502 0.502 0.502  shi 128  trans 0
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 1 0.89 0.969  spec 0 0 0  shi 10  trans 0
 OBJECT world
 kids 1
 OBJECT poly
 name "line"
-loc 0.1 0 0
+loc -10.1014 0 0
+crease 45.000000
 numvert 2
--0.1 0 0
-0.1 0 0
+-10.0989 0 0
+10.0989 0 0
 numsurf 1
 SURF 0x22
 mat 0

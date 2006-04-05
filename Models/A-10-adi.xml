@@ -104,7 +104,7 @@
   <type>rotate</type>
   <object-name>slip-ball</object-name>
   <property>/instrumentation/slip-skid-ball/indicated-slip-skid</property>
-  <factor>1.6</factor>
+  <factor>2.6</factor>
   <min-deg>-11</min-deg>
   <max-deg>11</max-deg>
   <center>

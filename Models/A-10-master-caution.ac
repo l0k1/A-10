@@ -1,0 +1,42 @@
+AC3Db
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+OBJECT world
+kids 2
+OBJECT poly
+name "master-caution-off"
+loc 0 0.000207901 -0.0112608
+texture "panel-up.rgb"
+crease 45.000000
+numvert 4
+0 0.0083234 -0.0136566
+0 0.0083234 0.0365343
+0 -0.0083234 0.0365343
+0 -0.0083234 -0.0136566
+numsurf 1
+SURF 0x20
+mat 0
+refs 4
+0 0.512909 0.438704
+1 0.400154 0.438704
+2 0.400154 0.406441
+3 0.512909 0.406441
+kids 0
+OBJECT poly
+name "master-caution-on"
+loc 5.33318e-05 -7.20688e-05 -0.0069829
+texture "A-10-master-caution-on.rgb"
+crease 45.000000
+numvert 4
+0 -0.00610909 -0.00882278
+0 -0.00610909 0.0236028
+0 0.00610909 0.0236028
+0 0.00610909 -0.00882278
+numsurf 1
+SURF 0x20
+mat 0
+refs 4
+3 1 1
+2 0 1
+1 0 0
+0 1 0
+kids 0

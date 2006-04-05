@@ -297,9 +297,9 @@ Fairchild A-10 simulation config.
   </A-10-nav>
   <instrumentation>
    <nav>
-    <A-10-nav-selector type="int">1</A-10-nav-selector>
-    <A-10-nav-mode type="int">0</A-10-nav-mode>
-    <A-10-nav-selected-preset type="int">1</A-10-nav-selected-preset>
+    <A-10-nav-selector type="int">1</A-10-nav-selector>              <!-- 1-4 -->
+    <A-10-nav-mode type="int">0</A-10-nav-mode>                      <!-- 0-2 -->
+    <A-10-nav-selected-preset type="int">1</A-10-nav-selected-preset><!-- 1-20 -->
     <A-10-nav-load-state type="int">0</A-10-nav-load-state>
     <presets>
      <preset n="1" type="float">10</preset>
@@ -325,6 +325,12 @@ Fairchild A-10 simulation config.
     </presets>
    </nav>
   </instrumentation>
+  <A-10-hud>
+   <intens type="double">1.0</intens>
+   <depr type="float">0.0</depr>
+   <mode-selector type="int">1</mode-selector>
+   <func-selector type="int">1</func-selector>
+  </A-10-hud>
 
 <!-- Start with the Parking Brake on -->
   <controls>

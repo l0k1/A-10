@@ -78,7 +78,7 @@
     <control-output control="SPOILER" prop="/surface-positions/spoiler-pos-norm"/>
 
     <control-speed control="FLAP0" transition-time="15"/>
-    <control-speed control="FLAP1" transition-time="1.0"/>
+    <control-speed control="FLAP1" transition-time="0.5"/>
     <control-speed control="SPOILER" transition-time="1.0"/>
 
   </wing>
@@ -98,31 +98,31 @@
                     prop="/surface-positions/right-elevator-pos-norm"/>
     <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
 
-    <control-speed control="FLAP0" transition-time="1.0"/>
+    <control-speed control="FLAP0" transition-time="0.5"/>
   </hstab>
 
   <vstab x="-14.88" y="2.85" z="0.0" taper="0.6" effectiveness="2"
          length="2.8" chord="2.14" sweep="0.0">
     <stall aoa="16" width="5" peak="1.5"/>
-    <flap0 start="0" end="1" lift="1.4" drag="1.4"/>
+    <flap0 start="0" end="1" lift="1.5" drag="1.5"/>
     <control-input axis="/controls/flight/rudder" control="FLAP0"
                    square="true" invert="true"/>
     <control-input axis="/controls/flight/rudder-trim" control="FLAP0"
                    invert="true"/>
     <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
-    <control-speed control="FLAP0" transition-time="0.75"/>
+    <control-speed control="FLAP0" transition-time="0.5"/>
   </vstab>
 
   <vstab x="-14.88" y="-2.85" z="0.0" taper="0.6" effectiveness="2"
          length="2.8" chord="2.14" sweep="0.0">
     <stall aoa="16" width="5" peak="1.5"/>
-    <flap0 start="0" end="1" lift="1.4" drag="1.4"/>
+    <flap0 start="0" end="1" lift="1.5" drag="1.5"/>
     <control-input axis="/controls/flight/rudder" control="FLAP0"
                    square="true" invert="true"/>
     <control-input axis="/controls/flight/rudder-trim" control="FLAP0"
                    invert="true"/>
     <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
-    <control-speed control="FLAP0" transition-time="0.75"/>
+    <control-speed control="FLAP0" transition-time="0.5"/>
  </vstab>
 
 <!-- 2 x GE TF34-100 -->

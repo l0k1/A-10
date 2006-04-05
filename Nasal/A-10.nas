@@ -11,6 +11,10 @@ ato_start = func {
   hdgdeg = getprop("/orientation/heading-deg");
 
   setprop("/controls/flight/flaps", 1.0);
+  setprop("/controls/flight/spoilers", 0.0);
+  setprop("/controls/gear/brake-left", 0.0);
+  setprop("/controls/gear/brake-right", 0.0);
+  setprop("/controls/gear/brake-parking", 0.0);
 
   setprop("/autopilot/settings/ground-roll-heading-deg", hdgdeg);
   setprop("/autopilot/settings/true-heading-deg", hdgdeg);
