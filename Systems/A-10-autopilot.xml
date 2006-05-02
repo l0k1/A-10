@@ -380,7 +380,7 @@
     <name>AGL Hold (common elevator) Stage 1</name>
     <debug>false</debug>
     <enable>
-      <prop>/autopilot/locks/ce-terrain-follow-hold</prop>
+      <prop>/autopilot/locks/ce-agl-hold</prop>
       <value>engaged</value>
     </enable>
     <input>

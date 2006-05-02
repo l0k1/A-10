@@ -340,16 +340,16 @@ ap_common_elevator_monitor = func {
     setprop("/autopilot/locks/ce-aoa-hold", "off");
     setprop("/autopilot/locks/ce-mach-climb-hold", "off");
     setprop("/autopilot/locks/ce-pitch-hold", "off");
-    setprop("/autopilot/locks/ce-terrain-follow-hold", "off");
+    setprop("/autopilot/locks/ce-agl-hold", "off");
     setprop("/autopilot/locks/ce-vfps-hold", "engaged");
   } else {
-    if(curr_ah_state == "terrain-follow") {
+    if(curr_ah_state == "agl-hold") {
       setprop("/autopilot/locks/common-elevator-control", "engaged");
       setprop("/autopilot/locks/ce-altitude-hold", "off");
       setprop("/autopilot/locks/ce-aoa-hold", "off");
       setprop("/autopilot/locks/ce-mach-climb-hold", "off");
       setprop("/autopilot/locks/ce-pitch-hold", "off");
-      setprop("/autopilot/locks/ce-terrain-follow-hold", "engaged");
+      setprop("/autopilot/locks/ce-agl-hold", "engaged");
       setprop("/autopilot/locks/ce-vfps-hold", "engaged");
     } else {
       if(curr_ah_state == "mach-climb") {
@@ -358,7 +358,7 @@ ap_common_elevator_monitor = func {
         setprop("/autopilot/locks/ce-aoa-hold", "off");
         setprop("/autopilot/locks/ce-mach-climb-hold", "engaged");
         setprop("/autopilot/locks/ce-pitch-hold", "off");
-        setprop("/autopilot/locks/ce-terrain-follow-hold", "off");
+        setprop("/autopilot/locks/ce-agl-hold", "off");
         setprop("/autopilot/locks/ce-vfps-hold", "engaged");
       } else {
         if(curr_ah_state == "vfps-hold") {
@@ -367,7 +367,7 @@ ap_common_elevator_monitor = func {
           setprop("/autopilot/locks/ce-aoa-hold", "off");
           setprop("/autopilot/locks/ce-mach-climb-hold", "off");
           setprop("/autopilot/locks/ce-pitch-hold", "off");
-          setprop("/autopilot/locks/ce-terrain-follow-hold", "off");
+          setprop("/autopilot/locks/ce-agl-hold", "off");
           setprop("/autopilot/locks/ce-vfps-hold", "engaged");
         } else {
           if(curr_ah_state == "pitch-hold") {
@@ -376,7 +376,7 @@ ap_common_elevator_monitor = func {
             setprop("/autopilot/locks/ce-aoa-hold", "off");
             setprop("/autopilot/locks/ce-mach-climb-hold", "off");
             setprop("/autopilot/locks/ce-pitch-hold", "engaged");
-            setprop("/autopilot/locks/ce-terrain-follow-hold", "off");
+            setprop("/autopilot/locks/ce-agl-hold", "off");
             setprop("/autopilot/locks/ce-vfps-hold", "off");
           } else {
             if(curr_ah_state == "testing") {
@@ -385,7 +385,7 @@ ap_common_elevator_monitor = func {
               setprop("/autopilot/locks/ce-aoa-hold", "off");
               setprop("/autopilot/locks/ce-mach-climb-hold", "off");
               setprop("/autopilot/locks/ce-pitch-hold", "off");
-              setprop("/autopilot/locks/ce-terrain-follow-hold", "off");
+              setprop("/autopilot/locks/ce-agl-hold", "off");
               setprop("/autopilot/locks/ce-vfps-hold", "off");
             } else {
               setprop("/autopilot/locks/common-elevator-control", "off");
@@ -393,7 +393,7 @@ ap_common_elevator_monitor = func {
               setprop("/autopilot/locks/ce-aoa-hold", "off");
               setprop("/autopilot/locks/ce-mach-climb-hold", "off");
               setprop("/autopilot/locks/ce-pitch-hold", "off");
-              setprop("/autopilot/locks/ce-terrain-follow-hold", "off");
+              setprop("/autopilot/locks/ce-agl-hold", "off");
               setprop("/autopilot/locks/ce-vfps-hold", "off");
             }
           }
