@@ -446,6 +446,8 @@ cfire_gau8a = func {
   setprop("ai/submodels/GAU-8A", 0);
 }
 #--------------------------------------------------------------------
+controls.trigger = func(b) { b ? fire_gau8a() : cfire_gau8a() }
+#--------------------------------------------------------------------
 initialise_drop_view_pos = func {
   eyelatdeg = getprop("/position/latitude-deg");
   eyelondeg = getprop("/position/longitude-deg");
