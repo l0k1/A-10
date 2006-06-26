@@ -11,7 +11,7 @@
    <object-name>CPT-red-thing</object-name>
    <type>material</type>
     <emission> 
-    <factor-prop>/controls/lighting/panel-norm</factor-prop>
+    <factor-prop>controls/lighting/panel-norm</factor-prop>
      <red>0.45</red>
      <green>0.34</green>
      <blue>0.18</blue>
@@ -24,10 +24,21 @@
    <object-name>CPT-video-screen</object-name>
    <type>material</type>
     <emission> 
-    <factor-prop>/controls/lighting/panel-norm</factor-prop>
+    <factor-prop>controls/lighting/panel-norm</factor-prop>
      <red>0.45</red>
      <green>0.34</green>
      <blue>0.18</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+   <object-name>CPT-canopy-jett-bkg</object-name>
+   <type>material</type>
+    <emission> 
+    <factor-prop>controls/lighting/panel-norm</factor-prop>
+        <red>0.20</red>
+        <green>0.10</green>
+        <blue>0.05</blue>
     </emission>
   </animation>
 

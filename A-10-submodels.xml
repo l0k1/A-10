@@ -37,7 +37,7 @@
     <pitch-offset>-4.0</pitch-offset>
     <eda>0.0122</eda>
     <weight>2.0</weight>
-    <life>60</life>
+    <life>6</life>
     <buoyancy>0</buoyancy>
     <wind>false</wind>
     <aero-stabilised>true</aero-stabilised>

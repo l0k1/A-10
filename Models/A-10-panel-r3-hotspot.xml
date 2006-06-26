@@ -61,7 +61,7 @@
     <h>65</h>
     <binding>
      <command>property-adjust</command>
-     <property>/controls/lighting/instruments-norm</property>
+     <property>controls/lighting/instruments-norm</property>
      <step>0.1</step>
     </binding>
    </action>
@@ -75,7 +75,7 @@
     <h>65</h>
     <binding>
      <command>property-adjust</command>
-     <property>/controls/lighting/instruments-norm</property>
+     <property>controls/lighting/instruments-norm</property>
      <step>-0.1</step>
     </binding>
     </action>
@@ -90,7 +90,7 @@
     <h>65</h>
     <binding>
      <command>property-adjust</command>
-     <property>/controls/lighting/panel-norm</property>
+     <property>controls/lighting/panel-norm</property>
      <step>0.1</step>
     </binding>
    </action>
@@ -104,7 +104,7 @@
     <h>65</h>
     <binding>
      <command>property-adjust</command>
-     <property>/controls/lighting/panel-norm</property>
+     <property>controls/lighting/panel-norm</property>
      <step>-0.1</step>
     </binding>
     </action>

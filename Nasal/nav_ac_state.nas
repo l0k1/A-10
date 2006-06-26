@@ -10,7 +10,7 @@
 # to have save() writing on getprop( "/sim/fg-home/") or somewhere else in a secure maner.
 
 
-var file = getprop("/sim/aircraft") ~ "-nav.xml";
+var file = getprop("sim/aircraft") ~ "-nav.xml";
 
 
 loadxml = func(name, node) { fgcommand("loadxml", props.Node.new({"filename": name, "targetnode": node})); }

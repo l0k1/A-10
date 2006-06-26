@@ -1,0 +1,466 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+
+  <path>A-10-throttle.ac</path>
+
+<!-- APU switch -->
+  <animation>
+    <object-name>apu-start-switch</object-name>
+    <type>rotate</type>
+    <property>controls/APU/off-start-switch</property>
+    <interpolation>
+      <entry><ind>0</ind><dep>-30</dep></entry>
+      <entry><ind>1</ind><dep>30</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>0.0245</x-m>
+      <y-m>0.0391</y-m>
+      <z-m>-0.0021</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+<!-- R Throttle -->
+  <animation> 
+    <object-name>r-throttle-handle</object-name>
+    <type>rotate</type>
+      <property>controls/engines/engine[1]/throttle</property>
+      <factor>41</factor>
+      <center>
+        <x-m>0.0000</x-m>
+        <y-m>0.0289</y-m>
+        <z-m>-0.0852</z-m>
+      </center>
+      <axis> 
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+      </axis>
+  </animation>
+  
+  <animation> 
+    <object-name>r-throttle-arm</object-name>
+    <type>rotate</type>
+      <property>controls/engines/engine[1]/throttle</property>
+      <factor>41</factor>
+      <center>
+        <x-m>0.0000</x-m>
+        <y-m>0.0289</y-m>
+        <z-m>-0.0852</z-m>
+      </center>
+      <axis> 
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+      </axis>
+  </animation>
+  
+  <animation> 
+    <object-name>missile-seeker-head-slew</object-name>
+    <type>rotate</type>
+      <property>controls/engines/engine[1]/throttle</property>
+      <factor>41</factor>
+      <center>
+        <x-m>0.0000</x-m>
+        <y-m>0.0289</y-m>
+        <z-m>-0.0852</z-m>
+      </center>
+      <axis> 
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+      </axis>
+  </animation>
+  
+  <animation> 
+    <object-name>speed-brake-switch</object-name>
+    <type>rotate</type>
+      <property>controls/engines/engine[1]/throttle</property>
+      <factor>41</factor>
+      <center>
+        <x-m>0.0000</x-m>
+        <y-m>0.0289</y-m>
+        <z-m>-0.0852</z-m>
+      </center>
+      <axis> 
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+      </axis>
+  </animation>
+  
+  <animation> 
+    <object-name>speed-brake-sides</object-name>
+    <type>rotate</type>
+      <property>controls/engines/engine[1]/throttle</property>
+      <factor>41</factor>
+      <center>
+        <x-m>0.0000</x-m>
+        <y-m>0.0289</y-m>
+        <z-m>-0.0852</z-m>
+      </center>
+      <axis> 
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+      </axis>
+  </animation>
+  
+  <animation> 
+    <object-name>mic-switch</object-name>
+    <type>rotate</type>
+      <property>controls/engines/engine[1]/throttle</property>
+      <factor>41</factor>
+      <center>
+        <x-m>0.0000</x-m>
+        <y-m>0.0289</y-m>
+        <z-m>-0.0852</z-m>
+      </center>
+      <axis> 
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+      </axis>
+  </animation>
+
+  <animation> 
+    <object-name>missile-uncage-switch</object-name>
+    <type>rotate</type>
+      <property>controls/engines/engine[1]/throttle</property>
+      <factor>41</factor>
+      <center>
+        <x-m>0.0000</x-m>
+        <y-m>0.0289</y-m>
+        <z-m>-0.0852</z-m>
+      </center>
+      <axis> 
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+      </axis>
+  </animation>
+
+  <animation> 
+    <object-name>flare-disp-button</object-name>
+    <type>rotate</type>
+      <property>controls/engines/engine[1]/throttle</property>
+      <factor>41</factor>
+      <center>
+        <x-m>0.0000</x-m>
+        <y-m>0.0289</y-m>
+        <z-m>-0.0852</z-m>
+      </center>
+      <axis> 
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+      </axis>
+  </animation>
+
+<!-- L Throttle -->
+  <animation> 
+    <object-name>l-throttle-handle</object-name>
+    <type>rotate</type>
+      <property>controls/engines/engine[0]/throttle</property>
+      <factor>41</factor>
+      <center>
+        <x-m>0.0000</x-m>
+        <y-m>0.0289</y-m>
+        <z-m>-0.0852</z-m>
+      </center>
+      <axis> 
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+      </axis>
+  </animation>
+  
+  <animation> 
+    <object-name>l-throttle-arm</object-name>
+    <type>rotate</type>
+      <property>controls/engines/engine[0]/throttle</property>
+      <factor>41</factor>
+      <center>
+        <x-m>0.0000</x-m>
+        <y-m>0.0289</y-m>
+        <z-m>-0.0852</z-m>
+      </center>
+      <axis> 
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+      </axis>
+  </animation>
+  
+  <animation> 
+    <object-name>master-extern-lt-switch</object-name>
+    <type>rotate</type>
+      <property>controls/engines/engine[0]/throttle</property>
+      <factor>41</factor>
+      <center>
+        <x-m>0.0000</x-m>
+        <y-m>0.0289</y-m>
+        <z-m>-0.0852</z-m>
+      </center>
+      <axis> 
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+      </axis>
+  </animation>
+  
+  <animation> 
+    <object-name>chaff-dispens-button</object-name>
+    <type>rotate</type>
+      <property>controls/engines/engine[1]/throttle</property>
+      <factor>41</factor>
+      <center>
+        <x-m>0.0000</x-m>
+        <y-m>0.0289</y-m>
+        <z-m>-0.0852</z-m>
+      </center>
+      <axis> 
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+      </axis>
+  </animation>
+
+ 
+
+
+<!-- lighting -->
+
+<!-- mount -->
+  <animation> 
+    <object-name>mount</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.45</red>
+      <green>0.34</green>
+      <blue>0.18</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+    <object-name>flaps-lever-handle</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.20</red>
+      <green>0.10</green>
+      <blue>0.05</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <object-name>apu-start-switch</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.20</red>
+      <green>0.10</green>
+      <blue>0.05</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <object-name>l-eng-oper-switch</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.20</red>
+      <green>0.10</green>
+      <blue>0.05</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <object-name>r-eng-oper-switch</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.20</red>
+      <green>0.10</green>
+      <blue>0.05</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <object-name>l-eng-fuel-flow-switch</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.20</red>
+      <green>0.10</green>
+      <blue>0.05</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <object-name>r-eng-fuel-flow-switch</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.20</red>
+      <green>0.10</green>
+      <blue>0.05</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <object-name>ldg-warn-silence-button</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.13</red>
+      <green>0.09</green>
+      <blue>0.04</blue>
+    </emission>
+  </animation>
+  
+  <animation> 
+   <object-name>box</object-name>
+    <object-name>skirt</object-name>
+    <object-name>flaps-l-side</object-name>
+    <object-name>flaps-r-side</object-name>
+    <object-name>throttle-friction-wheel</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.13</red>
+      <green>0.09</green>
+      <blue>0.04</blue>
+    </emission>
+  </animation>
+
+<!-- R Throttle -->
+  <animation> 
+    <object-name>r-throttle-handle</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.13</red>
+      <green>0.09</green>
+      <blue>0.04</blue>
+    </emission>
+  </animation>
+  
+  <animation> 
+    <object-name>missile-seeker-head-slew</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.13</red>
+      <green>0.09</green>
+      <blue>0.04</blue>
+    </emission>
+  </animation>
+  
+  
+  <animation> 
+    <object-name>speed-brake-switch</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.13</red>
+      <green>0.09</green>
+      <blue>0.04</blue>
+    </emission>
+  </animation>
+  
+  <animation> 
+    <object-name>mic-switch</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.13</red>
+      <green>0.09</green>
+      <blue>0.04</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <object-name>missile-uncage-switch</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.13</red>
+      <green>0.09</green>
+      <blue>0.04</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <object-name>flare-disp-button</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.13</red>
+      <green>0.09</green>
+      <blue>0.04</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <object-name>speed-brake-sides</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.13</red>
+      <green>0.09</green>
+      <blue>0.04</blue>
+    </emission>
+  </animation>
+  
+<!-- L Throttle -->
+  <animation> 
+    <object-name>l-throttle-handle</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.13</red>
+      <green>0.09</green>
+      <blue>0.04</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <object-name>master-extern-lt-switch</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.13</red>
+      <green>0.09</green>
+      <blue>0.04</blue>
+    </emission>
+  </animation>
+  
+  <animation> 
+    <object-name>chaff-dispens-button</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.13</red>
+      <green>0.09</green>
+      <blue>0.04</blue>
+    </emission>
+  </animation>
+  
+
+
+
+  <animation>
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>5</max-m>
+  </animation>
+
+</PropertyList>

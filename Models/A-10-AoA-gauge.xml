@@ -8,7 +8,7 @@
  <animation>
   <type>rotate</type>
   <object-name>needle</object-name>
-  <property>/orientation/alpha-deg</property>
+  <property>orientation/alpha-deg</property>
   <interpolation>
    <!--        AoA deg           gauge deg -->
 
@@ -37,7 +37,7 @@
    <object-name>mount</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.45</red>
         <green>0.34</green>
         <blue>0.18</blue>
@@ -48,7 +48,7 @@
    <object-name>face</object-name>
    <type>material</type>
      <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.50</red>
         <green>0.25</green>
         <blue>0.18</blue>
@@ -59,7 +59,7 @@
    <object-name>needle</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.75</red>
         <green>0.55</green>
         <blue>0.35</blue>
@@ -74,5 +74,3 @@
  </animation>
 
 </PropertyList>
-
-

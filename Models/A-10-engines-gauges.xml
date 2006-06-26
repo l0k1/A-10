@@ -9,7 +9,7 @@
       <name>temp-l</name>
       <type>rotate</type>
       <object-name>needle-temp-l</object-name>
-      <property>/engines/engine[0]/itt-norm</property>
+      <property>engines/engine[0]/itt-norm</property>
       <interpolation> 
         <entry><ind>0.0000</ind><dep>118</dep></entry><!--0-->
         <entry><ind>0.0213</ind><dep>179</dep></entry><!--iddle-->
@@ -31,7 +31,7 @@
       <name>temp-r</name>
       <type>rotate</type>
       <object-name>needle-temp-r</object-name>
-      <property>/engines/engine[1]/itt-norm</property>
+      <property>engines/engine[1]/itt-norm</property>
       <interpolation> 
         <entry><ind>0.0000</ind><dep>118</dep></entry><!--0-->
         <entry><ind>0.0213</ind><dep>179</dep></entry><!--iddle-->
@@ -55,7 +55,7 @@
       <name>fan-percent-l</name>
       <type>rotate</type>
       <object-name>needle-fan-l</object-name>
-      <property>/engines/engine[0]/n1</property>
+      <property>engines/engine[0]/A-10-alt-n1</property>
       <interpolation> 
         <entry><ind>0</ind><dep>28</dep></entry><!--0%-->
         <entry><ind>73.6</ind><dep>76</dep></entry><!--iddle-->
@@ -76,7 +76,7 @@
       <name>fan-percent-r</name>
       <type>rotate</type>
       <object-name>needle-fan-r</object-name>
-      <property>/engines/engine[1]/n1</property>
+      <property>engines/engine[1]/A-10-alt-n1</property>
       <interpolation> 
         <entry><ind>0</ind><dep>28</dep></entry><!--0%-->
         <entry><ind>73.6</ind><dep>76</dep></entry><!--iddle-->
@@ -100,7 +100,7 @@
       <name>core-rpm-l</name>
       <type>rotate</type>
       <object-name>needle-core-l</object-name>
-      <property>/engines/engine[0]/n1</property>
+      <property>engines/engine[0]/n1</property>
       <interpolation> 
         <entry><ind>0.0000</ind><dep>0</dep></entry><!--0-->
         <entry><ind>56.000</ind><dep>133</dep></entry><!--iddle-->
@@ -122,7 +122,7 @@
       <name>core-rpm-r</name>
       <type>rotate</type>
       <object-name>needle-core-r</object-name>
-      <property>/engines/engine[0]/n1</property>
+      <property>engines/engine[0]/n1</property>
       <interpolation> 
         <entry><ind>0.0000</ind><dep>0</dep></entry><!--0-->
         <entry><ind>56.000</ind><dep>133</dep></entry><!--iddle-->
@@ -149,7 +149,7 @@
       <name>fuel-flow-ppm-l</name>
       <type>rotate</type>
       <object-name>needle-fuel-l</object-name>
-      <property>/engines/engine[0]/fuel-flow-gph</property>
+      <property>engines/engine[0]/fuel-flow-gph</property>
       <interpolation> 
         <entry><ind>0.0000</ind><dep>139</dep></entry><!--0-->
         <entry><ind>10.64</ind><dep>158</dep></entry><!--iddle-->
@@ -171,7 +171,7 @@
       <name>fuel-flow-ppm-r</name>
       <type>rotate</type>
       <object-name>needle-fuel-r</object-name>
-      <property>/engines/engine[1]/fuel-flow-gph</property>
+      <property>engines/engine[1]/fuel-flow-gph</property>
       <interpolation> 
         <entry><ind>0.0000</ind><dep>139</dep></entry><!--0-->
         <entry><ind>10.64</ind><dep>158</dep></entry><!--iddle-->
@@ -198,7 +198,7 @@
       <name>oil-pressure-psi-l</name>
       <type>rotate</type>
       <object-name>needle-oil-l</object-name>
-      <property>/engines/engine[0]/oilp-norm</property>
+      <property>engines/engine[0]/oilp-norm</property>
       <interpolation> 
         <entry><ind>0.0000</ind><dep>159</dep></entry><!--0-->
         <entry><ind>0.0214</ind><dep>265</dep></entry><!--iddle-->
@@ -220,7 +220,7 @@
       <name>oil-pressure-psi-r</name>
       <type>rotate</type>
       <object-name>needle-oil-r</object-name>
-      <property>/engines/engine[1]/oilp-norm</property>
+      <property>engines/engine[1]/oilp-norm</property>
       <interpolation> 
         <entry><ind>0.0000</ind><dep>159</dep></entry><!--0-->
         <entry><ind>0.0214</ind><dep>265</dep></entry><!--iddle-->
@@ -240,7 +240,50 @@
     </animation>
 
 
+<!-- apu egt -->
+    <animation>
+      <name>apu-temp</name>
+      <type>rotate</type>
+      <object-name>needle-apu-egt</object-name>
+      <property>systems/apu/temp</property>
+      <interpolation> 
+        <entry><ind>0.0000</ind><dep>93</dep></entry><!--0-->
+        <entry><ind>1000</ind><dep>347</dep></entry><!--1000-->
+      </interpolation>
+      <center>
+       <x-m>0.0047</x-m>
+       <y-m>0.0782</y-m>
+       <z-m>-0.0502</z-m>
+      </center>
+      <axis> 
+        <x>-1</x>
+        <y>0</y>
+        <z>0</z>
+      </axis>
+    </animation>
 
+<!-- apu rpm -->
+
+    <animation>
+      <name>apu-rpm</name>
+      <type>rotate</type>
+      <object-name>needle-apu-rpm</object-name>
+      <property>systems/apu/rpm</property>
+      <interpolation> 
+        <entry><ind>0.0000</ind><dep>91</dep></entry><!--0-->
+        <entry><ind>120</ind><dep>345</dep></entry><!--max thrust-->
+      </interpolation>
+      <center>
+       <x-m>0.0047</x-m>
+       <y-m>0.0258</y-m>
+       <z-m>-0.0517</z-m>
+      </center>
+      <axis> 
+        <x>-1</x>
+        <y>0</y>
+        <z>0</z>
+      </axis>
+    </animation>
 
 
 <!-- lighting -->
@@ -249,7 +292,7 @@
    <object-name>mount</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.45</red>
         <green>0.34</green>
         <blue>0.18</blue>
@@ -261,7 +304,7 @@
    <object-name>face</object-name>
    <type>material</type>
      <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.50</red>
         <green>0.25</green>
         <blue>0.18</blue>
@@ -269,22 +312,10 @@
   </animation>
 
   <animation>
-   <object-name>needle-apu-rpm</object-name>
-   <object-name>needle-apu-egt</object-name>
-   <type>material</type>
-    <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
-        <red>0.75</red>
-        <green>0.55</green>
-        <blue>0.35</blue>
-      </emission>
-  </animation>
-
-  <animation>
    <object-name>needle-temp-l</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.75</red>
         <green>0.55</green>
         <blue>0.35</blue>
@@ -295,7 +326,7 @@
    <object-name>needle-temp-r</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.75</red>
         <green>0.55</green>
         <blue>0.35</blue>
@@ -306,7 +337,7 @@
    <object-name>needle-core-l</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.75</red>
         <green>0.55</green>
         <blue>0.35</blue>
@@ -317,7 +348,7 @@
    <object-name>needle-core-r</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.75</red>
         <green>0.55</green>
         <blue>0.35</blue>
@@ -328,7 +359,7 @@
    <object-name>needle-fan-l</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.75</red>
         <green>0.55</green>
         <blue>0.35</blue>
@@ -339,7 +370,7 @@
    <object-name>needle-fan-r</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.75</red>
         <green>0.55</green>
         <blue>0.35</blue>
@@ -350,7 +381,7 @@
    <object-name>needle-oil-l</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.75</red>
         <green>0.55</green>
         <blue>0.35</blue>
@@ -361,7 +392,7 @@
    <object-name>needle-oil-r</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.75</red>
         <green>0.55</green>
         <blue>0.35</blue>
@@ -372,7 +403,7 @@
    <object-name>needle-fuel-l</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.75</red>
         <green>0.55</green>
         <blue>0.35</blue>
@@ -383,7 +414,29 @@
    <object-name>needle-fuel-r</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+        <red>0.75</red>
+        <green>0.55</green>
+        <blue>0.35</blue>
+      </emission>
+  </animation>
+
+  <animation>
+   <object-name>needle-apu-rpm</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+        <red>0.75</red>
+        <green>0.55</green>
+        <blue>0.35</blue>
+      </emission>
+  </animation>
+
+<animation>
+   <object-name>needle-apu-egt</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.75</red>
         <green>0.55</green>
         <blue>0.35</blue>

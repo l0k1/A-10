@@ -8,7 +8,7 @@
  <animation>
   <type>rotate</type>
   <object-name>drum</object-name>
-  <property>/orientation/roll-deg</property>
+  <property>orientation/roll-deg</property>
   <center>
    <x-m>-0.0109</x-m>
    <y-m>0.0</y-m>
@@ -24,7 +24,7 @@
  <animation>
   <type>rotate</type>
   <object-name>bkg</object-name>
-  <property>/orientation/roll-deg</property>
+  <property>orientation/roll-deg</property>
   <center>
    <x-m>0.0</x-m>
    <y-m>0.0</y-m>
@@ -40,7 +40,7 @@
  <animation>
   <type>rotate</type>
   <object-name>drum</object-name>
-  <property>/orientation/pitch-deg</property>
+  <property>orientation/pitch-deg</property>
   <factor>1.5</factor>
   <center>
    <x-m>-0.0109</x-m>
@@ -61,7 +61,7 @@
    <object-name>mount</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.45</red>
         <green>0.34</green>
         <blue>0.18</blue>
@@ -72,7 +72,7 @@
    <object-name>scale</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.45</red>
         <green>0.34</green>
         <blue>0.18</blue>
@@ -84,7 +84,7 @@
    <object-name>ring</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.45</red>
         <green>0.34</green>
         <blue>0.18</blue>
@@ -95,7 +95,7 @@
    <object-name>bkg</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.55</red>
         <green>0.44</green>
         <blue>0.28</blue>
@@ -106,7 +106,7 @@
    <object-name>drum</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.55</red>
         <green>0.30</green>
         <blue>0.12</blue>
@@ -117,7 +117,7 @@
    <object-name>plane</object-name>
    <type>material</type>
     <emission> 
-     <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+     <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.55</red>
         <green>0.44</green>
         <blue>0.28</blue>

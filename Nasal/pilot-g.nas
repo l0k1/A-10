@@ -26,8 +26,8 @@ timeratio.setDoubleValue(0.03);
 damp = 0;
 
 updatePilotG = func {
-        var n = timeratio.getValue(); 
-		var g = pilot_g.getValue() ;
+    var n = timeratio.getValue(); 
+		var g = pilot_g.getValue();
 		if (g == nil) { g = 0; }
 		damp = ( g * n) + (damp * (1 - n));
 		
@@ -44,4 +44,4 @@ updatePilotG();
 
 
 
-# end 
+# end

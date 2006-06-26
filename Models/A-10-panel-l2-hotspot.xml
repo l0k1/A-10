@@ -58,7 +58,7 @@
     <h>65</h>
     <binding>
      <command>property-adjust</command>
-     <property>/instrumentation/nav/frequencies/alt-selected-mhz-x10</property>
+     <property>instrumentation/nav/frequencies/alt-selected-mhz-x10</property>
      <step>1</step>
      <min>1</min>
      <max>16</max>
@@ -67,7 +67,7 @@
     </binding>
     <binding>
      <command>nasal</command>
-     <script>nav_mode_selector.alt_freq_to_freq();</script>
+     <script>nav_scripts.alt_freq_to_freq();</script>
     </binding>
    </action>
    <action>
@@ -79,7 +79,7 @@
     <h>65</h>
     <binding>
      <command>property-adjust</command>
-     <property>/instrumentation/nav/frequencies/alt-selected-mhz-x10</property>
+     <property>instrumentation/nav/frequencies/alt-selected-mhz-x10</property>
      <step>-1</step>
      <min>1</min>
      <max>16</max>
@@ -88,7 +88,7 @@
     </binding>
     <binding>
      <command>nasal</command>
-     <script>nav_mode_selector.alt_freq_to_freq();</script>
+     <script>nav_scripts.alt_freq_to_freq();</script>
     </binding>
    </action>
 
@@ -101,7 +101,7 @@
     <h>65</h>
     <binding>
      <command>property-adjust</command>
-     <property>/instrumentation/nav/frequencies/alt-selected-mhz-x1</property>
+     <property>instrumentation/nav/frequencies/alt-selected-mhz-x1</property>
      <step>1</step>
      <min>0</min>
      <max>10</max>
@@ -110,7 +110,7 @@
     </binding>
     <binding>
      <command>nasal</command>
-     <script>nav_mode_selector.alt_freq_to_freq();</script>
+     <script>nav_scripts.alt_freq_to_freq();</script>
     </binding>
    </action>
   <action>
@@ -122,7 +122,7 @@
     <h>65</h>
     <binding>
      <command>property-adjust</command>
-     <property>/instrumentation/nav/frequencies/alt-selected-mhz-x1</property>
+     <property>instrumentation/nav/frequencies/alt-selected-mhz-x1</property>
      <step>-1</step>
      <min>0</min>
      <max>10</max>
@@ -131,7 +131,7 @@
     </binding>
     <binding>
      <command>nasal</command>
-     <script>nav_mode_selector.alt_freq_to_freq();</script>
+     <script>nav_scripts.alt_freq_to_freq();</script>
     </binding>
    </action>
 
@@ -144,7 +144,7 @@
     <h>65</h>
     <binding>
      <command>property-adjust</command>
-     <property>/instrumentation/nav/frequencies/alt-selected-mhz-x01</property>
+     <property>instrumentation/nav/frequencies/alt-selected-mhz-x01</property>
      <step>1</step>
      <min>0</min>
      <max>10</max>
@@ -153,7 +153,7 @@
     </binding>
     <binding>
      <command>nasal</command>
-     <script>nav_mode_selector.alt_freq_to_freq();</script>
+     <script>nav_scripts.alt_freq_to_freq();</script>
     </binding>
     </action>
    <action>
@@ -165,7 +165,7 @@
     <h>65</h>
     <binding>
      <command>property-adjust</command>
-     <property>/instrumentation/nav/frequencies/alt-selected-mhz-x01</property>
+     <property>instrumentation/nav/frequencies/alt-selected-mhz-x01</property>
      <step>-1</step>
      <min>0</min>
      <max>10</max>
@@ -174,7 +174,7 @@
     </binding>
     <binding>
      <command>nasal</command>
-     <script>nav_mode_selector.alt_freq_to_freq();</script>
+     <script>nav_scripts.alt_freq_to_freq();</script>
     </binding>
     </action>
 
@@ -187,7 +187,7 @@
     <h>65</h>
     <binding>
      <command>property-adjust</command>
-     <property>/instrumentation/nav/frequencies/alt-selected-mhz-x0001</property>
+     <property>instrumentation/nav/frequencies/alt-selected-mhz-x0001</property>
      <step>25</step>
      <min>0</min>
      <max>100</max>
@@ -196,7 +196,7 @@
     </binding>
     <binding>
      <command>nasal</command>
-     <script>nav_mode_selector.alt_freq_to_freq();</script>
+     <script>nav_scripts.alt_freq_to_freq();</script>
     </binding>
    </action>
   <action>
@@ -208,7 +208,7 @@
     <h>65</h>
     <binding>
      <command>property-adjust</command>
-     <property>/instrumentation/nav/frequencies/alt-selected-mhz-x0001</property>
+     <property>instrumentation/nav/frequencies/alt-selected-mhz-x0001</property>
      <step>-25</step>
      <min>0</min>
      <max>100</max>
@@ -217,7 +217,7 @@
     </binding>
     <binding>
      <command>nasal</command>
-     <script>nav_mode_selector.alt_freq_to_freq();</script>
+     <script>nav_scripts.alt_freq_to_freq();</script>
     </binding>
    </action>
 
@@ -232,7 +232,7 @@
     <h>40</h>
     <binding>
      <command>nasal</command>
-     <script>nav_mode_selector.change_preset(1);</script>
+     <script>nav_scripts.change_preset(1);</script>
     </binding>
    </action>
   <action>
@@ -244,7 +244,7 @@
     <h>40</h>
    <binding>
      <command>nasal</command>
-     <script>nav_mode_selector.change_preset(-1);</script>
+     <script>nav_scripts.change_preset(-1);</script>
     </binding>
    </action>
 
@@ -259,7 +259,7 @@
     <h>40</h>
     <binding>
      <command>property-adjust</command>
-     <property>/instrumentation/nav/A-10-nav-selector</property>
+     <property>instrumentation/nav/A-10-nav-selector</property>
      <step>1</step>
      <min>1</min>
      <max>5</max>
@@ -276,7 +276,7 @@
     <h>40</h>
     <binding>
      <command>property-adjust</command>
-     <property>/instrumentation/nav/A-10-nav-selector</property>
+     <property>instrumentation/nav/A-10-nav-selector</property>
      <step>-1</step>
      <min>1</min>
      <max>5</max>
@@ -296,7 +296,7 @@
     <h>40</h>
     <binding>
      <command>property-adjust</command>
-     <property>/instrumentation/nav/A-10-nav-mode</property>
+     <property>instrumentation/nav/A-10-nav-mode</property>
      <step>1</step>
      <min>0</min>
      <max>3</max>
@@ -313,7 +313,7 @@
     <h>40</h>
     <binding>
      <command>property-adjust</command>
-     <property>/instrumentation/nav/A-10-nav-mode</property>
+     <property>instrumentation/nav/A-10-nav-mode</property>
      <step>-1</step>
      <min>0</min>
      <max>3</max>
@@ -332,7 +332,7 @@
     <h>30</h>
     <binding>
      <command>nasal</command>
-     <script>nav_mode_selector.load_freq()</script>
+     <script>nav_scripts.load_freq()</script>
     </binding>
    </action>
 

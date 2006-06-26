@@ -10,7 +10,7 @@
    <object-name>mount</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.45</red>
         <green>0.34</green>
         <blue>0.18</blue>
@@ -21,7 +21,7 @@
    <object-name>mode-selector</object-name>
    <type>material</type>
      <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.25</red>
         <green>0.17</green>
         <blue>0.08</blue>
@@ -32,7 +32,7 @@
    <object-name>function-knob</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.25</red>
         <green>0.17</green>
         <blue>0.08</blue>
@@ -43,7 +43,7 @@
    <object-name>depr-knob</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.25</red>
         <green>0.17</green>
         <blue>0.08</blue>
@@ -54,7 +54,7 @@
    <object-name>inten-knob</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.25</red>
         <green>0.17</green>
         <blue>0.08</blue>
@@ -65,7 +65,7 @@
    <object-name>malf-warning-light-button</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.25</red>
         <green>0.17</green>
         <blue>0.08</blue>

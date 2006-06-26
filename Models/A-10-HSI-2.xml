@@ -1,36 +1,361 @@
 <?xml version="1.0"?>
 
 <PropertyList>
- <!-- horizontal situation indicator -->
- <name>HSI</name>
- <path>A-10-HSI-2.ac</path>
+  <!-- horizontal situation indicator -->
+  <name>HSI</name>
+  <path>A-10-HSI-2.ac</path>
 
 
- <!--<animation>
-  <type>rotate</type>
-  <object-name>HSI-headind-marker</object-name>
-  <property>controls/autoflight/heading-select</property>
-  <center>
-   <x-m>0.0</x-m>
-   <y-m>0.0</y-m>
-   <z-m>0.0</z-m>
-  </center>
+<!--HSI-course-card-->
+  <animation>
+    <type>rotate</type>
+    <object-name>HSI-course-card</object-name>
+    <condition>
+      <greater-than>
+        <property>systems/electrical/outputs/hsi</property>
+        <value>24</value>
+      </greater-than>
+    </condition>
+    <property>orientation/heading-deg</property>
+    <center>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+    <z-m>0.0</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>HSI-course-card</object-name>
+    <property>instrumentation/nav[2]/radials/selected-deg</property>
+    <center>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+    </center>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+<!--bearing-validity-flag-->
+  <animation>
+    <type>select</type>
+    <object-name>bearing-validity-flag</object-name>
+    <condition>
+      <or>
+        <equals>
+          <property>instrumentation/tacan/in-range</property>
+          <value>false</value>
+        </equals>
+        <equals>
+          <property>instrumentation/tacan/switch-position</property>
+          <value>0</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>bearing-validity-flag</object-name>
+    <condition>
+      <greater-than>
+        <property>systems/electrical/outputs/hsi</property>
+        <value>24</value>
+      </greater-than>
+    </condition>
+    <property>orientation/heading-deg</property>
+    <center>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>bearing-validity-flag</object-name>
+    <property>instrumentation/nav[2]/radials/selected-deg</property>
+    <center>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+    </center>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+<!--course-deviation-indicator ils off (CDI)-->
+  <animation>
+    <type>select</type>
+    <object-name>course-deviation-indicator-off</object-name>
+    <condition>
+      <equals>
+        <property>controls/switches/ils</property>
+        <value>false</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>course-deviation-indicator-off</object-name>
+    <condition>
+      <greater-than>
+        <property>systems/electrical/outputs/hsi</property>
+        <value>24</value>
+      </greater-than>
+    </condition>
+    <property>orientation/heading-deg</property>
+    <center>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>course-deviation-indicator-off</object-name>
+    <property>instrumentation/nav[2]/radials/selected-deg</property>
+    <center>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+    </center>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+<!--course-deviation-indicator ils on (CDI)-->
+  <animation>
+    <type>select</type>
+    <object-name>course-deviation-indicator-on</object-name>
+    <condition>
+      <equals>
+        <property>controls/switches/ils</property>
+        <value>true</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>course-deviation-indicator-on</object-name>
+    <condition>
+      <greater-than>
+        <property>systems/electrical/outputs/hsi</property>
+        <value>24</value>
+      </greater-than>
+    </condition>
+    <property>orientation/heading-deg</property>
+    <center>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>course-deviation-indicator-on</object-name>
+    <property>instrumentation/nav[2]/radials/selected-deg</property>
+    <center>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+    </center>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>course-deviation-indicator-on</object-name>
+    <property>instrumentation/nav[2]/heading-needle-deflection</property>
+		<interpolation>
+			<entry>
+				<ind>-10</ind>
+				<dep>-0.024</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>10</ind>
+				<dep>0.024</dep>
+			</entry>
+		</interpolation>
   <axis>
-   <x>1</x>
-   <y>0</y>
+   <x>0</x>
+   <y>1</y>
    <z>0</z>
   </axis>
- </animation>-->
+ </animation>
+
+<!--to-from (to)-->
+  <animation>
+    <type>rotate</type>
+    <object-name>to-from-to</object-name>
+    <condition>
+      <greater-than>
+        <property>systems/electrical/outputs/hsi</property>
+        <value>24</value>
+      </greater-than>
+    </condition>
+    <property>orientation/heading-deg</property>
+    <center>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>to-from-to</object-name>
+    <property>instrumentation/nav[2]/radials/selected-deg</property>
+    <center>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+    </center>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+<!--to-from (from)-->
+  <animation>
+    <type>rotate</type>
+    <object-name>to-from-from</object-name>
+    <condition>
+      <greater-than>
+        <property>systems/electrical/outputs/hsi</property>
+        <value>24</value>
+      </greater-than>
+    </condition>
+    <property>orientation/heading-deg</property>
+    <center>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>to-from-from</object-name>
+    <property>instrumentation/nav[2]/radials/selected-deg</property>
+    <center>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+    </center>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
 
 <!-- lighting -->
 
 
-
+  <animation>
+   <object-name>bearing-validity-flag</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+        <red>0.70</red>
+        <green>0.49</green>
+        <blue>0.26</blue>
+      </emission>
+  </animation>
+  
   <animation>
    <object-name>HSI-course-card</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+        <red>0.70</red>
+        <green>0.49</green>
+        <blue>0.26</blue>
+      </emission>
+  </animation>
+  
+  <animation>
+   <object-name>course-deviation-indicator-off</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+        <red>0.70</red>
+        <green>0.49</green>
+        <blue>0.26</blue>
+      </emission>
+  </animation>
+  
+  <animation>
+   <object-name>course-deviation-indicator-on</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+        <red>0.70</red>
+        <green>0.49</green>
+        <blue>0.26</blue>
+      </emission>
+  </animation>
+  
+  <animation>
+   <object-name>aircraft-symbol</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.70</red>
         <green>0.49</green>
         <blue>0.26</blue>
@@ -45,5 +370,3 @@
  </animation>
 
 </PropertyList>
-
-

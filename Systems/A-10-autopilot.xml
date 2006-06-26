@@ -26,17 +26,17 @@
     <name>Common Aileron Controller - stage 2</name>
     <debug>false</debug>
     <enable>
-      <prop>/autopilot/locks/common-aileron-control</prop>
+      <prop>autopilot/locks/common-aileron-control</prop>
       <value>engaged</value>
     </enable>
     <input>
-      <prop>/surface-positions/aileron-pos-norm</prop>
+      <prop>surface-positions/aileron-pos-norm</prop>
     </input>
     <reference>
-      <prop>/autopilot/internal/target-aileron-deflection-norm</prop>
+      <prop>autopilot/internal/target-aileron-deflection-norm</prop>
     </reference>
      <output>
-      <prop>/controls/flight/aileron</prop>
+      <prop>controls/flight/aileron</prop>
     </output>
     <config>
       <Ts>0.01</Ts>
@@ -59,8 +59,8 @@
     <name>Roll Hold (common aileron) filter</name>
     <debug>false</debug>
     <type>noise-spike</type>
-    <input>/autopilot/settings/target-roll-deg</input>
-    <output>/autopilot/internal/target-roll-deg-filtered</output>
+    <input>autopilot/settings/target-roll-deg</input>
+    <output>autopilot/internal/target-roll-deg-filtered</output>
     <max-rate-of-change>10.0</max-rate-of-change>
   </filter>
 
@@ -68,17 +68,17 @@
     <name>Roll Hold</name>
     <debug>false</debug>
     <enable>
-      <prop>/autopilot/locks/ca-roll-hold</prop>
+      <prop>autopilot/locks/ca-roll-hold</prop>
       <value>engaged</value>
     </enable>
     <input>
-      <prop>/orientation/roll-deg</prop>
+      <prop>orientation/roll-deg</prop>
     </input>
     <reference>
-      <prop>/autopilot/internal/target-roll-deg-filtered</prop>
+      <prop>autopilot/internal/target-roll-deg-filtered</prop>
     </reference>
      <output>
-      <prop>/autopilot/internal/target-aileron-deflection-norm</prop>
+      <prop>autopilot/internal/target-aileron-deflection-norm</prop>
     </output>
     <config>
       <Ts>0.02</Ts>
@@ -101,8 +101,8 @@
     <name>True Heading Hold filter</name>
     <debug>false</debug>
     <type>noise-spike</type>
-    <input>/autopilot/internal/true-heading-error-deg</input>
-    <output>/autopilot/internal/true-heading-error-deg-filtered</output>
+    <input>autopilot/internal/true-heading-error-deg</input>
+    <output>autopilot/internal/true-heading-error-deg-filtered</output>
     <max-rate-of-change>10.0</max-rate-of-change>
   </filter>
 
@@ -110,17 +110,17 @@
     <name>True Heading Hold Stage 1</name>
     <debug>false</debug>
     <enable>
-      <prop>/autopilot/locks/ca-true-heading-hold</prop>
+      <prop>autopilot/locks/ca-true-heading-hold</prop>
       <value>engaged</value>
     </enable>
     <input>
-      <prop>/autopilot/internal/true-heading-error-deg-filtered</prop>
+      <prop>autopilot/internal/true-heading-error-deg-filtered</prop>
     </input>
     <reference>
       <value>0.0</value>
     </reference>
     <output>
-      <prop>/autopilot/settings/target-roll-deg</prop>
+      <prop>autopilot/settings/target-roll-deg</prop>
     </output>
     <config>
       <Ts>0.02</Ts>
@@ -153,8 +153,8 @@
     <name>Nav1 filter 1</name>
     <debug>false</debug>
     <type>noise-spike</type>
-    <input>/autopilot/internal/nav1-heading-error-deg</input>
-    <output>/autopilot/internal/nav1-heading-error-deg-filtered[0]</output>
+    <input>autopilot/internal/nav1-heading-error-deg</input>
+    <output>autopilot/internal/nav1-heading-error-deg-filtered[0]</output>
     <max-rate-of-change>10.0</max-rate-of-change>
   </filter>
 
@@ -162,8 +162,8 @@
     <name>Nav1 filter</name>
     <debug>false</debug>
     <type>moving-average</type>
-    <input>/autopilot/internal/nav1-heading-error-deg-filtered[0]</input>
-    <output>/autopilot/internal/nav1-heading-error-deg-filtered[1]</output>
+    <input>autopilot/internal/nav1-heading-error-deg-filtered[0]</input>
+    <output>autopilot/internal/nav1-heading-error-deg-filtered[1]</output>
     <samples>20</samples>
   </filter>
 
@@ -171,17 +171,17 @@
     <name>Nav1 Hold Stage 1</name>
     <debug>false</debug>
     <enable>
-      <prop>/autopilot/locks/heading</prop>
+      <prop>autopilot/locks/heading</prop>
       <value>nav1-hold</value>
     </enable>
     <input>
-      <prop>/autopilot/internal/nav1-heading-error-deg-filtered[1]</prop>
+      <prop>autopilot/internal/nav1-heading-error-deg-filtered[1]</prop>
     </input>
     <reference>
       <value>0.0</value>
     </reference>
     <output>
-      <prop>/autopilot/settings/target-roll-deg</prop>
+      <prop>autopilot/settings/target-roll-deg</prop>
     </output>
     <config>
       <Ts>0.02</Ts>
@@ -211,17 +211,17 @@
     <name>Common Elevator Controller - Stage 2</name>
     <debug>false</debug>
     <enable>
-      <prop>/autopilot/locks/common-elevator-control</prop>
+      <prop>autopilot/locks/common-elevator-control</prop>
       <value>engaged</value>
     </enable>
     <input>
-      <prop>/surface-positions/elevator-pos-norm</prop>
+      <prop>surface-positions/elevator-pos-norm</prop>
     </input>
     <reference>
-      <prop>/autopilot/internal/target-elevator-deflection-norm</prop>
+      <prop>autopilot/internal/target-elevator-deflection-norm</prop>
     </reference>
      <output>
-      <prop>/controls/flight/elevator-trim</prop>
+      <prop>controls/flight/elevator-trim</prop>
     </output>
     <config>
       <Ts>0.01</Ts>
@@ -244,8 +244,8 @@
     <name>VFPS Hold (common elevator) filter</name>
     <debug>false</debug>
     <type>noise-spike</type>
-    <input>/autopilot/settings/target-climb-rate-fps</input>
-    <output>/autopilot/internal/target-climb-rate-fps-filtered</output>
+    <input>autopilot/settings/target-climb-rate-fps</input>
+    <output>autopilot/internal/target-climb-rate-fps-filtered</output>
     <max-rate-of-change>20.0</max-rate-of-change>
   </filter>
 
@@ -253,17 +253,17 @@
     <name>VFPS Hold</name>
     <debug>false</debug>
     <enable>
-      <prop>/autopilot/locks/ce-vfps-hold</prop>
+      <prop>autopilot/locks/ce-vfps-hold</prop>
       <value>engaged</value>
     </enable>
     <input>
-      <prop>/velocities/vertical-speed-fps</prop>
+      <prop>velocities/vertical-speed-fps</prop>
     </input>
     <reference>
-      <prop>/autopilot/internal/target-climb-rate-fps-filtered</prop>
+      <prop>autopilot/internal/target-climb-rate-fps-filtered</prop>
     </reference>
      <output>
-      <prop>/autopilot/internal/target-elevator-deflection-norm</prop>
+      <prop>autopilot/internal/target-elevator-deflection-norm</prop>
     </output>
     <config>
       <Ts>0.02</Ts>
@@ -286,8 +286,8 @@
     <name>Pitch Hold (common elevator) filter</name>
     <debug>false</debug>
     <type>noise-spike</type>
-    <input>/autopilot/settings/target-pitch-deg</input>
-    <output>/autopilot/internal/target-pitch-deg-filtered</output>
+    <input>autopilot/settings/target-pitch-deg</input>
+    <output>autopilot/internal/target-pitch-deg-filtered</output>
     <max-rate-of-change>1.0</max-rate-of-change>
   </filter>
 
@@ -295,17 +295,17 @@
     <name>Pitch Hold</name>
     <debug>false</debug>
     <enable>
-      <prop>/autopilot/locks/ce-pitch-hold</prop>
+      <prop>autopilot/locks/ce-pitch-hold</prop>
       <value>engaged</value>
     </enable>
     <input>
-      <prop>/orientation/pitch-deg</prop>
+      <prop>orientation/pitch-deg</prop>
     </input>
     <reference>
-      <prop>/autopilot/internal/target-pitch-deg-filtered</prop>
+      <prop>autopilot/internal/target-pitch-deg-filtered</prop>
     </reference>
      <output>
-      <prop>/autopilot/internal/target-elevator-deflection-norm</prop>
+      <prop>autopilot/internal/target-elevator-deflection-norm</prop>
     </output>
     <config>
       <Ts>0.02</Ts>
@@ -329,8 +329,8 @@
     <name>Atitude Hold (common elevator) filter</name>
     <debug>false</debug>
     <type>noise-spike</type>
-    <input>/autopilot/settings/target-altitude-ft</input>
-    <output>/autopilot/internal/target-altitude-ft-filtered</output>
+    <input>autopilot/settings/target-altitude-ft</input>
+    <output>autopilot/internal/target-altitude-ft-filtered</output>
     <max-rate-of-change>100.0</max-rate-of-change>
   </filter>
 
@@ -338,17 +338,17 @@
     <name>Altitude Hold (common elevator) stage 1</name>
     <debug>false</debug>
     <enable>
-      <prop>/autopilot/locks/ce-altitude-hold</prop>
+      <prop>autopilot/locks/ce-altitude-hold</prop>
       <value>engaged</value>
     </enable>
     <input>
-      <prop>/position/altitude-ft</prop>
+      <prop>position/altitude-ft</prop>
     </input>
     <reference>
-      <prop>/autopilot/internal/target-altitude-ft-filtered</prop>
+      <prop>autopilot/internal/target-altitude-ft-filtered</prop>
     </reference>
     <output>
-      <prop>/autopilot/settings/target-climb-rate-fps</prop>
+      <prop>autopilot/settings/target-climb-rate-fps</prop>
     </output>
     <config>
       <Ts>0.02</Ts>
@@ -371,8 +371,8 @@
     <name>AGL Hold filter</name>
     <debug>false</debug>
     <type>noise-spike</type>
-    <input>/position/altitude-agl-ft</input>
-    <output>/autopilot/internal/altitude-agl-ft-filtered</output>
+    <input>position/altitude-agl-ft</input>
+    <output>autopilot/internal/altitude-agl-ft-filtered</output>
     <max-rate-of-change>100</max-rate-of-change>
   </filter>
 
@@ -380,17 +380,17 @@
     <name>AGL Hold (common elevator) Stage 1</name>
     <debug>false</debug>
     <enable>
-      <prop>/autopilot/locks/ce-agl-hold</prop>
+      <prop>autopilot/locks/ce-agl-hold</prop>
       <value>engaged</value>
     </enable>
     <input>
-      <prop>/autopilot/internal/altitude-agl-ft-filtered</prop>
+      <prop>autopilot/internal/altitude-agl-ft-filtered</prop>
     </input>
     <reference>
-      <prop>/autopilot/settings/target-agl-ft</prop>
+      <prop>autopilot/settings/target-agl-ft</prop>
     </reference>
     <output>
-      <prop>/autopilot/settings/target-climb-rate-fps</prop>
+      <prop>autopilot/settings/target-climb-rate-fps</prop>
     </output>
     <config>
       <Ts>0.02</Ts>
@@ -412,17 +412,17 @@
     <name>Mach Lock Climb (common elevator) Stage 1</name>
     <debug>false</debug>
     <enable>
-      <prop>/autopilot/locks/altitude</prop>
+      <prop>autopilot/locks/altitude</prop>
       <value>mach-climb</value>
     </enable>
     <input>
-      <prop>/autopilot/settings/target-mach</prop>
+      <prop>autopilot/settings/target-mach</prop>
     </input>
     <reference>
-      <prop>/velocities/mach</prop>
+      <prop>velocities/mach</prop>
     </reference>
     <output>
-      <prop>/autopilot/settings/target-climb-rate-fps</prop>
+      <prop>autopilot/settings/target-climb-rate-fps</prop>
     </output>
     <config>
       <Ts>0.02</Ts>
@@ -449,18 +449,18 @@
     <name>Auto Throttle (5 sec lookahead)</name>
     <debug>false</debug>
     <enable>
-      <prop>/autopilot/locks/speed</prop>
+      <prop>autopilot/locks/speed</prop>
       <value>speed-with-throttle</value>
     </enable>
     <input>
-      <prop>/autopilot/internal/lookahead-5-sec-airspeed-kt</prop>
+      <prop>autopilot/internal/lookahead-5-sec-airspeed-kt</prop>
     </input>
     <reference>
-      <prop>/autopilot/settings/target-speed-kt</prop>
+      <prop>autopilot/settings/target-speed-kt</prop>
     </reference>
     <output>
-      <prop>/controls/engines/engine[0]/throttle</prop>
-      <prop>/controls/engines/engine[1]/throttle</prop>
+      <prop>controls/engines/engine[0]/throttle</prop>
+      <prop>controls/engines/engine[1]/throttle</prop>
     </output>
     <config>
       <Kp>0.05</Kp>        <!-- proportional gain -->
@@ -480,17 +480,17 @@
     <name>Speed hold (vary pitch) Stage #1</name>
     <debug>false</debug>
     <enable>
-      <prop>/autopilot/locks/speed</prop>
+      <prop>autopilot/locks/speed</prop>
       <value>speed-with-pitch</value>
     </enable>
     <input>
-      <prop>/autopilot/internal/lookahead-5-sec-airspeed-kt</prop>
+      <prop>autopilot/internal/lookahead-5-sec-airspeed-kt</prop>
     </input>
     <reference>
-      <prop>/autopilot/settings/target-speed-kt</prop>
+      <prop>autopilot/settings/target-speed-kt</prop>
     </reference>
     <output>
-      <prop>/autopilot/settings/target-pitch-deg</prop>
+      <prop>autopilot/settings/target-pitch-deg</prop>
     </output>
     <config>
       <Kp>-1.0</Kp>       <!-- proportional gain -->
@@ -509,17 +509,17 @@
     <name>Speed hold (vary pitch) Stage #2</name>
     <debug>false</debug>
     <enable>
-      <prop>/autopilot/locks/speed</prop>
+      <prop>autopilot/locks/speed</prop>
       <value>speed-with-pitch</value>
     </enable>
     <input>
-      <prop>/orientation/pitch-deg</prop>
+      <prop>orientation/pitch-deg</prop>
     </input>
     <reference>
-      <prop>/autopilot/settings/target-pitch-deg</prop>
+      <prop>autopilot/settings/target-pitch-deg</prop>
     </reference>
     <output>
-      <prop>/controls/flight/elevator-trim</prop>
+      <prop>controls/flight/elevator-trim</prop>
     </output>
     <config>
       <Kp>-0.05</Kp>      <!-- proportional gain -->
@@ -545,18 +545,18 @@
     <name>Auto Throttle (Mach Hold)</name>
     <debug>false</debug>
     <enable>
-      <prop>/autopilot/locks/speed</prop>
+      <prop>autopilot/locks/speed</prop>
       <value>mach-with-throttle</value>
     </enable>
     <input>
-      <prop>/velocities/mach</prop>
+      <prop>velocities/mach</prop>
     </input>
     <reference>
-      <prop>/autopilot/settings/target-mach</prop>
+      <prop>autopilot/settings/target-mach</prop>
     </reference>
     <output>
-      <prop>/controls/engines/engine[0]/throttle</prop>
-      <prop>/controls/engines/engine[1]/throttle</prop>
+      <prop>controls/engines/engine[0]/throttle</prop>
+      <prop>controls/engines/engine[1]/throttle</prop>
     </output>
     <config>
       <Kp>8.0</Kp>        <!-- proportional gain -->
@@ -577,17 +577,17 @@
     <name>Ground Roll Rudder hold</name>
     <debug>false</debug>
     <enable>
-      <prop>/autopilot/locks/rudder-control</prop>
+      <prop>autopilot/locks/rudder-control</prop>
       <value>rudder-hold</value>
     </enable>
     <input>
-      <prop>/orientation/heading-deg</prop>
+      <prop>orientation/heading-deg</prop>
     </input>
     <reference>
-      <prop>/autopilot/settings/ground-roll-heading-deg</prop>
+      <prop>autopilot/settings/ground-roll-heading-deg</prop>
     </reference>
     <output>
-      <prop>/controls/flight/rudder</prop>
+      <prop>controls/flight/rudder</prop>
     </output>
     <config>
       <Kp>0.4</Kp>      <!-- proportional gain -->
@@ -607,17 +607,17 @@
     <name>AoA-by-speed Hold</name>
     <debug>false</debug>
     <enable>
-      <prop>/autopilot/locks/aoa</prop>
+      <prop>autopilot/locks/aoa</prop>
       <value>aoa-with-speed</value>
     </enable>
     <input>
-      <prop>/orientation/alpha-deg</prop>
+      <prop>orientation/alpha-deg</prop>
     </input>
     <reference>
-      <prop>/autopilot/settings/target-aoa-deg</prop>
+      <prop>autopilot/settings/target-aoa-deg</prop>
     </reference>
     <output>
-      <prop>/autopilot/settings/target-speed-kt</prop>
+      <prop>autopilot/settings/target-speed-kt</prop>
     </output>
     <config>
       <Kp>-2.0</Kp>      <!-- proportional gain -->

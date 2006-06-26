@@ -176,7 +176,7 @@
    <object-name>mount</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.45</red>
         <green>0.34</green>
         <blue>0.18</blue>
@@ -187,7 +187,7 @@
    <object-name>knob</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.10</red>
         <green>0.05</green>
         <blue>0.025</blue>
@@ -198,7 +198,7 @@
    <object-name>face</object-name>
    <type>material</type>
      <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.50</red>
         <green>0.25</green>
         <blue>0.18</blue>
@@ -209,7 +209,7 @@
    <type>material</type>
    <object-name>drum-1</object-name>
      <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.50</red>
         <green>0.25</green>
         <blue>0.18</blue>
@@ -220,7 +220,7 @@
    <type>material</type>
    <object-name>drum-2</object-name>
      <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.50</red>
         <green>0.25</green>
         <blue>0.18</blue>
@@ -231,7 +231,7 @@
    <type>material</type>
    <object-name>drum-3</object-name>
      <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.50</red>
         <green>0.25</green>
         <blue>0.18</blue>
@@ -243,7 +243,7 @@
    <type>material</type>
    <object-name>drum-inhg-1</object-name>
      <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.50</red>
         <green>0.25</green>
         <blue>0.18</blue>
@@ -254,7 +254,7 @@
    <type>material</type>
    <object-name>drum-inhg-2</object-name>
      <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.50</red>
         <green>0.25</green>
         <blue>0.18</blue>
@@ -265,7 +265,7 @@
    <type>material</type>
    <object-name>drum-inhg-3</object-name>
      <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.50</red>
         <green>0.25</green>
         <blue>0.18</blue>
@@ -276,7 +276,7 @@
    <type>material</type>
    <object-name>drum-inhg-4</object-name>
      <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.50</red>
         <green>0.25</green>
         <blue>0.18</blue>
@@ -287,7 +287,7 @@
    <object-name>needle-w</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.75</red>
         <green>0.55</green>
         <blue>0.35</blue>

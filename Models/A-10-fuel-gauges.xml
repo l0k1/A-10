@@ -8,7 +8,7 @@
       <name>fuel-l</name>
       <type>rotate</type>
       <object-name>needle-l</object-name>
-      <property>/consumables/fuel/left-lbs</property>
+      <property>consumables/fuel/int-left-lbs</property>
       <interpolation> 
         <entry><ind>0</ind><dep>189</dep></entry>
         <entry><ind>3000</ind><dep>270</dep></entry>
@@ -31,7 +31,7 @@
       <name>fuel-r</name>
       <type>rotate</type>
       <object-name>needle-r</object-name>
-      <property>/consumables/fuel/left-lbs</property>
+      <property>consumables/fuel/int-right-lbs</property>
       <interpolation> 
         <entry><ind>0</ind><dep>171</dep></entry>
         <entry><ind>3000</ind><dep>90</dep></entry>
@@ -56,7 +56,7 @@
  <animation>
   <type>textranslate</type>
   <object-name>drum-1</object-name>
-  <property>/consumables/fuel/total-fuel-lbs</property>
+  <property>consumables/fuel/total-fuel-lbs</property>
   <factor>0.1</factor>
   <offset>-1</offset>
   <center>
@@ -75,7 +75,7 @@
  <animation>
   <type>textranslate</type>
   <object-name>drum-2</object-name>
-  <property>/consumables/fuel/total-fuel-lbs</property>
+  <property>consumables/fuel/total-fuel-lbs</property>
   <factor>0.01</factor>
   <offset>-10</offset>
   <step>10</step>
@@ -96,7 +96,7 @@
  <animation>
   <type>textranslate</type>
   <object-name>drum-3</object-name>
-  <property>/consumables/fuel/total-fuel-lbs</property>
+  <property>consumables/fuel/total-fuel-lbs</property>
   <factor>0.001</factor>
   <offset>-100</offset>
   <step>100</step>
@@ -116,7 +116,7 @@
  <animation>
   <type>textranslate</type>
   <object-name>drum-4</object-name>
-  <property>/consumables/fuel/total-fuel-lbs</property>
+  <property>consumables/fuel/total-fuel-lbs</property>
   <factor>0.0001</factor>
   <offset>-1000</offset>
   <step>1000</step>
@@ -137,7 +137,7 @@
  <animation>
   <type>textranslate</type>
   <object-name>drum-5</object-name>
-  <property>/consumables/fuel/total-fuel-lbs</property>
+  <property>consumables/fuel/total-fuel-lbs</property>
   <factor>0.00001</factor>
   <offset>-10000</offset>
   <step>10000</step>
@@ -165,7 +165,7 @@
       <name>hydraulic-system-l</name>
       <type>rotate</type>
       <object-name>needle-hyd-l</object-name>
-      <property>/engines/engine[0]/oilp-norm</property>
+      <property>engines/engine[0]/oilp-norm</property>
       <interpolation> 
         <entry><ind>0.0000</ind><dep>119</dep></entry>
         <entry><ind>0.0375</ind><dep>266.5</dep></entry>
@@ -193,7 +193,7 @@
       <name>hydraulic-system-r</name>
       <type>rotate</type>
       <object-name>needle-hyd-r</object-name>
-      <property>/engines/engine[1]/oilp-norm</property>
+      <property>engines/engine[1]/oilp-norm</property>
       <interpolation> 
         <entry><ind>0.0000</ind><dep>119</dep></entry>
         <entry><ind>0.0375</ind><dep>266.5</dep></entry>
@@ -231,7 +231,7 @@
    <object-name>mount</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.45</red>
         <green>0.34</green>
         <blue>0.18</blue>
@@ -242,7 +242,7 @@
    <object-name>face</object-name>
    <type>material</type>
      <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.50</red>
         <green>0.25</green>
         <blue>0.18</blue>
@@ -253,7 +253,7 @@
    <object-name>needle-l</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.75</red>
         <green>0.55</green>
         <blue>0.35</blue>
@@ -264,7 +264,7 @@
    <object-name>needle-r</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.75</red>
         <green>0.55</green>
         <blue>0.35</blue>
@@ -275,7 +275,7 @@
    <object-name>needle-hyd-l</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.75</red>
         <green>0.55</green>
         <blue>0.35</blue>
@@ -286,7 +286,7 @@
    <object-name>needle-hyd-r</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.75</red>
         <green>0.55</green>
         <blue>0.35</blue>
@@ -297,7 +297,7 @@
    <object-name>drum-1</object-name>
    <type>material</type>
      <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.50</red>
         <green>0.25</green>
         <blue>0.18</blue>
@@ -308,7 +308,7 @@
    <object-name>drum-2</object-name>
    <type>material</type>
      <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.50</red>
         <green>0.25</green>
         <blue>0.18</blue>
@@ -319,7 +319,7 @@
    <object-name>drum-3</object-name>
    <type>material</type>
      <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.50</red>
         <green>0.25</green>
         <blue>0.18</blue>
@@ -330,7 +330,7 @@
    <object-name>drum-4</object-name>
    <type>material</type>
      <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.50</red>
         <green>0.25</green>
         <blue>0.18</blue>
@@ -341,7 +341,7 @@
    <object-name>drum-5</object-name>
    <type>material</type>
      <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.50</red>
         <green>0.25</green>
         <blue>0.18</blue>
@@ -352,7 +352,7 @@
    <object-name>test-button</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.10</red>
         <green>0.05</green>
         <blue>0.025</blue>

@@ -55,10 +55,10 @@
            <action> 
               <name>calibrate fine</name>
               <button>0</button>
-              <x>-524</x>
-              <y>15</y>
-              <w>40</w>
-              <h>50</h>
+              <x>-500</x>
+              <y>25</y>
+              <w>26</w>
+              <h>40</h>
               <binding> 
                 <command>property-adjust</command>
                 <property>instrumentation/altimeter/setting-inhg</property>
@@ -71,10 +71,10 @@
             <action> 
               <name>calibrate coarse</name>
               <button>1</button>
-              <x>-524</x>
-              <y>15</y>
-              <w>40</w>
-              <h>50</h>
+              <x>-500</x>
+              <y>25</y>
+              <w>26</w>
+              <h>40</h>
               <binding> 
                 <command>property-adjust</command>
                 <property>instrumentation/altimeter/setting-inhg</property>
@@ -87,10 +87,10 @@
             <action> 
               <name>calibrate fine</name>
               <button>0</button>
-              <x>-478</x>
-              <y>15</y>
-              <w>40</w>
-              <h>50</h>
+              <x>-468</x>
+              <y>25</y>
+              <w>26</w>
+              <h>40</h>
               <binding> 
                 <command>property-adjust</command>
                 <property>instrumentation/altimeter/setting-inhg</property>
@@ -103,10 +103,10 @@
             <action> 
               <name>calibrate coarse</name>
               <button>1</button>
-              <x>-478</x>
-              <y>15</y>
-              <w>40</w>
-              <h>50</h>
+              <x>-468</x>
+              <y>25</y>
+              <w>26</w>
+              <h>40</h>
               <binding> 
                 <command>property-adjust</command>
                 <property>instrumentation/altimeter/setting-inhg</property>

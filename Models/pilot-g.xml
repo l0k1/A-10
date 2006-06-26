@@ -39,7 +39,7 @@
    <object-name>face</object-name> 
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.50</red>
         <green>0.25</green>
         <blue>0.18</blue>
@@ -49,7 +49,7 @@
    <object-name>needle-w</object-name> 
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.75</red>
         <green>0.55</green>
         <blue>0.35</blue>

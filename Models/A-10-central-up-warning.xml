@@ -10,12 +10,12 @@
   <object-name>alt-warning</object-name>
    <condition>
     <less-than>
-     <property>/position/altitude-agl-ft</property>
+     <property>position/altitude-agl-ft</property>
      <value>200</value>
     </less-than>
 
     <equals>
-     <property>/gear/gear[0]/position-norm</property>
+     <property>gear/gear[0]/position-norm</property>
      <value>0</value>
     </equals>
 
@@ -27,7 +27,7 @@
   <object-name>canopy-warning</object-name>
    <condition>
     <greater-than>
-     <property>/canopy/position-norm</property>
+     <property>canopy/position-norm</property>
      <value>0</value>
     </greater-than>
    </condition>  
@@ -38,14 +38,14 @@
   <object-name>steering-engaged</object-name>
    <condition>
     <less-than>
-     <property>/velocities/airspeed-kt</property>
+     <property>velocities/airspeed-kt</property>
 <!-- we should have /controls/gear/steering-engaged in the properties,
 could be fun with another keyb short-cut during landing :))) -->
      <value>95</value>
     </less-than>
 
     <equals>
-     <property>/gear/gear[0]/position-norm</property>
+     <property>gear/gear[0]/position-norm</property>
      <value>1</value>
     </equals>
 
@@ -58,7 +58,7 @@ could be fun with another keyb short-cut during landing :))) -->
    <object-name>mount</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.45</red>
         <green>0.34</green>
         <blue>0.18</blue>
@@ -69,7 +69,7 @@ could be fun with another keyb short-cut during landing :))) -->
    <object-name>gun-steering-marker-canopy</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.45</red>
         <green>0.34</green>
         <blue>0.18</blue>
@@ -80,7 +80,7 @@ could be fun with another keyb short-cut during landing :))) -->
    <object-name>button-dim</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.30</red>
         <green>0.16</green>
         <blue>0.08</blue>
@@ -91,7 +91,7 @@ could be fun with another keyb short-cut during landing :))) -->
    <object-name>button-audio</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.30</red>
         <green>0.16</green>
         <blue>0.08</blue>
@@ -135,5 +135,3 @@ could be fun with another keyb short-cut during landing :))) -->
  </animation>
 
 </PropertyList>
-
-

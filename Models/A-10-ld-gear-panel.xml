@@ -35,11 +35,11 @@
    <condition>
    <and>
     <greater-than>
-     <property>/gear/gear[0]/position-norm</property>
+     <property>gear/gear[0]/position-norm</property>
      <value>0</value>
     </greater-than>
     <less-than>
-     <property>/gear/gear[0]/position-norm</property>
+     <property>gear/gear[0]/position-norm</property>
      <value>1</value>
     </less-than>
    </and>
@@ -52,11 +52,11 @@
    <condition>
    <and>
     <greater-than>
-     <property>/gear/gear[1]/position-norm</property>
+     <property>gear/gear[1]/position-norm</property>
      <value>0</value>
     </greater-than>
     <less-than>
-     <property>/gear/gear[1]/position-norm</property>
+     <property>gear/gear[1]/position-norm</property>
      <value>1</value>
     </less-than>
    </and>
@@ -69,11 +69,11 @@
    <condition>
    <and>
     <greater-than>
-     <property>/gear/gear[2]/position-norm</property>
+     <property>gear/gear[2]/position-norm</property>
      <value>0</value>
     </greater-than>
     <less-than>
-     <property>/gear/gear[2]/position-norm</property>
+     <property>gear/gear[2]/position-norm</property>
      <value>1</value>
     </less-than>
    </and>
@@ -87,7 +87,7 @@
    <object-name>n-gear-safe</object-name>
    <condition>
     <equals>
-     <property>/gear/gear[0]/position-norm</property>
+     <property>gear/gear[0]/position-norm</property>
      <value>1</value>
     </equals>
    </condition>
@@ -98,7 +98,7 @@
    <object-name>l-gear-safe</object-name>
    <condition>
     <equals>
-     <property>/gear/gear[1]/position-norm</property>
+     <property>gear/gear[1]/position-norm</property>
      <value>1</value>
     </equals>
    </condition>
@@ -109,7 +109,7 @@
    <object-name>r-gear-safe</object-name>
    <condition>
     <equals>
-     <property>/gear/gear[2]/position-norm</property>
+     <property>gear/gear[2]/position-norm</property>
      <value>1</value>
     </equals>
    </condition>
@@ -120,7 +120,7 @@
     <name>ld-gear-handle</name>
     <type>rotate</type>
     <object-name>ld-gear-handle</object-name>
-    <property>/controls/gear/A-10-landing-gear-hdl-anim</property>
+    <property>controls/gear/A-10-landing-gear-hdl-anim</property>
     <factor>52</factor>
       <center>
        <x-m>-0.0121</x-m>
@@ -143,7 +143,7 @@
    <object-name>mount</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.45</red>
         <green>0.34</green>
         <blue>0.18</blue>
@@ -154,7 +154,7 @@
    <object-name>face</object-name>
    <type>material</type>
      <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.50</red>
         <green>0.25</green>
         <blue>0.18</blue>
@@ -165,7 +165,7 @@
    <object-name>needle</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.75</red>
         <green>0.55</green>
         <blue>0.35</blue>
@@ -177,7 +177,7 @@
    <object-name>anti-skid-button</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.10</red>
         <green>0.05</green>
         <blue>0.025</blue>
@@ -188,7 +188,7 @@
    <object-name>light-land-switch</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.10</red>
         <green>0.05</green>
         <blue>0.025</blue>
@@ -199,7 +199,7 @@
    <object-name>ld-gear-handle</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.10</red>
         <green>0.05</green>
         <blue>0.025</blue>
@@ -210,7 +210,7 @@
    <object-name>override-button</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.10</red>
         <green>0.05</green>
         <blue>0.025</blue>

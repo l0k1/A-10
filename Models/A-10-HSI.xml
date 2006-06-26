@@ -1,65 +1,280 @@
 <?xml version="1.0"?>
 
 <PropertyList>
- <!-- horizontal situation indicator -->
- <name>HSI</name>
- <path>A-10-HSI.ac</path>
+  <!-- horizontal situation indicator -->
+  <name>HSI</name>
+  <path>A-10-HSI.ac</path>
 
- <animation>
-  <type>rotate</type>
-  <object-name>HSI-compass-card</object-name>
-  <property>orientation/heading-magnetic-deg</property>
-  <center>
-   <x-m>0.0</x-m>
-   <y-m>0.0</y-m>
-   <z-m>0.0</z-m>
-  </center>
-  <axis>
-   <x>1</x>
-   <y>0</y>
-   <z>0</z>
-  </axis>
- </animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>HSI-compass-card</object-name>
+    <condition>
+      <greater-than>
+        <property>systems/electrical/outputs/hsi</property>
+        <value>24</value>
+      </greater-than>
+    </condition>
+    <property>orientation/heading-deg</property>
+    <center>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+ 
+  <animation>
+    <type>rotate</type>
+    <object-name>bearing-needle-1</object-name>
+    <condition>
+      <greater-than>
+        <property>systems/electrical/outputs/hsi</property>
+        <value>24</value>
+      </greater-than>
+    </condition>
+    <property>orientation/heading-deg</property>
+    <center>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
 
- <!--<animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>bearing-needle-1</object-name>
+    <condition>
+      <greater-than>
+        <property>systems/electrical/outputs/hsi</property>
+        <value>24</value>
+      </greater-than>
+      <not>
+        <equals>
+          <property>instrumentation/tacan/indicated-bearing-true-deg</property>
+          <value>0</value>
+        </equals>
+      </not>
+      <equals>
+        <property>instrumentation/tacan/switch-position</property>
+        <value>1</value>
+      </equals>
+    </condition>
+    <property>instrumentation/tacan/indicated-bearing-true-deg</property>
+    <center>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+    </center>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>miles-flag</object-name>
+    <condition>
+      <or>
+        <equals>
+          <property>instrumentation/tacan/in-range</property>
+          <value>false</value>
+        </equals>
+        <equals>
+          <property>instrumentation/tacan/switch-position</property>
+          <value>0</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>off-flag</object-name>
+    <condition>
+      <less-than>
+        <property>systems/electrical/outputs/hsi</property>
+        <value>24</value>
+      </less-than>
+    </condition>
+  </animation>
+
+<!-- tacan distance digital display -->
+  <animation>
+    <type>textranslate</type>
+    <object-name>miles-drum-1</object-name>
+    <property>instrumentation/tacan/indicated-distance-nm</property>
+    <factor>0.1</factor>
+    <offset>-1</offset>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <animation>
+    <type>textranslate</type>
+    <object-name>miles-drum-2</object-name>
+    <property>instrumentation/tacan/indicated-distance-nm</property>
+    <factor>0.01</factor>
+    <offset>-10</offset>
+    <step>10</step>
+    <scroll>0.5</scroll>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <animation>
+    <type>textranslate</type>
+    <object-name>miles-drum-3</object-name>
+    <property>instrumentation/tacan/indicated-distance-nm</property>
+    <factor>0.001</factor>
+    <offset>-100</offset>
+    <step>100</step>
+    <scroll>0.5</scroll>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+<!-- course digital display -->
+  <animation>
+    <type>textranslate</type>
+    <object-name>course-drum-1</object-name>
+    <property>instrumentation/nav[2]/radials/selected-deg</property>
+    <factor>0.1</factor>
+    <offset>-1</offset>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <animation>
+    <type>textranslate</type>
+    <object-name>course-drum-2</object-name>
+    <property>instrumentation/nav[2]/radials/selected-deg</property>
+    <factor>0.01</factor>
+    <offset>-10</offset>
+    <step>10</step>
+    <scroll>0.5</scroll>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <animation>
+    <type>textranslate</type>
+    <object-name>course-drum-3</object-name>
+    <property>instrumentation/nav[2]/radials/selected-deg</property>
+    <factor>0.001</factor>
+    <offset>-100</offset>
+    <step>100</step>
+    <scroll>0.5</scroll>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+<animation>
   <type>rotate</type>
   <object-name>course-knob</object-name>
-  <property>orientation/heading-magnetic-deg</property>
+  <property>instrumentation/nav[2]/radials/selected-deg</property>
   <center>
-   <x-m>0.0</x-m>
-   <y-m>0.0</y-m>
-   <z-m>0.0</z-m>
+    <x-m>0.0075</x-m>
+    <y-m>0.0491</y-m>
+    <z-m>-0.0413</z-m>
   </center>
   <axis>
-   <x>1</x>
-   <y>0</y>
-   <z>0</z>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
   </axis>
- </animation>
+</animation>
 
- <animation>
+ <!--<animation>
   <type>rotate</type>
   <object-name>heading-knob</object-name>
   <property>orientation/heading-magnetic-deg</property>
   <center>
-   <x-m>0.0</x-m>
-   <y-m>0.0</y-m>
-   <z-m>0.0</z-m>
+    <x-m>0.0</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.0</z-m>
   </center>
   <axis>
-   <x>1</x>
-   <y>0</y>
-   <z>0</z>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
   </axis>
  </animation>-->
 
+<!-- lighting -->
+
   <animation>
    <object-name>HSI-bkg</object-name>
-   <object-name>course-knob</object-name>
    <object-name>heading-set-knob</object-name>
+   <object-name>lubber-line</object-name>
    <type>material</type>
      <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+        <red>0.44</red>
+        <green>0.27</green>
+        <blue>0.15</blue>
+      </emission>
+  </animation>
+  
+  <animation>
+   <object-name>course-knob</object-name>
+   <type>material</type>
+     <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.44</red>
         <green>0.27</green>
         <blue>0.15</blue>
@@ -67,23 +282,115 @@
   </animation>
 
   <animation>
-   <object-name>HSI-compass-card</object-name>
-   <type>material</type>
-     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
-        <red>0.60</red>
-        <green>0.30</green>
-        <blue>0.23</blue>
-      </emission>
+    <object-name>HSI-compass-card</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>0.60</red>
+      <green>0.35</green>
+      <blue>0.23</blue>
+    </emission>
   </animation>
 
+  <animation>
+    <object-name>bearing-needle-1</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>0.60</red>
+      <green>0.35</green>
+      <blue>0.23</blue>
+    </emission>
+  </animation>
 
- <animation>
-  <type>range</type>
-  <min-m>0</min-m>
-  <max-m>5</max-m>
- </animation>
+  <animation>
+    <object-name>off-flag</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.60</red>
+      <green>0.35</green>
+      <blue>0.23</blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <object-name>miles-flag</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>0.60</red>
+      <green>0.35</green>
+      <blue>0.23</blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <object-name>miles-drum-1</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>0.60</red>
+      <green>0.35</green>
+      <blue>0.23</blue>
+    </emission>
+  </animation>
+  <animation>
+    <object-name>miles-drum-2</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>0.60</red>
+      <green>0.35</green>
+      <blue>0.23</blue>
+    </emission>
+  </animation>
+  <animation>
+    <object-name>miles-drum-3</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>0.60</red>
+      <green>0.35</green>
+      <blue>0.23</blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <object-name>course-drum-1</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>0.60</red>
+      <green>0.35</green>
+      <blue>0.23</blue>
+    </emission>
+  </animation>
+  <animation>
+    <object-name>course-drum-2</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>0.60</red>
+      <green>0.35</green>
+      <blue>0.23</blue>
+    </emission>
+  </animation>
+  <animation>
+    <object-name>course-drum-3</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>0.60</red>
+      <green>0.35</green>
+      <blue>0.23</blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>5</max-m>
+  </animation>
 
 </PropertyList>
-
-

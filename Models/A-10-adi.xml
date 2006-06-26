@@ -2,12 +2,22 @@
 <PropertyList>
 
  <path>A-10-ai.ac</path>
+ <animation>
+  <type>select</type>
+  <object-name>off-flag</object-name>
+    <condition>
+      <less-than>
+        <property>systems/electrical/outputs/adi</property>
+        <value>24</value>
+      </less-than>
+    </condition>
+ </animation>
 
 	
  <animation>
   <type>rotate</type>
   <object-name>sphere</object-name>
-  <property>/orientation/roll-deg</property>
+  <property>orientation/roll-deg</property>
   <center>
    <x-m>0</x-m>
    <y-m>0.0</y-m>
@@ -23,7 +33,7 @@
  <animation>
   <type>rotate</type>
   <object-name>sphere</object-name>
-  <property>/orientation/pitch-deg</property>
+  <property>orientation/pitch-deg</property>
   <center>
    <x-m>-0.0522</x-m>
    <y-m>0.0</y-m>
@@ -35,15 +45,79 @@
    <z>0</z>
   </axis>
  </animation>
-
+ 
+ <!-- ILS mode -->
+ <animation>
+  <type>select</type>
+  <object-name>ils-flag</object-name>
+    <condition>
+      <or>
+        <equals>
+          <property>controls/switches/ils</property>
+          <value>false</value>
+        </equals>
+        <less-than>
+          <property>systems/electrical/outputs/adi</property>
+          <value>24</value>
+        </less-than>
+      </or>
+    </condition>
+ </animation>
+ 
+ <animation>
+  <type>translate</type>
+  <object-name>glide-slope-index</object-name>
+  <condition>
+      <equals>
+        <property>controls/switches/ils</property>
+        <value>true</value>
+      </equals>
+      <greater-than>
+        <property>systems/electrical/outputs/adi</property>
+        <value>24</value>
+      </greater-than>
+  </condition>
+  <property>instrumentation/nav[2]/gs-needle-deflection</property>
+		<interpolation>
+			<entry>
+				<ind>-2.5</ind>
+				<dep>-0.036</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>2.5</ind>
+				<dep>0.036</dep>
+			</entry>
+		</interpolation>
+  <axis>
+   <x>-0.087</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation>
+ 
 <!-- ADI's bars in steering mode -->
+ <animation>
+  <type>select</type>
+  <object-name>yaw-steering-bar</object-name>
+  <condition>
+   <equals>
+   <property>A-10-nav/A-10-nav-selector-ptr</property>
+   <value>false</value>
+   </equals>
+  </condition>
+ </animation>
+
  <animation>
   <type>translate</type>
   <object-name>yaw-steering-bar</object-name>
   <condition>
    <equals>
-   <property>/A-10-nav/A-10-nav-selector-ptr</property>
-   <value>true</value>
+   <property>A-10-nav/A-10-nav-selector-ptr</property>
+   <value>false</value>
    </equals>
   </condition>
   <property>controls/flight/aileron</property>
@@ -56,12 +130,23 @@
  </animation>
 
  <animation>
+  <type>select</type>
+  <object-name>pitch-steering-bar</object-name>
+  <condition>
+   <equals>
+   <property>A-10-nav/A-10-nav-selector-ptr</property>
+   <value>false</value>
+   </equals>
+  </condition>
+ </animation>
+
+ <animation>
   <type>translate</type>
   <object-name>pitch-steering-bar</object-name>
   <condition>
    <equals>
-   <property>/A-10-nav/A-10-nav-selector-ptr</property>
-   <value>true</value>
+   <property>A-10-nav/A-10-nav-selector-ptr</property>
+   <value>false</value>
    </equals>
   </condition>
   <property>controls/flight/elevator</property>
@@ -76,21 +161,32 @@
 <!-- ADI's bars in homing mode -->
 
  <animation>
+  <type>select</type>
+  <object-name>nav-yaw-steering-bar</object-name>
+  <condition>
+   <equals>
+   <property>A-10-nav/A-10-nav-selector-ptr</property>
+   <value>true</value>
+   </equals>
+  </condition>
+ </animation>
+
+ <animation>
   <type>translate</type>
-  <object-name>yaw-steering-bar</object-name>
+  <object-name>nav-yaw-steering-bar</object-name>
   <condition>
    <equals>
-   <property>/A-10-nav/A-10-nav-selector-ptr</property>
-   <value>false</value>
+   <property>A-10-nav/A-10-nav-selector-ptr</property>
+   <value>true</value>
    </equals>
   </condition>
   <condition>
    <equals>
-   <property>/A-10-nav/A-10-nav-mode</property>
-   <value>3</value>
+   <property>instrumentation/nav/A-10-nav-mode</property>
+   <value>2</value>
    </equals>
   </condition>
-  <property>/instrumentation/nav[0]/heading-needle-deflection</property>
+  <property>instrumentation/nav[0]/heading-needle-deflection</property>
   <factor>0.0025</factor>
   <axis>
    <x>0</x>
@@ -99,11 +195,22 @@
   </axis>
  </animation>
 
-	
+ <animation>
+  <type>select</type>
+  <object-name>nav-pitch-steering-bar</object-name>
+  <condition>
+   <equals>
+   <property>A-10-nav/A-10-nav-selector-ptr</property>
+   <value>true</value>
+   </equals>
+  </condition>
+ </animation>
+
+<!-- slip-ball-->
  <animation>
   <type>rotate</type>
   <object-name>slip-ball</object-name>
-  <property>/instrumentation/slip-skid-ball/indicated-slip-skid</property>
+  <property>instrumentation/slip-skid-ball/indicated-slip-skid</property>
   <factor>2.6</factor>
   <min-deg>-11</min-deg>
   <max-deg>11</max-deg>
@@ -125,7 +232,7 @@
    <object-name>mount</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.45</red>
         <green>0.34</green>
         <blue>0.18</blue>
@@ -133,10 +240,45 @@
   </animation>
 
   <animation> 
+   <object-name>ils-flag</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+        <red>0.45</red>
+        <green>0.34</green>
+        <blue>0.18</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+   <object-name>off-flag</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+        <red>0.45</red>
+        <green>0.34</green>
+        <blue>0.18</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+   <object-name>course-flag</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+        <red>0.45</red>
+        <green>0.34</green>
+        <blue>0.18</blue>
+      </emission>
+  </animation>
+
+
+
+  <animation> 
    <object-name>ring-slip</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.45</red>
         <green>0.34</green>
         <blue>0.18</blue>
@@ -145,9 +287,12 @@
 
   <animation> 
    <object-name>ai-ring</object-name>
+   <object-name>gs-scale</object-name>
+   <object-name>knob-index</object-name>
+   <object-name>bank-index</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.45</red>
         <green>0.34</green>
         <blue>0.18</blue>
@@ -158,7 +303,7 @@
    <object-name>sphere</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.55</red>
         <green>0.30</green>
         <blue>0.12</blue>
@@ -169,7 +314,7 @@
    <object-name>reticl</object-name>
    <type>material</type>
     <emission> 
-     <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+     <factor-prop>controls/lighting/instruments-norm</factor-prop>
       <red>0.50</red>
       <green>0.35</green>
       <blue>0.20</blue>
@@ -180,7 +325,7 @@
    <object-name>slip-ball</object-name>
    <type>material</type>
     <emission> 
-     <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+     <factor-prop>controls/lighting/instruments-norm</factor-prop>
       <red>0.50</red>
       <green>0.35</green>
       <blue>0.20</blue>
@@ -191,7 +336,18 @@
    <object-name>glide-slope-index</object-name>
    <type>material</type>
     <emission> 
-     <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+     <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>0.50</red>
+      <green>0.35</green>
+      <blue>0.20</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+   <object-name>bank-index</object-name>
+   <type>material</type>
+    <emission> 
+     <factor-prop>controls/lighting/instruments-norm</factor-prop>
       <red>0.50</red>
       <green>0.35</green>
       <blue>0.20</blue>
@@ -202,10 +358,21 @@
    <object-name>yaw-steering-bar</object-name>
    <type>material</type>
     <emission> 
-     <factor-prop>/controls/lighting/instruments-norm</factor-prop>
-      <red>0.38</red>
-      <green>0.15</green>
-      <blue>0.05</blue>
+     <factor-prop>controls/lighting/instruments-norm</factor-prop>
+        <red>0.75</red>
+        <green>0.55</green>
+        <blue>0.35</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+   <object-name>nav-yaw-steering-bar</object-name>
+   <type>material</type>
+    <emission> 
+     <factor-prop>controls/lighting/instruments-norm</factor-prop>
+        <red>0.75</red>
+        <green>0.55</green>
+        <blue>0.35</blue>
     </emission>
   </animation>
 
@@ -213,12 +380,28 @@
    <object-name>pitch-steering-bar</object-name>
    <type>material</type>
     <emission> 
-     <factor-prop>/controls/lighting/instruments-norm</factor-prop>
-      <red>0.38</red>
-      <green>0.15</green>
-      <blue>0.05</blue>
+     <factor-prop>controls/lighting/instruments-norm</factor-prop>
+        <red>0.75</red>
+        <green>0.55</green>
+        <blue>0.35</blue>
     </emission>
   </animation>
 
+  <animation> 
+   <object-name>nav-pitch-steering-bar</object-name>
+   <type>material</type>
+    <emission> 
+     <factor-prop>controls/lighting/instruments-norm</factor-prop>
+        <red>0.75</red>
+        <green>0.55</green>
+        <blue>0.35</blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>5</max-m>
+  </animation>
 
 </PropertyList>

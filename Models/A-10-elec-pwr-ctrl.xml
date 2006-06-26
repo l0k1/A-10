@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>A-10-elec-pwr-ctrl.ac</path>
+
+<!-- apu-gen-power -->
+  <animation>
+    <object-name>apu-gen-pwr-switch</object-name>
+    <type>rotate</type>
+    <property>controls/electric/APU-generator[0]</property>
+    <interpolation>
+      <entry><ind>0</ind><dep>-30</dep></entry>
+      <entry><ind>1</ind><dep>30</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>-0.0266</x-m>
+      <y-m>-0.0422</y-m>
+      <z-m>-0.0021</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+ 
+
+<!-- inverter-stby -->
+  <animation>
+    <object-name>inverter-stby-switch</object-name>
+    <type>rotate</type>
+    <property>controls/switches/inverter</property>
+    <interpolation>
+      <entry><ind>0</ind><dep>-30</dep></entry>
+      <entry><ind>1</ind><dep>0</dep></entry>
+      <entry><ind>1</ind><dep>30</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>-0.0266</x-m>
+      <y-m>0.0099</y-m>
+      <z-m>-0.0021</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+
+<!-- l-ac-gen-power -->
+  <animation>
+    <object-name>l-ac-gen-switch</object-name>
+    <type>rotate</type>
+    <property>controls/electric/engine[0]/generator</property>
+    <interpolation>
+      <entry><ind>0</ind><dep>-30</dep></entry>
+      <entry><ind>1</ind><dep>30</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>0.0205</x-m>
+      <y-m>-0.0422</y-m>
+      <z-m>-0.0021</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+<!-- r-ac-gen-pwr -->
+  <animation>
+    <object-name>r-ac-gen-switch</object-name>
+    <type>rotate</type>
+    <property>controls/electric/engine[1]/generator</property>
+    <interpolation>
+      <entry><ind>0</ind><dep>-30</dep></entry>
+      <entry><ind>1</ind><dep>30</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>0.0205</x-m>
+      <y-m>-0.0100</y-m>
+      <z-m>-0.0021</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+<!-- battery-pwr -->
+  <animation>
+    <object-name>battery-pwr-switch</object-name>
+    <type>rotate</type>
+    <property>controls/electric/battery-switch</property>
+    <interpolation>
+      <entry><ind>0</ind><dep>-30</dep></entry>
+      <entry><ind>1</ind><dep>30</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>0.0205</x-m>
+      <y-m>0.0283</y-m>
+      <z-m>-0.0021</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation> 
+   <object-name>mount</object-name>
+   <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+        <red>0.45</red>
+        <green>0.34</green>
+        <blue>0.18</blue>
+      </emission>
+  </animation>
+
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>5</max-m>
+ </animation>
+
+</PropertyList>

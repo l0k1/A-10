@@ -1,7 +1,42 @@
 AC3Db
 MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat3" rgb 1 0 0  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
 OBJECT world
-kids 3
+kids 7
+OBJECT poly
+name "course-deviation-indicator-on"
+loc -0.00092483 -7.41953e-05 8.74123e-05
+crease 45.000000
+numvert 4
+0 0.0196211 -0.000938657
+0 0.0196211 0.000938657
+0 -0.0196211 0.000938657
+0 -0.0196211 -0.000938657
+numsurf 1
+SURF 0x20
+mat 0
+refs 4
+0 1 1
+1 0 1
+2 0 0
+3 1 0
+kids 0
+OBJECT poly
+name "to-from-from"
+loc -0.00143612 -0.0132919 0.000132004
+crease 45.000000
+numvert 3
+0 0.00151679 0.00203141
+0 0.00151679 -0.00203141
+0 -0.00184181 -2.70853e-05
+numsurf 1
+SURF 0x30
+mat 0
+refs 3
+2 0.426667 1
+1 5.73076e-08 0
+0 1 0
+kids 0
 OBJECT poly
 name "HSI-course-card"
 loc -0.00187227 -7.41953e-05 -3.42533e-06
@@ -62,7 +97,7 @@ refs 4
 8 1 0
 kids 0
 OBJECT poly
-name "course-deviation-indicator"
+name "course-deviation-indicator-off"
 loc -0.00092483 -7.41953e-05 8.74123e-05
 crease 45.000000
 numvert 4
@@ -78,4 +113,39 @@ refs 4
 2 0 1
 1 0 0
 0 1 0
+kids 0
+OBJECT poly
+name "bearing-validity-flag"
+loc -0.00149596 0.0166917 7.7833e-05
+texture "A-10-HSI-mount.rgb"
+crease 45.000000
+numvert 4
+0 -0.00208559 -0.00517333
+0 -0.00208559 0.00517333
+0 0.00208559 0.00517333
+0 0.00208559 -0.00517333
+numsurf 1
+SURF 0x30
+mat 1
+refs 4
+3 0.720933 0.12032
+2 0.679185 0.12032
+1 0.679185 0.111683
+0 0.720933 0.111683
+kids 0
+OBJECT poly
+name "to-from-to"
+loc -0.00143612 0.0109767 0.000132004
+crease 45.000000
+numvert 3
+0 0.00184181 2.70854e-05
+0 -0.00151679 0.00203141
+0 -0.00151679 -0.00203141
+numsurf 1
+SURF 0x30
+mat 0
+refs 3
+0 0.426667 1
+1 5.73076e-08 0
+2 1 0
 kids 0

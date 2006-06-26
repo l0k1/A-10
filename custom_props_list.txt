@@ -1,0 +1,107 @@
+  instrumentation/
+      nav/
+          A-10-nav-selector
+          A-10-nav-mode
+          A-10-nav-selected-preset
+          A-10-nav-load-state
+      presets/
+          preset [1]
+          preset [2]
+          preset [3]
+          preset [4]
+          preset [5]
+          preset [6]
+          preset [7]
+          preset [8]
+          preset [9]
+          preset [10]
+          preset [11]
+          preset [12]
+          preset [13]
+          preset [14]
+          preset [15]
+          preset [16]
+          preset [17]
+          preset [18]
+          preset [19]
+          preset [20]
+      A-10-warnings/
+          master-caution
+
+
+  controls/
+      switches/
+          ils
+          homing-UHF
+          homing-FM
+      A-10-hud/
+          intens
+          depr
+          mode-selector
+          func-selector
+      APU/
+          off-start-switch ??????
+      canopy/
+          A-10-canopy-switch
+      gear/
+          A-10-landing-gear-hdl-anim
+
+  systems/
+      apu/
+          start-state
+          rpm
+          temp
+      A-10-hydraulics/
+          l-hyd-res
+          r-hyd-res
+      A-10-electrical/
+          l-converter-failure
+          r-converter-failure
+          apu-generator-caution-light
+          l-generator-caution-light
+          r-generator-caution-light
+          instrument-inverter-caution-light
+      A-10-oxygen/
+          oxy-level
+      A-10-ejectable-seat/
+          armed
+      A-10-bleed-air/
+          warn-light
+      A-10-service-air/
+          service-air-warn-light
+      A-10-inertial-navigation-unit/
+          inu-hot-warn-light
+          inu-caution-light
+      A-10-alpha-mach-computer/
+          stall-sys-caution-light
+      A-10-cadc/
+          cadc-sys-caution-light
+      A-10-fuel/
+          l-main-pump
+          r-main-pump
+          l-wing-pump
+          r-wing-pump
+          l-pressure
+          r-pressure
+      A-10-iff/
+          iff-warn-light
+
+  engines/
+      A-10-eng-start-cycle
+      engine[0]/
+        A-10-alt-running
+        A-10-start-state
+        A-10-alt-n1
+        A-10-alt-n2
+        A-10-alt-prop-thrust
+      engine[1]/
+        A-10-alt-running
+        A-10-start-state
+        A-10-alt-n1
+        A-10-alt-n2
+        A-10-alt-prop-thrust
+
+     A-10-armament/
+        gun/
+            gun-unsafe
+

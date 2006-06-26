@@ -14,7 +14,7 @@
   <object-name>FTank3</object-name>
   <condition>
    <equals>
-    <property>/consumables/fuel/tank[4]/selected</property>
+    <property>consumables/fuel/tank[4]/selected</property>
     <value>1</value>
    </equals>
   </condition>
@@ -25,7 +25,7 @@
   <object-name>FTank1</object-name>
   <condition>
    <equals>
-    <property>/consumables/fuel/tank[5]/selected</property>
+    <property>consumables/fuel/tank[5]/selected</property>
     <value>1</value>
    </equals>
   </condition>
@@ -36,7 +36,7 @@
   <object-name>FTank2</object-name>
   <condition>
    <equals>
-    <property>/consumables/fuel/tank[6]/selected</property>
+    <property>consumables/fuel/tank[6]/selected</property>
     <value>1</value>
    </equals>
   </condition>
@@ -46,43 +46,64 @@
  <!-- 3D panels for hot-spots -->
 
  <panel>
-   <name>Panel-C</name>
-   <path>Aircraft/A-10/Models/A-10-panel-C-hotspot.xml</path>
-   <bottom-left>
-    <x-m>2.4445</x-m>
-    <y-m>-0.0712</y-m>
-    <z-m>0.9061</z-m>
-   </bottom-left>
-   <bottom-right>
-    <x-m>2.4445</x-m>
-    <y-m>0.0686</y-m>
-    <z-m>0.9061</z-m>
-   </bottom-right>
-   <top-left>
-    <x-m>2.4243</x-m>
-    <y-m>-0.0712</y-m>
-    <z-m>1.2842</z-m>
-   </top-left>
+    <name>Panel-C</name>
+    <path>Aircraft/A-10/Models/A-10-panel-C-hotspot.xml</path>
+    <bottom-left>
+      <x-m>2.4445</x-m>
+      <y-m>-0.0712</y-m>
+      <z-m>0.9061</z-m>
+    </bottom-left>
+    <bottom-right>
+      <x-m>2.4445</x-m>
+      <y-m>0.0686</y-m>
+      <z-m>0.9061</z-m>
+    </bottom-right>
+    <top-left>
+      <x-m>2.4243</x-m>
+      <y-m>-0.0712</y-m>
+      <z-m>1.2842</z-m>
+    </top-left>
   </panel>
 
  <panel>
-   <name>Panel-R</name>
-   <path>Aircraft/A-10/Models/A-10-panel-R-hotspot.xml</path>
-   <bottom-left>
-    <x-m>2.4354</x-m>
-    <y-m>0.0690</y-m>
-    <z-m>0.8445</z-m>
-   </bottom-left>
-   <bottom-right>
-    <x-m>2.4354</x-m>
-    <y-m>0.4885</y-m>
-    <z-m>0.8445</z-m>
-   </bottom-right>
-   <top-left>
-    <x-m>2.4019</x-m>
-    <y-m>0.0690</y-m>
-    <z-m>1.3153</z-m>
-   </top-left>
+    <name>Panel-R</name>
+    <path>Aircraft/A-10/Models/A-10-panel-R-hotspot.xml</path>
+    <bottom-left>
+      <x-m>2.4354</x-m>
+      <y-m>0.0690</y-m>
+      <z-m>0.8445</z-m>
+    </bottom-left>
+    <bottom-right>
+      <x-m>2.4354</x-m>
+      <y-m>0.4885</y-m>
+      <z-m>0.8445</z-m>
+    </bottom-right>
+    <top-left>
+      <x-m>2.4019</x-m>
+      <y-m>0.0690</y-m>
+      <z-m>1.3153</z-m>
+    </top-left>
+  </panel>
+
+
+ <panel>
+    <name>Panel-L</name>
+    <path>Aircraft/A-10/Models/A-10-panel-L-hotspot.xml</path>
+    <bottom-left>
+      <x-m>2.4354</x-m>
+      <y-m>-0.4885</y-m>
+      <z-m>0.8445</z-m>
+    </bottom-left>
+    <bottom-right>
+      <x-m>2.4354</x-m>
+      <y-m>-0.0690</y-m>
+      <z-m>0.8445</z-m>
+    </bottom-right>
+    <top-left>
+      <x-m>2.4019</x-m>
+      <y-m>-0.4885</y-m>
+      <z-m>1.3153</z-m>
+    </top-left>
   </panel>
 
 
@@ -107,130 +128,249 @@
   </panel>
 
   <panel>
-   <name>Panel-l2</name>
-   <path>Aircraft/A-10/Models/A-10-panel-l2-hotspot.xml</path>
-   <bottom-left>
-    <x-m>3.2026</x-m>
-    <y-m>-0.4353</y-m>
-    <z-m>0.7128</z-m>
-   </bottom-left>
-   <bottom-right>
-    <x-m>3.2026</x-m>
-    <y-m>-0.2747</y-m>
-    <z-m>0.7128</z-m>
-   </bottom-right>
-   <top-left>
-    <x-m>2.7728</x-m>
-    <y-m>-0.4353</y-m>
-    <z-m>0.7128</z-m>
-   </top-left>
+    <name>Panel-l1</name>
+    <path>Aircraft/A-10/Models/A-10-panel-l1-hotspot.xml</path>
+    <bottom-left>
+      <x-m>2.7732</x-m>
+      <y-m>-0.4353</y-m>
+      <z-m>0.7110</z-m>
+    </bottom-left>
+    <bottom-right>
+      <x-m>2.7732</x-m>
+      <y-m>-0.2751</y-m>
+      <z-m>0.7110</z-m>
+    </bottom-right>
+    <top-left>
+      <x-m>2.4324</x-m>
+      <y-m>-0.4353</y-m>
+      <z-m>0.8531</z-m>
+    </top-left>
+  </panel>
+  
+  <panel>
+    <name>Panel-l2</name>
+    <path>Aircraft/A-10/Models/A-10-panel-l2-hotspot.xml</path>
+    <bottom-left>
+      <x-m>3.2026</x-m>
+      <y-m>-0.4353</y-m>
+      <z-m>0.7128</z-m>
+    </bottom-left>
+    <bottom-right>
+      <x-m>3.2026</x-m>
+      <y-m>-0.2747</y-m>
+      <z-m>0.7128</z-m>
+    </bottom-right>
+    <top-left>
+      <x-m>2.7728</x-m>
+      <y-m>-0.4353</y-m>
+      <z-m>0.7128</z-m>
+    </top-left>
   </panel>
 
+  <panel>
+    <name>Panel-l4</name>
+    <path>Aircraft/A-10/Models/A-10-panel-l4-hotspot.xml</path>
+    <bottom-left>
+      <x-m>2.7120</x-m>
+      <y-m>-0.5814</y-m>
+      <z-m>0.7486</z-m>
+    </bottom-left>
+    <bottom-right>
+      <x-m>2.7120</x-m>
+      <y-m>-0.4526</y-m>
+      <z-m>0.7109</z-m>
+    </bottom-right>
+    <top-left>
+      <x-m>2.3723</x-m>
+      <y-m>-0.5914</y-m>
+      <z-m>0.8538</z-m>
+    </top-left>
+  </panel>
  
   <panel>
-   <name>Panel-r3</name>
-   <path>Aircraft/A-10/Models/A-10-panel-r3-hotspot.xml</path>
-   <bottom-left>
-    <x-m>3.2029</x-m>
-    <y-m>0.4327</y-m>
-    <z-m>0.7096</z-m>
-   </bottom-left>
-   <bottom-right>
-    <x-m>3.2029</x-m>
-    <y-m>0.5814</y-m>
-    <z-m>0.7470</z-m>
-   </bottom-right>
-   <top-left>
-    <x-m>2.7123</x-m>
-    <y-m>0.4327</y-m>
-    <z-m>0.7096</z-m>
-   </top-left>
+    <name>Panel-r1</name>
+    <path>Aircraft/A-10/Models/A-10-panel-r1-hotspot.xml</path>
+    <bottom-left>
+      <x-m>2.6823</x-m>
+      <y-m>0.2785</y-m>
+      <z-m>0.7096</z-m>
+    </bottom-left>
+    <bottom-right>
+      <x-m>2.6823</x-m>
+      <y-m>0.4327</y-m>
+      <z-m>0.7096</z-m>
+    </bottom-right>
+    <top-left>
+      <x-m>2.4354</x-m>
+      <y-m>0.2785</y-m>
+      <z-m>0.8445</z-m>
+    </top-left>
+  </panel>
+
+<panel>
+    <name>Panel-r2</name>
+    <path>Aircraft/A-10/Models/A-10-panel-r2-hotspot.xml</path>
+    <bottom-left>
+      <x-m>3.2029</x-m>
+      <y-m>0.2785</y-m>
+      <z-m>0.7096</z-m>
+    </bottom-left>
+    <bottom-right>
+      <x-m>3.2029</x-m>
+      <y-m>0.4327</y-m>
+      <z-m>0.7096</z-m>
+    </bottom-right>
+    <top-left>
+      <x-m>2.6823</x-m>
+      <y-m>0.2785</y-m>
+      <z-m>0.7096</z-m>
+    </top-left>
+  </panel>
+ 
+  <panel>
+    <name>Panel-r3</name>
+    <path>Aircraft/A-10/Models/A-10-panel-r3-hotspot.xml</path>
+    <bottom-left>
+      <x-m>3.2029</x-m>
+      <y-m>0.4327</y-m>
+      <z-m>0.7096</z-m>
+    </bottom-left>
+    <bottom-right>
+      <x-m>3.2029</x-m>
+      <y-m>0.5814</y-m>
+      <z-m>0.7470</z-m>
+    </bottom-right>
+    <top-left>
+      <x-m>2.7123</x-m>
+      <y-m>0.4327</y-m>
+      <z-m>0.7096</z-m>
+    </top-left>
+  </panel>
+ 
+  <panel>
+    <name>Panel-r4</name>
+    <path>Aircraft/A-10/Models/A-10-panel-r4-hotspot.xml</path>
+    <bottom-left>
+      <x-m>2.7120</x-m>
+      <y-m>0.4326</y-m>
+      <z-m>0.7096</z-m>
+    </bottom-left>
+    <bottom-right>
+      <x-m>2.7120</x-m>
+      <y-m>0.5814</y-m>
+      <z-m>0.7470</z-m>
+    </bottom-right>
+    <top-left>
+      <x-m>2.4107</x-m>
+      <y-m>0.4326</y-m>
+      <z-m>0.8638</z-m>
+    </top-left>
   </panel>
  
 <!-- instruments -->
 
   <model> 
-   <path>Aircraft/A-10/Models/A-10-hud.xml</path>
+    <path>Aircraft/A-10/Models/A-10-hud.xml</path>
     <offsets> 
-     <x-m>2.2800</x-m>
-     <y-m>0.0000</y-m>
-     <z-m>1.4100</z-m>
+      <x-m>2.2800</x-m>
+      <y-m>0.0000</y-m>
+      <z-m>1.4100</z-m>
     </offsets>
   </model>
  
   <model> 
-   <path>Aircraft/A-10/Models/A-10-detail-cpt.xml</path>
+    <path>Aircraft/A-10/Models/A-10-detail-cpt.xml</path>
     <offsets> 
-     <x-m>0.0000</x-m>
-     <y-m>0.0000</y-m>
-     <z-m>0.0000</z-m>
+      <x-m>0.0000</x-m>
+      <y-m>0.0000</y-m>
+      <z-m>0.0000</z-m>
     </offsets>
   </model>
  
   <model> 
-   <path>Aircraft/A-10/Models/mag-compass.xml</path>
+    <path>Aircraft/A-10/Models/mag-compass.xml</path>
     <offsets> 
-     <x-m>2.2800</x-m>
-     <y-m>0.1670</y-m>
-     <z-m>1.4800</z-m>
+      <x-m>2.2800</x-m>
+      <y-m>0.1670</y-m>
+      <z-m>1.4800</z-m>
     </offsets>
   </model>
  
   <model> 
-   <path>Aircraft/A-10/Models/A-10-accel.xml</path>
+    <path>Aircraft/A-10/Models/A-10-accel.xml</path>
     <offsets> 
-     <x-m>2.2850</x-m>
-     <y-m>-0.1680</y-m>
-     <z-m>1.4800</z-m>
+      <x-m>2.2850</x-m>
+      <y-m>-0.1680</y-m>
+      <z-m>1.4800</z-m>
     </offsets>
   </model>
  
   <model> 
-   <path>Aircraft/A-10/Models/A-10-vsi-6kfpm.xml</path>
+    <path>Aircraft/A-10/Models/A-10-vsi-6kfpm.xml</path>
     <offsets> 
-     <x-m>2.4030</x-m>
-     <y-m>0.1165</y-m>
-     <z-m>1.2130</z-m>
+      <x-m>2.4030</x-m>
+      <y-m>0.1165</y-m>
+      <z-m>1.2130</z-m>
     </offsets>
   </model>
  
   <model> 
-   <path>Aircraft/A-10/Models/A-10-alti.xml</path>
+    <path>Aircraft/A-10/Models/A-10-alti.xml</path>
     <offsets> 
-     <x-m>2.4015</x-m>
-     <y-m>0.1145</y-m>
-     <z-m>1.1275</z-m>
-     <pitch-deg>-5</pitch-deg>
+      <x-m>2.4015</x-m>
+      <y-m>0.1145</y-m>
+      <z-m>1.1275</z-m>
+      <pitch-deg>-5</pitch-deg>
     </offsets>
   </model>
  
   <model> 
-   <path>Aircraft/A-10/Models/A-10-rwr.xml</path>
+    <path>Aircraft/A-10/Models/A-10-rwr.xml</path>
     <offsets> 
-     <x-m>2.4130</x-m>
-     <y-m>-0.1115</y-m>
-     <z-m>1.2200</z-m>
-     <pitch-deg>-5</pitch-deg>
+      <x-m>2.4130</x-m>
+      <y-m>-0.1115</y-m>
+      <z-m>1.2200</z-m>
+      <pitch-deg>-5</pitch-deg>
     </offsets>
   </model>
  
   <model> 
-   <path>Aircraft/A-10/Models/A-10-asi.xml</path>
+    <path>Aircraft/A-10/Models/A-10-asi.xml</path>
     <offsets> 
-     <x-m>2.4185</x-m>
-     <y-m>-0.1125</y-m>
-     <z-m>1.1330</z-m>
-     <pitch-deg>-5</pitch-deg>
+      <x-m>2.4185</x-m>
+      <y-m>-0.1125</y-m>
+      <z-m>1.1330</z-m>
+      <pitch-deg>-5</pitch-deg>
     </offsets>
   </model>
 
-   <model> 
-   <path>Aircraft/A-10/Models/A-10-AoA-gauge.xml</path>
+  <model> 
+    <path>Aircraft/A-10/Models/A-10-AoA-gauge.xml</path>
     <offsets> 
-     <x-m>2.4000</x-m>
-     <y-m>-0.1881</y-m>
-     <z-m>1.1195</z-m>
-     <pitch-deg>-5</pitch-deg>
+      <x-m>2.4000</x-m>
+      <y-m>-0.1881</y-m>
+      <z-m>1.1195</z-m>
+      <pitch-deg>-5</pitch-deg>
+    </offsets>
+  </model>
+ 
+  <model> 
+    <path>Aircraft/A-10/Models/A-10-armament-panel.xml</path>
+    <offsets> 
+      <x-m>2.4080</x-m>
+      <y-m>-0.1881</y-m>
+      <z-m>0.9980</z-m>
+      <pitch-deg>-5</pitch-deg>
+    </offsets>
+  </model>
+ 
+  <model> 
+    <path>Aircraft/A-10/Models/A-10-adi.xml</path>
+    <offsets> 
+      <x-m>2.4235</x-m>
+      <y-m>0.0000</y-m>
+      <z-m>1.1580</z-m>
+      <pitch-deg>-5</pitch-deg>
     </offsets>
   </model>
  
@@ -245,142 +385,226 @@
   </model>
  
   <model> 
-   <path>Aircraft/A-10/Models/A-10-adi.xml</path>
+    <path>Aircraft/A-10/Models/A-10-HSI.xml</path>
     <offsets> 
-     <x-m>2.4235</x-m>
-     <y-m>0.0000</y-m>
-     <z-m>1.1580</z-m>
-	 <pitch-deg>-5</pitch-deg>
+      <x-m>2.4330</x-m>
+      <y-m>0.0000</y-m>
+      <z-m>1.0250</z-m>
+      <pitch-deg>-5</pitch-deg>
     </offsets>
   </model>
  
   <model> 
-   <path>Aircraft/A-10/Models/A-10-HSI.xml</path>
+    <path>Aircraft/A-10/Models/A-10-HSI-2.xml</path>
     <offsets> 
-     <x-m>2.4300</x-m>
-     <y-m>0.0000</y-m>
-     <z-m>1.0220</z-m>
-	 <pitch-deg>-5</pitch-deg>
+      <x-m>2.4330</x-m>
+      <y-m>0.0000</y-m>
+      <z-m>1.0250</z-m>
+      <pitch-deg>-5</pitch-deg>
     </offsets>
   </model>
  
   <model> 
-   <path>Aircraft/A-10/Models/A-10-HSI-2.xml</path>
+    <path>Aircraft/A-10/Models/A-10-nav-mode-selector.xml</path>
     <offsets> 
-     <x-m>2.4300</x-m>
-     <y-m>0.0000</y-m>
-     <z-m>1.0220</z-m>
-	 <pitch-deg>-5</pitch-deg>
+      <x-m>2.4330</x-m>
+      <y-m>0.0005</y-m>
+      <z-m>0.9360</z-m>
+      <pitch-deg>-5</pitch-deg>
     </offsets>
   </model>
  
   <model> 
-   <path>Aircraft/A-10/Models/A-10-nav-mode-selector.xml</path>
+    <path>Aircraft/A-10/Models/A-10-central-up-warning.xml</path>
     <offsets> 
-     <x-m>2.4330</x-m>
-     <y-m>0.0005</y-m>
-     <z-m>0.9360</z-m>
-	 <pitch-deg>-5</pitch-deg>
+      <x-m>2.4235</x-m>
+      <y-m>0.0000</y-m>
+      <z-m>1.2540</z-m>
+      <pitch-deg>-5</pitch-deg>
     </offsets>
   </model>
  
   <model> 
-   <path>Aircraft/A-10/Models/A-10-central-up-warning.xml</path>
+    <path>Aircraft/A-10/Models/A-10-engines-gauges.xml</path>
     <offsets> 
-     <x-m>2.4235</x-m>
-     <y-m>0.0000</y-m>
-     <z-m>1.2540</z-m>
-	 <pitch-deg>-5</pitch-deg>
+      <x-m>2.4140</x-m>
+      <y-m>0.1875</y-m>
+      <z-m>1.0015</z-m>
+      <pitch-deg>-5</pitch-deg>
     </offsets>
   </model>
  
   <model> 
-   <path>Aircraft/A-10/Models/A-10-engines-gauges.xml</path>
+    <path>Aircraft/A-10/Models/A-10-fuel-gauges.xml</path>
     <offsets> 
-     <x-m>2.4140</x-m>
-     <y-m>0.1875</y-m>
-     <z-m>1.0015</z-m>
-     <pitch-deg>-5</pitch-deg>
+      <x-m>2.4250</x-m>
+      <y-m>0.3585</y-m>
+      <z-m>0.9985</z-m>
+      <pitch-deg>-5</pitch-deg>
     </offsets>
   </model>
  
   <model> 
-   <path>Aircraft/A-10/Models/A-10-fuel-gauges.xml</path>
+    <path>Aircraft/A-10/Models/A-10-seat-switch.xml</path>
     <offsets> 
-     <x-m>2.4250</x-m>
-     <y-m>0.3585</y-m>
-     <z-m>0.9985</z-m>
-     <pitch-deg>-5</pitch-deg>
+      <x-m>0.0000</x-m>
+      <y-m>0.0000</y-m>
+      <z-m>0.0000</z-m>
     </offsets>
   </model>
  
+  <model> 
+    <path>Aircraft/A-10/Models/A-10-emer-brake.xml</path>
+    <offsets> 
+      <x-m>2.5178</x-m>
+      <y-m>-0.5075</y-m>
+      <z-m>0.8365</z-m>
+      <pitch-deg>-4</pitch-deg>
+      <heading-deg>7</heading-deg>
+    </offsets>
+  </model>
+
+  <model> 
+    <path>Aircraft/A-10/Models/A-10-fuel-control.xml</path>
+    <offsets> 
+      <x-m>2.5232</x-m>
+      <y-m>-0.3572</y-m>
+      <z-m>0.8150</z-m>
+      <pitch-deg>22.75</pitch-deg>
+    </offsets>
+  </model>
+
+  <model> 
+    <path>Aircraft/A-10/Models/A-10-throttle.xml</path>
+    <offsets> 
+      <x-m>2.6942</x-m>
+      <y-m>-0.3552</y-m>
+      <z-m>0.7440</z-m>
+      <pitch-deg>22.74</pitch-deg>
+    </offsets>
+  </model>
+  
+<!-- right console -->
+
+  <model> 
+    <path>Aircraft/A-10/Models/A-10-canopy-switch.xml</path>
+    <offsets> 
+      <x-m>0.0000</x-m>
+      <y-m>0.0000</y-m>
+      <z-m>0.0000</z-m>
+    </offsets>
+  </model>
+
+  <model> 
+    <path>Aircraft/A-10/Models/A-10-elec-pwr-ctrl.xml</path>
+    <offsets> 
+      <x-m>2.6300</x-m>
+      <y-m>0.5000</y-m>
+      <z-m>0.7750</z-m>
+      <roll-deg>12.55</roll-deg>
+      <pitch-deg>29.00</pitch-deg>
+      <heading-deg>-8.00</heading-deg>
+    </offsets>
+  </model>
+
+  <model> 
+    <path>Aircraft/A-10/Models/A-10-warn-panel.xml</path>
+    <offsets> 
+      <x-m>2.5100</x-m>
+      <y-m>0.3542</y-m>
+      <z-m>0.8150</z-m>
+      <pitch-deg>30.00</pitch-deg>
+    </offsets>
+  </model>
+  
+  <model> 
+    <path>Aircraft/A-10/Models/A-10-ils.xml</path>
+    <offsets> 
+      <x-m>2.6670</x-m>
+      <y-m>0.3512</y-m>
+      <z-m>0.7300</z-m>
+      <pitch-deg>30.00</pitch-deg>
+    </offsets>
+  </model>
+
+  <model> 
+    <path>Aircraft/A-10/Models/A-10-tacan.xml</path>
+    <offsets> 
+      <x-m>2.8500</x-m>
+      <y-m>0.3542</y-m>
+      <z-m>0.7110</z-m>
+    </offsets>
+  </model>
+
   <model>
     <object-name>Panel-r3</object-name>
     <path>Aircraft/A-10/Models/A-10-panel-r3.xml</path>
     <offsets> 
-     <x-m>3.0335</x-m>
-     <y-m>0.5070</y-m>
-     <z-m>0.7298</z-m>
-     <roll-deg>14</roll-deg>
+      <x-m>3.0335</x-m>
+      <y-m>0.5070</y-m>
+      <z-m>0.7298</z-m>
+      <roll-deg>14</roll-deg>
+    </offsets>
+  </model>
+
+<!-- left panel -->
+
+  <model> 
+    <path>Aircraft/A-10/Models/A-10-aoa-indexer.xml</path>
+    <offsets> 
+      <x-m>2.2640</x-m>
+      <y-m>-0.1671</y-m>
+      <z-m>1.4240</z-m>
     </offsets>
   </model>
  
   <model> 
-   <path>Aircraft/A-10/Models/A-10-aoa-indexer.xml</path>
+    <path>Aircraft/A-10/Models/A-10-stdby-adi.xml</path>
     <offsets> 
-     <x-m>2.2640</x-m>
-     <y-m>-0.1671</y-m>
-     <z-m>1.4240</z-m>
+      <x-m>2.3970</x-m>
+      <y-m>-0.1857</y-m>
+      <z-m>1.1895</z-m>
+      <pitch-deg>-5</pitch-deg>
     </offsets>
   </model>
  
   <model> 
-   <path>Aircraft/A-10/Models/A-10-stdby-adi.xml</path>
+    <path>Aircraft/A-10/Models/A-10-master-caution.xml</path>
     <offsets> 
-     <x-m>2.3970</x-m>
-     <y-m>-0.1857</y-m>
-     <z-m>1.1895</z-m>
-     <pitch-deg>-5</pitch-deg>
+      <x-m>2.3970</x-m>
+      <y-m>-0.1857</y-m>
+      <z-m>1.2295</z-m>
+      <pitch-deg>-5</pitch-deg>
     </offsets>
   </model>
  
   <model> 
-   <path>Aircraft/A-10/Models/A-10-master-caution.xml</path>
+    <path>Aircraft/A-10/Models/A-10-hud-panel.xml</path>
     <offsets> 
-     <x-m>2.3970</x-m>
-     <y-m>-0.1857</y-m>
-     <z-m>1.2295</z-m>
-     <pitch-deg>-5</pitch-deg>
+      <x-m>2.3969</x-m>
+      <y-m>-0.2806</y-m>
+      <z-m>1.1951</z-m>
+      <pitch-deg>-5</pitch-deg>
     </offsets>
   </model>
  
   <model> 
-   <path>Aircraft/A-10/Models/A-10-hud-panel.xml</path>
+    <path>Aircraft/A-10/Models/A-10-ld-gear-panel.xml</path>
     <offsets> 
-     <x-m>2.3969</x-m>
-     <y-m>-0.2806</y-m>
-     <z-m>1.1951</z-m>
-     <pitch-deg>-5</pitch-deg>
+      <x-m>2.4250</x-m>
+      <y-m>-0.3585</y-m>
+      <z-m>0.9985</z-m>
+      <pitch-deg>-5</pitch-deg>
     </offsets>
   </model>
  
   <model> 
-   <path>Aircraft/A-10/Models/A-10-ld-gear-panel.xml</path>
+    <path>Aircraft/A-10/Models/A-10-hars-fast-erect.xml</path>
     <offsets> 
-     <x-m>2.4250</x-m>
-     <y-m>-0.3585</y-m>
-     <z-m>0.9985</z-m>
-     <pitch-deg>-5</pitch-deg>
-    </offsets>
-  </model>
- 
-  <model> 
-   <path>Aircraft/A-10/Models/A-10-hars-fast-erect.xml</path>
-    <offsets> 
-     <x-m>2.4104</x-m>
-     <y-m>-0.2850</y-m>
-     <z-m>0.8770</z-m>
-     <pitch-deg>-5</pitch-deg>
+      <x-m>2.4104</x-m>
+      <y-m>-0.2850</y-m>
+      <z-m>0.8770</z-m>
+      <pitch-deg>-5</pitch-deg>
     </offsets>
   </model>
  
@@ -394,21 +618,21 @@
   </model>
  
   <model> 
-   <path>Aircraft/A-10/Models/A-10-an-arc-186-2.xml</path>
+    <path>Aircraft/A-10/Models/A-10-an-arc-186-2.xml</path>
     <offsets> 
-     <x-m>3.0753</x-m>
-     <y-m>-0.3551</y-m>
-     <z-m>0.7098</z-m>
+      <x-m>3.0753</x-m>
+      <y-m>-0.3551</y-m>
+      <z-m>0.7098</z-m>
     </offsets>
   </model>
  
   <model> 
-   <path>Aircraft/Hunter/Models/blackout.xml</path>
-   <name>Blackout</name>
+    <path>Aircraft/Hunter/Models/blackout.xml</path>
+    <name>Blackout</name>
     <offsets> 
-     <x-m>3.2000</x-m>
-     <y-m>0.0000</y-m>
-     <z-m>1.5400</z-m>
+      <x-m>3.2000</x-m>
+      <y-m>0.0000</y-m>
+      <z-m>1.5400</z-m>
     </offsets>
   </model>
 

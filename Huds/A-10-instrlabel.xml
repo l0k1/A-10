@@ -56,7 +56,7 @@
    <longitude>false</longitude>
   </radar-alt>
 
-  <baro>
+  <aoa>
    <name>angle-of-attack</name>
    <x>363</x>
    <y>191</y> 
@@ -72,7 +72,9 @@
    <working>true</working>
    <latitude>false</latitude>
    <longitude>false</longitude>
-  </baro>
+  </aoa>
+
+
 
 </labels>
 

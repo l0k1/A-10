@@ -8,7 +8,7 @@
  <animation>
   <type>rotate</type>
   <object-name>needle</object-name>
-  <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+  <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
   <interpolation>
    <entry><ind>  25</ind><dep>   3</dep></entry>
    <entry><ind>  50</ind><dep>   10</dep></entry>
@@ -32,7 +32,7 @@
  <animation>
   <type>rotate</type>
   <object-name>drum-1</object-name>
-  <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+  <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
   <factor>3.6</factor>
   <center>
    <x-m>-0.0157</x-m>
@@ -50,7 +50,7 @@
    <object-name>mount</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.45</red>
         <green>0.34</green>
         <blue>0.18</blue>
@@ -61,7 +61,7 @@
    <object-name>face</object-name>
    <type>material</type>
      <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.50</red>
         <green>0.25</green>
         <blue>0.18</blue>
@@ -72,7 +72,7 @@
    <object-name>drum-1</object-name>
    <type>material</type>
      <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.50</red>
         <green>0.25</green>
         <blue>0.18</blue>
@@ -83,7 +83,7 @@
    <object-name>needle-w</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.75</red>
         <green>0.55</green>
         <blue>0.35</blue>
@@ -98,5 +98,3 @@
  </animation>
 
 </PropertyList>
-
-

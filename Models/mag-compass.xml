@@ -7,7 +7,7 @@
  <animation>
   <type>rotate</type>
   <object-name>INS-ring</object-name>
-  <property>/instrumentation/magnetic-compass/indicated-heading-deg</property>
+  <property>instrumentation/magnetic-compass/indicated-heading-deg</property>
   <center>
    <x-m>-0.025</x-m>
    <y-m>0.00</y-m>
@@ -23,7 +23,7 @@
   <animation> 
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.65</red>
         <green>0.45</green>
         <blue>0.25</blue>

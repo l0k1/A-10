@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+
+  <path>A-10-fuel-control.ac</path>
+
+
+
+<!-- lighting -->
+
+  <animation> 
+    <object-name>mount</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.45</red>
+      <green>0.34</green>
+      <blue>0.18</blue>
+      </emission>
+  </animation>
+
+  <animation> 
+    <object-name>sig-ampl-switch</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.20</red>
+      <green>0.10</green>
+      <blue>0.05</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <object-name>ext-tks-fus-switch</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.20</red>
+      <green>0.10</green>
+      <blue>0.05</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <object-name>ext-tks-wing-switch</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.20</red>
+      <green>0.10</green>
+      <blue>0.05</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <object-name>tk-gate-switch</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.20</red>
+      <green>0.10</green>
+      <blue>0.05</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <object-name>cross-feed-switch</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.20</red>
+      <green>0.10</green>
+      <blue>0.05</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <object-name>boost-pump-wing-l-switch</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.20</red>
+      <green>0.10</green>
+      <blue>0.05</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <object-name>boost-pump-wing-r-switch</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.20</red>
+      <green>0.10</green>
+      <blue>0.05</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <object-name>boost-pump-main-l-switch</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.20</red>
+      <green>0.10</green>
+      <blue>0.05</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <object-name>boost-pump-main-r-switch</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.20</red>
+      <green>0.10</green>
+      <blue>0.05</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <object-name>rcvr-handle</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.20</red>
+      <green>0.10</green>
+      <blue>0.05</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <object-name>rcvr-lt-knob</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.20</red>
+      <green>0.10</green>
+      <blue>0.05</blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>5</max-m>
+  </animation>
+
+</PropertyList>

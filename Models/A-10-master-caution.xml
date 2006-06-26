@@ -12,7 +12,7 @@
   <object-name>master-caution-on</object-name>
    <condition>
     <equals>
-     <property>/engines/engine/out-of-fuel</property>
+     <property>instrumentation/A-10-warnings/master-caution</property>
      <value>true</value>
     </equals>
    </condition>  
@@ -35,7 +35,7 @@
    <object-name>master-caution-off</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.45</red>
         <green>0.34</green>
         <blue>0.18</blue>

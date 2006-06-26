@@ -93,10 +93,10 @@
     <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
 
     <control-output control="FLAP0" side="left"
-                    prop="/surface-positions/left-elevator-pos-norm"/>
+                    prop="surface-positions/left-elevator-pos-norm"/>
     <control-output control="FLAP0" side="right"
-                    prop="/surface-positions/right-elevator-pos-norm"/>
-    <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+                    prop="surface-positions/right-elevator-pos-norm"/>
+    <control-output control="FLAP0" prop="surface-positions/elevator-pos-norm"/>
 
     <control-speed control="FLAP0" transition-time="0.5"/>
   </hstab>
@@ -164,7 +164,7 @@
     <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
     <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
     <control-speed control="EXTEND" transition-time="7"/>
-    <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
+    <control-output control="EXTEND" prop="gear/gear[1]/position-norm"/>
   </gear>
 
 <!-- right main -->
@@ -174,14 +174,14 @@
   <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
   <control-speed control="EXTEND" transition-time="7"/>
-  <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
+  <control-output control="EXTEND" prop="gear/gear[2]/position-norm"/>
 </gear>
 
 <!-- Canopy -->
 <gear x="-4.7" y="0.0" z="1.52" retract-time="4" compression="0.6">
   <control-input axis="/controls/gear/brake-parking" control="EXTEND"/>
   <control-speed control="EXTEND" transition-time="4"/>
-  <control-output control="EXTEND" prop="/canopy/position-norm"/>
+  <!--<control-output control="EXTEND" prop="canopy/position-norm"/>-->
 </gear>
 
 <!-- Ballast -->
@@ -197,6 +197,6 @@
     for ammo is 1350 x 2lb = 2700lb
 -->
   <weight x="-4.0" y="0" z="-0.0" size="0.9"
-          mass-prop="/yasim/weights/ammunition-weight-lbs"/>
+          mass-prop="yasim/weights/ammunition-weight-lbs"/>
 
 </airplane>

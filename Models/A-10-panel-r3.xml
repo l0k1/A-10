@@ -13,7 +13,7 @@
   <object-name>fly-inst-adjustable</object-name>
   <type>material</type>
   <emission> 
-   <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+   <factor-prop>controls/lighting/instruments-norm</factor-prop>
    <red>0.25</red>
    <green>0.17</green>
    <blue>0.05</blue>
@@ -24,7 +24,7 @@
    <object-name>mount</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.45</red>
         <green>0.34</green>
         <blue>0.18</blue>

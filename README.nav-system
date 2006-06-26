@@ -12,7 +12,9 @@ normal range
 116 to 151.975 MHz AM
 receive only range
 108 to 115.975 MHz AM
-(for test purposes, I decided to let it work in homing (FM) mode, wich is displayed on the ADI while TACAN ADF AND ILS and HSI stuff are not implemented in the 3D cockpit).
+(for test purposes, I decided to let it work in homing (FM) mode, wich is
+displayed on the ADI while TACAN ADF AND ILS and HSI stuff are not implemented
+in the 3D cockpit).
 
 
 The aft one should be tuned to operate in VHF/FM mode (homing capability):
@@ -80,4 +82,3 @@ Preset channel selection:
     - Frequency selector knobs - click until desired channel number is obtained.
     (works also with Frequency control/emergency select knob - MAN, but loading
     isn't possible in PRE mode)
-
