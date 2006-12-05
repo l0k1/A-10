@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>A-10-fuel-aar.ac</path>
+
+	<animation>
+		<type>select</type>
+		<object-name>refuel-ready</object-name>
+		<condition>
+			<equals>
+				<property>sim/model/A-10/controls/fuel/receiver-lever</property>
+				<value>1</value>
+			</equals>
+			<equals>
+				<property>systems/refuel/contact</property>
+				<value>0</value>
+			</equals>
+			<equals>
+				<property>sim/model/A-10/controls/fuel/aar-lock</property>
+				<value>0</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>refuel-latched</object-name>
+		<condition>
+			<equals>
+				<property>sim/model/A-10/controls/fuel/receiver-lever</property>
+				<value>1</value>
+			</equals>
+			<equals>
+				<property>systems/refuel/contact</property>
+				<value>1</value>
+			</equals>
+			<equals>
+				<property>sim/model/A-10/controls/fuel/aar-lock</property>
+				<value>0</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>refuel-disconnect</object-name>
+		<condition>
+			<equals>
+				<property>sim/model/A-10/controls/fuel/receiver-lever</property>
+				<value>1</value>
+			</equals>
+			<equals>
+				<property>sim/model/A-10/controls/fuel/aar-lock</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<!-- lighting -->
+
+	<animation>
+		<object-name>refuel-ready</object-name>
+		<type>material</type>
+		<emission> 
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<object-name>refuel-latched</object-name>
+		<type>material</type>
+		<emission> 
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<object-name>refuel-disconnect</object-name>
+		<type>material</type>
+		<emission> 
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</emission>
+	</animation>
+
+</PropertyList>
