@@ -30,7 +30,7 @@
   <animation>
     <object-name>inverter-stby-switch</object-name>
     <type>rotate</type>
-    <property>controls/switches/inverter</property>
+    <property>sim/model/A-10/controls/switches/inverter</property>
     <interpolation>
       <entry><ind>0</ind><dep>-30</dep></entry>
       <entry><ind>1</ind><dep>0</dep></entry>

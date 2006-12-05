@@ -8,8 +8,8 @@
  <animation>
   <type>translate</type>
   <object-name>gun-cross</object-name>
-  <property>controls/A-10-hud/depr</property>
-  <factor>0.01</factor>
+  <property>controls/A-10/hud/depr</property>
+  <factor>0.03</factor>
   <axis>
    <x>0.00</x>
    <y>0.00</y>
@@ -23,11 +23,14 @@
    <object-name>gun-cross</object-name>
    <type>material</type>
     <emission> 
-      <factor-prop>controls/A-10-hud/intens</factor-prop>
+      <factor-prop>controls/A-10/hud/intens</factor-prop>
         <red>0.5</red>
         <green>1.0</green>
         <blue>0.5</blue>
       </emission>
+      <transparency>
+        <alpha-prop>sim[0]/hud/color/alpha</alpha-prop>
+      </transparency>
   </animation>
 
 

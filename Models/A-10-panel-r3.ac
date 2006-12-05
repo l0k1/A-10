@@ -411,7 +411,7 @@ refs 4
 1 0.401803 0.363539
 kids 0
 OBJECT poly
-name "switch"
+name "nav-flash-switch"
 loc -0.0910846 0.00910551 0.0422943
 texture "round-knob.rgb"
 crease 45.000000
@@ -2589,7 +2589,7 @@ refs 4
 3 0.211683 0.0938184
 kids 0
 OBJECT poly
-name "switch"
+name "strobe-switch"
 loc -0.0910846 0.00910551 -0.0406096
 texture "round-knob.rgb"
 crease 45.000000

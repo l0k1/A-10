@@ -8,7 +8,7 @@
  <animation>
   <type>rotate</type>
   <object-name>ring-0001</object-name>
-  <property>instrumentation/nav/frequencies/alt-selected-mhz-x0001</property>
+  <property>sim/model/A-10/instrumentation/nav[2]/frequencies/alt-selected-mhz-x0001</property>
   <interpolation>
    <entry><ind>0</ind><dep>0</dep></entry>
    <entry><ind>25</ind><dep>90</dep></entry>
@@ -30,7 +30,7 @@
  <animation>
   <type>rotate</type>
   <object-name>ring-01</object-name>
-  <property>instrumentation/nav/frequencies/alt-selected-mhz-x01</property>
+  <property>sim/model/A-10/instrumentation/nav[2]/frequencies/alt-selected-mhz-x01</property>
   <interpolation>
    <entry><ind>0</ind><dep>0</dep></entry>
    <entry><ind>1</ind><dep>36</dep></entry>
@@ -58,7 +58,7 @@
  <animation>
   <type>rotate</type>
   <object-name>ring-1</object-name>
-  <property>instrumentation/nav/frequencies/alt-selected-mhz-x1</property>
+  <property>sim/model/A-10/instrumentation/nav[2]/frequencies/alt-selected-mhz-x1</property>
   <interpolation>
    <entry><ind>0</ind><dep>0</dep></entry>
    <entry><ind>1</ind><dep>36</dep></entry>
@@ -87,7 +87,7 @@
  <animation>
   <type>rotate</type>
   <object-name>ring-10</object-name>
-  <property>instrumentation/nav/frequencies/alt-selected-mhz-x10</property>
+  <property>sim/model/A-10/instrumentation/nav[2]/frequencies/alt-selected-mhz-x10</property>
   <interpolation>
    <entry><ind>1</ind><dep>24</dep></entry>
    <entry><ind>2</ind><dep>48</dep></entry>
@@ -122,7 +122,7 @@
  <animation>
   <type>textranslate</type>
   <object-name>pressets</object-name>
-  <property>instrumentation/nav/A-10-nav-selected-preset</property>
+  <property>sim/model/A-10/instrumentation/nav[2]/selected-preset</property>
   <factor>0.0245</factor>
   <offset>-1</offset>
   <center>
@@ -142,7 +142,7 @@
  <animation>
   <type>rotate</type>
   <object-name>freq-select-knob</object-name>
-  <property>instrumentation/nav/A-10-nav-selector</property>
+  <property>sim/model/A-10/instrumentation/nav[2]/selector</property>
   <interpolation>
    <entry><ind>1</ind><dep>0</dep></entry>
    <entry><ind>2</ind><dep>62</dep></entry>
@@ -166,7 +166,7 @@
  <animation>
   <type>rotate</type>
   <object-name>mode-knob</object-name>
-  <property>instrumentation/nav/A-10-nav-mode</property>
+  <property>sim/model/A-10/instrumentation/nav[2]/mode</property>
   <interpolation>
    <entry><ind>0</ind><dep>0</dep></entry>
    <entry><ind>1</ind><dep>36</dep></entry>
@@ -189,7 +189,7 @@
  <animation>
   <type>translate</type>
   <object-name>load-button</object-name>
-  <property>instrumentation/nav/A-10-nav-load-state</property>
+  <property>sim/model/A-10/instrumentation/nav[2]/load-state</property>
   <interpolation>
    <entry><ind>0</ind><dep>0.0020</dep></entry>
    <entry><ind>1</ind><dep>-0.0030</dep></entry>

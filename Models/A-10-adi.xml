@@ -13,7 +13,7 @@
     </condition>
  </animation>
 
-	
+
  <animation>
   <type>rotate</type>
   <object-name>sphere</object-name>
@@ -77,7 +77,7 @@
         <value>24</value>
       </greater-than>
   </condition>
-  <property>instrumentation/nav[2]/gs-needle-deflection</property>
+  <property>instrumentation/nav[0]/gs-needle-deflection</property>
 		<interpolation>
 			<entry>
 				<ind>-2.5</ind>
@@ -105,7 +105,7 @@
   <object-name>yaw-steering-bar</object-name>
   <condition>
    <equals>
-   <property>A-10-nav/A-10-nav-selector-ptr</property>
+   <property>sim/model/A-10/A-10-nav/selector-ptr</property>
    <value>false</value>
    </equals>
   </condition>
@@ -116,7 +116,7 @@
   <object-name>yaw-steering-bar</object-name>
   <condition>
    <equals>
-   <property>A-10-nav/A-10-nav-selector-ptr</property>
+   <property>sim/model/A-10/A-10-nav/selector-ptr</property>
    <value>false</value>
    </equals>
   </condition>
@@ -134,7 +134,7 @@
   <object-name>pitch-steering-bar</object-name>
   <condition>
    <equals>
-   <property>A-10-nav/A-10-nav-selector-ptr</property>
+   <property>sim/model/A-10/A-10-nav/selector-ptr</property>
    <value>false</value>
    </equals>
   </condition>
@@ -145,7 +145,7 @@
   <object-name>pitch-steering-bar</object-name>
   <condition>
    <equals>
-   <property>A-10-nav/A-10-nav-selector-ptr</property>
+   <property>sim/model/A-10/A-10-nav/selector-ptr</property>
    <value>false</value>
    </equals>
   </condition>
@@ -165,7 +165,7 @@
   <object-name>nav-yaw-steering-bar</object-name>
   <condition>
    <equals>
-   <property>A-10-nav/A-10-nav-selector-ptr</property>
+   <property>sim/model/A-10/A-10-nav/selector-ptr</property>
    <value>true</value>
    </equals>
   </condition>
@@ -176,17 +176,17 @@
   <object-name>nav-yaw-steering-bar</object-name>
   <condition>
    <equals>
-   <property>A-10-nav/A-10-nav-selector-ptr</property>
+   <property>sim/model/A-10/A-10-nav/selector-ptr</property>
    <value>true</value>
    </equals>
   </condition>
   <condition>
    <equals>
-   <property>instrumentation/nav/A-10-nav-mode</property>
+   <property>sim/model/A-10/instrumentation/nav[2]/mode</property>
    <value>2</value>
    </equals>
   </condition>
-  <property>instrumentation/nav[0]/heading-needle-deflection</property>
+  <property>instrumentation/nav[2]/heading-needle-deflection</property>
   <factor>0.0025</factor>
   <axis>
    <x>0</x>
@@ -200,7 +200,7 @@
   <object-name>nav-pitch-steering-bar</object-name>
   <condition>
    <equals>
-   <property>A-10-nav/A-10-nav-selector-ptr</property>
+   <property>sim/model/A-10/A-10-nav/selector-ptr</property>
    <value>true</value>
    </equals>
   </condition>
@@ -211,7 +211,7 @@
   <type>rotate</type>
   <object-name>slip-ball</object-name>
   <property>instrumentation/slip-skid-ball/indicated-slip-skid</property>
-  <factor>2.6</factor>
+  <factor>10</factor>
   <min-deg>-11</min-deg>
   <max-deg>11</max-deg>
   <center>

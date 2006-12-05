@@ -6,8 +6,7 @@
  <path>detail-cpt.ac</path>
 
 <!-- panels-light-weak -->
-  <animation> 
-   <object-name>CPT-auto-alt-body</object-name>
+  <animation>
    <object-name>CPT-red-thing</object-name>
    <type>material</type>
     <emission> 

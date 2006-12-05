@@ -269,7 +269,7 @@
     <object-name>l-main-fuel-low</object-name>
     <condition>
       <less-than>
-        <property>consumables/fuel/int-left-lbs</property>
+        <property>sim/model/A-10/consumables/fuel/int-left-lbs</property>
         <value>654</value>
       </less-than>
     </condition>  
@@ -280,7 +280,7 @@
     <object-name>r-main-fuel-low</object-name>
     <condition>
       <less-than>
-        <property>consumables/fuel/int-right-lbs</property>
+        <property>sim/model/A-10/consumables/fuel/int-right-lbs</property>
         <value>663</value>
       </less-than>
     </condition>  
@@ -291,7 +291,7 @@
     <object-name>l-r-tks-unequal</object-name>
     <condition>
       <greater-than>
-        <property>consumables/fuel/diff-lbs</property>
+        <property>sim/model/A-10/consumables/fuel/diff-lbs</property>
         <value>750</value>
       </greater-than>
     </condition>  

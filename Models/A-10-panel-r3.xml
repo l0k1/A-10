@@ -3,38 +3,79 @@
 <PropertyList>
 
  <path>A-10-panel-r3.ac</path>
-
- <animation> 
-  <object-name>eng-inst-adjustable</object-name>
-  <object-name>flood-adjustable</object-name>
-  <object-name>console-adjustable</object-name>
-  <object-name>aux-inst-adjustable</object-name>
-  <object-name>formation-adjustable</object-name>
-  <object-name>fly-inst-adjustable</object-name>
-  <type>material</type>
-  <emission> 
-   <factor-prop>controls/lighting/instruments-norm</factor-prop>
-   <red>0.25</red>
-   <green>0.17</green>
-   <blue>0.05</blue>
-  </emission>
- </animation>
-
-  <animation> 
-   <object-name>mount</object-name>
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/panel-norm</factor-prop>
-        <red>0.45</red>
-        <green>0.34</green>
-        <blue>0.18</blue>
-      </emission>
+ 
+  <animation>
+    <object-name>strobe-switch</object-name>
+    <type>rotate</type>
+    <property>controls/lighting/strobe</property>
+    <interpolation>
+      <entry><ind>0</ind><dep>-30</dep></entry>
+      <entry><ind>1</ind><dep>30</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>-0.0913</x-m>
+      <y-m>-0.0409</y-m>
+      <z-m>-0.0023</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
   </animation>
 
- <animation>
-  <type>range</type>
-  <min-m>0</min-m>
-  <max-m>5</max-m>
- </animation>
+  <animation>
+    <object-name>nav-flash-switch</object-name>
+    <type>rotate</type>
+    <property>controls/A-10/lighting/nav-lights-switch</property>
+    <interpolation>
+      <entry><ind>0</ind><dep>-30</dep></entry>
+      <entry><ind>1</ind><dep>0</dep></entry>
+      <entry><ind>2</ind><dep>30</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>-0.0913</x-m>
+      <y-m>0.0424</y-m>
+      <z-m>-0.0023</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation> 
+    <object-name>eng-inst-adjustable</object-name>
+    <object-name>flood-adjustable</object-name>
+    <object-name>console-adjustable</object-name>
+    <object-name>aux-inst-adjustable</object-name>
+    <object-name>formation-adjustable</object-name>
+    <object-name>fly-inst-adjustable</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>0.25</red>
+      <green>0.17</green>
+      <blue>0.05</blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <object-name>mount</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>0.45</red>
+      <green>0.34</green>
+      <blue>0.18</blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>5</max-m>
+  </animation>
 
 </PropertyList>

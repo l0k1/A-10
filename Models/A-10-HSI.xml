@@ -170,7 +170,7 @@
   <animation>
     <type>textranslate</type>
     <object-name>course-drum-1</object-name>
-    <property>instrumentation/nav[2]/radials/selected-deg</property>
+    <property>instrumentation/nav[1]/radials/selected-deg</property>
     <factor>0.1</factor>
     <offset>-1</offset>
     <center>
@@ -187,7 +187,7 @@
   <animation>
     <type>textranslate</type>
     <object-name>course-drum-2</object-name>
-    <property>instrumentation/nav[2]/radials/selected-deg</property>
+    <property>instrumentation/nav[1]/radials/selected-deg</property>
     <factor>0.01</factor>
     <offset>-10</offset>
     <step>10</step>
@@ -206,7 +206,7 @@
   <animation>
     <type>textranslate</type>
     <object-name>course-drum-3</object-name>
-    <property>instrumentation/nav[2]/radials/selected-deg</property>
+    <property>instrumentation/nav[1]/radials/selected-deg</property>
     <factor>0.001</factor>
     <offset>-100</offset>
     <step>100</step>
@@ -226,14 +226,14 @@
 <animation>
   <type>rotate</type>
   <object-name>course-knob</object-name>
-  <property>instrumentation/nav[2]/radials/selected-deg</property>
+  <property>instrumentation/nav[1]/radials/selected-deg</property>
   <center>
     <x-m>0.0075</x-m>
     <y-m>0.0491</y-m>
     <z-m>-0.0413</z-m>
   </center>
   <axis>
-    <x>1</x>
+    <x>-1</x>
     <y>0</y>
     <z>0</z>
   </axis>
@@ -260,6 +260,16 @@
   <animation>
    <object-name>HSI-bkg</object-name>
    <object-name>heading-set-knob</object-name>
+   <type>material</type>
+     <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+        <red>0.44</red>
+        <green>0.27</green>
+        <blue>0.15</blue>
+      </emission>
+  </animation>
+  
+  <animation>
    <object-name>lubber-line</object-name>
    <type>material</type>
      <emission> 

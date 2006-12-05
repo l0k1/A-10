@@ -1,49 +1,58 @@
+TODOS:
+------
+- Waiting for:
+	- model engines props when start and stop
+	- review sounds for start of the engines. "Blowf" sound of the ignition.
+- Canopy should fly-away when wind > 130 kt
+- Work on the MP A-10 (second computer, FG lan-networked or both on MP).
+	- landing gear, lights.
+- AAR: Ctrl-F pour disconnect_reset
+- Fuel: permit different positions for the guages.
+- Pitch SAS.
+- Altitude warning system panel.
+- Payload: handling of the payload weight, GUI to choose them.
+
+12/05/2006
+----------
+- Fuel receptacle control and light indicator (you will have to close and open again the fuel receptacle after a disconnection, like in the real Warthog).
+- TACAN works fine with AAR tankers.
+- Autopilot: setting Vertical Speed to 0 makes now a good autotrim, (first step to an pitch SAS). 
+- No Hud when no electrical power.
+- Nice texture on the cockpit sides.
+- Some more details on the external texture. (more to come).
+- Payload: ECM pod AN/ALQ-131-V, AIM-9M and dual lancher rails. (weight balance and AIM-9 shoot: next time).
+ 
+
+09/16/2006
+----------
+- Engines: A-10 now starts with engines stopped (except n1 and n2 props). Engines are started with 2 switches located near the throttle.
+- Canopy: easier to close, don't need any more to stay pushing down the switch until the canopy is completly closed. New 'C' key makes the canopy open or close.
+- Jetstream: done, should be more visible maybe.
+- Shadows: many improvements.
+
+
+
+09/03/2006
+----------
+- External lighting: position lights (steady or flashing), anti-collision light (white flashing), formation lights (electroluminescent stripes), landing and taxi lights.
+- Under carriage: new model.
+- Engines: the fans are now spining. (An 'alphaed' disk should be added to model the fan at high spinning speed).
+- Hud: use of the latest version.
+- Altitude warning: now blinking.
+- Canpopy: wind sound when flying with the canopy open.
+
+
+
 06/18/2006
 ----------
-Removed all the leading slashes in xml and nasal files after being told that the A-10
-makes trouble in others MP aircrafts nasal scripts (fuel.nas).
-Next step should be reoganize the A-10 custom props so they are not spaned all around
-the props tree. 
+- Removed all the leading slashes in xml and nasal files after being told that the A-10 makes trouble in others MP aircrafts nasal scripts (fuel.nas).
 
 
 
 06/09/2006
 ----------
-I began a few days ago to implement the electrical scheme.
+Electrical scheme.
 
-The switchs and the circuits are OK, the devices (generator, inverter, converters)
-are not totaly implemented but the skelleton is there.
-
+- The switchs and the circuits are OK, the devices (generator, inverter, converters) are not totaly implemented but the skelleton is there.
 Few instruments are linked to the electrical circuit, the HSI an nav[0] are
 dependant of it, the AoA index (left of the HUD) is dependant too.
-
-So the better is to proceed with the standard electrical process:
-
-1 switch the battery ON
-2 start the APU (near the throttle)
-3 start the APU generator
-4 start the L and R generators
-(then you can cut the APU if you find it noisy)
-
-now its OK you have power on all the buses !
-
-- the radio AN-ARC 186 has a bug: right knob doesn't work (to be fixed) switche
-the STOW/PTR switche to STOW (under the HSI) to see the vertical bar in the ADI give
-the deviation to the main VOR radial (comment please if I say something wrong in
-navaids stuff) horizontal bar isn't effective yet.
-
-in the PTR mode the ADI bars show the main flight controls moves (ailerons rudder).
-
-- Tacan: use the gui or props to set the channel, actualy it will be displayed
-on the dialer.
-depress TCN (under the HSI) to see the bearing needle in the HSI show the gisement.
-TO FROM are not active. Distance is active. (There is a defection needle in RL,
-I don't know how to link it to wich property, it's normaly linked to the setted course).
-
-So you can have the ADI vertical bar on a VOR and in the same time have TACAN
-bearing and distance on the HSI.
-
-
-Don't forget to close the canopy (near the fuel guauges).
-Feel free to take everything you like for other planes
-Don't forget to comment and criticize :)

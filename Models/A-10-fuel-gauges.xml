@@ -8,7 +8,7 @@
       <name>fuel-l</name>
       <type>rotate</type>
       <object-name>needle-l</object-name>
-      <property>consumables/fuel/int-left-lbs</property>
+      <property>sim/model/A-10/consumables/fuel/int-left-lbs</property>
       <interpolation> 
         <entry><ind>0</ind><dep>189</dep></entry>
         <entry><ind>3000</ind><dep>270</dep></entry>
@@ -31,7 +31,7 @@
       <name>fuel-r</name>
       <type>rotate</type>
       <object-name>needle-r</object-name>
-      <property>consumables/fuel/int-right-lbs</property>
+      <property>sim/model/A-10/consumables/fuel/int-right-lbs</property>
       <interpolation> 
         <entry><ind>0</ind><dep>171</dep></entry>
         <entry><ind>3000</ind><dep>90</dep></entry>

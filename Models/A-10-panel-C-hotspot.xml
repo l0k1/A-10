@@ -164,7 +164,7 @@
               <h>48</h>
               <binding> 
                 <command>property-toggle</command>
-                <property>A-10-nav/A-10-nav-selector-ptr</property>
+                <property>sim/model/A-10/A-10-nav/selector-ptr</property>
               </binding>
             </action>
 

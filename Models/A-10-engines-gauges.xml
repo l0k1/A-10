@@ -55,7 +55,7 @@
       <name>fan-percent-l</name>
       <type>rotate</type>
       <object-name>needle-fan-l</object-name>
-      <property>engines/engine[0]/A-10-alt-n1</property>
+      <property>engines/engine[0]/n1</property>
       <interpolation> 
         <entry><ind>0</ind><dep>28</dep></entry><!--0%-->
         <entry><ind>73.6</ind><dep>76</dep></entry><!--iddle-->
@@ -76,7 +76,7 @@
       <name>fan-percent-r</name>
       <type>rotate</type>
       <object-name>needle-fan-r</object-name>
-      <property>engines/engine[1]/A-10-alt-n1</property>
+      <property>engines/engine[1]/n1</property>
       <interpolation> 
         <entry><ind>0</ind><dep>28</dep></entry><!--0%-->
         <entry><ind>73.6</ind><dep>76</dep></entry><!--iddle-->
@@ -122,7 +122,7 @@
       <name>core-rpm-r</name>
       <type>rotate</type>
       <object-name>needle-core-r</object-name>
-      <property>engines/engine[0]/n1</property>
+      <property>engines/engine[1]/n1</property>
       <interpolation> 
         <entry><ind>0.0000</ind><dep>0</dep></entry><!--0-->
         <entry><ind>56.000</ind><dep>133</dep></entry><!--iddle-->
@@ -432,7 +432,7 @@
       </emission>
   </animation>
 
-<animation>
+  <animation>
    <object-name>needle-apu-egt</object-name>
    <type>material</type>
     <emission> 

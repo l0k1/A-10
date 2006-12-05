@@ -51,7 +51,7 @@
 
 <actions> 
 
-<!-- panel-norm-->
+<!-- ils units-->
   <action>
     <name>ils-units-down</name>
     <button>0</button>
@@ -61,12 +61,12 @@
     <h>65</h>
     <binding>
      <command>property-adjust</command>
-     <property>instrumentation/nav[2]/frequencies/selected-mhz</property>
+     <property>instrumentation/nav[0]/frequencies/selected-mhz</property>
      <step>-1</step>
     </binding>
     <binding>
      <command>nasal</command>
-     <script>nav_scripts.nav2_freq_update();</script>
+     <script>nav_scripts.nav0_freq_update();</script>
     </binding>
   </action>
 
@@ -79,17 +79,17 @@
     <h>65</h>
     <binding>
      <command>property-adjust</command>
-     <property>instrumentation/nav[2]/frequencies/selected-mhz</property>
+     <property>instrumentation/nav[0]/frequencies/selected-mhz</property>
      <step>1</step>
     </binding>
     <binding>
      <command>nasal</command>
-     <script>nav_scripts.nav2_freq_update();</script>
+     <script>nav_scripts.nav0_freq_update();</script>
     </binding>
   </action>
 
 
-<!-- instruments-norm-->
+<!-- ils deci-->
    <action>
     <name>ils-deci-down</name>
     <button>0</button>
@@ -99,12 +99,12 @@
     <h>65</h>
     <binding>
      <command>property-adjust</command>
-     <property>instrumentation/nav[2]/frequencies/selected-mhz</property>
+     <property>instrumentation/nav[0]/frequencies/selected-mhz</property>
      <step>-0.01</step>
     </binding>
     <binding>
      <command>nasal</command>
-     <script>nav_scripts.nav2_freq_update();</script>
+     <script>nav_scripts.nav0_freq_update();</script>
     </binding>
     </action>
 
@@ -117,12 +117,12 @@
     <h>65</h>
     <binding>
      <command>property-adjust</command>
-     <property>instrumentation/nav[2]/frequencies/selected-mhz</property>
+     <property>instrumentation/nav[0]/frequencies/selected-mhz</property>
      <step>0.01</step>
     </binding>
     <binding>
      <command>nasal</command>
-     <script>nav_scripts.nav2_freq_update();</script>
+     <script>nav_scripts.nav0_freq_update();</script>
     </binding>
    </action>
 

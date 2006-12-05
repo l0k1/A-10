@@ -66,12 +66,6 @@
        <command>nasal</command>
        <script>canopy.canopy_switch(-1)</script>
       </binding>
-      <mod-up>
-       <binding>
-        <command>nasal</command>
-        <script>canopy.canopy_switch(0)</script>
-       </binding>
-       </mod-up>
      </action>
      
 <!-- apu-gen-power -->
@@ -98,8 +92,8 @@
       <w>178</w>
       <h>60</h>
       <binding>
-       <command>nasal</command>
-        <script>power_systems.inverter_switch(-1)</script>
+        <command>nasal</command>
+        <script>electrical.inverter_switch(-1)</script>
       </binding>
     </action>
 
@@ -111,8 +105,8 @@
       <w>178</w>
       <h>70</h>
       <binding>
-       <command>nasal</command>
-        <script>power_systems.inverter_switch(1)</script>
+        <command>nasal</command>
+        <script>electrical.inverter_switch(1)</script>
       </binding>
     </action>
 

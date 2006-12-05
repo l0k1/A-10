@@ -492,3 +492,15 @@ start_up = func {
   settimer(altimeter_monitor, 0.5);
 }
 #--------------------------------------------------------------------
+
+# strobes -----------------------------------------------------------
+strobe_switch = props.globals.getNode("controls/lighting/strobe", 1);
+aircraft.light.new("sim/model/A-10/lighting/strobe", 0.05, 1.00, strobe_switch);
+
+# nav lights -----------------------------------------------------------
+nav_lights_switch = props.globals.getNode("controls/A-10/lighting/nav-lights-flash", 1);
+aircraft.light.new("sim/model/A-10/lighting/nav-lights", 0.62, 0.62, nav_lights_switch);
+
+# warning lights medium speed -----------------------------------------------------------
+warn_medium_lights_switch = props.globals.getNode("controls/A-10/lighting/warn-medium-lights-switch", 1);
+aircraft.light.new("sim/model/A-10/lighting/warn-medium-lights", 0.40, 0.30, warn_medium_lights_switch);

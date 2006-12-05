@@ -12,7 +12,7 @@
     <object-name>index-hars</object-name>
     <condition>
       <equals>
-        <property>A-10-nav/A-10-nav-selector-hars</property>
+        <property>sim/model/A-10/A-10-nav/selector-hars</property>
         <value>1</value>
       </equals>
     </condition>
@@ -23,7 +23,7 @@
   <object-name>index-vlocs</object-name>
   <condition>
    <equals>
-    <property>A-10-nav/A-10-nav-selector-vlocs</property>
+    <property>sim/model/A-10/A-10-nav/selector-vlocs</property>
     <value>1</value>
    </equals>
   </condition>
@@ -34,7 +34,7 @@
   <object-name>index-tils</object-name>
   <condition>
    <equals>
-    <property>A-10-nav/A-10-nav-selector-tils</property>
+    <property>sim/model/A-10/A-10-nav/selector-tils</property>
     <value>1</value>
    </equals>
   </condition>
@@ -45,7 +45,7 @@
   <object-name>index-nav_crs</object-name>
   <condition>
    <equals>
-    <property>A-10-nav/A-10-nav-selector-nav_crs</property>
+    <property>sim/model/A-10/A-10-nav/selector-nav_crs</property>
     <value>1</value>
    </equals>
   </condition>
@@ -56,7 +56,7 @@
   <object-name>index-man</object-name>
   <condition>
    <equals>
-    <property>A-10-nav/A-10-nav-selector-man</property>
+    <property>sim/model/A-10/A-10-nav/selector-man</property>
     <value>1</value>
    </equals>
   </condition>
@@ -176,7 +176,7 @@
   <animation>
     <object-name>ptr-switch</object-name>
     <type>rotate</type>
-    <property>A-10-nav/A-10-nav-selector-ptr</property>
+    <property>sim/model/A-10/A-10-nav/selector-ptr</property>
     <interpolation>
       <entry><ind>0</ind><dep>-30</dep></entry>
       <entry><ind>1</ind><dep>30</dep></entry>

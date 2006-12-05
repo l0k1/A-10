@@ -1,7 +1,9 @@
 #A-10 electrical system.
     # A-10 external-battery-switch assumed always on
     # A-10 external pwr assumed never connected
-    
+
+var UPDATE_PERIOD = 0.3;
+
 battery = nil;
 alternator = nil;
 
@@ -29,10 +31,12 @@ init_electrical = func {
     setprop("controls/electric/external-power", 0);
     setprop("controls/electric/engine[0]/generator", 0);
     setprop("controls/electric/engine[1]/generator", 0);
-    setprop("controls/switches/inverter", 1);
+    setprop("sim/model/A-10/controls/switches/inverter", 1);
     setprop("systems/electrical/L-conv-volts", 0.0);
     setprop("systems/electrical/R-conv-volts", 0.0);
     setprop("systems/electrical/inverter-volts", 0.0);
+    setprop("systems/electrical/radar", 24.0);
+	# radar only used to allow Air to Air Refueling to work.
     settimer(update_electrical, 0);
 }
 
@@ -104,7 +108,7 @@ update_electrical = func {
     dt = time - last_time;
     last_time = time;
     update_virtual_bus( dt );
-    settimer(update_electrical, 0);
+    settimer(update_electrical, UPDATE_PERIOD);
 }
 
 
@@ -115,14 +119,14 @@ update_virtual_bus = func( dt ) {
     master_apu        = getprop("controls/electric/APU-generator[0]");
     master_alt        = getprop("controls/electric/engine[0]/generator");
     master_alt1       = getprop("controls/electric/engine[1]/generator");
-    master_inv        = getprop("controls/switches/inverter");
+    master_inv        = getprop("sim/model/A-10/controls/switches/inverter");
     external_volts    = 0.0;
     battery_volts     = battery.get_output_volts();
     if (master_alt) {
-        L_gen_volts = alternator.get_output_volts("engines/engine[0]/A-10-alt-n1");
+        L_gen_volts = alternator.get_output_volts("engines/engine[0]/n1");
     } else { L_gen_volts = 0.0;}
     if (master_alt1) {
-        R_gen_volts = alternator.get_output_volts("engines/engine[1]/A-10-alt-n1");
+        R_gen_volts = alternator.get_output_volts("engines/engine[1]/n1");
     } else { R_gen_volts = 0.0; }
     if (master_apu) {
         APU_gen_volts = alternator.get_output_volts("systems/apu/rpm");
@@ -299,8 +303,7 @@ update_virtual_bus = func( dt ) {
     return load;
 }
 
-#setprop("systems/electrical/outputs/nav[0]", battery_bus_volts);
-#setprop("systems/electrical/outputs/com[0]", battery_bus_volts);
+
 #    if ( getprop("controls/switches/pitot-heat" ) ) {
 #        setprop("systems/electrical/outputs/pitot-heat", battery_bus_volts);
 #    } else {
@@ -365,6 +368,7 @@ R_AC_bus = func() {
     setprop("systems/electrical/outputs/cadc", R_AC_bus_volts);
     setprop("systems/electrical/outputs/nav-mode", R_AC_bus_volts);
     setprop("systems/electrical/outputs/aoa-indexer", R_AC_bus_volts);
+    setprop("systems/electrical/outputs/hud", R_AC_bus_volts);
     return load;
 }
 
@@ -374,3 +378,76 @@ AC_ESSEN_bus = func() {
 }
 
 settimer(init_electrical, 0);
+
+
+
+# other electrical power controls
+# -------------------------------
+
+inverter_switch = func {
+	input = arg[0];
+	if (input == 1) {
+		inverter_switch_up();
+	} else {
+		inverter_switch_down();
+	}
+}
+
+inverter_switch_up = func {
+	if (getprop("sim/model/A-10/controls/switches/inverter") == 0) {
+		setprop("sim/model/A-10/controls/switches/inverter", 1);
+	} elsif (getprop("sim/model/A-10/controls/switches/inverter") == 1) {
+		setprop("sim/model/A-10/controls/switches/inverter", 2);
+	}
+}
+inverter_switch_down = func {
+	if (getprop("sim/model/A-10/controls/switches/inverter") == 2) {
+		setprop("sim/model/A-10/controls/switches/inverter", 1);
+	} elsif (getprop("sim/model/A-10/controls/switches/inverter") == 1) {
+		setprop("sim/model/A-10/controls/switches/inverter", 0);
+	}
+}
+
+
+# lighting controls
+# -----------------
+
+nav_lights_switcher = func {
+  input = arg[0];
+  if (input == 1) { nav_lights_switch_up() } else { nav_lights_switch_down() }
+}
+nav_lights_switch_up = func {
+  if (getprop("controls/A-10/lighting/nav-lights-switch") == 0) {
+    setprop("controls/A-10/lighting/nav-lights-switch", 1);
+  } elsif (getprop("controls/A-10/lighting/nav-lights-switch") == 1) {
+    setprop("controls/A-10/lighting/nav-lights-switch", 2);
+    setprop("controls/A-10/lighting/nav-lights-flash", 1);
+  }
+}
+nav_lights_switch_down = func {
+  if (getprop("controls/A-10/lighting/nav-lights-switch") == 2) {
+    setprop("controls/A-10/lighting/nav-lights-switch", 1);
+    setprop("controls/A-10/lighting/nav-lights-flash", 0);
+  } elsif (getprop("controls/A-10/lighting/nav-lights-switch") == 1) {
+    setprop("controls/A-10/lighting/nav-lights-switch", 0);
+  }
+}
+
+land_lights_switcher = func {
+  input = arg[0];
+  if (input == 1) { land_lights_switch_up() } else { land_lights_switch_down() }
+}
+land_lights_switch_up = func {
+  if (getprop("controls/A-10/lighting/land-lights-switch") == 0) {
+    setprop("controls/A-10/lighting/land-lights-switch", 1);
+  } elsif (getprop("controls/A-10/lighting/land-lights-switch") == 1) {
+    setprop("controls/A-10/lighting/land-lights-switch", 2);
+  }
+}
+land_lights_switch_down = func {
+  if (getprop("controls/A-10/lighting/land-lights-switch") == 2) {
+    setprop("controls/A-10/lighting/land-lights-switch", 1);
+  } elsif (getprop("controls/A-10/lighting/land-lights-switch") == 1) {
+    setprop("controls/A-10/lighting/land-lights-switch", 0);
+  }
+}

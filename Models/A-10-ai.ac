@@ -36,9 +36,9 @@ numsurf 1
 SURF 0x30
 mat 0
 refs 3
-2 0 0.36
-1 1 1
 0 1 0
+1 1 1
+2 0 0.36
 kids 0
 OBJECT poly
 name "ring-slip"
@@ -4207,9 +4207,9 @@ numsurf 1
 SURF 0x30
 mat 0
 refs 3
-0 0 0.36
-1 1 1
 2 1 0
+1 1 1
+0 0 0.36
 kids 0
 OBJECT poly
 name "off-flag"

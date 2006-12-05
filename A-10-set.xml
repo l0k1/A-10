@@ -4,557 +4,591 @@
 Fairchild A-10 simulation config.
 
 2006-02-02 Lee Elliott
-2006-02-26 Alexis Bory xiii@g2ms.com (3D cockpit)
+2006-08-15 Alexis Bory xiii@g2ms.com (3D cockpit)
 ************************************************************************
 -->
 
 <PropertyList>
-  <sim>
+	<sim>
 
-    <startup>
-      <splash-texture>Aircraft/A-10/A-10-splash.rgb</splash-texture>
-    </startup>
+		<startup>
+			<splash-texture>Aircraft/A-10/A-10-splash.rgb</splash-texture>
+		</startup>
 
-    <flight-model>yasim</flight-model>
-    <status>beta</status>
-    <author>Lee Elliott - Alexis Bory</author>
-    <aero>A-10-yasim</aero>
-    <fuel-fraction>1.0</fuel-fraction>
-    <description>Fairchild A-10 (YASim FDM)</description>
-    <virtual-cockpit archive="y">false</virtual-cockpit>
-    <chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
+		<flight-model>yasim</flight-model>
+		<status>beta</status>
+		<author>Lee Elliott - Alexis Bory</author>
+		<aero>A-10-yasim</aero>
+		<fuel-fraction>1.0</fuel-fraction>
+		<description>Fairchild A-10 (YASim FDM)</description>
+		<virtual-cockpit archive="y">false</virtual-cockpit>
+		<chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
 
-    <number-views type="int" archive="y">7</number-views>
-    
-    <view n="0">
-      <name>Cockpit View</name>
-      <type>lookfrom</type>
-      <internal archive="y">true</internal>
-      <config>
-        <x-offset-m archive="y">0.0</x-offset-m>
-        <y-offset-m archive="y">1.48</y-offset-m>
-        <z-offset-m archive="y">3.20</z-offset-m>
-        <pitch-offset-deg>-12</pitch-offset-deg>
-        <default-field-of-view-deg>55</default-field-of-view-deg>
-      </config>
-    </view>
+		<number-views type="int" archive="y">7</number-views>
+		<view n="0">
+			<name>Cockpit View</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<x-offset-m archive="y">0.0</x-offset-m>
+				<y-offset-m archive="y">1.48</y-offset-m>
+				<z-offset-m archive="y">3.20</z-offset-m>
+				<pitch-offset-deg>-12</pitch-offset-deg>
+				<default-field-of-view-deg>55</default-field-of-view-deg>
+			</config>
+		</view>
+		<view n="6">
+			<name>Drop View</name>
+			<type>lookat</type>
+			<config>
+				<eye-lat-deg-path>sim/view[6]/latitude-deg</eye-lat-deg-path>
+				<eye-lon-deg-path>sim/view[6]/longitude-deg</eye-lon-deg-path>
+				<eye-alt-ft-path>sim/view[6]/altitude-ft</eye-alt-ft-path>
+				<eye-roll-deg-path>sim/view[6]/roll-deg</eye-roll-deg-path>
+				<eye-pitch-deg-path>sim/view[6]/pitch-deg</eye-pitch-deg-path>
+				<eye-heading-deg-path>sim/view[6]/heading-deg</eye-heading-deg-path>
+				<at-model type="bool">true</at-model>
+				<at-model-idx type="int">0</at-model-idx>
+				<ground-level-nearplane-m type="double">1.0f</ground-level-nearplane-m>
+				<default-field-of-view-deg type="double">8.0</default-field-of-view-deg>
+				<x-offset-m type="double">0</x-offset-m>
+				<y-offset-m type="double">0</y-offset-m>
+				<z-offset-m type="double">0</z-offset-m>
+				<target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
+			</config>
+		</view>
+		<view n="1">
+			<config>
+				<target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
+				<pitch-offset-deg>0</pitch-offset-deg>
+			</config>
+		</view>
+		<view n="2">
+			<config>
+				<x-offset-m archive="y" type="double">6.0</x-offset-m>
+				<z-offset-m archive="y">-19.7</z-offset-m>
+				<target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
+			</config>
+		</view>
+		<view n="3">
+			<config>
+				<target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
+			</config>
+		</view>
+		<view n="5">
+			<config>
+				<target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
+			</config>
+		</view>
 
-    <view n="6">
-      <name>Drop View</name>
-      <type>lookat</type>
-      <config>
-        <eye-lat-deg-path>sim/view[6]/latitude-deg</eye-lat-deg-path>
-        <eye-lon-deg-path>sim/view[6]/longitude-deg</eye-lon-deg-path>
-        <eye-alt-ft-path>sim/view[6]/altitude-ft</eye-alt-ft-path>
-        <eye-roll-deg-path>sim/view[6]/roll-deg</eye-roll-deg-path>
-        <eye-pitch-deg-path>sim/view[6]/pitch-deg</eye-pitch-deg-path>
-        <eye-heading-deg-path>sim/view[6]/heading-deg</eye-heading-deg-path>
+		<instrumentation>
+			<path>Aircraft/A-10/Systems/instrumentation.xml</path>
+		</instrumentation>
 
-        <at-model type="bool">true</at-model>
-        <at-model-idx type="int">0</at-model-idx>
+		<systems>
+			<autopilot>
+				<path>Aircraft/A-10/Systems/A-10-autopilot.xml</path>
+			</autopilot>
+			<electrical>
+				<path></path><!-- intentionally left empty -->
+			</electrical>
+		</systems>
 
-        <ground-level-nearplane-m type="double">1.0f</ground-level-nearplane-m>
-        <default-field-of-view-deg type="double">8.0</default-field-of-view-deg>
+		<sound>
+			<audible>true</audible>
+			<path>Aircraft/A-10/Sounds/A-10-sound.xml</path>
+		</sound>
 
-        <x-offset-m type="double">0</x-offset-m>
-        <y-offset-m type="double">0</y-offset-m>
-        <z-offset-m type="double">0</z-offset-m>
-        <target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
-      </config>
-    </view>
-<!--
-    <current-view>
-      <field-of-view>55</field-of-view>
-      <pitch-offset-deg>-12</pitch-offset-deg>
-    </current-view>
--->
-<!-- Shift the camera target point back -->
-    <view n="1">
-      <config>
-        <target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
-        <pitch-offset-deg>0</pitch-offset-deg>
-      </config>
-    </view>
+		<model>
+			<path>Aircraft/A-10/Models/A-10-model.xml</path>
+			<A-10>
+				<canopy-safe type="bool">true</canopy-safe>
+				<consumables>
+					 <fuel>
+					 	<diff-lbs type="double">0</diff-lbs>
+					 </fuel>
+				</consumables>				
+				<controls>
+					<canopy-lock type="bool">false</canopy-lock>
+					<canopy-switch type="int">2</canopy-switch>
+					<engines>
+						<engine n="0">
+							<starter-switch-position type="int">1</starter-switch-position>
+						</engine>
+						<engine n="1">
+							<starter-switch-position type="int">1</starter-switch-position>
+						</engine>
+					</engines>
+					<fuel>
+						<receiver-lever type="bool">0</receiver-lever>
+						<aar-lock type="bool">0</aar-lock>
+					</fuel>
+				</controls>
+				<engines>
+					<initial-start-state type="bool"></initial-start-state>
+					<engine n="0">
+						<running type="bool">0</running>
+					</engine>
+					<engine n="1">
+						<running type="bool">0</running>
+					</engine>
+				</engines>
+				<A-10-nav>
+					<selector-hars type="bool">false</selector-hars>
+					<selector-vlocs type="bool">false</selector-vlocs>
+					<selector-tils type="bool">false</selector-tils>
+					<selector-nav_crs type="bool">false</selector-nav_crs>
+					<selector-man type="bool">false</selector-man>
+					<selector-ils type="bool">false</selector-ils>
+					<selector-ptr type="bool">true</selector-ptr>
+					<hars>
+						<hars-warn-light type="bool">false</hars-warn-light>
+					</hars>
+				</A-10-nav>
+				<instrumentation>
+					<nav n="2">
+						<selector type="int">1</selector>
+						<mode type="int">0</mode>
+						<selected-preset type="int">1</selected-preset>
+						<load-state type="int">0</load-state>
+						<presets>
+							<preset n="1" type="float">10</preset>
+							<preset n="2" type="float">10</preset>
+							<preset n="3" type="float">10</preset>
+							<preset n="4" type="float">10</preset>
+							<preset n="5" type="float">10</preset>
+							<preset n="6" type="float">10</preset>
+							<preset n="7" type="float">10</preset>
+							<preset n="8" type="float">10</preset>
+							<preset n="9" type="float">10</preset>
+							<preset n="10" type="float">10</preset>
+							<preset n="11" type="float">10</preset>
+							<preset n="12" type="float">10</preset>
+							<preset n="13" type="float">10</preset>
+							<preset n="14" type="float">10</preset>
+							<preset n="15" type="float">10</preset>
+							<preset n="16" type="float">10</preset>
+							<preset n="17" type="float">10</preset>
+							<preset n="18" type="float">10</preset>
+							<preset n="19" type="float">10</preset>
+							<preset n="20" type="float">10</preset>
+						</presets>
+					</nav>
+					<warnings>
+						<master-caution type="bool">false</master-caution>
+					</warnings>
+				</instrumentation>
+			</A-10>
+		</model>
 
-    <view n="2">
-      <config>
-        <x-offset-m archive="y" type="double">6.0</x-offset-m>
-        <z-offset-m archive="y">-19.7</z-offset-m>
-        <target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
-      </config>
-    </view>
+		<!--sub models -->
+		<submodels>
+			<serviceable type="bool">1</serviceable>
+			<path>Aircraft/A-10/A-10-submodels.xml</path>
+		</submodels>
 
-    <view n="3">
-      <config>
-        <target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
-      </config>
-    </view>
+		<!-- Flap settings -->
+		<flaps>
+			<setting>0.00</setting>
+			<setting>0.08</setting>
+			<setting>0.16</setting>
+			<setting>0.32</setting>
+			<setting>0.48</setting>
+			<setting>0.64</setting>
+			<setting>0.82</setting>
+			<setting>1.00</setting>
+		</flaps>
 
-    <view n="5">
-      <config>
-        <target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
-      </config>
-    </view>
+		<aoa-indexer>
+			<too-slow-deg>9.5</too-slow-deg>  <!-- target +1.5 deg -->
+			<slow-deg>8.5</slow-deg>          <!-- target +0.5 deg -->
+			<fast-deg>7.5</fast-deg>          <!-- target -0.5 deg -->
+			<too-fast-deg>6.5</too-fast-deg>  <!-- target -1.5 deg -->
+		</aoa-indexer>
 
-    <instrumentation>
-      <path>Aircraft/A-10/Systems/instrumentation.xml</path>
-    </instrumentation>
+		<help>
+			<title>Fairchild A-10</title>
+			<key>
+				<name>C</name>
+				<desc>open/close canopy</desc>
+			</key>
+			<key>
+				<name>d/f</name>
+				<desc>retract/extend slats</desc>
+			</key>
+			<key>
+				<name>e</name>
+				<desc>Fire the GAU-8/A cannon</desc>
+			</key>
+			<key>
+				<name>j/k</name>
+				<desc>decrease/increase spoilers</desc>
+			</key>
+			<key>
+				<name>K</name>
+				<desc>toggle trajectory markers</desc>
+			</key>
+			<key>
+				<name>U</name>
+				<desc>update drop view position</desc>
+			</key>
+			<line>Top Speed:      380 kt @ 15000 ft)</line>
+			<line>Use the Equipment/Fuel and Payload</line>
+			<line>menu item to use the external drop</line>
+			<line>tanks</line>
+		</help>
 
-    <systems>
-      <autopilot>
-        <path>Aircraft/A-10/Systems/A-10-autopilot.xml</path>
-      </autopilot>
-    <electrical>
-      <path></path>
-      <!--<path>Aircraft/A-10/Systems/A-10-electrical.xml</path>-->
-    </electrical>
-    </systems>
+		<!-- Hud -->
+		<hud>
+			<path n="1">Aircraft/A-10/Huds/A-10.xml</path>
+			<visibility n="1">true</visibility>
+			<color>
+				<transparent type="bool">true</transparent>
+				<antialiased type="bool">true</antialiased>
+				<brightness type="float">0.85</brightness>
+				<alpha type="float">0.85</alpha>
+			</color>
+			<palette>
+				<color n="0">
+					<red type="float">0.38</red>
+					<green type="float">1.0</green>
+					<blue type="float">0.22</blue>
+				</color>
+				<color n="1">
+					<red type="float">1.0</red>
+					<green type="float">0.0</green>
+					<blue type="float">0.0</blue>
+				</color>
+			</palette>
+		</hud>
 
-<!-- Sound -->
-    <sound>
-      <audible>true</audible>
-      <path>Aircraft/A-10/Sounds/A-10-sound.xml</path>
-    </sound>
+	</sim>
 
-    <hud>
-      <path>Aircraft/A-10/Huds/A-10-hud1.xml</path>
-      <visibility>true</visibility>
-      <current-color>0</current-color>
-      <color>
-        <transparent type="bool">true</transparent>
-        <antialiased type="bool">true</antialiased>
-        <brightness type="float">0.85</brightness>
-        <alpha type="float">0.85</alpha>
-      </color>
-      <palette>
-        <color n="0">
-          <red type="float">0.38</red>
-          <green type="float">1.0</green>
-          <blue type="float">0.22</blue>
-        </color>
-        <color n="1">
-          <red type="float">1.0</red>
-          <green type="float">0.0</green>
-          <blue type="float">0.0</blue>
-        </color>
-      </palette>
-    </hud>
+	<input>
 
-    <model>
-      <path>Aircraft/A-10/Models/A-10-model.xml</path>
-    </model>
+		<keyboard>
+			<key n="6">
+				<name>Ctrl-C</name>
+				<desc>Disconnect AAR boom or resets the AAR receiver</desc>
+				<binding>
+				   <command>nasal</command>
+				   <script>nav_scripts.test_button(2)</script>
+				</binding>
+			</key>
+			<key n="67">
+				<name>C</name>
+				<desc>Toggle canopy on or off</desc>
+				<binding>
+				   <command>nasal</command>
+				   <script>canopy.canopy_switch(2)</script>
+				</binding>
+			</key>
+			<key n="100">
+				<name>d</name>
+				<desc>Retract Slats.</desc>
+				<binding>
+					<command>property-adjust</command>
+					<property>controls/flight/slats</property>
+					<step type="double">-0.25</step>
+				</binding>
+			</key>
+			<key n="101">
+				<name>e</name>
+				<desc>Fire GAU-8/A cannon</desc>
+				<binding>
+					<command>nasal</command>
+					<script>A10.fire_gau8a()</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>A10.cfire_gau8a()</script>
+					</binding>
+				</mod-up>
+			</key>
+			<key n="102">
+				<name>f</name>
+				<desc>Extend Slats.</desc>
+				<binding>
+					<command>property-adjust</command>
+					<property>controls/flight/slats</property>
+				<step type="double">0.25</step>
+				</binding>
+			</key>
+			<key n="75">
+				<name>K</name>
+				<desc>Toggle trajectory markers</desc>
+				<binding n="0">
+					<command>nasal</command>
+					<script>A10.toggle_traj_mkr()</script>
+				</binding>
+			</key>
+			<!-- Update Drop View position -->
+			<key n="85">
+				<name>U</name>
+				<desc>Update Drop View position</desc>
+				<binding n="0">
+					<command>nasal</command>
+					<script>A10.update_drop_view_pos()</script>
+				</binding>
+			</key>
+		</keyboard>
 
-<!--sub models -->
-    <submodels>
-      <serviceable type="bool">1</serviceable>
-      <path>Aircraft/A-10/A-10-submodels.xml</path>
-    </submodels>
+	</input>
 
-<!-- Flap settings -->
-    <flaps>
-      <setting>0.00</setting>
-      <setting>0.08</setting>
-      <setting>0.16</setting>
-      <setting>0.32</setting>
-      <setting>0.48</setting>
-      <setting>0.64</setting>
-      <setting>0.82</setting>
-      <setting>1.00</setting>
-    </flaps>
+	<autopilot>
 
-     <aoa-indexer>
-       <too-slow-deg>9.5</too-slow-deg>  <!-- target +1.5 deg -->
-       <slow-deg>8.5</slow-deg>          <!-- target +0.5 deg -->         
-       <fast-deg>7.5</fast-deg>          <!-- target -0.5 deg -->         
-       <too-fast-deg>6.5</too-fast-deg>  <!-- target -1.5 deg -->         
-     </aoa-indexer>
+		<locks>
+			<aoa type="string">initialised</aoa>
+			<auto-flap-control type="string">manual</auto-flap-control>
+			<auto-landing type="string">enabled</auto-landing>
+			<auto-take-off type="string">enabled</auto-take-off>
+			<common-aileron-control type="string">off</common-aileron-control>
+			<common-elevator-control type="string">off</common-elevator-control>
+			<ca-roll-hold type="string">initialised</ca-roll-hold>
+			<ca-true-heading-hold type="string">initialised</ca-true-heading-hold>
+			<ca-dg-heading-hold type="string">initialised</ca-dg-heading-hold>
+			<ca-nav1-hold type="string">initialised</ca-nav1-hold>
+			<ce-altitude-hold type="string">initialised</ce-altitude-hold>
+			<ce-aoa-hold type="string">initialised</ce-aoa-hold>
+			<ce-mach-climb-hold type="string">initialised</ce-mach-climb-hold>
+			<ce-pitch-hold type="string">initialised</ce-pitch-hold>
+			<ce-agl-hold type="string">initialised</ce-agl-hold>
+			<ce-vfps-hold type="string">initialised</ce-vfps-hold>
+			<rudder-control type="string">initialised</rudder-control>
+		</locks>
 
-    <help>
-      <title>Fairchild A-10</title>
-      <key>
-        <name>d/f</name>
-        <desc>retract/extend slats</desc>
-      </key>
-      <key>
-        <name>e</name>
-        <desc>Fire the GAU-8/A cannon</desc>
-      </key>
-      <key>
-        <name>j/k</name>
-        <desc>decrease/increase spoilers</desc>
-      </key>
-      <key>
-        <name>K</name>
-        <desc>toggle trajectory markers</desc>
-      </key>
-      <key>
-        <name>U</name>
-        <desc>update drop view position</desc>
-      </key>
-      <line>Top Speed:      380 kt @ 15000 ft)</line>
-      <line>Use the Equipment/Fuel and Payload</line>
-      <line>menu item to use the external drop</line>
-      <line>tanks</line>
-    </help>
+		<settings>
+			<approach-aoa-deg type="float">8.0</approach-aoa-deg>
+			<auto-flap-target-aoa-deg type="float">0.0</auto-flap-target-aoa-deg>
+			<auto-landing-touchdown-alt-ft type="float">300.0</auto-landing-touchdown-alt-ft>
+			<auto-landing-circuit-speed-kt type="float">260.0</auto-landing-circuit-speed-kt>
+			<climb-out-pitch-trans-time-sec type="float">8.0</climb-out-pitch-trans-time-sec>
+			<ground-roll-heading-deg type="float">-999.9</ground-roll-heading-deg>
+			<ground-roll-rotate-speed-kts type="float">100</ground-roll-rotate-speed-kts>
+			<take-off-initial-pitch-deg type="float">0.0</take-off-initial-pitch-deg>
+			<take-off-final-pitch-deg type="float">7.0</take-off-final-pitch-deg>
+			<target-agl-ft type="float">1000</target-agl-ft>
+			<target-altitude-ft type="float">3000</target-altitude-ft>
+			<target-aoa-deg type="float">1.5</target-aoa-deg>
+			<target-climb-rate-fps type="float">30</target-climb-rate-fps>
+			<target-pitch-deg type="float">0</target-pitch-deg>
+			<target-speed-kt type="float">320.0</target-speed-kt>
+			<target-mach type="float">0.48</target-mach>
+		</settings>
+	</autopilot>
 
-  </sim>
+	<instrumentation>
+		<tacan>
+			<switch-position>0</switch-position>
+		</tacan>
+		<radar>
+			<minimized type="bool">0</minimized>
+			<range type="double">32</range>
+			<range-control type="int">5</range-control>
+			<serviceable type="bool">1</serviceable>
+			<switch type="string">ON</switch>
+		</radar>
+	</instrumentation>
 
-  <input>
+	<controls>
 
-    <keyboard>
-      <key n="100">
-        <name>d</name>
-        <desc>Retract Slats.</desc>
-        <binding>
-          <command>property-adjust</command>
-          <property>controls/flight/slats</property>
-          <step type="double">-0.25</step>
-        </binding>
-      </key>
+		<switches>
+			<ils type="bool">0</ils>
+			<homing-UHF type="bool">0</homing-UHF>
+			<homing-FM type="bool">0</homing-FM>
+		</switches>
+		<APU>
+			<off-start-switch type="bool">0</off-start-switch>
+		</APU>
+		<canopy>
+			<A-10-canopy-switch type="int">1</A-10-canopy-switch>
+		</canopy>
+		<gear>
+			<!-- Start with the Parking Brake on -->
+			<brake-parking type="double">1.0</brake-parking>
+			<!-- landing gear handle animation -->
+			<!-- init with landing gear up - 0.0 -->
+			<A-10-landing-gear-hdl-anim type= "float">0.0</A-10-landing-gear-hdl-anim>
+		</gear>
+		<lighting>
+			<strobe type="bool">false</strobe>
+		</lighting>
+		<A-10>
+			<hud>
+				<intens type="float">1.0</intens>
+				<depr type="float">0.0</depr>
+				<mode-selector type="int">1</mode-selector>
+				<func-selector type="int">1</func-selector>
+			</hud>
+			<lighting>
+				<nav-lights-switch type="int">1</nav-lights-switch>
+				<nav-lights-flash type="bool">false</nav-lights-flash>
+				<formation type="double">0.0</formation>
+				<land-lights-switch type="int">1</land-lights-switch>
+				<warn-medium-lights-switch type="bool">1</warn-medium-lights-switch>
+			</lighting>
+		</A-10>
 
-      <key n="101">
-        <name>e</name>
-        <desc>Fire GAU-8/A cannon</desc>
-        <binding>
-          <command>nasal</command>
-          <script>A10.fire_gau8a()</script>
-        </binding>
-        <mod-up>
-          <binding>
-            <command>nasal</command>
-            <script>A10.cfire_gau8a()</script>
-          </binding>
-        </mod-up>
-      </key>
+	</controls>
 
-      <key n="102">
-        <name>f</name>
-        <desc>Extend Slats.</desc>
-        <binding>
-          <command>property-adjust</command>
-          <property>controls/flight/slats</property>
-          <step type="double">0.25</step>
-        </binding>
-      </key>
+	<!-- Start with the Canopy open -->
+	<canopy>
+		<position-norm type="double">1.0</position-norm>
+	</canopy>
 
-      <key n="75">
-        <name>K</name>
-        <desc>Toggle trajectory markers</desc>
-        <binding n="0">
-          <command>nasal</command>
-          <script>A10.toggle_traj_mkr()</script>
-        </binding>
-      </key>
-      
-<!-- Update Drop View position -->
-       <key n="85">
-        <name>U</name>
-        <desc>Update Drop View position</desc>
-        <binding n="0">
-          <command>nasal</command>
-          <script>A10.update_drop_view_pos()</script>
-        </binding>
-      </key>
-      
-    </keyboard>
+	<systems>
+		<!-- APU -->
+		<apu>
+			<start-state type="float">0</start-state>
+			<rpm type="float">0</rpm>
+			<temp type="float">0</temp>
+		</apu>
+		<!-- hydraulic system -->
+		<A-10-hydraulics>
+			<l-hyd-res type="float">1</l-hyd-res>
+			<r-hyd-res type="float">1</r-hyd-res>
+		</A-10-hydraulics>
+		<!-- electrical system (logical three remains under the std. elec. node) -->
+		<A-10-electrical>
+			<l-converter-failure type="bool">0</l-converter-failure>
+			<r-converter-failure type="bool">0</r-converter-failure>
+			<apu-generator-caution-light type="bool">0</apu-generator-caution-light>
+			<l-generator-caution-light type="bool">0</l-generator-caution-light>
+			<r-generator-caution-light type="bool">0</r-generator-caution-light>
+			<instrument-inverter-caution-light type="bool">0</instrument-inverter-caution-light>
+		</A-10-electrical>
+		<!-- oxygen system -->
+		<A-10-oxygen>
+			<oxy-level type="float">5</oxy-level>
+		</A-10-oxygen>
+		<!-- ejectable seat -->
+		<A-10-ejectable-seat>
+			<armed type="bool">1</armed>
+		</A-10-ejectable-seat>
+		<!-- bleed air system -->
+		<A-10-bleed-air>
+			<warn-light type="bool">0</warn-light>
+		</A-10-bleed-air>
+		<!-- service air system -->
+		<A-10-service-air>
+			<service-air-warn-light type="bool">0</service-air-warn-light>
+		</A-10-service-air>
+		<!-- inertial navigation -->
+		<A-10-inertial-navigation-unit>
+			<inu-hot-warn-light type="bool">0</inu-hot-warn-light>
+			<inu-caution-light type="bool">0</inu-caution-light>
+		</A-10-inertial-navigation-unit>
+		<!-- stall system -->
+		<A-10-alpha-mach-computer>
+			<stall-sys-caution-light type="bool">0</stall-sys-caution-light>
+		</A-10-alpha-mach-computer>
+		<!-- central air data computer -->
+		<A-10-cadc>
+			<cadc-sys-caution-light type="bool">0</cadc-sys-caution-light>
+		</A-10-cadc>
+		<!-- fuel system -->
+		<A-10-fuel>
+			<l-main-pump type="bool">1</l-main-pump>
+			<r-main-pump type="bool">1</r-main-pump>
+			<l-wing-pump type="bool">1</l-wing-pump>
+			<r-wing-pump type="bool">1</r-wing-pump>
+			<l-pressure type="float">0.6</l-pressure><!-- psig -->
+			<r-pressure type="float">0.6</r-pressure><!-- psig -->
+		</A-10-fuel>
+		<!-- iff system in prevision of future impl. -->
+		<A-10-iff>
+			<iff-warn-light type="bool">0</iff-warn-light>
+		</A-10-iff>
+	</systems>
 
-  </input>
-
-  <autopilot>
-    <locks>
-      <aoa type="string">initialised</aoa>
-      <auto-flap-control type="string">manual</auto-flap-control>
-      <auto-landing type="string">enabled</auto-landing>
-      <auto-take-off type="string">enabled</auto-take-off>
-      <common-aileron-control type="string">off</common-aileron-control>
-      <common-elevator-control type="string">off</common-elevator-control>
-      <ca-roll-hold type="string">initialised</ca-roll-hold>
-      <ca-true-heading-hold type="string">initialised</ca-true-heading-hold>
-      <ca-dg-heading-hold type="string">initialised</ca-dg-heading-hold>
-      <ca-nav1-hold type="string">initialised</ca-nav1-hold>
-      <ce-altitude-hold type="string">initialised</ce-altitude-hold>
-      <ce-aoa-hold type="string">initialised</ce-aoa-hold>
-      <ce-mach-climb-hold type="string">initialised</ce-mach-climb-hold>
-      <ce-pitch-hold type="string">initialised</ce-pitch-hold>
-      <ce-agl-hold type="string">initialised</ce-agl-hold>
-      <ce-vfps-hold type="string">initialised</ce-vfps-hold>
-      <rudder-control type="string">initialised</rudder-control>
-    </locks>
-
-    <settings>
-      <approach-aoa-deg type="float">8.0</approach-aoa-deg>
-      <auto-flap-target-aoa-deg type="float">0.0</auto-flap-target-aoa-deg>
-      <auto-landing-touchdown-alt-ft type="float">300.0</auto-landing-touchdown-alt-ft>
-      <auto-landing-circuit-speed-kt type="float">260.0</auto-landing-circuit-speed-kt>
-      <climb-out-pitch-trans-time-sec type="float">8.0</climb-out-pitch-trans-time-sec>
-      <ground-roll-heading-deg type="float">-999.9</ground-roll-heading-deg>
-      <ground-roll-rotate-speed-kts type="float">100</ground-roll-rotate-speed-kts>
-      <take-off-initial-pitch-deg type="float">0.0</take-off-initial-pitch-deg>
-      <take-off-final-pitch-deg type="float">7.0</take-off-final-pitch-deg>
-      <target-agl-ft type="float">1000</target-agl-ft>
-      <target-altitude-ft type="float">3000</target-altitude-ft>
-      <target-aoa-deg type="float">1.5</target-aoa-deg>
-      <target-climb-rate-fps type="float">30</target-climb-rate-fps>
-      <target-pitch-deg type="float">0</target-pitch-deg>
-      <target-speed-kt type="float">320.0</target-speed-kt>
-      <target-mach type="float">0.48</target-mach>
-    </settings>
-  </autopilot>
-
-  <A-10-nav>
-    <A-10-nav-selector-hars type="bool">false</A-10-nav-selector-hars>
-    <A-10-nav-selector-vlocs type="bool">false</A-10-nav-selector-vlocs>
-    <A-10-nav-selector-tils type="bool">false</A-10-nav-selector-tils>
-    <A-10-nav-selector-nav_crs type="bool">false</A-10-nav-selector-nav_crs>
-    <A-10-nav-selector-man type="bool">false</A-10-nav-selector-man>
-    <A-10-nav-selector-ils type="bool">false</A-10-nav-selector-ils>
-    <A-10-nav-selector-ptr type="bool">true</A-10-nav-selector-ptr> <!-- true=able, false=stow -->
-    <hars>
-      <hars-warn-light type="bool">false</hars-warn-light>
-    </hars>
-  </A-10-nav>
-  
-  <instrumentation>
-    <tacan>
-      <switch-position>0</switch-position>
-    </tacan>
-    <nav>
-      <A-10-nav-selector type="int">1</A-10-nav-selector>              <!-- 1-4 -->
-      <A-10-nav-mode type="int">0</A-10-nav-mode>                      <!-- 0-2 -->
-      <A-10-nav-selected-preset type="int">1</A-10-nav-selected-preset><!-- 1-20 -->
-      <A-10-nav-load-state type="int">0</A-10-nav-load-state>
-      <presets>
-        <preset n="1" type="float">10</preset>
-        <preset n="2" type="float">10</preset>
-        <preset n="3" type="float">10</preset>
-        <preset n="4" type="float">10</preset>
-        <preset n="5" type="float">10</preset>
-        <preset n="6" type="float">10</preset>
-        <preset n="7" type="float">10</preset>
-        <preset n="8" type="float">10</preset>
-        <preset n="9" type="float">10</preset>
-        <preset n="10" type="float">10</preset>
-        <preset n="11" type="float">10</preset>
-        <preset n="12" type="float">10</preset>
-        <preset n="13" type="float">10</preset>
-        <preset n="14" type="float">10</preset>
-        <preset n="15" type="float">10</preset>
-        <preset n="16" type="float">10</preset>
-        <preset n="17" type="float">10</preset>
-        <preset n="18" type="float">10</preset>
-        <preset n="19" type="float">10</preset>
-        <preset n="20" type="float">10</preset>
-      </presets>
-    </nav>
-    <A-10-warnings>
-      <master-caution type="bool">false</master-caution>
-    </A-10-warnings>
-  </instrumentation>
-
-
-
-
-<!-- Start with the Parking Brake on -->
-  <controls>
-    <switches>
-      <ils type="bool">0</ils>
-      <homing-UHF type="bool">0</homing-UHF>
-      <homing-FM type="bool">0</homing-FM>
-    </switches>
-    <A-10-hud>
-      <intens type="double">1.0</intens>
-      <depr type="float">0.0</depr>
-      <mode-selector type="int">1</mode-selector>
-      <func-selector type="int">1</func-selector>
-    </A-10-hud>
-    <APU>
-      <off-start-switch type="bool">0</off-start-switch>
-    </APU>
-    <canopy>
-      <A-10-canopy-switch type="int">3</A-10-canopy-switch>
-    </canopy>
-    <gear>
-      <brake-parking type="double">1.0</brake-parking>
-<!-- landing gear handle animation -->
-<!-- init with landing gear up - 0.0 -->
-      <A-10-landing-gear-hdl-anim type= "float">0.0</A-10-landing-gear-hdl-anim>
-    </gear>
-  </controls>
-
-<!-- Start with the Canopy open -->
-  <canopy>
-    <position-norm type="double">1.0</position-norm>
-  </canopy>
-
-  <systems>
-    <!-- APU -->
-    <apu>
-      <start-state type="float">0</start-state>
-      <rpm type="float">0</rpm>
-      <temp type="float">0</temp>
-    </apu>
-    <!-- hydraulic system -->
-    <A-10-hydraulics>
-      <l-hyd-res type="float">1</l-hyd-res>
-      <r-hyd-res type="float">1</r-hyd-res>
-    </A-10-hydraulics>
-    <!-- electrical system (logical three remains under the std. elec. node) -->
-    <A-10-electrical>
-      <l-converter-failure type="bool">0</l-converter-failure>
-      <r-converter-failure type="bool">0</r-converter-failure>
-      <apu-generator-caution-light type="bool">0</apu-generator-caution-light>
-      <l-generator-caution-light type="bool">0</l-generator-caution-light>
-      <r-generator-caution-light type="bool">0</r-generator-caution-light>
-      <instrument-inverter-caution-light type="bool">0</instrument-inverter-caution-light>
-    </A-10-electrical>
-    <!-- oxygen system -->
-    <A-10-oxygen>
-      <oxy-level type="float">5</oxy-level>
-    </A-10-oxygen>
-    <!-- ejectable seat -->
-    <A-10-ejectable-seat>
-      <armed type="bool">1</armed>
-    </A-10-ejectable-seat>
-    <!-- bleed air system -->
-    <A-10-bleed-air>
-      <warn-light type="bool">0</warn-light>
-    </A-10-bleed-air>
-    <!-- service air system -->
-    <A-10-service-air>
-      <service-air-warn-light type="bool">0</service-air-warn-light>
-    </A-10-service-air>
-    <!-- inertial navigation -->
-    <A-10-inertial-navigation-unit>
-      <inu-hot-warn-light type="bool">0</inu-hot-warn-light>
-      <inu-caution-light type="bool">0</inu-caution-light>
-    </A-10-inertial-navigation-unit>
-    <!-- stall system -->
-    <A-10-alpha-mach-computer>
-      <stall-sys-caution-light type="bool">0</stall-sys-caution-light>
-    </A-10-alpha-mach-computer>
-    <!-- central air data computer -->
-    <A-10-cadc>
-      <cadc-sys-caution-light type="bool">0</cadc-sys-caution-light>
-    </A-10-cadc>
-    <!-- fuel system -->
-    <A-10-fuel>
-      <l-main-pump type="bool">1</l-main-pump>
-      <r-main-pump type="bool">1</r-main-pump>
-      <l-wing-pump type="bool">1</l-wing-pump>
-      <r-wing-pump type="bool">1</r-wing-pump>
-      <l-pressure type="float">0.6</l-pressure><!-- psig -->
-      <r-pressure type="float">0.6</r-pressure><!-- psig -->
-    </A-10-fuel>
-    <!-- iff system in prevision of future impl. -->
-    <A-10-iff>
-    <iff-warn-light type="bool">0</iff-warn-light>
-    </A-10-iff>
-  </systems>
-
-  
-<!-- Engine indexes -->
-  <engines>
-    <A-10-eng-start-cycle type="bool">0</A-10-eng-start-cycle>
-    <engine n="0">
-      <engine-num type="int">0</engine-num>
-      <A-10-alt-running type="bool">1</A-10-alt-running>
-      <A-10-start-state type="float">0</A-10-start-state>
-      <A-10-alt-n1 type="float">0</A-10-alt-n1>
-      <A-10-alt-n2 type="float">0</A-10-alt-n2>
-      <A-10-alt-prop-thrust type="float">0</A-10-alt-prop-thrust>
-    </engine>
-    <engine n="1">
-      <engine-num type="int">1</engine-num>
-      <A-10-alt-running type="bool">1</A-10-alt-running>
-      <A-10-start-state type="float">0</A-10-start-state>
-      <A-10-alt-n1 type="float">0</A-10-alt-n1>
-      <A-10-alt-n2 type="float">0</A-10-alt-n2>
-      <A-10-alt-prop-thrust type="float">0</A-10-alt-prop-thrust>
-    </engine>
-  </engines>
-  
-<!-- Fuel Tank indexes -->
-  <consumables>
-    <fuel>
-      <tank n="0">
-        <tank-num type="int">0</tank-num>
+	<!-- Fuel Tank indexes -->
+	<consumables>
+		<fuel>
+			<tank n="0">
+				<tank-num type="int">0</tank-num>
 				<kill-when-empty type="bool">false</kill-when-empty>
-      </tank>
-      <tank n="1">
-        <tank-num type="int">1</tank-num>
+			</tank>
+			<tank n="1">
+				<tank-num type="int">1</tank-num>
 				<kill-when-empty type="bool">false</kill-when-empty>
-      </tank>
-      <tank n="2">
-        <tank-num type="int">2</tank-num>
+			</tank>
+			<tank n="2">
+				<tank-num type="int">2</tank-num>
 				<kill-when-empty type="bool">false</kill-when-empty>
-      </tank>
-      <tank n="3">
-        <tank-num type="int">3</tank-num>
+			</tank>
+			<tank n="3">
+				<tank-num type="int">3</tank-num>
 				<kill-when-empty type="bool">false</kill-when-empty>
-      </tank>
-      <tank n="4">
-        <tank-num type="int">4</tank-num>
+			</tank>
+			<tank n="4">
+				<tank-num type="int">4</tank-num>
 				<kill-when-empty type="bool">false</kill-when-empty>
-      </tank>
-      <tank n="5">
-        <tank-num type="int">5</tank-num>
+			</tank>
+			<tank n="5">
+				<tank-num type="int">5</tank-num>
 				<kill-when-empty type="bool">false</kill-when-empty>
-      </tank>
-      <tank n="6">
-        <tank-num type="int">6</tank-num>
+			</tank>
+			<tank n="6">
+				<tank-num type="int">6</tank-num>
 				<kill-when-empty type="bool">false</kill-when-empty>
-      </tank>
-      <diff-lbs type="double">0</diff-lbs>
-    </fuel>
-  </consumables>
-  
-<!-- armament systems -->
-  <A-10-armament>
-    <gun>
-      <gun-unsafe type="bool">false</gun-unsafe>
-    </gun>
-  </A-10-armament>
-  
-<!-- Weight entry for the GAU-8/A ammunition -->
-  <yasim>
-    <weights>
-      <ammunition-weight-lbs type="float">2700</ammunition-weight-lbs>
-    </weights>
-  </yasim>
+			</tank>
+		</fuel>
+	</consumables>
 
-<!-- Nasal files & scripts -->
-  <nasal>
-    <pilot-g>
-      <file>Aircraft/A-10/Nasal/pilot-g.nas</file>
-    </pilot-g>
-    <A10>
-      <file>Aircraft/A-10/Nasal/A-10.nas</file>
-      <script>zero_ext_tanks();</script>
-    </A10>
-    <power_systems>
-      <file>Aircraft/A-10/Nasal/power_systems.nas</file>
-      <!--<script>main_power_loop();</script>-->
-    </power_systems>
-    <!-- <nav_ac_state>
-      <file>Aircraft/A-10/Nasal/nav_ac_state.nas</file>
-    </nav_ac_state> -->
-    <nav_scripts>
-      <file>Aircraft/A-10/Nasal/nav_scripts.nas</file>
-      <script>nav_scripts.freq_startup();</script>
-      <script>nav_scripts.nav2_freq_update();</script>
-     </nav_scripts>
-    <landing_gear_handle>
-      <file>Aircraft/A-10/Nasal/landing_gear_handle.nas</file>
-    </landing_gear_handle>
-    <canopy>
-      <file>Aircraft/A-10/Nasal/canopy.nas</file>
-    </canopy>
-    <electrical>
-      <file>Aircraft/A-10/Nasal/electrical.nas</file>
-    </electrical>
-    <apu>
-      <file>Aircraft/A-10/Nasal/apu.nas</file>
-    </apu>
-  </nasal>
+	<!-- armament systems -->
+	<A-10-armament>
+		<gun>
+			<gun-unsafe type="bool">false</gun-unsafe>
+		</gun>
+	</A-10-armament>
+
+	<!-- Weight entry for the GAU-8/A ammunition -->
+	<yasim>
+		<weights>
+			<ammunition-weight-lbs type="float">2700</ammunition-weight-lbs>
+		</weights>
+	</yasim>
+
+	<!-- Nasal files & scripts -->
+	<nasal>
+		<A10fuel>
+			<file>Aircraft/A-10/Nasal/aar.nas</file>
+		</A10fuel>
+		<A10>
+			<file>Aircraft/A-10/Nasal/A-10.nas</file>
+			<script>zero_ext_tanks();</script>
+		</A10>
+		<!-- <nav_ac_state>
+		<file>Aircraft/A-10/Nasal/nav_ac_state.nas</file>
+		</nav_ac_state> -->
+		<nav_scripts>
+			<file>Aircraft/A-10/Nasal/nav_scripts.nas</file>
+			<script>nav_scripts.freq_startup();</script>
+			<script>nav_scripts.nav2_freq_update();</script>
+		</nav_scripts>
+		<landing_gear_handle>
+			<file>Aircraft/A-10/Nasal/landing_gear_handle.nas</file>
+		</landing_gear_handle>
+		<canopy>
+			<file>Aircraft/A-10/Nasal/canopy.nas</file>
+		</canopy>
+		<electrical>
+			<file>Aircraft/A-10/Nasal/electrical.nas</file>
+		</electrical>
+		<apu>
+			<file>Aircraft/A-10/Nasal/apu.nas</file>
+		</apu>
+		<engines>
+			<file>Aircraft/A-10/Nasal/engines.nas</file>
+		</engines>
+		<radar>
+			<file>Aircraft/A-10/Nasal/radar.nas</file>
+		</radar>
+		<pilot-g>
+			<file>Aircraft/A-10/Nasal/pilot-g.nas</file>
+		</pilot-g>
+
+	</nasal>
 
 </PropertyList>

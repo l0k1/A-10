@@ -30,7 +30,38 @@
         </layer>
       </layers>
 <!-- define hotspot actions below -->
-      <actions> 
+
+      <actions>
+	  	<!-- close refueling receiver door lever -->
+        <action>
+          <name>lever-up</name>
+          <button>0</button>
+          <x>370</x>
+          <y>170</y>
+          <w>160</w>
+          <h>120</h>
+          <binding>
+            <command>nasal</command>
+            <script>A10fuel.aar_receiver_lever(-1)</script>
+          </binding>
+        </action>
+
+	  	<!-- open refueling receiver door lever -->
+        <action>
+          <name>lever-down</name>
+          <button>0</button>
+          <x>370</x>
+          <y>30</y>
+          <w>160</w>
+          <h>120</h>
+          <binding>
+            <command>nasal</command>
+            <script>A10fuel.aar_receiver_lever(1)</script>
+          </binding>
+        </action>
+	  
+	  
+        <!-- APU starter switch -->
         <action> 
           <name>APU-switch-start</name>
           <button>0</button>
@@ -43,6 +74,7 @@
             <script>apu.off_start_switch(1)</script>
           </binding>
         </action>
+
         <action> 
           <name>APU-switch-off</name>
           <button>0</button>
@@ -55,6 +87,62 @@
             <script>apu.off_start_switch(-1)</script>
            </binding>
         </action>
+
+        <!-- left engine starter switch -->
+        <action>
+          <name>left-engine-up</name>
+          <button>0</button>
+          <x>85</x>
+          <y>-210</y>
+          <w>120</w>
+          <h>45</h>
+          <binding>
+            <command>nasal</command>
+            <script>engines.starter_switch(1, 0)</script>
+          </binding>
+        </action>
+
+        <action>
+          <name>left-engine-down</name>
+          <button>0</button>
+          <x>85</x>
+          <y>-270</y>
+          <w>120</w>
+          <h>45</h>
+          <binding>
+            <command>nasal</command>
+            <script>engines.starter_switch(-1, 0)</script>
+          </binding>
+        </action>
+
+        <!-- right engine starter switch -->
+        <action>
+          <name>right-engine-up</name>
+          <button>0</button>
+          <x>280</x>
+          <y>-210</y>
+          <w>120</w>
+          <h>45</h>
+          <binding>
+            <command>nasal</command>
+            <script>engines.starter_switch(1, 1)</script>
+          </binding>
+        </action>
+
+        <action>
+          <name>right-engine-down</name>
+          <button>0</button>
+          <x>280</x>
+          <y>-270</y>
+          <w>120</w>
+          <h>45</h>
+          <binding>
+            <command>nasal</command>
+            <script>engines.starter_switch(-1, 1)</script>
+          </binding>
+        </action>
+
+
       </actions> 
     </instrument>
   </instruments>
