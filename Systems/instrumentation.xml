@@ -38,20 +38,20 @@ file, these values will be used (they are hardcoded).
   <airspeed-indicator>
     <name>airspeed-indicator</name>
     <number>0</number>
-    <pitot-port>systems/pitot</pitot-port>
-    <static-port>systems/static</static-port>
+    <total-pressure>/systems/pitot/total-pressure-inhg</total-pressure>
+    <static-pressure>/systems/static/pressure-inhg</static-pressure>
   </airspeed-indicator>
 
   <altimeter>
     <name>altimeter</name>
     <number>0</number>
-    <static-port>systems/static</static-port>
+    <static-pressure>/systems/static/pressure-inhg</static-pressure>
   </altimeter>
 
   <attitude-indicator>
     <name>attitude-indicator</name>
     <number>0</number>
-    <vacuum-system>systems/vacuum</vacuum-system>
+    <suction>/systems/vacuum/suction-inhg</suction>
   </attitude-indicator>
 
   <clock>
@@ -67,7 +67,7 @@ file, these values will be used (they are hardcoded).
   <encoder>
     <name>encoder</name>
     <number>0</number>
-    <static-port>systems/static</static-port>
+    <static-pressure>/systems/static/pressure-inhg</static-pressure>
   </encoder>
 
   <marker-beacon>
@@ -78,7 +78,7 @@ file, these values will be used (they are hardcoded).
   <heading-indicator>
     <name>heading-indicator</name>
     <number>0</number>
-    <vacuum-system>systems/vacuum</vacuum-system>
+    <suction>/systems/vacuum/suction-inhg</suction>
   </heading-indicator>
 
   <KT-70>
@@ -114,7 +114,7 @@ file, these values will be used (they are hardcoded).
   <transponder>
     <name>transponder</name>
     <number>0</number>
-    <encoder>instrumentation/encoder</encoder>
+    <mode-c-altitude>/instrumentation/encoder/mode-c-alt-ft</mode-c-altitude>
   </transponder>
 
   <turn-indicator>
@@ -125,7 +125,7 @@ file, these values will be used (they are hardcoded).
   <vertical-speed-indicator>
     <name>vertical-speed-indicator</name>
     <number>0</number>
-    <static-port>systems/static</static-port>
+    <static-pressure>/systems/static/pressure-inhg</static-pressure>
   </vertical-speed-indicator>
 
   <gps>
