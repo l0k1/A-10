@@ -6,16 +6,7 @@
  <path>detail-cpt.ac</path>
 
 <!-- panels-light-weak -->
-  <animation>
-   <object-name>CPT-red-thing</object-name>
-   <type>material</type>
-    <emission> 
-    <factor-prop>controls/lighting/panel-norm</factor-prop>
-     <red>0.45</red>
-     <green>0.34</green>
-     <blue>0.18</blue>
-    </emission>
-  </animation>
+
 
   <animation> 
    <object-name>CPT-video-frame-l</object-name>

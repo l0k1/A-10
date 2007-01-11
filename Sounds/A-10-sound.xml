@@ -638,6 +638,7 @@
       <path>Aircraft/A-10/Sounds/gun2.wav</path>
       <condition> 
         <property>ai/submodels/GAU-8A[0]</property>
+		<property>ai/submodels/submodel[1]/count</property>
       </condition>
       <volume> 
         <value>1</value>
@@ -777,7 +778,7 @@
         <factor>0.4</factor>
       </volume>
     </nav-selector-tacan-off>
-		
+
     <selector-hars> 
       <name>selector-hars</name>
       <mode>once</mode>
@@ -862,20 +863,31 @@
         <factor>0.4</factor>
       </volume>
     </selector-ils>
-    <selector-ptr> 
-      <name>selector-ptr</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/shlock.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/A-10-nav/selector-ptr</property>
-          <value>2</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </selector-ptr>
+
+<selector-ptr-left> 
+		<name>selector-ptr-left</name>
+		<mode>once</mode>
+		<path>Aircraft/A-10/Sounds/shlock.wav</path>
+		<condition>
+			<not>
+				<property>sim/model/A-10/A-10-nav/selector-ptr</property>
+			</not>
+		</condition>
+		<volume>
+			<factor>0.4</factor>
+		</volume>
+	</selector-ptr-left>
+	<selector-ptr-right> 
+		<name>selector-ptr</name>
+		<mode>once</mode>
+		<path>Aircraft/A-10/Sounds/shlock.wav</path>
+		<condition>
+			<property>sim/model/A-10/A-10-nav/selector-ptr</property>
+		</condition>
+		<volume>
+			<factor>0.4</factor>
+		</volume>
+	</selector-ptr-right>
 
     <!-- A-10-nav-preset -->
     <A-10-nav-preset-1> 
@@ -1388,7 +1400,180 @@
         <factor>0.3</factor>
       </volume>
     </nav-flash-switch-steady>
+	
+<!-- armament switches -->
+		<master-arm-switch-up> 
+			<name>master-arm-switch-up</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/shlock.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/weapons/master-arm-switch</property>
+					<value>1</value>
+				</equals>
+			</condition>
+			<volume>
+			<factor>0.5</factor>
+			</volume>
+		</master-arm-switch-up>
+		<master-arm-switch-middle> 
+			<name>master-arm-switch-middle</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/shlock.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/weapons/master-arm-switch</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<volume>
+			<factor>0.4</factor>
+			</volume>
+		</master-arm-switch-middle>
+		<master-arm-switch-down> 
+			<name>master-arm-switch-down</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/shlock.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/weapons/master-arm-switch</property>
+					<value>-1</value>
+				</equals>
+			</condition>
+			<volume>
+			<factor>0.5</factor>
+			</volume>
+		</master-arm-switch-down>
 
-  </fx>
+		<gun-rate-switch-hi> 
+			<name>gun-rate-switch-hi</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/weapons/gun-rate-switch</property>
+					<value>1</value>
+				</equals>
+			</condition>
+			<volume>
+			<factor>0.5</factor>
+			</volume>
+		</gun-rate-switch-hi>
+		<gun-rate-switch-safe> 
+			<name>gun-rate-switch-safe</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/weapons/gun-rate-switch</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<volume>
+			<factor>0.4</factor>
+			</volume>
+		</gun-rate-switch-safe>
+		
+		<!--aim9-->
+		<aim9-knob-off> 
+			<name>aim9-knob-off</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click2.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/weapons/aim9s/aim9-knob</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<volume>
+			<factor>0.4</factor>
+			</volume>
+		</aim9-knob-off>
+
+		<aim9-knob-cool> 
+			<name>aim9-knob-cool</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click2.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/weapons/aim9s/aim9-knob</property>
+					<value>1</value>
+				</equals>
+			</condition>
+			<volume>
+			<factor>0.4</factor>
+			</volume>
+		</aim9-knob-cool>
+
+		<aim9-knob-selected> 
+			<name>aim9-knob-selected</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click2.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/weapons/aim9s/aim9-knob</property>
+					<value>2</value>
+				</equals>
+			</condition>
+			<volume>
+			<factor>0.4</factor>
+			</volume>
+		</aim9-knob-selected>
+
+		<aim9-signal> 
+			<name>aim9-signal</name>
+			<mode>looped</mode>
+			<path>Aircraft/A-10/Sounds/115hz-square.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/weapons/aim9s/aim9-knob</property>
+					<value>2</value>
+				</equals>
+				<equals>
+					<property>controls/armament/station-select</property>
+					<value>10</value>
+				</equals>
+				<not>
+					<property>sim/model/A-10/weapons/release_lock</property>
+				</not>
+				<property>sim/model/A-10/weapons/aim9s/aim9-available</property>
+				<property>sim/model/A-10/weapons/master-arm-switch</property>
+				<greater-than>
+					<property>systems/electrical/R-AC-volts</property>
+				<value>24</value>
+			</greater-than>
+			</condition>
+			<volume>
+			<factor>0.06</factor>
+			</volume>
+		</aim9-signal>
+
+		<aim9-shoot-0> 
+			<name>aim9-shoot-0</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/shoo7.wav</path>
+			<condition>
+				<property>sim/model/A-10/weapons/aim9s/aim9[0]/trigger</property>
+			</condition>
+			<volume>
+			<factor>0.8</factor>
+			</volume>
+		</aim9-shoot-0>
+
+		<aim9-shoot-1> 
+			<name>aim9-shoot-1</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/shoo7.wav</path>
+			<condition>
+				<property>sim/model/A-10/weapons/aim9s/aim9[1]/trigger</property>
+			</condition>
+			<volume>
+			<factor>0.8</factor>
+			</volume>
+		</aim9-shoot-1>
+
+
+
+	</fx>
 
 </PropertyList>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+
+
+<PropertyList>
+	<name>aim-9-dual-launcher</name>
+  	<path>aim-9-dual-launcher.ac</path>
+	<animation>
+		<type>select</type>
+		<object-name>lau-114</object-name>
+		<object-name>fasten-screw</object-name>
+		<object-name>L-lau-105-body</object-name>
+		<object-name>L-lau-105-rails</object-name>
+		<object-name>R-lau-105-body</object-name>
+		<object-name>R-lau-105-rails</object-name>
+		<condition>
+			<property>sim/model/A-10/weapons/aim9s/dual</property>
+		</condition>
+	</animation>
+
+</PropertyList>

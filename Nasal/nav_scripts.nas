@@ -157,6 +157,6 @@ tacan_tenth_adjust = func {
   setprop( "instrumentation/tacan/frequencies/selected-channel[2]", new_tenths );
 }
 
-test_button = func {
-  print("button ", arg[0]);
-}
+#test_button = func {
+#  print("button ", arg[0]);
+#}

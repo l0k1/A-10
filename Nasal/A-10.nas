@@ -435,19 +435,6 @@ toggle_traj_mkr = func {
   }
 }
 #--------------------------------------------------------------------
-fire_gau8a = func {
-  setprop("ai/submodels/GAU-8A", 1);
-  ammo_cnt = getprop("ai/submodels/submodel[1]/count");
-  ammo_wgt = ammo_cnt * 2;
-  setprop("yasim/weights/ammunition-weight-lbs", ammo_wgt);
-}
-#--------------------------------------------------------------------
-cfire_gau8a = func {
-  setprop("ai/submodels/GAU-8A", 0);
-}
-#--------------------------------------------------------------------
-controls.trigger = func(b) { b ? fire_gau8a() : cfire_gau8a() }
-#--------------------------------------------------------------------
 initialise_drop_view_pos = func {
   eyelatdeg = getprop("position/latitude-deg");
   eyelondeg = getprop("position/longitude-deg");

@@ -3,6 +3,18 @@
 
 
 <PropertyList>
-<name>an-alq-131</name>
-  <path>an-alq-131.ac</path>
+	<name>an-alq-131</name>
+	<path>an-alq-131.ac</path>
+
+	<animation>
+		<type>select</type>
+		<object-name>an-alq-131-sides</object-name>
+		<object-name>an-alq-131-fasten-screw</object-name>
+		<object-name>an-alq-131-body</object-name>
+		<object-name>an-alq-131-domes</object-name>
+		<condition>
+				<property>/sim/model/A-10/weapons/ecm/an-alq-131</property>
+		</condition>
+	</animation>
+	
 </PropertyList>

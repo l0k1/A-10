@@ -44,7 +44,7 @@
     <object-name>gun-unsafe</object-name>
     <condition>
       <equals>
-        <property>A-10-armament/gun/gun-unsafe</property>
+        <property>sim/model/A-10/weapons/gun/gun-unsafe</property>
         <value>1</value>
       </equals>
     </condition>  
@@ -245,7 +245,7 @@
     <object-name>hars</object-name>
     <condition>
       <equals>
-        <property>A-10-nav/hars/hars-warn-light</property>
+        <property>sim/model/A-10/A-10-nav/hars/hars-warn-light</property>
         <value>1</value>
       </equals>
     </condition>  

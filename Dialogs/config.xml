@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<name>A-10-config</name>
+	<layout>vbox</layout>
+	<x>-40</x>
+	<y>-40</y>
+
+	<group>
+		<layout>hbox</layout>
+		<empty><stretch>1</stretch></empty>
+
+		<text>
+			<label>A-10 configuration</label>
+		</text>
+
+		<empty><stretch>1</stretch></empty>
+
+		<button>
+			<pref-width>16</pref-width>
+			<pref-height>16</pref-height>
+			<legend></legend>
+			<default>1</default>
+			<keynum>27</keynum>
+			<border>2</border>
+
+			<binding>
+				<command>nasal</command>
+				<script>A10weapons.config_dialog.close()</script>
+			</binding>
+		</button>
+	</group>
+
+	<hrule><whatever/></hrule>
+
+
+
+	<group>
+		<layout>hbox</layout>
+		<empty><pref-width>4</pref-width></empty>
+		<checkbox>
+			<halign>left</halign>
+			<label>ECM AN/ALQ-131 - Station #1 only - 535 lbs</label>
+			<property>/sim/model/A-10/weapons/ecm/an-alq-131</property>
+			<live>1</live>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+		</checkbox>
+		<empty><stretch>1</stretch></empty>
+	</group>
+
+	<group>
+		<layout>hbox</layout>
+		<empty><pref-width>4</pref-width></empty>
+		<checkbox>
+			<halign>left</halign>
+			<label>2x AIM-9m - Station #11 only - 612 lbs</label>
+			<property>/sim/model/A-10/weapons/aim9s/dual</property>
+			<live>1</live>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+		</checkbox>
+		<empty><stretch>1</stretch></empty>
+	</group>
+
+
+	<empty><pref-height>3</pref-height></empty>
+</PropertyList>

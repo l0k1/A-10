@@ -125,7 +125,7 @@
           <h>50</h>
           <binding> 
             <command>nasal</command>
-            <script>power_systems.land_lights_switcher(1)</script>
+            <script>electrical.land_lights_switcher(1)</script>
           </binding>
         </action>
         <action> 
@@ -137,7 +137,230 @@
           <h>50</h>
           <binding> 
             <command>nasal</command>
-            <script>power_systems.land_lights_switcher(-1)</script>
+            <script>electrical.land_lights_switcher(-1)</script>
+          </binding>
+        </action>
+
+        <!-- master arm switch -->
+        <action> 
+          <name>master-arm-up</name>
+          <button>0</button>
+          <x>-28</x>
+          <y>-42</y>
+          <w>55</w>
+          <h>50</h>
+          <binding> 
+            <command>nasal</command>
+            <script>A10weapons.master_arm_switch(1)</script>
+          </binding>
+        </action>
+        <action> 
+          <name>master-arm-down</name>
+          <button>0</button>
+          <x>-28</x>
+          <y>-95</y>
+          <w>55</w>
+          <h>50</h>
+          <binding> 
+            <command>nasal</command>
+            <script>A10weapons.master_arm_switch(-1)</script>
+          </binding>
+        </action>
+		
+        <!-- gun rate switch -->
+        <action> 
+          <name>gun-rate-up</name>
+          <button>0</button>
+          <x>420</x>
+          <y>-42</y>
+          <w>55</w>
+          <h>50</h>
+          <binding> 
+            <command>nasal</command>
+            <script>A10weapons.gun_rate_switch(1)</script>
+          </binding>
+        </action>
+        <action> 
+          <name>gun-rate-down</name>
+          <button>0</button>
+          <x>420</x>
+          <y>-95</y>
+          <w>55</w>
+          <h>50</h>
+          <binding> 
+            <command>nasal</command>
+            <script>A10weapons.gun_rate_switch(-1)</script>
+          </binding>
+        </action>
+
+        <!-- Aim-9 knob -->
+        <action> 
+          <name>aim-9-knob-cw</name>
+          <button>0</button>
+          <x>100</x>
+          <y>-335</y>
+          <w>48</w>
+          <h>65</h>
+          <binding> 
+            <command>nasal</command>
+            <script>A10weapons.aim9_knob(1)</script>
+          </binding>
+        </action>
+        <action> 
+          <name>aim-9-knob-ccw</name>
+          <button>0</button>
+          <x>47</x>
+          <y>-335</y>
+          <w>48</w>
+          <h>65</h>
+          <binding> 
+            <command>nasal</command>
+            <script>A10weapons.aim9_knob(-1)</script>
+          </binding>
+        </action>
+
+        <!-- station #5 -->
+        <action> 
+          <name>station-5</name>
+          <button>0</button>
+          <x>137</x>
+          <y>-100</y>
+          <w>46</w>
+          <h>45</h>
+          <binding> A10weapons.select_station()
+            <command>nasal</command>
+            <script>A10weapons.select_station(4)</script>
+          </binding>
+        </action>
+        <!-- station #6 -->
+        <action> 
+          <name>station-6</name>
+          <button>0</button>
+          <x>198</x>
+          <y>-100</y>
+          <w>46</w>
+          <h>45</h>
+          <binding> 
+            <command>nasal</command>
+            <script>A10weapons.select_station(5)</script>
+          </binding>
+        </action>
+        <!-- station #7 -->
+        <action> 
+          <name>station-7</name>
+          <button>0</button>
+          <x>259</x>
+          <y>-100</y>
+          <w>46</w>
+          <h>45</h>
+          <binding> 
+            <command>nasal</command>
+            <script>A10weapons.select_station(6)</script>
+          </binding>
+        </action>
+
+        <!-- station #1 -->
+        <action> 
+          <name>station-1</name>
+          <button>0</button>
+          <x>-11</x>
+          <y>-223</y>
+          <w>46</w>
+          <h>45</h>
+          <binding> 
+            <command>nasal</command>
+            <script>A10weapons.select_station(0)</script>
+          </binding>
+        </action>
+        <!-- station #2 -->
+        <action> 
+          <name>station-2</name>
+          <button>0</button>
+          <x>49</x>
+          <y>-223</y>
+          <w>46</w>
+          <h>45</h>
+          <binding> 
+            <command>nasal</command>
+            <script>A10weapons.select_station(1)</script>
+          </binding>
+        </action>
+        <!-- station #3 -->
+        <action> 
+          <name>station-3</name>
+          <button>0</button>
+          <x>109</x>
+          <y>-223</y>
+          <w>46</w>
+          <h>45</h>
+          <binding> 
+            <command>nasal</command>
+            <script>A10weapons.select_station(2)</script>
+          </binding>
+        </action>
+        <!-- station #4 -->
+        <action> 
+          <name>station-4</name>
+          <button>0</button>
+          <x>169</x>
+          <y>-223</y>
+          <w>46</w>
+          <h>45</h>
+          <binding> 
+            <command>nasal</command>
+            <script>A10weapons.select_station(3)</script>
+          </binding>
+        </action>
+        <!-- station #8 -->
+        <action> 
+          <name>station-8</name>
+          <button>0</button>
+          <x>231</x>
+          <y>-223</y>
+          <w>46</w>
+          <h>45</h>
+          <binding> 
+            <command>nasal</command>
+            <script>A10weapons.select_station(7)</script>
+          </binding>
+        </action>
+        <!-- station #9 -->
+        <action> 
+          <name>station-9</name>
+          <button>0</button>
+          <x>292</x>
+          <y>-223</y>
+          <w>46</w>
+          <h>45</h>
+          <binding> 
+            <command>nasal</command>
+            <script>A10weapons.select_station(8)</script>
+          </binding>
+        </action>
+        <!-- station #10 -->
+        <action> 
+          <name>station-10</name>
+          <button>0</button>
+          <x>352</x>
+          <y>-223</y>
+          <w>46</w>
+          <h>45</h>
+          <binding> 
+            <command>nasal</command>
+            <script>A10weapons.select_station(9)</script>
+          </binding>
+        </action>
+        <!-- station #11 -->
+        <action> 
+          <name>station-11</name>
+          <button>0</button>
+          <x>413</x>
+          <y>-223</y>
+          <w>46</w>
+          <h>45</h>
+          <binding> 
+            <command>nasal</command>
+            <script>A10weapons.select_station(10)</script>
           </binding>
         </action>
 

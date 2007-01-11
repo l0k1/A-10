@@ -32,10 +32,11 @@ do_open = func {
 }
 
 do_close = func {
-		if ( getprop("canopy/position-norm") > 0 ) {
+		if ( getprop("canopy/position-norm") > 0.01 ) {
 		continue_move( -0.015 );
 	} else {
 		setprop("sim/model/A-10/controls/canopy-lock", 0);
+		setprop("canopy/position-norm", 0)
 	}
 }
 

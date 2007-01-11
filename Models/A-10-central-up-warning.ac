@@ -3,7 +3,26 @@ MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  
 MATERIAL "ac3dmat12" rgb 0.266667 0.266667 0.266667  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
 MATERIAL "ac3dmat14" rgb 0.8 0.8 0.8  amb 0.122 0.137 0.149  emis 0 0 0  spec 0 0 0  shi 15  trans 0
 OBJECT world
-kids 7
+kids 8
+OBJECT poly
+name "gun-ready"
+loc -0.0143463 0.0208512 0.126314
+texture "signals-up.rgb"
+crease 45.000000
+numvert 4
+0 0.00577784 -0.0148043
+0 0.00577784 0.0147973
+0 -0.00577784 0.0147973
+0 -0.00577784 -0.0148043
+numsurf 1
+SURF 0x20
+mat 0
+refs 4
+0 0.83653 0.43712
+1 0.716931 0.43712
+2 0.716931 0.338719
+3 0.83653 0.338719
+kids 0
 OBJECT poly
 name "gun-steering-marker-canopy"
 loc 2.37464 0.0212484 -0.00161284

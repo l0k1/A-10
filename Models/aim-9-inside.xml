@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+
+
+<PropertyList>
+<name>aim-9-inside</name>
+	<path>aim-9.ac</path>
+	<animation>
+		<type>select</type>
+		<object-name>canard</object-name>
+		<object-name>tail</object-name>
+		<object-name>body</object-name>
+		<condition>
+			<property>sim/model/A-10/weapons/aim9s/dual</property>
+			<not>
+				<property>sim/model/A-10/weapons/aim9s/aim9[1]/trigger</property>
+			</not>
+		</condition>
+	</animation>	
+	
+</PropertyList>

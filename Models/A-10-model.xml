@@ -53,12 +53,35 @@
 	</model>	
 
 	<model>
-		<path>Aircraft/A-10/Models/aim-9.xml</path>
+		<name>AIM-9-inside</name>
+		<path>Aircraft/A-10/Models/aim-9-inside.xml</path>
 		<offsets> 
 			<x-m>7.2544</x-m>
-			<y-m>5.9169</y-m>
+			<y-m>5.5920</y-m>
 			<z-m>-0.14</z-m>
 			<pitch-deg>-3</pitch-deg>
+		</offsets>
+	</model>	
+	<model>
+		<name>AIM-9-ouside</name>
+		<path>Aircraft/A-10/Models/aim-9-outside.xml</path>
+		<offsets> 
+			<x-m>7.2544</x-m>
+			<y-m>6.2160</y-m>
+			<z-m>-0.14</z-m>
+			<pitch-deg>-3</pitch-deg>
+			<roll-deg>-7</roll-deg>
+		</offsets>
+	</model>	
+	<model>
+		<name>AIM-9-dual-launcher</name>
+		<path>Aircraft/A-10/Models/aim-9-dual-launcher.xml</path>
+		<offsets> 
+			<x-m>7.0800</x-m>
+			<y-m>5.9040</y-m>
+			<z-m>-0.1400</z-m>
+			<pitch-deg>-3</pitch-deg>
+			<roll-deg>7</roll-deg>
 		</offsets>
 	</model>	
 
@@ -399,6 +422,19 @@
 		<offsets> 
 			<x-m>2.4000</x-m>
 			<y-m>-0.1881</y-m>
+			<z-m>1.1195</z-m>
+			<pitch-deg>-5</pitch-deg>
+		</offsets>
+		<animation>
+			<type>noshadow</type>
+		</animation>
+	</model>
+
+<model>
+		<path>Aircraft/A-10/Models/A-10-chronometer.xml</path>
+		<offsets> 
+			<x-m>2.4000</x-m>
+			<y-m>-0.2530</y-m>
 			<z-m>1.1195</z-m>
 			<pitch-deg>-5</pitch-deg>
 		</offsets>
@@ -813,9 +849,22 @@
 		<type>select</type>
 		<object-name>BCanopyFrame</object-name>
 		<object-name>BCanopyFrameInner</object-name>
-		<object-name>BCanopyGlass</object-name>
 		<condition>
 			<property>sim/model/A-10/canopy-safe</property>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>BCanopyGlass</object-name>
+		<condition>
+			<and>
+				<property>sim/model/A-10/canopy-safe</property>
+				<not-equals>
+					<property>sim/current-view/view-number</property>
+					<value>0</value>
+				</not-equals>
+			</and>
 		</condition>
 	</animation>
 	
@@ -824,8 +873,9 @@
 		<object-name>BCanopyFrame</object-name>
 		<object-name>BCanopyFrameInner</object-name>
 		<object-name>BCanopyGlass</object-name>
+		<object-name>CanopyLock</object-name>
 		<property>canopy/position-norm</property>
-		<factor>50</factor>
+		<factor>35</factor>
 		<center>
 			<x-m>4.65</x-m>
 			<y-m>0.0</y-m>
@@ -1180,7 +1230,7 @@
 				</equals>
 			</not>
 		</condition>
- </animation>
+	</animation>
 
 <!-- Extend/Retract -->
 <!-- Nose Gear -->

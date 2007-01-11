@@ -15,7 +15,7 @@
 		</roll-input>
 		<pitch-input>
 			<property>/orientation/pitch-deg</property>
-      <offset>-3.2</offset>
+			<offset>-3.2</offset>
 		</pitch-input>
 		<compression-factor>10.00</compression-factor>
 		<display-span>10.0</display-span>
@@ -117,13 +117,13 @@
 		<enable-pointer>false</enable-pointer>
 		<pointer-type>fixed</pointer-type>
 	</tape>
-	
-  <gauge>
-   <name>rudder</name>
+
+	<gauge>
+	<name>rudder</name>
 		<x>-55</x>
 		<y>-100</y>
-   <width>110</width>
-   <height>5</height>
+		<width>110</width>
+		<height>5</height>
 		<option>top</option>
 		<option>notext</option>
 		<major-divisions>50</major-divisions>
@@ -144,6 +144,23 @@
 			<max>1.0</max>
 			<min>-1.0</min>
 		</input>
-  </gauge>
+	</gauge>
+
+	<aiming-reticle>
+		<x>-23</x>
+		<y>-55</y>
+		<width>48</width> <!-- defines the diameter of the constant/inner circle -->
+		<height>48</height>
+		<active-condition>
+			<equals>
+				<property>/sim/model/A-10/weapons/aim9s/aim9-knob</property>
+				<value>2</value>
+			</equals>
+		</active-condition>
+		<diameter-input>1</diameter-input>
+		<!-- defines the diameter of the adjustable/outer circle -->
+		<!--<width>1</width>-->
+		
+	</aiming-reticle>
 
 </PropertyList>
