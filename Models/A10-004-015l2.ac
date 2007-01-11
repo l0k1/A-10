@@ -1328,6 +1328,7 @@ refs 4
 kids 0
 OBJECT poly
 name "CanopyLock"
+crease 45.000000
 loc 2.6648 1.13483 0.477773
 numvert 136
 -0.00999355 0.0303444 -0.00210527
