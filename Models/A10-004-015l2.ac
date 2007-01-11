@@ -1329,8 +1329,6 @@ kids 0
 OBJECT poly
 name "CanopyLock"
 loc 2.6648 1.13483 0.477773
-texture "A-10-canopy-lock.rgb"
-crease 45.000000
 numvert 136
 -0.00999355 0.0303444 -0.00210527
 -0.00993824 0.0298488 -0.00556821

@@ -431,7 +431,7 @@
 	</model>
 
 <model>
-		<path>Aircraft/A-10/Models/A-10-chronometer.xml</path>
+		<path>Aircraft/A-10/Models/A-10-chronometer.ac</path>
 		<offsets> 
 			<x-m>2.4000</x-m>
 			<y-m>-0.2530</y-m>
