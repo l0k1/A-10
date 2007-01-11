@@ -102,12 +102,95 @@ Fairchild A-10 simulation config.
 		<model>
 			<path>Aircraft/A-10/Models/A-10-model.xml</path>
 			<A-10>
+				<weapons>
+					<master-arm-switch type="int">0</master-arm-switch>
+					<gun-rate-switch type="int">0</gun-rate-switch>
+					<release-switch type="bool">false</release-switch>
+					<release_lock type="bool">0</release_lock>
+					<station-light-test type="bool">false</station-light-test>
+					<ecm>
+						<an-alq-131 type="bool">true</an-alq-131>
+					</ecm>
+					<aim9s>
+						<dual type="bool">true</dual>
+						<aim9-knob type="int">0</aim9-knob>
+						<aim9-available type="bool">1</aim9-available>
+						<aim9 n="0">
+							<trigger type="bool">false</trigger>
+						</aim9>
+						<aim9 n="1">
+							<trigger type="bool">false</trigger>
+						</aim9>
+						<reticle-diam type="int">20</reticle-diam>
+					</aim9s>
+					<gun>
+						<gun-unsafe type="bool">false</gun-unsafe>
+						<gun-ready type="bool">false</gun-ready>
+					</gun>
+					<stations>
+						<station n="0">
+							<weight-lb type="float">535</weight-lb>
+							<selected type="bool">false</selected>
+							<description type="string">an-alq-131</description>
+						</station>
+						<station n="1">
+							<weight-lb type="float">0</weight-lb>
+							<selected type="bool">false</selected>
+							<description type="string">empty</description>
+						</station>
+						<station n="2">
+							<weight-lb type="float">0</weight-lb>
+							<selected type="bool">false</selected>
+							<description type="string">empty</description>
+						</station>
+						<station n="3">
+							<weight-lb type="float">0</weight-lb>
+							<selected type="bool">false</selected>
+							<description type="string">empty</description>
+						</station>
+						<station n="4">
+							<weight-lb type="float">0</weight-lb>
+							<selected type="bool">false</selected>
+							<description type="string">empty</description>
+						</station>
+						<station n="5">
+							<weight-lb type="float">0</weight-lb>
+							<selected type="bool">false</selected>
+							<description type="string">empty</description>
+						</station>
+						<station n="6">
+							<weight-lb type="float">0</weight-lb>
+							<selected type="bool">false</selected>
+							<description type="string">empty</description>
+						</station>
+						<station n="7">
+							<weight-lb type="float">0</weight-lb>
+							<selected type="bool">false</selected>
+							<description type="string">empty</description>
+						</station>
+						<station n="8">
+							<weight-lb type="float">0</weight-lb>
+							<selected type="bool">false</selected>
+							<description type="string">empty</description>
+						</station>
+						<station n="9">
+							<weight-lb type="float">0</weight-lb>
+							<selected type="bool">false</selected>
+							<description type="string">empty</description>
+						</station>
+						<station n="10">
+							<weight-lb type="float">612</weight-lb>
+							<selected type="bool">false</selected>
+							<description type="string">2 x AIM-9</description>
+						</station>
+					</stations>
+				</weapons>
 				<canopy-safe type="bool">true</canopy-safe>
 				<consumables>
-					 <fuel>
-					 	<diff-lbs type="double">0</diff-lbs>
-					 </fuel>
-				</consumables>				
+					<fuel>
+						<diff-lbs type="double">0</diff-lbs>
+					</fuel>
+				</consumables>
 				<controls>
 					<canopy-lock type="bool">false</canopy-lock>
 					<canopy-switch type="int">2</canopy-switch>
@@ -209,6 +292,10 @@ Fairchild A-10 simulation config.
 		<help>
 			<title>Fairchild A-10</title>
 			<key>
+				<name>Ctrl-I</name>
+				<desc>open/close A-10 weapons dialog</desc>
+			</key>
+			<key>
 				<name>C</name>
 				<desc>open/close canopy</desc>
 			</key>
@@ -219,6 +306,10 @@ Fairchild A-10 simulation config.
 			<key>
 				<name>e</name>
 				<desc>Fire the GAU-8/A cannon</desc>
+			</key>
+			<key>
+				<name>,</name>
+				<desc>release weapons on selected pylon</desc>
 			</key>
 			<key>
 				<name>j/k</name>
@@ -267,12 +358,12 @@ Fairchild A-10 simulation config.
 	<input>
 
 		<keyboard>
-			<key n="6">
-				<name>Ctrl-C</name>
-				<desc>Disconnect AAR boom or resets the AAR receiver</desc>
+			<key n="9">
+				<name>Ctrl-I</name>
+				<desc>Show configuration dialog</desc>
 				<binding>
-				   <command>nasal</command>
-				   <script>nav_scripts.test_button(2)</script>
+					<command>nasal</command>
+					<script>A10weapons.config_dialog.toggle()</script>
 				</binding>
 			</key>
 			<key n="67">
@@ -297,12 +388,12 @@ Fairchild A-10 simulation config.
 				<desc>Fire GAU-8/A cannon</desc>
 				<binding>
 					<command>nasal</command>
-					<script>A10.fire_gau8a()</script>
+					<script>A10weapons.fire_gau8a()</script>
 				</binding>
 				<mod-up>
 					<binding>
 						<command>nasal</command>
-						<script>A10.cfire_gau8a()</script>
+						<script>A10weapons.cfire_gau8a()</script>
 					</binding>
 				</mod-up>
 			</key>
@@ -401,9 +492,7 @@ Fairchild A-10 simulation config.
 		<APU>
 			<off-start-switch type="bool">0</off-start-switch>
 		</APU>
-		<canopy>
-			<A-10-canopy-switch type="int">1</A-10-canopy-switch>
-		</canopy>
+		<canopy-switch type="int">3</canopy-switch>
 		<gear>
 			<!-- Start with the Parking Brake on -->
 			<brake-parking type="double">1.0</brake-parking>
@@ -536,12 +625,6 @@ Fairchild A-10 simulation config.
 		</fuel>
 	</consumables>
 
-	<!-- armament systems -->
-	<A-10-armament>
-		<gun>
-			<gun-unsafe type="bool">false</gun-unsafe>
-		</gun>
-	</A-10-armament>
 
 	<!-- Weight entry for the GAU-8/A ammunition -->
 	<yasim>
@@ -588,6 +671,9 @@ Fairchild A-10 simulation config.
 		<pilot-g>
 			<file>Aircraft/A-10/Nasal/pilot-g.nas</file>
 		</pilot-g>
+		<A10weapons>
+			<file>Aircraft/A-10/Nasal/A-10-weapons.nas</file>
+		</A10weapons>
 
 	</nasal>
 
