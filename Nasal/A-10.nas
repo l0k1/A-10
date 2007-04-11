@@ -427,13 +427,20 @@ zero_ext_tanks_sub = func {
   setprop("consumables/fuel/tank[6]/selected", "false");
 }
 #--------------------------------------------------------------------
-toggle_traj_mkr = func {
-  if(getprop("ai/submodels/trajectory-markers") < 1) {
-    setprop("ai/submodels/trajectory-markers", 1);
-  } else {
-    setprop("ai/submodels/trajectory-markers", 0);
-  }
+  toggle_traj_mkr = func {
+		if(getprop("/ai/submodels/trajectory-markers") == nil) {
+			setprop("/ai/submodels/trajectory-markers", 0);
+		}
+    if(getprop("/ai/submodels/trajectory-markers") < 1) {
+      setprop("/ai/submodels/trajectory-markers", 1);
+    } else {
+			setprop("/ai/submodels/trajectory-markers", 0);
+  	}
 }
+
+ #--------------------------------------------------------------------
+
+
 #--------------------------------------------------------------------
 initialise_drop_view_pos = func {
   eyelatdeg = getprop("position/latitude-deg");
