@@ -446,18 +446,18 @@ initialise_drop_view_pos = func {
   eyelatdeg = getprop("position/latitude-deg");
   eyelondeg = getprop("position/longitude-deg");
   eyealtft = getprop("position/altitude-ft") + 20;
-  setprop("sim/view[6]/latitude-deg", eyelatdeg);
-  setprop("sim/view[6]/longitude-deg", eyelondeg);
-  setprop("sim/view[6]/altitude-ft", eyealtft);
+  setprop("sim/view[100]/latitude-deg", eyelatdeg);
+  setprop("sim/view[100]/longitude-deg", eyelondeg);
+  setprop("sim/view[100]/altitude-ft", eyealtft);
 }
 #--------------------------------------------------------------------
 update_drop_view_pos = func {
   eyelatdeg = getprop("position/latitude-deg");
   eyelondeg = getprop("position/longitude-deg");
   eyealtft = getprop("position/altitude-ft") + 20;
-  interpolate("sim/view[6]/latitude-deg", eyelatdeg, 5);
-  interpolate("sim/view[6]/longitude-deg", eyelondeg, 5);
-  interpolate("sim/view[6]/altitude-ft", eyealtft, 5);
+  interpolate("sim/view[100]/latitude-deg", eyelatdeg, 5);
+  interpolate("sim/view[100]/longitude-deg", eyelondeg, 5);
+  interpolate("sim/view[100]/altitude-ft", eyealtft, 5);
 }
 #--------------------------------------------------------------------
 altimeter_monitor = func {
