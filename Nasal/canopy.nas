@@ -1,52 +1,32 @@
-# animation of the canopy switch and the canopy move
-# arg[0]: 1 and -1 = mouse click up/down aeras, 2 = keyb "C" toggle like.
+# used to the animation of the canopy switch and the canopy move
+# toggle keystroke or 2 position switch
 
-canopy_switch = func {
-	input = arg[0];
-	if ( ! getprop("sim/model/A-10/controls/canopy-lock") ) {
-		setprop("sim/model/A-10/controls/canopy-lock", 1);
-		if (input == 2 ) {
-			if ( getprop("canopy/position-norm") < 1 ) {
-				input = 1;
-			} elsif ( getprop("canopy/position-norm") >= 1 ) {
-				input = -1;
-			}
-		}
-		if (input == 1 ) {
-			setprop("controls/canopy-switch", 3);
-			do_open();
-		}
-		elsif (input == -1) {
-			setprop("controls/canopy-switch", 1);
-			do_close();
+var cnpy = aircraft.door.new("canopy", 10);
+var switch = props.globals.getNode("sim/model/A-10/controls/canopy/canopy-switch", 1);
+var pos = props.globals.getNode("canopy/position-norm", 1);
+
+canopy_switch = func(v) {
+
+	p = pos.getValue();
+
+	if (v == 2 ) {
+		if ( p < 1 ) {
+			v = 1;
+		} elsif ( p >= 1 ) {
+			v = -1;
 		}
 	}
-}
 
-do_open = func {
-	if ( getprop("canopy/position-norm") < 1 ) {
-		continue_move( 0.015 );
-	} else {
-		setprop("sim/model/A-10/controls/canopy-lock", 0);
+	if (v < 0) {
+		switch.setValue(1);
+		cnpy.close();
+
+	} elsif (v > 0) {
+		switch.setValue(3);
+		cnpy.open();
+
 	}
 }
 
-do_close = func {
-		if ( getprop("canopy/position-norm") > 0.01 ) {
-		continue_move( -0.015 );
-	} else {
-		setprop("sim/model/A-10/controls/canopy-lock", 0);
-		setprop("canopy/position-norm", 0)
-	}
-}
 
-continue_move = func {
-	position = getprop("canopy/position-norm");
-	new_position = position + arg[0];
-	setprop("canopy/position-norm", new_position);
-	if ( arg[0] > 0 ) {
-		settimer( do_open, 0.05);
-	} elsif ( arg[0] < 0 ) {
-		settimer( do_close, 0.05);
-	}
-}
+

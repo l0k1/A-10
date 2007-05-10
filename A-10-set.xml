@@ -198,8 +198,9 @@ Fairchild A-10 simulation config.
 					</fuel>
 				</consumables>
 				<controls>
-					<canopy-lock type="bool">false</canopy-lock>
-					<canopy-switch type="int">2</canopy-switch>
+					<canopy>
+						<canopy-switch type="int">2</canopy-switch>
+					</canopy>
 					<engines>
 						<engine n="0">
 							<starter-switch-position type="int">1</starter-switch-position>

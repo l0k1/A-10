@@ -8,7 +8,7 @@
   <animation>
     <object-name>switch</object-name>
     <type>rotate</type>
- 	<property>controls/canopy-switch</property>
+ 	<property>sim/model/A-10/controls/canopy/canopy-switch</property>
     <factor>30</factor>
     <center>
       <x-m>2.4829</x-m>
