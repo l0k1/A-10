@@ -30,6 +30,16 @@
   </axis>
  </animation>
 
+  <animation>
+    <type>select</type>
+    <object-name>off-flag</object-name>
+    <condition>
+      <less-than>
+        <property>systems/electrical/outputs/hsi</property>
+        <value>24</value>
+      </less-than>
+    </condition>
+  </animation>
 
 <!-- lighting -->
 
@@ -46,6 +56,17 @@
 
   <animation>
    <object-name>face</object-name>
+   <type>material</type>
+     <emission> 
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+        <red>0.50</red>
+        <green>0.25</green>
+        <blue>0.18</blue>
+      </emission>
+  </animation>
+
+  <animation>
+   <object-name>off-flag</object-name>
    <type>material</type>
      <emission> 
       <factor-prop>controls/lighting/instruments-norm</factor-prop>

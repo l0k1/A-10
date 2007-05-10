@@ -2045,7 +2045,15 @@
 		<type>shader</type>
 		<shader>heat-haze</shader>
 		<object-name>noshadow.Exhausts</object-name>
-		<factor>0.12</factor>
+		<factor>0.2</factor>
+		<speed-prop>engines/engine/n1</speed-prop>
+	</animation>
+
+	<animation>
+		<type>shader</type>
+		<shader>heat-haze</shader>
+		<object-name>noshadow.Exhaust3</object-name>
+		<factor>0.2</factor>
 		<speed-prop>engines/engine/n1</speed-prop>
 	</animation>
 
@@ -2054,14 +2062,14 @@
 		<type>blend</type>
 		<object-name>noshadow.Exhaust3</object-name>
 		<property>engines/engine/n1</property>
-		<factor>.01</factor>
+		<factor>0.01</factor>
 		<offset>0.45</offset>
 		<max>0.9</max>
 	</animation>
 
 	<animation>
 		<type>blend</type>
-		<object-name>noshadow.Exhaust</object-name>
+		<object-name>noshadow.Exhausts</object-name>
 		<property>engines/engine/n1</property>
 		<factor>-0.01</factor>
 		<offset>1</offset>
@@ -2071,7 +2079,7 @@
 
 	<animation>
 		<type>scale</type>
-		<object-name>noshadow.Exhaust</object-name>
+		<object-name>noshadow.Exhausts</object-name>
 		<property>engines/engine/n1</property>
 		<x-factor>0.01</x-factor>
 		<x-offset>0.5</x-offset>

@@ -244,6 +244,7 @@
 	<!--switches and knobs-->
 	<animation> 
 		<object-name>mount</object-name>
+		<object-name>stations-lt-off</object-name>
 		<type>material</type>
 		<emission> 
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
