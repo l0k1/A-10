@@ -10,10 +10,7 @@
     <type>select</type>
     <object-name>eng-start-cycle</object-name>
     <condition>
-      <equals>
-        <property>engines/A-10-eng-start-cycle</property>
-        <value>1</value>
-      </equals>
+      <property>sim/model/A-10/engines/eng-start-cycle</property>
     </condition>  
   </animation>
   

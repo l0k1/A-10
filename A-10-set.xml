@@ -241,7 +241,8 @@ Fairchild A-10 simulation config.
 					</lighting>
 				</controls>
 				<engines>
-					<initial-start-state type="bool"></initial-start-state>
+					<initial-start-state type="bool">false</initial-start-state> <!-- sim value -->
+					<eng-start-cycle  type="bool">false</eng-start-cycle> <!-- warn-panel model value -->
 					<engine n="0">
 						<running type="bool">0</running>
 					</engine>

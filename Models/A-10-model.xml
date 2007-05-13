@@ -820,6 +820,30 @@
 		</animation>
 	</model>
 
+	<model> 
+		<path>Aircraft/A-10/Models/stick.xml</path>
+		<offsets> 
+			<x-m>2.6127</x-m>
+			<y-m>0.0000</y-m>
+			<z-m>0.5176</z-m>
+		</offsets>
+		<animation>
+			<type>noshadow</type>
+		</animation>
+	</model>
+
+	<model> 
+		<path>Aircraft/A-10/Models/pedals.xml</path>
+		<offsets> 
+			<x-m>2.0800</x-m>
+			<y-m>0.0000</y-m>
+			<z-m>0.5804</z-m>
+		</offsets>
+		<animation>
+			<type>noshadow</type>
+		</animation>
+	</model>
+
 
 <!-- De-select when in view 0 -->
 	<animation>
@@ -831,8 +855,8 @@
 		<object-name>CPT-Visor</object-name>
 		<object-name>CPT-Face-Mask</object-name>
 		<object-name>CPT-Face-Mask-Tube</object-name>
-		<object-name>CPT-C-Stick</object-name><!--otherwise it's just hidding HSI-->
 		<object-name>FCanopyGlass</object-name>
+		<object-name>BCanopyGlass</object-name>
 		<object-name>Fuselage-Ext</object-name>
 		<condition>
 			<not>
