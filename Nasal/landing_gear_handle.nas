@@ -3,35 +3,37 @@
 
 setlistener( "controls/gear/gear-down", func {ldg_hdl_main();} );
 
+ld_hdl = props.globals.getNode("sim/model/A-10/controls/gear/ld-gear-handle-anim", 1);
+
 ldg_hdl_main = func {
+  pos = ld_hdl.getValue();
   if ( getprop("controls/gear/gear-down") == 1 ) {
-    if ( getprop("controls/gear/A-10-landing-gear-hdl-anim") > -1 ) {
-        ldg_hdl_anim(-1); # move it down
+    if ( pos > -1 ) {
+        ldg_hdl_anim(-1, pos);
     }
   } else {
-    if ( getprop("controls/gear/A-10-landing-gear-hdl-anim") < 0 ) {
-      ldg_hdl_anim(1); # move it up
-    }
+    if ( pos < 0 ) {
+      ldg_hdl_anim(1, pos);
+	}
   }
 }
 
 
 ldg_hdl_anim = func {
-  ldg_hdl_anim_anim = getprop("controls/gear/A-10-landing-gear-hdl-anim");
+  
   incr = arg[0]/10;
-  ldg_hdl_anim_anim = ldg_hdl_anim_anim + incr;
+  pos = arg[1] + incr;
+ 
+  if (( arg[0] = 1 ) and ( pos >= 0 )){    
+    ld_hdl.setDoubleValue(0);
+  
+  } elsif  (( arg[0] = -1 ) and ( pos <= -1 )){
+    ld_hdl.setDoubleValue(-1);
 
-  # stop anim when handle up 
-  if (( arg[0] = 1 ) and ( ldg_hdl_anim_anim >= 0 )){
-    setprop("controls/gear/A-10-landing-gear-hdl-anim", 0);
 
-  # stop anim when handle down
-  } elsif  (( arg[0] = -1 ) and ( ldg_hdl_anim_anim <= -1 )){
-    setprop("controls/gear/A-10-landing-gear-hdl-anim", -1);
-
-  # continue anim
   } else {
-    setprop("controls/gear/A-10-landing-gear-hdl-anim", ldg_hdl_anim_anim);
+    ld_hdl.setDoubleValue(pos);
     settimer( ldg_hdl_main, 0.05 );
+
   }
 }

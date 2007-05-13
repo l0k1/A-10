@@ -427,20 +427,10 @@ zero_ext_tanks_sub = func {
   setprop("consumables/fuel/tank[6]/selected", "false");
 }
 #--------------------------------------------------------------------
-  toggle_traj_mkr = func {
-		if(getprop("/ai/submodels/trajectory-markers") == nil) {
-			setprop("/ai/submodels/trajectory-markers", 0);
-		}
-    if(getprop("/ai/submodels/trajectory-markers") < 1) {
-      setprop("/ai/submodels/trajectory-markers", 1);
-    } else {
-			setprop("/ai/submodels/trajectory-markers", 0);
-  	}
+var toggle_traj_mkr = func {
+    var p = "/ai/submodels/trajectory-markers";
+    setprop(p, !getprop(p));
 }
-
- #--------------------------------------------------------------------
-
-
 #--------------------------------------------------------------------
 initialise_drop_view_pos = func {
   eyelatdeg = getprop("position/latitude-deg");
@@ -485,16 +475,20 @@ start_up = func {
   settimer(ap_common_elevator_monitor, 0.5);
   settimer(altimeter_monitor, 0.5);
 }
-#--------------------------------------------------------------------
+
+# HUD ---------------------------------------------------------------
+setlistener("/sim/current-view/view-number", func {
+    setprop("/sim/hud/visibility[1]", cmdarg().getValue() == 0);
+}, 1);
 
 # strobes -----------------------------------------------------------
 strobe_switch = props.globals.getNode("controls/lighting/strobe", 1);
 aircraft.light.new("sim/model/A-10/lighting/strobe", [0.05, 1.00], strobe_switch);
 
 # nav lights -----------------------------------------------------------
-nav_lights_switch = props.globals.getNode("controls/A-10/lighting/nav-lights-flash", 1);
+nav_lights_switch = props.globals.getNode("sim/model/A-10/controls/lighting/nav-lights-flash", 1);
 aircraft.light.new("sim/model/A-10/lighting/nav-lights", [0.62, 0.62], nav_lights_switch);
 
 # warning lights medium speed -----------------------------------------------------------
-warn_medium_lights_switch = props.globals.getNode("controls/A-10/lighting/warn-medium-lights-switch", 1);
+warn_medium_lights_switch = props.globals.getNode("sim/model/A-10/controls/lighting/warn-medium-lights-switch", 1);
 aircraft.light.new("sim/model/A-10/lighting/warn-medium-lights", [0.40, 0.30], warn_medium_lights_switch);

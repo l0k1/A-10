@@ -101,7 +101,7 @@
           <h>65</h>
           <binding>
             <command>property-adjust</command>
-            <property>controls/A-10/lighting/formation</property>
+            <property>sim/model/A-10/controls/lighting/formation</property>
             <step>0.1</step>
             <max>1.0</max>
           </binding>
@@ -116,7 +116,7 @@
           <h>65</h>
           <binding>
             <command>property-adjust</command>
-            <property>controls/A-10/lighting/formation</property>
+            <property>sim/model/A-10/controls/lighting/formation</property>
             <step>-0.1</step>
             <min>0.0</min>
           </binding>

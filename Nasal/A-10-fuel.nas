@@ -230,7 +230,7 @@ update_loop = func {
 
 
 initialize = func {
-	fuel.updateFuel = func {}	# kill $FG_ROOT/Nasal/fuel.nas' loop
+	fuel.update = func {}	# kill $FG_ROOT/Nasal/fuel.nas' loop
 	print ("Initializing Nasal Fuel System");
 	refuelingN = props.globals.getNode("/systems/refuel/contact", 1);
 	refuelingN.setBoolValue(0);

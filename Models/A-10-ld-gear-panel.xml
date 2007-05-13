@@ -8,7 +8,7 @@
       <name>flaps</name>
       <type>rotate</type>
       <object-name>needle</object-name>
-  <property>surface-positions/left-flap-pos-norm</property>
+      <property>surface-positions/left-flap-pos-norm</property>
       <interpolation> 
         <entry><ind>0</ind><dep>0</dep></entry>
         <entry><ind>0.333</ind><dep>30</dep></entry>
@@ -120,7 +120,7 @@
     <name>ld-gear-handle</name>
     <type>rotate</type>
     <object-name>ld-gear-handle</object-name>
-    <property>controls/gear/A-10-landing-gear-hdl-anim</property>
+    <property>sim/model/A-10/controls/gear/ld-gear-handle-anim</property>
     <factor>52</factor>
       <center>
        <x-m>-0.0121</x-m>
@@ -139,7 +139,7 @@
   <animation>
     <object-name>light-land-switch</object-name>
     <type>rotate</type>
-    <property>controls/A-10/lighting/land-lights-switch</property>
+    <property>sim/model/A-10/controls/lighting/land-lights-switch</property>
     <interpolation>
       <entry><ind>0</ind><dep>-30</dep></entry>
       <entry><ind>1</ind><dep>0</dep></entry>

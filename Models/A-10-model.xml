@@ -2311,10 +2311,10 @@
 			<or>
 				<and>
 					<property>sim/model/A-10/lighting/nav-lights/state</property>
-					<property>controls/A-10/lighting/nav-lights-flash</property>
+					<property>sim/model/A-10/controls/lighting/nav-lights-flash</property>
 				</and>
 				<equals>
-					<property>controls/A-10/lighting/nav-lights-switch</property>
+					<property>sim/model/A-10/controls/lighting/nav-lights-switch</property>
 					<value>0</value>
 				</equals>
 			</or>
@@ -2368,10 +2368,10 @@
 			<or>
 				<and>
 					<property>sim/model/A-10/lighting/nav-lights/state</property>
-					<property>controls/A-10/lighting/nav-lights-flash</property>
+					<property>sim/model/A-10/controls/lighting/nav-lights-flash</property>
 				</and>
 				<equals>
-					<property>controls/A-10/lighting/nav-lights-switch</property>
+					<property>sim/model/A-10/controls/lighting/nav-lights-switch</property>
 					<value>0</value>
 				</equals>
 			</or>
@@ -2424,10 +2424,10 @@
 			<or>
 				<and>
 					<property>sim/model/A-10/lighting/nav-lights/state</property>
-					<property>controls/A-10/lighting/nav-lights-flash</property>
+					<property>sim/model/A-10/controls/lighting/nav-lights-flash</property>
 				</and>
 				<equals>
-					<property>controls/A-10/lighting/nav-lights-switch</property>
+					<property>sim/model/A-10/controls/lighting/nav-lights-switch</property>
 					<value>0</value>
 				</equals>
 			</or>
@@ -2486,7 +2486,7 @@
 			</equals>
 			<not>
 				<equals>
-					<property>controls/A-10/lighting/land-lights-switch</property>
+					<property>sim/model/A-10/controls/lighting/land-lights-switch</property>
 					<value>1</value>
 				</equals>
 			</not>
@@ -2539,7 +2539,7 @@
 				<value>1</value>
 			</equals>
 			<equals>
-				<property>controls/A-10/lighting/land-lights-switch</property>
+				<property>sim/model/A-10/controls/lighting/land-lights-switch</property>
 				<value>2</value>
 			</equals>
 		</condition>
@@ -2591,7 +2591,7 @@
 		<object-name>noshadow.TailEmpL-Formation</object-name>
 		<type>material</type>
 		<emission> 
-			<factor-prop>controls/A-10/lighting/formation</factor-prop>
+			<factor-prop>sim/model/A-10/controls/lighting/formation</factor-prop>
 				<red>0.91</red>
 				<green>0.98</green>
 				<blue>0.78</blue>

@@ -9,7 +9,7 @@ registerTimer = func {
 	pilot_g            = props.globals.getNode("accelerations/pilot-g", 1);
 	timeratio          = props.globals.getNode("accelerations/timeratio", 1);
 	pilot_g_damped     = props.globals.getNode("accelerations/pilot-g-damped", 1);
-	hud_intens_control = props.globals.getNode("controls/A-10/hud/intens", 1);
+	hud_intens_control = props.globals.getNode("sim/model/A-10/controls/hud/intens", 1);
 	hud_alpha          = props.globals.getNode("sim[0]/hud/color/alpha", 1);
 	hud_volts          = props.globals.getNode("systems/electrical/outputs/hud", 1);
 	
@@ -31,8 +31,9 @@ update_pilot_g = func {
 	damp = (g * n) + (damp * (1 - n));
 
 	pilot_g_damped.setDoubleValue(damp);
-# their should be an electrical param for hud, like other instruments,
-# so dealing here with power alimentation is a dirty workaround.
+
+	# there should be an electrical param for hud, like other instruments,
+	# so dealing here with power alimentation is a dirty workaround.
 	if (hvolts > 24) {
 		if (damp > 3) {
 			if (damp > 5) {

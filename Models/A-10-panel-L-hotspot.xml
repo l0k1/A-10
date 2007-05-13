@@ -57,7 +57,7 @@
           <h>30</h>
           <binding> 
             <command>property-adjust</command>
-            <property>controls/A-10/hud/depr</property>
+            <property>sim/model/A-10/controls/hud/depr</property>
             <step>-0.05</step>
             <min>-1.0</min>
             <max>1.0</max>
@@ -73,7 +73,7 @@
           <h>30</h>
           <binding> 
             <command>property-adjust</command>
-            <property>controls/A-10/hud/depr</property>
+            <property>sim/model/A-10/controls/hud/depr</property>
             <step>0.05</step>
             <min>-1.0</min>
             <max>1.0</max>
@@ -91,7 +91,7 @@
           <h>30</h>
           <binding> 
             <command>property-adjust</command>
-            <property>controls/A-10/hud/intens</property>
+            <property>sim/model/A-10/controls/hud/intens</property>
             <step>-0.1</step>
             <min>0.0</min>
             <max>1.0</max>
@@ -107,7 +107,7 @@
           <h>30</h>
           <binding> 
             <command>property-adjust</command>
-            <property>controls/A-10/hud/intens</property>
+            <property>sim/model/A-10/controls/hud/intens</property>
             <step>0.1</step>
             <min>0.0</min>
             <max>1.0</max>
