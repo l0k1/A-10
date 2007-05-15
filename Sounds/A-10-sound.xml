@@ -31,7 +31,7 @@
         <factor type="double">0.0001</factor>
       </volume>
       <pitch>
-        <property>engines/engine[0]/n1</property>
+        <property>sim/model/A-10/engines/engine[0]/n1</property>
         <factor>0.2</factor>
       </pitch>
     </engine-outside-0>
@@ -58,11 +58,11 @@
         </not>
       </condition>
       <volume>
-        <property>engines/engine[0]/n2</property>
+        <property>sim/model/A-10/engines/engine[0]/n1</property>
         <factor>0.0005</factor>
       </volume>
       <pitch>
-        <property>engines/engine[0]/n2</property>
+        <property>sim/model/A-10/engines/engine[0]/n1</property>
         <factor>0.01</factor>
         <offset>0.15</offset>
       </pitch>
@@ -94,7 +94,7 @@
         <factor type="double">0.0001</factor>
       </volume>
       <pitch>
-        <property>engines/engine[1]/n1</property>
+        <property>sim/model/A-10/engines/engine[1]/n1</property>
         <factor>0.2</factor>
       </pitch>
     </engine-outside-1>
@@ -121,11 +121,11 @@
         </not>
       </condition>
       <volume>
-        <property>engines/engine[1]/n2</property>
+        <property>sim/model/A-10/engines/engine[1]/n1</property>
         <factor>0.0005</factor>
       </volume>
       <pitch>
-        <property>engines/engine[1]/n2</property>
+        <property>sim/model/A-10/engines/engine[1]/n1</property>
         <factor>0.01</factor>
         <offset>0.15</offset>
       </pitch>
@@ -154,7 +154,7 @@
         <factor type="double">0.00006</factor>
       </volume>
       <pitch>
-        <property>engines/engine[0]/n1</property>
+        <property>sim/model/A-10/engines/engine[0]/n1</property>
         <factor>0.2</factor>
       </pitch>
     </engine-inside-0>
@@ -177,11 +177,11 @@
         </less-than-equals>
       </condition>
       <volume>
-        <property>engines/engine[0]/n2</property>
+        <property>sim/model/A-10/engines/engine[0]/n1</property>
         <factor>0.0001</factor>
       </volume>
       <pitch>
-        <property>engines/engine[0]/n2</property>
+        <property>sim/model/A-10/engines/engine[0]/n1</property>
         <factor>0.01</factor>
         <offset>0.15</offset>
       </pitch>
@@ -209,7 +209,7 @@
         <factor type="double">0.00006</factor>
       </volume>
       <pitch>
-        <property>engines/engine[1]/n1</property>
+        <property>sim/model/A-10/engines/engine[1]/n1</property>
         <factor>0.16</factor>
       </pitch>
     </engine-inside-1>
@@ -232,11 +232,11 @@
         </less-than-equals>
       </condition>
       <volume>
-        <property>engines/engine[1]/n2</property>
+        <property>sim/model/A-10/engines/engine[1]/n1</property>
         <factor>0.00025</factor>
       </volume>
       <pitch>
-        <property>engines/engine[1]/n2</property>
+        <property>sim/model/A-10/engines/engine[1]/n1</property>
         <factor>0.01</factor>
         <offset>0.15</offset>
       </pitch>
@@ -253,17 +253,17 @@
           <value>0</value>
         </equals>
         <greater-than>
-          <property>systems/apu/rpm[0]</property>
+          <property>sim/model/A-10/systems/apu/rpm[0]</property>
           <value>0</value>
         </greater-than> 
       </condition>
       <volume>
-        <property>systems/apu/rpm[0]</property>
+        <property>sim/model/A-10/systems/apu/rpm[0]</property>
         <factor>0.0005</factor>
         <offset>0.15</offset>
       </volume>
       <pitch>
-        <property>systems/apu/rpm[0]</property>
+        <property>sim/model/A-10/systems/apu/rpm[0]</property>
         <factor>0.01</factor>
         <offset>0.15</offset>
       </pitch>
@@ -675,7 +675,7 @@
       <mode>once</mode>
       <path>Aircraft/A-10/Sounds/click.wav</path>
       <condition> 
-        <property>controls/APU/off-start-switch</property>
+        <property>sim/model/A-10/controls/APU/off-start-switch</property>
       </condition>
       <volume> 
         <factor>0.3</factor>
@@ -687,7 +687,7 @@
       <path>Aircraft/A-10/Sounds/click.wav</path>
       <condition> 
         <not> 
-          <property>controls/APU/off-start-switch</property>
+          <property>sim/model/A-10/controls/APU/off-start-switch</property>
         </not>
       </condition>
       <volume> 

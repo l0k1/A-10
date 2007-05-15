@@ -146,7 +146,7 @@ update_virtual_bus = func( dt ) {
         R_gen_volts = alternator.get_output_volts("engines/engine[1]/n1");
     } else { R_gen_volts = 0.0; }
     if (master_apu) {
-        APU_gen_volts = alternator.get_output_volts("systems/apu/rpm");
+        APU_gen_volts = alternator.get_output_volts("sim/model/A-10/systems/apu/rpm");
     } else { APU_gen_volts = 0.0; }
     INV_volts    = getprop("systems/electrical/inverter-volts");
     L_AC_bus_volts = 0.0;
@@ -316,7 +316,7 @@ BATT_bus = func() {
     } else {
         setprop("systems/electrical/outputs/cabin-lights", 0.0);
     }
-    if ( getprop("controls/APU/off-start-switch") and (getprop("systems/apu/start-state") < 1 )) {
+    if ( getprop("sim/model/A-10/controls/APU/off-start-switch") and (getprop("sim/model/A-10/systems/apu/start-state") < 1 )) {
         setprop("systems/electrical/outputs/apu-starter", battery_bus_volts);
     } else {
         setprop("systems/electrical/outputs/apu-starter", 0.0);

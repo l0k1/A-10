@@ -31,6 +31,10 @@ Fairchild A-10 simulation config.
 		<virtual-cockpit archive="y">false</virtual-cockpit>
 		<chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
 
+		<tutorials>
+			<tutorial include="Tutorials/startup_tutorial.xml"/>
+		</tutorials>
+
 		<view n="0">
 			<name>Cockpit View</name>
 			<type>lookfrom</type>
@@ -208,6 +212,9 @@ Fairchild A-10 simulation config.
 					</fuel>
 				</consumables>
 				<controls>
+					<APU>
+						<off-start-switch type="int">0</off-start-switch>
+					</APU>
 					<canopy>
 						<canopy-switch type="int">2</canopy-switch>
 					</canopy>
@@ -241,13 +248,16 @@ Fairchild A-10 simulation config.
 					</lighting>
 				</controls>
 				<engines>
-					<initial-start-state type="bool">false</initial-start-state> <!-- sim value -->
 					<eng-start-cycle  type="bool">false</eng-start-cycle> <!-- warn-panel model value -->
 					<engine n="0">
 						<running type="bool">0</running>
+						<n1 type="float">0.0</n1>
+						<start-state type="float">0.0</start-state>
 					</engine>
 					<engine n="1">
 						<running type="bool">0</running>
+						<n1 type="float">0.0</n1>
+						<start-state type="float">0.0</start-state>
 					</engine>
 				</engines>
 				<A-10-nav>
@@ -295,6 +305,13 @@ Fairchild A-10 simulation config.
 						<master-caution type="bool">false</master-caution>
 					</warnings>
 				</instrumentation>
+				<systems>
+					<apu>
+						<start-state type="float">0</start-state>
+						<rpm type="float">0</rpm>
+						<temp type="float">0</temp>
+					</apu>
+				</systems>
 			</A-10>
 		</model>
 
@@ -542,12 +559,6 @@ Fairchild A-10 simulation config.
 	</canopy>
 
 	<systems>
-		<!-- APU -->
-		<apu>
-			<start-state type="float">0</start-state>
-			<rpm type="float">0</rpm>
-			<temp type="float">0</temp>
-		</apu>
 		<!-- hydraulic system -->
 		<A-10-hydraulics>
 			<l-hyd-res type="float">1</l-hyd-res>
@@ -680,9 +691,6 @@ Fairchild A-10 simulation config.
 		<engines>
 			<file>Aircraft/A-10/Nasal/engines.nas</file>
 		</engines>
-		<radar>
-			<file>Aircraft/A-10/Nasal/radar.nas</file>
-		</radar>
 		<pilot-g>
 			<file>Aircraft/A-10/Nasal/pilot-g.nas</file>
 		</pilot-g>

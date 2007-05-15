@@ -83,7 +83,12 @@
 			<pitch-deg>-3</pitch-deg>
 			<roll-deg>7</roll-deg>
 		</offsets>
-	</model>	
+	</model>
+	
+	<!-- tutorial marker -->
+	<model>
+		<path>Models/Aircraft/marker.xml</path>
+	</model>
 
 	<!-- Cockpit -->
 	<!-- 3D panels for hot-spots -->

@@ -55,11 +55,11 @@
       <name>fan-percent-l</name>
       <type>rotate</type>
       <object-name>needle-fan-l</object-name>
-      <property>engines/engine[0]/n1</property>
+      <property>sim/model/A-10/engines/engine[0]/n1</property>
       <interpolation> 
         <entry><ind>0</ind><dep>28</dep></entry><!--0%-->
         <entry><ind>73.6</ind><dep>76</dep></entry><!--iddle-->
-        <entry><ind>102</ind><dep>340</dep></entry>
+        <entry><ind>102</ind><dep>345</dep></entry>
       </interpolation>
       <center>
        <x-m>0.0047</x-m>
@@ -76,11 +76,11 @@
       <name>fan-percent-r</name>
       <type>rotate</type>
       <object-name>needle-fan-r</object-name>
-      <property>engines/engine[1]/n1</property>
+      <property>sim/model/A-10/engines/engine[1]/n1</property>
       <interpolation> 
         <entry><ind>0</ind><dep>28</dep></entry><!--0%-->
         <entry><ind>73.6</ind><dep>76</dep></entry><!--iddle-->
-        <entry><ind>102</ind><dep>340</dep></entry>
+        <entry><ind>102</ind><dep>345</dep></entry>
       </interpolation>
       <center>
        <x-m>0.0047</x-m>
@@ -100,7 +100,7 @@
       <name>core-rpm-l</name>
       <type>rotate</type>
       <object-name>needle-core-l</object-name>
-      <property>engines/engine[0]/n1</property>
+      <property>sim/model/A-10/engines/engine[0]/n1</property>
       <interpolation> 
         <entry><ind>0.0000</ind><dep>0</dep></entry><!--0-->
         <entry><ind>56.000</ind><dep>133</dep></entry><!--iddle-->
@@ -122,7 +122,7 @@
       <name>core-rpm-r</name>
       <type>rotate</type>
       <object-name>needle-core-r</object-name>
-      <property>engines/engine[1]/n1</property>
+      <property>sim/model/A-10/engines/engine[1]/n1</property>
       <interpolation> 
         <entry><ind>0.0000</ind><dep>0</dep></entry><!--0-->
         <entry><ind>56.000</ind><dep>133</dep></entry><!--iddle-->
@@ -245,7 +245,7 @@
       <name>apu-temp</name>
       <type>rotate</type>
       <object-name>needle-apu-egt</object-name>
-      <property>systems/apu/temp</property>
+      <property>sim/model/A-10/systems/apu/temp</property>
       <interpolation> 
         <entry><ind>0.0000</ind><dep>93</dep></entry><!--0-->
         <entry><ind>1000</ind><dep>347</dep></entry><!--1000-->
@@ -268,7 +268,7 @@
       <name>apu-rpm</name>
       <type>rotate</type>
       <object-name>needle-apu-rpm</object-name>
-      <property>systems/apu/rpm</property>
+      <property>sim/model/A-10/systems/apu/rpm</property>
       <interpolation> 
         <entry><ind>0.0000</ind><dep>91</dep></entry><!--0-->
         <entry><ind>120</ind><dep>345</dep></entry><!--max thrust-->
