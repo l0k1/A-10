@@ -1,0 +1,352 @@
+<PropertyList>
+	<name>Engines Start</name>
+	<description>This tutorial teaches the A-10 engines start procedure</description>
+	<interval>0</interval>
+
+	<init>					
+		<set>
+			<property>/sim/current-view/view-number</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>/controls/gear/brake-parking</property>
+			<value>1</value>
+		</set>
+		<set>
+			<property>/controls/flight/flaps</property>
+			<value>0.0</value>
+		</set>
+		<set>
+			<property>/sim/model/A-10/controls/engines/engine[0]/starter-switch-position</property>
+			<value>1</value>
+		</set>
+		<set>
+			<property>/sim/model/A-10/controls/engines/engine[1]/starter-switch-position</property>
+			<value>1</value>
+		</set>
+
+		<set>
+			<property>/sim/model/A-10/engines/initial-start-state</property>
+			<value>false</value>
+		</set>
+		<set>
+			<property>/sim/model/A-10/engines/eng-start-cycle</property>
+			<value>false</value>
+		</set>
+		<set>
+			<property>/sim/model/A-10/engines/engine[0]/start-state</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>/sim/model/A-10/engines/engine[1]/start-state</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>/engines/engine[0]/out-of-fuel</property>
+			<value>1</value>
+		</set>
+		<set>
+			<property>/engines/engine[1]/out-of-fuel</property>
+			<value>1</value>
+		</set>
+		<set>
+			<property>/controls/engines/engine[0]/throttle</property>
+			<value>0.0</value>
+		</set>
+		<set>
+			<property>/controls/engines/engine[1]/throttle</property>
+			<value>0.0</value>
+		</set>
+
+		<set>
+			<property>/sim/model/A-10/controls/APU/off-start-switch</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>sim/model/A-10/systems/apu/temp</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>sim/model/A-10/systems/apu/rpm</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>sim/model/A-10/systems/apu/start-state</property>
+			<value>0</value>
+		</set>
+
+		<set>
+			<property>/controls/electric/APU-generator</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>/controls/electric/battery-switch</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>/controls/electric/engine[0]/generator</property>
+			<value>false</value>
+		</set>
+		<set>
+			<property>/controls/electric/engine[1]/generator</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>/sim/model/A-10/engines/engine[0]/n1</property>
+			<value>0</value>
+		</set>
+		<set>
+			<property>/sim/model/A-10/engines/engine[1]/n1</property>
+			<value>0</value>
+		</set>
+	</init>
+
+	<step>
+		<message>
+			First, ensure battery is switched on.
+			Use the battery switch on the electrical control panel{|.}
+		</message>
+		<view>
+			<heading-offset-deg>340</heading-offset-deg>
+			<pitch-offset-deg>-35</pitch-offset-deg>
+			<field-of-view>40</field-of-view>
+		</view>
+		<marker>
+			<x-m>2.6800</x-m>
+			<y-m>0.4980</y-m>
+			<z-m>0.8150</z-m>
+			<scale>1.5</scale>
+		</marker>
+		<exit>
+			<condition>
+				<property>/controls/electric/battery-switch</property>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>
+			Then, start the APU{ (Auxiliar Power Unit)|.}
+		</message>
+		<view>
+			<heading-offset-deg>353</heading-offset-deg>
+			<pitch-offset-deg>-40</pitch-offset-deg>
+			<field-of-view>55</field-of-view>
+		</view>
+		<marker>
+			<x-m>2.7680</x-m>
+			<y-m>-0.2800</y-m>
+			<z-m>0.8200</z-m>
+			<scale>1.5</scale>
+		</marker>
+		<exit>
+			<condition>
+				<greater-than>
+					<property>/sim/model/A-10/systems/apu/start-state</property>
+					<value>0.05</value>
+				</greater-than>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>Let the APU take its turns until it reach at least{ 90%|.} </message>
+		<view>
+			<heading-offset-deg>342</heading-offset-deg>
+			<pitch-offset-deg>-34</pitch-offset-deg>
+			<field-of-view>24</field-of-view>
+		</view>
+		<exit>
+			<condition>
+				<greater-than>
+					<property>/sim/model/A-10/systems/apu/rpm</property>
+					<value>64</value>
+				</greater-than>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>Now engage the APU generator{|.}</message>
+		<view>
+			<heading-offset-deg>340</heading-offset-deg>
+			<pitch-offset-deg>-35</pitch-offset-deg>
+			<field-of-view>40</field-of-view>
+		</view>
+		<marker>
+			<x-m>2.6300</x-m>
+			<y-m>0.4320</y-m>
+			<z-m>0.8150</z-m>
+			<scale>1.5</scale>
+		</marker>
+		<exit>
+			<condition>
+				<property>/controls/electric/APU-generator</property>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>
+			You don't need anymore the battery to be turned on{|.}
+			Switch it off{|.}
+		</message>
+		<marker>
+			<x-m>2.6800</x-m>
+			<y-m>0.4980</y-m>
+			<z-m>0.8150</z-m>
+			<scale>1.5</scale>
+		</marker>
+		<exit>
+			<condition>
+				<not>
+					<property>/controls/electric/battery-switch</property>
+				</not>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>
+			Lets go with first engine{|.}
+			Move the throttles to the "Iddle" position{|.}
+			Use PageUp on the keyboard or 9 on the numeric keypad{|.}	
+		</message>
+		<view>
+			<heading-offset-deg>20</heading-offset-deg>
+			<pitch-offset-deg>-48</pitch-offset-deg>
+			<field-of-view>40</field-of-view>
+		</view>
+		<error>
+			<message>
+				Tip:
+				Move the throttles forward until they hide the bottom of the idle{|-}max arrow{|.} 
+			</message>
+			<condition>
+				<less-than>
+					<property>/controls/engines/engine[0]/throttle</property>
+					<value>0.06</value>
+				</less-than>
+			</condition>
+		</error>
+		<exit>
+			<condition>
+				<greater-than>
+					<property>/controls/engines/engine[0]/throttle</property>
+					<value>0.06</value>
+				</greater-than>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>
+			Start the left engine{|.}
+			Push the switch forward in the "ignition" position{ |.}
+		</message>
+		<view>
+			<heading-offset-deg>3.61</heading-offset-deg>
+			<pitch-offset-deg>-42</pitch-offset-deg>
+			<field-of-view>44</field-of-view>
+		</view>
+		<marker>
+			<x-m>2.7230</x-m>
+			<y-m>-0.3000</y-m>
+			<z-m>0.8200</z-m>
+			<scale>1.5</scale>
+		</marker>
+		<exit>
+			<condition>
+				<equals>
+					<property>/sim/model/A-10/controls/engines/engine[0]/starter-switch-position</property>
+					<value>2</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>Let the left engine spool up until it reach at least{ 25%} rpm{|.}</message>
+		<view>
+			<heading-offset-deg>342</heading-offset-deg>
+			<pitch-offset-deg>-34</pitch-offset-deg>
+			<field-of-view>24</field-of-view>
+		</view>
+		<exit>
+			<condition>
+				<greater-than>
+					<property>/engines/engine/n1</property>
+					<value>57</value>
+				</greater-than>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>
+			Now engage the left engine generator{|.}
+			We will use now the same view angle which makes easier all the switch operations'|.}
+		</message>
+		<view>
+			<heading-offset-deg>353</heading-offset-deg>
+			<pitch-offset-deg>-40</pitch-offset-deg>
+			<field-of-view>55</field-of-view>
+		</view>
+		<marker>
+			<x-m>2.6900</x-m>
+			<y-m>0.4230</y-m>
+			<z-m>0.8150</z-m>
+			<scale>1.5</scale>
+		</marker>
+		<exit>
+			<condition>
+				<property>/controls/electric/engine/generator</property>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>
+			Start the right engine{|.}
+			Push the switch forward in the "ignition" position{ |.}
+		</message>
+		<marker>
+			<x-m>2.7230</x-m>
+			<y-m>-0.2660</y-m>
+			<z-m>0.8200</z-m>
+			<scale>1.5</scale>
+		</marker>
+		<exit>
+			<condition>
+				<equals>
+					<property>/sim/model/A-10/controls/engines/engine[1]/starter-switch-position</property>
+					<value>2</value>
+				</equals>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>
+			Then engage the right engine generator{|.}
+		</message>
+		<view>
+			<heading-offset-deg>353</heading-offset-deg>
+			<pitch-offset-deg>-40</pitch-offset-deg>
+			<field-of-view>55</field-of-view>
+		</view>
+		<marker>
+			<x-m>2.6900</x-m>
+			<y-m>0.4450</y-m>
+			<z-m>0.8250</z-m>
+			<scale>1.5</scale>
+		</marker>
+		<exit>
+			<condition>
+				<property>/controls/electric/engine[1]/generator</property>
+			</condition>
+		</exit>
+	</step>
+
+
+</PropertyList>
