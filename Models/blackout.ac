@@ -4,7 +4,7 @@ MATERIAL "ac3dmat0" rgb 0 0 0  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  
 OBJECT world
 kids 2
 OBJECT poly
-name "INS_blackout_sphere"
+name "Blackout-Sphere"
 loc 0 -5.96046e-008 0
 crease 61.000000
 numvert 92
@@ -783,7 +783,7 @@ refs 3
 91 -0.0608384 0.301567
 kids 0
 OBJECT poly
-name "INS_redout_sphere"
+name "Redout-Sphere"
 loc 0 -5.96046e-008 0
 crease 61.000000
 numvert 92

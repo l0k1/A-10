@@ -4,7 +4,7 @@
     
 	<animation> 
       <type>material</type>
-      <object-name>INS_blackout_sphere</object-name>
+      <object-name>Blackout-Sphere</object-name>
       <transparency> 
         <alpha-prop>accelerations/pilot-g-damped</alpha-prop>
         <factor>0.6667</factor>
@@ -16,7 +16,7 @@
 	
 	<animation> 
       <type>material</type>
-      <object-name>INS_redout_sphere</object-name>
+      <object-name>Redout-Sphere</object-name>
       <transparency> 
         <alpha-prop>accelerations/pilot-g-damped</alpha-prop>
         <factor>-0.5</factor>
@@ -28,7 +28,7 @@
  
     <animation> 
       <type>select</type>
-      <object-name>INS_blackout_sphere</object-name>
+      <object-name>Blackout-Sphere</object-name>
       <condition> 
         <equals> 
             <property>sim/current-view/view-number</property>
@@ -39,7 +39,7 @@
 	
 	<animation> 
       <type>select</type>
-      <object-name>INS_redout_sphere</object-name>
+      <object-name>Redout-Sphere</object-name>
       <condition> 
         <equals> 
             <property>sim/current-view/view-number</property>
@@ -47,11 +47,5 @@
           </equals>
        </condition>
     </animation>
-
- <animation>
-  <type>noshadow</type>
-   <object-name>INS_blackout_sphere</object-name>
-   <object-name>INS_redout_sphere</object-name>
- </animation>
       
   </PropertyList>

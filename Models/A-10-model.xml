@@ -801,7 +801,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/Hunter/Models/blackout.xml</path>
+		<path>Aircraft/A-10/Models/blackout.xml</path>
 		<name>Blackout</name>
 		<offsets>
 			<x-m>3.2000</x-m>
