@@ -10,7 +10,7 @@
 # + out-of-fuel       - boolean, set by this code.
 
 
-var UPDATE_PERIOD = 0.3;
+var UPDATE_PERIOD = 0.1;
 
 var enabled = nil;
 var fuel_freeze = nil;
@@ -49,10 +49,10 @@ update_loop = func {
 	# check for contact with tanker aircraft
 	var tankers = [];
 	if (ai_enabled) {
-		foreach (a; aimodelsN.getChildren("aircraft")) {
-			var contact = a.getNode("refuel/contact").getBoolValue();
-			var tanker = a.getNode("tanker").getBoolValue();
-			#var id = a.getNode("id").getValue();
+		foreach (a; aimodelsN.getChildren("tanker")) {
+			var contact = a.getNode("refuel/contact", 1).getBoolValue();
+			var tanker = a.getNode("tanker", 1).getBoolValue();
+			var id = a.getNode("id").getValue();
 			#print("ai '", id, "'  contact=", contact, "  tanker=", tanker);
 
 			if (tanker and contact) {
@@ -63,8 +63,8 @@ update_loop = func {
 		foreach (m; aimodelsN.getChildren("multiplayer")) {
 			var contact = m.getNode("refuel/contact").getBoolValue();
 			var tanker = m.getNode("tanker").getBoolValue();
-			#var id = m.getNode("id").getValue();
-			#print("mp '", id, "'  contact=", contact, "  tanker=", tanker);
+			var id = m.getNode("id").getValue();
+			print("mp '", id, "'  contact=", contact, "  tanker=", tanker);
 
 			if (tanker and contact) {
 				append(tankers, m);
@@ -100,11 +100,11 @@ update_loop = func {
 	}	
 
 	# unlock A-10 aar receiver lock and calculate fuel received
-		if (refueling) {
-			# assume max flow rate is 6000 lbs/min (for KC135)
-			var received = 100 * UPDATE_PERIOD;
-			total -= received;
-		}
+	if (refueling) {
+		# assume max flow rate is 6000 lbs/min (for KC135)
+		var received = 100 * UPDATE_PERIOD;
+		total -= received;
+	}
 
 
 	# make list of selected tanks
@@ -210,15 +210,32 @@ update_loop = func {
 	diff_lbs = abs(right_main - left_main);
 	setprop("sim/model/A-10/consumables/fuel/diff-lbs", diff_lbs);
 	
-	# stop the A-10's engines when off or when out of fuel
-	foreach (var i; [0,1]) {
-		running = getprop("sim/model/A-10/engines/engine["~ i ~ "]/running");
-		if (! running) {
-			setprop("engines/engine["~ i ~ "]/out-of-fuel", 1);
-		} else {
-			setprop("engines/engine["~ i ~ "]/out-of-fuel", out_of_fuel);
+	# stop the A-10's engines when off or when out of fuel	
+	var start_state = getprop("sim/model/A-10/engines/engine[0]/start-state");
+	var n1 = getprop("engines/engine[0]/n1");
+	var running = getprop("sim/model/A-10/engines/engine[0]/running");
+
+	if (! running) {
+		setprop("engines/engine[0]/out-of-fuel", 1);
+	} else {
+		setprop("engines/engine[0]/out-of-fuel", out_of_fuel);
+		if (start_state >= 1) {
+			setprop("sim/model/A-10/engines/engine[0]/n1", n1);
 		}
 	}
+	start_state = getprop("sim/model/A-10/engines/engine[1]/start-state");
+	n1 = getprop("engines/engine[1]/n1");
+	running = getprop("sim/model/A-10/engines/engine[1]/running");
+
+	if (! running) {
+		setprop("engines/engine[1]/out-of-fuel", 1);
+	} else {
+		setprop("engines/engine[1]/out-of-fuel", out_of_fuel);
+		if (start_state >= 1) {
+			setprop("sim/model/A-10/engines/engine[1]/n1", n1);
+		}
+	}
+	
 
 	# miscelaneous A-10's props
 	setprop("velocities/ground-speed-kt", ground_speed());
@@ -256,6 +273,8 @@ initialize = func {
 
 	setlistener("sim/freeze/fuel", func { fuel_freeze = cmdarg().getBoolValue() }, 1);
 	setlistener("sim/ai/enabled", func { ai_enabled = cmdarg().getBoolValue() }, 1);
+
+	update_loop();
 }
 
 ground_speed = func {
@@ -281,26 +300,6 @@ aar_receiver_lever = func {
 	}
 }
 
-#aar_receiver_lever = func {
-#	input = arg[0];
-#	aar_rcvr = getprop("sim/model/A-10/controls/fuel/receiver-lever");
-#	if ((input == 1) and (aar_rcvr == 0)) {
-#		aar_rcvr = 1;
-#		setprop("sim/model/A-10/controls/fuel/receiver-lever", aar_rcvr)
-#	} elsif ((input == -1) and (aar_rcvr == 1)) {
-#		aar_rcvr = 0;
-#		setprop("sim/model/A-10/controls/fuel/receiver-lever", aar_rcvr)
-#	}
-#}
 
-wait_for_fdm = func {
-	if (getprop("/position/altitude-agl-ft")) { # is there a better indicator?
-		initialize();
-		update_loop();
-	} else {
-		settimer(wait_for_fdm, 1);
-	}
-}
+setlistener("/sim/signals/fdm-initialized", initialize);
 
-
-settimer(wait_for_fdm, 0);
