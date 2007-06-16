@@ -64,7 +64,7 @@ update_loop = func {
 			var contact = m.getNode("refuel/contact").getBoolValue();
 			var tanker = m.getNode("tanker").getBoolValue();
 			var id = m.getNode("id").getValue();
-			print("mp '", id, "'  contact=", contact, "  tanker=", tanker);
+			#print("mp '", id, "'  contact=", contact, "  tanker=", tanker);
 
 			if (tanker and contact) {
 				append(tankers, m);
