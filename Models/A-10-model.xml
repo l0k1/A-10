@@ -2209,6 +2209,9 @@
 		<x-factor>12</x-factor>
 		<y-factor>12</y-factor>
 		<z-factor>12</z-factor>
+		<x-offset>1</x-offset>
+		<y-offset>1</y-offset>
+		<z-offset>1</z-offset>
 	</animation>
 	<animation>
 		<type>dist-scale</type>
@@ -2265,6 +2268,9 @@
 		<x-factor>12</x-factor>
 		<y-factor>12</y-factor>
 		<z-factor>12</z-factor>
+		<x-offset>1</x-offset>
+		<y-offset>1</y-offset>
+		<z-offset>1</z-offset>
 	</animation>
 	<animation>
 		<type>dist-scale</type>
@@ -2321,6 +2327,9 @@
 		<x-factor>12</x-factor>
 		<y-factor>12</y-factor>
 		<z-factor>12</z-factor>
+		<x-offset>1</x-offset>
+		<y-offset>1</y-offset>
+		<z-offset>1</z-offset>
 	</animation>
 	<animation>
 		<type>dist-scale</type>
@@ -2377,6 +2386,9 @@
 		<x-factor>4</x-factor>
 		<y-factor>4</y-factor>
 		<z-factor>4</z-factor>
+		<x-offset>1</x-offset>
+		<y-offset>1</y-offset>
+		<z-offset>1</z-offset>
 	</animation>
 	<animation>
 		<type>dist-scale</type>
@@ -2434,6 +2446,9 @@
 		<x-factor>4</x-factor>
 		<y-factor>4</y-factor>
 		<z-factor>4</z-factor>
+		<x-offset>1</x-offset>
+		<y-offset>1</y-offset>
+		<z-offset>1</z-offset>
 	</animation>
 	<animation>
 		<type>dist-scale</type>
@@ -2490,6 +2505,9 @@
 		<x-factor>4</x-factor>
 		<y-factor>4</y-factor>
 		<z-factor>4</z-factor>
+		<x-offset>1</x-offset>
+		<y-offset>1</y-offset>
+		<z-offset>1</z-offset>
 	</animation>
 	<animation>
 		<type>dist-scale</type>
@@ -2544,6 +2562,9 @@
 		<x-factor>9</x-factor>
 		<y-factor>9</y-factor>
 		<z-factor>9</z-factor>
+		<x-offset>1</x-offset>
+		<y-offset>1</y-offset>
+		<z-offset>1</z-offset>
 	</animation>
 	<animation>
 		<type>dist-scale</type>
@@ -2596,6 +2617,9 @@
 		<x-factor>12</x-factor>
 		<y-factor>12</y-factor>
 		<z-factor>12</z-factor>
+		<x-offset>1</x-offset>
+		<y-offset>1</y-offset>
+		<z-offset>1</z-offset>
 	</animation>
 	<animation>
 		<type>dist-scale</type>
