@@ -1,84 +1,87 @@
-Collins AN/ARC-186(V)
----------------------
+TACAN AN/ARN-118
+----------------
 
-VHF AM/FM Transceiver
-
-On the Fairchild A-10 has two of them.The remote control panels are mounted on the left console. Each radio is identical but they are preseted single-band to provide dedicated VHF/AM or VHF/FM operation. This is done by an external switch located on the receiver-transceiver unit.
-
-
-The forward one is tuned to operate in VHF/AM mode:
-
-normal range
-116 to 151.975 MHz AM
-receive only range
-108 to 115.975 MHz AM
-(for test purposes, I decided to let it work in homing (FM) mode, wich is
-displayed on the ADI while TACAN ADF AND ILS and HSI stuff are not implemented
-in the 3D cockpit).
+ILS
+---
 
 
-The aft one should be tuned to operate in VHF/FM mode (homing capability):
-
-30 to 76 MHz FM
-
+VHF AM/FM Transceiver: Collins AN/ARC-186(V)
+--------------------------------------------
 
 
-Controls and indicators:
-------------------------
+	The Fairchild A-10 has two of them. Both remote control panels are mounted
+	on the left console. Each radio is identical but they are preseted
+	single-band to provide dedicated VHF/AM or VHF/FM operation. This is done by
+	an external switch located on the receiver-transceiver unit.
+
+	The forward one is tuned to operate in VHF/AM mode (RL):
+	normal range
+	116 to 151.975 MHz AM
+	receive only range
+	108 to 115.975 MHz AM
+
+	For test purposes, I decided to let it work in homing (FM) mode, wich is
+	displayed on the AI (Attitude Indicator) while ADF stuff is not yet 
+	implemented in the 3D cockpit.
+
+	The aft one should be tuned to operate in VHF/FM mode for homing capability
+	at 30 to 76 MHz FM but is currently disabled.
+
+	Controls and indicators:
+	------------------------
  
-left side:
+	Left side:
+		VOL control knob - not yet used
 
-    VOL control knob - not yet used
+		Squelch disable/tone switch - not used yet
 
-    Squelch disable/tone switch - not used yet
+		Frequency control/emrgency select knob:
+		- EMER FM       - not used yet (cyphered coms)
+		- EMER AM       - not used yet (cyphered coms)
+		- MAN           - Enables manual frequency selection.
+		- PRE           - Enables preset chanel selection.
+		(Left mouse button rotates CW, center mouse button (linux) rotates CCW)
 
-    Frequency control/emrgency select knob:
-    - EMER FM       - not used yet (cyphered coms)
-    - EMER AM       - not used yet (cyphered coms)
-    - MAN           - Enables manual frequency selection.
-    - PRE           - Enables preset chanel selection.
-    (Left mouse button rotates CW, center mouse button (linux) rotates CCW)
+		Load pushbutton - Inserts manualy selected frequency into selected
+		preseted channel. 
 
-    Load pushbutton - Inserts manualy selected frequency into selected preset channel. 
+	Center:
+		Frequency indicator - indicates the frequency selected by the frequency
+		selector   knobs. (in some case it doesn't reflect the frequency in use)
 
-Center:
+		Frequency selector knobs - select frequency.
+		(Left mouse button rotates CW, center mouse button (linux) rotates CCW)
 
-    Frequency indicator - indicates the frequency selected by the frequency
-    selector   knobs. (in some case it doesn't reflect the frequency in use)
+		Preset chanel indicator - indicates the preset number (1-20)
 
-    Frequency selector knobs - select frequency.
-    (Left mouse button rotates CW, center mouse button (linux) rotates CCW)
+		Preset chanel selector - selects the presets channels.
+		(Left mouse button forward, center mouse button (linux) backward)
 
-    Preset chanel indicator - indicates the preset number (1-20)
+	Right:
+		Mode selector knob:
+		- OFF - Disables the receiver-transceiver.
+		- TR  - Enable the tramsmit/receive mode.
+		- DF  - Enable FM Homing (VHF/FM radio only).
 
-    Preset chanel selector - selects the presets channels.
-    (Left mouse button forward, center mouse button (linux) backward)
 
-Right:
+	Operation:
+	----------
 
-    Mode selector knob:
-    - OFF - Disables the receiver-transceiver.
-    - TR  - Enable the tramsmit/receive mode.
-    - DF  - Enable FM Homing (VHF/FM radio only).
+	Manual frequency selection:
+		- Mode selector knob - TR
+		- Frequency control/emergency select knob - MAN
+		- Frequency selector knobs - set desired frequency.
 
-Operation:
-----------
+	Loading preset channels:
+		- Mode selector knob - TR
+		- Frequency control/emergency select knob - MAN
+		- Frequency selector knobs - set desired frequency
+		- Preset chanel selector - click until the desired channel number is
+		obtained. (If the button doesn't move, review the step before).
 
-Manual frequency selection:
-    - Mode selector knob - TR
-    - Frequency control/emergency select knob - MAN
-    - Frequency selector knobs - set desired frequency.
-
-Loading preset channels:
-    - Mode selector knob - TR
-    - Frequency control/emergency select knob - MAN
-    - Frequency selector knobs - set desired frequency
-    - Preset chanel selector - click until the desired channel number is obtained
-    (if the button doesn't move, review the step before).
-
-Preset channel selection:
-    - Mode selector knob - TR
-    - Frequency control/emergency select knob - PRE
-    - Frequency selector knobs - click until desired channel number is obtained.
-    (works also with Frequency control/emergency select knob - MAN, but loading
-    isn't possible in PRE mode)
+	Preset channel selection:
+		- Mode selector knob - TR
+		- Frequency control/emergency select knob - PRE
+		- Frequency selector knobs - click until desired channel number is
+		obtained. (It works also with Frequency control/emergency select
+		knob - MAN, but loading isn't possible in PRE mode).

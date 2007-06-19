@@ -271,6 +271,8 @@ Fairchild A-10 simulation config.
 					<hars>
 						<hars-warn-light type="bool">false</hars-warn-light>
 					</hars>
+					<homing-FM type="bool">false</homing-FM>
+					<homing-UHF type="bool">false</homing-UHF>
 				</A-10-nav>
 				<instrumentation>
 					<nav n="2">

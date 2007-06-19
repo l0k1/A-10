@@ -314,7 +314,7 @@
  
 
 <!-- instruments-->
-	<model> 
+	<model>
 		<path>Aircraft/A-10/Models/A-10-hud.xml</path>
 		<offsets>
 			<x-m>2.2800</x-m>
@@ -322,10 +322,10 @@
 			<z-m>1.4500</z-m>
 		</offsets>
 	</model>
- 
-	<model> 
+
+	<model>
 		<path>Aircraft/A-10/Models/A-10-detail-cpt.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>0.0000</x-m>
 			<y-m>0.0000</y-m>
 			<z-m>0.0000</z-m>
@@ -373,7 +373,7 @@
 
 	<model>
 		<path>Aircraft/A-10/Models/A-10-vsi-6kfpm.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.4030</x-m>
 			<y-m>0.1165</y-m>
 			<z-m>1.2130</z-m>
@@ -385,7 +385,7 @@
 
 	<model>
 		<path>Aircraft/A-10/Models/A-10-alti.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.4015</x-m>
 			<y-m>0.1145</y-m>
 			<z-m>1.1275</z-m>
@@ -398,7 +398,7 @@
 
 	<model>
 		<path>Aircraft/A-10/Models/A-10-asi.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.4185</x-m>
 			<y-m>-0.1125</y-m>
 			<z-m>1.1330</z-m>
@@ -408,10 +408,10 @@
 			<type>noshadow</type>
 		</animation>
 	</model>
-	
+
 	<model>
 		<path>Aircraft/A-10/Models/A-10-rwr.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.4130</x-m>
 			<y-m>-0.1115</y-m>
 			<z-m>1.2200</z-m>
@@ -424,7 +424,7 @@
 
 	<model>
 		<path>Aircraft/A-10/Models/A-10-AoA-gauge.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.4000</x-m>
 			<y-m>-0.1881</y-m>
 			<z-m>1.1195</z-m>
@@ -437,7 +437,7 @@
 
 	<model>
 		<path>Aircraft/A-10/Models/A-10-chronometer.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.4000</x-m>
 			<y-m>-0.2530</y-m>
 			<z-m>1.1195</z-m>
@@ -447,10 +447,10 @@
 			<type>noshadow</type>
 		</animation>
 	</model>
- 
+
 	<model>
 		<path>Aircraft/A-10/Models/A-10-uhf-disp.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.4000</x-m>
 			<y-m>-0.318</y-m>
 			<z-m>1.1195</z-m>
@@ -460,10 +460,10 @@
 			<type>noshadow</type>
 		</animation>
 	</model>
- 
+
 	<model>
 		<path>Aircraft/A-10/Models/A-10-adi.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.4235</x-m>
 			<y-m>0.0000</y-m>
 			<z-m>1.1580</z-m>
@@ -473,10 +473,10 @@
 			<type>noshadow</type>
 		</animation>
 	</model>
- 
+
 	<model>
 		<path>Aircraft/A-10/Models/A-10-armament-panel.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.4080</x-m>
 			<y-m>-0.1881</y-m>
 			<z-m>0.9980</z-m>
@@ -486,10 +486,10 @@
 			<type>noshadow</type>
 		</animation>
 	</model>
- 
+
 	<model>
 		<path>Aircraft/A-10/Models/A-10-HSI.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.4330</x-m>
 			<y-m>0.0000</y-m>
 			<z-m>1.0250</z-m>
@@ -499,10 +499,10 @@
 			<type>noshadow</type>
 		</animation>
 	</model>
- 
+
 	<model>
 		<path>Aircraft/A-10/Models/A-10-HSI-2.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.4330</x-m>
 			<y-m>0.0000</y-m>
 			<z-m>1.0250</z-m>
@@ -512,10 +512,10 @@
 			<type>noshadow</type>
 		</animation>
 	</model>
- 
+
 	<model>
 		<path>Aircraft/A-10/Models/A-10-nav-mode-selector.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.4330</x-m>
 			<y-m>0.0005</y-m>
 			<z-m>0.9360</z-m>
@@ -525,10 +525,10 @@
 			<type>noshadow</type>
 		</animation>
 	</model>
- 
-	<model> 
+
+	<model>
 		<path>Aircraft/A-10/Models/A-10-alt-ap.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.3800</x-m>
 			<y-m>0.0000</y-m>
 			<z-m>1.3100</z-m>
@@ -538,10 +538,10 @@
 			<type>noshadow</type>
 		</animation>
 	</model>
- 
-	<model> 
+
+	<model>
 		<path>Aircraft/A-10/Models/A-10-central-up-warning.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.4235</x-m>
 			<y-m>0.0000</y-m>
 			<z-m>1.2540</z-m>
@@ -551,10 +551,10 @@
 			<type>noshadow</type>
 		</animation>
 	</model>
- 
-	<model> 
+
+	<model>
 		<path>Aircraft/A-10/Models/A-10-engines-gauges.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.4140</x-m>
 			<y-m>0.1875</y-m>
 			<z-m>1.0015</z-m>
@@ -564,10 +564,10 @@
 			<type>noshadow</type>
 		</animation>
 	</model>
- 
-	<model> 
+
+	<model>
 		<path>Aircraft/A-10/Models/A-10-fuel-gauges.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.4250</x-m>
 			<y-m>0.3585</y-m>
 			<z-m>0.9985</z-m>
@@ -580,7 +580,7 @@
 
 	<model>
 		<path>Aircraft/A-10/Models/A-10-seat-switch.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>0.0000</x-m>
 			<y-m>0.0000</y-m>
 			<z-m>0.0000</z-m>
@@ -589,10 +589,10 @@
 			<type>noshadow</type>
 		</animation>
 	</model>
-	
+
 	<model>
 		<path>Aircraft/A-10/Models/A-10-emer-brake.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.5178</x-m>
 			<y-m>-0.5075</y-m>
 			<z-m>0.8365</z-m>
@@ -606,7 +606,7 @@
 
 	<model>
 		<path>Aircraft/A-10/Models/A-10-fuel-control.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.5232</x-m>
 			<y-m>-0.3572</y-m>
 			<z-m>0.8150</z-m>
@@ -631,9 +631,9 @@
 	</model>
 
 <!-- right console -->
-	<model> 
+	<model>
 		<path>Aircraft/A-10/Models/A-10-canopy-switch.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>0.0000</x-m>
 			<y-m>0.0000</y-m>
 			<z-m>0.0000</z-m>
@@ -645,7 +645,7 @@
 
 	<model>
 		<path>Aircraft/A-10/Models/A-10-elec-pwr-ctrl.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.6300</x-m>
 			<y-m>0.5000</y-m>
 			<z-m>0.7750</z-m>
@@ -660,7 +660,7 @@
 
 	<model>
 		<path>Aircraft/A-10/Models/A-10-warn-panel.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.5100</x-m>
 			<y-m>0.3542</y-m>
 			<z-m>0.8150</z-m>
@@ -687,7 +687,7 @@
 	<model>
 		<object-name>Panel-r3</object-name>
 		<path>Aircraft/A-10/Models/A-10-panel-r3.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>3.0335</x-m>
 			<y-m>0.5070</y-m>
 			<z-m>0.7298</z-m>
@@ -709,11 +709,11 @@
 			<type>noshadow</type>
 		</animation>
 	</model>
-	
+
 <!-- left panel -->
 	<model>
 		<path>Aircraft/A-10/Models/A-10-stdby-adi.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.3970</x-m>
 			<y-m>-0.1857</y-m>
 			<z-m>1.1895</z-m>
@@ -726,7 +726,7 @@
 
 	<model>
 		<path>Aircraft/A-10/Models/A-10-master-caution.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.3970</x-m>
 			<y-m>-0.1857</y-m>
 			<z-m>1.2295</z-m>
@@ -739,7 +739,7 @@
 
 	<model>
 		<path>Aircraft/A-10/Models/A-10-hud-panel.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.3969</x-m>
 			<y-m>-0.2806</y-m>
 			<z-m>1.1951</z-m>
@@ -752,7 +752,7 @@
 
 	<model>
 		<path>Aircraft/A-10/Models/A-10-ld-gear-panel.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.4250</x-m>
 			<y-m>-0.3585</y-m>
 			<z-m>0.9985</z-m>
@@ -765,7 +765,7 @@
 
 	<model>
 		<path>Aircraft/A-10/Models/A-10-hars-fast-erect.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.4104</x-m>
 			<y-m>-0.2850</y-m>
 			<z-m>0.8770</z-m>
@@ -778,7 +778,7 @@
  
 	<model>
 		<path>Aircraft/A-10/Models/A-10-an-arc-186-1.xml</path>
-			<offsets> 
+			<offsets>
 				<x-m>2.8427</x-m>
 				<y-m>-0.3551</y-m>
 				<z-m>0.7098</z-m>
@@ -813,9 +813,9 @@
 		</animation>
 	</model>
 
-	<model> 
+	<model>
 		<path>Aircraft/A-10/Models/A-10-aoa-indexer.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.2640</x-m>
 			<y-m>-0.1671</y-m>
 			<z-m>1.4240</z-m>
@@ -825,9 +825,9 @@
 		</animation>
 	</model>
 
-	<model> 
+	<model>
 		<path>Aircraft/A-10/Models/stick.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.6127</x-m>
 			<y-m>0.0000</y-m>
 			<z-m>0.5176</z-m>
@@ -837,9 +837,9 @@
 		</animation>
 	</model>
 
-	<model> 
+	<model>
 		<path>Aircraft/A-10/Models/pedals.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>2.0800</x-m>
 			<y-m>0.0000</y-m>
 			<z-m>0.5804</z-m>
@@ -882,7 +882,7 @@
 			<property>sim/model/A-10/canopy-safe</property>
 		</condition>
 	</animation>
-	
+
 	<animation>
 		<type>select</type>
 		<object-name>BCanopyGlass</object-name>
@@ -896,7 +896,7 @@
 			</and>
 		</condition>
 	</animation>
-	
+
 	<animation>
 		<type>rotate</type>
 		<object-name>BCanopyFrame</object-name>
@@ -1510,7 +1510,7 @@
 			<z>0</z>
 		</axis>
 	</animation>
-	
+
 	<animation>
 		<type>rotate</type>
 		<object-name>UC-NoseStrutHub</object-name>
@@ -1527,7 +1527,7 @@
 			<z>-1</z>
 		</axis>
 	</animation>
- 
+
 	<animation>
 		<type>translate</type>
 		<object-name>UC-NoseStrutHub</object-name>
@@ -2063,11 +2063,11 @@
 	<animation>
 		<type>noshadow</type>
 		<object-name>LEFan</object-name>
-	</animation>-->
+	</animation>
 	<animation>
 		<type>noshadow</type>
 		<object-name>REFan</object-name>
-	</animation>-->
+	</animation>
 
 	<!-- exhausts -->
 	<animation>
@@ -2192,7 +2192,7 @@
 			<z>0.53</z>
 		</axis>
 	</animation>
-	
+
 	<animation>
 		<type>billboard</type>
 		<object-name>noshadow.strobe_halo_T</object-name>
@@ -2222,7 +2222,7 @@
 			<entry><ind>16000</ind><dep>7</dep></entry>
 		</interpolation>
 	</animation>
-	
+
 	<!-- strobe Right -->
 	<animation>
 		<type>select</type>
@@ -2251,7 +2251,7 @@
 			<z>0.45</z>
 		</axis>
 	</animation>
-	
+
 	<animation>
 		<type>billboard</type>
 		<object-name>noshadow.strobe_halo_R</object-name>
@@ -2281,7 +2281,7 @@
 			<entry><ind>16000</ind><dep>7</dep></entry>
 		</interpolation>
 	</animation>
-	
+
 	<!-- strobe Left -->
 	<animation>
 		<type>select</type>
@@ -2310,7 +2310,7 @@
 			<z>0.45</z>
 		</axis>
 	</animation>
-	
+
 	<animation>
 		<type>billboard</type>
 		<object-name>noshadow.strobe_halo_L</object-name>
@@ -2340,7 +2340,7 @@
 			<entry><ind>16000</ind><dep>7</dep></entry>
 		</interpolation>
 	</animation>
-	
+
 	<!-- red nav light (left) -->
 	<animation>
 		<type>select</type>
@@ -2630,7 +2630,7 @@
 			<entry><ind>16000</ind><dep>10</dep></entry>
 		</interpolation>
 	</animation>
-	
+
 	<!-- formation lights -->
 	<animation>
 		<object-name>noshadow.FuseTailBottom-Formation</object-name>
@@ -2643,7 +2643,7 @@
 		<object-name>noshadow.TailEmpR-Formation</object-name>
 		<object-name>noshadow.TailEmpL-Formation</object-name>
 		<type>material</type>
-		<emission> 
+		<emission>
 			<factor-prop>sim/model/A-10/controls/lighting/formation</factor-prop>
 				<red>0.91</red>
 				<green>0.98</green>

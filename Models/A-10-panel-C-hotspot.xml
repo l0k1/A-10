@@ -204,9 +204,9 @@
               <y>-468</y>
               <w>82</w>
               <h>40</h>
-              <binding> 
-                <command>property-toggle</command>
-                <property>controls/switches/homing-FM</property>
+              <binding>
+                <command>nasal</command>
+                <script>nav_scripts.fm_uhf_toggle_buttons(0)</script>
               </binding>
             </action>
 
@@ -218,9 +218,9 @@
               <y>-418</y>
               <w>82</w>
               <h>40</h>
-              <binding> 
-                <command>property-toggle</command>
-                <property>controls/switches/homing-UHF</property>
+              <binding>
+                <command>nasal</command>
+                <script>nav_scripts.fm_uhf_toggle_buttons(1)</script>
               </binding>
             </action>
 

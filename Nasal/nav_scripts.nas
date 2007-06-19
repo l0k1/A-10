@@ -3,7 +3,7 @@
 
 
 # an/arc-186
-#------------------------------------------------------------------------------
+#-----------
 
 # the "save to disk" function parts (to keep the preseted frequencies from flight to flight)
 # are commented out. See Aircraft/A-10/Nasal/nav_ac_state.nas for how to use it.
@@ -113,13 +113,32 @@ load_freq = func {
   }
 }
 
+
 # used only at startup to wait for FGFS to read the saved presset.
 registerTimer = func {
     settimer(freq_startup, 30);
 }
 
+
 # NAVIGATION INSTRUMENTATION
 # --------------------------
+
+# A-10-nav-move-selector:
+var fm_uhf_toggle_buttons = func {
+  var fm_button = props.globals.getNode("sim/model/A-10/A-10-nav/homing-FM");
+  var uhf_button = props.globals.getNode("sim/model/A-10/A-10-nav/homing-UHF");
+  var arg = arg[0];
+  var fm = fm_button.getBoolValue();
+  var uhf = uhf_button.getBoolValue();
+  if (arg < 1) {
+    fm_button.setBoolValue(!fm);
+    if (!fm) {uhf_button.setBoolValue(0);}
+  } else {
+    uhf_button.setBoolValue(!uhf);
+    if (!uhf) {fm_button.setBoolValue(0);}
+  }
+}
+
 
 # nav[1]: TACAN
 var nav1_back = 0.0;
@@ -137,11 +156,12 @@ nav1_freq_update = func {
 }
 
 tacan_XYtoggle = func {
-  xy_sign = getprop( "instrumentation/tacan/frequencies/selected-channel[4]" );
-  if ( xy_sign == "X" ) {
-    setprop( "instrumentation/tacan/frequencies/selected-channel[4]", "Y" );
+  var xy_sign = props.globals.getNode("instrumentation/tacan/frequencies/selected-channel[4]");
+  var s = xy_sign.getValue();
+  if ( s == "X" ) {
+    xy_sign.setValue( "Y" );
   } else {
-    setprop( "instrumentation/tacan/frequencies/selected-channel[4]", "X" );
+    xy_sign.setValue( "X" );
   }
 }
 

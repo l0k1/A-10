@@ -10,8 +10,8 @@
   <h>768</h>
   <y-offset>0</y-offset>
 
-  <instruments> 
-    <instrument> 
+  <instruments>
+    <instrument>
       <name>l4 panel</name>
       <y>384</y>
       <w>1024</w>
@@ -19,10 +19,9 @@
       <w-base>1024</w-base>
       <h-base>1024</h-base>
       <x>512</x>
-    
-      <layers> 
-    
-        <layer> 
+
+      <layers>
+        <layer>
           <name>background</name>
           <texture> 
             <path>Aircraft/A-10/Models/transparent-bg.rgb</path>
@@ -31,28 +30,15 @@
             <x2>1.0</x2>
             <y2>1.0</y2>
           </texture>
-        </layer>
-    
-        <!--<layer>
-          <name>grid</name>
-          <texture>
-            <path>Aircraft/A-10/Models/hotspotgrid.rgb</path>
-            <x1>0.0</x1>
-            <y1>0.0</y1>
-            <x2>1.0</x2>
-            <y2>1.0</y2>
-          </texture>
-        </layer>-->
-    
+        </layer>   
       </layers>
-    
+
     <!-- define hotspot actions below -->
-    
-    
-      <actions> 
-    
-    <!-- cockpit open-close-->
-        <action>
+
+      <actions>
+
+    <!-- seat up-down-->
+        <!--<action>
           <name>seat-up</name>
           <button>0</button>
           <x>-109</x>
@@ -61,10 +47,10 @@
           <h>78</h>
           <binding>
             <command>nasal</command>
-            <script>canopy.canopy_switch(1)</script>
+            <script></script>
           </binding>
         </action>
-    
+
         <action>
           <name>seat-down</name>
           <button>0</button>
@@ -74,16 +60,16 @@
           <h>78</h>
           <binding>
             <command>nasal</command>
-            <script>canopy.canopy_switch(-1)</script>
+            <script></script>
           </binding>
           <mod-up>
             <binding>
               <command>nasal</command>
-              <script>canopy.canopy_switch(0)</script>
+              <script></script>
             </binding>
           </mod-up>
-        </action>
-    
+        </action>-->
+
         <action>
           <name>move-emer-brake-handle</name>
           <button>0</button>
@@ -96,10 +82,8 @@
             <property>controls/gear/brake-parking</property>
           </binding>
         </action>
-  
-  
-      </actions> 
 
+      </actions>
     </instrument>
   </instruments>
 

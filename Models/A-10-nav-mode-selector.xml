@@ -93,7 +93,7 @@
       <value>24</value>
     </greater-than>
    <equals>
-    <property>controls/switches/homing-FM</property>
+    <property>sim/model/A-10/A-10-nav/homing-FM</property>
     <value>1</value>
    </equals>
   </condition>
@@ -103,7 +103,7 @@
   <object-name>homing-light-fm-off</object-name>
   <condition>
    <equals>
-    <property>controls/switches/homing-FM</property>
+    <property>sim/model/A-10/A-10-nav/homing-FM</property>
     <value>0</value>
    </equals>
   </condition>
@@ -118,7 +118,7 @@
       <value>24</value>
     </greater-than>
    <equals>
-    <property>controls/switches/homing-UHF</property>
+    <property>sim/model/A-10/A-10-nav/homing-UHF</property>
     <value>1</value>
    </equals>
   </condition>
@@ -128,7 +128,7 @@
   <object-name>homing-light-uhf-off</object-name>
   <condition>
    <equals>
-    <property>controls/switches/homing-UHF</property>
+    <property>sim/model/A-10/A-10-nav/homing-UHF</property>
     <value>0</value>
    </equals>
   </condition>
@@ -140,15 +140,15 @@
    <object-name>homing-light-fm-on</object-name> 
    <type>material</type>
     <condition>
-      <less-than>
+      <greater-than>
         <property>systems/electrical/outputs/nav-mode</property>
         <value>24</value>
-      </less-than>
+      </greater-than>
     </condition>
     <emission> 
-      <red>0.65</red>
-      <green>0.65</green>
-      <blue>0.65</blue>
+      <red>0.80</red>
+      <green>0.80</green>
+      <blue>0.80</blue>
     </emission>
   </animation>
 
@@ -156,15 +156,15 @@
    <object-name>homing-light-uhf-on</object-name> 
    <type>material</type>
     <condition>
-      <less-than>
+      <greater-than>
         <property>systems/electrical/outputs/nav-mode</property>
         <value>24</value>
-      </less-than>
+      </greater-than>
     </condition>
     <emission> 
-      <red>0.65</red>
-      <green>0.65</green>
-      <blue>0.65</blue>
+      <red>0.80</red>
+      <green>0.80</green>
+      <blue>0.80</blue>
     </emission>
   </animation>
 
@@ -294,10 +294,12 @@
     </emission>
   </animation>
 
-  <animation>
-    <type>range</type>
-    <min-m>0</min-m>
-    <max-m>5</max-m>
-  </animation>
+
+
+	<animation>
+	<type>range</type>
+	<min-m>0</min-m>
+	<max-m>5</max-m>
+</animation>
 
 </PropertyList>
