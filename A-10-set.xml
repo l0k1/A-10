@@ -275,34 +275,34 @@ Fairchild A-10 simulation config.
 					<homing-UHF type="bool">false</homing-UHF>
 				</A-10-nav>
 				<instrumentation>
-					<nav n="2">
+					<vhf>
 						<selector type="int">1</selector>
 						<mode type="int">0</mode>
 						<selected-preset type="int">1</selected-preset>
 						<load-state type="int">0</load-state>
 						<presets>
-							<preset n="1" type="float">10</preset>
-							<preset n="2" type="float">10</preset>
-							<preset n="3" type="float">10</preset>
-							<preset n="4" type="float">10</preset>
-							<preset n="5" type="float">10</preset>
-							<preset n="6" type="float">10</preset>
-							<preset n="7" type="float">10</preset>
-							<preset n="8" type="float">10</preset>
-							<preset n="9" type="float">10</preset>
-							<preset n="10" type="float">10</preset>
-							<preset n="11" type="float">10</preset>
-							<preset n="12" type="float">10</preset>
-							<preset n="13" type="float">10</preset>
-							<preset n="14" type="float">10</preset>
-							<preset n="15" type="float">10</preset>
-							<preset n="16" type="float">10</preset>
-							<preset n="17" type="float">10</preset>
-							<preset n="18" type="float">10</preset>
-							<preset n="19" type="float">10</preset>
-							<preset n="20" type="float">10</preset>
-						</presets>
-					</nav>
+							<preset n="1" type="float">0</preset>
+							<preset n="2" type="float">0</preset>
+							<preset n="3" type="float">0</preset>
+							<preset n="4" type="float">0</preset>
+							<preset n="5" type="float">0</preset>
+							<preset n="6" type="float">0</preset>
+							<preset n="7" type="float">0</preset>
+							<preset n="8" type="float">0</preset>
+							<preset n="9" type="float">0</preset>
+							<preset n="10" type="float">0</preset>
+							<preset n="11" type="float">0</preset>
+							<preset n="12" type="float">0</preset>
+							<preset n="13" type="float">0</preset>
+							<preset n="14" type="float">0</preset>
+							<preset n="15" type="float">0</preset>
+							<preset n="16" type="float">0</preset>
+							<preset n="17" type="float">0</preset>
+							<preset n="18" type="float">0</preset>
+							<preset n="19" type="float">0</preset>
+							<preset n="20" type="float">0</preset>
+						</presets>-->
+					</vhf>
 					<warnings>
 						<master-caution type="bool">false</master-caution>
 					</warnings>
@@ -533,6 +533,22 @@ Fairchild A-10 simulation config.
 			<serviceable type="bool">1</serviceable>
 			<switch type="string">ON</switch>
 		</radar>
+		<nav n="2">
+			<radials>
+				<selected-deg type="double">029.0</selected-deg>
+			</radials>
+			<serviceable>true</serviceable>
+			<cdi>
+				<serviceable>true</serviceable>
+			</cdi>
+			<gs>
+				<serviceable>true</serviceable>
+			</gs>
+			<to-from>
+				<serviceable>true</serviceable>
+			</to-from>
+			<slaved-to-gps type="bool">false</slaved-to-gps>
+		</nav>
 	</instrumentation>
 
 	<controls>

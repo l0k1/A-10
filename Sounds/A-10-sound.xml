@@ -920,7 +920,7 @@
       <path>Aircraft/A-10/Sounds/slide.wav</path>
       <condition>
         <equals>
-          <property>sim/model/A-10/instrumentation/nav[2]/selected-preset</property>
+          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
           <value>1</value>
         </equals>
       </condition>
@@ -934,7 +934,7 @@
       <path>Aircraft/A-10/Sounds/slide.wav</path>
       <condition>
         <equals>
-          <property>sim/model/A-10/instrumentation/nav[2]/selected-preset</property>
+          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
           <value>2</value>
         </equals>
       </condition>
@@ -948,7 +948,7 @@
       <path>Aircraft/A-10/Sounds/slide.wav</path>
       <condition>
         <equals>
-          <property>sim/model/A-10/instrumentation/nav[2]/selected-preset</property>
+          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
           <value>3</value>
         </equals>
       </condition>
@@ -962,7 +962,7 @@
       <path>Aircraft/A-10/Sounds/slide.wav</path>
       <condition>
         <equals>
-          <property>sim/model/A-10/instrumentation/nav[2]/selected-preset</property>
+          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
           <value>4</value>
         </equals>
       </condition>
@@ -976,7 +976,7 @@
       <path>Aircraft/A-10/Sounds/slide.wav</path>
       <condition>
         <equals>
-          <property>sim/model/A-10/instrumentation/nav[2]/selected-preset</property>
+          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
           <value>5</value>
         </equals>
       </condition>
@@ -990,7 +990,7 @@
       <path>Aircraft/A-10/Sounds/slide.wav</path>
       <condition>
         <equals>
-          <property>sim/model/A-10/instrumentation/nav[2]/selected-preset</property>
+          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
           <value>6</value>
         </equals>
       </condition>
@@ -1004,7 +1004,7 @@
       <path>Aircraft/A-10/Sounds/slide.wav</path>
       <condition>
         <equals>
-          <property>sim/model/A-10/instrumentation/nav[2]/selected-preset</property>
+          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
           <value>7</value>
         </equals>
       </condition>
@@ -1018,7 +1018,7 @@
       <path>Aircraft/A-10/Sounds/slide.wav</path>
       <condition>
         <equals>
-          <property>sim/model/A-10/instrumentation/nav[2]/selected-preset</property>
+          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
           <value>8</value>
         </equals>
       </condition>
@@ -1032,7 +1032,7 @@
       <path>Aircraft/A-10/Sounds/slide.wav</path>
       <condition>
         <equals>
-          <property>sim/model/A-10/instrumentation/nav[2]/selected-preset</property>
+          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
           <value>9</value>
         </equals>
       </condition>
@@ -1046,7 +1046,7 @@
       <path>Aircraft/A-10/Sounds/slide.wav</path>
       <condition>
         <equals>
-          <property>sim/model/A-10/instrumentation/nav[2]/selected-preset</property>
+          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
           <value>10</value>
         </equals>
       </condition>
@@ -1060,7 +1060,7 @@
       <path>Aircraft/A-10/Sounds/slide.wav</path>
       <condition>
         <equals>
-          <property>sim/model/A-10/instrumentation/nav[2]/selected-preset</property>
+          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
           <value>11</value>
         </equals>
       </condition>
@@ -1074,7 +1074,7 @@
       <path>Aircraft/A-10/Sounds/slide.wav</path>
       <condition>
         <equals>
-          <property>sim/model/A-10/instrumentation/nav[2]/selected-preset</property>
+          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
           <value>12</value>
         </equals>
       </condition>
@@ -1088,7 +1088,7 @@
       <path>Aircraft/A-10/Sounds/slide.wav</path>
       <condition>
         <equals>
-          <property>sim/model/A-10/instrumentation/nav[2]/selected-preset</property>
+          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
           <value>13</value>
         </equals>
       </condition>
@@ -1102,7 +1102,7 @@
       <path>Aircraft/A-10/Sounds/slide.wav</path>
       <condition>
         <equals>
-          <property>sim/model/A-10/instrumentation/nav[2]/selected-preset</property>
+          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
           <value>14</value>
         </equals>
       </condition>
@@ -1116,7 +1116,7 @@
       <path>Aircraft/A-10/Sounds/slide.wav</path>
       <condition>
         <equals>
-          <property>sim/model/A-10/instrumentation/nav[2]/selected-preset</property>
+          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
           <value>15</value>
         </equals>
       </condition>
@@ -1130,7 +1130,7 @@
       <path>Aircraft/A-10/Sounds/slide.wav</path>
       <condition>
         <equals>
-          <property>sim/model/A-10/instrumentation/nav[2]/selected-preset</property>
+          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
           <value>16</value>
         </equals>
       </condition>
@@ -1144,7 +1144,7 @@
       <path>Aircraft/A-10/Sounds/slide.wav</path>
       <condition>
         <equals>
-          <property>sim/model/A-10/instrumentation/nav[2]/selected-preset</property>
+          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
           <value>17</value>
         </equals>
       </condition>
@@ -1158,7 +1158,7 @@
       <path>Aircraft/A-10/Sounds/slide.wav</path>
       <condition>
         <equals>
-          <property>sim/model/A-10/instrumentation/nav[2]/selected-preset</property>
+          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
           <value>18</value>
         </equals>
       </condition>
@@ -1172,7 +1172,7 @@
       <path>Aircraft/A-10/Sounds/slide.wav</path>
       <condition>
         <equals>
-          <property>sim/model/A-10/instrumentation/nav[2]/selected-preset</property>
+          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
           <value>19</value>
         </equals>
       </condition>
@@ -1186,7 +1186,7 @@
       <path>Aircraft/A-10/Sounds/slide.wav</path>
       <condition>
         <equals>
-          <property>sim/model/A-10/instrumentation/nav[2]/selected-preset</property>
+          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
           <value>20</value>
         </equals>
       </condition>
@@ -1201,7 +1201,7 @@
       <path>Aircraft/A-10/Sounds/record-signal.wav</path>
       <condition>
         <equals>
-          <property>sim/model/A-10/instrumentation/nav[2]/load-state</property>
+          <property>sim/model/A-10/instrumentation/vhf/load-state</property>
           <value>1</value>
         </equals>
       </condition>

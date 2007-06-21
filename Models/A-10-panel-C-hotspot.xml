@@ -197,7 +197,7 @@
             </action>
 
   <!-- homing FM button -->
-           <action> 
+           <!--<action> 
               <name>homing-FM-toggle</name>
               <button>0</button>
               <x>343</x>
@@ -208,10 +208,10 @@
                 <command>nasal</command>
                 <script>nav_scripts.fm_uhf_toggle_buttons(0)</script>
               </binding>
-            </action>
+            </action>-->
 
   <!-- homing UHF button -->
-           <action> 
+           <!--<action> 
               <name>homing-UHF-toggle</name>
               <button>0</button>
               <x>343</x>
@@ -222,7 +222,7 @@
                 <command>nasal</command>
                 <script>nav_scripts.fm_uhf_toggle_buttons(1)</script>
               </binding>
-            </action>
+            </action>-->
 
           </actions> 
 

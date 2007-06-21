@@ -2,180 +2,185 @@
 # Alexis BORY  < xiii at g2ms dot com >  -- Public Domain
 
 
-# an/arc-186
-#-----------
-
-# the "save to disk" function parts (to keep the preseted frequencies from flight to flight)
-# are commented out. See Aircraft/A-10/Nasal/nav_ac_state.nas for how to use it.
-
-# init, mainly useful when saving preseted freqs...
-freq_startup = func {
-  # nav_ac_state.freq_state_load();
-  #if(getprop( "instrumentation/nav[2]/frequencies/selected-mhz" ) == nil) { return registerTimer(); }
-  #for(i=1; i<21; i=i+1) {
-    #if(getprop("sim/model/A-10/instrumentation/nav[2]/presets/preset[" ~ i ~ "]") != 10) {
-      #preset_num = getprop("sim/model/A-10/instrumentation/nav[2]/selected-preset");
-      #setprop( "sim/model/A-10/instrumentation/nav[2]/frequencies/selected-mhz" , getprop("sim/model/A-10/instrumentation/nav[2]/presets/preset[" ~ preset_num ~ "]"));
-      #return;
-    #}
-  #}
-  default_freq_startup();
-  nav0_freq_update();
-}
-
-# main init
-default_freq_startup = func {
-  if ( ! getprop( "instrumentation/nav[2]/frequencies/selected-mhz" )) {
-    setprop("instrumentation/nav[2]/frequencies/selected-mhz", 0);
-  }
-  selected  = getprop( "instrumentation/nav[2]/frequencies/selected-mhz" );
-  if ( ! getprop( "instrumentation/nav[2]/frequencies/standby-mhz" )) {
-    setprop("instrumentation/nav[2]/frequencies/standby-mhz", 0);
-  }
-  standby  = getprop( "instrumentation/nav[2]/frequencies/standby-mhz" );
-  setprop("sim/model/A-10/instrumentation/nav[2]/presets/preset[1]", selected); 
-  setprop("sim/model/A-10/instrumentation/nav[2]/presets/preset[2]", standby); 
-  alt_freq_update();
-}
-
-# nav[2]: display selected-mhz on the radio set
-alt_freq_update = func {
-  ind_freq  = getprop( "instrumentation/nav[2]/frequencies/selected-mhz" );
-  ind_freq_x10   =  int(ind_freq / 10);
-  ind_freq_x1    =  int(ind_freq) - (ind_freq_x10 * 10);
-  res   =  ((ind_freq - (int(ind_freq))) * 10);
-  ind_freq_x01   =  int(res);
-  ind_freq_x0001 =  (int(int(res * 10)/25)) * 25; # rounded to 25
-  setprop("sim/model/A-10/instrumentation/nav[2]/frequencies/alt-selected-mhz-x10", ind_freq_x10);
-  setprop("sim/model/A-10/instrumentation/nav[2]/frequencies/alt-selected-mhz-x1", ind_freq_x1);
-  setprop("sim/model/A-10/instrumentation/nav[2]/frequencies/alt-selected-mhz-x01", ind_freq_x01);
-  setprop("sim/model/A-10/instrumentation/nav[2]/frequencies/alt-selected-mhz-x0001", ind_freq_x0001);
-}
-
-# nav[0] (ILS): update selected-mhz with translated decimals
-nav0_freq_update = func {
-  test = getprop("instrumentation/nav[0]/frequencies/selected-mhz");
-  if (! test) {
-    setprop("sim/model/A-10/instrumentation/nav[0]/frequencies/freq-whole", 0);
-  } else {
-    setprop("sim/model/A-10/instrumentation/nav[0]/frequencies/freq-whole", test * 100);
-  }
-}
-
-# nav[2]: update selected-mhz property from the dialed freq
-alt_freq_to_freq = func {
-  if ( ! getprop( "instrumentation/nav[2]/frequencies/selected-mhz" )) {
-    setprop("instrumentation/nav[2]/frequencies/selected-mhz", 0);
-  }
-  ind_freq_up_x10 = getprop("sim/model/A-10/instrumentation/nav[2]/frequencies/alt-selected-mhz-x10");
-  ind_freq_up_x1 = getprop("sim/model/A-10/instrumentation/nav[2]/frequencies/alt-selected-mhz-x1");
-  ind_freq_up_x01 = getprop("sim/model/A-10/instrumentation/nav[2]/frequencies/alt-selected-mhz-x01");
-  ind_freq_up_x0001 = getprop("sim/model/A-10/instrumentation/nav[2]/frequencies/alt-selected-mhz-x0001");
-  ind_freq_up = (ind_freq_up_x10 * 10) + ind_freq_up_x1 + (ind_freq_up_x01 / 10) + ( ind_freq_up_x0001 / 1000 );
-  setprop( "instrumentation/nav[2]/frequencies/selected-mhz", ind_freq_up);
-}
-
-# nav[2]: what to do when selecting an other presset on the radio set
-change_preset = func {
-  if ( ! getprop( "sim/model/A-10/instrumentation/nav[2]/selected-preset" )) {
-    setprop( "sim/model/A-10/instrumentation/nav[2]/selected-preset", 1)
-  }
-  new_preset_num  = (getprop("sim/model/A-10/instrumentation/nav[2]/selected-preset") + arg[0]);
-  if (arg[0] == 1) {
-    if ( new_preset_num == 21 ) { new_preset_num = 1;}
-  } elsif (arg[0] == -1) {
-    if ( new_preset_num == 0 ) { new_preset_num = 20; }
-  }
-  setprop("sim/model/A-10/instrumentation/nav[2]/selected-preset", new_preset_num);
-  preset_freq = getprop("sim/model/A-10/instrumentation/instrumentation/nav[2]/presets/preset[" ~ new_preset_num ~ "]");
-  setprop( "sim/model/A-10/instrumentation/nav[2]/frequencies/selected-mhz", preset_freq);
-  alt_freq_update();
+# ILS: nav[0]
+# -----------
+# update selected-mhz with translated decimals
+var nav0_freq_update = func {
+	test = getprop("instrumentation/nav[0]/frequencies/selected-mhz");
+	if (! test) {
+		setprop("sim/model/A-10/instrumentation/nav[0]/frequencies/freq-whole", 0);
+	} else {
+		setprop("sim/model/A-10/instrumentation/nav[0]/frequencies/freq-whole", test * 100);
+	}
 }
 
 
-# nav[2]: load displayed freq into 'non volatile memory'
-# load_state is used for the load button animation
-load_state = props.globals.getNode("sim/model/A-10/instrumentation/nav[2]/load-state");
-
-load_freq = func {
-  mode = getprop("sim/model/A-10/instrumentation/nav[2]/mode");
-  selector = getprop("sim/model/A-10/instrumentation/nav[2]/selector");
-  if ( mode == 1 ) {
-    if ( selector == 3 ) {
-      to_load_freq = getprop( "instrumentation/nav[2]/frequencies/selected-mhz" );
-      num_preset   = getprop("sim/model/A-10/instrumentation/nav[2]/selected-preset");
-      setprop("sim/model/A-10/instrumentation/nav[2]/presets/preset[" ~ num_preset ~ "]", to_load_freq);
-      setprop("sim/model/A-10/instrumentation/nav[2]/load-state", 1);
-      load_state.setValue(1);
-      #nav_ac_state.freq_state_save();
-      settimer(func { load_state.setValue(0) }, 0.5);
-    }
-  }
-}
-
-
-# used only at startup to wait for FGFS to read the saved presset.
-registerTimer = func {
-    settimer(freq_startup, 30);
-}
-
-
-# NAVIGATION INSTRUMENTATION
-# --------------------------
-
-# A-10-nav-move-selector:
-var fm_uhf_toggle_buttons = func {
-  var fm_button = props.globals.getNode("sim/model/A-10/A-10-nav/homing-FM");
-  var uhf_button = props.globals.getNode("sim/model/A-10/A-10-nav/homing-UHF");
-  var arg = arg[0];
-  var fm = fm_button.getBoolValue();
-  var uhf = uhf_button.getBoolValue();
-  if (arg < 1) {
-    fm_button.setBoolValue(!fm);
-    if (!fm) {uhf_button.setBoolValue(0);}
-  } else {
-    uhf_button.setBoolValue(!uhf);
-    if (!uhf) {fm_button.setBoolValue(0);}
-  }
-}
-
-
-# nav[1]: TACAN
-var nav1_back = 0.0;
+# TACAN: nav[1]
+# ------------- 
+var nav1_back = 0;
 setlistener( "instrumentation/tacan/switch-position", func {nav1_freq_update();} );
 
 nav1_freq_update = func {
-  if ( getprop("instrumentation/tacan/switch-position") == 1 ) {
-    tacan_freq = getprop( "instrumentation/tacan/frequencies/selected-mhz" );
-    nav1_freq = getprop( "instrumentation/nav[1]/frequencies/selected-mhz" );
-    nav1_back = nav1_freq;
-    setprop("instrumentation/nav[1]/frequencies/selected-mhz", tacan_freq);
-  } else {
-    setprop("instrumentation/nav[1]/frequencies/selected-mhz", nav1_back);
-  }
+	if ( getprop("instrumentation/tacan/switch-position") == 1 ) {
+		tacan_freq = getprop( "instrumentation/tacan/frequencies/selected-mhz" );
+		nav1_freq = getprop( "instrumentation/nav[1]/frequencies/selected-mhz" );
+		nav1_back = nav1_freq;
+		setprop("instrumentation/nav[1]/frequencies/selected-mhz", tacan_freq);
+	} else {
+	setprop("instrumentation/nav[1]/frequencies/selected-mhz", nav1_back);
+	}
 }
 
 tacan_XYtoggle = func {
-  var xy_sign = props.globals.getNode("instrumentation/tacan/frequencies/selected-channel[4]");
-  var s = xy_sign.getValue();
-  if ( s == "X" ) {
-    xy_sign.setValue( "Y" );
-  } else {
-    xy_sign.setValue( "X" );
-  }
+	var xy_sign = props.globals.getNode("instrumentation/tacan/frequencies/selected-channel[4]");
+	var s = xy_sign.getValue();
+	if ( s == "X" ) {
+		xy_sign.setValue( "Y" );
+	} else {
+		xy_sign.setValue( "X" );
+	}
 }
 
 tacan_tenth_adjust = func {
-  tenths = getprop( "instrumentation/tacan/frequencies/selected-channel[2]" );
-  hundreds = getprop( "instrumentation/tacan/frequencies/selected-channel[1]" );
-  value = (10 * tenths) + (100 * hundreds);
-  adjust = arg[0];
-  new_value = value + adjust;
-  new_hundreds = int(new_value/100);
-  new_tenths = (new_value - (new_hundreds*100))/10;
-  setprop( "instrumentation/tacan/frequencies/selected-channel[1]", new_hundreds );
-  setprop( "instrumentation/tacan/frequencies/selected-channel[2]", new_tenths );
+	tenths = getprop( "instrumentation/tacan/frequencies/selected-channel[2]" );
+	hundreds = getprop( "instrumentation/tacan/frequencies/selected-channel[1]" );
+	value = (10 * tenths) + (100 * hundreds);
+	adjust = arg[0];
+	new_value = value + adjust;
+	new_hundreds = int(new_value/100);
+	new_tenths = (new_value - (new_hundreds*100))/10;
+	setprop( "instrumentation/tacan/frequencies/selected-channel[1]", new_hundreds );
+	setprop( "instrumentation/tacan/frequencies/selected-channel[2]", new_tenths );
 }
+
+# AN/ARC-186: VHF on nav[2]
+# -------------------------
+
+var nav2_selected_mhz = props.globals.getNode("instrumentation/nav[2]/frequencies/selected-mhz", 1);
+var vhf = props.globals.getNode("sim/model/A-10/instrumentation/vhf");
+var vhf_mode = vhf.getNode("mode");
+var vhf_selector = vhf.getNode("selector");
+var vhf_load_state = vhf.getNode("load-state");
+var vhf_preset = vhf.getNode("selected-preset");
+var vhf_presets = vhf.getNode("presets");
+var vhf_fqs = vhf.getNode("frequencies");
+var vhf_fqs10 = vhf_fqs.getNode("alt-selected-mhz-x10");
+var vhf_fqs1 = vhf_fqs.getNode("alt-selected-mhz-x1");
+var vhf_fqs01 = vhf_fqs.getNode("alt-selected-mhz-x01");
+var vhf_fqs0001 = vhf_fqs.getNode("alt-selected-mhz-x0001");
+
+
+# Displays selected-mhz on the VHF radio set
+var alt_freq_update = func {
+	var freq  = nav2_selected_mhz.getValue();
+	if ( freq == nil ) { freq = 0; }	
+	var freq10 = int( freq / 10 );
+	var freq1 = int( freq ) - ( freq10 * 10 );
+	var res = ( ( freq - ( int( freq ) ) ) * 10 );
+	var freq01 = int( res );
+	var freq0001 = ( int( int( res * 10 ) / 25 ) ) * 25; # rounded to 25
+	vhf_fqs10.setValue( freq10 );
+	vhf_fqs1.setValue( freq1 );
+	vhf_fqs01.setValue( freq01 );
+	vhf_fqs0001.setValue( freq0001 );
+}
+
+# Updates nav[2] selected-mhz property from the VHF dialed freq
+var alt_freq_to_freq = func {
+	var freq10 = vhf_fqs10.getValue();
+	var freq1 = vhf_fqs1.getValue();
+	var freq01 = vhf_fqs01.getValue();
+	var freq0001 = vhf_fqs0001.getValue();
+	var freq = ( freq10 * 10 ) + freq1 + ( freq01 / 10 ) + ( freq0001 / 1000 );
+	nav2_selected_mhz.setValue( freq );
+}
+
+# Changes the selected freq on nav[2]
+var change_preset = func {
+	var presets = vhf.getNode("presets");
+	var p = vhf_preset.getValue();
+	if ( p == nil ) { p = 1; }
+	var new_p = p + arg[0];
+	if (arg[0] == 1 and new_p == 21 ) {
+		new_p = 1;
+	} elsif (arg[0] == -1 and new_p == 0 ) {
+		new_p = 20;
+	}
+	vhf_preset.setValue( new_p );
+	var f_data = "preset[" ~ new_p ~ "]";
+	p_freq = vhf_presets.getNode(f_data);
+	var f = p_freq.getValue();
+	if ( f == nil ) { f = 0; }
+	nav2_selected_mhz.setValue( f );
+	alt_freq_update();
+}
+
+# Saves displayed freq using aircraft.data.save()
+# load_state used for the load button animation
+load_freq = func {
+	var mode = vhf_mode.getValue();
+	var selector = vhf_selector.getValue();
+	if ( mode == 1 and selector == 3 ) {
+		# mode to TR, delector to MAN
+		var to_load_freq = nav2_selected_mhz.getValue();
+		var p = vhf_preset.getValue();
+		var f = "preset[" ~ p ~ "]";
+		var p_freq = vhf_presets.getNode(f);
+		p_freq.setValue(to_load_freq);
+		vhf_load_state.setValue(1);
+		aircraft.data.add(p_freq);
+		aircraft.data.save();
+		settimer(func { vhf_load_state.setValue(0) }, 0.5);
+	}
+}
+
+# Homing deviations computing loop
+var ac_hdg = props.globals.getNode("/orientation/heading-deg", 1);
+var st_hdg = props.globals.getNode("instrumentation/nav[2]/heading-deg", 1);
+var vhf_hdev = vhf.getNode("homing-deviation",1);
+
+nav2_homing_devs = func {
+	var ahdg = ac_hdg.getValue();
+	var shdg = st_hdg.getValue();
+	if ( shdg != nil ) {
+		var d = shdg - ahdg;
+		while ( d > 180) d -= 360;
+		while ( d < -180) d += 360;
+		vhf_hdev.setDoubleValue(d);
+	}
+	settimer(func { nav2_homing_devs(); }, 0.1);
+}
+
+
+# Other navigation panels
+# -----------------------
+
+# A-10-nav-mode-selector panel:
+var fm_vhf_toggle_buttons = func {
+	var fm_button = props.globals.getNode("sim/model/A-10/A-10-nav/homing-FM");
+	var vhf_button = props.globals.getNode("sim/model/A-10/A-10-nav/homing-UHF");
+	var arg = arg[0];
+	var fm = fm_button.getBoolValue();
+	var vhf = vhf_button.getBoolValue();
+	if (arg < 1) {
+		fm_button.setBoolValue(!fm);
+		if (!fm) { vhf_button.setBoolValue(0); }
+	} else {
+		vhf_button.setBoolValue(!vhf);
+		if (!vhf) { fm_button.setBoolValue(0); }
+	}
+}
+
+
+# Init
+# ----
+freq_startup = func {
+	change_preset(0);
+	nav0_freq_update();
+	nav2_homing_devs();
+}
+
+setlistener("/sim/signals/nasal-dir-initialized", func { settimer(freq_startup, 3);});
 
 #test_button = func {
 #  print("button ", arg[0]);

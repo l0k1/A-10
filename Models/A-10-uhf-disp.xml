@@ -2,197 +2,200 @@
 
 <PropertyList>
 
- <name>uhf-disp</name>
- <path>A-10-uhf-disp.ac</path>
+	<name>uhf-display</name>
+	<path>A-10-uhf-disp.ac</path>
 
-<animation>
-  <type>textranslate</type>
-  <object-name>drum-4</object-name>
-  <property>instrumentation/comm[0]/frequencies/selected-mhz</property>
-  <factor>1</factor>
-  <offset>-0.1</offset>
-  <center>
-   <x-m>0</x-m>
-   <y-m>0</y-m>
-   <z-m>0</z-m>
-  </center>
-  <axis>
-   <x>0</x>
-   <y>-1</y>
-   <z>0</z>
-  </axis>
- </animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>drum-4</object-name>
+		<property>instrumentation/comm[0]/frequencies/selected-mhz</property>
+		<factor>1</factor>
+		<offset>-0.1</offset>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
 
- <animation>
-  <type>textranslate</type>
-  <object-name>drum-3</object-name>
-  <property>instrumentation/comm[0]/frequencies/selected-mhz</property>
-  <factor>0.1</factor>
-  <offset>-1</offset>
-  <step>1</step>
-  <scroll>0.5</scroll>
-  <center>
-   <x-m>0</x-m>
-   <y-m>0</y-m>
-   <z-m>0</z-m>
-  </center>
-  <axis>
-   <x>0</x>
-   <y>-1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
-
- <animation>
-  <type>textranslate</type>
-  <object-name>drum-2</object-name>
-  <property>instrumentation/comm[0]/frequencies/selected-mhz</property>
-  <factor>0.01</factor>
-  <offset>-10</offset>
-  <step>10</step>
-  <scroll>0.5</scroll>
-  <center>
-   <x-m>0</x-m>
-   <y-m>0</y-m>
-   <z-m>0</z-m>
-  </center>
-  <axis>
-   <x>0</x>
-   <y>-1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
- <animation>
-  <type>textranslate</type>
-  <object-name>drum-1</object-name>
-  <property>instrumentation/comm[0]/frequencies/selected-mhz</property>
-  <factor>0.001</factor>
-  <offset>-100</offset>
-  <step>100</step>
-  <scroll>0.5</scroll>
-  <center>
-   <x-m>0</x-m>
-   <y-m>0</y-m>
-   <z-m>0</z-m>
-  </center>
-  <axis>
-   <x>0</x>
-   <y>-1</y>
-   <z>0</z>
-  </axis>
- </animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>drum-3</object-name>
+		<property>instrumentation/comm[0]/frequencies/selected-mhz</property>
+		<factor>0.1</factor>
+		<offset>-1</offset>
+		<step>1</step>
+		<scroll>0.5</scroll>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
 
 
-<!-- lighting -->
+	<animation>
+		<type>textranslate</type>
+		<object-name>drum-2</object-name>
+		<property>instrumentation/comm[0]/frequencies/selected-mhz</property>
+		<factor>0.01</factor>
+		<offset>-10</offset>
+		<step>10</step>
+		<scroll>0.5</scroll>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
 
-  <animation> 
-   <object-name>mount</object-name>
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/panel-norm</factor-prop>
-        <red>0.45</red>
-        <green>0.34</green>
-        <blue>0.18</blue>
-      </emission>
-  </animation>
-
-  <animation>
-   <object-name>drum-1</object-name>
-   <type>material</type>
-     <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.50</red>
-        <green>0.25</green>
-        <blue>0.18</blue>
-      </emission>
-  </animation>
-
-  <animation>
-   <object-name>drum-2</object-name>
-   <type>material</type>
-     <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.50</red>
-        <green>0.25</green>
-        <blue>0.18</blue>
-      </emission>
-  </animation>
-
-  <animation>
-   <object-name>drum-3</object-name>
-   <type>material</type>
-     <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.50</red>
-        <green>0.25</green>
-        <blue>0.18</blue>
-      </emission>
-  </animation>
-
-  <animation>
-   <object-name>drum-4</object-name>
-   <type>material</type>
-     <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.50</red>
-        <green>0.25</green>
-        <blue>0.18</blue>
-      </emission>
-  </animation>
-
-  <animation>
-   <object-name>00</object-name>
-   <type>material</type>
-     <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.50</red>
-        <green>0.25</green>
-        <blue>0.18</blue>
-      </emission>
-  </animation>
-
-  <animation>
-   <object-name>25</object-name>
-   <type>material</type>
-     <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.50</red>
-        <green>0.25</green>
-        <blue>0.18</blue>
-      </emission>
-  </animation>
-
-  <animation>
-   <object-name>50</object-name>
-   <type>material</type>
-     <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.50</red>
-        <green>0.25</green>
-        <blue>0.18</blue>
-      </emission>
-  </animation>
-
-  <animation>
-   <object-name>75</object-name>
-   <type>material</type>
-     <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.50</red>
-        <green>0.25</green>
-        <blue>0.18</blue>
-      </emission>
-  </animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>drum-1</object-name>
+		<property>instrumentation/comm[0]/frequencies/selected-mhz</property>
+		<factor>0.001</factor>
+		<offset>-100</offset>
+		<step>100</step>
+		<scroll>0.5</scroll>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
 
 
+	<!-- lighting -->
+
+	<animation> 
+		<object-name>mount</object-name>
+		<type>material</type>
+		<emission>
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.45</red>
+			<green>0.34</green>
+			<blue>0.18</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<object-name>drum-1</object-name>
+		<type>material</type>
+		<emission>
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.50</red>
+			<green>0.25</green>
+			<blue>0.18</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<object-name>drum-2</object-name>
+		<type>material</type>
+		<emission>
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.50</red>
+			<green>0.25</green>
+			<blue>0.18</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<object-name>drum-3</object-name>
+		<type>material</type>
+		<emission>
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.50</red>
+			<green>0.25</green>
+			<blue>0.18</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<object-name>drum-4</object-name>
+		<type>material</type>
+		<emission>
+		<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.50</red>
+			<green>0.25</green>
+			<blue>0.18</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<object-name>00</object-name>
+		<type>material</type>
+		<emission>
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.50</red>
+			<green>0.25</green>
+			<blue>0.18</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<object-name>25</object-name>
+		<type>material</type>
+		<emission>
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.50</red>
+			<green>0.25</green>
+			<blue>0.18</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<object-name>50</object-name>
+		<type>material</type>
+		<emission>
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.50</red>
+			<green>0.25</green>
+			<blue>0.18</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<object-name>75</object-name>
+		<type>material</type>
+		<emission>
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.50</red>
+			<green>0.25</green>
+			<blue>0.18</blue>
+		</emission>
+	</animation>
 
 
- <animation>
-  <type>range</type>
-  <min-m>0</min-m>
-  <max-m>5</max-m>
- </animation>
+	<animation>
+		<object-name>uhf-disp</object-name>
+		<type>noshadow</type>
+	</animation>
+
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
 
 </PropertyList>

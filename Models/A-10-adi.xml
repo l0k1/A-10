@@ -180,28 +180,26 @@
 		<type>select</type>
 		<object-name>nav-yaw-steering-bar</object-name>
 		<condition>
+			<property>sim/model/A-10/A-10-nav/selector-ptr</property>
+			<property>instrumentation/nav[2]/in-range</property>
 			<equals>
-				<property>sim/model/A-10/A-10-nav/selector-ptr</property>
-				<value>true</value>
+				<property>sim/model/A-10/instrumentation/vhf/mode</property>
+				<value>2</value>
 			</equals>
+			<greater-than>
+				<property>sim/model/A-10/instrumentation/vhf/selector</property>
+				<value>2</value>
+			</greater-than>
 		</condition>
 	</animation>
 
 	<animation>
 		<type>translate</type>
 		<object-name>nav-yaw-steering-bar</object-name>
-		<condition>
-			<equals>
-				<property>sim/model/A-10/A-10-nav/selector-ptr</property>
-				<value>true</value>
-			</equals>
-			<equals>
-				<property>sim/model/A-10/instrumentation/nav[2]/mode</property>
-				<value>2</value>
-			</equals>
-		</condition>
-		<property>instrumentation/nav[2]/heading-needle-deflection</property>
-		<factor>0.0025</factor>
+		<property>sim/model/A-10/instrumentation/vhf/homing-deviation</property>
+		<factor>0.0012</factor>
+		<min-m>-0.0331</min-m>
+		<max-m>0.0330</max-m>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -213,10 +211,69 @@
 		<type>select</type>
 		<object-name>nav-pitch-steering-bar</object-name>
 		<condition>
+			<property>sim/model/A-10/A-10-nav/selector-ptr</property>
+			<property>instrumentation/nav[2]/in-range</property>
 			<equals>
-				<property>sim/model/A-10/A-10-nav/selector-ptr</property>
-				<value>true</value>
+				<property>sim/model/A-10/instrumentation/vhf/mode</property>
+				<value>2</value>
 			</equals>
+			<greater-than>
+				<property>sim/model/A-10/instrumentation/vhf/selector</property>
+				<value>2</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>nav-pitch-steering-bar</object-name>
+		<property>instrumentation/nav[2]/nav-distance</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>50000</ind>
+				<dep>-0.030</dep>
+			</entry>
+			<entry>
+				<ind>600000</ind>
+				<dep>-0.030</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+
+	<!-- course-flag -->
+	<animation>
+		<type>select</type>
+		<object-name>course-flag</object-name>
+		<condition>
+			<or>
+				<and>
+					<property>sim/model/A-10/A-10-nav/selector-ptr</property>
+					<not>
+						<property>instrumentation/nav[2]/in-range</property>
+					</not>
+					<equals>
+						<property>sim/model/A-10/instrumentation/vhf/mode</property>
+						<value>2</value>
+					</equals>
+					<greater-than>
+						<property>sim/model/A-10/instrumentation/vhf/selector</property>
+						<value>2</value>
+					</greater-than>
+				</and>
+				<less-than>
+					<property>systems/electrical/outputs/adi</property>
+					<value>24</value>
+				</less-than>
+			</or>
 		</condition>
 	</animation>
 

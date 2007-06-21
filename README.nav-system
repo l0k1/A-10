@@ -1,8 +1,10 @@
 TACAN AN/ARN-118
 ----------------
+	FIXME
 
 ILS
 ---
+	FIXME
 
 
 VHF AM/FM Transceiver: Collins AN/ARC-186(V)
@@ -20,12 +22,14 @@ VHF AM/FM Transceiver: Collins AN/ARC-186(V)
 	receive only range
 	108 to 115.975 MHz AM
 
-	For test purposes, I decided to let it work in homing (FM) mode, wich is
-	displayed on the AI (Attitude Indicator) while ADF stuff is not yet 
-	implemented in the 3D cockpit.
-
 	The aft one should be tuned to operate in VHF/FM mode for homing capability
-	at 30 to 76 MHz FM but is currently disabled.
+	at 30 to 76 MHz FM but is currently disabled in the model.
+
+	For conveniance purposes, I decided to let the forward one work in the both
+    ranges for homing mode (which in RL should be reserved to FM).
+	The homing is displayed on the ADI (Attitude Indicator). There is no Course
+	setting and no Radials caculation when using AM/FM homing on the ADI.
+
 
 	Controls and indicators:
 	------------------------
@@ -85,3 +89,22 @@ VHF AM/FM Transceiver: Collins AN/ARC-186(V)
 		- Frequency selector knobs - click until desired channel number is
 		obtained. (It works also with Frequency control/emergency select
 		knob - MAN, but loading isn't possible in PRE mode).
+
+	FM (and AM) Homing:
+		- Navigation Mode Panel - TISL mode - UNSELECTED (not implemented yet)
+		- Navigation Mode Panel - FM button - PUSHED
+		- Mode selector knob - DF
+		- Frequency control/emergency select knob - MAN or PRE
+		
+		When the signal strong enough (in range) the course warning flag is
+		stowed away. then the bank steering bar of the ADI will indicate course
+		deviation to the left or right of the center line, relative to the
+		selected station.
+		Turing the aircraft toward the bank steerg bar will correct the
+		deviation. As the aircraft approaches the station, the pitch steering
+		bar will move up toward the cnterline in accordance with the increasing
+		strengh of the received signal. If the station is in the opposite
+		direction (aircraft flying away from station), the pitch steering bar
+		will move down from the center bar to the bottom of the ADI.
+		When not in the DF mode, the ADI bank and pitch steering bars and course
+		warning flag are stowed out of view.
