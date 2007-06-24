@@ -133,10 +133,10 @@ file, these values will be used (they are hardcoded).
     <number>0</number>
   </gps>
 
-  <wxradar>
+  <radar>
     <name>wxradar</name>
     <number>0</number>
-  </wxradar>
+  </radar>
 
   <tacan>
     <name>tacan</name>
