@@ -462,9 +462,10 @@
 	</animation>
 
 
-
-	
-
+	<animation>
+		<object-name>arm-panel</object-name>
+		<type>noshadow</type>
+	</animation>
 
 	<!--LOD-->
 	<animation>

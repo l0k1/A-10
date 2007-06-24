@@ -57,9 +57,27 @@
       <object-name>needle-fan-l</object-name>
       <property>sim/model/A-10/engines/engine[0]/n1</property>
       <interpolation> 
-        <entry><ind>0</ind><dep>28</dep></entry><!--0%-->
-        <entry><ind>73.6</ind><dep>76</dep></entry><!--iddle-->
-        <entry><ind>102</ind><dep>345</dep></entry>
+        <entry><ind>0</ind><dep>0</dep></entry>
+        <entry><ind>5</ind><dep>1.7</dep></entry>
+        <entry><ind>10</ind><dep>3.5</dep></entry>
+        <entry><ind>15</ind><dep>6.5</dep></entry>
+        <entry><ind>20</ind><dep>9</dep></entry>
+        <entry><ind>25</ind><dep>12.5</dep></entry>
+        <entry><ind>30</ind><dep>15.7</dep></entry>
+        <entry><ind>35</ind><dep>19.5</dep></entry>
+        <entry><ind>40</ind><dep>23.5</dep></entry>
+        <entry><ind>45</ind><dep>30.3</dep></entry>
+        <entry><ind>50</ind><dep>38</dep></entry>
+        <entry><ind>55</ind><dep>50</dep></entry>
+        <entry><ind>60</ind><dep>62</dep></entry>
+        <entry><ind>65</ind><dep>77</dep></entry>
+        <entry><ind>70</ind><dep>96</dep></entry>
+        <entry><ind>75</ind><dep>120</dep></entry>
+        <entry><ind>80</ind><dep>153</dep></entry>
+        <entry><ind>85</ind><dep>185</dep></entry>
+        <entry><ind>90</ind><dep>225</dep></entry>
+        <entry><ind>95</ind><dep>268</dep></entry>
+        <entry><ind>100</ind><dep>314</dep></entry>
       </interpolation>
       <center>
        <x-m>0.0047</x-m>
@@ -72,15 +90,34 @@
         <z>0</z>
       </axis>
     </animation>
+
     <animation>
       <name>fan-percent-r</name>
       <type>rotate</type>
       <object-name>needle-fan-r</object-name>
       <property>sim/model/A-10/engines/engine[1]/n1</property>
       <interpolation> 
-        <entry><ind>0</ind><dep>28</dep></entry><!--0%-->
-        <entry><ind>73.6</ind><dep>76</dep></entry><!--iddle-->
-        <entry><ind>102</ind><dep>345</dep></entry>
+        <entry><ind>0</ind><dep>0</dep></entry>
+        <entry><ind>5</ind><dep>1.7</dep></entry>
+        <entry><ind>10</ind><dep>3.5</dep></entry>
+        <entry><ind>15</ind><dep>6.5</dep></entry>
+        <entry><ind>20</ind><dep>9</dep></entry>
+        <entry><ind>25</ind><dep>12.5</dep></entry>
+        <entry><ind>30</ind><dep>15.7</dep></entry>
+        <entry><ind>35</ind><dep>19.5</dep></entry>
+        <entry><ind>40</ind><dep>23.5</dep></entry>
+        <entry><ind>45</ind><dep>30.3</dep></entry>
+        <entry><ind>50</ind><dep>38</dep></entry>
+        <entry><ind>55</ind><dep>50</dep></entry>
+        <entry><ind>60</ind><dep>62</dep></entry>
+        <entry><ind>65</ind><dep>77</dep></entry>
+        <entry><ind>70</ind><dep>96</dep></entry>
+        <entry><ind>75</ind><dep>120</dep></entry>
+        <entry><ind>80</ind><dep>153</dep></entry>
+        <entry><ind>85</ind><dep>185</dep></entry>
+        <entry><ind>90</ind><dep>225</dep></entry>
+        <entry><ind>95</ind><dep>268</dep></entry>
+        <entry><ind>100</ind><dep>314</dep></entry>
       </interpolation>
       <center>
        <x-m>0.0047</x-m>

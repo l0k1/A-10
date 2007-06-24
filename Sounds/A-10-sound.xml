@@ -2,6 +2,13 @@
 
 <PropertyList>
 
+	<engines-levels>
+		<jet-out>0.005</jet-out>
+		<whine-out>0.007</whine-out>
+		<jet-in>0.0025</jet-in>
+		<whine-in>0.0015</whine-in>
+	</engines-levels>
+
   <fx>
 
     <!-- engines outside-->
@@ -22,13 +29,10 @@
             <value>0</value>
           </greater-than>
         </or>
-        <not>
-            <property>engines/engine[0]/out-of-fuel</property>
-        </not>
       </condition>
       <volume>
-        <property>engines/engine[0]/prop-thrust</property>
-        <factor type="double">0.0001</factor>
+        <property>sim/model/A-10/engines/engine[0]/n1</property>
+        <factor alias="../../../../engines-levels/jet-out"/>
       </volume>
       <pitch>
         <property>sim/model/A-10/engines/engine[0]/n1</property>
@@ -53,13 +57,10 @@
             <value>0</value>
           </greater-than>
         </or>
-        <not>
-          <property>engines/engine[0]/out-of-fuel</property>
-        </not>
       </condition>
       <volume>
         <property>sim/model/A-10/engines/engine[0]/n1</property>
-        <factor>0.0005</factor>
+        <factor alias="../../../../engines-levels/whine-out"/>
       </volume>
       <pitch>
         <property>sim/model/A-10/engines/engine[0]/n1</property>
@@ -85,13 +86,10 @@
             <value>0</value>
           </greater-than>
         </or>
-        <not>
-          <property>engines/engine[1]/out-of-fuel</property>
-        </not>
       </condition>
       <volume>
-        <property>engines/engine[1]/prop-thrust</property>
-        <factor type="double">0.0001</factor>
+        <property>sim/model/A-10/engines/engine[1]/n1</property>
+        <factor alias="../../../../engines-levels/jet-out"/>
       </volume>
       <pitch>
         <property>sim/model/A-10/engines/engine[1]/n1</property>
@@ -116,13 +114,10 @@
             <value>0</value>
           </greater-than>
         </or>
-        <not>
-          <property>engines/engine[1]/out-of-fuel</property>
-        </not>
       </condition>
       <volume>
         <property>sim/model/A-10/engines/engine[1]/n1</property>
-        <factor>0.0005</factor>
+        <factor alias="../../../../engines-levels/whine-out"/>
       </volume>
       <pitch>
         <property>sim/model/A-10/engines/engine[1]/n1</property>
@@ -141,17 +136,14 @@
           <property>sim/current-view/view-number</property>
           <value>0</value>
         </equals>
-        <not>
-          <property>engines/engine[0]/out-of-fuel</property>
-        </not>
         <less-than-equals>
           <property>canopy/position-norm</property>
           <value>0</value>
         </less-than-equals>
       </condition>
       <volume>
-        <property>engines/engine[0]/prop-thrust</property>
-        <factor type="double">0.00006</factor>
+        <property>sim/model/A-10/engines/engine[0]/n1</property>
+        <factor alias="../../../../engines-levels/jet-in"/>
       </volume>
       <pitch>
         <property>sim/model/A-10/engines/engine[0]/n1</property>
@@ -159,7 +151,7 @@
       </pitch>
     </engine-inside-0>
 
-    <whine-inside-1>
+    <whine-inside-0>
       <name>whine-inside-0</name>
       <path>Sounds/whine.wav</path>
       <mode>looped</mode>
@@ -168,9 +160,6 @@
           <property>sim/current-view/view-number</property>
           <value>0</value>
         </equals>
-        <not>
-          <property>engines/engine[0]/out-of-fuel</property>
-        </not>
         <less-than-equals>
           <property>canopy/position-norm</property>
           <value>0</value>
@@ -178,14 +167,14 @@
       </condition>
       <volume>
         <property>sim/model/A-10/engines/engine[0]/n1</property>
-        <factor>0.0001</factor>
+        <factor alias="../../../../engines-levels/whine-in"/>
       </volume>
       <pitch>
         <property>sim/model/A-10/engines/engine[0]/n1</property>
         <factor>0.01</factor>
         <offset>0.15</offset>
       </pitch>
-    </whine-inside-1>
+    </whine-inside-0>
 
     <engine-inside-1>
       <name>engine-inside-1</name>
@@ -196,17 +185,14 @@
           <property>sim/current-view/view-number</property>
           <value>0</value>
         </equals>
-        <not>
-          <property>engines/engine[1]/out-of-fuel</property>
-        </not>
         <less-than-equals>
           <property>canopy/position-norm</property>
           <value>0</value>
         </less-than-equals>
       </condition>
       <volume>
-        <property>engines/engine[1]/prop-thrust</property>
-        <factor type="double">0.00006</factor>
+        <property>sim/model/A-10/engines/engine[1]/n1</property>
+        <factor alias="../../../../engines-levels/jet-in"/>
       </volume>
       <pitch>
         <property>sim/model/A-10/engines/engine[1]/n1</property>
@@ -223,9 +209,6 @@
           <property>sim/current-view/view-number</property>
           <value>0</value>
         </equals>
-        <not>
-          <property>engines/engine[1]/out-of-fuel</property>
-        </not>
         <less-than-equals>
           <property>canopy/position-norm</property>
           <value>0</value>
@@ -233,7 +216,7 @@
       </condition>
       <volume>
         <property>sim/model/A-10/engines/engine[1]/n1</property>
-        <factor>0.00025</factor>
+        <factor alias="../../../../engines-levels/whine-in"/>
       </volume>
       <pitch>
         <property>sim/model/A-10/engines/engine[1]/n1</property>

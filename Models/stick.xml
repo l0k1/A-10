@@ -61,8 +61,10 @@
 		</axis>
 	</animation>
 
-
-
+	<animation>
+		<object-name>stick</object-name>
+		<type>noshadow</type>
+	</animation>
 
 	<animation>
 		<type>range</type>

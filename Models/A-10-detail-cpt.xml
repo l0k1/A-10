@@ -32,4 +32,9 @@
     </emission>
   </animation>
 
+	<animation>
+		<object-name>detail-cpt</object-name>
+		<type>noshadow</type>
+	</animation>
+
 </PropertyList>

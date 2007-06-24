@@ -1,4 +1,4 @@
-
+var a10weapons = props.globals.getNode("sim/model/A-10/weapons");
 
 # switches ---------------------------------------------------------------------
 master_arm_switch = func {
@@ -59,25 +59,53 @@ aim9_knob = func {
 }
 
 
-# gun trigger ------------------------------------------------------------------
-# todo: only one key binding plus selection of station target or gun.
+# gun
+# ---
+#  trigger and vibration visual effect
+var gun_ready = a10weapons.getNode("gun/gun-ready");
+var gau8a_submodel = props.globals.getNode("ai/submodels/submodel[1]");
+var remaining_rounds = gau8a_submodel.getNode("count");
+var gun_running = props.globals.getNode("ai/submodels/GAU-8A");
+var z_pov = props.globals.getNode("/sim/current-view/z-offset-m");
+var z_povhold = props.globals.getNode("/sim/current-view/z-offset-m-hold", 1);
+var current_v = props.globals.getNode("/sim/current-view/view-number");
 
+z_povhold.setDoubleValue(z_pov.getValue());
 controls.trigger = func(b) { b ? fire_gau8a() : cfire_gau8a() }
 
 fire_gau8a = func {
-	if (getprop("sim/model/A-10/weapons/gun/gun-ready")
-	and (getprop("ai/submodels/submodel[1]/count") > 0)) {
-		setprop("ai/submodels/GAU-8A", 1);
-		ammo_cnt = getprop("ai/submodels/submodel[1]/count");
-		ammo_wgt = ammo_cnt * 2;
-		setprop("yasim/weights/ammunition-weight-lbs", ammo_wgt);
+	var gready = gun_ready.getValue();
+	var count = remaining_rounds.getValue();
+	if ( gready and count > 0 ) {
+		gun_running.setBoolValue(1);
+		count = remaining_rounds.getValue() * 2;
+		setprop("yasim/weights/ammunition-weight-lbs", count);
+	}
+	var zpov = z_pov.getValue();
+	gau8a_vibs(0.002, zpov);
+}
+
+gau8a_vibs = func(v, zpov) {
+	var grunning = gun_running.getBoolValue();
+	var currv = current_v.getValue();
+	if ( currv == 0 ) {
+		var nv = v + zpov;
+		z_pov.setValue( nv );
+		if ( grunning ) {
+			settimer( func { gau8a_vibs(-v, zpov) }, 0.02);
+		} else {
+			var zph = z_povhold.getValue();
+			z_pov.setValue( zph );
+		}
+	} else {
+		settimer( func { gau8a_vibs(-v, zpov) }, 0.1);
 	}
 }
 
 cfire_gau8a = func {
-	setprop("ai/submodels/GAU-8A", 0);
-	if (getprop("ai/submodels/submodel[1]/count") == 0) {
-		setprop("sim/model/A-10/weapons/gun/gun-ready", 0);
+	gun_running.setBoolValue(0);
+	if ( remaining_rounds.getValue() == 0 ) {
+		gun_ready.setValue(0);
 	}
 }
 

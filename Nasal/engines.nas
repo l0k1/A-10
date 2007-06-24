@@ -1,3 +1,6 @@
+
+
+
 # starter: 3 positions switch
 starter_switch = func {
 	var input = arg[0];
@@ -39,16 +42,16 @@ starter_switch = func {
 test_start = func {
 	var eng_num = arg[0];
 	var speed = 0.03;
-	var volts = getprop("systems/electrical/APU-gen-volts");
+	var ignitors_volts = getprop("systems/electrical/outputs/engines-ignitors");
 	var left_main = getprop("consumables/fuel/tank[1]/level-lbs");
 	var start_state = getprop("sim/model/A-10/engines/engine["~eng_num~"]/start-state");
-
-	if (( left_main > 10.0 ) and ( volts > 23.0 )) {
+	var psi = props.globals.getNode("systems/bleed-air/psi").getValue();
+	if (( left_main > 10.0 ) and ( ignitors_volts > 23.0 ) and ( psi > 50 )) {
 		if ( start_state < 1 ) {
 			var new_start_state = start_state + 0.004;
 			setprop("sim/model/A-10/engines/engine["~eng_num~"]/start-state", new_start_state );
-			# rpm increase during around 60 sec up to 100%
-			var rpm = (math.sin( ( start_state * 3 ) + 4.7 )+1) * 30;
+			# rpm increase during around 60 sec up to 60%
+			var rpm = (math.sin( ( start_state * 3 ) + 4.7 )+1) * 27;
 			setprop("sim/model/A-10/engines/engine["~eng_num~"]/n1", rpm);
 			if (( left_main > 10.0 ) and ( start_state > 0.3 )) {
 				setprop("sim/model/A-10/engines/engine["~eng_num~"]/running", 1);
@@ -81,5 +84,8 @@ test_stop = func {
 		setprop("sim/model/A-10/engines/engine["~eng_num~"]/start-state", 0 );
 	}
 }
+
+
+
 
 

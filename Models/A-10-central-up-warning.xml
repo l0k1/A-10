@@ -26,6 +26,10 @@
 		<object-name>canopy-warning</object-name>
 		<condition>
 			<greater-than>
+				<property>systems/electrical/outputs/ldg-warning-system</property>
+				<value>24</value>
+			</greater-than>
+			<greater-than>
 				<property>canopy/position-norm</property>
 				<value>0</value>
 			</greater-than>
@@ -36,6 +40,10 @@
 		<type>select</type> 
 		<object-name>steering-engaged</object-name>
 		<condition>
+			<greater-than>
+				<property>systems/electrical/outputs/ldg-warning-system</property>
+				<value>24</value>
+			</greater-than>
 			<less-than>
 				<property>velocities/airspeed-kt</property>
 				<value>95</value>
@@ -52,6 +60,10 @@
 		<object-name>gun-ready</object-name>
 		<condition>
 			<property>sim/model/A-10/weapons/gun/gun-ready</property>
+			<greater-than>
+				<property>systems/electrical/R-AC-volts</property>
+				<value>24</value>
+			</greater-than>
 		</condition>  
 	</animation>
 
@@ -139,6 +151,11 @@
 			<green>1.0</green>
 			<blue>1.0</blue>
 		</emission>
+	</animation>
+
+	<animation>
+		<object-name>central-up-warning</object-name>
+		<type>noshadow</type>
 	</animation>
 	
 	<animation>

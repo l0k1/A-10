@@ -34,7 +34,7 @@
     <interpolation>
       <entry><ind>0</ind><dep>-30</dep></entry>
       <entry><ind>1</ind><dep>0</dep></entry>
-      <entry><ind>1</ind><dep>30</dep></entry>
+      <entry><ind>2</ind><dep>30</dep></entry>
     </interpolation>
     <center>
       <x-m>-0.0266</x-m>
@@ -112,16 +112,33 @@
     </axis>
   </animation>
 
-  <animation> 
-   <object-name>mount</object-name>
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/panel-norm</factor-prop>
-        <red>0.45</red>
-        <green>0.34</green>
-        <blue>0.18</blue>
-      </emission>
-  </animation>
+	<animation> 
+		<object-name>mount</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.45</red>
+			<green>0.34</green>
+			<blue>0.18</blue>
+		</emission>
+	</animation>
+
+	<animation> 
+		<object-name>switches</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.45</red>
+			<green>0.34</green>
+			<blue>0.18</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<object-name>elec-pwr-panel</object-name>
+		<type>noshadow</type>
+	</animation>
+
 
  <animation>
   <type>range</type>

@@ -4,21 +4,22 @@
 
 var UPDATE_PERIOD = 0.3;
 
-battery = nil;
-alternator = nil;
+var battery = nil;
+var alternator = nil;
 
-last_time = 0.0;
+var last_time = 0.0;
 
-bat_src_volts = 0.0;
+var bat_src_volts = 0.0;
 
-battery_bus_volts   = 0.0;
-L_DC_bus_volts      = 0.0;
-R_DC_bus_volts      = 0.0;
-L_AC_bus_volts      = 0.0;
-R_AC_bus_volts      = 0.0;
-L_conv_volts        = 0.0;
-R_conv_volts        = 0.0;
-DC_ESSEN_bus_volts  = 0.0;
+var battery_bus_volts   = 0.0;
+var L_DC_bus_volts      = 0.0;
+var R_DC_bus_volts      = 0.0;
+var L_AC_bus_volts      = 0.0;
+var R_AC_bus_volts      = 0.0;
+var L_conv_volts        = 0.0;
+var R_conv_volts        = 0.0;
+var AC_ESSEN_bus_volts  = 0.0;
+var DC_ESSEN_bus_volts  = 0.0;
 ammeter_ave = 0.0;
 
 
@@ -32,6 +33,7 @@ init_electrical = func {
     setprop("controls/electric/engine[0]/generator", 0);
     setprop("controls/electric/engine[1]/generator", 0);
     setprop("sim/model/A-10/controls/switches/inverter", 1);
+	setprop("systems/electrical/power_source", "none");
     setprop("systems/electrical/L-conv-volts", 0.0);
     setprop("systems/electrical/R-conv-volts", 0.0);
     setprop("systems/electrical/inverter-volts", 0.0);
@@ -123,6 +125,7 @@ update_electrical = func {
     dt = time - last_time;
     last_time = time;
     update_virtual_bus( dt );
+	check_bleed_air();
     settimer(update_electrical, UPDATE_PERIOD);
 }
 
@@ -140,12 +143,12 @@ update_virtual_bus = func( dt ) {
     external_volts    = 0.0;
     battery_volts     = battery.get_output_volts();
     if (master_alt and !eng_outof) {
-        L_gen_volts = alternator.get_output_volts("engines/engine[0]/n1");
+        L_gen_volts = alternator.get_output_volts("sim/model/A-10/engines/engine[0]/n1");
     } else { L_gen_volts = 0.0;}
     if (master_alt1 and !eng_outof1) {
-        R_gen_volts = alternator.get_output_volts("engines/engine[1]/n1");
+        R_gen_volts = alternator.get_output_volts("sim/model/A-10/engines/engine[1]/n1");
     } else { R_gen_volts = 0.0; }
-    if (master_apu) {
+    if ( master_apu ) {
         APU_gen_volts = alternator.get_output_volts("sim/model/A-10/systems/apu/rpm");
     } else { APU_gen_volts = 0.0; }
     INV_volts    = getprop("systems/electrical/inverter-volts");
@@ -163,6 +166,7 @@ update_virtual_bus = func( dt ) {
             R_AC_bus_volts = APU_gen_volts;
             AC_ESSEN_bus_volts = APU_gen_volts;
             L_conv_volts = APU_gen_volts;
+            power_source = "apu";
         }
         if ((L_gen_volts < 23) and (R_gen_volts >= 23)) {
             L_AC_bus_volts = R_gen_volts;
@@ -253,9 +257,11 @@ update_virtual_bus = func( dt ) {
         DC_ESSEN_bus_volts      = 0.0;
         AUX_DC_ESSEN_bus_volts  = 0.0;
     }
+    # Inverter
     if (( master_inv == 2 ) and (L_gen_volts < 20) and (R_gen_volts < 20)) {
         INV_volts = bat_src_volts;
-        power_source = "battery";
+        power_source = "battery"; 		# Does not mean that the battery is
+                                        # connected to any bus.
     } elsif ( master_inv == 1 ) {
         INV_volts = 0.0;
     } elsif ( master_inv == 0 ) {
@@ -288,6 +294,7 @@ update_virtual_bus = func( dt ) {
     # charge/discharge the battery
     if ( power_source == "battery" ) {
         battery.apply_load( load, dt );
+        setprop( "systems/electrical/power_source", power_source );
     } elsif ( bat_src_volts > battery_volts ) {
         battery.apply_load( -battery.charge_amps, dt );
     }
@@ -331,11 +338,15 @@ DC_ESSEN_bus = func() {
     setprop("systems/electrical/outputs/nav[1]", DC_ESSEN_bus_volts);
     setprop("systems/electrical/outputs/com[1]", DC_ESSEN_bus_volts);
     setprop("systems/electrical/outputs/nav[2]", DC_ESSEN_bus_volts);
+    setprop("systems/electrical/outputs/ldg-warning-system", DC_ESSEN_bus_volts);
+    setprop("systems/electrical/outputs/apu-start-system", DC_ESSEN_bus_volts);
+    setprop("systems/electrical/outputs/caution-panel", DC_ESSEN_bus_volts);
     return load;
 }
 
 AUX_DC_ESSEN_bus = func() {
     load = 0.0;
+    setprop("systems/electrical/outputs/engines-ignitors", AC_ESSEN_bus_volts);
     return load;
 }
 
@@ -378,15 +389,39 @@ AC_ESSEN_bus = func() {
 setlistener("/sim/signals/fdm-initialized", init_electrical);
 
 
+# bleed air system
+# ----------------
+var check_bleed_air= func {
+		# max ECS incomming pressure : 65 psi ( from Environment Control System valve)
+		# nin rpm from a running TF34 engine to start the other one : 85 %rpm
+		# All numbers below guessed from above
+		# min pressure for TF34 engine start : 50 psi
+		# nominal APU : 70 psi @ 100 %rpm
+		# nominal TF34 : 60 psi @ 90 %rpm
+		var bair_sys = props.globals.getNode("systems/bleed-air");
+		var psi = bair_sys.getNode("psi", 1);
+		var e0_n1 = props.globals.getNode("sim/model/A-10/engines/engine[0]/n1").getValue();
+		var e1_n1 = props.globals.getNode("sim/model/A-10/engines/engine[1]/n1").getValue();
+		var apu_rpm = props.globals.getNode("sim/model/A-10/systems/apu/rpm").getValue();
+		if ( e0_n1 == nil ) { e0_n1 = 0 }
+		if ( e1_n1 == nil ) { e1_n1 = 0 }
+		if ( apu_rpm == nil ) { apu_rpm = 0 }
+		var p0 = e0_n1 * 0.67;
+		var p1 = e1_n1 * 0.67;
+		var p2 = apu_rpm * 0.7;
+		var bleed_air = p0;
+		if ( p1 > bleed_air ) { bleed_air = p1; }
+		if ( p2 > bleed_air ) { bleed_air = p2; }
+		psi.setValue(bleed_air);
+}
 
 
 # other electrical power controls
 # -------------------------------
-
 inverter_switch = func {
-    inv_pos = props.globals.getNode("sim/model/A-10/controls/switches/inverter", 1);
-    pos = inv.getValue();
-    input = arg[0];
+    var inv_pos = props.globals.getNode("sim/model/A-10/controls/switches/inverter", 1);
+    var pos = inv_pos.getValue();
+    var input = arg[0];
     if ( input == 1 ) {
         if ( pos == 0 ) {
             inv_pos.setIntValue(1);

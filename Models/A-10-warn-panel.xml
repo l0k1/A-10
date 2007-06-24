@@ -22,6 +22,10 @@
         <property>engines/engine[0]/oilp-norm</property>
         <value>0.0185</value>
       </less-than>
+      <greater-than>
+        <property>systems/electrical/outputs/caution-panel</property>
+        <value>24</value>
+      </greater-than> 
     </condition>  
   </animation>
 
@@ -33,6 +37,10 @@
         <property>engines/engine[1]/oilp-norm</property>
         <value>0.0185</value>
       </less-than>
+      <greater-than>
+        <property>systems/electrical/outputs/caution-panel</property>
+        <value>24</value>
+      </greater-than> 
     </condition>  
   </animation>
 
@@ -164,6 +172,10 @@
         <property>engines/engine[0]/oilp-norm</property>
         <value>0.0170</value>
       </less-than>
+      <greater-than>
+        <property>systems/electrical/outputs/caution-panel</property>
+        <value>24</value>
+      </greater-than> 
     </condition>  
   </animation>
 
@@ -175,6 +187,10 @@
         <property>engines/engine[1]/oilp-norm</property>
         <value>0.0170</value>
       </less-than>
+      <greater-than>
+        <property>systems/electrical/outputs/caution-panel</property>
+        <value>24</value>
+      </greater-than> 
     </condition>  
   </animation>
 
@@ -391,6 +407,10 @@
         <property>systems/electrical/APU-gen-volts</property>
         <value>23</value>
       </less-than>
+      <greater-than>
+        <property>systems/electrical/outputs/apu-start-system</property>
+        <value>24</value>
+      </greater-than> 
     </condition>  
   </animation>
 
@@ -825,6 +845,12 @@
       <blue>0.18</blue>
       </emission>
   </animation>
+
+	<animation>
+		<object-name>warn-panel</object-name>
+		<type>noshadow</type>
+	</animation>
+
 
   <animation>
     <type>range</type>

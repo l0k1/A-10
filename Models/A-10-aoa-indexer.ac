@@ -3,7 +3,7 @@ MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 1 1 1  spec 0 0 0  shi 10  
 OBJECT world
 kids 5
 OBJECT poly
-name "aoa-too-fast"
+name "aoa-too-slow"
 loc 3.48662e-05 0.000420377 -0.000211392
 texture "panel-up.rgb"
 crease 45.000000
@@ -22,7 +22,7 @@ refs 4
 0 0.756916 0.577417
 kids 0
 OBJECT poly
-name "aoa-fast"
+name "aoa-slow"
 loc 3.48662e-05 0.000420377 -0.000211392
 texture "panel-up.rgb"
 crease 45.000000
@@ -60,7 +60,7 @@ refs 4
 0 0.806541 0.57745
 kids 0
 OBJECT poly
-name "aoa-slow"
+name "aoa-fast"
 loc 3.48662e-05 0.000420377 -0.000211392
 texture "panel-up.rgb"
 crease 45.000000
@@ -79,7 +79,7 @@ refs 4
 3 0.83174 0.577529
 kids 0
 OBJECT poly
-name "aoa-too-slow"
+name "aoa-too-fast"
 loc 3.48661e-05 0.000398506 -0.00018952
 texture "panel-up.rgb"
 crease 45.000000

@@ -377,9 +377,15 @@ Fairchild A-10 simulation config.
 				<desc>update drop view position</desc>
 			</key>
 			<line>Top Speed:      380 kt @ 15000 ft)</line>
-			<line>Use the Equipment/Fuel and Payload</line>
-			<line>menu item to use the external drop</line>
-			<line>tanks</line>
+			<line>______________________________________________</line>
+			<line>External fuel tanks ?</line>
+			<line>  Menu > Equipment > Fuel and Payload</line>
+			<line>______________________________________________</line>
+			<line>External stores ?   (ECM Pod, AIM-9)</line>
+			<line>  Ctrl-I or Tab key</line>
+			<line>______________________________________________</line>
+			<line>How to start it ?</line>
+			<line>  Menu > Help > Start Tutorial > Engines Start</line>
 		</help>
 
 		<!-- Hud -->
@@ -582,11 +588,10 @@ Fairchild A-10 simulation config.
 			<l-hyd-res type="float">1</l-hyd-res>
 			<r-hyd-res type="float">1</r-hyd-res>
 		</A-10-hydraulics>
-		<!-- electrical system (logical three remains under the std. elec. node) -->
+		<!-- electrical system (logical three remains under /systems/electrical) -->
 		<A-10-electrical>
 			<l-converter-failure type="bool">0</l-converter-failure>
 			<r-converter-failure type="bool">0</r-converter-failure>
-			<apu-generator-caution-light type="bool">0</apu-generator-caution-light>
 			<l-generator-caution-light type="bool">0</l-generator-caution-light>
 			<r-generator-caution-light type="bool">0</r-generator-caution-light>
 			<instrument-inverter-caution-light type="bool">0</instrument-inverter-caution-light>
@@ -600,9 +605,6 @@ Fairchild A-10 simulation config.
 			<armed type="bool">1</armed>
 		</A-10-ejectable-seat>
 		<!-- bleed air system -->
-		<A-10-bleed-air>
-			<warn-light type="bool">0</warn-light>
-		</A-10-bleed-air>
 		<!-- service air system -->
 		<A-10-service-air>
 			<service-air-warn-light type="bool">0</service-air-warn-light>
@@ -633,6 +635,9 @@ Fairchild A-10 simulation config.
 		<A-10-iff>
 			<iff-warn-light type="bool">0</iff-warn-light>
 		</A-10-iff>
+		<bleed-air>
+			<warn-light type="bool">0</warn-light>
+		</bleed-air>
 	</systems>
 
 	<!-- Fuel Tank indexes -->
@@ -686,13 +691,9 @@ Fairchild A-10 simulation config.
 			<file>Aircraft/A-10/Nasal/A-10.nas</file>
 			<script>zero_ext_tanks();</script>
 		</A10>
-		<!-- <nav_ac_state>
-		<file>Aircraft/A-10/Nasal/nav_ac_state.nas</file>
-		</nav_ac_state> -->
 		<nav_scripts>
 			<file>Aircraft/A-10/Nasal/nav_scripts.nas</file>
 			<script>nav_scripts.freq_startup();</script>
-			<script>nav_scripts.nav2_freq_update();</script>
 		</nav_scripts>
 		<landing_gear_handle>
 			<file>Aircraft/A-10/Nasal/landing_gear_handle.nas</file>

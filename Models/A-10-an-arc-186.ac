@@ -5,7 +5,7 @@ MATERIAL "ac3dmat14" rgb 0.8 0.8 0.8  amb 0.122 0.137 0.149  emis 0 0 0  spec 0 
 OBJECT world
 kids 1
 OBJECT group
-name "nav"
+name "uhf"
 loc -0.0188413 0.00149103 -0.000173733
 kids 21
 OBJECT poly
