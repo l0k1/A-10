@@ -518,27 +518,6 @@
         <factor>0.25</factor>
       </volume>
     </spoiler>
-<!--
-    <slat>
-      <name>slats</name>
-      <mode>in-transit</mode>
-      <path>Sounds/flaps.wav</path>
-      <property>surface-positions/L-slat-pos-norm</property>
-      <volume>
-        <factor>0.15</factor>
-      </volume>
-    </slat>
-
-    <slat>
-      <name>slats</name>
-      <mode>in-transit</mode>
-      <path>Sounds/flaps.wav</path>
-      <property>surface-positions/R-slat-pos-norm</property>
-      <volume>
-        <factor>0.25</factor>
-      </volume>
-    </slat>
--->
 
     <wind>
       <name>wind</name>

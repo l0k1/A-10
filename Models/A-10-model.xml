@@ -576,7 +576,7 @@
 			<z-m>0.7750</z-m>
 			<roll-deg>12.55</roll-deg>
 			<pitch-deg>29.00</pitch-deg>
-			<!--<heading-deg>-8.00</heading-deg>-->
+			<heading-deg>-8.00</heading-deg>
 		</offsets>
 	</model>
 
@@ -1031,6 +1031,25 @@
 			<x>0</x>
 			<y>-1</y>
 			<z>0</z>
+		</axis>
+	</animation>
+
+<!-- Slats bits -->
+	<animation>
+		<type>translate</type>
+		<object-name>L-Wing-Slat</object-name>
+		<object-name>R-Wing-Slat</object-name>
+		<property>orientation/alpha-deg</property>
+		<interpolation>
+			<entry><ind>-8</ind><dep>0</dep></entry>
+			<entry><ind>6</ind><dep>0</dep></entry>
+			<entry><ind>7</ind><dep>0.15</dep></entry>
+			<entry><ind>20</ind><dep>0.15</dep></entry>
+		</interpolation>
+		<axis>
+			<x>-1.00</x>
+			<y>0.00</y>
+			<z>0.22</z>
 		</axis>
 	</animation>
 
