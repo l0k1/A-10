@@ -93,7 +93,7 @@
 	<submodel>
 		<name>aim-9-L</name>
 		<model>Aircraft/A-10/Models/aim-9smoke.xml</model>
-		<trigger>sim/model/A-10/weapons/aim9s/aim9[0]/trigger</trigger>
+		<trigger>sim/model/A-10/weapons/dual-AIM-9/aim9[0]/trigger</trigger>
 		<speed>300</speed>
 		<repeat>false</repeat>
 		<delay>0.1</delay>
@@ -114,7 +114,7 @@
 	<submodel>
 		<name>aim-9-R</name>
 		<model>Aircraft/A-10/Models/aim-9smoke.xml</model>
-		<trigger>sim/model/A-10/weapons/aim9s/aim9[1]/trigger</trigger>
+		<trigger>sim/model/A-10/weapons/dual-AIM-9/aim9[1]/trigger</trigger>
 		<speed>300</speed>
 		<repeat>false</repeat>
 		<delay>0.1</delay>

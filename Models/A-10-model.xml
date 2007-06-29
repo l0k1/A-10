@@ -7,6 +7,11 @@
 
 	<path>A10-004-015l2.ac</path>
 
+	<model>
+		<path>Aircraft/A-10/Models/ext-stores.xml</path>
+	</model>	
+
+
 	<!-- Select the external loads as appropriate -->
 	<!-- Select extermal tanks -->
 	<animation>
@@ -42,48 +47,7 @@
 		</condition>
 	</animation>
 	
-	<model>
-		<path>Aircraft/A-10/Models/an-alq-131.xml</path>
-		<offsets> 
-			<x-m>7.3844</x-m>
-			<y-m>-5.9169</y-m>
-			<z-m>-0.65</z-m>
-			<pitch-deg>-3</pitch-deg>
-		</offsets>
-	</model>	
 
-	<model>
-		<name>AIM-9-inside</name>
-		<path>Aircraft/A-10/Models/aim-9-inside.xml</path>
-		<offsets> 
-			<x-m>7.2544</x-m>
-			<y-m>5.5920</y-m>
-			<z-m>-0.14</z-m>
-			<pitch-deg>-3</pitch-deg>
-		</offsets>
-	</model>	
-	<model>
-		<name>AIM-9-ouside</name>
-		<path>Aircraft/A-10/Models/aim-9-outside.xml</path>
-		<offsets> 
-			<x-m>7.2544</x-m>
-			<y-m>6.2160</y-m>
-			<z-m>-0.14</z-m>
-			<pitch-deg>-3</pitch-deg>
-			<roll-deg>-7</roll-deg>
-		</offsets>
-	</model>	
-	<model>
-		<name>AIM-9-dual-launcher</name>
-		<path>Aircraft/A-10/Models/aim-9-dual-launcher.xml</path>
-		<offsets> 
-			<x-m>7.0800</x-m>
-			<y-m>5.9040</y-m>
-			<z-m>-0.1400</z-m>
-			<pitch-deg>-3</pitch-deg>
-			<roll-deg>7</roll-deg>
-		</offsets>
-	</model>
 	
 	<!-- tutorial marker -->
 	<model>

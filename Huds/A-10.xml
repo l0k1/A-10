@@ -153,7 +153,7 @@
 		<height>48</height>
 		<active-condition>
 			<equals>
-				<property>/sim/model/A-10/weapons/aim9s/aim9-knob</property>
+				<property>/sim/model/A-10/weapons/dual-AIM-9/aim9-knob</property>
 				<value>2</value>
 			</equals>
 		</active-condition>

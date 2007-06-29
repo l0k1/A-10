@@ -203,7 +203,7 @@
           <h>65</h>
           <binding> 
             <command>nasal</command>
-            <script>A10weapons.aim9_knob(1)</script>
+            <script>A10weapons.aim9_knob_switch(1)</script>
           </binding>
         </action>
         <action> 
@@ -215,7 +215,7 @@
           <h>65</h>
           <binding> 
             <command>nasal</command>
-            <script>A10weapons.aim9_knob(-1)</script>
+            <script>A10weapons.aim9_knob_switch(-1)</script>
           </binding>
         </action>
 
@@ -227,7 +227,7 @@
           <y>-100</y>
           <w>46</w>
           <h>45</h>
-          <binding> A10weapons.select_station()
+          <binding>
             <command>nasal</command>
             <script>A10weapons.select_station(4)</script>
           </binding>

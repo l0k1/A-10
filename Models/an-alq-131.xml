@@ -13,7 +13,10 @@
 		<object-name>an-alq-131-body</object-name>
 		<object-name>an-alq-131-domes</object-name>
 		<condition>
-				<property>/sim/model/A-10/weapons/ecm/an-alq-131</property>
+			<equals>
+				<property>/sim/model/A-10/weapons/stations/station[0]/description</property>
+				<value>AN-ALQ-131</value>
+			</equals>
 		</condition>
 	</animation>
 	

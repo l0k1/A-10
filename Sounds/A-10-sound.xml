@@ -1467,7 +1467,7 @@
 			<path>Aircraft/A-10/Sounds/click2.wav</path>
 			<condition>
 				<equals>
-					<property>sim/model/A-10/weapons/aim9s/aim9-knob</property>
+					<property>sim/model/A-10/weapons/dual-AIM-9/aim9-knob</property>
 					<value>0</value>
 				</equals>
 			</condition>
@@ -1482,7 +1482,7 @@
 			<path>Aircraft/A-10/Sounds/click2.wav</path>
 			<condition>
 				<equals>
-					<property>sim/model/A-10/weapons/aim9s/aim9-knob</property>
+					<property>sim/model/A-10/weapons/dual-AIM-9/aim9-knob</property>
 					<value>1</value>
 				</equals>
 			</condition>
@@ -1497,7 +1497,7 @@
 			<path>Aircraft/A-10/Sounds/click2.wav</path>
 			<condition>
 				<equals>
-					<property>sim/model/A-10/weapons/aim9s/aim9-knob</property>
+					<property>sim/model/A-10/weapons/dual-AIM-9/aim9-knob</property>
 					<value>2</value>
 				</equals>
 			</condition>
@@ -1512,7 +1512,7 @@
 			<path>Aircraft/A-10/Sounds/115hz-square.wav</path>
 			<condition>
 				<equals>
-					<property>sim/model/A-10/weapons/aim9s/aim9-knob</property>
+					<property>sim/model/A-10/weapons/dual-AIM-9/aim9-knob</property>
 					<value>2</value>
 				</equals>
 				<equals>
@@ -1522,7 +1522,7 @@
 				<not>
 					<property>sim/model/A-10/weapons/release_lock</property>
 				</not>
-				<property>sim/model/A-10/weapons/aim9s/aim9-available</property>
+				<property>sim/model/A-10/weapons/dual-AIM-9/aim9-available</property>
 				<property>sim/model/A-10/weapons/master-arm-switch</property>
 				<greater-than>
 					<property>systems/electrical/R-AC-volts</property>
@@ -1539,7 +1539,7 @@
 			<mode>once</mode>
 			<path>Aircraft/A-10/Sounds/shoo7.wav</path>
 			<condition>
-				<property>sim/model/A-10/weapons/aim9s/aim9[0]/trigger</property>
+				<property>sim/model/A-10/weapons/dual-AIM-9/aim9[0]/trigger</property>
 			</condition>
 			<volume>
 			<factor>0.8</factor>
@@ -1551,7 +1551,7 @@
 			<mode>once</mode>
 			<path>Aircraft/A-10/Sounds/shoo7.wav</path>
 			<condition>
-				<property>sim/model/A-10/weapons/aim9s/aim9[1]/trigger</property>
+				<property>sim/model/A-10/weapons/dual-AIM-9/aim9[1]/trigger</property>
 			</condition>
 			<volume>
 			<factor>0.8</factor>

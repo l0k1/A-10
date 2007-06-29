@@ -14,7 +14,10 @@
 		<object-name>R-lau-105-body</object-name>
 		<object-name>R-lau-105-rails</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/aim9s/dual</property>
+			<equals>
+				<property>/sim/model/A-10/weapons/stations/station[10]/description</property>
+				<value>dual-AIM-9</value>
+			</equals>
 		</condition>
 	</animation>
 

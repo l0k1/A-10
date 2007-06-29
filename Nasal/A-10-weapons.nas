@@ -1,68 +1,14 @@
 var a10weapons = props.globals.getNode("sim/model/A-10/weapons");
-
-# switches ---------------------------------------------------------------------
-master_arm_switch = func {
-	input = arg[0];
-	if (input == 1) {
-		if (getprop("sim/model/A-10/weapons/master-arm-switch") == -1) {
-			setprop("sim/model/A-10/weapons/master-arm-switch", 0);
-		} elsif (getprop("sim/model/A-10/weapons/master-arm-switch") == 0) {
-			setprop("sim/model/A-10/weapons/master-arm-switch", 1);
-			if (getprop("sim/model/A-10/weapons/gun-rate-switch") == 1) {
-				if (getprop("ai/submodels/submodel[1]/count") > 0) {
-					setprop("sim/model/A-10/weapons/gun/gun-ready", 1);
-				}
-			}
-		}
-	} else {
-		if (getprop("sim/model/A-10/weapons/master-arm-switch") == 1) {
-			setprop("sim/model/A-10/weapons/master-arm-switch", 0);
-			setprop("sim/model/A-10/weapons/gun/gun-ready", 0);
-		} elsif (getprop("sim/model/A-10/weapons/master-arm-switch") == 0) {
-			setprop("sim/model/A-10/weapons/master-arm-switch", -1);
-		}
-	}
-}
-
-gun_rate_switch = func {
-	input = arg[0];
-	if (input == 1) {
-		if (getprop("sim/model/A-10/weapons/gun-rate-switch") == 0) {
-			setprop("sim/model/A-10/weapons/gun-rate-switch", 1);
-			if (getprop("sim/model/A-10/weapons/master-arm-switch") == 1){
-				if (getprop("ai/submodels/submodel[1]/count") > 0) {
-					setprop("sim/model/A-10/weapons/gun/gun-ready", 1);
-				}
-			}
-		}
-	} elsif (getprop("sim/model/A-10/weapons/gun-rate-switch") == 1) {
-		setprop("sim/model/A-10/weapons/gun-rate-switch", 0);
-		setprop("sim/model/A-10/weapons/gun/gun-ready", 0);
-	}
-}
-
-aim9_knob = func {
-	input = arg[0];
-	if (input == 1) {
-		if (getprop("sim/model/A-10/weapons/aim9s/aim9-knob") == 0) {
-			setprop("sim/model/A-10/weapons/aim9s/aim9-knob", 1);
-		} elsif (getprop("sim/model/A-10/weapons/aim9s/aim9-knob") == 1) {
-			setprop("sim/model/A-10/weapons/aim9s/aim9-knob", 2);
-		}
-	} else {
-		if (getprop("sim/model/A-10/weapons/aim9s/aim9-knob") == 2) {
-			setprop("sim/model/A-10/weapons/aim9s/aim9-knob", 1);
-		} elsif (getprop("sim/model/A-10/weapons/aim9s/aim9-knob") == 1) {
-			setprop("sim/model/A-10/weapons/aim9s/aim9-knob", 0);
-		}
-	}
-}
+var arm_sw = props.globals.getNode("sim/model/A-10/weapons/master-arm-switch");
+var gr_switch = props.globals.getNode("sim/model/A-10/weapons/gun-rate-switch");
+var gun_count = props.globals.getNode("ai/submodels/submodel[1]/count");
+var aim9_knob = props.globals.getNode("sim/model/A-10/weapons/dual-AIM-9/aim9-knob");
+var gun_ready = props.globals.getNode("sim/model/A-10/weapons/gun/gun-ready");
 
 
-# gun
-# ---
-#  trigger and vibration visual effect
-var gun_ready = a10weapons.getNode("gun/gun-ready");
+
+# gun: trigger and vibration visual effect
+# ----------------------------------------
 var gau8a_submodel = props.globals.getNode("ai/submodels/submodel[1]");
 var remaining_rounds = gau8a_submodel.getNode("count");
 var gun_running = props.globals.getNode("ai/submodels/GAU-8A");
@@ -74,6 +20,7 @@ z_povhold.setDoubleValue(z_pov.getValue());
 controls.trigger = func(b) { b ? fire_gau8a() : cfire_gau8a() }
 
 fire_gau8a = func {
+	# FIXME: we need some juice and hyd pressure.
 	var gready = gun_ready.getValue();
 	var count = remaining_rounds.getValue();
 	if ( gready and count > 0 ) {
@@ -110,8 +57,41 @@ cfire_gau8a = func {
 }
 
 
+# station selection
+# -----------------
+# FIXME: severals station could be selected at the same time, povided they are loaded
+# with the same weapon type. For now, use only one at a time.
+var stations = props.globals.getNode("sim/model/A-10/weapons/stations");
+var stations_list = stations.getChildren("station");
 
-# release ----------------------------------------------------------------------
+
+select_station = func {
+	var target_idx = arg[0];
+	setprop("controls/armament/station-select", target_idx);
+	foreach (var station; stations_list) {
+		idx = station.getIndex();
+		if ( idx == target_idx ) {
+			if (station.getNode("selected").getValue() == 1) {
+				station.getNode("selected").setBoolValue(0);
+			} else {
+				station.getNode("selected").setBoolValue(1);
+			}
+		} else {
+			station.getNode("selected").setBoolValue(0);
+			station.getNode("ready-0").setBoolValue(0);
+			station.getNode("ready-1").setBoolValue(0);
+			station.getNode("ready-2").setBoolValue(0);
+			station.getNode("error").setBoolValue(0);
+		}
+	}
+}
+
+
+# station release
+# ---------------
+var dual_aim9 = a10weapons.getNode("dual-AIM-9");
+var aim9_knob = dual_aim9.getNode("aim9-knob");
+var rlock =  a10weapons.getNode("release_lock");
 
 setlistener("controls/gear/brake-left", func {
 	setprop("sim/model/A-10/weapons/release-switch", cmdarg().getBoolValue());
@@ -119,23 +99,23 @@ setlistener("controls/gear/brake-left", func {
 	settimer( release_unlock, 2);
 });
 
-# for a begining, just release aim-9 if station #11 is selected 
 release = func {
-	if ((getprop("sim/model/A-10/weapons/master-arm-switch") == 1)
-	and (getprop("systems/electrical/R-AC-volts")) > 24 )	{
-		selected_station = getprop("controls/armament/station-select");
-		if ((selected_station == 10)
-		and (getprop("sim/model/A-10/weapons/aim9s/aim9-knob") == 2)) {
-			aim9s = props.globals.getNode("sim/model/A-10/weapons/aim9s", 1).getChildren("aim9");
+	sel_s = getprop("controls/armament/station-select");
+	avail = props.globals.getNode("sim/model/A-10/weapons/stations/station[" ~ sel_s ~ "]/available");
+	var arm_volts = props.globals.getNode("systems/electrical/R-AC-volts").getValue();
+	var asw = arm_sw.getValue();
+	if ( asw == 1 and arm_volts > 24 )	{
+		# release aim-9 if station #11 is selected 
+		if (( sel_s == 10 ) and ( aim9_knob.getValue() == 2 )) {
+			aim9s = props.globals.getNode("sim/model/A-10/weapons/dual-AIM-9", 1).getChildren("aim9");
 			foreach (var aim9; aim9s) {
+				rlk = rlock.getValue();
+				var a = avail.getValue();
 				trigger = aim9.getNode("trigger", 1).getBoolValue();
-				if (( ! trigger )
-				and (getprop("sim/model/A-10/weapons/release_lock") == 0)) {
+				if ( ! trigger and rlk == 0  and a > 0 ) {
 					aim9.getNode("trigger", 1).setBoolValue(1);
-					setprop("sim/model/A-10/weapons/release_lock", 1);
-					if (aim9.getIndex() == 1) {
-						setprop("sim/model/A-10/weapons/aim9s/aim9-available", 0);
-					}
+					rlock.setValue(1);
+					avail.setValue( a - 1 );
 				}
 			}
 		}
@@ -143,60 +123,117 @@ release = func {
 }
 
 release_unlock = func {
-	setprop("sim/model/A-10/weapons/release_lock", 0);
+	# FIXME: a mod-up binding for unlock would be better...
+	rlock.setBoolValue(0);
 }
 
-# station selection ------------------------------------------------------------
 
-# several station could be selected at the same time, for now use only one 
-select_station = func {
-	target_idx = arg[0];
-	setprop("controls/armament/station-select", target_idx);
-	stations = props.globals.getNode("sim/model/A-10/weapons/stations", 1).getChildren("station");
-	foreach (var station; stations) {
-		idx = station.getIndex();
-		if ( idx == target_idx ) {
-			if (station.getNode("selected", 1).getValue() == 1) {
-				station.getNode("selected", 1).setBoolValue(0);
-			} else {
-				station.getNode("selected", 1).setBoolValue(1);
-			}
+# station load
+# ------------
+station_load = func(s, type) {
+	var weight = type.getNode("weight-lb").getValue();
+	var desc = type.getNode("description").getValue();
+	var avail = type.getNode("available").getValue();
+	s.getNode("weight-lb").setValue(weight);
+	s.getNode("description").setValue(desc);
+	s.getNode("available").setValue(avail);
+}
+# station unload
+# ---------------
+station_unload = func(s) {
+	# FIXME: we should update the lights on armament panel.
+	s.getNode("weight-lb").setValue(0);
+	s.getNode("description").setValue("none");
+	s.getNode("available").setValue(0);
+}
+
+
+# config dialog
+# -------------
+var config_dialog = nil;
+var stations_change = props.globals.getNode("sim/model/A-10/weapons/stations-change-flag");
+
+setlistener( stations_change, func { update_stations(); });
+
+var update_stations = func {
+	var a = nil;
+	foreach (s; stations.getChildren("station")) {
+		var idx = s.getIndex();
+		var weight = 0;
+		var desc = s.getNode("description").getValue();
+		var type = a10weapons.getNode(desc);
+		if ( desc != "none" ) {
+			station_load(s, type);
 		} else {
-			station.getNode("selected", 1).setBoolValue(0);
+			station_unload(s);
 		}
 	}
 }
-
-
-
-# config dialog ----------------------------------------------------------------
-var config_dialog = nil;
-
-setlistener("sim/model/A-10/weapons/ecm/an-alq-131", func {
-	if (getprop("sim/model/A-10/weapons/ecm/an-alq-131")) {
-		setprop("sim/model/A-10/weapons/stations/station[0]/weight-lb", 535);
-	} else {
-		setprop("sim/model/A-10/weapons/stations/station[0]/weight-lb", 0);	
-	}
-});
-
-setlistener("sim/model/A-10/weapons/aim9s/dual", func {
-	if (getprop("sim/model/A-10/weapons/aim9s/dual")) {
-		setprop("sim/model/A-10/weapons/stations/station[10]/weight-lb", 612);
-		setprop("sim/model/A-10/weapons/aim9s/aim9-available", 1);
-		# recharger...
-	} else {
-		setprop("sim/model/A-10/weapons/stations/station[10]/weight-lb", 0);
-		setprop("sim/model/A-10/weapons/aim9s/aim9-available", 0);		
-	}
-});
-
-
-
-
-
 
 setlistener("/sim/signals/fdm-initialized", func {
 	config_dialog = gui.Dialog.new("/sim/gui/dialogs/A-10/config/dialog",
 		"Aircraft/A-10/Dialogs/config.xml");
 });
+
+
+# Armament panel switches
+# -----------------------
+
+master_arm_switch = func {
+	var input = arg[0];
+	var asw = arm_sw.getValue();
+	var gcount = gun_count.getValue();
+	if ( input == 1 ) {
+		if ( asw == -1 ) {
+			arm_sw.setValue(0);
+		} elsif ( asw == 0 ) {
+			arm_sw.setValue(1);
+			if ( gr_switch.getValue() == 1 and gcount > 0 ) {
+				gun_ready.setValue(1);
+			}
+		}
+	} else {
+		if ( asw == 1 ) {
+			arm_sw.setValue(0);
+			gun_ready.setValue(0);
+		} elsif ( asw == 0 ) {
+			arm_sw.setValue(-1);
+		}
+	}
+}
+
+gun_rate_switch = func {
+	var input = arg[0];
+	var grsw = gr_switch.getValue();
+	var asw = arm_sw.getValue();
+	var gcount = gun_count.getValue();
+	if (input == 1) {
+		if ( grsw == 0 ) {
+			gr_switch.setValue(1);
+			if ( asw == 1 and gcount > 0 ) {
+				gun_ready.setValue(1);
+			}
+		}
+	} elsif ( grsw == 1 ) {
+		gr_switch.setValue(0);
+		gun_ready.setValue(0);
+	}
+}
+
+aim9_knob_switch = func {
+	var input = arg[0];
+	var a_knob = aim9_knob.getValue();
+	if ( input == 1 ) {
+		if ( a_knob == 0 ) {
+			aim9_knob.setValue(1);
+		} elsif ( a_knob == 1 ) {
+			aim9_knob.setValue(2);
+		}
+	} else {
+		if ( a_knob == 2 ) {
+			aim9_knob.setValue(1);
+		} elsif ( a_knob == 1 ) {
+			aim9_knob.setValue(0);
+		}
+	}
+}

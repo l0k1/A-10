@@ -123,18 +123,23 @@ Fairchild A-10 simulation config.
 			<path>Aircraft/A-10/Models/A-10-model.xml</path>
 			<A-10>
 				<weapons>
+					<stations-change-flag type="bool">0</stations-change-flag>
 					<master-arm-switch type="int">0</master-arm-switch>
 					<gun-rate-switch type="int">0</gun-rate-switch>
 					<release-switch type="bool">false</release-switch>
 					<release_lock type="bool">0</release_lock>
 					<station-light-test type="bool">false</station-light-test>
-					<ecm>
-						<an-alq-131 type="bool">true</an-alq-131>
-					</ecm>
-					<aim9s>
-						<dual type="bool">true</dual>
+
+					<AN-ALQ-131>
+						<description type="string">AN-ALQ-131</description>
+						<weight-lb type="float">535</weight-lb>
+						<available type="int">1</available>
+					</AN-ALQ-131>
+
+					<dual-AIM-9>
+						<description type="string">dual-AIM-9</description>
 						<aim9-knob type="int">0</aim9-knob>
-						<aim9-available type="bool">1</aim9-available>
+						<available type="int">2</available>
 						<aim9 n="0">
 							<trigger type="bool">false</trigger>
 						</aim9>
@@ -142,66 +147,129 @@ Fairchild A-10 simulation config.
 							<trigger type="bool">false</trigger>
 						</aim9>
 						<reticle-diam type="int">20</reticle-diam>
-					</aim9s>
+						<weight-lb type="float">612</weight-lb>
+					</dual-AIM-9>
+
+					<LAU-68>
+						<description type="string">LAU-68</description>
+						<weight-lb type="float">202.5</weight-lb>
+						<available type="int">7</available>
+					</LAU-68>
+
 					<gun>
 						<gun-unsafe type="bool">false</gun-unsafe>
 						<gun-ready type="bool">false</gun-ready>
 					</gun>
 					<stations>
 						<station n="0">
+							<ready-0 type="bool">0</ready-0>
+							<ready-1 type="bool">0</ready-1>
+							<ready-2 type="bool">0</ready-2>
+							<error type="bool">0</error>
 							<weight-lb type="float">535</weight-lb>
 							<selected type="bool">false</selected>
-							<description type="string">an-alq-131</description>
+							<description type="string">AN-ALQ-131</description>
+							<available type="int">1</available>
 						</station>
 						<station n="1">
+							<ready-0 type="bool">0</ready-0>
+							<ready-1 type="bool">0</ready-1>
+							<ready-2 type="bool">0</ready-2>
+							<error type="bool">0</error>
 							<weight-lb type="float">0</weight-lb>
 							<selected type="bool">false</selected>
-							<description type="string">empty</description>
+							<description type="string">none</description>
+							<available type="int">0</available>
 						</station>
 						<station n="2">
+							<ready-0 type="bool">0</ready-0>
+							<ready-1 type="bool">0</ready-1>
+							<ready-2 type="bool">0</ready-2>
+							<error type="bool">0</error>
 							<weight-lb type="float">0</weight-lb>
 							<selected type="bool">false</selected>
-							<description type="string">empty</description>
+							<description type="string">none</description>
+							<available type="int">0</available>
 						</station>
 						<station n="3">
+							<ready-0 type="bool">0</ready-0>
+							<ready-1 type="bool">0</ready-1>
+							<ready-2 type="bool">0</ready-2>
+							<error type="bool">0</error>
 							<weight-lb type="float">0</weight-lb>
 							<selected type="bool">false</selected>
-							<description type="string">empty</description>
+							<description type="string">none</description>
+							<available type="int">0</available>
 						</station>
 						<station n="4">
+							<ready-0 type="bool">0</ready-0>
+							<ready-1 type="bool">0</ready-1>
+							<ready-2 type="bool">0</ready-2>
+							<error type="bool">0</error>
 							<weight-lb type="float">0</weight-lb>
 							<selected type="bool">false</selected>
-							<description type="string">empty</description>
+							<description type="string">none</description>
+							<available type="int">0</available>
 						</station>
 						<station n="5">
+							<ready-0 type="bool">0</ready-0>
+							<ready-1 type="bool">0</ready-1>
+							<ready-2 type="bool">0</ready-2>
+							<error type="bool">0</error>
 							<weight-lb type="float">0</weight-lb>
 							<selected type="bool">false</selected>
-							<description type="string">empty</description>
+							<description type="string">none</description>
+							<available type="int">0</available>
 						</station>
 						<station n="6">
+							<ready-0 type="bool">0</ready-0>
+							<ready-1 type="bool">0</ready-1>
+							<ready-2 type="bool">0</ready-2>
+							<error type="bool">0</error>
 							<weight-lb type="float">0</weight-lb>
 							<selected type="bool">false</selected>
-							<description type="string">empty</description>
+							<description type="string">none</description>
+							<available type="int">0</available>
 						</station>
 						<station n="7">
+							<ready-0 type="bool">0</ready-0>
+							<ready-1 type="bool">0</ready-1>
+							<ready-2 type="bool">0</ready-2>
+							<error type="bool">0</error>
 							<weight-lb type="float">0</weight-lb>
 							<selected type="bool">false</selected>
-							<description type="string">empty</description>
+							<description type="string">none</description>
+							<available type="int">0</available>
 						</station>
 						<station n="8">
+							<ready-0 type="bool">0</ready-0>
+							<ready-1 type="bool">0</ready-1>
+							<ready-2 type="bool">0</ready-2>
+							<error type="bool">0</error>
 							<weight-lb type="float">0</weight-lb>
 							<selected type="bool">false</selected>
-							<description type="string">empty</description>
+							<description type="string">none</description>
+							<available type="int">0</available>
 						</station>
 						<station n="9">
+							<ready-0 type="bool">0</ready-0>
+							<ready-1 type="bool">0</ready-1>
+							<ready-2 type="bool">0</ready-2>
+							<error type="bool">0</error>
 							<weight-lb type="float">0</weight-lb>
 							<selected type="bool">false</selected>
-							<description type="string">empty</description>
+							<description type="string">none</description>
+							<available type="int">0</available>
 						</station>
 						<station n="10">
+							<ready-0 type="bool">0</ready-0>
+							<ready-1 type="bool">0</ready-1>
+							<ready-2 type="bool">0</ready-2>
+							<error type="bool">0</error>
 							<weight-lb type="float">612</weight-lb>
 							<selected type="bool">false</selected>
-							<description type="string">2 x AIM-9</description>
+							<description type="string">dual-AIM-9</description>
+							<available type="int">2</available>
 						</station>
 					</stations>
 				</weapons>
