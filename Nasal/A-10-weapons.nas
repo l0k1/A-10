@@ -20,7 +20,7 @@ z_povhold.setDoubleValue(z_pov.getValue());
 controls.trigger = func(b) { b ? fire_gau8a() : cfire_gau8a() }
 
 fire_gau8a = func {
-	# FIXME: we need some juice and hyd pressure.
+	# FIXME: we need juice and hyd pressure.
 	var gready = gun_ready.getValue();
 	var count = remaining_rounds.getValue();
 	if ( gready and count > 0 ) {
@@ -59,29 +59,50 @@ cfire_gau8a = func {
 
 # station selection
 # -----------------
-# FIXME: severals station could be selected at the same time, povided they are loaded
-# with the same weapon type. For now, use only one at a time.
+# Selects one or several stations. Each has to be loaded with the same type of
+# ordnance. Selecting a new station loaded with a different type deselects the
+# former ones. Selecting  an allready selected station deselect it.
+# Activates the search sound flag for AIM-9s (wich will be played only if the AIM-9
+# knob is on the correct position). Ask for deactivation of the search sound flag
+# in case of station deselection.
 var stations = props.globals.getNode("sim/model/A-10/weapons/stations");
 var stations_list = stations.getChildren("station");
-
+var aim9_knob = a10weapons.getNode("dual-AIM-9/aim9-knob");
+var aim9_sound = a10weapons.getNode("dual-AIM-9/search-sound");
+var cdesc = "";
 
 select_station = func {
 	var target_idx = arg[0];
 	setprop("controls/armament/station-select", target_idx);
-	foreach (var station; stations_list) {
-		idx = station.getIndex();
+	var desc_node = "sim/model/A-10/weapons/stations/station[" ~ target_idx ~ "]/description";
+	cdesc = props.globals.getNode(desc_node).getValue();
+	var sel_list = props.globals.getNode("sim/model/A-10/weapons/selected-stations");
+	foreach (var s; stations_list) {
+		idx = s.getIndex();
+		var sdesc = s.getNode("description").getValue();
+		var ssel = s.getNode("selected");
+		var tsnode = "s" ~ idx;
 		if ( idx == target_idx ) {
-			if (station.getNode("selected").getValue() == 1) {
-				station.getNode("selected").setBoolValue(0);
+			if (ssel.getBoolValue()) {
+				ssel.setBoolValue(0);
+				sel_list.removeChildren(tsnode);
+				if ( sdesc == "dual-AIM-9" ) {
+					deactivate_aim9_sound();
+				}
 			} else {
-				station.getNode("selected").setBoolValue(1);
+				ssel.setBoolValue(1);
+				var ts = sel_list.getNode(tsnode, 1);
+				ts.setValue(target_idx);
+				if ( sdesc == "dual-AIM-9") {
+					aim9_sound.setBoolValue(1);
+				}
 			}
-		} else {
-			station.getNode("selected").setBoolValue(0);
-			station.getNode("ready-0").setBoolValue(0);
-			station.getNode("ready-1").setBoolValue(0);
-			station.getNode("ready-2").setBoolValue(0);
-			station.getNode("error").setBoolValue(0);
+		} elsif ( cdesc != sdesc ) {
+			ssel.setBoolValue(0);
+			sel_list.removeChildren(tsnode);
+			if ( sdesc == "dual-AIM-9" ) {
+				deactivate_aim9_sound();
+			}
 		}
 	}
 }
@@ -89,62 +110,92 @@ select_station = func {
 
 # station release
 # ---------------
-var dual_aim9 = a10weapons.getNode("dual-AIM-9");
-var aim9_knob = dual_aim9.getNode("aim9-knob");
-var rlock =  a10weapons.getNode("release_lock");
-
-setlistener("controls/gear/brake-left", func {
-	setprop("sim/model/A-10/weapons/release-switch", cmdarg().getBoolValue());
-	release();
-	settimer( release_unlock, 2);
-});
+# Handles ripples and intervales.
+# Handles the avaibality lights (3 green lights each station).
+# LAU-68, with 7 ammos by station turns only one light until the dispenser is empty.
+# Releases and substract the released weight from the station weight.
+# Ask for deactivation of the search sound flag after the last AIM-9 has been released.
+var sl_list = 0;
 
 release = func {
-	sel_s = getprop("controls/armament/station-select");
-	avail = props.globals.getNode("sim/model/A-10/weapons/stations/station[" ~ sel_s ~ "]/available");
 	var arm_volts = props.globals.getNode("systems/electrical/R-AC-volts").getValue();
 	var asw = arm_sw.getValue();
-	if ( asw == 1 and arm_volts > 24 )	{
-		# release aim-9 if station #11 is selected 
-		if (( sel_s == 10 ) and ( aim9_knob.getValue() == 2 )) {
-			aim9s = props.globals.getNode("sim/model/A-10/weapons/dual-AIM-9", 1).getChildren("aim9");
-			foreach (var aim9; aim9s) {
-				rlk = rlock.getValue();
+	if ( asw != 1 or arm_volts < 24 )	{ return; }
+	sl_list = a10weapons.getNode("selected-stations").getChildren();
+	var rip = a10weapons.getNode("rip").getValue();
+	var interval = a10weapons.getNode("interval").getValue();
+	# FIXME: riple compatible release types should be defined in the foo-set.file 
+	if ( cdesc == "LAU-68") {
+		var rip_counter = rip;
+		release_operate(rip_counter, interval);
+	} else {
+		release_operate(1, interval);
+	}
+}
+
+release_operate = func(rip_counter, interval) {
+	foreach(sl; sl_list) {
+		var slidx = sl.getValue();
+		var s_node = "sim/model/A-10/weapons/stations/station[" ~ slidx ~ "]";		
+		var s = props.globals.getNode(s_node);
+		var wght = s.getNode("weight-lb").getValue();
+		var awght = s.getNode("ammo-weight-lb").getValue();
+		if ( cdesc == "LAU-68" ) { var lau68ready = s.getNode("ready-0"); } 
+		var avail = s.getNode("available");
+		var a = avail.getValue();
+		if ( a != 0 ) {
+			if ( cdesc == "dual-AIM-9"  and aim9_knob.getValue() != 2 ) { return; }
+			turns = a10weapons.getNode(cdesc).getNode("available").getValue();
+			for( i = 0; i <= turns; i = i + 1 ) {
+				var it = cdesc ~ "/trigger[" ~ i ~"]";
+				var itrigger = s.getNode(it);
+				var iready_node = "ready-" ~ i;
 				var a = avail.getValue();
-				trigger = aim9.getNode("trigger", 1).getBoolValue();
-				if ( ! trigger and rlk == 0  and a > 0 ) {
-					aim9.getNode("trigger", 1).setBoolValue(1);
-					rlock.setValue(1);
-					avail.setValue( a - 1 );
+				if ( cdesc != "LAU-68" ) { var iready = s.getNode(iready_node); }
+				var t = itrigger.getBoolValue();
+				if ( !t and a > 0) {
+					itrigger.setBoolValue(1);
+					a -= 1;
+					avail.setValue(a);
+					rip_counter -= 1;
+					wght -= awght;
+					s.getNode("weight-lb").setValue(wght);
+					if ( cdesc != "LAU-68" ) { iready.setBoolValue(0); }
+					if ( a == 0 ) {
+						if ( cdesc == "LAU-68" ) {
+							lau68ready.setBoolValue(0);
+						} elsif ( cdesc == "dual-AIM-9" ) {
+							deactivate_aim9_sound();
+						}
+						s.getNode("error").setBoolValue(1);
+					}
+					if (rip_counter > 0 ) {
+						settimer( func { release_operate(rip_counter, interval); }, interval);
+					}
+					return;
 				}
 			}
 		}
 	}
 }
 
-release_unlock = func {
-	# FIXME: a mod-up binding for unlock would be better...
-	rlock.setBoolValue(0);
-}
 
-
-# station load
-# ------------
-station_load = func(s, type) {
-	var weight = type.getNode("weight-lb").getValue();
-	var desc = type.getNode("description").getValue();
-	var avail = type.getNode("available").getValue();
-	s.getNode("weight-lb").setValue(weight);
-	s.getNode("description").setValue(desc);
-	s.getNode("available").setValue(avail);
-}
-# station unload
-# ---------------
-station_unload = func(s) {
-	# FIXME: we should update the lights on armament panel.
-	s.getNode("weight-lb").setValue(0);
-	s.getNode("description").setValue("none");
-	s.getNode("available").setValue(0);
+# Searchs if there isn't a remainning AIM-9 on a selected station before
+# deactivating the search sound flag.
+deactivate_aim9_sound = func {
+	aim9_sound.setBoolValue(0);
+	var a = 0;
+	foreach (s; stations.getChildren("station")) {
+		var ssel = s.getNode("selected").getBoolValue();
+		var desc = s.getNode("description").getValue();
+		var avail = s.getNode("available");
+		if ( ssel and desc == "dual-AIM-9"  ) {
+			a += avail.getValue();
+		}
+		if ( a ) {
+			aim9_sound.setBoolValue(1);
+		}
+	}
 }
 
 
@@ -174,6 +225,67 @@ setlistener("/sim/signals/fdm-initialized", func {
 	config_dialog = gui.Dialog.new("/sim/gui/dialogs/A-10/config/dialog",
 		"Aircraft/A-10/Dialogs/config.xml");
 });
+
+
+# station load
+# ------------
+# Sets the station properties from the type definition in the current station.
+# Prepares the error light or the 3 ready lights, then sets to false the
+# necessary number of triggers (useful in the case of the submodels weren't
+# already defined). Each type of submodel has its own node inside each station
+# node containing the triggers.
+station_load = func(s, type) {
+	var weight = type.getNode("weight-lb").getValue();
+	var ammo_weight = type.getNode("ammo-weight-lb").getValue();
+	var desc = type.getNode("description").getValue();
+	var avail = type.getNode("available").getValue();
+	var readyn = type.getNode("ready-number").getValue();
+	s.getNode("weight-lb").setValue(weight);
+	s.getNode("ammo-weight-lb").setValue(ammo_weight);
+	s.getNode("description").setValue(desc);
+	s.getNode("available").setValue(avail);
+	if ( readyn == 0 ) {
+		# non-armable payload case. (ECM pod, external tank...)
+		s.getNode("error").setBoolValue(1);
+		return;
+	} else {
+		s.getNode("error").setBoolValue(0);
+	}
+	if ( readyn == 1 ) {
+		# single ordnance case.
+		s.getNode("ready-0").setBoolValue(1);
+	} elsif( readyn == 2 ) {
+		# double ordnance case
+		s.getNode("ready-0").setBoolValue(1);
+		s.getNode("ready-1").setBoolValue(1);
+	} else {
+		# triple ordnance case
+		s.getNode("ready-0").setBoolValue(1);
+		s.getNode("ready-1").setBoolValue(1);
+		s.getNode("ready-2").setBoolValue(1);
+	} 
+	for( i = 0; i < avail; i = i + 1 ) {
+		# FIXME: here to add submodels reload
+		itrigger_node = desc ~ "/trigger[" ~ i ~ "]";
+		t = s.getNode(itrigger_node, 1);
+		t.setBoolValue(0);
+	}
+}
+
+
+# station unload
+# --------------
+station_unload = func(s) {
+	s.getNode("weight-lb").setValue(0);
+	s.getNode("ammo-weight-lb").setValue(0);
+	desc = s.getNode("description").getValue();
+	s.getNode("description").setValue("none");
+	s.getNode("available").setValue(0);
+	s.getNode("ready-0").setBoolValue(0);
+	s.getNode("ready-1").setBoolValue(0);
+	s.getNode("ready-2").setBoolValue(0);
+	s.getNode("error").setBoolValue(1);
+}
 
 
 # Armament panel switches

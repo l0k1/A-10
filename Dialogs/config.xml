@@ -30,6 +30,7 @@
 			<height>25</height>
 			<property>/sim/model/A-10/weapons/stations/station[0]/description</property>
 			<value>AN-ALQ-131</value>
+			<value>dual-AIM-9</value>
 			<value>none</value>
 		</combo>
 	</group>
@@ -238,11 +239,11 @@
 				<command>dialog-apply</command>
 			</binding>
 			<binding>
-				<command>dialog-close</command>
+				<command>property-toggle</command>
+				<property>sim/model/A-10/weapons/stations-change-flag</property>
 			</binding>
 			<binding>
-				<command>property-toggle</command>
-				<property>sim/model/A-10/weapons/change</property>
+				<command>dialog-close</command>
 			</binding>
 		</button>
 		<button>

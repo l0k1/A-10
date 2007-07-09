@@ -1,0 +1,93 @@
+A-10 Armament - 07/09/2007
+
+
+Loading Weapons:
+----------------
+
+The GAU-8A gun barrel is automatically loaded at startup. All you can do is
+empty the barrel while shooting like a fool on each cow you gonna have on sight!
+
+
+To load external stores:
+------------------------
+Actually there is only a short set of available ordnances and special loads.
+- AN-ALQ-131: it's an ECM pod, available on pylon #1 only.
+- Dual AIM-9: Air to Air infrared guided missiles.
+Available on pylons #1 and 11.
+- LAU-68: Seven Wili Pete rockets dispenser.
+Available on Pylons #2, 3, 4, 8, 9 and 10.
+
+You can choose to load a set of them by calling the armament dialog. Press the
+'Tab' key or 'Ctrl-i'.
+
+Once you hit the Apply or the OK button, the load will be loaded. You can choose
+a set of weapons, apply the dialog, then call the dialog again and change the
+choice you made. But once you have fired one ordnance, trying to change the set,
+or just re-apply the load can produce unexpected results as the submodels
+reloading is not completely handled yet.
+
+The armament dialog and the loading of ordnances is independant of the aircraft
+state, that is you don't need to start the engines or any electrical stuff to
+load a weapon on a pylon.
+
+Note: selecting external tanks on pylons #3 and 8 can interfer with LAU-68 loads
+on the same pylons, expect unexpected behaviour when using an external tank and
+LAU-68 on the same panel :) (this has to be fixed).
+
+Enabling weapons use:
+---------------------
+- You first need electrical power on the armament system, that means having at
+least the APU running and the APU generator set to on. Note that the gun
+remaining rounds (blue lighted) will show up when the armament panel is powered.
+- Then switch the armament systen on: Master ARM switch - up position.
+
+
+Using the gun:
+--------------
+That should be impossible when being still on ground, that is with Weight on
+Wheels (WoW). But as we are still working on it, it is exceptionally permitted
+until futher DoD decision.
+- Switch the gun switch on, up position. A green 'Gun Ready' light should go
+on. (Located above the RWR).
+- press 'e' key to trigger the gun.
+
+
+Using the external weapons:
+---------------------------
+As for the gun that should be impossible when being still on ground but it is
+also exceptionally permitted until futher DoD decision.
+
+To select (arm) a weapon you first need to activate the armament panel:
+- Select one or several stations, (provided they are loaded with the
+same type of ordnance) by click on the pylons buttons.
+- Selecting a new station loaded with a different type deselects the former
+ones. Selecting  an already selected station deselect it.
+
+The lights on each station button have a different behaviour depending on the
+type of ordnance attached to it.
+- AN-ALQ-131: ECM pod, the error light will go on if selected.
+- Dual AIM-9: 2 missiles, 2 green lights go on. They indicate that 2 missiles
+are available. AIM-9s needs also the AIM-9 knob to be set to 'set' in order
+to be selected (armed). that activates also the search sound.
+- LAU-68: 7 rockets, 1 green light. It indicates that there is one or more
+available rocket in the dispenser.
+
+Excepted the case of an AN-ALQ-131 load, the error light means that there isn't
+any ordnance loaded on the selected station or that all ordnances on this
+station ave been already released.
+
+LAU-68 and (later) other balistic ordnances are released in ripple. The quantity
+is settable on the armament panel left side counter (when set to 0, one ordnance
+is released as when set to 1). The time interval between releases is set on the
+right counter wich is msec x10.
+
+To release a selected weapon, press ',' key.
+
+That's all folks, enjoy !
+
+
+
+
+
+
+

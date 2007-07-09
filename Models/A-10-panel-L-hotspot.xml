@@ -193,6 +193,74 @@
           </binding>
         </action>
 
+        <!-- ripples counter -->
+        <action> 
+          <name>rip-down</name>
+          <button>0</button>
+          <x>-17</x>
+          <y>-275</y>
+          <w>27</w>
+          <h>40</h>
+          <binding> 
+            <command>property-adjust</command>
+            <property>sim/model/A-10/weapons/rip</property>
+            <step>-1</step>
+            <min>0</min>
+            <max>99</max>
+            <wrap>false</wrap>
+          </binding>
+        </action>
+        <action> 
+          <name>rip-up</name>
+          <button>0</button>
+          <x>15</x>
+          <y>-275</y>
+          <w>27</w>
+          <h>40</h>
+          <binding> 
+            <command>property-adjust</command>
+            <property>sim/model/A-10/weapons/rip</property>
+            <step>1</step>
+            <min>0</min>
+            <max>99</max>
+            <wrap>false</wrap>
+          </binding>
+        </action>
+
+        <!-- interval counter -->
+        <action> 
+          <name>interval-down</name>
+          <button>0</button>
+          <x>420</x>
+          <y>-275</y>
+          <w>27</w>
+          <h>40</h>
+          <binding> 
+            <command>property-adjust</command>
+            <property>sim/model/A-10/weapons/interval</property>
+            <step>-0.01</step>
+            <min>0.0</min>
+            <max>1</max>
+            <wrap>false</wrap>
+          </binding>
+        </action>
+        <action> 
+          <name>interval-up</name>
+          <button>0</button>
+          <x>452</x>
+          <y>-275</y>
+          <w>27</w>
+          <h>40</h>
+          <binding> 
+            <command>property-adjust</command>
+            <property>sim/model/A-10/weapons/interval</property>
+            <step>0.01</step>
+            <min>0.0</min>
+            <max>1</max>
+            <wrap>false</wrap>
+          </binding>
+        </action>
+
         <!-- Aim-9 knob -->
         <action> 
           <name>aim-9-knob-cw</name>

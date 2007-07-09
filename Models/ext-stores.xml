@@ -13,37 +13,10 @@
 	</model>	
 
 	<model>
-		<name>AIM-9-inside</name>
-		<path>Aircraft/A-10/Models/aim-9-inside.xml</path>
-		<offsets> 
-			<x-m>7.2544</x-m>
-			<y-m>5.5920</y-m>
-			<z-m>-0.14</z-m>
-			<pitch-deg>-3</pitch-deg>
-		</offsets>
-	</model>	
-	<model>
-		<name>AIM-9-ouside</name>
-		<path>Aircraft/A-10/Models/aim-9-outside.xml</path>
-		<offsets> 
-			<x-m>7.2544</x-m>
-			<y-m>6.2160</y-m>
-			<z-m>-0.14</z-m>
-			<pitch-deg>-3</pitch-deg>
-			<roll-deg>-7</roll-deg>
-		</offsets>
-	</model>	
-	<model>
 		<name>AIM-9-dual-launcher</name>
 		<path>Aircraft/A-10/Models/aim-9-dual-launcher.xml</path>
-		<offsets> 
-			<x-m>7.0800</x-m>
-			<y-m>5.9040</y-m>
-			<z-m>-0.1400</z-m>
-			<pitch-deg>-3</pitch-deg>
-			<roll-deg>7</roll-deg>
-		</offsets>
 	</model>
+
 
 	<model>
 		<path>Aircraft/A-10/Models/Stores/LAU-68/LAU-68.xml</path>

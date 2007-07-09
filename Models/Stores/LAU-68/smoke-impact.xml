@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<path>puff-impact.ac</path>
+
+	<animation>
+		<type>billboard</type>
+		<object-name>puff</object-name>
+		<spherical>true</spherical>
+	</animation>
+
+	<animation>
+		<type>scale</type>
+		<use-personality>true</use-personality>
+		<property>sim/time/elapsed-sec</property>
+		<x-min>0.3</x-min>
+		<y-min>0.3</y-min>
+		<z-min>0.3</z-min>
+		<x-factor>0.05</x-factor>
+		<y-factor>0.05</y-factor>
+		<z-factor>0.05</z-factor>
+	</animation>
+
+	<!--<animation>
+		<type>blend</type>
+		<object-name>puff</object-name>
+		<use-personality>true</use-personality>
+		<property>sim/time/elapsed-sec</property>
+		<factor>0.035</factor>
+		<min>0.05</min>
+		<max>1.0</max>
+	</animation>-->
+
+	<animation>
+		<type>material</type>
+		<object-name>puff</object-name>
+		<use-personality>true</use-personality>
+		<emission>
+			<red>0.60</red>
+			<green>0.60</green>
+			<blue>0.60</blue>
+		</emission>
+	</animation>
+
+
+</PropertyList>

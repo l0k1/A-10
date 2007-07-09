@@ -126,34 +126,37 @@ Fairchild A-10 simulation config.
 					<stations-change-flag type="bool">0</stations-change-flag>
 					<master-arm-switch type="int">0</master-arm-switch>
 					<gun-rate-switch type="int">0</gun-rate-switch>
-					<release-switch type="bool">false</release-switch>
 					<release_lock type="bool">0</release_lock>
 					<station-light-test type="bool">false</station-light-test>
+					<selected-stations></selected-stations>
+					<rip type="int">3</rip>
+					<interval type="float">0.08</interval>
 
 					<AN-ALQ-131>
 						<description type="string">AN-ALQ-131</description>
 						<weight-lb type="float">535</weight-lb>
+						<ammo-weight-lb type="float">0</ammo-weight-lb>
 						<available type="int">1</available>
+						<ready-number>0</ready-number>
 					</AN-ALQ-131>
 
 					<dual-AIM-9>
 						<description type="string">dual-AIM-9</description>
+						<weight-lb type="float">612</weight-lb>
+						<ammo-weight-lb type="float">191</ammo-weight-lb>
 						<aim9-knob type="int">0</aim9-knob>
 						<available type="int">2</available>
-						<aim9 n="0">
-							<trigger type="bool">false</trigger>
-						</aim9>
-						<aim9 n="1">
-							<trigger type="bool">false</trigger>
-						</aim9>
+						<ready-number>2</ready-number>
+						<search-sound type="bool">false</search-sound>
 						<reticle-diam type="int">20</reticle-diam>
-						<weight-lb type="float">612</weight-lb>
 					</dual-AIM-9>
 
 					<LAU-68>
 						<description type="string">LAU-68</description>
 						<weight-lb type="float">202.5</weight-lb>
+						<ammo-weight-lb type="float">23.9</ammo-weight-lb>
 						<available type="int">7</available>
+						<ready-number>1</ready-number>
 					</LAU-68>
 
 					<gun>
@@ -162,114 +165,125 @@ Fairchild A-10 simulation config.
 					</gun>
 					<stations>
 						<station n="0">
-							<ready-0 type="bool">0</ready-0>
-							<ready-1 type="bool">0</ready-1>
-							<ready-2 type="bool">0</ready-2>
-							<error type="bool">0</error>
-							<weight-lb type="float">535</weight-lb>
+							<ammo-weight-lb type="float">0</ammo-weight-lb>
+							<available type="int">0</available>
+							<description type="string">none</description>
+							<error type="bool">true</error>
+							<ready-0 type="bool">false</ready-0>
+							<ready-1 type="bool">false</ready-1>
+							<ready-2 type="bool">false</ready-2>
 							<selected type="bool">false</selected>
-							<description type="string">AN-ALQ-131</description>
-							<available type="int">1</available>
+							<weight-lb type="float">0</weight-lb>
 						</station>
 						<station n="1">
-							<ready-0 type="bool">0</ready-0>
-							<ready-1 type="bool">0</ready-1>
-							<ready-2 type="bool">0</ready-2>
-							<error type="bool">0</error>
-							<weight-lb type="float">0</weight-lb>
-							<selected type="bool">false</selected>
-							<description type="string">none</description>
+							<ammo-weight-lb type="float">0</ammo-weight-lb>
 							<available type="int">0</available>
+							<description type="string">none</description>
+							<error type="bool">true</error>
+							<ready-0 type="bool">false</ready-0>
+							<ready-1 type="bool">false</ready-1>
+							<ready-2 type="bool">false</ready-2>
+							<selected type="bool">false</selected>
+							<weight-lb type="float">0</weight-lb>
 						</station>
 						<station n="2">
-							<ready-0 type="bool">0</ready-0>
-							<ready-1 type="bool">0</ready-1>
-							<ready-2 type="bool">0</ready-2>
-							<error type="bool">0</error>
-							<weight-lb type="float">0</weight-lb>
-							<selected type="bool">false</selected>
-							<description type="string">none</description>
+							<ammo-weight-lb type="float">0</ammo-weight-lb>
 							<available type="int">0</available>
+							<description type="string">none</description>
+							<error type="bool">true</error>
+							<ready-0 type="bool">false</ready-0>
+							<ready-1 type="bool">false</ready-1>
+							<ready-2 type="bool">false</ready-2>
+							<selected type="bool">false</selected>
+							<weight-lb type="float">0</weight-lb>
 						</station>
 						<station n="3">
-							<ready-0 type="bool">0</ready-0>
-							<ready-1 type="bool">0</ready-1>
-							<ready-2 type="bool">0</ready-2>
-							<error type="bool">0</error>
-							<weight-lb type="float">0</weight-lb>
-							<selected type="bool">false</selected>
-							<description type="string">none</description>
+							<ammo-weight-lb type="float">0</ammo-weight-lb>
 							<available type="int">0</available>
+							<description type="string">none</description>
+							<error type="bool">true</error>
+							<ready-0 type="bool">false</ready-0>
+							<ready-1 type="bool">false</ready-1>
+							<ready-2 type="bool">false</ready-2>
+							<selected type="bool">false</selected>
+							<weight-lb type="float">0</weight-lb>
 						</station>
 						<station n="4">
-							<ready-0 type="bool">0</ready-0>
-							<ready-1 type="bool">0</ready-1>
-							<ready-2 type="bool">0</ready-2>
-							<error type="bool">0</error>
-							<weight-lb type="float">0</weight-lb>
-							<selected type="bool">false</selected>
-							<description type="string">none</description>
+							<ammo-weight-lb type="float">0</ammo-weight-lb>
 							<available type="int">0</available>
+							<description type="string">none</description>
+							<error type="bool">true</error>
+							<ready-0 type="bool">false</ready-0>
+							<ready-1 type="bool">false</ready-1>
+							<ready-2 type="bool">false</ready-2>
+							<selected type="bool">false</selected>
+							<weight-lb type="float">0</weight-lb>
 						</station>
 						<station n="5">
-							<ready-0 type="bool">0</ready-0>
-							<ready-1 type="bool">0</ready-1>
-							<ready-2 type="bool">0</ready-2>
-							<error type="bool">0</error>
-							<weight-lb type="float">0</weight-lb>
-							<selected type="bool">false</selected>
-							<description type="string">none</description>
+							<ammo-weight-lb type="float">0</ammo-weight-lb>
 							<available type="int">0</available>
+							<description type="string">none</description>
+							<error type="bool">true</error>
+							<ready-0 type="bool">false</ready-0>
+							<ready-1 type="bool">false</ready-1>
+							<ready-2 type="bool">false</ready-2>
+							<selected type="bool">false</selected>
+							<weight-lb type="float">0</weight-lb>
 						</station>
 						<station n="6">
-							<ready-0 type="bool">0</ready-0>
-							<ready-1 type="bool">0</ready-1>
-							<ready-2 type="bool">0</ready-2>
-							<error type="bool">0</error>
-							<weight-lb type="float">0</weight-lb>
-							<selected type="bool">false</selected>
-							<description type="string">none</description>
+							<ammo-weight-lb type="float">0</ammo-weight-lb>
 							<available type="int">0</available>
+							<description type="string">none</description>
+							<error type="bool">true</error>
+							<ready-0 type="bool">false</ready-0>
+							<ready-1 type="bool">false</ready-1>
+							<ready-2 type="bool">false</ready-2>
+							<selected type="bool">false</selected>
+							<weight-lb type="float">0</weight-lb>
 						</station>
 						<station n="7">
-							<ready-0 type="bool">0</ready-0>
-							<ready-1 type="bool">0</ready-1>
-							<ready-2 type="bool">0</ready-2>
-							<error type="bool">0</error>
-							<weight-lb type="float">0</weight-lb>
-							<selected type="bool">false</selected>
-							<description type="string">none</description>
+							<ammo-weight-lb type="float">0</ammo-weight-lb>
 							<available type="int">0</available>
+							<description type="string">none</description>
+							<error type="bool">true</error>
+							<ready-0 type="bool">false</ready-0>
+							<ready-1 type="bool">false</ready-1>
+							<ready-2 type="bool">false</ready-2>
+							<selected type="bool">false</selected>
+							<weight-lb type="float">0</weight-lb>
 						</station>
 						<station n="8">
-							<ready-0 type="bool">0</ready-0>
-							<ready-1 type="bool">0</ready-1>
-							<ready-2 type="bool">0</ready-2>
-							<error type="bool">0</error>
-							<weight-lb type="float">0</weight-lb>
-							<selected type="bool">false</selected>
-							<description type="string">none</description>
+							<ammo-weight-lb type="float">0</ammo-weight-lb>
 							<available type="int">0</available>
+							<description type="string">none</description>
+							<error type="bool">true</error>
+							<ready-0 type="bool">false</ready-0>
+							<ready-1 type="bool">false</ready-1>
+							<ready-2 type="bool">false</ready-2>
+							<selected type="bool">false</selected>
+							<weight-lb type="float">0</weight-lb>
 						</station>
 						<station n="9">
-							<ready-0 type="bool">0</ready-0>
-							<ready-1 type="bool">0</ready-1>
-							<ready-2 type="bool">0</ready-2>
-							<error type="bool">0</error>
-							<weight-lb type="float">0</weight-lb>
-							<selected type="bool">false</selected>
-							<description type="string">none</description>
+							<ammo-weight-lb type="float">0</ammo-weight-lb>
 							<available type="int">0</available>
+							<description type="string">none</description>
+							<error type="bool">true</error>
+							<ready-0 type="bool">false</ready-0>
+							<ready-1 type="bool">false</ready-1>
+							<ready-2 type="bool">false</ready-2>
+							<selected type="bool">false</selected>
+							<weight-lb type="float">0</weight-lb>
 						</station>
 						<station n="10">
-							<ready-0 type="bool">0</ready-0>
-							<ready-1 type="bool">0</ready-1>
-							<ready-2 type="bool">0</ready-2>
-							<error type="bool">0</error>
-							<weight-lb type="float">612</weight-lb>
+							<ammo-weight-lb type="float">0</ammo-weight-lb>
+							<available type="int">0</available>
+							<description type="string">none</description>
+							<error type="bool">true</error>
+							<ready-0 type="bool">false</ready-0>
+							<ready-1 type="bool">false</ready-1>
+							<ready-2 type="bool">false</ready-2>
 							<selected type="bool">false</selected>
-							<description type="string">dual-AIM-9</description>
-							<available type="int">2</available>
+							<weight-lb type="float">0</weight-lb>
 						</station>
 					</stations>
 				</weapons>
@@ -414,15 +428,11 @@ Fairchild A-10 simulation config.
 			<title>Fairchild A-10</title>
 			<key>
 				<name>Ctrl-I</name>
-				<desc>open/close A-10 weapons dialog</desc>
+				<desc>Open/close A-10 weapons dialog</desc>
 			</key>
 			<key>
 				<name>C</name>
-				<desc>open/close canopy</desc>
-			</key>
-			<key>
-				<name>d/f</name>
-				<desc>retract/extend slats</desc>
+				<desc>Open/close canopy</desc>
 			</key>
 			<key>
 				<name>e</name>
@@ -430,26 +440,26 @@ Fairchild A-10 simulation config.
 			</key>
 			<key>
 				<name>,</name>
-				<desc>release weapons on selected pylon</desc>
+				<desc>Release weapons on selected pylon</desc>
 			</key>
 			<key>
 				<name>j/k</name>
-				<desc>decrease/increase spoilers</desc>
+				<desc>Decrease/increase spoilers</desc>
 			</key>
 			<key>
 				<name>K</name>
-				<desc>toggle trajectory markers</desc>
+				<desc>Toggle trajectory markers</desc>
 			</key>
 			<key>
 				<name>U</name>
-				<desc>update drop view position</desc>
+				<desc>Update drop view position</desc>
 			</key>
 			<line>Top Speed:      380 kt @ 15000 ft)</line>
 			<line>______________________________________________</line>
 			<line>External fuel tanks ?</line>
 			<line>  Menu > Equipment > Fuel and Payload</line>
 			<line>______________________________________________</line>
-			<line>External stores ?   (ECM Pod, AIM-9)</line>
+			<line>External stores ?   (ECM Pod, AIM-9, LAU-68)</line>
 			<line>  Ctrl-I or Tab key</line>
 			<line>______________________________________________</line>
 			<line>How to start it ?</line>
@@ -493,21 +503,20 @@ Fairchild A-10 simulation config.
 					<script>A10weapons.config_dialog.toggle()</script>
 				</binding>
 			</key>
+			<key n="44">
+				<name>,</name>
+				<desc>Left brake</desc>
+				<binding>
+					<command>nasal</command>
+					<script>A10weapons.release()</script>
+				</binding>
+			</key>
 			<key n="67">
 				<name>C</name>
 				<desc>Toggle canopy on or off</desc>
 				<binding>
 				   <command>nasal</command>
 				   <script>canopy.canopy_switch(2)</script>
-				</binding>
-			</key>
-			<key n="100">
-				<name>d</name>
-				<desc>Retract Slats.</desc>
-				<binding>
-					<command>property-adjust</command>
-					<property>controls/flight/slats</property>
-					<step type="double">-0.25</step>
 				</binding>
 			</key>
 			<key n="101">

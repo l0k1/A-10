@@ -16,7 +16,7 @@
 				<value>dual-AIM-9</value>
 			</equals>
 			<not>
-				<property>sim/model/A-10/weapons/dual-AIM-9/aim9[0]/trigger</property>
+				<property>sim/model/A-10/weapons/stations/station[10]/trigger[1]</property>
 			</not>
 		</condition>
 	</animation>	
