@@ -75,7 +75,7 @@ Fairchild A-10 simulation config.
 		</view>
 		<view n="2">
 			<config>
-				<x-offset-m archive="y" type="double">6.0</x-offset-m>
+				<y-offset-m archive="y" type="double">6.0</y-offset-m>
 				<z-offset-m archive="y">-19.7</z-offset-m>
 				<target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
 			</config>
