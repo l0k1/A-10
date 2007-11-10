@@ -92,7 +92,7 @@
 
 	<submodel>
 		<name>aim-9-0-0</name>
-		<model>Aircraft/A-10/Models/aim-9smoke.xml</model>
+		<model>Aircraft/A-10/Models/Stores/AIM-9/aim-9smoke.xml</model>
 		<trigger>sim/model/A-10/weapons/stations/station[0]/dual-AIM-9/trigger[1]</trigger>
 		<speed>300</speed>
 		<repeat>false</repeat>
@@ -105,14 +105,14 @@
 		<pitch-offset>1</pitch-offset>
 		<cd>0</cd>
 		<weight>191</weight>
-		<eda>0.000001</eda>
+		<eda>2.81</eda>
 		<life>25</life>
 		<buoyancy>31</buoyancy>
 		<aero-stabilised>true</aero-stabilised>
 	</submodel>
 	<submodel>
 		<name>aim-9-0-1</name>
-		<model>Aircraft/A-10/Models/aim-9smoke.xml</model>
+		<model>Aircraft/A-10/Models/Stores/AIM-9/aim-9smoke.xml</model>
 		<trigger>sim/model/A-10/weapons/stations/station[0]/dual-AIM-9/trigger[0]</trigger>
 		<speed>300</speed>
 		<repeat>false</repeat>
@@ -132,7 +132,7 @@
 	</submodel>
 	<submodel>
 		<name>aim-9-10-0</name>
-		<model>Aircraft/A-10/Models/aim-9smoke.xml</model>
+		<model>Aircraft/A-10/Models/Stores/AIM-9/aim-9smoke.xml</model>
 		<trigger>sim/model/A-10/weapons/stations/station[10]/dual-AIM-9/trigger[0]</trigger>
 		<speed>300</speed>
 		<repeat>false</repeat>
@@ -152,7 +152,7 @@
 	</submodel>
 	<submodel>
 		<name>aim-9-10-1</name>
-		<model>Aircraft/A-10/Models/aim-9smoke.xml</model>
+		<model>Aircraft/A-10/Models/Stores/AIM-9/aim-9smoke.xml</model>
 		<trigger>sim/model/A-10/weapons/stations/station[10]/dual-AIM-9/trigger[1]</trigger>
 		<speed>300</speed>
 		<repeat>false</repeat>
@@ -175,7 +175,7 @@
 		<model>Aircraft/A-10/Models/Stores/LAU-68/wp.xml</model>
 		<speed>300</speed>
 		<repeat>false</repeat>
-		<delay>0.1</delay>
+		<delay>0</delay>
 		<count>1</count>
 		<x-offset>-25.1808</x-offset>
 		<yaw-offset>0</yaw-offset>
@@ -1249,5 +1249,603 @@
 		<submodel-path alias="../../LAU-68/submodel-path"/>
 	</submodel>
 
+	<MK-82-LD>
+		<model>Aircraft/A-10/Models/Stores/MK-82/MK-82-LD.xml</model>
+		<speed>0</speed>
+		<repeat>false</repeat>
+		<delay>0.1</delay>
+		<count>1</count>
+		<x-offset>-25.1808</x-offset>
+		<yaw-offset>0</yaw-offset>
+		<pitch-offset>-2</pitch-offset>
+		<cd>0.045</cd>
+		<weight>500</weight>
+		<eda>2.81</eda>
+		<life>25</life>
+		<buoyancy>0</buoyancy>
+		<aero-stabilised>true</aero-stabilised>
+		<collision>true</collision>
+		<collision-report>sim/ai/aircraft/collision/cannon</collision-report>
+		<impact>true</impact>
+		<impact-report>sim/ai/aircraft/impact/droptank</impact-report>
+		<submodel-path>Aircraft/A-10/Models/Stores/MK-82/MK-82-submodels.xml</submodel-path>
+	</MK-82-LD>
+
+	<submodel>
+		<name>MK-82-LD-ter-2-0</name>
+		<model alias="../../MK-82-LD/model"/>
+		<trigger>sim/model/A-10/weapons/stations/station[2]/triple-MK-82-LD/trigger[0]</trigger>
+		<speed alias="../../MK-82-LD/speed"/>
+		<repeat alias="../../MK-82-LD/repeat"/>
+		<delay alias="../../MK-82-LD/delay"/>
+		<count alias="../../MK-82-LD/count"/>
+		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<y-offset>-12.8343</y-offset>
+		<z-offset>-1.6936</z-offset>
+		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
+		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
+		<cd alias="../../MK-82-LD/cd"/>
+		<weight alias="../../MK-82-LD/weight"/>
+		<eda alias="../../MK-82-LD/eda"/>
+		<life alias="../../MK-82-LD/life"/>
+		<buoyancy alias="../../MK-82-LD/buoyancy"/>
+		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
+		<collision alias="../../MK-82-LD/buoyancy"/>
+		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<impact alias="../../MK-82-LD/impact"/>
+		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+	</submodel>
+	<submodel>
+		<name>MK-82-LD-ter-2-1</name>
+		<model alias="../../MK-82-LD/model"/>
+		<trigger>sim/model/A-10/weapons/stations/station[2]/triple-MK-82-LD/trigger[1]</trigger>
+		<speed alias="../../MK-82-LD/speed"/>
+		<repeat alias="../../MK-82-LD/repeat"/>
+		<delay alias="../../MK-82-LD/delay"/>
+		<count alias="../../MK-82-LD/count"/>
+		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<y-offset>-11.9081</y-offset>
+		<z-offset>-2.5866</z-offset>
+		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
+		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
+		<cd alias="../../MK-82-LD/cd"/>
+		<weight alias="../../MK-82-LD/weight"/>
+		<eda alias="../../MK-82-LD/eda"/>
+		<life alias="../../MK-82-LD/life"/>
+		<buoyancy alias="../../MK-82-LD/buoyancy"/>
+		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
+		<collision alias="../../MK-82-LD/buoyancy"/>
+		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<impact alias="../../MK-82-LD/impact"/>
+		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+	</submodel>
+	<submodel>
+		<name>MK-82-LD-ter-2-2</name>
+		<model alias="../../MK-82-LD/model"/>
+		<trigger>sim/model/A-10/weapons/stations/station[2]/triple-MK-82-LD/trigger[2]</trigger>
+		<speed alias="../../MK-82-LD/speed"/>
+		<repeat alias="../../MK-82-LD/repeat"/>
+		<delay alias="../../MK-82-LD/delay"/>
+		<count alias="../../MK-82-LD/count"/>
+		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<y-offset>-10.9820</y-offset>
+		<z-offset>-1.6936</z-offset>
+		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
+		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
+		<cd alias="../../MK-82-LD/cd"/>
+		<weight alias="../../MK-82-LD/weight"/>
+		<eda alias="../../MK-82-LD/eda"/>
+		<life alias="../../MK-82-LD/life"/>
+		<buoyancy alias="../../MK-82-LD/buoyancy"/>
+		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
+		<collision alias="../../MK-82-LD/buoyancy"/>
+		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<impact alias="../../MK-82-LD/impact"/>
+		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+	</submodel>
+	<submodel>
+		<name>MK-82-LD-ter-3-0</name>
+		<model alias="../../MK-82-LD/model"/>
+		<trigger>sim/model/A-10/weapons/stations/station[3]/triple-MK-82-LD/trigger[0]</trigger>
+		<speed alias="../../MK-82-LD/speed"/>
+		<repeat alias="../../MK-82-LD/repeat"/>
+		<delay alias="../../MK-82-LD/delay"/>
+		<count alias="../../MK-82-LD/count"/>
+		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<y-offset>-6.4659</y-offset>
+		<z-offset>-1.9797</z-offset>
+		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
+		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
+		<cd alias="../../MK-82-LD/cd"/>
+		<weight alias="../../MK-82-LD/weight"/>
+		<eda alias="../../MK-82-LD/eda"/>
+		<life alias="../../MK-82-LD/life"/>
+		<buoyancy alias="../../MK-82-LD/buoyancy"/>
+		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
+		<collision alias="../../MK-82-LD/buoyancy"/>
+		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<impact alias="../../MK-82-LD/impact"/>
+		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+	</submodel>
+	<submodel>
+		<name>MK-82-LD-ter-3-1</name>
+		<model alias="../../MK-82-LD/model"/>
+		<trigger>sim/model/A-10/weapons/stations/station[3]/triple-MK-82-LD/trigger[1]</trigger>
+		<speed alias="../../MK-82-LD/speed"/>
+		<repeat alias="../../MK-82-LD/repeat"/>
+		<delay alias="../../MK-82-LD/delay"/>
+		<count alias="../../MK-82-LD/count"/>
+		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<y-offset>-5.5420</y-offset>
+		<z-offset>-2.8727</z-offset>
+		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
+		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
+		<cd alias="../../MK-82-LD/cd"/>
+		<weight alias="../../MK-82-LD/weight"/>
+		<eda alias="../../MK-82-LD/eda"/>
+		<life alias="../../MK-82-LD/life"/>
+		<buoyancy alias="../../MK-82-LD/buoyancy"/>
+		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
+		<collision alias="../../MK-82-LD/buoyancy"/>
+		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<impact alias="../../MK-82-LD/impact"/>
+		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+	</submodel>
+	<submodel>
+		<name>MK-82-LD-ter-3-2</name>
+		<model alias="../../MK-82-LD/model"/>
+		<trigger>sim/model/A-10/weapons/stations/station[3]/triple-MK-82-LD/trigger[2]</trigger>
+		<speed alias="../../MK-82-LD/speed"/>
+		<repeat alias="../../MK-82-LD/repeat"/>
+		<delay alias="../../MK-82-LD/delay"/>
+		<count alias="../../MK-82-LD/count"/>
+		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<y-offset>-4.6135</y-offset>
+		<z-offset>-1.9797</z-offset>
+		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
+		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
+		<cd alias="../../MK-82-LD/cd"/>
+		<weight alias="../../MK-82-LD/weight"/>
+		<eda alias="../../MK-82-LD/eda"/>
+		<life alias="../../MK-82-LD/life"/>
+		<buoyancy alias="../../MK-82-LD/buoyancy"/>
+		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
+		<collision alias="../../MK-82-LD/buoyancy"/>
+		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<impact alias="../../MK-82-LD/impact"/>
+		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+	</submodel>
+	<submodel>
+		<name>MK-82-LD-ter-7-0</name>
+		<model alias="../../MK-82-LD/model"/>
+		<trigger>sim/model/A-10/weapons/stations/station[7]/triple-MK-82-LD/trigger[0]</trigger>
+		<speed alias="../../MK-82-LD/speed"/>
+		<repeat alias="../../MK-82-LD/repeat"/>
+		<delay alias="../../MK-82-LD/delay"/>
+		<count alias="../../MK-82-LD/count"/>
+		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<y-offset>4.6135</y-offset>
+		<z-offset>-1.9797</z-offset>
+		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
+		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
+		<cd alias="../../MK-82-LD/cd"/>
+		<weight alias="../../MK-82-LD/weight"/>
+		<eda alias="../../MK-82-LD/eda"/>
+		<life alias="../../MK-82-LD/life"/>
+		<buoyancy alias="../../MK-82-LD/buoyancy"/>
+		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
+		<collision alias="../../MK-82-LD/buoyancy"/>
+		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<impact alias="../../MK-82-LD/impact"/>
+		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+	</submodel>
+	<submodel>
+		<name>MK-82-LD-ter-7-1</name>
+		<model alias="../../MK-82-LD/model"/>
+		<trigger>sim/model/A-10/weapons/stations/station[7]/triple-MK-82-LD/trigger[1]</trigger>
+		<speed alias="../../MK-82-LD/speed"/>
+		<repeat alias="../../MK-82-LD/repeat"/>
+		<delay alias="../../MK-82-LD/delay"/>
+		<count alias="../../MK-82-LD/count"/>
+		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<y-offset>5.5420</y-offset>
+		<z-offset>-2.8727</z-offset>
+		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
+		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
+		<cd alias="../../MK-82-LD/cd"/>
+		<weight alias="../../MK-82-LD/weight"/>
+		<eda alias="../../MK-82-LD/eda"/>
+		<life alias="../../MK-82-LD/life"/>
+		<buoyancy alias="../../MK-82-LD/buoyancy"/>
+		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
+		<collision alias="../../MK-82-LD/buoyancy"/>
+		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<impact alias="../../MK-82-LD/impact"/>
+		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+	</submodel>
+	<submodel>
+		<name>MK-82-LD-ter-7-2</name>
+		<model alias="../../MK-82-LD/model"/>
+		<trigger>sim/model/A-10/weapons/stations/station[7]/triple-MK-82-LD/trigger[2]</trigger>
+		<speed alias="../../MK-82-LD/speed"/>
+		<repeat alias="../../MK-82-LD/repeat"/>
+		<delay alias="../../MK-82-LD/delay"/>
+		<count alias="../../MK-82-LD/count"/>
+		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<y-offset>6.4659</y-offset>
+		<z-offset>-1.9797</z-offset>
+		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
+		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
+		<cd alias="../../MK-82-LD/cd"/>
+		<weight alias="../../MK-82-LD/weight"/>
+		<eda alias="../../MK-82-LD/eda"/>
+		<life alias="../../MK-82-LD/life"/>
+		<buoyancy alias="../../MK-82-LD/buoyancy"/>
+		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
+		<collision alias="../../MK-82-LD/buoyancy"/>
+		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<impact alias="../../MK-82-LD/impact"/>
+		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+	</submodel>
+	<submodel>
+		<name>MK-82-LD-ter-8-0</name>
+		<model alias="../../MK-82-LD/model"/>
+		<trigger>sim/model/A-10/weapons/stations/station[8]/triple-MK-82-LD/trigger[0]</trigger>
+		<speed alias="../../MK-82-LD/speed"/>
+		<repeat alias="../../MK-82-LD/repeat"/>
+		<delay alias="../../MK-82-LD/delay"/>
+		<count alias="../../MK-82-LD/count"/>
+		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<y-offset>10.9820</y-offset>
+		<z-offset>-1.6936</z-offset>
+		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
+		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
+		<cd alias="../../MK-82-LD/cd"/>
+		<weight alias="../../MK-82-LD/weight"/>
+		<eda alias="../../MK-82-LD/eda"/>
+		<life alias="../../MK-82-LD/life"/>
+		<buoyancy alias="../../MK-82-LD/buoyancy"/>
+		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
+		<collision alias="../../MK-82-LD/buoyancy"/>
+		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<impact alias="../../MK-82-LD/impact"/>
+		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+	</submodel>
+	<submodel>
+		<name>MK-82-LD-ter-8-1</name>
+		<model alias="../../MK-82-LD/model"/>
+		<trigger>sim/model/A-10/weapons/stations/station[8]/triple-MK-82-LD/trigger[1]</trigger>
+		<speed alias="../../MK-82-LD/speed"/>
+		<repeat alias="../../MK-82-LD/repeat"/>
+		<delay alias="../../MK-82-LD/delay"/>
+		<count alias="../../MK-82-LD/count"/>
+		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<y-offset>11.9081</y-offset>
+		<z-offset>-2.5866</z-offset>
+		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
+		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
+		<cd alias="../../MK-82-LD/cd"/>
+		<weight alias="../../MK-82-LD/weight"/>
+		<eda alias="../../MK-82-LD/eda"/>
+		<life alias="../../MK-82-LD/life"/>
+		<buoyancy alias="../../MK-82-LD/buoyancy"/>
+		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
+		<collision alias="../../MK-82-LD/buoyancy"/>
+		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<impact alias="../../MK-82-LD/impact"/>
+		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+	</submodel>
+	<submodel>
+		<name>MK-82-LD-ter-8-2</name>
+		<model alias="../../MK-82-LD/model"/>
+		<trigger>sim/model/A-10/weapons/stations/station[8]/triple-MK-82-LD/trigger[2]</trigger>
+		<speed alias="../../MK-82-LD/speed"/>
+		<repeat alias="../../MK-82-LD/repeat"/>
+		<delay alias="../../MK-82-LD/delay"/>
+		<count alias="../../MK-82-LD/count"/>
+		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<y-offset>12.8343</y-offset>
+		<z-offset>-1.6936</z-offset>
+		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
+		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
+		<cd alias="../../MK-82-LD/cd"/>
+		<weight alias="../../MK-82-LD/weight"/>
+		<eda alias="../../MK-82-LD/eda"/>
+		<life alias="../../MK-82-LD/life"/>
+		<buoyancy alias="../../MK-82-LD/buoyancy"/>
+		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
+		<collision alias="../../MK-82-LD/buoyancy"/>
+		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<impact alias="../../MK-82-LD/impact"/>
+		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+	</submodel>
+
+	<submodel>
+		<name>MK-82-LD-single-0</name>
+		<model alias="../../MK-82-LD/model"/>
+		<trigger>sim/model/A-10/weapons/stations/station[0]/single-MK-82-LD/trigger[0]</trigger>
+		<speed alias="../../MK-82-LD/speed"/>
+		<repeat alias="../../MK-82-LD/repeat"/>
+		<delay alias="../../MK-82-LD/delay"/>
+		<count alias="../../MK-82-LD/count"/>
+		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<y-offset>-19.3652</y-offset>
+		<z-offset>-0.6909</z-offset>
+		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
+		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
+		<cd alias="../../MK-82-LD/cd"/>
+		<weight alias="../../MK-82-LD/weight"/>
+		<eda alias="../../MK-82-LD/eda"/>
+		<life alias="../../MK-82-LD/life"/>
+		<buoyancy alias="../../MK-82-LD/buoyancy"/>
+		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
+		<collision alias="../../MK-82-LD/buoyancy"/>
+		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<impact alias="../../MK-82-LD/impact"/>
+		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+	</submodel>
+	<submodel>
+		<name>MK-82-LD-single-1</name>
+		<model alias="../../MK-82-LD/model"/>
+		<trigger>sim/model/A-10/weapons/stations/station[1]/single-MK-82-LD/trigger[0]</trigger>
+		<speed alias="../../MK-82-LD/speed"/>
+		<repeat alias="../../MK-82-LD/repeat"/>
+		<delay alias="../../MK-82-LD/delay"/>
+		<count alias="../../MK-82-LD/count"/>
+		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<y-offset>-15.8960</y-offset>
+		<z-offset>-1.1886</z-offset>
+		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
+		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
+		<cd alias="../../MK-82-LD/cd"/>
+		<weight alias="../../MK-82-LD/weight"/>
+		<eda alias="../../MK-82-LD/eda"/>
+		<life alias="../../MK-82-LD/life"/>
+		<buoyancy alias="../../MK-82-LD/buoyancy"/>
+		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
+		<collision alias="../../MK-82-LD/buoyancy"/>
+		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<impact alias="../../MK-82-LD/impact"/>
+		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+	</submodel>
+	<submodel>
+		<name>MK-82-LD-single-2</name>
+		<model alias="../../MK-82-LD/model"/>
+		<trigger>sim/model/A-10/weapons/stations/station[2]/single-MK-82-LD/trigger[0]</trigger>
+		<speed alias="../../MK-82-LD/speed"/>
+		<repeat alias="../../MK-82-LD/repeat"/>
+		<delay alias="../../MK-82-LD/delay"/>
+		<count alias="../../MK-82-LD/count"/>
+		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<y-offset>-11.8488</y-offset>
+		<z-offset>-1.6644</z-offset>
+		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
+		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
+		<cd alias="../../MK-82-LD/cd"/>
+		<weight alias="../../MK-82-LD/weight"/>
+		<eda alias="../../MK-82-LD/eda"/>
+		<life alias="../../MK-82-LD/life"/>
+		<buoyancy alias="../../MK-82-LD/buoyancy"/>
+		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
+		<collision alias="../../MK-82-LD/buoyancy"/>
+		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<impact alias="../../MK-82-LD/impact"/>
+		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+	</submodel>
+	<submodel>
+		<name>MK-82-LD-single-3</name>
+		<model alias="../../MK-82-LD/model"/>
+		<trigger>sim/model/A-10/weapons/stations/station[3]/single-MK-82-LD/trigger[0]</trigger>
+		<speed alias="../../MK-82-LD/speed"/>
+		<repeat alias="../../MK-82-LD/repeat"/>
+		<delay alias="../../MK-82-LD/delay"/>
+		<count alias="../../MK-82-LD/count"/>
+		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<y-offset>-5.5548</y-offset>
+		<z-offset>-1.9062</z-offset>
+		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
+		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
+		<cd alias="../../MK-82-LD/cd"/>
+		<weight alias="../../MK-82-LD/weight"/>
+		<eda alias="../../MK-82-LD/eda"/>
+		<life alias="../../MK-82-LD/life"/>
+		<buoyancy alias="../../MK-82-LD/buoyancy"/>
+		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
+		<collision alias="../../MK-82-LD/buoyancy"/>
+		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<impact alias="../../MK-82-LD/impact"/>
+		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+	</submodel>
+	<submodel>
+		<name>MK-82-LD-single-4</name>
+		<model alias="../../MK-82-LD/model"/>
+		<trigger>sim/model/A-10/weapons/stations/station[4]/single-MK-82-LD/trigger[0]</trigger>
+		<speed alias="../../MK-82-LD/speed"/>
+		<repeat alias="../../MK-82-LD/repeat"/>
+		<delay alias="../../MK-82-LD/delay"/>
+		<count alias="../../MK-82-LD/count"/>
+		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<y-offset>-1.8615</y-offset>
+		<z-offset>-1.9062</z-offset>
+		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
+		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
+		<cd alias="../../MK-82-LD/cd"/>
+		<weight alias="../../MK-82-LD/weight"/>
+		<eda alias="../../MK-82-LD/eda"/>
+		<life alias="../../MK-82-LD/life"/>
+		<buoyancy alias="../../MK-82-LD/buoyancy"/>
+		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
+		<collision alias="../../MK-82-LD/buoyancy"/>
+		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<impact alias="../../MK-82-LD/impact"/>
+		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+	</submodel>
+	<submodel>
+		<name>MK-82-LD-single-5</name>
+		<model alias="../../MK-82-LD/model"/>
+		<trigger>sim/model/A-10/weapons/stations/station[5]/single-MK-82-LD/trigger[0]</trigger>
+		<speed alias="../../MK-82-LD/speed"/>
+		<repeat alias="../../MK-82-LD/repeat"/>
+		<delay alias="../../MK-82-LD/delay"/>
+		<count alias="../../MK-82-LD/count"/>
+		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<y-offset>0</y-offset>
+		<z-offset>-1.6936</z-offset>
+		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
+		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
+		<cd alias="../../MK-82-LD/cd"/>
+		<weight alias="../../MK-82-LD/weight"/>
+		<eda alias="../../MK-82-LD/eda"/>
+		<life alias="../../MK-82-LD/life"/>
+		<buoyancy alias="../../MK-82-LD/buoyancy"/>
+		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
+		<collision alias="../../MK-82-LD/buoyancy"/>
+		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<impact alias="../../MK-82-LD/impact"/>
+		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+	</submodel>
+	<submodel>
+		<name>MK-82-LD-single-6</name>
+		<model alias="../../MK-82-LD/model"/>
+		<trigger>sim/model/A-10/weapons/stations/station[6]/single-MK-82-LD/trigger[0]</trigger>
+		<speed alias="../../MK-82-LD/speed"/>
+		<repeat alias="../../MK-82-LD/repeat"/>
+		<delay alias="../../MK-82-LD/delay"/>
+		<count alias="../../MK-82-LD/count"/>
+		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<y-offset>1.8615</y-offset>
+		<z-offset>-1.9062</z-offset>
+		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
+		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
+		<cd alias="../../MK-82-LD/cd"/>
+		<weight alias="../../MK-82-LD/weight"/>
+		<eda alias="../../MK-82-LD/eda"/>
+		<life alias="../../MK-82-LD/life"/>
+		<buoyancy alias="../../MK-82-LD/buoyancy"/>
+		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
+		<collision alias="../../MK-82-LD/buoyancy"/>
+		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<impact alias="../../MK-82-LD/impact"/>
+		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+	</submodel>
+	<submodel>
+		<name>MK-82-LD-single-7</name>
+		<model alias="../../MK-82-LD/model"/>
+		<trigger>sim/model/A-10/weapons/stations/station[7]/single-MK-82-LD/trigger[0]</trigger>
+		<speed alias="../../MK-82-LD/speed"/>
+		<repeat alias="../../MK-82-LD/repeat"/>
+		<delay alias="../../MK-82-LD/delay"/>
+		<count alias="../../MK-82-LD/count"/>
+		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<y-offset>5.5548</y-offset>
+		<z-offset>-1.9062</z-offset>
+		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
+		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
+		<cd alias="../../MK-82-LD/cd"/>
+		<weight alias="../../MK-82-LD/weight"/>
+		<eda alias="../../MK-82-LD/eda"/>
+		<life alias="../../MK-82-LD/life"/>
+		<buoyancy alias="../../MK-82-LD/buoyancy"/>
+		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
+		<collision alias="../../MK-82-LD/buoyancy"/>
+		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<impact alias="../../MK-82-LD/impact"/>
+		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+	</submodel>
+	<submodel>
+		<name>MK-82-LD-single-8</name>
+		<model alias="../../MK-82-LD/model"/>
+		<trigger>sim/model/A-10/weapons/stations/station[8]/single-MK-82-LD/trigger[0]</trigger>
+		<speed alias="../../MK-82-LD/speed"/>
+		<repeat alias="../../MK-82-LD/repeat"/>
+		<delay alias="../../MK-82-LD/delay"/>
+		<count alias="../../MK-82-LD/count"/>
+		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<y-offset>11.8488</y-offset>
+		<z-offset>-1.6644</z-offset>
+		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
+		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
+		<cd alias="../../MK-82-LD/cd"/>
+		<weight alias="../../MK-82-LD/weight"/>
+		<eda alias="../../MK-82-LD/eda"/>
+		<life alias="../../MK-82-LD/life"/>
+		<buoyancy alias="../../MK-82-LD/buoyancy"/>
+		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
+		<collision alias="../../MK-82-LD/buoyancy"/>
+		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<impact alias="../../MK-82-LD/impact"/>
+		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+	</submodel>
+	<submodel>
+		<name>MK-82-LD-single-9</name>
+		<model alias="../../MK-82-LD/model"/>
+		<trigger>sim/model/A-10/weapons/stations/station[9]/single-MK-82-LD/trigger[0]</trigger>
+		<speed alias="../../MK-82-LD/speed"/>
+		<repeat alias="../../MK-82-LD/repeat"/>
+		<delay alias="../../MK-82-LD/delay"/>
+		<count alias="../../MK-82-LD/count"/>
+		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<y-offset>15.8960</y-offset>
+		<z-offset>-1.1886</z-offset>
+		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
+		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
+		<cd alias="../../MK-82-LD/cd"/>
+		<weight alias="../../MK-82-LD/weight"/>
+		<eda alias="../../MK-82-LD/eda"/>
+		<life alias="../../MK-82-LD/life"/>
+		<buoyancy alias="../../MK-82-LD/buoyancy"/>
+		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
+		<collision alias="../../MK-82-LD/buoyancy"/>
+		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<impact alias="../../MK-82-LD/impact"/>
+		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+	</submodel>
+	<submodel>
+		<name>MK-82-LD-single-10</name>
+		<model alias="../../MK-82-LD/model"/>
+		<trigger>sim/model/A-10/weapons/stations/station[10]/single-MK-82-LD/trigger[0]</trigger>
+		<speed alias="../../MK-82-LD/speed"/>
+		<repeat alias="../../MK-82-LD/repeat"/>
+		<delay alias="../../MK-82-LD/delay"/>
+		<count alias="../../MK-82-LD/count"/>
+		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<y-offset>19.3652</y-offset>
+		<z-offset>-0.6909</z-offset>
+		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
+		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
+		<cd alias="../../MK-82-LD/cd"/>
+		<weight alias="../../MK-82-LD/weight"/>
+		<eda alias="../../MK-82-LD/eda"/>
+		<life alias="../../MK-82-LD/life"/>
+		<buoyancy alias="../../MK-82-LD/buoyancy"/>
+		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
+		<collision alias="../../MK-82-LD/buoyancy"/>
+		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<impact alias="../../MK-82-LD/impact"/>
+		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+	</submodel>
 
 </PropertyList>

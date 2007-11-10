@@ -31,6 +31,7 @@
 			<property>/sim/model/A-10/weapons/stations/station[0]/description</property>
 			<value>AN-ALQ-131</value>
 			<value>dual-AIM-9</value>
+			<value>single-MK-82-LD</value>
 			<value>none</value>
 		</combo>
 	</group>
@@ -50,6 +51,7 @@
 			<height>25</height>
 			<property>/sim/model/A-10/weapons/stations/station[1]/description</property>
 			<value>LAU-68</value>
+			<value>single-MK-82-LD</value>
 			<value>none</value>
 		</combo>
 	</group>
@@ -69,6 +71,8 @@
 			<height>25</height>
 			<property>/sim/model/A-10/weapons/stations/station[2]/description</property>
 			<value>LAU-68</value>
+			<value>single-MK-82-LD</value>
+			<value>triple-MK-82-LD</value>
 			<value>none</value>
 		</combo>
 	</group>
@@ -88,6 +92,8 @@
 			<height>25</height>
 			<property>/sim/model/A-10/weapons/stations/station[3]/description</property>
 			<value>LAU-68</value>
+			<value>single-MK-82-LD</value>
+			<value>triple-MK-82-LD</value>
 			<value>none</value>
 		</combo>
 	</group>
@@ -106,6 +112,7 @@
 			<width>200</width>
 			<height>25</height>
 			<property>/sim/model/A-10/weapons/stations/station[4]/description</property>
+			<value>single-MK-82-LD</value>
 			<value>none</value>
 		</combo>
 	</group>
@@ -124,6 +131,7 @@
 			<width>200</width>
 			<height>25</height>
 			<property>/sim/model/A-10/weapons/stations/station[5]/description</property>
+			<value>single-MK-82-LD</value>
 			<value>none</value>
 		</combo>
 	</group>
@@ -142,6 +150,7 @@
 			<width>200</width>
 			<height>25</height>
 			<property>/sim/model/A-10/weapons/stations/station[6]/description</property>
+			<value>single-MK-82-LD</value>
 			<value>none</value>
 		</combo>
 	</group>
@@ -161,6 +170,8 @@
 			<height>25</height>
 			<property>/sim/model/A-10/weapons/stations/station[7]/description</property>
 			<value>LAU-68</value>
+			<value>single-MK-82-LD</value>
+			<value>triple-MK-82-LD</value>
 			<value>none</value>
 		</combo>
 	</group>
@@ -180,6 +191,8 @@
 			<height>25</height>
 			<property>/sim/model/A-10/weapons/stations/station[8]/description</property>
 			<value>LAU-68</value>
+			<value>single-MK-82-LD</value>
+			<value>triple-MK-82-LD</value>
 			<value>none</value>
 		</combo>
 	</group>
@@ -199,6 +212,7 @@
 			<height>25</height>
 			<property>/sim/model/A-10/weapons/stations/station[9]/description</property>
 			<value>LAU-68</value>
+			<value>single-MK-82-LD</value>
 			<value>none</value>
 		</combo>
 	</group>
@@ -218,6 +232,7 @@
 			<height>25</height>
 			<property>/sim/model/A-10/weapons/stations/station[10]/description</property>
 			<value>dual-AIM-9</value>
+			<value>single-MK-82-LD</value>
 			<value>none</value>
 		</combo>
 	</group>

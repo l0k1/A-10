@@ -2,7 +2,6 @@ TODOS:
 ------
 - Handling the external fuel tanks in the new armament dialog, or better, merge
 it with the legacy 'fuel and payload' menu (if possible...).
-- Move the AIM-9 related files under Models/Stores directory.
 - Model the labels on the armament panel.
 - Code the submodels reloading.
 - Review sounds for start of the engines. "Blowf" sound of the ignition.
@@ -16,6 +15,17 @@ it with the legacy 'fuel and payload' menu (if possible...).
 - AIM-9 search sound based on AI or MP.
 
 
+11/10/2007
+----------
+- Fixed the Altimeter InGh setting (thanks to dabidB21).
+- Moved the AIM-9 related files under Models/Stores directory.
+- Fixed some bugs in the armament stuff.
+
+
+10/21/2007
+----------
+- Canopy's properties moved to /sim/model/A-10/.
+
 07/09/2007
 ----------
 - Added explosion and smoke subsubmodels to the gun tracers.
@@ -27,7 +37,6 @@ same type of ordnance.
 - Added two more AIM-9s available on pylon #1.
 - Weapons weight is now substracted on release. 
 - Fixed the broken navigation instruments.
-- Fixed some bugs with the engine start system.
 
 01/09/2007
 ---------

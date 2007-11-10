@@ -19,8 +19,8 @@
 		<object-name>FTank3</object-name>
 		<condition>
 			<equals>
-				<property>consumables/fuel/tank[4]/selected</property>
-				<value>1</value>
+				<property>/sim/model/A-10/weapons/stations/station[3]/description</property>
+				<value>tank-600-gals</value>
 			</equals>
 		</condition>
 	</animation>
@@ -30,8 +30,8 @@
 		<object-name>FTank1</object-name>
 		<condition>
 			<equals>
-				<property>consumables/fuel/tank[5]/selected</property>
-				<value>1</value>
+				<property>/sim/model/A-10/weapons/stations/station[5]/description</property>
+				<value>tank-600-gals</value>
 			</equals>
 		</condition>
 	</animation>
@@ -41,8 +41,8 @@
 		<object-name>FTank2</object-name>
 		<condition>
 			<equals>
-				<property>consumables/fuel/tank[6]/selected</property>
-				<value>1</value>
+				<property>/sim/model/A-10/weapons/stations/station[7]/description</property>
+				<value>tank-600-gals</value>
 			</equals>
 		</condition>
 	</animation>
@@ -744,7 +744,7 @@
 		<object-name>BCanopyFrameInner</object-name>
 		<object-name>BCanopyGlass</object-name>
 		<object-name>CanopyLock</object-name>
-		<property>canopy/position-norm</property>
+		<property>sim/model/A-10/canopy/position-norm</property>
 		<factor>35</factor>
 		<center>
 			<x-m>4.65</x-m>

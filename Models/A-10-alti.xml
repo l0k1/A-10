@@ -92,7 +92,7 @@
  <animation>
   <type>textranslate</type>
   <object-name>drum-inhg-1</object-name>
-  <property>environment/pressure-inhg</property>
+  <property>instrumentation/altimeter/setting-inhg</property>
   <factor>10</factor>
   <offset>-0.01</offset>
   <center>
@@ -111,7 +111,7 @@
  <animation>
   <type>textranslate</type>
   <object-name>drum-inhg-2</object-name>
-  <property>environment/pressure-inhg</property>
+  <property>instrumentation/altimeter/setting-inhg</property>
   <factor>1</factor>
   <offset>-0.1</offset>
   <step>0.1</step>
@@ -132,7 +132,7 @@
  <animation>
   <type>textranslate</type>
   <object-name>drum-inhg-3</object-name>
-  <property>environment/pressure-inhg</property>
+  <property>instrumentation/altimeter/setting-inhg</property>
   <factor>0.1</factor>
   <offset>-1</offset>
   <step>1</step>
@@ -152,7 +152,7 @@
  <animation>
   <type>textranslate</type>
   <object-name>drum-inhg-4</object-name>
-  <property>environment/pressure-inhg</property>
+  <property>instrumentation/altimeter/setting-inhg</property>
   <factor>0.01</factor>
   <offset>-10</offset>
   <step>10</step>

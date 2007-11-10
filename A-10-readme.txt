@@ -65,19 +65,15 @@ Key               Action
 'e'               Fire GAU-8/A cannon
 'f'               Extend slats
 'K' (Shift-k)     Toggle trajactory markers on & off
-'U' (Shift-u)     Update Drop view position
 
 3D Panel
 --------
-CAUTION: SHADOWS
-Curently shadows are not well handled for the 3D cockpit.
-You may need to disable shadows feature if necessary.
 
 Altimeter:
-Mouse clicking inGH adjustable with the left button.
+Mouse clicking inGH adjustable.
 
 Lighting of the panel and instruments:
-Look for the extreme bottom of the right console, there is one
+Look for the extrem bottom of the right console, there is one
 of the several lighting sub-panel of the A-10. Curently Ctrl-C
 key doesn't show correctly the hot spots, but, 'FLY INST' works
 and adjusts the instruments lighting. 'CONSOLE' works too and 
@@ -92,10 +88,17 @@ combined display. The two needles display the internal amount of
 fuel, left needle is left internal fuselage tank plus left
 internal wing tank, same for the right side. the digital counter
 displays the total of both side's internal tanks plus (if needed)
-the total of the three external tanks. 
+the total of the three external tanks.  - FIXME -
 
-2D Panels
-------
+
+
+
+
+
+
+
+2D Panels (outdated)
+--------------------
 Currently, there are two simple 2D panels for the model, neither
 of which are in any way accurate - they are simply holders for
 the instruments.  The 'vfr' panel includes the basic instruments

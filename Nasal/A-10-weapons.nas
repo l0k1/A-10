@@ -67,6 +67,7 @@ cfire_gau8a = func {
 # in case of station deselection.
 var stations = props.globals.getNode("sim/model/A-10/weapons/stations");
 var stations_list = stations.getChildren("station");
+var weights = props.globals.getNode("sim").getChildren("weight");
 var aim9_knob = a10weapons.getNode("dual-AIM-9/aim9-knob");
 var aim9_sound = a10weapons.getNode("dual-AIM-9/search-sound");
 var cdesc = "";
@@ -75,7 +76,9 @@ select_station = func {
 	var target_idx = arg[0];
 	setprop("controls/armament/station-select", target_idx);
 	var desc_node = "sim/model/A-10/weapons/stations/station[" ~ target_idx ~ "]/description";
+	print("sim/model/A-10/weapons/stations/station[" ~ target_idx ~ "]/description");
 	cdesc = props.globals.getNode(desc_node).getValue();
+	print("select_station.cdesc: " ~ cdesc);
 	var sel_list = props.globals.getNode("sim/model/A-10/weapons/selected-stations");
 	foreach (var s; stations_list) {
 		idx = s.getIndex();
@@ -98,6 +101,7 @@ select_station = func {
 				}
 			}
 		} elsif ( cdesc != sdesc ) {
+			# TODO: code triple and single MK82 mixed release ? 
 			ssel.setBoolValue(0);
 			sel_list.removeChildren(tsnode);
 			if ( sdesc == "dual-AIM-9" ) {
@@ -125,9 +129,8 @@ release = func {
 	var rip = a10weapons.getNode("rip").getValue();
 	var interval = a10weapons.getNode("interval").getValue();
 	# FIXME: riple compatible release types should be defined in the foo-set.file 
-	if ( cdesc == "LAU-68") {
-		var rip_counter = rip;
-		release_operate(rip_counter, interval);
+	if ( cdesc == "LAU-68" or cdesc == "triple-MK-82-LD" or cdesc == "single-MK-82-LD") {
+		release_operate(rip, interval);
 	} else {
 		release_operate(1, interval);
 	}
@@ -136,9 +139,11 @@ release = func {
 release_operate = func(rip_counter, interval) {
 	foreach(sl; sl_list) {
 		var slidx = sl.getValue();
-		var s_node = "sim/model/A-10/weapons/stations/station[" ~ slidx ~ "]";		
-		var s = props.globals.getNode(s_node);
-		var wght = s.getNode("weight-lb").getValue();
+		var snode = "sim/model/A-10/weapons/stations/station[" ~ slidx ~ "]";		
+		var s = props.globals.getNode(snode);
+		var wnode = "sim/weight[" ~ slidx ~ "]";		
+		var w = props.globals.getNode(wnode);
+		var wght = w.getNode("weight-lb").getValue();
 		var awght = s.getNode("ammo-weight-lb").getValue();
 		if ( cdesc == "LAU-68" ) { var lau68ready = s.getNode("ready-0"); } 
 		var avail = s.getNode("available");
@@ -159,7 +164,7 @@ release_operate = func(rip_counter, interval) {
 					avail.setValue(a);
 					rip_counter -= 1;
 					wght -= awght;
-					s.getNode("weight-lb").setValue(wght);
+					w.getNode("weight-lb").setValue(wght);
 					if ( cdesc != "LAU-68" ) { iready.setBoolValue(0); }
 					if ( a == 0 ) {
 						if ( cdesc == "LAU-68" ) {
@@ -199,32 +204,47 @@ deactivate_aim9_sound = func {
 }
 
 
-# config dialog
-# -------------
-var config_dialog = nil;
-var stations_change = props.globals.getNode("sim/model/A-10/weapons/stations-change-flag");
+# link from the Fuel and Payload menu (gui.nas)
+# ---------------------------------------------
+# Called from the F&W dialog when the user selects a weight option
+# and hijacked from gui.nas so we can call our update_stations().
+# TODO: make the call of a custom func possible from inside gui.nas
+gui.weightChangeHandler = func {
+	var tankchanged = gui.setWeightOpts();
 
-setlistener( stations_change, func { update_stations(); });
+	# This is unfortunate.  Changing tanks means that the list of
+	# tanks selected and their slider bounds must change, but our GUI
+	# isn't dynamic in that way.  The only way to get the changes on
+	# screen is to pop it down and recreate it.
+	# TODO: position the recreated window where it was before.
+	if(tankchanged) {
+		update_stations();
+		var p = props.Node.new({"dialog-name" : "WeightAndFuel"});
+		fgcommand("dialog-close", p);
+		gui.showWeightDialog();
+	}
+}
 
 var update_stations = func {
 	var a = nil;
-	foreach (s; stations.getChildren("station")) {
-		var idx = s.getIndex();
+	foreach (w; weights) {
+		var idx = w.getIndex();
 		var weight = 0;
-		var desc = s.getNode("description").getValue();
+		var desc = w.getNode("selected").getValue();
+		if ( desc == "600 Gallons Fuel Tank" ) {
+			desc = "tank-600-gals";
+		}
 		var type = a10weapons.getNode(desc);
+		var snode = "sim/model/A-10/weapons/stations/station[" ~ idx ~ "]";
+		var s = props.globals.getNode(snode);
 		if ( desc != "none" ) {
-			station_load(s, type);
+			station_load(s, w, type);
 		} else {
-			station_unload(s);
+			station_unload(s, w);
 		}
 	}
 }
 
-setlistener("/sim/signals/fdm-initialized", func {
-	config_dialog = gui.Dialog.new("/sim/gui/dialogs/A-10/config/dialog",
-		"Aircraft/A-10/Dialogs/config.xml");
-});
 
 
 # station load
@@ -232,16 +252,16 @@ setlistener("/sim/signals/fdm-initialized", func {
 # Sets the station properties from the type definition in the current station.
 # Prepares the error light or the 3 ready lights, then sets to false the
 # necessary number of triggers (useful in the case of the submodels weren't
-# already defined). Each type of submodel has its own node inside each station
-# node containing the triggers.
-station_load = func(s, type) {
+# already defined).
+# Creates a node attached to the station's one and containing the triggers.
+station_load = func(s, w, type) {
 	var weight = type.getNode("weight-lb").getValue();
 	var ammo_weight = type.getNode("ammo-weight-lb").getValue();
 	var desc = type.getNode("description").getValue();
 	var avail = type.getNode("available").getValue();
 	var readyn = type.getNode("ready-number").getValue();
-	s.getNode("weight-lb").setValue(weight);
-	s.getNode("ammo-weight-lb").setValue(ammo_weight);
+	w.getNode("weight-lb").setValue(weight);
+	s.getNode("ammo-weight-lb", 1).setValue(ammo_weight);
 	s.getNode("description").setValue(desc);
 	s.getNode("available").setValue(avail);
 	if ( readyn == 0 ) {
@@ -255,17 +275,17 @@ station_load = func(s, type) {
 		# single ordnance case.
 		s.getNode("ready-0").setBoolValue(1);
 	} elsif( readyn == 2 ) {
-		# double ordnance case
+		# double ordnances case
 		s.getNode("ready-0").setBoolValue(1);
 		s.getNode("ready-1").setBoolValue(1);
 	} else {
-		# triple ordnance case
+		# triple ordnances case
 		s.getNode("ready-0").setBoolValue(1);
 		s.getNode("ready-1").setBoolValue(1);
 		s.getNode("ready-2").setBoolValue(1);
 	} 
 	for( i = 0; i < avail; i = i + 1 ) {
-		# FIXME: here to add submodels reload
+		# TODO: here to add submodels reload
 		itrigger_node = desc ~ "/trigger[" ~ i ~ "]";
 		t = s.getNode(itrigger_node, 1);
 		t.setBoolValue(0);
@@ -275,10 +295,10 @@ station_load = func(s, type) {
 
 # station unload
 # --------------
-station_unload = func(s) {
-	s.getNode("weight-lb").setValue(0);
+station_unload = func(s, w) {
+	w.getNode("weight-lb").setValue(0);
 	s.getNode("ammo-weight-lb").setValue(0);
-	desc = s.getNode("description").getValue();
+	#desc = s.getNode("description").getValue();
 	s.getNode("description").setValue("none");
 	s.getNode("available").setValue(0);
 	s.getNode("ready-0").setBoolValue(0);

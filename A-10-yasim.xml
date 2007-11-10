@@ -198,43 +198,43 @@
 -->
   <weight x="-4.0" y="0" z="-0.0" size="0.9"
       mass-prop="yasim/weights/ammunition-weight-lbs"/>
-  <!-- Stations, weight is dinamicly configured while choosing the weapons,
+  <!-- Stations, weight is dynamicly configured while choosing the weapons,
        drag should be too, but it's not possible yet in YASim-->
   <weight x="-7.56" y="5.90"   z="0.00"
       size="0.25"
-      mass-prop="sim/model/A-10/weapons/stations/station[0]/weight-lb"/><!-- #1 extern L-->
+      mass-prop="sim/weight[0]/weight-lb"/><!-- #1 extern L-->
   <weight x="-7.56" y="4.83"   z="-0.22"
       size="0.25"
-      mass-prop="sim/model/A-10/weapons/stations/station[1]/weight-lb"/>
+      mass-prop="sim/weight[1]/weight-lb"/>
   <weight x="-7.56" y="3.62"   z="-0.37"
       size="0.25"
-      mass-prop="sim/model/A-10/weapons/stations/station[2]/weight-lb"/>
+      mass-prop="sim/weight[2]/weight-lb"/>
   <weight x="-7.56" y="1.69"   z="-0.44"
       size="0.25"
-      mass-prop="sim/model/A-10/weapons/stations/station[3]/weight-lb"/>
+      mass-prop="sim/weight[3]/weight-lb"/>
   <weight x="-7.56" y="0.56"   z="-0.44"
       size="0.25"
-      mass-prop="sim/model/A-10/weapons/stations/station[4]/weight-lb"/><!--fuse L-->
+      mass-prop="sim/weight[4]/weight-lb"/><!--fuse L-->
   <weight x="-7.56" y="0.00"   z="-0.44"
       size="0.25"
-      mass-prop="sim/model/A-10/weapons/stations/station[5]/weight-lb"/><!--center-->
+      mass-prop="sim/weight[5]/weight-lb"/><!--center-->
   <weight x="-7.56" y="-0.56"   z="-0.44"
       size="0.25"
-      mass-prop="sim/model/A-10/weapons/stations/station[6]/weight-lb"/><!--fuse R-->
+      mass-prop="sim/weight[6]/weight-lb"/><!--fuse R-->
   <weight x="-7.56" y="-1.69"   z="-0.44"
       size="0.25"
-      mass-prop="sim/model/A-10/weapons/stations/station[7]/weight-lb"/>
+      mass-prop="sim/weight[7]/weight-lb"/>
   <weight x="-7.56" y="-3.62"   z="-0.37"
       size="0.25"
-      mass-prop="sim/model/A-10/weapons/stations/station[8]/weight-lb"/>
+      mass-prop="sim/weight[8]/weight-lb"/>
   <weight x="-7.56" y="-4.83"   z="-0.22"
       size="0.25"
-      mass-prop="sim/model/A-10/weapons/stations/station[9]/weight-lb"/>
+      mass-prop="sim/weight[9]/weight-lb"/>
   <weight x="-7.56" y="-5.9"   z="0.00"
       size="0.25"
-      mass-prop="sim/model/A-10/weapons/stations/station[10]/weight-lb"/><!-- #11 extern R-->
+      mass-prop="sim/weight[10]/weight-lb"/><!-- #11 extern R-->
   <weight x="-7.56" y="-5.9"   z="0.00"
       size="0.25"
-      mass-prop="sim/model/A-10/weapons/stations/station[11]/weight-lb"/><!-- #11 extern R-->
+      mass-prop="sim/weight[11]/weight-lb"/><!-- #11 extern R-->
 
 </airplane>

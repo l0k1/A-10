@@ -845,7 +845,7 @@
 		<object-name>rip-intvl-x10</object-name>
 		<property>sim/model/A-10/weapons/interval</property>
 		<factor>1</factor>
-		<step>0.1</step>
+		<step>0.0999</step>
 		<center>
 			<x-m>0</x-m>
 			<y-m>0</y-m>

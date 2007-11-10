@@ -14,12 +14,16 @@
 
 	<model>
 		<name>AIM-9-dual-launcher</name>
-		<path>Aircraft/A-10/Models/aim-9-dual-launcher.xml</path>
+		<path>Aircraft/A-10/Models/Stores/AIM-9/aim-9-dual-launcher.xml</path>
 	</model>
-
-
 	<model>
 		<path>Aircraft/A-10/Models/Stores/LAU-68/LAU-68.xml</path>
+	</model>	
+	<model>
+		<path>Aircraft/A-10/Models/Stores/MK-82/triple-MK-82-LD.xml</path>
+	</model>	
+	<model>
+		<path>Aircraft/A-10/Models/Stores/MK-82/single-MK-82-LD.xml</path>
 	</model>	
 
 </PropertyList>

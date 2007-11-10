@@ -1,9 +1,9 @@
 # used to the animation of the canopy switch and the canopy move
 # toggle keystroke or 2 position switch
 
-var cnpy = aircraft.door.new("canopy", 10);
+var cnpy = aircraft.door.new("sim/model/A-10/canopy", 10);
 var switch = props.globals.getNode("sim/model/A-10/controls/canopy/canopy-switch", 1);
-var pos = props.globals.getNode("canopy/position-norm", 1);
+var pos = props.globals.getNode("sim/model/A-10/canopy/position-norm", 1);
 
 canopy_switch = func(v) {
 
