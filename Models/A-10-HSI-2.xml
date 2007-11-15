@@ -16,7 +16,7 @@
         <value>24</value>
       </greater-than>
     </condition>
-    <property>/instrumentation/heading-indicator/indicated-heading-deg</property>
+    <property>instrumentation/heading-indicator/indicated-heading-deg</property>
     <center>
       <x-m>0.0</x-m>
       <y-m>0.0</y-m>
@@ -72,7 +72,7 @@
         <value>24</value>
       </greater-than>
     </condition>
-    <property>/instrumentation/heading-indicator/indicated-heading-deg</property>
+    <property>instrumentation/heading-indicator/indicated-heading-deg</property>
     <center>
       <x-m>0.0</x-m>
       <y-m>0.0</y-m>
@@ -121,7 +121,7 @@
         <value>24</value>
       </greater-than>
     </condition>
-    <property>/instrumentation/heading-indicator/indicated-heading-deg</property>
+    <property>instrumentation/heading-indicator/indicated-heading-deg</property>
     <center>
       <x-m>0.0</x-m>
       <y-m>0.0</y-m>
@@ -171,7 +171,7 @@
         <value>24</value>
       </greater-than>
     </condition>
-    <property>/instrumentation/heading-indicator/indicated-heading-deg</property>
+    <property>instrumentation/heading-indicator/indicated-heading-deg</property>
     <center>
       <x-m>0.0</x-m>
       <y-m>0.0</y-m>
@@ -235,7 +235,7 @@
         <value>24</value>
       </greater-than>
     </condition>
-    <property>/instrumentation/heading-indicator/indicated-heading-deg</property>
+    <property>instrumentation/heading-indicator/indicated-heading-deg</property>
     <center>
       <x-m>0.0</x-m>
       <y-m>0.0</y-m>

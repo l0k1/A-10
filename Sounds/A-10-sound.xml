@@ -25,7 +25,7 @@
             </equals>
           </not>
           <greater-than>
-            <property>sim/model/A-10/canopy/position-norm</property>
+            <property>canopy/position-norm</property>
             <value>0</value>
           </greater-than>
         </or>
@@ -53,7 +53,7 @@
             </equals>
           </not>
           <greater-than>
-            <property>sim/model/A-10/canopy/position-norm</property>
+            <property>canopy/position-norm</property>
             <value>0</value>
           </greater-than>
         </or>
@@ -82,7 +82,7 @@
             </equals>
           </not>
           <greater-than>
-            <property>sim/model/A-10/canopy/position-norm</property>
+            <property>canopy/position-norm</property>
             <value>0</value>
           </greater-than>
         </or>
@@ -110,7 +110,7 @@
             </equals>
           </not>
           <greater-than>
-            <property>sim/model/A-10/canopy/position-norm</property>
+            <property>canopy/position-norm</property>
             <value>0</value>
           </greater-than>
         </or>
@@ -137,7 +137,7 @@
           <value>0</value>
         </equals>
         <less-than-equals>
-          <property>sim/model/A-10/canopy/position-norm</property>
+          <property>canopy/position-norm</property>
           <value>0</value>
         </less-than-equals>
       </condition>
@@ -161,7 +161,7 @@
           <value>0</value>
         </equals>
         <less-than-equals>
-          <property>sim/model/A-10/canopy/position-norm</property>
+          <property>canopy/position-norm</property>
           <value>0</value>
         </less-than-equals>
       </condition>
@@ -186,7 +186,7 @@
           <value>0</value>
         </equals>
         <less-than-equals>
-          <property>sim/model/A-10/canopy/position-norm</property>
+          <property>canopy/position-norm</property>
           <value>0</value>
         </less-than-equals>
       </condition>
@@ -210,7 +210,7 @@
           <value>0</value>
         </equals>
         <less-than-equals>
-          <property>sim/model/A-10/canopy/position-norm</property>
+          <property>canopy/position-norm</property>
           <value>0</value>
         </less-than-equals>
       </condition>
@@ -529,7 +529,7 @@
 					<value>0</value>
 				</equals>
 				<greater-than>
-					<property>sim/model/A-10/canopy/position-norm</property>
+					<property>canopy/position-norm</property>
 					<value>0</value>
 				</greater-than>
       </condition>
@@ -543,7 +543,7 @@
       <name>canopy</name>
       <mode>in-transit</mode>
       <path>Aircraft/A-10/Sounds/canopy-trans.wav</path>
-      <property>sim/model/A-10/canopy/position-norm</property>
+      <property>canopy/position-norm</property>
       <volume>
         <factor>0.04</factor>
       </volume>
@@ -555,7 +555,7 @@
       <path>Aircraft/A-10/Sounds/canopy-close2.wav</path>
       <condition>
         <less-than-equals>
-          <property>sim/model/A-10/canopy/position-norm</property>
+          <property>canopy/position-norm</property>
           <value>0</value>
         </less-than-equals>
       </condition>

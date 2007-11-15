@@ -7,24 +7,24 @@
 		<name>Pitch Ladder</name>
 		<type>pitch</type>
 		<x>-10</x>
-		<y>-115</y>
+		<y>-95</y>
 		<width>20</width>
 		<height>160</height>
 		<roll-input>
-			<property>/instrumentation/attitude-indicator/indicated-roll-deg</property>
+			<property>instrumentation/attitude-indicator/indicated-roll-deg</property>
 		</roll-input>
 		<pitch-input>
-			<property>/instrumentation/attitude-indicator/indicated-pitch-deg</property>
-			<offset>-3.2</offset>
+			<property>instrumentation/attitude-indicator/indicated-pitch-deg</property>
+			<!--<offset>-3.2</offset>-->
 		</pitch-input>
 		<compression-factor>10.00</compression-factor>
-		<display-span>10.0</display-span>
+		<display-span>14.0</display-span>
 		<divisions>5.0</divisions>
 		<screen-hole>0</screen-hole>
 		<lbl-pos>0</lbl-pos>
 		<enable-fuselage-ref-line>false</enable-fuselage-ref-line>
 		<enable-target-spot>false</enable-target-spot>
-		<enable-velocity-vector>false</enable-velocity-vector>
+		<enable-velocity-vector>true</enable-velocity-vector>
 		<enable-drift-marker>false</enable-drift-marker>
 		<enable-alpha-bracket>false</enable-alpha-bracket>
 		<enable-energy-marker>false</enable-energy-marker>
@@ -42,7 +42,7 @@
 		<width>50</width>
 		<height>40</height>
 		<input>
-			<property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+			<property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
 		</input>
 		<format>%4.0f</format>
 		<halign>left</halign>
@@ -55,7 +55,7 @@
 		<width>50</width>
 		<height>40</height>
 		<input>
-			<property>/instrumentation/altimeter/indicated-altitude-ft</property>
+			<property>instrumentation/altimeter/indicated-altitude-ft</property>
 		</input>
 		<format>%4.0f</format>
 		<halign>left</halign>
@@ -68,7 +68,7 @@
 		<width>50</width>
 		<height>40</height>
 		<input>
-			<property>/position/altitude-agl-ft</property>
+			<property>position/altitude-agl-ft</property>
 		</input>
 		<format>%4.0fR</format>
 		<halign>left</halign>
@@ -82,7 +82,7 @@
 		<height>8</height>
 		<box>true</box>
 		<input>
-			<property>/instrumentation/attitude-indicator/indicated-pitch-deg</property>
+			<property>instrumentation/attitude-indicator/indicated-pitch-deg</property>
 		</input>
 		<format>%4.2f</format>
 		<halign>right</halign>
@@ -95,7 +95,7 @@
 		<width>100</width>
 		<height>10</height>
 		<input>
-			<property>/instrumentation/heading-indicator/indicated-heading-deg</property>
+			<property>instrumentation/heading-indicator/indicated-heading-deg</property>
 			<factor>0.1</factor>
 			<max>85</max>
 			<min>0</min>
@@ -140,7 +140,7 @@
 		<enable-pointer>true</enable-pointer>
 		<pointer-type>fixed</pointer-type>
 		<input>
-			<property>/controls/flight/rudder</property>
+			<property>controls/flight/rudder</property>
 			<max>1.0</max>
 			<min>-1.0</min>
 		</input>
@@ -153,7 +153,7 @@
 		<height>48</height>
 		<active-condition>
 			<equals>
-				<property>/sim/model/A-10/weapons/dual-AIM-9/aim9-knob</property>
+				<property>sim/model/A-10/weapons/dual-AIM-9/aim9-knob</property>
 				<value>2</value>
 			</equals>
 		</active-condition>

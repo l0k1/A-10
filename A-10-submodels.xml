@@ -1260,7 +1260,7 @@
 		<pitch-offset>-2</pitch-offset>
 		<cd>0.045</cd>
 		<weight>500</weight>
-		<eda>2.81</eda>
+		<eda>0.63</eda>
 		<life>25</life>
 		<buoyancy>0</buoyancy>
 		<aero-stabilised>true</aero-stabilised>

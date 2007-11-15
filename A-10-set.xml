@@ -216,7 +216,9 @@ Fairchild A-10 simulation config.
 			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
 		</weight>
 
-
+		<canopy>
+			<position-norm type="double">0</position-norm>
+		</canopy>
 		<model>
 			<path>Aircraft/A-10/Models/A-10-model.xml</path>
 			<A-10>
@@ -397,9 +399,6 @@ Fairchild A-10 simulation config.
 						</station>
 					</stations>
 				</weapons>
-				<canopy>
-					<position-norm type="double">0</position-norm>
-				</canopy>
 				<canopy-safe type="bool">true</canopy-safe>
 				<consumables>
 					<fuel>
@@ -430,7 +429,7 @@ Fairchild A-10 simulation config.
 					</gear>
 					<hud>
 						<intens type="double">1</intens>
-						<depr type="float">0.0</depr>
+						<depr type="float">0.35</depr>
 						<mode-selector type="int">1</mode-selector>
 						<func-selector type="int">1</func-selector>
 					</hud>
@@ -906,6 +905,7 @@ Fairchild A-10 simulation config.
 		<A10weapons>
 			<file>Aircraft/A-10/Nasal/A-10-weapons.nas</file>
 		</A10weapons>
+
 
 	</nasal>
 

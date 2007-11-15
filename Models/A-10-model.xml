@@ -744,7 +744,7 @@
 		<object-name>BCanopyFrameInner</object-name>
 		<object-name>BCanopyGlass</object-name>
 		<object-name>CanopyLock</object-name>
-		<property>sim/model/A-10/canopy/position-norm</property>
+		<property>canopy/position-norm</property>
 		<factor>35</factor>
 		<center>
 			<x-m>4.65</x-m>

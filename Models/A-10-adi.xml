@@ -17,7 +17,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>sphere</object-name>
-		<property>/instrumentation/attitude-indicator/indicated-roll-deg</property>
+		<property>instrumentation/attitude-indicator/indicated-roll-deg</property>
 		<center>
 			<x-m>0</x-m>
 			<y-m>0.0</y-m>
@@ -33,7 +33,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>sphere</object-name>
-		<property>/instrumentation/attitude-indicator/indicated-pitch-deg</property>
+		<property>instrumentation/attitude-indicator/indicated-pitch-deg</property>
 		<center>
 			<x-m>-0.0522</x-m>
 			<y-m>0.0</y-m>
@@ -102,11 +102,13 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>bank-index</object-name>
-		<property>/instrumentation/attitude-indicator/indicated-roll-deg</property>
+		<property>instrumentation/attitude-indicator/indicated-roll-deg</property>
+		<min-deg>-120</min-deg>
+		<max-deg>120</max-deg>
 		<center>
 			<x-m>-0.0015</x-m>
 			<y-m>0</y-m>
-			<z-m>0.0007</z-m>
+			<z-m>0.0064</z-m>
 		</center>
 		<axis>
 			<x>-1</x>
