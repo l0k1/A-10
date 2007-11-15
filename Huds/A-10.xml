@@ -11,10 +11,10 @@
 		<width>20</width>
 		<height>160</height>
 		<roll-input>
-			<property>/orientation/roll-deg</property>
+			<property>/instrumentation/attitude-indicator/indicated-roll-deg</property>
 		</roll-input>
 		<pitch-input>
-			<property>/orientation/pitch-deg</property>
+			<property>/instrumentation/attitude-indicator/indicated-pitch-deg</property>
 			<offset>-3.2</offset>
 		</pitch-input>
 		<compression-factor>10.00</compression-factor>
@@ -42,7 +42,7 @@
 		<width>50</width>
 		<height>40</height>
 		<input>
-			<property>/velocities/airspeed-kt</property>
+			<property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
 		</input>
 		<format>%4.0f</format>
 		<halign>left</halign>
@@ -55,7 +55,7 @@
 		<width>50</width>
 		<height>40</height>
 		<input>
-			<property>/position/altitude-ft</property>
+			<property>/instrumentation/altimeter/indicated-altitude-ft</property>
 		</input>
 		<format>%4.0f</format>
 		<halign>left</halign>
@@ -82,7 +82,7 @@
 		<height>8</height>
 		<box>true</box>
 		<input>
-			<property>/orientation/pitch-deg</property>
+			<property>/instrumentation/attitude-indicator/indicated-pitch-deg</property>
 		</input>
 		<format>%4.2f</format>
 		<halign>right</halign>
@@ -95,7 +95,7 @@
 		<width>100</width>
 		<height>10</height>
 		<input>
-			<property>/orientation/heading-deg</property>
+			<property>/instrumentation/heading-indicator/indicated-heading-deg</property>
 			<factor>0.1</factor>
 			<max>85</max>
 			<min>0</min>

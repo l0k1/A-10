@@ -152,6 +152,71 @@
               </binding>
             </action>
 
+<!-- heading set knob -->
+	    <action> 
+		    <name>heading-ccw</name>
+		    <button>0</button>
+		    <x>-322</x>
+		    <y>-350</y>
+		    <w>120</w>
+		    <h>70</h>
+		    <binding> 
+			    <command>property-adjust</command>
+			    <property>instrumentation/heading-indicator/offset-deg</property>
+			    <step>1</step>
+			    <min>-180</min>
+			    <max>180</max>
+			    <wrap>true</wrap>
+		    </binding>
+	    </action>
+	    <action> 
+		    <name>heading-ccw</name>
+		    <button>1</button>
+		    <x>-322</x>
+		    <y>-350</y>
+		    <w>120</w>
+		    <h>70</h>
+		    <binding> 
+			    <command>property-adjust</command>
+			    <property>instrumentation/heading-indicator/offset-deg</property>
+			    <step>5</step>
+			    <min>-180</min>
+			    <max>180</max>
+			    <wrap>true</wrap>
+		    </binding>
+	    </action>
+	    <action> 
+		    <name>heading-cw</name>
+		    <button>0</button>
+		    <x>-450</x>
+		    <y>-350</y>
+		    <w>120</w>
+		    <h>70</h>
+		    <binding> 
+			    <command>property-adjust</command>
+			    <property>instrumentation/heading-indicator/offset-deg</property>
+			    <step>-1</step>
+			    <min>-180</min>
+			    <max>180</max>
+			    <wrap>true</wrap>
+		    </binding>
+	    </action>
+	    <action> 
+		    <name>heading-cw</name>
+		    <button>1</button>
+		    <x>-450</x>
+		    <y>-350</y>
+		    <w>120</w>
+		    <h>70</h>
+		    <binding> 
+			    <command>property-adjust</command>
+			    <property>instrumentation/heading-indicator/offset-deg</property>
+			    <step>-5</step>
+			    <min>-180</min>
+			    <max>180</max>
+			    <wrap>true</wrap>
+		    </binding>
+	</action>
 
 <!-- nav-mode-selector -->
   <!-- PTR switch -->

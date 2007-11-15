@@ -378,6 +378,8 @@ R_AC_bus = func() {
     setprop("systems/electrical/outputs/nav-mode", R_AC_bus_volts);
     setprop("systems/electrical/outputs/aoa-indexer", R_AC_bus_volts);
     setprop("systems/electrical/outputs/hud", R_AC_bus_volts);
+    setprop("instrumentation/heading-indicator/spin", R_AC_bus_volts/30);
+    setprop("instrumentation/attitude-indicator/spin", R_AC_bus_volts/30);
     return load;
 }
 

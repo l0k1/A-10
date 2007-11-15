@@ -14,7 +14,7 @@
         <value>24</value>
       </greater-than>
     </condition>
-    <property>orientation/heading-deg</property>
+    <property>/instrumentation/heading-indicator/indicated-heading-deg</property>
     <center>
       <x-m>0.0</x-m>
       <y-m>0.0</y-m>
@@ -36,7 +36,7 @@
         <value>24</value>
       </greater-than>
     </condition>
-    <property>orientation/heading-deg</property>
+    <property>/instrumentation/heading-indicator/indicated-heading-deg</property>
     <center>
       <x-m>0.0</x-m>
       <y-m>0.0</y-m>
@@ -239,21 +239,21 @@
   </axis>
 </animation>
 
- <!--<animation>
+ <animation>
   <type>rotate</type>
-  <object-name>heading-knob</object-name>
-  <property>orientation/heading-magnetic-deg</property>
+  <object-name>heading-set-knob</object-name>
+  <property>instrumentation/heading-indicator/offset-deg</property>
   <center>
-    <x-m>0.0</x-m>
-    <y-m>0.0</y-m>
-    <z-m>0.0</z-m>
+    <x-m>0.0075</x-m>
+    <y-m>-0.0491</y-m>
+    <z-m>-0.0413</z-m>
   </center>
   <axis>
-    <x>1</x>
+    <x>-1</x>
     <y>0</y>
     <z>0</z>
   </axis>
- </animation>-->
+ </animation>
 
 <!-- lighting -->
 
