@@ -115,6 +115,33 @@
           </binding>
         </action>
 
+        <!-- hud mode knob -->
+        <action> 
+          <name>hud-mode-knob-ccw</name>
+          <button>0</button>
+          <x>5</x>
+          <y>270</y>
+          <w>48</w>
+          <h>65</h>
+          <binding> 
+            <command>nasal</command>
+            <script>A10hud.hud_mode_knob_move(-1)</script>
+          </binding>
+        </action>
+        <action> 
+          <name>hud-mode-knob-cw</name>
+          <button>0</button>
+          <x>60</x>
+          <y>270</y>
+          <w>48</w>
+          <h>65</h>
+          <binding> 
+            <command>nasal</command>
+            <script>A10hud.hud_mode_knob_move(1)</script>
+          </binding>
+        </action>
+
+
         <!-- land-taxi lights -->
         <action> 
           <name>land-lights-up</name>

@@ -9,13 +9,12 @@
 		<x>-10</x>
 		<y>-95</y>
 		<width>20</width>
-		<height>160</height>
+		<height>130</height>
 		<roll-input>
 			<property>instrumentation/attitude-indicator/indicated-roll-deg</property>
 		</roll-input>
 		<pitch-input>
 			<property>instrumentation/attitude-indicator/indicated-pitch-deg</property>
-			<!--<offset>-3.2</offset>-->
 		</pitch-input>
 		<compression-factor>10.00</compression-factor>
 		<display-span>14.0</display-span>
@@ -38,7 +37,7 @@
 	<label>
 		<name>KIAS</name>
 		<x>-66</x>
-		<y>-35</y>
+		<y>-45</y>
 		<width>50</width>
 		<height>40</height>
 		<input>
@@ -51,7 +50,7 @@
 	<label>
 		<name>Altitude</name>
 		<x>39</x>
-		<y>-35</y>
+		<y>-45</y>
 		<width>50</width>
 		<height>40</height>
 		<input>
@@ -64,7 +63,7 @@
 	<label>
 		<name>Altitude AGL</name>
 		<x>35</x>
-		<y>-47</y>
+		<y>-57</y>
 		<width>50</width>
 		<height>40</height>
 		<input>
@@ -77,7 +76,7 @@
 	<label>
 		<name>Pitch</name>
 		<x>35</x>
-		<y>-61</y>
+		<y>-71</y>
 		<width>28</width>
 		<height>8</height>
 		<box>true</box>
@@ -88,14 +87,28 @@
 		<halign>right</halign>
 	</label>
 
+	<label>
+		<name>Depression</name>
+		<x>-66</x>
+		<y>-71</y>
+		<width>28</width>
+		<height>8</height>
+		<box>false</box>
+		<input>
+			<property>sim/model/A-10/controls/hud/depr</property>
+		</input>
+		<format>%4.2fD</format>
+		<halign>left</halign>
+	</label>
+
 	<tape>
 		<name>Heading</name>
 		<x>-50</x>
-		<y>-99</y>
+		<y>-115</y>
 		<width>100</width>
 		<height>10</height>
 		<input>
-			<property>instrumentation/heading-indicator/indicated-heading-deg</property>
+			<property>instrumentation/heading-indicator-fg/indicated-heading-deg</property>
 			<factor>0.1</factor>
 			<max>85</max>
 			<min>0</min>
@@ -121,8 +134,8 @@
 	<gauge>
 	<name>rudder</name>
 		<x>-55</x>
-		<y>-100</y>
-		<width>110</width>
+		<y>-118</y>
+		<width>120</width>
 		<height>5</height>
 		<option>top</option>
 		<option>notext</option>
@@ -158,9 +171,6 @@
 			</equals>
 		</active-condition>
 		<diameter-input>1</diameter-input>
-		<!-- defines the diameter of the adjustable/outer circle -->
-		<!--<width>1</width>-->
-		
 	</aiming-reticle>
 
 </PropertyList>

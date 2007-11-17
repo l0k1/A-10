@@ -14,7 +14,7 @@
         <value>24</value>
       </greater-than>
     </condition>
-    <property>instrumentation/heading-indicator/indicated-heading-deg</property>
+    <property>instrumentation/heading-indicator-fg/indicated-heading-deg</property>
     <center>
       <x-m>0.0</x-m>
       <y-m>0.0</y-m>
@@ -36,7 +36,7 @@
         <value>24</value>
       </greater-than>
     </condition>
-    <property>instrumentation/heading-indicator/indicated-heading-deg</property>
+    <property>instrumentation/heading-indicator-fg/indicated-heading-deg</property>
     <center>
       <x-m>0.0</x-m>
       <y-m>0.0</y-m>
@@ -242,7 +242,7 @@
  <animation>
   <type>rotate</type>
   <object-name>heading-set-knob</object-name>
-  <property>instrumentation/heading-indicator/offset-deg</property>
+  <property>instrumentation/heading-indicator-fg/offset-deg</property>
   <center>
     <x-m>0.0075</x-m>
     <y-m>-0.0491</y-m>

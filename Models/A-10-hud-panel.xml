@@ -3,6 +3,22 @@
   <PropertyList> 
     <path>A-10-hud-panel.ac</path>
 
+	<animation>
+		<object-name>mode-selector</object-name>
+		<type>rotate</type>
+		<property>sim/model/A-10/controls/hud/mode-selector</property>
+		<factor>45</factor>
+		<center>
+			<x-m>0.0031</x-m>
+			<y-m>0.0238</y-m>
+			<z-m>0.0180</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
 
 <!-- lighting -->
 

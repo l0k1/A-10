@@ -36,7 +36,6 @@
 
 <!-- define hotspot actions below -->
 			<actions>
-
 				<!-- HSI -->
 				<!-- course knob (OBS) CCW -->
 				<action>
@@ -150,7 +149,7 @@
 					<h>70</h>
 					<binding>
 						<command>property-adjust</command>
-						<property>instrumentation/heading-indicator/offset-deg</property>
+						<property>instrumentation/heading-indicator-fg/offset-deg</property>
 						<step>1</step>
 						<min>-180</min>
 						<max>180</max>
@@ -167,7 +166,7 @@
 					<h>70</h>
 					<binding>
 						<command>property-adjust</command>
-						<property>instrumentation/heading-indicator/offset-deg</property>
+						<property>instrumentation/heading-indicator-fg/offset-deg</property>
 						<step>5</step>
 						<min>-180</min>
 						<max>180</max>
@@ -184,7 +183,7 @@
 					<h>70</h>
 					<binding>
 						<command>property-adjust</command>
-						<property>instrumentation/heading-indicator/offset-deg</property>
+						<property>instrumentation/heading-indicator-fg/offset-deg</property>
 						<step>-1</step>
 						<min>-180</min>
 						<max>180</max>
@@ -201,7 +200,7 @@
 					<h>70</h>
 					<binding>
 						<command>property-adjust</command>
-						<property>instrumentation/heading-indicator/offset-deg</property>
+						<property>instrumentation/heading-indicator-fg/offset-deg</property>
 						<step>-5</step>
 						<min>-180</min>
 						<max>180</max>
@@ -251,11 +250,8 @@
 						<property>instrumentation/tacan/switch-position</property>
 					</binding>
 				</action>
-
 			</actions>
-
 		</instrument>
 	</instruments>
-
 
 </PropertyList>
