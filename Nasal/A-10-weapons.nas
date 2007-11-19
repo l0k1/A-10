@@ -20,7 +20,7 @@ z_povhold.setDoubleValue(z_pov.getValue());
 controls.trigger = func(b) { b ? fire_gau8a() : cfire_gau8a() }
 
 fire_gau8a = func {
-	# FIXME: we need juice and hyd pressure.
+	# FIXME: we need electrical power and hyd pressure.
 	var gready = gun_ready.getValue();
 	var count = remaining_rounds.getValue();
 	if ( gready and count > 0 ) {
@@ -76,9 +76,9 @@ select_station = func {
 	var target_idx = arg[0];
 	setprop("controls/armament/station-select", target_idx);
 	var desc_node = "sim/model/A-10/weapons/stations/station[" ~ target_idx ~ "]/description";
-	print("sim/model/A-10/weapons/stations/station[" ~ target_idx ~ "]/description");
+	#print("sim/model/A-10/weapons/stations/station[" ~ target_idx ~ "]/description");
 	cdesc = props.globals.getNode(desc_node).getValue();
-	print("select_station.cdesc: " ~ cdesc);
+	#print("select_station.cdesc: " ~ cdesc);
 	var sel_list = props.globals.getNode("sim/model/A-10/weapons/selected-stations");
 	foreach (var s; stations_list) {
 		idx = s.getIndex();

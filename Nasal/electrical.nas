@@ -2,7 +2,6 @@
     # A-10 external-battery-switch assumed always on
     # A-10 external pwr assumed never connected
 
-var UPDATE_PERIOD = 0.3;
 
 var battery = nil;
 var alternator = nil;
@@ -24,7 +23,6 @@ ammeter_ave = 0.0;
 
 
 init_electrical = func {
-    print("Initializing Nasal Electrical System");
     battery = BatteryClass.new();
     alternator = AlternatorClass.new();
     setprop("controls/switches/master-avionics", 0);
@@ -33,13 +31,12 @@ init_electrical = func {
     setprop("controls/electric/engine[0]/generator", 0);
     setprop("controls/electric/engine[1]/generator", 0);
     setprop("sim/model/A-10/controls/switches/inverter", 1);
-	setprop("systems/electrical/power_source", "none");
+    setprop("systems/electrical/power_source", "none");
     setprop("systems/electrical/L-conv-volts", 0.0);
     setprop("systems/electrical/R-conv-volts", 0.0);
     setprop("systems/electrical/inverter-volts", 0.0);
     setprop("systems/electrical/radar", 24.0);
-    # radar only used to allow Air to Air Refueling to work.
-    settimer(update_electrical, 0);
+    # radar only used to allow Air to Air Refueling code to work.
 }
 
 
@@ -126,7 +123,6 @@ update_electrical = func {
     last_time = time;
     update_virtual_bus( dt );
     check_bleed_air();
-    settimer(update_electrical, UPDATE_PERIOD);
 }
 
 
@@ -393,7 +389,6 @@ AC_ESSEN_bus = func() {
     return load;
 }
 
-setlistener("/sim/signals/fdm-initialized", init_electrical);
 
 
 # bleed air system

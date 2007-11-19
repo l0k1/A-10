@@ -1,19 +1,14 @@
 var hud_mode_knob_pos = props.globals.getNode("sim/model/A-10/controls/hud/mode-selector");
 
-
-
-var speed_east_fps  = props.globals.getNode("/velocities/speed-east-fps");
-var speed_north_fps = props.globals.getNode("/velocities/speed-north-fps");
-var speed_down_fps  = props.globals.getNode("/velocities/speed-down-fps");
-var agl_ft          = props.globals.getNode("/position/altitude-agl-ft");
-var pitch  		    = props.globals.getNode("/orientation/pitch-deg");
-var ccip_deviation_m  		= props.globals.getNode("sim/model/A-10/instrumentation/hud/ccip_dev_m", 1);
+var speed_east_fps   = props.globals.getNode("/velocities/speed-east-fps");
+var speed_north_fps  = props.globals.getNode("/velocities/speed-north-fps");
+var speed_down_fps   = props.globals.getNode("/velocities/speed-down-fps");
+var agl_ft           = props.globals.getNode("/position/altitude-agl-ft");
+var pitch            = props.globals.getNode("/orientation/pitch-deg");
+var ccip_deviation_m = props.globals.getNode("sim/model/A-10/instrumentation/hud/ccip_dev_m", 1);
 
 lbs_to_slugs    = 0.031080950172;   # conversion factor.
 var D2R         = math.pi / 180;
-
-var UPDATE_PERIOD = 0.2;
-
 
 # main loop ####################
 update_loop = func {
@@ -23,7 +18,7 @@ update_loop = func {
 		var sn_fps = speed_north_fps.getValue();
 		var sd_fps = speed_down_fps.getValue();
 		var agl    = agl_ft.getValue();
-		var p    = pitch.getValue();
+		var p      = pitch.getValue();
 
 		s_fps = 0; # total velocity, fps.
 		a = 0; # angle between total velocity and horizontal velocity.
@@ -33,7 +28,7 @@ update_loop = func {
 		var sina_vct = sd_fps / s_fps;
 		var cosa_vct = gs_fps / s_fps;
 
-		var a = ( 180 / math.pi  * ( math.atan2( gs_fps, sd_fps )) ) - 90; # used to check calculations against pitch
+		var a = ( 180 / math.pi  * ( math.atan2( gs_fps, sd_fps )) ) - 90;
 		var sina = math.sin( a * D2R );
 		var cosa = math.cos( a * D2R );
 		
@@ -58,19 +53,16 @@ update_loop = func {
 		#print(" ccip-dev: " ~ ccip_dev_m ~ "m");
 		#print(" ");
 	}
-	settimer(update_loop, UPDATE_PERIOD);
-
 }
 
 
-# init #################
-init = func {
-	print("Initializing A-10 CCIP range calculator");
-	update_loop();
-}
 
-setlistener("/sim/signals/fdm-initialized", init);
 
+
+# hide hud if view-number != 0
+setlistener("/sim/current-view/view-number", func {
+	setprop("/sim/hud/visibility[1]", cmdarg().getValue() == 0);
+}, 1);
 
 
 # controls #################

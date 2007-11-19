@@ -10,7 +10,6 @@
 # + out-of-fuel       - boolean, set by this code.
 
 
-var UPDATE_PERIOD = 0.1;
 
 var enabled = nil;
 var fuel_freeze = nil;
@@ -88,7 +87,7 @@ update_loop = func {
 	}
 
 	if (fuel_freeze) {
-		return settimer(update_loop, UPDATE_PERIOD);
+		return;
 	}
 
 
@@ -102,7 +101,7 @@ update_loop = func {
 	# unlock A-10 aar receiver lock and calculate fuel received
 	if (refueling) {
 		# assume max flow rate is 6000 lbs/min (for KC135)
-		var received = 100 * UPDATE_PERIOD;
+		var received = 100 * 0.1;# A10.nas UPDATE_PERIOD_fast
 		total -= received;
 	}
 
@@ -235,20 +234,26 @@ update_loop = func {
 			setprop("sim/model/A-10/engines/engine[1]/n1", n1);
 		}
 	}
-	
 
-	# miscelaneous A-10's props
-	setprop("velocities/ground-speed-kt", ground_speed());
-
-
-	settimer(update_loop, UPDATE_PERIOD);
 }
 
 
 
 initialize = func {
+
 	fuel.update = func {}	# kill $FG_ROOT/Nasal/fuel.nas' loop
-	print ("Initializing Nasal Fuel System");
+
+	# Zero fuel level in the external ferry tanks.
+	setprop("consumables/fuel/tank[4]/level-gal_us", 0);
+	setprop("consumables/fuel/tank[5]/level-gal_us", 0);
+	setprop("consumables/fuel/tank[6]/level-gal_us", 0);
+	setprop("consumables/fuel/tank[4]/level-lbs", 0);
+	setprop("consumables/fuel/tank[5]/level-lbs", 0);
+	setprop("consumables/fuel/tank[6]/level-lbs", 0);
+	setprop("consumables/fuel/tank[4]/selected", "false");
+	setprop("consumables/fuel/tank[5]/selected", "false");
+	setprop("consumables/fuel/tank[6]/selected", "false");
+
 	refuelingN = props.globals.getNode("/systems/refuel/contact", 1);
 	refuelingN.setBoolValue(0);
 	aar_rcvr = getprop("sim/model/A-10/controls/fuel/receiver-lever");
@@ -273,19 +278,10 @@ initialize = func {
 
 	setlistener("sim/freeze/fuel", func { fuel_freeze = cmdarg().getBoolValue() }, 1);
 	setlistener("sim/ai/enabled", func { ai_enabled = cmdarg().getBoolValue() }, 1);
-
-	update_loop();
 }
 
-ground_speed = func {
-	nfps = getprop("velocities/speed-north-fps");
-	efps = getprop("velocities/speed-east-fps");
-	vfps =  math.sqrt((nfps * nfps) + (efps * efps));
-	# 1 kph = 1 fps / 6080.27 * 3600 
-	vkph = vfps * 0.59207897;
-	return(vkph);
-}
 
+# Controls ################
 aar_receiver_lever = func {
 	input = arg[0];
 	aar_rcvr = getprop("sim/model/A-10/controls/fuel/receiver-lever");
@@ -301,5 +297,5 @@ aar_receiver_lever = func {
 }
 
 
-setlistener("/sim/signals/fdm-initialized", initialize);
+
 

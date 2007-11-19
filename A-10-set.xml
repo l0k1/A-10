@@ -9,7 +9,7 @@ Fairchild A-10 simulation config.
 -->
 
 <PropertyList>
-       
+
 	<ai>
 		<submodels>
 			<trajectory-markers type="bool">0</trajectory-markers>
@@ -859,7 +859,6 @@ Fairchild A-10 simulation config.
 		</A10fuel>
 		<A10>
 			<file>Aircraft/A-10/Nasal/A-10.nas</file>
-			<script>zero_ext_tanks();</script>
 		</A10>
 		<nav_scripts>
 			<file>Aircraft/A-10/Nasal/nav_scripts.nas</file>
@@ -880,15 +879,18 @@ Fairchild A-10 simulation config.
 		<engines>
 			<file>Aircraft/A-10/Nasal/engines.nas</file>
 		</engines>
-		<pilot-g>
+		<pilot_g>
 			<file>Aircraft/A-10/Nasal/pilot-g.nas</file>
-		</pilot-g>
+		</pilot_g>
 		<A10weapons>
 			<file>Aircraft/A-10/Nasal/A-10-weapons.nas</file>
 		</A10weapons>
 		<A10hud>
 			<file>Aircraft/A-10/Nasal/hud.nas</file>
 		</A10hud>
+		<A10autopilot>
+			<file>Aircraft/A-10/Nasal/autopilot.nas</file>
+		</A10autopilot>
 
 
 
