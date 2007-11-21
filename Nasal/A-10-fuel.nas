@@ -208,6 +208,60 @@ update_loop = func {
 	setprop("sim/model/A-10/consumables/fuel/int-right-lbs", total_int_right);
 	diff_lbs = abs(right_main - left_main);
 	setprop("sim/model/A-10/consumables/fuel/diff-lbs", diff_lbs);
+
+	# fuel quantity gauge
+	var fuel_dsp_sel = getprop("sim/model/A-10/controls/fuel/fuel-dsp-sel");
+	var fuel_test_ind = getprop("sim/model/A-10/controls/fuel/fuel-test-ind");
+	var left_ext_tank = getprop("consumables/fuel/tank[4]/level-lbs");
+	var cent_ext_tank = getprop("consumables/fuel/tank[5]/level-lbs");
+	var right_ext_tank = getprop("consumables/fuel/tank[6]/level-lbs");
+	var fuel_bus_volts = getprop("systems/electrical/outputs/fuel-gauge-sel");
+	if(left_ext_tank == nil) {
+		left_ext_tank = 0;
+	}
+	if(cent_ext_tank == nil) {
+		cent_ext_tank = 0;
+	}
+	if(right_ext_tank == nil) {
+		right_ext_tank = 0;
+	}
+	if(fuel_bus_volts < 24) {
+		setprop("sim/model/A-10/consumables/fuel/fuel-dsp-left", 0);
+		setprop("sim/model/A-10/consumables/fuel/fuel-dsp-right", 0);
+		setprop("sim/model/A-10/consumables/fuel/fuel-dsp-drum", 0);
+	} else {
+		if(fuel_test_ind) {
+			setprop("sim/model/A-10/consumables/fuel/fuel-dsp-left", 3000);
+			setprop("sim/model/A-10/consumables/fuel/fuel-dsp-right", 3000);
+			setprop("sim/model/A-10/consumables/fuel/fuel-dsp-drum", 6000);
+		} else {
+			setprop("sim/model/A-10/consumables/fuel/fuel-dsp-drum", lbs);
+			if(fuel_dsp_sel == -1) {
+				setprop("sim/model/A-10/consumables/fuel/fuel-dsp-left", total_int_left);
+				setprop("sim/model/A-10/consumables/fuel/fuel-dsp-right", total_int_right);
+			} else {
+				if(fuel_dsp_sel == 0) {
+					setprop("sim/model/A-10/consumables/fuel/fuel-dsp-left", left_main);
+					setprop("sim/model/A-10/consumables/fuel/fuel-dsp-right", right_main);
+				} else {
+					if(fuel_dsp_sel == 1) {
+						setprop("sim/model/A-10/consumables/fuel/fuel-dsp-left", left_wing);
+						setprop("sim/model/A-10/consumables/fuel/fuel-dsp-right", right_wing);
+					} else {
+						if(fuel_dsp_sel == 2) {
+							setprop("sim/model/A-10/consumables/fuel/fuel-dsp-left", left_ext_tank);
+							setprop("sim/model/A-10/consumables/fuel/fuel-dsp-right", right_ext_tank);
+						} else {
+							if(fuel_dsp_sel == 3) {
+								setprop("sim/model/A-10/consumables/fuel/fuel-dsp-left", cent_ext_tank);
+								setprop("sim/model/A-10/consumables/fuel/fuel-dsp-right", 0);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 	
 	# stop the A-10's engines when off or when out of fuel	
 	var start_state = getprop("sim/model/A-10/engines/engine[0]/start-state");
@@ -296,6 +350,17 @@ aar_receiver_lever = func {
 	}
 }
 
+fuel_sel_knob_move = func(arg0) {
+	var knob_pos = getprop("sim/model/A-10/controls/fuel/fuel-dsp-sel");
+	if(arg0 == 1 and knob_pos < 3) {
+		knob_pos = knob_pos + 1;
+	} else {
+		if(arg0 == -1 and knob_pos > -1) {
+			knob_pos = knob_pos - 1;
+		}
+	}
+	setprop("sim/model/A-10/controls/fuel/fuel-dsp-sel", knob_pos);
+}
 
 
 

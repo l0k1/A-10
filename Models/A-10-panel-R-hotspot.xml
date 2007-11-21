@@ -117,6 +117,45 @@
               </binding>
             </action>
 
+	    <!-- Fuel quantity selector -->
+	    <action>
+		    <name>fuel_sel_dec</name>
+		    <button>0</button>
+		    <x>88</x>
+		    <y>-410</y>
+		    <w>82</w>
+		    <h>100</h>
+		    <binding>
+			    <command>nasal</command>
+			    <script>A10fuel.fuel_sel_knob_move(-1)</script>
+		    </binding>
+	    </action>
+	    <action>
+		    <name>fuel_sel_inc</name>
+		    <button>0</button>
+		    <x>185</x>
+		    <y>-410</y>
+		    <w>82</w>
+		    <h>100</h>
+		    <binding>
+			    <command>nasal</command>
+			    <script>A10fuel.fuel_sel_knob_move(1)</script>
+		    </binding>
+	    </action>
+	    
+	    <!-- Fuel test indicator -->
+	    <action>
+		    <name>fuel_test_ind</name>
+		    <button>0</button>
+		    <x>280</x>
+		    <y>-345</y>
+		    <w>32</w>
+		    <h>32</h>
+		    <binding>
+			    <command>property-toggle</command>
+			    <property>sim/model/A-10/controls/fuel/fuel-test-ind</property>
+		    </binding>
+	    </action>
 
           </actions> 
 

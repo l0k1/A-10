@@ -1,5 +1,7 @@
 var UPDATE_PERIOD = 0.1;
-
+var ikts        = props.globals.getNode("velocities/airspeed-kt");
+var aft_ballast = props.globals.getNode("sim/model/A-10/controls/flight/CG-trim-aft", 1);
+var fwd_ballast = props.globals.getNode("sim/model/A-10/controls/flight/CG-trim-fwd", 1);
 
 # Flaps ###################
 # automatic retraction of the flaps if speed exceed 210 KIAS
@@ -16,22 +18,40 @@ speed_toggle_flap = func {
 			setprop("controls/flight/flaps", getprop("sim/flaps/setting[" ~ curr_set ~ "]"));
 		}
 	}
-	settimer(speed_toggle_flap, 0.5);
 }
+
+# auto-trim: Move a ballast from one Yasim weight point to another
+# depending on the airspeed of the a/c. 
+auto_trim = func {
+	var kts = ikts.getValue();
+	var new_fwd = 0;
+	if (kts > 220) { new_fwd = 11*(kts-220); }
+	if (new_fwd > 2500) { new_fwd = 2500 }
+	var new_aft = 2500 - new_fwd;
+	#print ( new_fwd );
+	aft_ballast.setDoubleValue(new_aft);
+	fwd_ballast.setDoubleValue(new_fwd);
+}
+
 
 # Main loop ###############
 var cnt = 0;	# elecrical is done each 0.3 sec.
 				# hud is done each 0.1 sec.
 				# fuel is done each 0.1 sec.
+				# flaps is done each 0.6 sec.
 
 main_loop = func {
-	cnt +=1;
+	cnt += 1;
+	auto_trim();
 	A10hud.update_loop();
 	A10fuel.update_loop();
-	if ( cnt == 3 ) {
+	if ((cnt == 3 ) or (cnt == 6 )) {
 		electrical.update_electrical();
 		pilot_g.update_pilot_g();
-		cnt = 0;
+		if (cnt == 6 ) {
+			speed_toggle_flap();
+			cnt = 0;
+		}		
 	}
 	settimer(main_loop, UPDATE_PERIOD);
 }
@@ -43,7 +63,7 @@ init = func {
 	settimer(A10autopilot.ap_common_elevator_monitor, 0.5);
 	settimer(A10autopilot.altimeter_monitor, 0.5);
 	print("Initializing A-10 CCIP range calculator");
-	print ("Initializing Nasal Fuel System");
+	print("Initializing Nasal Fuel System");
 	A10fuel.initialize();
 	print("Initializing Nasal Electrical System");
 	electrical.init_electrical();

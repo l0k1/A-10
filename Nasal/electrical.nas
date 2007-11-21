@@ -386,6 +386,7 @@ R_AC_bus = func() {
 
 AC_ESSEN_bus = func() {
     load = 0.0;
+    setprop("systems/electrical/outputs/fuel-gauge-sel", AC_ESSEN_bus_volts);
     return load;
 }
 

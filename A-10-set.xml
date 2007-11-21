@@ -384,9 +384,16 @@ Fairchild A-10 simulation config.
 				<consumables>
 					<fuel>
 						<diff-lbs type="double">0</diff-lbs>
+						<fuel-dsp-left type="double">0</fuel-dsp-left>
+						<fuel-dsp-right type="double">0</fuel-dsp-right>
+						<fuel-dsp-drum type="double">0</fuel-dsp-drum>
 					</fuel>
 				</consumables>
 				<controls>
+					<flight>
+						<CG-trim-fwd type="double">0</CG-trim-fwd>
+						<CG-trim-aft type="double">2500</CG-trim-aft>
+					</flight>
 					<APU>
 						<off-start-switch type="int">0</off-start-switch>
 					</APU>
@@ -404,6 +411,8 @@ Fairchild A-10 simulation config.
 					<fuel>
 						<receiver-lever type="bool">0</receiver-lever>
 						<aar-lock type="bool">0</aar-lock>
+						<fuel-dsp-sel type="int">0</fuel-dsp-sel> <!-- -1 to 3 -->
+						<fuel-test-ind type="bool">false</fuel-test-ind>
 					</fuel>
 					<gear>
 						<ld-gear-handle-anim type= "double">0.0</ld-gear-handle-anim>
@@ -808,6 +817,11 @@ Fairchild A-10 simulation config.
 		<bleed-air>
 			<warn-light type="bool">0</warn-light>
 		</bleed-air>
+		<electrical>
+			<outputs>
+				<fuel-gauge-sel type="double">0</fuel-gauge-sel>
+			</outputs>
+		</electrical>
 	</systems>
 
 	<!-- Fuel Tank indexes -->

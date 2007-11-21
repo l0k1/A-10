@@ -188,7 +188,8 @@
 <ballast x="-2.8" y="0" z="0.74" mass="2000"/> <!-- Armored cockpit -->
 <ballast x="-2.0" y="0" z="0.0" mass="1300"/> <!-- Gun (minus ammunition -->
 <ballast x="-6.0" y="0" z="0.0" mass="1000"/> <!-- avionics -->
-<ballast x="-4.0" y="0" z="0.0" mass="2500"/> <!-- trim ballast -->
+<weight x="-4.0" y="0" z="0.0" size="0" mass-prop="sim/model/A-10/controls/flight/CG-trim-aft"/> <!-- speed based moving trim mass="2500"  -->
+<weight x="-2.0" y="0" z="0.0" size="0" mass-prop="sim/model/A-10/controls/flight/CG-trim-fwd"/> <!-- speed based moving trim -->
 
 <!--
     GAU-8/a ammunition drum.

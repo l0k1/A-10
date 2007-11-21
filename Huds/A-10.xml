@@ -133,7 +133,7 @@
 
 	<gauge>
 	<name>rudder</name>
-		<x>-55</x>
+		<x>-60</x>
 		<y>-118</y>
 		<width>120</width>
 		<height>5</height>
@@ -145,7 +145,7 @@
 		<tick-top>false</tick-top>
 		<tick-right>true</tick-right>
 		<tick-left>true</tick-left>
-		<cap-bottom>true</cap-bottom>
+		<cap-bottom>false</cap-bottom>
 		<cap-top>false</cap-top>
 		<cap-right>false</cap-right>
 		<cap-left>false</cap-left>
