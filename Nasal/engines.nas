@@ -2,7 +2,7 @@
 
 
 # starter: 3 positions switch
-starter_switch = func {
+var starter_switch = func {
 	var input = arg[0];
 	var eng_num = arg[1];
 	var position = "sim/model/A-10/controls/engines/engine["~eng_num~"]/starter-switch-position";
@@ -39,7 +39,7 @@ starter_switch = func {
 	}
 }
 
-test_start = func {
+var test_start = func {
 	var eng_num = arg[0];
 	var speed = 0.03;
 	var ignitors_volts = getprop("systems/electrical/outputs/engines-ignitors");
@@ -65,7 +65,7 @@ test_start = func {
 	}
 }
 
-test_stop = func {
+var test_stop = func {
 	var eng_num = arg[0];
 	var rpm_stop = 1;
 	var speed = 0.1;
@@ -84,7 +84,6 @@ test_stop = func {
 		setprop("sim/model/A-10/engines/engine["~eng_num~"]/start-state", 0 );
 	}
 }
-
 
 
 

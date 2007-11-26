@@ -9,7 +9,7 @@ var alternator = nil;
 var last_time = 0.0;
 
 var bat_src_volts = 0.0;
-
+var external_volts    = 0.0;
 var battery_bus_volts   = 0.0;
 var L_DC_bus_volts      = 0.0;
 var R_DC_bus_volts      = 0.0;
@@ -19,10 +19,10 @@ var L_conv_volts        = 0.0;
 var R_conv_volts        = 0.0;
 var AC_ESSEN_bus_volts  = 0.0;
 var DC_ESSEN_bus_volts  = 0.0;
-ammeter_ave = 0.0;
+var ammeter_ave = 0.0;
 
 
-init_electrical = func {
+var init_electrical = func {
     battery = BatteryClass.new();
     alternator = AlternatorClass.new();
     setprop("controls/switches/master-avionics", 0);
@@ -43,9 +43,9 @@ init_electrical = func {
 
 
 
-BatteryClass = {};
+var BatteryClass = {};
 BatteryClass.new = func {
-    obj = { parents : [BatteryClass],
+    var obj = { parents : [BatteryClass],
             ideal_volts : 26.0,
             ideal_amps : 30.0,
             amp_hours : 12.75,
@@ -54,8 +54,8 @@ BatteryClass.new = func {
     return obj;
 }
 BatteryClass.apply_load = func( amps, dt ) {
-    amphrs_used = amps * dt / 3600.0;
-    percent_used = amphrs_used / me.amp_hours;
+    var amphrs_used = amps * dt / 3600.0;
+    var percent_used = amphrs_used / me.amp_hours;
     me.charge_percent -= percent_used;
     if ( me.charge_percent < 0.0 ) {
         me.charge_percent = 0.0;
@@ -65,51 +65,48 @@ BatteryClass.apply_load = func( amps, dt ) {
     return me.amp_hours * me.charge_percent;
 }
 BatteryClass.get_output_volts = func {
-    x = 1.0 - me.charge_percent;
-    factor = x / 10;
+    var x = 1.0 - me.charge_percent;
+    var factor = x / 10;
     return me.ideal_volts - factor;
 }
 BatteryClass.get_output_amps = func {
-    x = 1.0 - me.charge_percent;
-    tmp = -(3.0 * x - 1.0);
-    factor = (tmp*tmp*tmp*tmp*tmp + 32) / 32;
+    var x = 1.0 - me.charge_percent;
+    var tmp = -(3.0 * x - 1.0);
+    var factor = (tmp*tmp*tmp*tmp*tmp + 32) / 32;
     return me.ideal_amps * factor;
 }
 
-AlternatorClass = {};
+var AlternatorClass = {};
 AlternatorClass.new = func {
-    obj = { parents : [AlternatorClass],
+    var obj = { parents : [AlternatorClass],
             ideal_volts : 26.0,
             ideal_amps : 60.0 };
     return obj;
 }
 AlternatorClass.apply_load = func( amps, dt, src ) {
-    rpm = getprop(src);
+    var rpm = getprop(src);
+    var factor = 0;
     # A-10 APU can have 0 rpm
-    if (rpm == 0) {
-        factor = 0;
-    } else {
+    if (rpm > 0) {
         factor = math.ln(rpm)/4;
     }
-    available_amps = me.ideal_amps * factor;
+    var available_amps = me.ideal_amps * factor;
     return available_amps - amps;
 }
 AlternatorClass.get_output_volts = func( src ) {
-    rpm = getprop(src );
+    var rpm = getprop(src);
+    var factor = 0;
     # A-10 APU can have 0 rpm
-    if (rpm == 0) {
-        factor = 0;
-    } else {
+    if (rpm > 0) {
         factor = math.ln(rpm)/4;
     }
     return me.ideal_volts * factor;
 }
 AlternatorClass.get_output_amps = func(src ){
-    rpm = getprop( src );
+    rpm = getprop(src);
+    var factor = 0;
     # A-10 APU can have 0 rpm
-    if (rpm == 0) {
-        factor = 0;
-    } else {
+    if (rpm > 0) {
         factor = math.ln(rpm)/4;
     }
     return me.ideal_amps * factor;
@@ -117,9 +114,9 @@ AlternatorClass.get_output_amps = func(src ){
 
 
 
-update_electrical = func {
-    time = getprop("sim/time/elapsed-sec");
-    dt = time - last_time;
+var update_electrical = func {
+    var time = getprop("sim/time/elapsed-sec");
+    var dt = time - last_time;
     last_time = time;
     update_virtual_bus( dt );
     check_bleed_air();
@@ -128,32 +125,41 @@ update_electrical = func {
 
 
 
-update_virtual_bus = func( dt ) {
-    eng_outof         = getprop("engines/engine[0]/out-of-fuel");
-    eng_outof1        = getprop("engines/engine[1]/out-of-fuel");
-    master_bat        = getprop("controls/electric/battery-switch");
-    master_apu        = getprop("controls/electric/APU-generator[0]");
-    master_alt        = getprop("controls/electric/engine[0]/generator");
-    master_alt1       = getprop("controls/electric/engine[1]/generator");
-    master_inv        = getprop("sim/model/A-10/controls/switches/inverter");
-    external_volts    = 0.0;
-    battery_volts     = battery.get_output_volts();
+var update_virtual_bus = func( dt ) {
+    var eng_outof         = getprop("engines/engine[0]/out-of-fuel");
+    var eng_outof1        = getprop("engines/engine[1]/out-of-fuel");
+    var master_bat        = getprop("controls/electric/battery-switch");
+    var master_apu        = getprop("controls/electric/APU-generator[0]");
+    var master_alt        = getprop("controls/electric/engine[0]/generator");
+    var master_alt1       = getprop("controls/electric/engine[1]/generator");
+    var master_inv        = getprop("sim/model/A-10/controls/switches/inverter");
+    var L_gen_volts       = 0.0;
+    var R_gen_volts       = 0.0;
+    var APU_gen_volts     = 0.0;
+    #var INV_volts         = getprop("systems/electrical/inverter-volts");
+    var INV_volts         = 0.0;
+
+    battery_volts         = battery.get_output_volts();
+    L_AC_bus_volts        = 0.0;
+    R_AC_bus_volts        = 0.0;
+    load                  = 0.0;
+    AC_ESSEN_bus_volts    = 0.0;
+    R_conv_volts          = 0.0;
+    L_conv_volts          = 0.0;
+    var power_source      = nil;
+    #var ammeter           = 0.0;
+
     if (master_alt and !eng_outof) {
         L_gen_volts = alternator.get_output_volts("sim/model/A-10/engines/engine[0]/n1");
-    } else { L_gen_volts = 0.0;}
+    }
     if (master_alt1 and !eng_outof1) {
         R_gen_volts = alternator.get_output_volts("sim/model/A-10/engines/engine[1]/n1");
-    } else { R_gen_volts = 0.0; }
+    }
     if ( master_apu ) {
         APU_gen_volts = alternator.get_output_volts("sim/model/A-10/systems/apu/rpm");
-    } else { APU_gen_volts = 0.0; }
-    INV_volts    = getprop("systems/electrical/inverter-volts");
-    L_AC_bus_volts = 0.0;
-    R_AC_bus_volts = 0.0;
-    load = 0.0;
-    
-  # determine power source
-    power_source = nil;
+    }
+
+    # determine power source
     if ( master_bat == 1 ) { bat_src_volts = battery_volts; }
     if (APU_gen_volts >= 23) {
         R_conv_volts = APU_gen_volts;
@@ -276,7 +282,6 @@ update_virtual_bus = func( dt ) {
     load += L_AC_bus();
     load += R_AC_bus();
     load += AC_ESSEN_bus();
-    ammeter = 0.0;
     if ( bat_src_volts > 1.0 ) {
         # normal load
         load += 15.0;
@@ -312,7 +317,7 @@ update_virtual_bus = func( dt ) {
 
 
 
-BATT_bus = func() {
+var BATT_bus = func() {
     load = 0.0;
     if ( getprop("controls/switches/cabin-lights") ) {
         setprop("systems/electrical/outputs/cabin-lights", battery_bus_volts);
@@ -327,7 +332,7 @@ BATT_bus = func() {
     return load;
 }
 
-DC_ESSEN_bus = func() {
+var DC_ESSEN_bus = func() {
     load = 0.0;
     setprop("systems/electrical/outputs/nav[0]", DC_ESSEN_bus_volts);
     setprop("systems/electrical/outputs/com[0]", DC_ESSEN_bus_volts);
@@ -340,18 +345,18 @@ DC_ESSEN_bus = func() {
     return load;
 }
 
-AUX_DC_ESSEN_bus = func() {
+var AUX_DC_ESSEN_bus = func() {
     load = 0.0;
     setprop("systems/electrical/outputs/engines-ignitors", AC_ESSEN_bus_volts);
     return load;
 }
 
-L_DC_bus = func() {
+var L_DC_bus = func() {
     load = 0.0;
     return load;
 }
 
-R_DC_bus = func() {
+var R_DC_bus = func() {
     load = 0.0;
     setprop("systems/electrical/outputs/uhf-adf", R_DC_bus_volts);
     setprop("systems/electrical/outputs/vhf-comm", R_DC_bus_volts);
@@ -360,12 +365,12 @@ R_DC_bus = func() {
     return load;
 }
 
-L_AC_bus = func() {
+var L_AC_bus = func() {
     load = 0.0;
     return load;
 }
 
-R_AC_bus = func() {
+var R_AC_bus = func() {
     load = 0.0;
     setprop("systems/electrical/outputs/tacan", R_AC_bus_volts);
     setprop("systems/electrical/outputs/hsi", R_AC_bus_volts);
@@ -384,7 +389,7 @@ R_AC_bus = func() {
     return load;
 }
 
-AC_ESSEN_bus = func() {
+var AC_ESSEN_bus = func() {
     load = 0.0;
     setprop("systems/electrical/outputs/fuel-gauge-sel", AC_ESSEN_bus_volts);
     return load;
@@ -421,7 +426,7 @@ var check_bleed_air= func {
 
 # other electrical power controls
 # -------------------------------
-inverter_switch = func {
+var inverter_switch = func {
     var inv_pos = props.globals.getNode("sim/model/A-10/controls/switches/inverter", 1);
     var pos = inv_pos.getValue();
     var input = arg[0];
@@ -446,11 +451,11 @@ inverter_switch = func {
 # lighting controls
 # -----------------
 
-nav_lights_switcher = func {
-    flash = props.globals.getNode("sim/model/A-10/controls/lighting/nav-lights-flash", 1);
-    s_pos = props.globals.getNode("sim/model/A-10/controls/lighting/nav-lights-switch", 1);
-    pos = s_pos.getValue();
-    input = arg[0];
+var nav_lights_switcher = func {
+    var flash = props.globals.getNode("sim/model/A-10/controls/lighting/nav-lights-flash", 1);
+    var s_pos = props.globals.getNode("sim/model/A-10/controls/lighting/nav-lights-switch", 1);
+    var pos = s_pos.getValue();
+    var input = arg[0];
     if ( input == 1 ) {
         if ( pos == 0 ) {
             s_pos.setIntValue(1);
@@ -470,10 +475,10 @@ nav_lights_switcher = func {
 
 
 
-land_lights_switcher = func {
-    s_pos = props.globals.getNode("sim/model/A-10/controls/lighting/land-lights-switch", 1);
-    pos = s_pos.getValue();
-    input = arg[0];
+var land_lights_switcher = func {
+    var s_pos = props.globals.getNode("sim/model/A-10/controls/lighting/land-lights-switch", 1);
+    var pos = s_pos.getValue();
+    var input = arg[0];
     if ( input == 1 ) {
         if ( pos == 0 ) {
             s_pos.setIntValue(1);

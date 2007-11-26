@@ -5,7 +5,7 @@
 # - sim/model/A-10/system/apu/rpm
 # - sim/model/A-10/system/apu/tmp
 
-off_start_switch = func {
+var off_start_switch = func {
   var input = arg[0];
   if (input == 1) {
     setprop("sim/model/A-10/controls/APU/off-start-switch", 1);
@@ -14,7 +14,7 @@ off_start_switch = func {
   elsif (input == -1) { test_stop() }
 }
 
-test_start = func {
+var test_start = func {
 	setprop("sim/model/A-10/controls/APU/off-start-switch", 1);
 	var volts = getprop("systems/electrical/outputs/apu-starter[0]");
 	# we need electric power
@@ -38,7 +38,7 @@ test_start = func {
 	}
 }
 
-test_stop = func {
+var test_stop = func {
 	var rpm_stop = 1;
 	var temp_stop = 1;
 	setprop("sim/model/A-10/controls/APU/off-start-switch", 0);
@@ -65,7 +65,7 @@ test_stop = func {
 	}
 }
 
-transient_start_seq = func {
+var transient_start_seq = func {
   var speed = arg[0];
   var start_state = arg[1];
   var new_start_state = start_state + 0.004;
@@ -73,11 +73,11 @@ transient_start_seq = func {
   settimer( test_start, speed);
 }
 
-transient_stop_seq = func {
+var transient_stop_seq = func {
   var speed = arg[0];
   settimer( test_stop, speed);
 }
 
-atan = func {
+var atan = func {
   return math.atan2(arg[0], 1);
 }

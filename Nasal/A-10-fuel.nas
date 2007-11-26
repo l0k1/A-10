@@ -24,7 +24,7 @@ var aar_lock = nil;
 var aar_state = nil;
 
 # initialize property if it doesn't exist, and set node type otherwise
-init_prop = func(node, prop, val, type = "double") {
+var init_prop = func(node, prop, val, type = "double") {
 	var n = node.getNode(prop);
 	if (n != nil) {
 		var v = n.getValue();
@@ -44,7 +44,7 @@ init_prop = func(node, prop, val, type = "double") {
 
 
 
-update_loop = func {
+var update_loop = func {
 	# check for contact with tanker aircraft
 	var tankers = [];
 	if (ai_enabled) {
@@ -263,11 +263,12 @@ update_loop = func {
 		}
 	}
 	
-	# stop the A-10's engines when off or when out of fuel	
+	# stop the A-10's engines when not running or when out of fuel
+	# if running, tie the fake n1 rpm to the YASim n1 rpm
+	# in a verbose maner to avoid looped engine index concatenations	
 	var start_state = getprop("sim/model/A-10/engines/engine[0]/start-state");
 	var n1 = getprop("engines/engine[0]/n1");
 	var running = getprop("sim/model/A-10/engines/engine[0]/running");
-
 	if (! running) {
 		setprop("engines/engine[0]/out-of-fuel", 1);
 	} else {
@@ -275,11 +276,14 @@ update_loop = func {
 		if (start_state >= 1) {
 			setprop("sim/model/A-10/engines/engine[0]/n1", n1);
 		}
+		if ( out_of_fuel ) {
+			A10engines.test_stop(0);
+		}
 	}
+
 	start_state = getprop("sim/model/A-10/engines/engine[1]/start-state");
 	n1 = getprop("engines/engine[1]/n1");
 	running = getprop("sim/model/A-10/engines/engine[1]/running");
-
 	if (! running) {
 		setprop("engines/engine[1]/out-of-fuel", 1);
 	} else {
@@ -287,13 +291,16 @@ update_loop = func {
 		if (start_state >= 1) {
 			setprop("sim/model/A-10/engines/engine[1]/n1", n1);
 		}
+		if ( out_of_fuel ) {
+			A10engines.test_stop(1);
+		}
 	}
 
 }
 
 
 
-initialize = func {
+var initialize = func {
 
 	fuel.update = func {}	# kill $FG_ROOT/Nasal/fuel.nas' loop
 
@@ -336,7 +343,7 @@ initialize = func {
 
 
 # Controls ################
-aar_receiver_lever = func {
+var aar_receiver_lever = func {
 	input = arg[0];
 	aar_rcvr = getprop("sim/model/A-10/controls/fuel/receiver-lever");
 	if (input == 1) {
@@ -350,7 +357,7 @@ aar_receiver_lever = func {
 	}
 }
 
-fuel_sel_knob_move = func(arg0) {
+var fuel_sel_knob_move = func(arg0) {
 	var knob_pos = getprop("sim/model/A-10/controls/fuel/fuel-dsp-sel");
 	if(arg0 == 1 and knob_pos < 3) {
 		knob_pos = knob_pos + 1;

@@ -98,7 +98,7 @@
           <h>45</h>
           <binding>
             <command>nasal</command>
-            <script>engines.starter_switch(1, 0)</script>
+            <script>A10engines.starter_switch(1, 0)</script>
           </binding>
         </action>
 
@@ -111,7 +111,7 @@
           <h>45</h>
           <binding>
             <command>nasal</command>
-            <script>engines.starter_switch(-1, 0)</script>
+            <script>A10engines.starter_switch(-1, 0)</script>
           </binding>
         </action>
 
@@ -125,7 +125,7 @@
           <h>45</h>
           <binding>
             <command>nasal</command>
-            <script>engines.starter_switch(1, 1)</script>
+            <script>A10engines.starter_switch(1, 1)</script>
           </binding>
         </action>
 
@@ -138,7 +138,7 @@
           <h>45</h>
           <binding>
             <command>nasal</command>
-            <script>engines.starter_switch(-1, 1)</script>
+            <script>A10engines.starter_switch(-1, 1)</script>
           </binding>
         </action>
 

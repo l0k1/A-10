@@ -715,14 +715,14 @@
 	</animation>
 
 <!-- Canopy -->
-	<animation>
+	<!--<animation>
 		<type>select</type>
 		<object-name>BCanopyFrame</object-name>
 		<object-name>BCanopyFrameInner</object-name>
 		<condition>
 			<property>sim/model/A-10/canopy-safe</property>
 		</condition>
-	</animation>
+	</animation>-->
 
 	<animation>
 		<type>select</type>
@@ -2032,7 +2032,16 @@
 				<property>velocities/airspeed-kt</property>
 				<value>50</value>
 			</less-than>
-			<property>sim/model/A-10/engines/engine/n1</property>
+			<or>
+				<equals>
+					<property>sim/model/A-10/engines/engine[0]/running</property>
+					<value>true</value>
+				</equals>
+				<equals>
+					<property>sim/model/A-10/engines/engine[1]/running</property>
+					<value>true</value>
+				</equals>
+			</or>
 		</condition>
 	</animation>
 

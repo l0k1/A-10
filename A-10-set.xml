@@ -554,17 +554,11 @@ Fairchild A-10 simulation config.
 				<name>K</name>
 				<desc>Toggle trajectory markers</desc>
 			</key>
-			<key>
-				<name>U</name>
-				<desc>Update drop view position</desc>
-			</key>
-			<line>Top Speed:      380 kt @ 15000 ft)</line>
-			<line>______________________________________________</line>
 			<line>External fuel tanks ?</line>
 			<line>  Menu > Equipment > Fuel and Payload</line>
 			<line>______________________________________________</line>
-			<line>External stores ?   (ECM Pod, AIM-9, LAU-68)</line>
-			<line>  Ctrl-I or Tab key</line>
+			<line>External stores ? (ECM Pod, AIM-9, LAU-68...)</line>
+			<line>  Menu > Equipement > Fuel and Payload</line>
 			<line>______________________________________________</line>
 			<line>How to start it ?</line>
 			<line>  Menu > Help > Start Tutorial > Engines Start</line>
@@ -890,9 +884,9 @@ Fairchild A-10 simulation config.
 		<apu>
 			<file>Aircraft/A-10/Nasal/apu.nas</file>
 		</apu>
-		<engines>
+		<A10engines>
 			<file>Aircraft/A-10/Nasal/engines.nas</file>
-		</engines>
+		</A10engines>
 		<pilot_g>
 			<file>Aircraft/A-10/Nasal/pilot-g.nas</file>
 		</pilot_g>

@@ -7,11 +7,11 @@ var agl_ft           = props.globals.getNode("/position/altitude-agl-ft");
 var pitch            = props.globals.getNode("/orientation/pitch-deg");
 var ccip_deviation_m = props.globals.getNode("sim/model/A-10/instrumentation/hud/ccip_dev_m", 1);
 
-lbs_to_slugs    = 0.031080950172;   # conversion factor.
+var lbs_to_slugs    = 0.031080950172;   # conversion factor.
 var D2R         = math.pi / 180;
 
 # main loop ####################
-update_loop = func {
+var update_loop = func {
 	var mode = hud_mode_knob_pos.getValue();
 	if ( mode == 3 ) {
 		var se_fps = speed_east_fps.getValue();
@@ -66,7 +66,7 @@ setlistener("/sim/current-view/view-number", func {
 
 
 # controls #################
-hud_mode_knob_move = func(v) {
+var hud_mode_knob_move = func(v) {
 	var p = hud_mode_knob_pos.getValue();
 	if (v == 1 ) {
 		if ( p < 6 ) {

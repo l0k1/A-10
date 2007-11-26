@@ -19,7 +19,7 @@ var current_v = props.globals.getNode("/sim/current-view/view-number");
 z_povhold.setDoubleValue(z_pov.getValue());
 controls.trigger = func(b) { b ? fire_gau8a() : cfire_gau8a() }
 
-fire_gau8a = func {
+var fire_gau8a = func {
 	# FIXME: we need electrical power and hyd pressure.
 	var gready = gun_ready.getValue();
 	var count = remaining_rounds.getValue();
@@ -32,7 +32,7 @@ fire_gau8a = func {
 	gau8a_vibs(0.002, zpov);
 }
 
-gau8a_vibs = func(v, zpov) {
+var gau8a_vibs = func(v, zpov) {
 	var grunning = gun_running.getBoolValue();
 	var currv = current_v.getValue();
 	if ( currv == 0 ) {
@@ -49,7 +49,7 @@ gau8a_vibs = func(v, zpov) {
 	}
 }
 
-cfire_gau8a = func {
+var cfire_gau8a = func {
 	gun_running.setBoolValue(0);
 	if ( remaining_rounds.getValue() == 0 ) {
 		gun_ready.setValue(0);
@@ -72,7 +72,7 @@ var aim9_knob = a10weapons.getNode("dual-AIM-9/aim9-knob");
 var aim9_sound = a10weapons.getNode("dual-AIM-9/search-sound");
 var cdesc = "";
 
-select_station = func {
+var select_station = func {
 	var target_idx = arg[0];
 	setprop("controls/armament/station-select", target_idx);
 	var desc_node = "sim/model/A-10/weapons/stations/station[" ~ target_idx ~ "]/description";
@@ -121,7 +121,7 @@ select_station = func {
 # Ask for deactivation of the search sound flag after the last AIM-9 has been released.
 var sl_list = 0;
 
-release = func {
+var release = func {
 	var arm_volts = props.globals.getNode("systems/electrical/R-AC-volts").getValue();
 	var asw = arm_sw.getValue();
 	if ( asw != 1 or arm_volts < 24 )	{ return; }
@@ -136,7 +136,7 @@ release = func {
 	}
 }
 
-release_operate = func(rip_counter, interval) {
+var release_operate = func(rip_counter, interval) {
 	foreach(sl; sl_list) {
 		var slidx = sl.getValue();
 		var snode = "sim/model/A-10/weapons/stations/station[" ~ slidx ~ "]";		
@@ -187,7 +187,7 @@ release_operate = func(rip_counter, interval) {
 
 # Searchs if there isn't a remainning AIM-9 on a selected station before
 # deactivating the search sound flag.
-deactivate_aim9_sound = func {
+var deactivate_aim9_sound = func {
 	aim9_sound.setBoolValue(0);
 	var a = 0;
 	foreach (s; stations.getChildren("station")) {
@@ -254,7 +254,7 @@ var update_stations = func {
 # necessary number of triggers (useful in the case of the submodels weren't
 # already defined).
 # Creates a node attached to the station's one and containing the triggers.
-station_load = func(s, w, type) {
+var station_load = func(s, w, type) {
 	var weight = type.getNode("weight-lb").getValue();
 	var ammo_weight = type.getNode("ammo-weight-lb").getValue();
 	var desc = type.getNode("description").getValue();
@@ -295,7 +295,7 @@ station_load = func(s, w, type) {
 
 # station unload
 # --------------
-station_unload = func(s, w) {
+var station_unload = func(s, w) {
 	w.getNode("weight-lb").setValue(0);
 	s.getNode("ammo-weight-lb").setValue(0);
 	#desc = s.getNode("description").getValue();
@@ -311,7 +311,7 @@ station_unload = func(s, w) {
 # Armament panel switches
 # -----------------------
 
-master_arm_switch = func {
+var master_arm_switch = func {
 	var input = arg[0];
 	var asw = arm_sw.getValue();
 	var gcount = gun_count.getValue();
@@ -334,7 +334,7 @@ master_arm_switch = func {
 	}
 }
 
-gun_rate_switch = func {
+var gun_rate_switch = func {
 	var input = arg[0];
 	var grsw = gr_switch.getValue();
 	var asw = arm_sw.getValue();
@@ -352,7 +352,7 @@ gun_rate_switch = func {
 	}
 }
 
-aim9_knob_switch = func {
+var aim9_knob_switch = func {
 	var input = arg[0];
 	var a_knob = aim9_knob.getValue();
 	if ( input == 1 ) {

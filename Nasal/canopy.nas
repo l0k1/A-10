@@ -5,9 +5,9 @@ var cnpy = aircraft.door.new("canopy", 10);
 var switch = props.globals.getNode("sim/model/A-10/controls/canopy/canopy-switch", 1);
 var pos = props.globals.getNode("canopy/position-norm", 1);
 
-canopy_switch = func(v) {
+var canopy_switch = func(v) {
 
-	p = pos.getValue();
+	var p = pos.getValue();
 
 	if (v == 2 ) {
 		if ( p < 1 ) {
@@ -28,5 +28,11 @@ canopy_switch = func(v) {
 	}
 }
 
-
+# fixes cockpit when use of ac_state.nas #####
+var cockpit_state = func {
+	var switch = getprop("sim/model/A-10/controls/canopy/canopy-switch");
+	if ( switch == 1 ) {
+		setprop("canopy/position-norm", 0);
+	}
+}
 

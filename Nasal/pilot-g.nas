@@ -1,19 +1,19 @@
 
 
-pilot_g            = props.globals.getNode("accelerations/pilot-g", 1);
-timeratio          = props.globals.getNode("accelerations/timeratio", 1);
-pilot_g_damped     = props.globals.getNode("accelerations/pilot-g-damped", 1);
-hud_intens_control = props.globals.getNode("sim/model/A-10/controls/hud/intens", 1);
-hud_alpha          = props.globals.getNode("sim[0]/hud/color/alpha", 1);
-hud_volts          = props.globals.getNode("systems/electrical/outputs/hud", 1);
+var pilot_g            = props.globals.getNode("accelerations/pilot-g", 1);
+var timeratio          = props.globals.getNode("accelerations/timeratio", 1);
+var pilot_g_damped     = props.globals.getNode("accelerations/pilot-g-damped", 1);
+var hud_intens_control = props.globals.getNode("sim/model/A-10/controls/hud/intens", 1);
+var hud_alpha          = props.globals.getNode("sim[0]/hud/color/alpha", 1);
+var hud_volts          = props.globals.getNode("systems/electrical/outputs/hud", 1);
 
 pilot_g_damped.setDoubleValue(0); 
 timeratio.setDoubleValue(0.03); 
 
-damp = 0;
+var damp = 0;
 hud_alpha.setDoubleValue(0);
 
-update_pilot_g = func {
+var update_pilot_g = func {
 	var n        = timeratio.getValue(); 
 	var g        = pilot_g.getValue();
 	var h_intens = hud_intens_control.getValue();

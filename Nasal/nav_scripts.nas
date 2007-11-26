@@ -6,7 +6,7 @@
 # -----------
 # update selected-mhz with translated decimals
 var nav0_freq_update = func {
-	test = getprop("instrumentation/nav[0]/frequencies/selected-mhz");
+	var test = getprop("instrumentation/nav[0]/frequencies/selected-mhz");
 	if (! test) {
 		setprop("sim/model/A-10/instrumentation/nav[0]/frequencies/freq-whole", 0);
 	} else {
@@ -20,18 +20,18 @@ var nav0_freq_update = func {
 var nav1_back = 0;
 setlistener( "instrumentation/tacan/switch-position", func {nav1_freq_update();} );
 
-nav1_freq_update = func {
+var nav1_freq_update = func {
 	if ( getprop("instrumentation/tacan/switch-position") == 1 ) {
-		tacan_freq = getprop( "instrumentation/tacan/frequencies/selected-mhz" );
-		nav1_freq = getprop( "instrumentation/nav[1]/frequencies/selected-mhz" );
-		nav1_back = nav1_freq;
+		var tacan_freq = getprop( "instrumentation/tacan/frequencies/selected-mhz" );
+		var nav1_freq = getprop( "instrumentation/nav[1]/frequencies/selected-mhz" );
+		var nav1_back = nav1_freq;
 		setprop("instrumentation/nav[1]/frequencies/selected-mhz", tacan_freq);
 	} else {
 	setprop("instrumentation/nav[1]/frequencies/selected-mhz", nav1_back);
 	}
 }
 
-tacan_XYtoggle = func {
+var tacan_XYtoggle = func {
 	var xy_sign = props.globals.getNode("instrumentation/tacan/frequencies/selected-channel[4]");
 	var s = xy_sign.getValue();
 	if ( s == "X" ) {
@@ -41,14 +41,14 @@ tacan_XYtoggle = func {
 	}
 }
 
-tacan_tenth_adjust = func {
-	tenths = getprop( "instrumentation/tacan/frequencies/selected-channel[2]" );
-	hundreds = getprop( "instrumentation/tacan/frequencies/selected-channel[1]" );
-	value = (10 * tenths) + (100 * hundreds);
-	adjust = arg[0];
-	new_value = value + adjust;
-	new_hundreds = int(new_value/100);
-	new_tenths = (new_value - (new_hundreds*100))/10;
+var tacan_tenth_adjust = func {
+	var tenths = getprop( "instrumentation/tacan/frequencies/selected-channel[2]" );
+	var hundreds = getprop( "instrumentation/tacan/frequencies/selected-channel[1]" );
+	var value = (10 * tenths) + (100 * hundreds);
+	var adjust = arg[0];
+	var new_value = value + adjust;
+	var new_hundreds = int(new_value/100);
+	var new_tenths = (new_value - (new_hundreds*100))/10;
 	setprop( "instrumentation/tacan/frequencies/selected-channel[1]", new_hundreds );
 	setprop( "instrumentation/tacan/frequencies/selected-channel[2]", new_tenths );
 }
@@ -117,7 +117,7 @@ var change_preset = func {
 
 # Saves displayed freq using aircraft.data.save()
 # load_state used for the load button animation
-load_freq = func {
+var load_freq = func {
 	var mode = vhf_mode.getValue();
 	var selector = vhf_selector.getValue();
 	if ( mode == 1 and selector == 3 ) {
@@ -139,7 +139,7 @@ var ac_hdg = props.globals.getNode("/orientation/heading-deg", 1);
 var st_hdg = props.globals.getNode("instrumentation/nav[2]/heading-deg", 1);
 var vhf_hdev = vhf.getNode("homing-deviation",1);
 
-nav2_homing_devs = func {
+var nav2_homing_devs = func {
 	var ahdg = ac_hdg.getValue();
 	var shdg = st_hdg.getValue();
 	if ( shdg != nil ) {
@@ -174,7 +174,7 @@ var fm_vhf_toggle_buttons = func {
 
 # Init
 # ----
-freq_startup = func {
+var freq_startup = func {
 	change_preset(0);
 	nav0_freq_update();
 	nav2_homing_devs();

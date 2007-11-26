@@ -1,4 +1,4 @@
-autotakeoff = func {
+var autotakeoff = func {
 
 	if(getprop("autopilot/locks/auto-take-off") == "enabled") {
 		ato_start();
@@ -6,9 +6,9 @@ autotakeoff = func {
 
 }
 #--------------------------------------------------------------------
-ato_start = func {
+var ato_start = func {
 
-	hdgdeg = getprop("orientation/heading-deg");
+	var hdgdeg = getprop("orientation/heading-deg");
 
 	setprop("controls/flight/flaps", 1.0);
 	setprop("controls/flight/spoilers", 0.0);
@@ -29,7 +29,7 @@ ato_start = func {
 
 	setprop("autopilot/internal/target-aileron-deflection-norm", 0);
 
-	toiptdeg = getprop("autopilot/settings/take-off-initial-pitch-deg");
+	var toiptdeg = getprop("autopilot/settings/take-off-initial-pitch-deg");
 	setprop("autopilot/settings/target-pitch-deg", toiptdeg);
 
 	# Start the main loop.
@@ -37,7 +37,7 @@ ato_start = func {
 
 }
 #--------------------------------------------------------------------
-ato_mainloop = func {
+var ato_mainloop = func {
 
 	ato_mode();
 	ato_spddep();
@@ -49,9 +49,9 @@ ato_mainloop = func {
 
 }
 #--------------------------------------------------------------------
-ato_mode = func {
+var ato_mode = func {
 
-	agl = getprop("position/altitude-agl-ft");
+	var agl = getprop("position/altitude-agl-ft");
 	if(agl > 50) {
 		setprop("controls/gear/gear-down", "false");
 		setprop("autopilot/locks/rudder-control", "reset");
@@ -65,16 +65,16 @@ ato_mode = func {
 }
 
 #--------------------------------------------------------------------
-ato_spddep = func {
+var ato_spddep = func {
 
 	# This script controls speed dependent actions.
-	airspeed = getprop("velocities/airspeed-kt");
-	grrtkt = getprop("autopilot/settings/ground-roll-rotate-speed-kts");
+	var airspeed = getprop("velocities/airspeed-kt");
+	var grrtkt = getprop("autopilot/settings/ground-roll-rotate-speed-kts");
 	if(airspeed < grrtkt) {
 		# Do nothing until airspeed > groud roll rotation kts
 	} else {
 		if(airspeed < 180) {
-			tofptdeg = getprop("autopilot/settings/take-off-final-pitch-deg");
+			var tofptdeg = getprop("autopilot/settings/take-off-final-pitch-deg");
 			setprop("autopilot/settings/target-pitch-deg", tofptdeg);
 			setprop("autopilot/locks/heading", "wing-leveler");
 		} else {
@@ -107,7 +107,7 @@ ato_spddep = func {
 
 }
 #--------------------------------------------------------------------
-autoland = func {
+var autoland = func {
 
 	if(getprop("autopilot/locks/auto-landing") == "enabled") {
 		atl_start();
@@ -115,14 +115,14 @@ autoland = func {
 
 }
 #--------------------------------------------------------------------
-atl_start = func {
+var atl_start = func {
 
 	setprop("autopilot/locks/auto-landing", "engaged");
 
 	setprop("autopilot/settings/target-climb-rate-fps", 0);
 	setprop("autopilot/locks/altitude", "vfps-hold");
 
-	crspdkt = getprop("autopilot/settings/auto-landing-circuit-speed-kt");
+	var crspdkt = getprop("autopilot/settings/auto-landing-circuit-speed-kt");
 	setprop("autopilot/settings/target-speed-kt", crspdkt);
 	setprop("autopilot/locks/speed", "speed-with-throttle");
 
@@ -133,10 +133,10 @@ atl_start = func {
 
 }
 #--------------------------------------------------------------------
-atl_mainloop = func {
+var atl_mainloop = func {
 
-	altaglft = getprop("position/altitude-agl-ft");
-	tdnaltft = getprop("autopilot/settings/auto-landing-touchdown-alt-ft");
+	var altaglft = getprop("position/altitude-agl-ft");
+	var tdnaltft = getprop("autopilot/settings/auto-landing-touchdown-alt-ft");
 
 	if(altaglft > tdnaltft) {
 		atl_glideslope();
@@ -150,17 +150,17 @@ atl_mainloop = func {
 
 }
 #--------------------------------------------------------------------
-atl_glideslope = func {
+var atl_glideslope = func {
 
-	gs1vfps = getprop("instrumentation/nav[0]/gs-rate-of-climb");
+	var gs1vfps = getprop("instrumentation/nav[0]/gs-rate-of-climb");
 	setprop("autopilot/settings/target-climb-rate-fps", gs1vfps);
 
 	if(gs1vfps < 0) {
-		apaoadeg = getprop("autopilot/settings/approach-aoa-deg");
+		var apaoadeg = getprop("autopilot/settings/approach-aoa-deg");
 		setprop("autopilot/settings/target-aoa-deg", apaoadeg);
 		setprop("autopilot/locks/aoa", "aoa-with-speed");
 
-		kias = getprop("velocities/airspeed-kt");
+		var kias = getprop("velocities/airspeed-kt");
 		if(kias < 170) {
 			setprop("controls/flight/flaps", 1.0);
 			setprop("controls/gear/gear-down", "true");
@@ -194,12 +194,12 @@ atl_glideslope = func {
 
 }
 #--------------------------------------------------------------------
-atl_touchdown = func {
+var atl_touchdown = func {
 
 	# Get the agl, kias, vfps & heading.
-	agl = getprop("position/altitude-agl-ft");
-	kias = getprop("velocities/airspeed-kt");
-	vfps = getprop("velocities/vertical-speed-fps");
+	var agl = getprop("position/altitude-agl-ft");
+	var kias = getprop("velocities/airspeed-kt");
+	var vfps = getprop("velocities/vertical-speed-fps");
 
 	setprop("autopilot/locks/aoa", "off");
 	setprop("autopilot/locks/heading", "");
@@ -255,8 +255,8 @@ atl_touchdown = func {
 
 }
 #--------------------------------------------------------------------
-ap_common_aileron_monitor = func {
-	curr_hh_state = getprop("autopilot/locks/heading");
+var ap_common_aileron_monitor = func {
+	var curr_hh_state = getprop("autopilot/locks/heading");
 
 	if(curr_hh_state == "wing-leveler") {
 		setprop("autopilot/locks/common-aileron-control", "engaged");
@@ -331,8 +331,8 @@ ap_common_aileron_monitor = func {
 	settimer(ap_common_aileron_monitor, 0.5);
 }
 #--------------------------------------------------------------------
-ap_common_elevator_monitor = func {
-	curr_ah_state = getprop("autopilot/locks/altitude");
+var ap_common_elevator_monitor = func {
+	var curr_ah_state = getprop("autopilot/locks/altitude");
 
 	if(curr_ah_state == "altitude-hold") {
 		setprop("autopilot/locks/common-elevator-control", "engaged");
@@ -404,15 +404,15 @@ ap_common_elevator_monitor = func {
 	settimer(ap_common_elevator_monitor, 0.5);
 }
 #--------------------------------------------------------------------
-altimeter_monitor = func {
-	ind_alt = getprop("instrumentation/altimeter/indicated-altitude-ft");
-	alt_ftx5 = int(ind_alt / 10000);
+var altimeter_monitor = func {
+	var ind_alt = getprop("instrumentation/altimeter/indicated-altitude-ft");
+	var alt_ftx5 = int(ind_alt / 10000);
 	ind_alt = ind_alt - (alt_ftx5 * 10000);
-	alt_ftx4 = int(ind_alt / 1000);
+	var alt_ftx4 = int(ind_alt / 1000);
 	ind_alt = ind_alt - (alt_ftx4 * 1000);
-	alt_ftx3 = int(ind_alt / 100);
+	var alt_ftx3 = int(ind_alt / 100);
 	ind_alt = ind_alt - (alt_ftx3 * 100);
-	alt_ftx2 = int(ind_alt / 10);
+	var alt_ftx2 = int(ind_alt / 10);
 
 	setprop("instrumentation/altimeter/indicated-altitude-ft-x2", alt_ftx2);
 	setprop("instrumentation/altimeter/indicated-altitude-ft-x3", alt_ftx3);

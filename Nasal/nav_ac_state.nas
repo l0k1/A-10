@@ -13,18 +13,18 @@
 var file = getprop("sim/aircraft") ~ "-nav.xml";
 
 
-loadxml = func(name, node) { fgcommand("loadxml", props.Node.new({"filename": name, "targetnode": node})); }
-savexml = func(name, node) { fgcommand("savexml", props.Node.new({"filename": name, "sourcenode": node})); }
+var loadxml = func(name, node) { fgcommand("loadxml", props.Node.new({"filename": name, "targetnode": node})); }
+var savexml = func(name, node) { fgcommand("savexml", props.Node.new({"filename": name, "sourcenode": node})); }
 # this is the root of a little property tree:   props.Node.new({"filename": name, "sourcenode": node})); }
 # that contains two children "filename", and "sourcenode"  with respective values
 
-freq_state_load = func() {
+var freq_state_load = func() {
 	loadxml(file, "instrumentation/nav/presets");
-    print("restoring nav presets from ", file);
+	print("restoring nav presets from ", file);
 }
 
 
-freq_state_save = func() {
+var freq_state_save = func() {
 	savexml(file, "instrumentation/nav/presets");
-    print("saving nav presets in ", file);
+	print("saving nav presets in ", file);
 }
