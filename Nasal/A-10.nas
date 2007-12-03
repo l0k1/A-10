@@ -2,6 +2,8 @@ var UPDATE_PERIOD = 0.1;
 var ikts        = props.globals.getNode("velocities/airspeed-kt");
 var aft_ballast = props.globals.getNode("sim/model/A-10/controls/flight/CG-trim-aft", 1);
 var fwd_ballast = props.globals.getNode("sim/model/A-10/controls/flight/CG-trim-fwd", 1);
+var audio_alt_warn_signal = props.globals.getNode("sim/model/A-10/instrumentation/warnings/audio-alt");
+
 
 # Flaps ###################
 # automatic retraction of the flaps if speed exceed 210 KIAS
@@ -20,19 +22,37 @@ var speed_toggle_flap = func {
 	}
 }
 
-# auto-trim: Move a ballast from one Yasim weight point to another
-# depending on the airspeed of the a/c. 
-var auto_trim = func {
+
+# Auto-CGtrim ###############
+# Move a ballast from one YASim weight point to another
+# depending on the airspeed of the a/c. This provides smoother pitch reactions
+# at A-10's high speeds.
+var auto_cgtrim = func {
 	var kts = ikts.getValue();
 	var new_fwd = 0;
 	if (kts > 220) { new_fwd = 11*(kts-220); }
 	if (new_fwd > 2500) { new_fwd = 2500 }
-	var new_aft = 2500 - new_fwd;
-	#print ( new_fwd );	
+	var new_aft = 2500 - new_fwd;	
 	aft_ballast.setDoubleValue(new_aft);
 	fwd_ballast.setDoubleValue(new_fwd);
 }
 
+
+# Audio Altitude Warning ##
+var audio_alt_warn_counter = 0;
+var audio_alt_warning = func {
+	var gear = getprop("gear/gear[0]/position-norm");
+	var alt = getprop("position/altitude-agl-ft");
+	if ( audio_alt_warn_counter == 0 and gear == 0 and alt < 200 ) {
+		audio_alt_warn_signal.setBoolValue(1);
+	}
+	audio_alt_warn_counter += 1;
+	if ( audio_alt_warn_counter == 20 or alt >= 200) {
+		audio_alt_warn_counter = 0;
+		audio_alt_warn_signal.setBoolValue(0);
+	}
+	setprop("sim/model/A-10/instrumentation/warnings/alt_warn_counter", audio_alt_warn_counter);
+}
 
 # Main loop ###############
 var cnt = 0;	# elecrical is done each 0.3 sec.
@@ -42,10 +62,12 @@ var cnt = 0;	# elecrical is done each 0.3 sec.
 
 var main_loop = func {
 	cnt += 1;
-	auto_trim();
+	auto_cgtrim();
 	A10hud.update_loop();
 	A10fuel.update_loop();
+	nav_scripts.nav2_homing_devs();
 	if ((cnt == 3 ) or (cnt == 6 )) {
+		audio_alt_warning();
 		electrical.update_electrical();
 		pilot_g.update_pilot_g();
 		if (cnt == 6 ) {
@@ -76,8 +98,10 @@ var init = func {
 	A10fuel.initialize();
 	print("Initializing Nasal Electrical System");
 	electrical.init_electrical();
+	nav_scripts.freq_startup();
 	settimer(speed_toggle_flap, 0.5);
 	settimer(func {canopy.cockpit_state()}, 3);
+	aircraft.data.save();
 	main_loop();
 }
 setlistener("/sim/signals/fdm-initialized", init);

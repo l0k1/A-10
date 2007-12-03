@@ -413,6 +413,14 @@ Fairchild A-10 simulation config.
 						<aar-lock type="bool">0</aar-lock>
 						<fuel-dsp-sel type="int">0</fuel-dsp-sel> <!-- -1 to 3 -->
 						<fuel-test-ind type="bool">false</fuel-test-ind>
+						<ext-tanks-wing type="bool">false</ext-tanks-wing>
+						<ext-tanks-fus type="bool">false</ext-tanks-fus>
+						<tk-gate-open type="bool">false</tk-gate-open>
+						<cross-feed-sw type="bool">false</cross-feed-sw>
+						<boost-pumps-wing-l type="bool">true</boost-pumps-wing-l>
+						<boost-pumps-wing-r type="bool">true</boost-pumps-wing-r>
+						<boost-pumps-main-l type="bool">true</boost-pumps-main-l>
+						<boost-pumps-main-r type="bool">true</boost-pumps-main-r>
 					</fuel>
 					<gear>
 						<ld-gear-handle-anim type= "double">0.0</ld-gear-handle-anim>
@@ -485,10 +493,17 @@ Fairchild A-10 simulation config.
 							<preset n="18" type="float">0</preset>
 							<preset n="19" type="float">0</preset>
 							<preset n="20" type="float">0</preset>
-						</presets>-->
+						</presets>
+						<frequencies>
+							<alt-selected-mhz-x10 type="int">0</alt-selected-mhz-x10>
+							<alt-selected-mhz-x1 type="int">0</alt-selected-mhz-x1>
+							<alt-selected-mhz-x01 type="int">0</alt-selected-mhz-x01>
+							<alt-selected-mhz-x0001 type="int">0</alt-selected-mhz-x0001>
+						</frequencies>
 					</vhf>
 					<warnings>
 						<master-caution type="bool">false</master-caution>
+						<audio-alt type="bool">false</audio-alt>
 					</warnings>
 				</instrumentation>
 				<systems>
@@ -870,7 +885,6 @@ Fairchild A-10 simulation config.
 		</A10>
 		<nav_scripts>
 			<file>Aircraft/A-10/Nasal/nav_scripts.nas</file>
-			<script>nav_scripts.freq_startup();</script>
 		</nav_scripts>
 		<landing_gear_handle>
 			<file>Aircraft/A-10/Nasal/landing_gear_handle.nas</file>

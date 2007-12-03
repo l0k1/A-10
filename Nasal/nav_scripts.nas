@@ -73,17 +73,26 @@ var vhf_fqs0001 = vhf_fqs.getNode("alt-selected-mhz-x0001");
 # Displays selected-mhz on the VHF radio set
 var alt_freq_update = func {
 	var freq  = nav2_selected_mhz.getValue();
-	if ( freq == nil ) { freq = 0; }	
-	var freq10 = int( freq / 10 );
-	var freq1 = int( freq ) - ( freq10 * 10 );
-	var res = ( ( freq - ( int( freq ) ) ) * 10 );
-	var freq01 = int( res );
-	var freq0001 = ( int( int( res * 10 ) / 25 ) ) * 25; # rounded to 25
+	if (freq == nil) { freq = 0; }	
+	var freq10 = int(freq / 10);
+	var freq1 = int(freq) - (freq10 * 10);
+	var resr = rounding25((freq - int(freq)) * 1000);
+	var freq01 = int(resr / 100);
+	var freq0001 = ((resr / 100) - freq01) * 100;
 	vhf_fqs10.setValue( freq10 );
 	vhf_fqs1.setValue( freq1 );
 	vhf_fqs01.setValue( freq01 );
 	vhf_fqs0001.setValue( freq0001 );
 }
+
+var rounding25 = func(n) {
+	var aa = n / 25;
+	var a = int(aa);
+	var l = ( a + 0.5 ) * 25;
+	n = (n >= l) ? ((a + 1) * 25) : (a * 25);
+	return( n );
+}
+
 
 # Updates nav[2] selected-mhz property from the VHF dialed freq
 var alt_freq_to_freq = func {
@@ -121,16 +130,24 @@ var load_freq = func {
 	var mode = vhf_mode.getValue();
 	var selector = vhf_selector.getValue();
 	if ( mode == 1 and selector == 3 ) {
-		# mode to TR, delector to MAN
+		# mode to TR, selector to MAN
 		var to_load_freq = nav2_selected_mhz.getValue();
 		var p = vhf_preset.getValue();
 		var f = "preset[" ~ p ~ "]";
 		var p_freq = vhf_presets.getNode(f);
 		p_freq.setValue(to_load_freq);
 		vhf_load_state.setValue(1);
-		aircraft.data.add(p_freq);
-		aircraft.data.save();
 		settimer(func { vhf_load_state.setValue(0) }, 0.5);
+	}
+}
+
+# Init ####################
+var freq_startup = func {
+	change_preset(0);
+	nav0_freq_update();
+	# add all the restored pressets to the aircraft datas
+	foreach (var p_freq; vhf_presets.getChildren()) {
+		aircraft.data.add(p_freq);
 	}
 }
 
@@ -148,9 +165,7 @@ var nav2_homing_devs = func {
 		while ( d < -180) d += 360;
 		vhf_hdev.setDoubleValue(d);
 	}
-	settimer(func { nav2_homing_devs(); }, 0.1);
 }
-
 
 # Other navigation panels
 # -----------------------
@@ -172,16 +187,3 @@ var fm_vhf_toggle_buttons = func {
 }
 
 
-# Init
-# ----
-var freq_startup = func {
-	change_preset(0);
-	nav0_freq_update();
-	nav2_homing_devs();
-}
-
-setlistener("/sim/signals/nasal-dir-initialized", func { settimer(freq_startup, 3);});
-
-#test_button = func {
-#  print("button ", arg[0]);
-#}
