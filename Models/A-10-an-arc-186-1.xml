@@ -153,15 +153,16 @@
 		<object-name>freq-select-knob</object-name>
 		<property>sim/model/A-10/instrumentation/vhf/selector</property>
 		<interpolation>
-			<entry><ind>1</ind><dep>0</dep></entry>
-			<entry><ind>2</ind><dep>62</dep></entry>
-			<entry><ind>3</ind><dep>98</dep></entry>
-			<entry><ind>4</ind><dep>157</dep></entry>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>1</ind><dep>53</dep></entry>
+			<entry><ind>2</ind><dep>107</dep></entry>
+			<entry><ind>3</ind><dep>143</dep></entry>
+			<entry><ind>4</ind><dep>181</dep></entry>
 		</interpolation>
 		<center>
-			<x-m>0.0179</x-m>
-			<y-m>-0.0495</y-m>
-			<z-m>0.0019</z-m>
+			<x-m>0.0173</x-m>
+			<y-m>-0.0546</y-m>
+			<z-m>0.0000</z-m>
 		</center>
 		<axis>
 			<x>0</x>
@@ -173,24 +174,24 @@
 	<!-- mode knob -->
 
 	<animation>
-	<type>rotate</type>
-	<object-name>mode-knob</object-name>
-	<property>sim/model/A-10/instrumentation/vhf/mode</property>
-	<interpolation>
-	<entry><ind>0</ind><dep>0</dep></entry>
-	<entry><ind>1</ind><dep>36</dep></entry>
-	<entry><ind>2</ind><dep>75</dep></entry>
-	</interpolation>
-	<center>
-	<x-m>0.0179</x-m>
-	<y-m>0.0524</y-m>
-	<z-m>0.0019</z-m>
-	</center>
-	<axis>
-	<x>0</x>
-	<y>0</y>
-	<z>-1</z>
-	</axis>
+		<type>rotate</type>
+		<object-name>mode-knob</object-name>
+		<property>sim/model/A-10/instrumentation/vhf/mode</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>1</ind><dep>36</dep></entry>
+			<entry><ind>2</ind><dep>75</dep></entry>
+		</interpolation>
+		<center>
+			<x-m>0.0173</x-m>
+			<y-m>0.0556</y-m>
+			<z-m>0.0000</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>-1</z>
+		</axis>
 	</animation>
 
 	<!-- load button -->
@@ -273,38 +274,38 @@
 		</emission>
 	</animation>
 
-  <animation>
-   <object-name>ring-01</object-name> 
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.75</red>
-        <green>0.55</green>
-        <blue>0.35</blue>
-      </emission>
-  </animation>
+	<animation>
+		<object-name>ring-01</object-name> 
+		<type>material</type>
+		<emission>
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.75</red>
+			<green>0.55</green>
+			<blue>0.35</blue>
+		</emission>
+	</animation>
 
-  <animation>
-   <object-name>ring-1</object-name> 
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.75</red>
-        <green>0.55</green>
-        <blue>0.35</blue>
-      </emission>
-  </animation>
+	<animation>
+		<object-name>ring-1</object-name> 
+		<type>material</type>
+		<emission>
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.75</red>
+			<green>0.55</green>
+			<blue>0.35</blue>
+		</emission>
+	</animation>
 
-  <animation>
-   <object-name>ring-10</object-name> 
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.75</red>
-        <green>0.55</green>
-        <blue>0.35</blue>
-      </emission>
-  </animation>
+	<animation>
+		<object-name>ring-10</object-name> 
+		<type>material</type>
+		<emission>
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.75</red>
+			<green>0.55</green>
+			<blue>0.35</blue>
+		</emission>
+	</animation>
 
 	<animation>
 		<object-name>pressets-01</object-name> 
