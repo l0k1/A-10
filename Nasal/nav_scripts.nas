@@ -86,8 +86,7 @@ var alt_freq_update = func {
 }
 
 var rounding25 = func(n) {
-	var aa = n / 25;
-	var a = int(aa);
+	var a = int( n / 25 );
 	var l = ( a + 0.5 ) * 25;
 	n = (n >= l) ? ((a + 1) * 25) : (a * 25);
 	return( n );
