@@ -623,6 +623,10 @@
 			<path>Aircraft/A-10/Sounds/altitude.wav</path>
 			<condition>
 				<property>sim/model/A-10/instrumentation/warnings/audio-alt</property>
+				<equals>
+					<property>sim/current-view/view-number</property>
+					<value>0</value>
+				</equals>
 			</condition>
 			<volume>
 				<property>sim/model/A-10/instrumentation/warnings/audio-alt-volume</property>
