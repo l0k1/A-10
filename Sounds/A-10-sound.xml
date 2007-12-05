@@ -625,7 +625,7 @@
 				<property>sim/model/A-10/instrumentation/warnings/audio-alt</property>
 			</condition>
 			<volume>
-				<value>0.7</value>
+				<property>sim/model/A-10/instrumentation/warnings/audio-alt-volume</property>
 			</volume>
 		</alt-warning>
 
@@ -1063,7 +1063,7 @@
       </volume>
     </selector-ils>
 
-<selector-ptr-left> 
+	<selector-ptr-left> 
 		<name>selector-ptr-left</name>
 		<mode>once</mode>
 		<path>Aircraft/A-10/Sounds/shlock.wav</path>
