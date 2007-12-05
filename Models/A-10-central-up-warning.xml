@@ -22,6 +22,26 @@
 	</animation>
 
 	<animation>
+		<type>rotate</type>
+		<object-name>button-audio</object-name>
+		<property>sim/model/A-10/instrumentation/warnings/audio-alt-volume</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>1</ind><dep>270</dep></entry>
+		</interpolation>
+		<center>
+			<x-m>0.0000</x-m>
+			<y-m>0.0472</y-m>
+			<z-m>0.0106</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>  
+	</animation>
+
+	<animation>
 		<type>select</type>
 		<object-name>canopy-warning</object-name>
 		<condition>

@@ -4,6 +4,11 @@
 
 # ILS: nav[0]
 # -----------
+var ils_freq         = props.globals.getNode("instrumentation/nav[0]/frequencies");
+var ils_freq_sel     = ils_freq.getNode("selected-mhz", 1);
+var ils_freq_sel_fmt = ils_freq.getNode("selected-mhz-fmt", 1);
+
+
 # update selected-mhz with translated decimals
 var nav0_freq_update = func {
 	var test = getprop("instrumentation/nav[0]/frequencies/selected-mhz");
@@ -20,8 +25,12 @@ var nav0_freq_update = func {
 var nav1_back = 0;
 setlistener( "instrumentation/tacan/switch-position", func {nav1_freq_update();} );
 
+var tc        = props.globals.getNode("instrumentation/tacan/");
+var tc_sw_pos = tc.getNode("switch-position");
+var tc_freq   = tc.getNode("frequencies");
+
 var nav1_freq_update = func {
-	if ( getprop("instrumentation/tacan/switch-position") == 1 ) {
+	if ( tc_sw_pos.getValue() == 1 ) {
 		var tacan_freq = getprop( "instrumentation/tacan/frequencies/selected-mhz" );
 		var nav1_freq = getprop( "instrumentation/nav[1]/frequencies/selected-mhz" );
 		var nav1_back = nav1_freq;
@@ -32,7 +41,7 @@ var nav1_freq_update = func {
 }
 
 var tacan_XYtoggle = func {
-	var xy_sign = props.globals.getNode("instrumentation/tacan/frequencies/selected-channel[4]");
+	var xy_sign = tc_freq.getNode("selected-channel[4]");
 	var s = xy_sign.getValue();
 	if ( s == "X" ) {
 		xy_sign.setValue( "Y" );
@@ -69,6 +78,7 @@ var vhf_fqs1 = vhf_fqs.getNode("alt-selected-mhz-x1");
 var vhf_fqs01 = vhf_fqs.getNode("alt-selected-mhz-x01");
 var vhf_fqs0001 = vhf_fqs.getNode("alt-selected-mhz-x0001");
 
+aircraft.data.add(vhf_preset);
 
 # Displays selected-mhz on the VHF radio set
 var alt_freq_update = func {
@@ -123,7 +133,7 @@ var change_preset = func {
 	alt_freq_update();
 }
 
-# Saves displayed freq using aircraft.data.save()
+# Saves displayed freq in the pressets memory
 # load_state used for the load button animation
 var load_freq = func {
 	var mode = vhf_mode.getValue();
@@ -142,8 +152,13 @@ var load_freq = func {
 
 # Init ####################
 var freq_startup = func {
-	change_preset(0);
 	nav0_freq_update();
+	aircraft.data.add(ils_freq_sel);
+	aircraft.data.add(ils_freq_sel_fmt);
+	foreach (var f_tc; tc_freq.getChildren()) {
+		aircraft.data.add(f_tc);
+	}
+	change_preset(0);
 	# add all the restored pressets to the aircraft datas
 	foreach (var p_freq; vhf_presets.getChildren()) {
 		aircraft.data.add(p_freq);

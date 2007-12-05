@@ -468,7 +468,7 @@ Fairchild A-10 simulation config.
 				</A-10-nav>
 				<instrumentation>
 					<vhf>
-						<selector type="int">1</selector>
+						<selector type="int">0</selector>
 						<mode type="int">0</mode>
 						<selected-preset type="int">1</selected-preset>
 						<load-state type="int">0</load-state>
@@ -504,6 +504,7 @@ Fairchild A-10 simulation config.
 					<warnings>
 						<master-caution type="bool">false</master-caution>
 						<audio-alt type="bool">false</audio-alt>
+						<audio-alt-volume type="float">0.7</audio-alt-volume>
 					</warnings>
 				</instrumentation>
 				<systems>

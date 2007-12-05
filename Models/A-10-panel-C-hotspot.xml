@@ -20,7 +20,6 @@
 			<x>512</x>
 
 			<layers>
-
 				<layer>
 					<name>background</name>
 					<texture>
@@ -31,11 +30,44 @@
 					<y2>1.0</y2>
 					</texture>
 				</layer>
-
 			</layers>
 
 <!-- define hotspot actions below -->
 			<actions>
+				<!-- Audio Altitude warning volume knob -->
+				<action>
+					<name>vol-ccw</name>
+					<button>0</button>
+					<x>290</x>
+					<y>435</y>
+					<w>70</w>
+					<h>50</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>sim/model/A-10/instrumentation/warnings/audio-alt-volume</property>
+						<step>-0.1</step>
+						<min>0</min>
+						<max>1</max>
+						<wrap>false</wrap>
+					</binding>
+				</action>
+				<action>
+					<name>vol-cw</name>
+					<button>0</button>
+					<x>370</x>
+					<y>435</y>
+					<w>70</w>
+					<h>50</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>sim/model/A-10/instrumentation/warnings/audio-alt-volume</property>
+						<step>0.1</step>
+						<min>0</min>
+						<max>1</max>
+						<wrap>false</wrap>
+					</binding>
+				</action>
+
 				<!-- HSI -->
 				<!-- course knob (OBS) CCW -->
 				<action>

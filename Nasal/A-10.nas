@@ -39,6 +39,9 @@ var auto_cgtrim = func {
 
 
 # Audio Altitude Warning ##
+var audio_alt_vol = props.globals.getNode("sim/model/A-10/instrumentation/warnings/audio-alt-volume");
+aircraft.data.add(audio_alt_vol);
+
 var audio_alt_warn_counter = 0;
 var audio_alt_warning = func {
 	var gear = getprop("gear/gear[0]/position-norm");
