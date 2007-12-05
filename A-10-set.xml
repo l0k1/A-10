@@ -572,12 +572,14 @@ Fairchild A-10 simulation config.
 			</key>
 			<line>External fuel tanks ?</line>
 			<line>  Menu > Equipment > Fuel and Payload</line>
-			<line>______________________________________________</line>
+			<line>__________________________________________________</line>
 			<line>External stores ? (ECM Pod, AIM-9, LAU-68...)</line>
 			<line>  Menu > Equipement > Fuel and Payload</line>
-			<line>______________________________________________</line>
+			<line>__________________________________________________</line>
 			<line>How to start it ?</line>
 			<line>  Menu > Help > Start Tutorial > Engines Start</line>
+			<line>__________________________________________________</line>
+			<line>Find more A-10 information on wiki.flightgear.org</line>
 		</help>
 
 		<!-- Hud -->
