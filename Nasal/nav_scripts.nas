@@ -167,7 +167,8 @@ var freq_startup = func {
 		aircraft.data.add(p_freq);
 	}
 	## HSI
-	aircraft.data.add("instrumentation/heading-indicator-fg/offset-deg");
+	aircraft.data.add("instrumentation/heading-indicator-fg/offset-deg",
+		"instrumentation/nav[1]/radials/selected-deg");
 }
 
 # Homing deviations computing loop
