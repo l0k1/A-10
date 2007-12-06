@@ -152,17 +152,22 @@ var load_freq = func {
 
 # Init ####################
 var freq_startup = func {
+	## nav[0] - ILS
 	nav0_freq_update();
 	aircraft.data.add(ils_freq_sel);
 	aircraft.data.add(ils_freq_sel_fmt);
+	## nav[1] - TACAN
 	foreach (var f_tc; tc_freq.getChildren()) {
 		aircraft.data.add(f_tc);
 	}
+	## nav[2] - VHF
 	change_preset(0);
-	# add all the restored pressets to the aircraft datas
+	# add all the restored pressets to a new aircraft data file
 	foreach (var p_freq; vhf_presets.getChildren()) {
 		aircraft.data.add(p_freq);
 	}
+	## HSI
+	aircraft.data.add("instrumentation/heading-indicator-fg/offset-deg");
 }
 
 # Homing deviations computing loop
