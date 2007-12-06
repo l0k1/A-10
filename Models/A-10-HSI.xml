@@ -259,6 +259,16 @@
 
   <animation>
    <object-name>HSI-bkg</object-name>
+   <type>material</type>
+     <emission> 
+      <factor-prop>controls/lighting/panel-norm</factor-prop>
+        <red>0.44</red>
+        <green>0.27</green>
+        <blue>0.15</blue>
+      </emission>
+  </animation>
+
+  <animation>
    <object-name>heading-set-knob</object-name>
    <type>material</type>
      <emission> 
