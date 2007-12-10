@@ -261,7 +261,7 @@
   <animation> 
     <object-name>chaff-dispens-button</object-name>
     <type>rotate</type>
-      <property>controls/engines/engine[1]/throttle</property>
+      <property>controls/engines/engine[0]/throttle</property>
       <factor>41</factor>
       <center>
         <x-m>0.0000</x-m>
