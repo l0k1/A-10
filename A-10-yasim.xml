@@ -126,23 +126,23 @@
  </vstab>
 
 <!-- 2 x GE TF34-100 -->
-  <jet x="-10.8" y="-1.5" z="1.27" mass="1440" thrust="9065" tsfc="0.371">
-    <actionpt x="-12.5" y="-1.5" z="1.15"/>
-    <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
-  </jet>
+	<jet x="-10.8" y="1.5" z="1.27" mass="1440" thrust="9065" spool-time="8" tsfc="0.371" n1-idle="56" n1-max="102" n2-idle="20" n2-max="100" epr="6.42" egt="1223" rotate="9">
+		<actionpt x="-12.5" y="1.5" z="1.15"/>
+		<control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+	</jet>
 
-  <jet x="-10.8" y="1.5" z="1.27" mass="1440" thrust="9065" tsfc="0.371">
-    <control-input axis="/controls/engines/engine[1]/throttle" control="THROTTLE"/>
-    <actionpt x="-12.5" y="1.5" z="1.15"/>
-  </jet>
+	<jet x="-10.8" y="-1.5" z="1.27" mass="1440" thrust="9065" spool-time="8" tsfc="0.371" n1-idle="56" n1-max="102" n2-idle="20" n2-max="100" epr="6.42" egt="1223" rotate="9">
+		<actionpt x="-12.5" y="-1.5" z="1.15"/>
+		<control-input axis="/controls/engines/engine[1]/throttle" control="THROTTLE"/>
+	</jet>
 
 <!-- Internal tanks -->
-  <tank x="-8.3" y="2.0" z="0.0" jet="true" capacity="2000"/>
-  <tank x="-8.3" y="-0.5" z="0.63" jet="true" capacity="3350"/>
-  <tank x="-8.3" y="0.5" z="0.63" jet="true" capacity="3350"/>
-  <tank x="-8.3" y="-2.0" z="0.0" jet="true" capacity="2000"/>
+  <tank x="-8.3" y="2.0" z="0.0" jet="true" capacity="2089.92"/><!-- ppg=6.72, real tank capacity : 311 gallons -> 311*6.72 = 2089.92 lbs -->
+  <tank x="-8.8" y="0.0" z="0.63" jet="true" capacity="3433.92"/><!-- real tank capacity: 511 gallons -> 511*6.72 = 3433.92 lbs -->
+  <tank x="-7.2" y="0.0" z="0.63" jet="true" capacity="3433.92"/>
+  <tank x="-8.3" y="-2.0" z="0.0" jet="true" capacity="2089.92"/>
 <!-- Ferry Tanks -->
-  <tank x="-7.6" y="1.29" z="-0.86" jet="true" capacity="4032"/>
+  <tank x="-7.6" y="1.29" z="-0.86" jet="true" capacity="4032"/> <!-- 600*6.72 = 4032 -->
   <tank x="-7.6" y="0" z="-0.86" jet="true" capacity="4032"/>
   <tank x="-7.6" y="-1.29" z="-0.86" jet="true" capacity="4032"/>
 
@@ -187,7 +187,7 @@
 <!-- Ballast -->
 <ballast x="-2.8" y="0" z="0.74" mass="2000"/> <!-- Armored cockpit -->
 <ballast x="-2.0" y="0" z="0.0" mass="1300"/> <!-- Gun (minus ammunition -->
-<ballast x="-6.0" y="0" z="0.0" mass="1000"/> <!-- avionics -->
+<ballast x="-6.1" y="0" z="0.0" mass="1000"/> <!-- avionics -->
 <weight x="-4.0" y="0" z="0.0" size="0" mass-prop="sim/model/A-10/controls/flight/CG-trim-aft"/> <!-- speed based moving trim mass="2500"  -->
 <weight x="-2.0" y="0" z="0.0" size="0" mass-prop="sim/model/A-10/controls/flight/CG-trim-fwd"/> <!-- speed based moving trim -->
 
