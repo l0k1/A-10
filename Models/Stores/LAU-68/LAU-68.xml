@@ -6,6 +6,7 @@
 
 	<name>lau-68</name>
 	<path>lau-68.ac</path>	
+	<nopreview/>
 
 	<animation>
 		<type>select</type>

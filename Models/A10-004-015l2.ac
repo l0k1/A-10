@@ -25799,7 +25799,7 @@ name "Nav-Taxi-LandingLights"
 loc 4.45404 0.0582979 -1.14908
 kids 7
 OBJECT poly
-name "noshadow.Taxi-halo"
+name "Taxi-halo"
 loc -4.45404 -0.0582976 1.14908
 texture "panel-up.rgb"
 crease 45.000000
@@ -25823,7 +25823,7 @@ refs 3
 1 0.124244 0.796797
 kids 0
 OBJECT poly
-name "noshadow.Landing-halo"
+name "Landing-halo"
 loc -4.45404 -0.0582976 1.14908
 texture "panel-up.rgb"
 crease 45.000000
@@ -25847,7 +25847,7 @@ refs 3
 1 0.124244 0.737926
 kids 0
 OBJECT poly
-name "noshadow.nav_halo_L"
+name "nav_halo_L"
 loc -4.45404 -0.0582976 1.14908
 texture "panel-up.rgb"
 crease 45.000000
@@ -25871,7 +25871,7 @@ refs 3
 1 0.190298 0.737926
 kids 0
 OBJECT poly
-name "noshadow.nav_halo_R"
+name "nav_halo_R"
 loc -4.45404 -0.0582976 1.14908
 texture "panel-up.rgb"
 crease 45.000000
@@ -25895,7 +25895,7 @@ refs 3
 1 0.0590319 0.7377
 kids 0
 OBJECT poly
-name "noshadow.L-NavLight"
+name "L-NavLight"
 loc 11.1351 0.145744 -2.87271
 crease 45.000000
 numvert 19
@@ -26041,7 +26041,7 @@ refs 4
 7 0 0
 kids 0
 OBJECT poly
-name "noshadow.R-NavLight"
+name "R-NavLight"
 loc 11.1351 0.145744 -2.87271
 crease 45.000000
 numvert 19
@@ -26187,7 +26187,7 @@ refs 4
 1 0 0
 kids 0
 OBJECT poly
-name "noshadow.nav_halo_T"
+name "nav_halo_T"
 loc -4.45404 -0.0582976 1.14908
 texture "panel-up.rgb"
 crease 45.000000
@@ -26215,7 +26215,7 @@ name "StrobeLights"
 loc 5.60511 0.278591 -2.96894
 kids 6
 OBJECT poly
-name "noshadow.Aft-StrobeLight-off"
+name "Aft-StrobeLight-off"
 loc 10.4512 0.250579 2.96936
 crease 180.000000
 numvert 33
@@ -26471,7 +26471,7 @@ refs 3
 31 0.125 0.875
 kids 0
 OBJECT poly
-name "noshadow.R-StrobeLight-off"
+name "R-StrobeLight-off"
 loc 3.18206 0.292596 -5.9381
 texture "A-10-000.rgb"
 crease 81.000000
@@ -26600,7 +26600,7 @@ refs 4
 12 0.0239689 0.362525
 kids 0
 OBJECT poly
-name "noshadow.L-StrobeLight-off"
+name "L-StrobeLight-off"
 loc 3.18206 0.292596 -5.9381
 texture "A-10-000.rgb"
 crease 81.000000
@@ -26729,7 +26729,7 @@ refs 4
 11 0.0239689 0.35907
 kids 0
 OBJECT poly
-name "noshadow.strobe_halo_L"
+name "strobe_halo_L"
 loc -5.60511 -0.27859 2.96895
 texture "panel-up.rgb"
 crease 45.000000
@@ -26753,7 +26753,7 @@ refs 3
 1 0.124086 0.738636
 kids 0
 OBJECT poly
-name "noshadow.strobe_halo_R"
+name "strobe_halo_R"
 loc -5.60511 -0.27859 2.96895
 texture "panel-up.rgb"
 crease 45.000000
@@ -26777,7 +26777,7 @@ refs 3
 1 0.124086 0.738636
 kids 0
 OBJECT poly
-name "noshadow.strobe_halo_T"
+name "strobe_halo_T"
 loc -5.60511 -0.27859 2.96895
 texture "panel-up.rgb"
 crease 45.000000
@@ -26805,7 +26805,7 @@ name "FormationLights"
 loc 6.48884 0.669929 -1.96121
 kids 9
 OBJECT poly
-name "noshadow.FuseTailBottom-Formation"
+name "FuseTailBottom-Formation"
 loc -6.51048 0.508459 1.96121
 crease 45.000000
 numvert 8
@@ -26834,7 +26834,7 @@ refs 4
 4 0 0
 kids 0
 OBJECT poly
-name "noshadow.FuseTailTop-Formation"
+name "FuseTailTop-Formation"
 loc -6.48884 -0.669928 1.96121
 crease 45.000000
 numvert 8
@@ -26863,7 +26863,7 @@ refs 4
 4 0 1
 kids 0
 OBJECT poly
-name "noshadow.WingR-Formation"
+name "WingR-Formation"
 loc 2.02859 -0.210443 -6.92766
 crease 78.000000
 numvert 14
@@ -26912,7 +26912,7 @@ refs 4
 9 1 1
 kids 0
 OBJECT poly
-name "noshadow.WingL-Formation"
+name "WingL-Formation"
 loc 2.02453 -0.205239 -6.89118
 crease 78.000000
 numvert 14
@@ -26961,7 +26961,7 @@ refs 4
 8 0 1
 kids 0
 OBJECT poly
-name "noshadow.FuseSideL-Formation"
+name "FuseSideL-Formation"
 loc -2.63711 -0.606516 2.69616
 crease 45.000000
 numvert 4
@@ -26979,7 +26979,7 @@ refs 4
 0 0 1
 kids 0
 OBJECT poly
-name "noshadow.FuseSideR-Formation"
+name "FuseSideR-Formation"
 loc -2.63711 -0.606516 1.25057
 crease 45.000000
 numvert 4
@@ -26997,7 +26997,7 @@ refs 4
 0 0 0
 kids 0
 OBJECT poly
-name "noshadow.FuseTop-Formation"
+name "FuseTop-Formation"
 loc -1.5913 0.845701 1.96121
 crease 45.000000
 numvert 8
@@ -27026,7 +27026,7 @@ refs 4
 7 0 0
 kids 0
 OBJECT poly
-name "noshadow.TailEmpR-Formation"
+name "TailEmpR-Formation"
 loc 7.90586 0.472241 -1.01197
 crease 45.000000
 numvert 4
@@ -27044,7 +27044,7 @@ refs 4
 0 1 0
 kids 0
 OBJECT poly
-name "noshadow.TailEmpL-Formation"
+name "TailEmpL-Formation"
 loc 7.90586 0.472241 5.00042
 crease 45.000000
 numvert 4
@@ -48430,7 +48430,7 @@ refs 4
 353 0 0
 kids 0
 OBJECT poly
-name "noshadow.Exhausts"
+name "Exhausts"
 loc 15.5828 1.21113 0.0257363
 texture "hh-noise3.rgb"
 crease 61.000000
@@ -48810,7 +48810,7 @@ refs 4
 51 29.0048 0.853553
 kids 0
 OBJECT poly
-name "noshadow.Exhaust3"
+name "Exhaust3"
 loc 16.1696 1.21113 0.0257361
 texture "hh-noise3.rgb"
 crease 61.000000

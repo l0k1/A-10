@@ -9,6 +9,7 @@
 
 	<animation>
 		<type>select</type>
+		<nopreview/>
 		<object-name>ter-2</object-name>
 		<condition>
 			<equals>
@@ -19,6 +20,7 @@
 	</animation>
 	<animation>
 		<type>select</type>
+		<nopreview/>
 		<object-name>mk82-2-0</object-name>
 		<condition>
 			<equals>
@@ -32,6 +34,7 @@
 	</animation>
 	<animation>
 		<type>select</type>
+		<nopreview/>
 		<object-name>mk82-2-1</object-name>
 		<condition>
 			<equals>
@@ -45,6 +48,7 @@
 	</animation>
 	<animation>
 		<type>select</type>
+		<nopreview/>
 		<object-name>mk82-2-2</object-name>
 		<condition>
 			<equals>
@@ -159,6 +163,7 @@
 
 	<animation>
 		<type>select</type>
+		<nopreview/>
 		<object-name>ter-8</object-name>
 		<condition>
 			<equals>
@@ -169,6 +174,7 @@
 	</animation>
 	<animation>
 		<type>select</type>
+		<nopreview/>
 		<object-name>mk82-8-0</object-name>
 		<condition>
 			<equals>
@@ -182,6 +188,7 @@
 	</animation>
 	<animation>
 		<type>select</type>
+		<nopreview/>
 		<object-name>mk82-8-1</object-name>
 		<condition>
 			<equals>
@@ -195,6 +202,7 @@
 	</animation>
 	<animation>
 		<type>select</type>
+		<nopreview/>
 		<object-name>mk82-8-2</object-name>
 		<condition>
 			<equals>

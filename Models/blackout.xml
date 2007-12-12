@@ -4,6 +4,7 @@
     
 	<animation> 
       <type>material</type>
+      <nopreview/>
       <object-name>Blackout-Sphere</object-name>
       <transparency> 
         <alpha-prop>accelerations/pilot-g-damped</alpha-prop>
@@ -16,6 +17,7 @@
 	
 	<animation> 
       <type>material</type>
+      <nopreview/>
       <object-name>Redout-Sphere</object-name>
       <transparency> 
         <alpha-prop>accelerations/pilot-g-damped</alpha-prop>

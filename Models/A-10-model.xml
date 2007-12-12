@@ -16,6 +16,7 @@
 	<!-- Select extermal tanks -->
 	<animation>
 		<type>select</type>
+		<nopreview/>
 		<object-name>FTank3</object-name>
 		<condition>
 			<equals>
@@ -27,6 +28,7 @@
 
 	<animation>
 		<type>select</type>
+		<nopreview/>
 		<object-name>FTank1</object-name>
 		<condition>
 			<equals>
@@ -38,6 +40,7 @@
 
 	<animation>
 		<type>select</type>
+		<nopreview/>
 		<object-name>FTank2</object-name>
 		<condition>
 			<equals>
@@ -1932,16 +1935,18 @@
 	<!-- exhausts -->
 	<animation>
 		<type>shader</type>
+		<nopreview/>
 		<shader>heat-haze</shader>
-		<object-name>noshadow.Exhausts</object-name>
+		<object-name>Exhausts</object-name>
 		<factor>0.2</factor>
 		<speed-prop>sim/model/A-10/engines/engine/n1</speed-prop>
 	</animation>
 
 	<animation>
 		<type>shader</type>
+		<nopreview/>
 		<shader>heat-haze</shader>
-		<object-name>noshadow.Exhaust3</object-name>
+		<object-name>Exhaust3</object-name>
 		<factor>0.2</factor>
 		<speed-prop>sim/model/A-10/engines/engine/n1</speed-prop>
 	</animation>
@@ -1949,7 +1954,7 @@
 
 	<animation>
 		<type>blend</type>
-		<object-name>noshadow.Exhaust3</object-name>
+		<object-name>Exhaust3</object-name>
 		<property>sim/model/A-10/engines/engine/n1</property>
 		<factor>0.01</factor>
 		<offset>0.45</offset>
@@ -1958,7 +1963,7 @@
 
 	<animation>
 		<type>blend</type>
-		<object-name>noshadow.Exhausts</object-name>
+		<object-name>Exhausts</object-name>
 		<property>sim/model/A-10/engines/engine/n1</property>
 		<factor>-0.01</factor>
 		<offset>1</offset>
@@ -1968,7 +1973,7 @@
 
 	<animation>
 		<type>scale</type>
-		<object-name>noshadow.Exhausts</object-name>
+		<object-name>Exhausts</object-name>
 		<property>sim/model/A-10/engines/engine/n1</property>
 		<x-factor>0.01</x-factor>
 		<x-offset>0.5</x-offset>
@@ -1982,7 +1987,7 @@
 
 	<animation>
 		<type>translate</type>
-		<object-name>noshadow.Exhaust3</object-name>
+		<object-name>Exhaust3</object-name>
 		<property>sim/model/A-10/engines/engine/n1</property>
 		<factor>-0.005</factor>
 		<offset-m>0</offset-m>
@@ -1996,7 +2001,7 @@
 
 	<animation>
 		<type>scale</type>
-		<object-name>noshadow.Exhaust3</object-name>
+		<object-name>Exhaust3</object-name>
 		<property>sim/model/A-10/engines/engine/n1</property>
 		<x-factor>0.01</x-factor>
 		<x-offset>0.5</x-offset>
@@ -2012,44 +2017,12 @@
 		<z-min>-1</z-min>
 	</animation>
 
-	<animation>
-		<type>select</type>
-		<object-name>noshadow.Exhausts</object-name>
-		<condition>
-			<less-than>
-				<property>velocities/airspeed-kt</property>
-				<value>50</value>
-			</less-than>
-			<property>sim/model/A-10/engines/engine/n1</property>
-		</condition>
-	</animation>
-
-	<animation>
-		<type>select</type>
-		<object-name>noshadow.Exhaust3</object-name>
-		<condition>
-			<less-than>
-				<property>velocities/airspeed-kt</property>
-				<value>50</value>
-			</less-than>
-			<or>
-				<equals>
-					<property>sim/model/A-10/engines/engine[0]/running</property>
-					<value>true</value>
-				</equals>
-				<equals>
-					<property>sim/model/A-10/engines/engine[1]/running</property>
-					<value>true</value>
-				</equals>
-			</or>
-		</condition>
-	</animation>
 
 	<!-- lighting -->
 	<!-- strobe tail -->
 	<animation>
 		<type>select</type>
-		<object-name>noshadow.strobe_halo_T</object-name>
+		<object-name>strobe_halo_T</object-name>
 		<condition>
 			<property>sim/model/A-10/lighting/strobe/state</property>
 		</condition>
@@ -2060,13 +2033,13 @@
 
 	<animation>
 		<type>material</type>
-		<object-name>noshadow.strobe_halo_T</object-name>
+		<object-name>strobe_halo_T</object-name>
 		<threshold>0.001</threshold>
 	</animation>
 
 	<animation>
 		<type>translate</type>
-		<object-name>noshadow.strobe_halo_T</object-name>
+		<object-name>strobe_halo_T</object-name>
 		<offset-m>16.11</offset-m>
 		<axis>
 			<x>16.11</x>
@@ -2077,12 +2050,12 @@
 
 	<animation>
 		<type>billboard</type>
-		<object-name>noshadow.strobe_halo_T</object-name>
+		<object-name>strobe_halo_T</object-name>
 	</animation>
 
 	<animation>
 		<type>scale</type>
-		<object-name>noshadow.strobe_halo_T</object-name>
+		<object-name>strobe_halo_T</object-name>
 		<property>sim/time/sun-angle-rad</property>
 		<offset>-1.4</offset>
 		<x-min>1</x-min>
@@ -2097,7 +2070,7 @@
 	</animation>
 	<animation>
 		<type>dist-scale</type>
-		<object-name>noshadow.strobe_halo_T</object-name>
+		<object-name>strobe_halo_T</object-name>
 		<interpolation>
 			<entry><ind>0</ind><dep>1</dep></entry>
 			<entry><ind>500</ind><dep>2.5</dep></entry>
@@ -2108,7 +2081,7 @@
 	<!-- strobe Right -->
 	<animation>
 		<type>select</type>
-		<object-name>noshadow.strobe_halo_R</object-name>
+		<object-name>strobe_halo_R</object-name>
 		<condition>
 			<property>sim/model/A-10/lighting/strobe/state</property>
 		</condition>
@@ -2119,13 +2092,13 @@
 
 	<animation>
 		<type>material</type>
-		<object-name>noshadow.strobe_halo_R</object-name>
+		<object-name>strobe_halo_R</object-name>
 		<threshold>0.001</threshold>
 	</animation>
 
 	<animation>
 		<type>translate</type>
-		<object-name>noshadow.strobe_halo_R</object-name>
+		<object-name>strobe_halo_R</object-name>
 		<offset-m>12.49</offset-m>
 		<axis>
 			<x>8.69</x>
@@ -2136,12 +2109,12 @@
 
 	<animation>
 		<type>billboard</type>
-		<object-name>noshadow.strobe_halo_R</object-name>
+		<object-name>strobe_halo_R</object-name>
 	</animation>
 
 	<animation>
 		<type>scale</type>
-		<object-name>noshadow.strobe_halo_R</object-name>
+		<object-name>strobe_halo_R</object-name>
 		<property>sim/time/sun-angle-rad</property>
 		<offset>-1.4</offset>
 		<x-min>1</x-min>
@@ -2156,7 +2129,7 @@
 	</animation>
 	<animation>
 		<type>dist-scale</type>
-		<object-name>noshadow.strobe_halo_R</object-name>
+		<object-name>strobe_halo_R</object-name>
 		<interpolation>
 			<entry><ind>0</ind><dep>1</dep></entry>
 			<entry><ind>500</ind><dep>2.5</dep></entry>
@@ -2167,7 +2140,7 @@
 	<!-- strobe Left -->
 	<animation>
 		<type>select</type>
-		<object-name>noshadow.strobe_halo_L</object-name>
+		<object-name>strobe_halo_L</object-name>
 		<condition>
 			<property>sim/model/A-10/lighting/strobe/state</property>
 		</condition>
@@ -2178,13 +2151,13 @@
 
 	<animation>
 		<type>material</type>
-		<object-name>noshadow.strobe_halo_L</object-name>
+		<object-name>strobe_halo_L</object-name>
 		<threshold>0.001</threshold>
 	</animation>
 
 	<animation>
 		<type>translate</type>
-		<object-name>noshadow.strobe_halo_L</object-name>
+		<object-name>strobe_halo_L</object-name>
 		<offset-m>12.47</offset-m>
 		<axis>
 			<x>8.61</x>
@@ -2195,12 +2168,12 @@
 
 	<animation>
 		<type>billboard</type>
-		<object-name>noshadow.strobe_halo_L</object-name>
+		<object-name>strobe_halo_L</object-name>
 	</animation>
 
 	<animation>
 		<type>scale</type>
-		<object-name>noshadow.strobe_halo_L</object-name>
+		<object-name>strobe_halo_L</object-name>
 		<property>sim/time/sun-angle-rad</property>
 		<offset>-1.4</offset>
 		<x-min>1</x-min>
@@ -2215,7 +2188,7 @@
 	</animation>
 	<animation>
 		<type>dist-scale</type>
-		<object-name>noshadow.strobe_halo_L</object-name>
+		<object-name>strobe_halo_L</object-name>
 		<interpolation>
 			<entry><ind>0</ind><dep>1</dep></entry>
 			<entry><ind>500</ind><dep>2.5</dep></entry>
@@ -2226,7 +2199,7 @@
 	<!-- red nav light (left) -->
 	<animation>
 		<type>select</type>
-		<object-name>noshadow.nav_halo_L</object-name>
+		<object-name>nav_halo_L</object-name>
 		<condition>
 			<or>
 				<and>
@@ -2243,7 +2216,7 @@
 
 	<animation>
 		<type>translate</type>
-		<object-name>noshadow.nav_halo_L</object-name>
+		<object-name>nav_halo_L</object-name>
 		<offset-m>12.44</offset-m>
 		<axis>
 			<x>8.69</x>
@@ -2254,12 +2227,12 @@
 
 	<animation>
 		<type>billboard</type>
-		<object-name>noshadow.nav_halo_L</object-name>
+		<object-name>nav_halo_L</object-name>
 	</animation>
 
 	<animation>
 		<type>scale</type>
-		<object-name>noshadow.nav_halo_L</object-name>
+		<object-name>nav_halo_L</object-name>
 		<property>sim/time/sun-angle-rad</property>
 		<offset>-1.4</offset>
 		<x-min>1</x-min>
@@ -2274,7 +2247,7 @@
 	</animation>
 	<animation>
 		<type>dist-scale</type>
-		<object-name>noshadow.nav_halo_L</object-name>
+		<object-name>nav_halo_L</object-name>
 		<interpolation>
 			<entry><ind>0</ind><dep>1</dep></entry>
 			<entry><ind>500</ind><dep>2.5</dep></entry>
@@ -2286,7 +2259,7 @@
 	<!-- green nav light (right)-->
 	<animation>
 		<type>select</type>
-		<object-name>noshadow.nav_halo_R</object-name>
+		<object-name>nav_halo_R</object-name>
 		<condition>
 			<or>
 				<and>
@@ -2303,7 +2276,7 @@
 
 	<animation>
 		<type>translate</type>
-		<object-name>noshadow.nav_halo_R</object-name>
+		<object-name>nav_halo_R</object-name>
 		<offset-m>12.44</offset-m>
 		<axis>
 			<x>8.69</x>
@@ -2314,12 +2287,12 @@
 
 	<animation>
 		<type>billboard</type>
-		<object-name>noshadow.nav_halo_R</object-name>
+		<object-name>nav_halo_R</object-name>
 	</animation>
 
 	<animation>
 		<type>scale</type>
-		<object-name>noshadow.nav_halo_R</object-name>
+		<object-name>nav_halo_R</object-name>
 		<property>sim/time/sun-angle-rad</property>
 		<offset>-1.4</offset>
 		<x-min>1</x-min>
@@ -2334,7 +2307,7 @@
 	</animation>
 	<animation>
 		<type>dist-scale</type>
-		<object-name>noshadow.nav_halo_R</object-name>
+		<object-name>nav_halo_R</object-name>
 		<interpolation>
 			<entry><ind>0</ind><dep>1</dep></entry>
 			<entry><ind>500</ind><dep>2.5</dep></entry>
@@ -2345,7 +2318,7 @@
 	<!-- white nav light (tail) -->
 	<animation>
 		<type>select</type>
-		<object-name>noshadow.nav_halo_T</object-name>
+		<object-name>nav_halo_T</object-name>
 		<condition>
 			<or>
 				<and>
@@ -2362,7 +2335,7 @@
 
 	<animation>
 		<type>translate</type>
-		<object-name>noshadow.nav_halo_T</object-name>
+		<object-name>nav_halo_T</object-name>
 		<offset-m>16.10</offset-m>
 		<axis>
 			<x>16.10</x>
@@ -2373,12 +2346,12 @@
 
 	<animation>
 		<type>billboard</type>
-		<object-name>noshadow.nav_halo_T</object-name>
+		<object-name>nav_halo_T</object-name>
 	</animation>
 
 	<animation>
 		<type>scale</type>
-		<object-name>noshadow.nav_halo_T</object-name>
+		<object-name>nav_halo_T</object-name>
 		<property>sim/time/sun-angle-rad</property>
 		<offset>-1.4</offset>
 		<x-min>1</x-min>
@@ -2393,7 +2366,7 @@
 	</animation>
 	<animation>
 		<type>dist-scale</type>
-		<object-name>noshadow.nav_halo_T</object-name>
+		<object-name>nav_halo_T</object-name>
 		<interpolation>
 			<entry><ind>0</ind><dep>1</dep></entry>
 			<entry><ind>500</ind><dep>2.5</dep></entry>
@@ -2404,7 +2377,7 @@
 	<!-- taxi light -->
 	<animation>
 		<type>select</type>
-		<object-name>noshadow.Taxi-halo</object-name>
+		<object-name>Taxi-halo</object-name>
 		<!-- <condition>
 			<property>sim/model/A-10/lighting/nav-lights</property>
 		</condition> -->
@@ -2424,7 +2397,7 @@
 
 	<animation>
 		<type>translate</type>
-		<object-name>noshadow.Taxi-halo</object-name>
+		<object-name>Taxi-halo</object-name>
 		<offset-m>3,075</offset-m>
 		<axis>
 			<x>2.797</x>
@@ -2435,7 +2408,7 @@
 
 	<animation>
 		<type>scale</type>
-		<object-name>noshadow.Taxi-halo</object-name>
+		<object-name>Taxi-halo</object-name>
 		<property>sim/time/sun-angle-rad</property>
 		<offset>-1.4</offset>
 		<x-min>1</x-min>
@@ -2450,7 +2423,7 @@
 	</animation>
 	<animation>
 		<type>dist-scale</type>
-		<object-name>noshadow.Taxi-halo</object-name>
+		<object-name>Taxi-halo</object-name>
 		<interpolation>
 			<entry><ind>0</ind><dep>1</dep></entry>
 			<entry><ind>500</ind><dep>2.5</dep></entry>
@@ -2461,7 +2434,7 @@
 	<!-- landing light -->
 	<animation>
 		<type>select</type>
-		<object-name>noshadow.Landing-halo</object-name>
+		<object-name>Landing-halo</object-name>
 		<!-- <condition>
 			<property>sim/model/A-10/lighting/nav-lights</property>
 		</condition> -->
@@ -2479,7 +2452,7 @@
 
 	<animation>
 		<type>translate</type>
-		<object-name>noshadow.Landing-halo</object-name>
+		<object-name>Landing-halo</object-name>
 		<offset-m>2.90</offset-m>
 		<axis>
 			<x>2.68</x>
@@ -2490,7 +2463,7 @@
 
 	<animation>
 		<type>scale</type>
-		<object-name>noshadow.Landing-halo</object-name>
+		<object-name>Landing-halo</object-name>
 		<property>sim/time/sun-angle-rad</property>
 		<offset>-1.4</offset>
 		<x-min>1</x-min>
@@ -2505,7 +2478,7 @@
 	</animation>
 	<animation>
 		<type>dist-scale</type>
-		<object-name>noshadow.Landing-halo</object-name>
+		<object-name>Landing-halo</object-name>
 		<interpolation>
 			<entry><ind>0</ind><dep>1</dep></entry>
 			<entry><ind>500</ind><dep>4</dep></entry>
@@ -2515,15 +2488,15 @@
 
 	<!-- formation lights -->
 	<animation>
-		<object-name>noshadow.FuseTailBottom-Formation</object-name>
-		<object-name>noshadow.FuseTailTop-Formation</object-name>
-		<object-name>noshadow.FuseTop-Formation</object-name>
-		<object-name>noshadow.WingR-Formation</object-name>
-		<object-name>noshadow.WingL-Formation</object-name>
-		<object-name>noshadow.FuseSideR-Formation</object-name>
-		<object-name>noshadow.FuseSideL-Formation</object-name>
-		<object-name>noshadow.TailEmpR-Formation</object-name>
-		<object-name>noshadow.TailEmpL-Formation</object-name>
+		<object-name>FuseTailBottom-Formation</object-name>
+		<object-name>FuseTailTop-Formation</object-name>
+		<object-name>FuseTop-Formation</object-name>
+		<object-name>WingR-Formation</object-name>
+		<object-name>WingL-Formation</object-name>
+		<object-name>FuseSideR-Formation</object-name>
+		<object-name>FuseSideL-Formation</object-name>
+		<object-name>TailEmpR-Formation</object-name>
+		<object-name>TailEmpL-Formation</object-name>
 		<type>material</type>
 		<emission>
 			<factor-prop>sim/model/A-10/controls/lighting/formation</factor-prop>

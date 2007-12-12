@@ -5,6 +5,7 @@
 <PropertyList>
 
 	<path>MK-82-LD-single.ac</path>
+	<nopreview/>
 
 	<animation>
 		<type>select</type>

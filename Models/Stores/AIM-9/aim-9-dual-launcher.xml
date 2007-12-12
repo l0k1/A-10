@@ -9,6 +9,7 @@
 
 	<animation>
 		<type>select</type>
+		<nopreview/>
 		<object-name>LAU-114-0</object-name>
 		<condition>
 			<equals>
@@ -19,6 +20,7 @@
 	</animation>
 	<animation>
 		<type>select</type>
+		<nopreview/>
 		<object-name>AIM-9-0-0</object-name>
 		<condition>
 			<equals>
@@ -32,6 +34,7 @@
 	</animation>	
 	<animation>
 		<type>select</type>
+		<nopreview/>
 		<object-name>AIM-9-0-1</object-name>
 		<condition>
 			<equals>
