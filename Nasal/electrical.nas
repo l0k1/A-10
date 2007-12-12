@@ -461,7 +461,7 @@ var nav_lights_switcher = func {
             s_pos.setIntValue(1);
         } elsif ( pos == 1 ) {
             s_pos.setIntValue(2);
-            s_pos.setBoolValue(1);
+            flash.setBoolValue(1);
         }
     } else {
         if ( pos == 2 ) {
