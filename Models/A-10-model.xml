@@ -1935,7 +1935,6 @@
 	<!-- exhausts -->
 	<animation>
 		<type>shader</type>
-		<nopreview/>
 		<shader>heat-haze</shader>
 		<object-name>Exhausts</object-name>
 		<factor>0.2</factor>
@@ -1944,7 +1943,6 @@
 
 	<animation>
 		<type>shader</type>
-		<nopreview/>
 		<shader>heat-haze</shader>
 		<object-name>Exhaust3</object-name>
 		<factor>0.2</factor>
@@ -2017,6 +2015,38 @@
 		<z-min>-1</z-min>
 	</animation>
 
+	<animation>
+		<type>select</type>
+		<object-name>Exhausts</object-name>
+		<condition>
+			<less-than>
+				<property>velocities/airspeed-kt</property>
+				<value>50</value>
+			</less-than>
+			<property>sim/model/A-10/engines/engine/n1</property>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>Exhaust3</object-name>
+		<condition>
+			<less-than>
+				<property>velocities/airspeed-kt</property>
+				<value>50</value>
+			</less-than>
+			<or>
+				<equals>
+					<property>sim/model/A-10/engines/engine[0]/running</property>
+					<value>true</value>
+				</equals>
+				<equals>
+					<property>sim/model/A-10/engines/engine[1]/running</property>
+					<value>true</value>
+				</equals>
+			</or>
+		</condition>
+	</animation>
 
 	<!-- lighting -->
 	<!-- strobe tail -->
