@@ -2048,6 +2048,14 @@
 		</condition>
 	</animation>
 
+	<animation>
+		<object-name>Exhausts</object-name>
+		<type>noshadow</type>
+	</animation>
+	<animation>
+		<object-name>Exhaust3</object-name>
+		<type>noshadow</type>
+	</animation>
 	<!-- lighting -->
 	<!-- strobe tail -->
 	<animation>
