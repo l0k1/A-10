@@ -1935,6 +1935,7 @@
 	<!-- exhausts -->
 	<animation>
 		<type>shader</type>
+		<nopreview/>
 		<shader>heat-haze</shader>
 		<object-name>Exhausts</object-name>
 		<factor>0.2</factor>
@@ -1943,6 +1944,7 @@
 
 	<animation>
 		<type>shader</type>
+		<nopreview/>
 		<shader>heat-haze</shader>
 		<object-name>Exhaust3</object-name>
 		<factor>0.2</factor>
