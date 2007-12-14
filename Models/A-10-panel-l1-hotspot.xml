@@ -115,7 +115,7 @@
 				</action>-->
 
 				<!-- toggle EXT tanks switches -->
-				<action>
+				<!--<action>
 					<name>ext-tanks-wing</name>
 					<button>0</button>
 					<x>-410</x>
@@ -139,10 +139,10 @@
 						<command>property-toggle</command>
 						<property>sim/model/A-10/controls/fuel/ext-tanks-fus</property>
 					</binding>
-				</action>
+				</action>-->
 
 				<!-- toggle Tank Gate switch -->
-				<action>
+				<!--<action>
 					<name>tk-gate-open</name>
 					<button>0</button>
 					<x>-410</x>
@@ -166,9 +166,9 @@
 						<command>property-toggle</command>
 						<property>sim/model/A-10/controls/fuel/cross-feed-sw</property>
 					</binding>
-				</action>
+				</action>-->
 				<!-- toggle Wing Boost Pumps switches -->
-				<action>
+				<!--<action>
 					<name>boost-pumps-wing-l</name>
 					<button>0</button>
 					<x>-410</x>
@@ -192,9 +192,9 @@
 						<command>property-toggle</command>
 						<property>sim/model/A-10/controls/fuel/boost-pumps-wing-r</property>
 					</binding>
-				</action>
+				</action>-->
 				<!-- toggle Main Boost Pumps switches -->
-				<action>
+				<!--<action>
 					<name>boost-pumps-main-l</name>
 					<button>0</button>
 					<x>-410</x>
@@ -218,7 +218,7 @@
 						<command>property-toggle</command>
 						<property>sim/model/A-10/controls/fuel/boost-pumps-main-r</property>
 					</binding>
-				</action>
+				</action>-->
 
 
 				<!-- APU starter switch -->
