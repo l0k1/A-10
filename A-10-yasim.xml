@@ -177,13 +177,6 @@
   <control-output control="EXTEND" prop="gear/gear[2]/position-norm"/>
 </gear>
 
-<!-- Canopy -->
-<gear x="-4.7" y="0.0" z="1.52" retract-time="4" compression="0.6">
-  <control-input axis="/controls/gear/brake-parking" control="EXTEND"/>
-  <control-speed control="EXTEND" transition-time="4"/>
-  <!--<control-output control="EXTEND" prop="canopy/position-norm"/>-->
-</gear>
-
 <!-- Ballast -->
 <ballast x="-2.8" y="0" z="0.74" mass="2000"/> <!-- Armored cockpit -->
 <ballast x="-2.0" y="0" z="0.0" mass="1300"/> <!-- Gun (minus ammunition -->
