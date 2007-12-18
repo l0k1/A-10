@@ -57,6 +57,23 @@ var audio_alt_warning = func {
 	setprop("sim/model/A-10/instrumentation/warnings/alt_warn_counter", audio_alt_warn_counter);
 }
 
+# Accelerometer ###########
+var g_curr 	  	= props.globals.getNode("accelerations/pilot-g");
+var g_max	   	= props.globals.getNode("sim/model/A-10/instrumentation/g-meter/g-max");
+var g_min	   	= props.globals.getNode("sim/model/A-10/instrumentation/g-meter/g-min");
+
+var g_min_max = func {
+	# records g min and max values
+	var curr = g_curr.getValue();
+	var max = g_max.getValue();
+	var min = g_min.getValue();
+	if ( curr >= max ) {
+		g_max.setDoubleValue(curr);
+	} elsif ( curr <= min ) {
+		g_min.setDoubleValue(curr);
+	}
+}
+
 # Main loop ###############
 var cnt = 0;	# elecrical is done each 0.3 sec.
 				# hud is done each 0.1 sec.
@@ -69,10 +86,11 @@ var main_loop = func {
 	A10hud.update_loop();
 	A10fuel.update_loop();
 	nav_scripts.nav2_homing_devs();
+	pilot_g.update_pilot_g();
+	g_min_max();
 	if ((cnt == 3 ) or (cnt == 6 )) {
 		audio_alt_warning();
 		electrical.update_electrical();
-		pilot_g.update_pilot_g();
 		if (cnt == 6 ) {
 			speed_toggle_flap();
 			cnt = 0;
