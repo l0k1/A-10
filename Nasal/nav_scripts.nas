@@ -31,6 +31,7 @@ var tc_freq   = tc.getNode("frequencies");
 
 var nav1_freq_update = func {
 	if ( tc_sw_pos.getValue() == 1 ) {
+		print("nav1_freq_updat etc_sw_pos = 1");
 		var tacan_freq = getprop( "instrumentation/tacan/frequencies/selected-mhz" );
 		var nav1_freq = getprop( "instrumentation/nav[1]/frequencies/selected-mhz" );
 		var nav1_back = nav1_freq;
@@ -62,10 +63,11 @@ var tacan_tenth_adjust = func {
 	setprop( "instrumentation/tacan/frequencies/selected-channel[2]", new_tenths );
 }
 
-# AN/ARC-186: VHF on nav[2]
-# -------------------------
+# AN/ARC-186: VHF voice on comm[0] and homing on nav[2]
+# -----------------------------------------------------
 
 var nav2_selected_mhz = props.globals.getNode("instrumentation/nav[2]/frequencies/selected-mhz", 1);
+var comm0_selected_mhz = props.globals.getNode("instrumentation/comm[0]/frequencies/selected-mhz", 1);
 var vhf = props.globals.getNode("sim/model/A-10/instrumentation/vhf");
 var vhf_mode = vhf.getNode("mode");
 var vhf_selector = vhf.getNode("selector");
@@ -80,7 +82,7 @@ var vhf_fqs0001 = vhf_fqs.getNode("alt-selected-mhz-x0001");
 
 aircraft.data.add(vhf_preset);
 
-# Displays selected-mhz on the VHF radio set
+# Displays nav[2] selected-mhz on the VHF radio set.
 var alt_freq_update = func {
 	var freq  = nav2_selected_mhz.getValue();
 	if (freq == nil) { freq = 0; }	
@@ -103,7 +105,7 @@ var rounding25 = func(n) {
 }
 
 
-# Updates nav[2] selected-mhz property from the VHF dialed freq
+# Updates comm[0] and nav[2] selected-mhz property from the VHF dialed freq
 var alt_freq_to_freq = func {
 	var freq10 = vhf_fqs10.getValue();
 	var freq1 = vhf_fqs1.getValue();
@@ -111,9 +113,10 @@ var alt_freq_to_freq = func {
 	var freq0001 = vhf_fqs0001.getValue();
 	var freq = ( freq10 * 10 ) + freq1 + ( freq01 / 10 ) + ( freq0001 / 1000 );
 	nav2_selected_mhz.setValue( freq );
+	comm0_selected_mhz.setValue( freq );
 }
 
-# Changes the selected freq on nav[2]
+# Changes the selected freq on comm[0] and nav[2]
 var change_preset = func {
 	var presets = vhf.getNode("presets");
 	var p = vhf_preset.getValue();
@@ -130,6 +133,7 @@ var change_preset = func {
 	var f = p_freq.getValue();
 	if ( f == nil ) { f = 0; }
 	nav2_selected_mhz.setValue( f );
+	comm0_selected_mhz.setValue( f );
 	alt_freq_update();
 }
 
@@ -160,7 +164,7 @@ var freq_startup = func {
 	foreach (var f_tc; tc_freq.getChildren()) {
 		aircraft.data.add(f_tc);
 	}
-	## nav[2] - VHF
+	## comm[0] and nav[2] - VHF
 	change_preset(0);
 	# add all the restored pressets to a new aircraft data file
 	foreach (var p_freq; vhf_presets.getChildren()) {
