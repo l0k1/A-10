@@ -7,6 +7,7 @@ var hud_intens_control = props.globals.getNode("sim/model/A-10/controls/hud/inte
 var hud_alpha          = props.globals.getNode("sim[0]/hud/color/alpha", 1);
 var hud_volts          = props.globals.getNode("systems/electrical/outputs/hud", 1);
 
+pilot_g.setDoubleValue(1); 
 pilot_g_damped.setDoubleValue(0); 
 timeratio.setDoubleValue(0.03); 
 
