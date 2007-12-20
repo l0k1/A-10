@@ -58,6 +58,12 @@
 	</model>
 
 	<!-- Cockpit -->
+
+	<model>
+		<path>Aircraft/A-10/Models/pilot.xml</path>
+	</model>
+
+
 	<!-- 3D panels for hot-spots -->
 	<panel>
 		<name>Panel-C</name>
@@ -312,7 +318,7 @@
 		<path>Aircraft/A-10/Models/A-10-accel.xml</path>
 		<offsets>
 			<x-m>2.2850</x-m>
-			<y-m>-0.1680</y-m>
+			<y-m>-0.1660</y-m>
 			<z-m>1.4800</z-m>
 		</offsets>
 	</model>
@@ -697,13 +703,6 @@
 <!-- De-select when in view 0 -->
 	<animation>
 		<type>select</type>
-		<object-name>CPT-Pilot-Head</object-name>
-		<object-name>CPT-Pilot-Body</object-name>
-		<object-name>CPT-Helmet</object-name>
-		<object-name>CPT-Helmet-Inside</object-name>
-		<object-name>CPT-Visor</object-name>
-		<object-name>CPT-Face-Mask</object-name>
-		<object-name>CPT-Face-Mask-Tube</object-name>
 		<object-name>FCanopyGlass</object-name>
 		<object-name>BCanopyGlass</object-name>
 		<object-name>Fuselage-Ext</object-name>
