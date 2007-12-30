@@ -4,7 +4,7 @@
 
 <PropertyList>
 
- <name>A-10 r3 Panel Hotspots</name>
+ <name>A-10 r4 Panel Hotspots</name>
  <background>Aircraft/A-10/Models/transparent-bg.rgb</background>
  <w>1024</w>
  <h>768</h>
@@ -12,7 +12,7 @@
 
  <instruments> 
   <instrument> 
-   <name>r3 panel</name>
+   <name>r4 panel</name>
    <y>384</y>
    <w>1024</w>
    <h>768</h>
@@ -40,42 +40,15 @@
 
 
    <actions> 
-
-<!-- cockpit open-close-->
-    <action>
-     <name>cockpit-open</name>
-      <button>0</button>
-      <x>-128</x>
-      <y>372</y>
-      <w>138</w>
-      <h>82</h>
-      <binding>
-       <command>nasal</command>
-       <script>canopy.canopy_switch(1)</script>
-      </binding>
-     </action>
-
-     <action>
-      <name>cockpit-close</name>
-      <button>0</button>
-      <x>-192</x>
-      <y>285</y>
-      <w>138</w>
-      <h>82</h>
-      <binding>
-       <command>nasal</command>
-       <script>canopy.canopy_switch(-1)</script>
-      </binding>
-     </action>
      
 <!-- apu-gen-power -->
     <action>
      <name>apu-gen-powered</name>
       <button>0</button>
       <x>-383</x>
-      <y>-185</y>
+      <y>-100</y>
       <w>178</w>
-      <h>138</h>
+      <h>188</h>
       <binding>
        <command>property-toggle</command>
        <property>controls/electric/APU-generator</property>
@@ -87,10 +60,10 @@
     <action>
      <name>inverter-stby-down</name>
       <button>0</button>
-      <x>-180</x>
-      <y>-195</y>
+      <x>-160</x>
+      <y>-100</y>
       <w>178</w>
-      <h>60</h>
+      <h>80</h>
       <binding>
         <command>nasal</command>
         <script>electrical.inverter_switch(-1)</script>
@@ -100,10 +73,10 @@
     <action>
      <name>inverter-stby-up</name>
       <button>0</button>
-      <x>-180</x>
-      <y>-130</y>
+      <x>-160</x>
+      <y>-15</y>
       <w>178</w>
-      <h>70</h>
+      <h>80</h>
       <binding>
         <command>nasal</command>
         <script>electrical.inverter_switch(1)</script>
@@ -118,7 +91,7 @@
       <x>-383</x>
       <y>-335</y>
       <w>178</w>
-      <h>138</h>
+      <h>188</h>
       <binding>
        <command>property-toggle</command>
        <property>controls/electric/engine/generator</property>
@@ -129,10 +102,10 @@
     <action>
      <name>apu-gen-powered</name>
       <button>0</button>
-      <x>-180</x>
+      <x>-160</x>
       <y>-345</y>
       <w>178</w>
-      <h>138</h>
+      <h>188</h>
       <binding>
        <command>property-toggle</command>
        <property>controls/electric/engine[1]/generator</property>
@@ -144,10 +117,10 @@
     <action>
      <name>battery-cockpit-switch</name>
       <button>0</button>
-      <x>90</x>
+      <x>125</x>
       <y>-360</y>
       <w>178</w>
-      <h>138</h>
+      <h>188</h>
       <binding>
        <command>property-toggle</command>
        <property>controls/electric/battery-switch</property>

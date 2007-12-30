@@ -9,7 +9,7 @@
 	<y-offset>0</y-offset>
 	<instruments>
 		<instrument>
-			<name>l2 panel</name>
+			<name>l1 panel</name>
 			<y>384</y>
 			<w>1024</w>
 			<h>768</h>

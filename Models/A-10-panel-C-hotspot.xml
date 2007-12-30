@@ -11,7 +11,7 @@
 
 	<instruments>
 		<instrument>
-			<name>R panel</name>
+			<name>C panel</name>
 			<y>384</y>
 			<w>1024</w>
 			<h>768</h>
@@ -254,7 +254,7 @@
 						<property>sim/model/A-10/A-10-nav/selector-ptr</property>
 					</binding>
 				</action>
-
+				<!-- HARS=0, VLOCS=1, TISL=2, NAV-CRS=3, MAN=4, ILS=5, TCN=6 -->
 				<!-- ils switch -->
 				<action>
 					<name>ils-switch-toggle</name>
@@ -264,8 +264,10 @@
 					<w>98</w>
 					<h>46</h>
 					<binding>
-						<command>property-toggle</command>
-						<property>controls/switches/ils</property>
+						<!--<command>property-toggle</command>
+						<property>controls/switches/ils</property>-->
+						<command>nasal</command>
+						<script>nav_scripts.nav_mode_selector(5)</script>
 					</binding>
 				</action>
 
@@ -278,8 +280,10 @@
 					<w>98</w>
 					<h>46</h>
 					<binding>
-						<command>property-toggle</command>
-						<property>instrumentation/tacan/switch-position</property>
+						<!--<command>property-toggle</command>
+						<property>instrumentation/tacan/switch-position</property>-->
+						<command>nasal</command>
+						<script>nav_scripts.nav_mode_selector(6)</script>
 					</binding>
 				</action>
 			</actions>
