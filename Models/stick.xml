@@ -6,15 +6,13 @@
 
 	<animation>
 		<type>rotate</type>
-		<object-name>stick-handle</object-name>
-		<object-name>stick-roll</object-name>
-		<object-name>stick-mast</object-name>
+		<object-name>stick-upper</object-name>
 		<property>controls/flight/elevator</property>
-		<factor>20</factor>
+		<factor>9</factor>
 		<center>
-			<x-m>0</x-m>
+			<x-m>0.03</x-m>
 			<y-m>0</y-m>
-			<z-m>0.0153</z-m>
+			<z-m>0.05</z-m>
 		</center>
 		<axis>
 			<x>0</x>
@@ -22,17 +20,15 @@
 			<z>0</z>
 		</axis>
 	</animation>
-
 	<animation>
 		<type>rotate</type>
-		<object-name>stick-handle</object-name>
-		<object-name>stick-roll</object-name>
+		<object-name>stick-upper</object-name>
 		<property>controls/flight/aileron</property>
-		<factor>20</factor>
+		<factor>9</factor>
 		<center>
-			<x-m>0</x-m>
+			<x-m>0.03</x-m>
 			<y-m>0</y-m>
-			<z-m>0.1895</z-m>
+			<z-m>0.05</z-m>
 		</center>
 		<axis>
 			<x>-1</x>
@@ -40,26 +36,106 @@
 			<z>0</z>
 		</axis>
 	</animation>
+
 	<animation>
 		<type>rotate</type>
-		<object-name>stick-roll</object-name>
-		<property>controls/flight/aileron</property>
-		<interpolation>
-		    <entry><ind>1</ind><dep>20</dep></entry>
-			<entry><ind>0</ind><dep>0</dep></entry>
-			<entry><ind>-1</ind><dep>-20</dep></entry>
-		</interpolation>
+		<object-name>stick-rubber-hose-1</object-name>
+		<property>controls/flight/elevator</property>
+		<factor>7</factor>
 		<center>
-			<x-m>0</x-m>
-			<y-m>-0.0536</y-m>
-			<z-m>0.1751</z-m>
+			<x-m>0.03</x-m>
+			<y-m>0</y-m>
+			<z-m>0.05</z-m>
 		</center>
 		<axis>
-			<x>1</x>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>stick-rubber-hose-1</object-name>
+		<property>controls/flight/aileron</property>
+		<factor>7</factor>
+		<center>
+			<x-m>0.03</x-m>
+			<y-m>0</y-m>
+			<z-m>0.05</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
 			<y>0</y>
 			<z>0</z>
 		</axis>
 	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>stick-rubber-hose-2</object-name>
+		<property>controls/flight/elevator</property>
+		<factor>5</factor>
+		<center>
+			<x-m>0.03</x-m>
+			<y-m>0</y-m>
+			<z-m>0.05</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>stick-rubber-hose-2</object-name>
+		<property>controls/flight/aileron</property>
+		<factor>5</factor>
+		<center>
+			<x-m>0.03</x-m>
+			<y-m>0</y-m>
+			<z-m>0.05</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>stick-rubber-hose-3</object-name>
+		<property>controls/flight/elevator</property>
+		<factor>3</factor>
+		<center>
+			<x-m>0.03</x-m>
+			<y-m>0</y-m>
+			<z-m>0.05</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>stick-rubber-hose-3</object-name>
+		<property>controls/flight/aileron</property>
+		<factor>3</factor>
+		<center>
+			<x-m>0.03</x-m>
+			<y-m>0</y-m>
+			<z-m>0.05</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
 
 	<animation>
 		<object-name>stick</object-name>
