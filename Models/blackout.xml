@@ -49,5 +49,15 @@
           </equals>
        </condition>
     </animation>
+
+	<animation>
+		<object-name>Blackout-Sphere</object-name>
+		<type>noshadow</type>
+	</animation>
+
+	<animation>
+		<object-name>Redout-Sphere</object-name>
+		<type>noshadow</type>
+	</animation>
       
   </PropertyList>
