@@ -467,10 +467,18 @@ Fairchild A-10 simulation config.
 					<homing-UHF type="bool">false</homing-UHF>
 				</A-10-nav>
 				<instrumentation>
+					<cdi>
+						<from-flag type="bool">false</from-flag>
+						<to-flag type="bool">false</to-flag>
+						<needle-deflection type="double">0</needle-deflection>
+					</cdi>
 					<g-meter>
 						<g-max archive="y" type="double">1</g-max>
 						<g-min archive="y" type="double">1</g-min>
 					</g-meter>
+					<tacan>
+						<indicated-bearing-mag-deg type="double">0</indicated-bearing-mag-deg>
+					</tacan>
 					<vhf>
 						<selector type="int">0</selector>
 						<mode type="int">0</mode>
@@ -769,11 +777,6 @@ Fairchild A-10 simulation config.
 		<lighting>
 			<strobe type="bool">false</strobe>
 		</lighting>
-		<switches>
-			<ils type="bool">0</ils>
-			<homing-UHF type="bool">0</homing-UHF>
-			<homing-FM type="bool">0</homing-FM>
-		</switches>
 	</controls>
 
 	<!-- Start with the Canopy open -->
