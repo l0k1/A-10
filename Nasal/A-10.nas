@@ -86,6 +86,8 @@ var main_loop = func {
 	A10hud.update_loop();
 	A10fuel.update_loop();
 	nav_scripts.nav2_homing_devs();
+	nav_scripts.tacan_offset_apply();
+	nav_scripts.compas_card_dev_indicator();
 	pilot_g.update_pilot_g();
 	g_min_max();
 	if ((cnt == 3 ) or (cnt == 6 )) {

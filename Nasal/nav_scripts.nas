@@ -7,6 +7,7 @@
 var ils_freq         = props.globals.getNode("instrumentation/nav[0]/frequencies");
 var ils_freq_sel     = ils_freq.getNode("selected-mhz", 1);
 var ils_freq_sel_fmt = ils_freq.getNode("selected-mhz-fmt", 1);
+var ils_btn          = props.globals.getNode("sim/model/A-10/A-10-nav/selector-ils");
 
 
 # update selected-mhz with translated decimals
@@ -25,13 +26,38 @@ var nav0_freq_update = func {
 var nav1_back = 0;
 setlistener( "instrumentation/tacan/switch-position", func {nav1_freq_update();} );
 
-var tc        = props.globals.getNode("instrumentation/tacan/");
-var tc_sw_pos = tc.getNode("switch-position");
-var tc_freq   = tc.getNode("frequencies");
+var tc              = props.globals.getNode("instrumentation/tacan/");
+var tc_sw_pos       = tc.getNode("switch-position");
+var tc_freq         = tc.getNode("frequencies");
+var tc_true_hdg     = props.globals.getNode("instrumentation/tacan/indicated-bearing-true-deg");
+var tc_mag_hdg      = props.globals.getNode("sim/model/A-10/instrumentation/tacan/indicated-bearing-mag-deg");
+var tcn_btn         = props.globals.getNode("instrumentation/tacan/switch-position");
+var heading_offset  = props.globals.getNode("instrumentation/heading-indicator-fg/offset-deg");
+var tcn_ident       = props.globals.getNode("instrumentation/tacan/ident");
+var vtc_ident       = props.globals.getNode("instrumentation/nav[1]/nav-id");
+var from_flag       = props.globals.getNode("sim/model/A-10/instrumentation/cdi/from-flag");
+var to_flag         = props.globals.getNode("sim/model/A-10/instrumentation/cdi/to-flag");
+var cdi_deflection  = props.globals.getNode("sim/model/A-10/instrumentation/cdi/needle-deflection");
+var vtc_from_flag   = props.globals.getNode("instrumentation/nav[1]/from-flag");
+var vtc_to_flag     = props.globals.getNode("instrumentation/nav[1]/to-flag");
+var vtc_deflection  = props.globals.getNode("instrumentation/nav[1]/heading-needle-deflection");
+var course_radial   = props.globals.getNode("instrumentation/nav[1]/radials/selected-deg");
+
+var tacan_offset_apply = func {
+	tcn            = tcn_btn.getValue();
+	var hdg_offset = heading_offset.getValue();
+	var true_hdg   = tc_true_hdg.getValue();
+	if ( true_hdg and ( tcn == 1) ) {
+		var new_mag_hdg = hdg_offset + true_hdg;
+		tc_mag_hdg.setDoubleValue( geo.normdeg( new_mag_hdg ) );
+	} else {
+		tc_mag_hdg.setDoubleValue( 0 );
+	}
+}
 
 var nav1_freq_update = func {
 	if ( tc_sw_pos.getValue() == 1 ) {
-		print("nav1_freq_updat etc_sw_pos = 1");
+		#print("nav1_freq_updat etc_sw_pos = 1");
 		var tacan_freq = getprop( "instrumentation/tacan/frequencies/selected-mhz" );
 		var nav1_freq = getprop( "instrumentation/nav[1]/frequencies/selected-mhz" );
 		var nav1_back = nav1_freq;
@@ -61,6 +87,49 @@ var tacan_tenth_adjust = func {
 	var new_tenths = (new_value - (new_hundreds*100))/10;
 	setprop( "instrumentation/tacan/frequencies/selected-channel[1]", new_hundreds );
 	setprop( "instrumentation/tacan/frequencies/selected-channel[2]", new_tenths );
+}
+
+# TACAN on HSI's Course Deviation Indicator
+# -----------------------------------------------------
+# CDI works with ils OR tacan OR vortac (which freq is tuned from the tacan panel)
+var compas_card_dev_indicator = func {
+	var tcn = tcn_btn.getValue();
+	if ( tcn ) {
+		var tcnid = tcn_ident.getValue();
+		var vtcid = vtc_ident.getValue();
+		if ( tcnid == vtcid ) {
+			# we have a VORTAC
+			from_flag.setBoolValue(vtc_from_flag.getBoolValue());
+			to_flag.setBoolValue(vtc_to_flag.getBoolValue());
+			cdi_deflection.setValue(vtc_deflection.getValue());
+		} else {
+			# we have a legacy TACAN
+			var tcn_toflag = 1;
+			var tcn_fromflag = 0;
+			var tcn_bearing = tc_mag_hdg.getValue();
+			var radial = course_radial.getValue();
+			var delt = tcn_bearing - radial;
+			if ( delt > 180 ) {
+				delt -= 360;				
+			} elsif ( delt < -180 ) {
+				delt += 360;				
+			}
+			if ( delt > 90 ) {
+				delt -= 180;
+				tcn_toflag = 0;
+				tcn_fromflag = 1;
+			} elsif ( delt < - 90 ) {
+				delt += 180;
+				tcn_toflag = 0;
+				tcn_fromflag = 1;
+			}
+			if ( delt > 10 ) { delt = 10 };
+			if ( delt < -10 ) { delt = -10 };
+			from_flag.setBoolValue(tcn_fromflag);
+			to_flag.setBoolValue(tcn_toflag);
+			cdi_deflection.setValue(delt);
+		}
+	}
 }
 
 # AN/ARC-186: VHF voice on comm[0] and homing on nav[2]
@@ -195,19 +264,15 @@ var nav2_homing_devs = func {
 # -----------------------
 
 # A-10-nav-mode-selector panel:
-var fm_vhf_toggle_buttons = func {
-	var fm_button = props.globals.getNode("sim/model/A-10/A-10-nav/homing-FM");
-	var vhf_button = props.globals.getNode("sim/model/A-10/A-10-nav/homing-UHF");
-	var arg = arg[0];
-	var fm = fm_button.getBoolValue();
-	var vhf = vhf_button.getBoolValue();
-	if (arg < 1) {
-		fm_button.setBoolValue(!fm);
-		if (!fm) { vhf_button.setBoolValue(0); }
-	} else {
-		vhf_button.setBoolValue(!vhf);
-		if (!vhf) { fm_button.setBoolValue(0); }
+# buttons indices: HARS=0, VLOCS=1, TISL=2, NAV-CRS=3, MAN=4, ILS=5, TCN=6
+var nav_mode_selector = func(n) {
+	if ( n == 5 ) {
+		var n_state = ils_btn.getBoolValue();
+		ils_btn.setBoolValue(!n_state);
+		tcn_btn.setBoolValue(0);
+	} elsif ( n == 6) {
+		var n_state = tcn_btn.getBoolValue();
+		tcn_btn.setBoolValue(!n_state);
+		ils_btn.setBoolValue(0);
 	}
 }
-
-
