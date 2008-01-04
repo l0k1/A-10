@@ -264,8 +264,6 @@
 					<w>98</w>
 					<h>46</h>
 					<binding>
-						<!--<command>property-toggle</command>
-						<property>controls/switches/ils</property>-->
 						<command>nasal</command>
 						<script>nav_scripts.nav_mode_selector(5)</script>
 					</binding>
@@ -280,8 +278,6 @@
 					<w>98</w>
 					<h>46</h>
 					<binding>
-						<!--<command>property-toggle</command>
-						<property>instrumentation/tacan/switch-position</property>-->
 						<command>nasal</command>
 						<script>nav_scripts.nav_mode_selector(6)</script>
 					</binding>

@@ -57,18 +57,8 @@
         <property>systems/electrical/outputs/hsi</property>
         <value>24</value>
       </greater-than>
-      <not>
-        <equals>
-          <property>instrumentation/tacan/indicated-bearing-true-deg</property>
-          <value>0</value>
-        </equals>
-      </not>
-      <equals>
-        <property>instrumentation/tacan/switch-position</property>
-        <value>1</value>
-      </equals>
     </condition>
-    <property>instrumentation/tacan/indicated-bearing-true-deg</property>
+    <property>sim/model/A-10/instrumentation/tacan/indicated-bearing-mag-deg</property>
     <center>
       <x-m>0.0</x-m>
       <y-m>0.0</y-m>

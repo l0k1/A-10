@@ -67,7 +67,7 @@
 		<object-name>index-ils</object-name>
 		<condition>
 			<equals>
-				<property>controls/switches/ils</property>
+				<property>sim/model/A-10/A-10-nav/selector-ils</property>
 				<value>1</value>
 			</equals>
 		</condition>
@@ -125,32 +125,6 @@
 			</or>
 		</condition>
 	</animation>
-
-	<!--<animation>
-	<type>select</type>
-	<object-name>homing-light-uhf-on</object-name>
-	<condition>
-	<greater-than>
-	<property>systems/electrical/outputs/nav-mode</property>
-	<value>24</value>
-	</greater-than>
-	<equals>
-	<property>sim/model/A-10/A-10-nav/homing-UHF</property>
-	<value>1</value>
-	</equals>
-	</condition>
-	</animation>
-
-	<animation>
-	<type>select</type>
-	<object-name>homing-light-uhf-off</object-name>
-	<condition>
-	<equals>
-	<property>sim/model/A-10/A-10-nav/homing-UHF</property>
-	<value>0</value>
-	</equals>
-	</condition>
-	</animation>-->
 
 	<!-- PTR switch  -->
 

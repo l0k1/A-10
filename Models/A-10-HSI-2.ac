@@ -1,9 +1,9 @@
 AC3Db
 MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.2 0.2 0.2  shi 128  trans 0
 MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
-MATERIAL "ac3dmat3" rgb 1 0 0  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat3" rgb 0.882 0 0  amb 0 0 0  emis 0 0 0  spec 0 0 0  shi 10  trans 0
 OBJECT world
-kids 7
+kids 10
 OBJECT poly
 name "course-deviation-indicator-on"
 loc -0.00092483 -7.41953e-05 8.74123e-05
@@ -23,13 +23,31 @@ refs 4
 3 1 0
 kids 0
 OBJECT poly
+name "tcn-course-deviation-indicator-on"
+loc -0.00092483 -7.41953e-05 8.74123e-05
+crease 45.000000
+numvert 4
+0 -0.0196211 -0.000938657
+0 -0.0196211 0.000938657
+0 0.0196211 0.000938657
+0 0.0196211 -0.000938657
+numsurf 1
+SURF 0x0
+mat 1
+refs 4
+3 1 1
+2 0 1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
 name "to-from-from"
-loc -0.00143612 -0.0132919 0.000132004
+loc -0.00143612 -0.0132578 0.000132004
 crease 45.000000
 numvert 3
-0 0.00151679 0.00203141
-0 0.00151679 -0.00203141
-0 -0.00184181 -2.70853e-05
+0 0.00183532 0.00245801
+0 0.00183532 -0.00245801
+0 -0.00222859 -3.27732e-05
 numsurf 1
 SURF 0x10
 mat 1
@@ -37,6 +55,22 @@ refs 3
 2 0.426667 1
 1 5.73076e-08 0
 0 1 0
+kids 0
+OBJECT poly
+name "tcn-to-from-from"
+loc -0.00143612 -0.0132578 0.000132004
+crease 45.000000
+numvert 3
+0 -0.00222859 -3.27732e-05
+0 0.00183532 -0.00245801
+0 0.00183532 0.00245801
+numsurf 1
+SURF 0x10
+mat 1
+refs 3
+0 0.426667 1
+1 5.73076e-08 0
+2 1 0
 kids 0
 OBJECT poly
 name "aircraft-symbol"
@@ -117,12 +151,12 @@ refs 4
 kids 0
 OBJECT poly
 name "to-from-to"
-loc -0.00143612 0.0109767 0.000132004
+loc -0.00143612 0.0109426 0.000132004
 crease 45.000000
 numvert 3
-0 0.00184181 2.70854e-05
-0 -0.00151679 0.00203141
-0 -0.00151679 -0.00203141
+0 0.00222859 3.27733e-05
+0 -0.00183532 0.00245801
+0 -0.00183532 -0.00245801
 numsurf 1
 SURF 0x10
 mat 1
@@ -130,6 +164,22 @@ refs 3
 0 0.426667 1
 1 5.73076e-08 0
 2 1 0
+kids 0
+OBJECT poly
+name "tcn-to-from-to"
+loc -0.00143612 0.0109426 0.000132004
+crease 45.000000
+numvert 3
+0 -0.00183532 -0.00245801
+0 -0.00183532 0.00245801
+0 0.00222859 3.27733e-05
+numsurf 1
+SURF 0x10
+mat 1
+refs 3
+2 0.426667 1
+1 5.73076e-08 0
+0 1 0
 kids 0
 OBJECT poly
 name "HSI-course-card"
