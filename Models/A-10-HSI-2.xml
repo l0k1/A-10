@@ -104,6 +104,16 @@
 						<value>0</value>
 					</equals>
 				</and>
+				<and>
+					<equals>
+						<property>instrumentation/tacan/switch-position</property>
+						<value>1</value>
+					</equals>
+					<equals>
+						<property>instrumentation/tacan/in-range</property>
+						<value>false</value>
+					</equals>
+				</and>
 			</or>
 		</condition>
 	</animation>
@@ -248,6 +258,10 @@ p		</condition>
 		<type>select</type>
 		<object-name>tcn-course-deviation-indicator-on</object-name>
 		<condition>
+			<equals>
+				<property>instrumentation/tacan/in-range</property>
+				<value>true</value>
+			</equals>
 			<equals>
 				<property>instrumentation/tacan/switch-position</property>
 				<value>1</value>
