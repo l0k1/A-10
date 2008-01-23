@@ -5,11 +5,12 @@
 
 <PropertyList>
 
-	<path>A10-004-015l2.ac</path>
-
 	<model>
 		<path>Aircraft/A-10/Models/ext-stores.xml</path>
 	</model>
+
+	<path>A10-004-015l2.ac</path>
+
 
 
 	<!-- Select the external loads as appropriate -->

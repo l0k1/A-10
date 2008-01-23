@@ -32,14 +32,36 @@
 		<object-name>bearing-validity-flag</object-name>
 		<condition>
 			<or>
-				<equals>
-					<property>instrumentation/tacan/in-range</property>
-					<value>false</value>
-				</equals>
-				<equals>
-					<property>instrumentation/tacan/switch-position</property>
-					<value>0</value>
-				</equals>
+				<and>
+					<equals>
+						<property>instrumentation/nav[0]/in-range</property>
+						<value>false</value>
+					</equals>
+					<equals>
+						<property>sim/model/A-10/A-10-nav/selector-ils</property>
+						<value>true</value>
+					</equals>
+				</and>
+				<and>
+					<equals>
+						<property>instrumentation/tacan/in-range</property>
+						<value>false</value>
+					</equals>
+					<equals>
+						<property>instrumentation/tacan/switch-position</property>
+						<value>1</value>
+					</equals>
+				</and>
+				<and>
+					<equals>
+						<property>sim/model/A-10/A-10-nav/selector-ils</property>
+						<value>false</value>
+					</equals>
+					<equals>
+						<property>instrumentation/tacan/switch-position</property>
+						<value>0</value>
+					</equals>
+				</and>
 			</or>
 		</condition>
 	</animation>
@@ -151,13 +173,17 @@
 		<object-name>to-from-to</object-name>
 		<condition>
 			<equals>
-				<property>instrumentation/nav[1]/to-flag</property>
+				<property>instrumentation/nav[0]/to-flag</property>
 				<value>true</value>
 			</equals>
 			<greater-than>
 				<property>systems/electrical/outputs/hsi</property>
 				<value>24</value>
 			</greater-than>
+			<equals>
+				<property>sim/model/A-10/A-10-nav/selector-ils</property>
+				<value>true</value>
+			</equals>
 		</condition>
 	</animation>
 	<animation>
@@ -184,14 +210,18 @@
 		<object-name>to-from-from</object-name>
 		<condition>
 			<equals>
-				<property>instrumentation/nav[1]/from-flag</property>
+				<property>instrumentation/nav[0]/from-flag</property>
 				<value>true</value>
 			</equals>
 			<greater-than>
 				<property>systems/electrical/outputs/hsi</property>
 				<value>24</value>
 			</greater-than>
-		</condition>
+			<equals>
+				<property>sim/model/A-10/A-10-nav/selector-ils</property>
+				<value>true</value>
+			</equals>
+p		</condition>
 	</animation>
 	<animation>
 		<type>rotate</type>
