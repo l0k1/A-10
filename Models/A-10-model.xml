@@ -125,27 +125,7 @@
 			<z-m>1.3153</z-m>
 		</top-left>
 	</panel>
-
-	<!--<panel>
-		<name>Panel-L</name>
-		<path>Aircraft/A-10/Models/A-10-panel-L-hotspot.xml</path>
-		<bottom-left>
-			<x-m>2.4354</x-m>
-			<y-m>-0.4885</y-m>
-			<z-m>0.8445</z-m>
-		</bottom-left>
-		<bottom-right>
-			<x-m>2.4354</x-m>
-			<y-m>-0.0690</y-m>
-			<z-m>0.8445</z-m>
-		</bottom-right>
-		<top-left>
-			<x-m>2.4019</x-m>
-			<y-m>-0.4885</y-m>
-			<z-m>1.3153</z-m>
-		</top-left>
-	</panel>-->
-
+	<!-- fuel panel -->
 	<panel>
 		<name>Panel-l1</name>
 		<path>Aircraft/A-10/Models/A-10-panel-l1-hotspot.xml</path>
@@ -162,7 +142,7 @@
 		<top-left>
 			<x-m>2.4324</x-m>
 			<y-m>-0.4353</y-m>
-			<z-m>0.8531</z-m>
+			<z-m>0.8550</z-m>
 		</top-left>
 	</panel>
 	
@@ -183,6 +163,26 @@
 			<x-m>2.7728</x-m>
 			<y-m>-0.4353</y-m>
 			<z-m>0.7128</z-m>
+		</top-left>
+	</panel>
+
+	<panel>
+		<name>Panel-l3</name>
+		<path>Aircraft/A-10/Models/A-10-panel-l3-hotspot.xml</path>
+		<bottom-left>
+			<x-m>2.7083</x-m>
+			<y-m>-0.5817</y-m>
+			<z-m>0.77517</z-m>
+		</bottom-left>
+		<bottom-right>
+			<x-m>2.7083</x-m>
+			<y-m>-0.4214</y-m>
+			<z-m>0.7251</z-m>
+		</bottom-right>
+		<top-left>
+			<x-m>2.5348</x-m>
+			<y-m>-0.5817</y-m>
+			<z-m>0.8419</z-m>
 		</top-left>
 	</panel>
 
@@ -572,6 +572,17 @@
 			<y-m>-0.3552</y-m>
 			<z-m>0.7440</z-m>
 			<pitch-deg>22.74</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/A-10/Models/A-10-sas.xml</path>
+		<offsets>
+			<x-m>2.6704</x-m>
+			<y-m>-0.5034</y-m>
+			<z-m>0.7504</z-m>
+			<pitch-deg>27</pitch-deg>
+			<roll-deg>-14</roll-deg>
 		</offsets>
 	</model>
 

@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+
+	<path>A-10-sas.ac</path>
+
+	<!-- Pitch SAS switch -->
+	<animation>
+		<object-name>pitch-L-switch</object-name>
+		<type>rotate</type>
+		<property>sim/model/A-10/controls/sas/pitch-sas-switch</property>
+		<factor>60</factor>
+		<center>
+			<x-m>-0.0213</x-m>
+			<y-m>0.0178</y-m>
+			<z-m>0.0000</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<object-name>pitch-R-switch</object-name>
+		<type>rotate</type>
+		<property>sim/model/A-10/controls/sas/pitch-sas-switch</property>
+		<factor>60</factor>
+		<center>
+			<x-m>-0.0213</x-m>
+			<y-m>0.0537</y-m>
+			<z-m>0.0000</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+
+	<!-- lighting -->
+
+	<!-- mount -->
+	<animation> 
+		<object-name>mount</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.45</red>
+			<green>0.34</green>
+			<blue>0.18</blue>
+		</emission>
+	</animation>
+
+	<animation> 
+		<object-name>pitch-R-switch</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.20</red>
+			<green>0.10</green>
+			<blue>0.05</blue>
+		</emission>
+	</animation>
+
+	<animation> 
+		<object-name>pitch-L-switch</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.20</red>
+			<green>0.10</green>
+			<blue>0.05</blue>
+		</emission>
+	</animation>
+
+	<animation> 
+		<object-name>yaw-R-switch</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.20</red>
+			<green>0.10</green>
+			<blue>0.05</blue>
+		</emission>
+	</animation>
+
+	<animation> 
+		<object-name>yaw-L-switch</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.20</red>
+			<green>0.10</green>
+			<blue>0.05</blue>
+		</emission>
+	</animation>
+
+
+	<animation> 
+		<object-name>monitor-test-switch</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.13</red>
+			<green>0.09</green>
+			<blue>0.04</blue>
+		</emission>
+	</animation>
+
+	<animation> 
+		<object-name>to-trim-button</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.13</red>
+			<green>0.09</green>
+			<blue>0.04</blue>
+		</emission>
+	</animation>
+
+	<animation> 
+		<object-name>yaw-trim-knob</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.13</red>
+			<green>0.09</green>
+			<blue>0.04</blue>
+		</emission>
+	</animation>
+
+	<!--<animation> 
+		<object-name>to-trim-light-on</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</emission>
+	</animation>-->
+
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+
+</PropertyList>

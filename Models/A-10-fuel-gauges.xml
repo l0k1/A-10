@@ -182,27 +182,22 @@
   </axis>
  </animation>
 
-
-
-
-
-
-
-<!-- Hydraulic Systems presure L -->
+<!-- Left hydraulic systems pressure in psi -->
     <animation>
       <name>hydraulic-system-l</name>
       <type>rotate</type>
       <object-name>needle-hyd-l</object-name>
-      <property>engines/engine[0]/oilp-norm</property>
-      <interpolation> 
-        <entry><ind>0.0000</ind><dep>119</dep></entry>
-        <entry><ind>0.0375</ind><dep>266.5</dep></entry>
-        <entry><ind>0.125</ind><dep>323.5</dep></entry>
-        <entry><ind>0.250</ind><dep>356.9</dep></entry>
-        <entry><ind>0.375</ind><dep>374.7</dep></entry>
-        <entry><ind>0.50</ind><dep>386.4</dep></entry>
-        <entry><ind>0.75</ind><dep>394.1</dep></entry>
-        <entry><ind>1</ind><dep>394.1</dep></entry>
+      <property>systems/A-10-hydraulics/hyd-psi[0]</property>
+      <interpolation>
+	<entry><ind>0.0</ind><dep>117.9</dep></entry>
+	<entry><ind>500</ind><dep>152</dep></entry>
+	<entry><ind>1000</ind><dep>198.5</dep></entry>
+	<entry><ind>1500</ind><dep>231</dep></entry>
+	<entry><ind>2000</ind><dep>270</dep></entry>
+	<entry><ind>2500</ind><dep>309</dep></entry>
+	<entry><ind>3000</ind><dep>350</dep></entry>
+	<entry><ind>3500</ind><dep>390</dep></entry>
+	<entry><ind>4000</ind><dep>427</dep></entry>
       </interpolation>
       <center>
        <x-m>0.0023</x-m>
@@ -221,16 +216,17 @@
       <name>hydraulic-system-r</name>
       <type>rotate</type>
       <object-name>needle-hyd-r</object-name>
-      <property>engines/engine[1]/oilp-norm</property>
-      <interpolation> 
-        <entry><ind>0.0000</ind><dep>119</dep></entry>
-        <entry><ind>0.0375</ind><dep>266.5</dep></entry>
-        <entry><ind>0.125</ind><dep>323.5</dep></entry>
-        <entry><ind>0.250</ind><dep>356.9</dep></entry>
-        <entry><ind>0.375</ind><dep>374.7</dep></entry>
-        <entry><ind>0.50</ind><dep>386.4</dep></entry>
-        <entry><ind>0.75</ind><dep>394.1</dep></entry>
-        <entry><ind>1</ind><dep>394.1</dep></entry>
+      <property>systems/A-10-hydraulics/hyd-psi[1]</property>
+      <interpolation>
+	<entry><ind>0.0</ind><dep>117.9</dep></entry>
+	<entry><ind>500</ind><dep>152</dep></entry>
+	<entry><ind>1000</ind><dep>198.5</dep></entry>
+	<entry><ind>1500</ind><dep>231</dep></entry>
+	<entry><ind>2000</ind><dep>270</dep></entry>
+	<entry><ind>2500</ind><dep>309</dep></entry>
+	<entry><ind>3000</ind><dep>350</dep></entry>
+	<entry><ind>3500</ind><dep>390</dep></entry>
+	<entry><ind>4000</ind><dep>427</dep></entry>
       </interpolation>
       <center>
        <x-m>0.0023</x-m>

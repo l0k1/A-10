@@ -391,36 +391,26 @@ Fairchild A-10 simulation config.
 				</consumables>
 				<controls>
 					<flight>
-						<CG-trim-fwd type="double">0</CG-trim-fwd>
-						<CG-trim-aft type="double">2500</CG-trim-aft>
+						<sas-elevator type="double">0</sas-elevator>
 					</flight>
-					<APU>
-						<off-start-switch type="int">0</off-start-switch>
-					</APU>
 					<canopy>
 						<canopy-switch type="int">2</canopy-switch>
 					</canopy>
 					<engines>
 						<engine n="0">
-							<starter-switch-position type="int">1</starter-switch-position>
+							<starter-switch-position type="int">1</starter-switch-position><!-- 0(Motor),1(Norm) or 2(Ignit) -->
+							<throttle type="double">0</throttle>
 						</engine>
 						<engine n="1">
 							<starter-switch-position type="int">1</starter-switch-position>
+							<throttle type="double">0</throttle>
 						</engine>
 					</engines>
 					<fuel>
-						<receiver-lever type="bool">0</receiver-lever>
-						<aar-lock type="bool">0</aar-lock>
 						<fuel-dsp-sel type="int">0</fuel-dsp-sel> <!-- -1 to 3 -->
 						<fuel-test-ind type="bool">false</fuel-test-ind>
-						<ext-tanks-wing type="bool">false</ext-tanks-wing>
-						<ext-tanks-fus type="bool">false</ext-tanks-fus>
 						<tk-gate-open type="bool">false</tk-gate-open>
 						<cross-feed-sw type="bool">false</cross-feed-sw>
-						<boost-pumps-wing-l type="bool">true</boost-pumps-wing-l>
-						<boost-pumps-wing-r type="bool">true</boost-pumps-wing-r>
-						<boost-pumps-main-l type="bool">true</boost-pumps-main-l>
-						<boost-pumps-main-r type="bool">true</boost-pumps-main-r>
 					</fuel>
 					<gear>
 						<ld-gear-handle-anim type= "double">0.0</ld-gear-handle-anim>
@@ -438,17 +428,23 @@ Fairchild A-10 simulation config.
 						<land-lights-switch type="int">1</land-lights-switch>
 						<warn-medium-lights-switch type="bool">1</warn-medium-lights-switch>
 					</lighting>
+					<sas>
+						<pitch-sas-switch type="bool">1</pitch-sas-switch>
+						<yaw-sas-switch type="bool">1</yaw-sas-switch>
+					</sas>
 				</controls>
 				<engines>
-					<eng-start-cycle  type="bool">false</eng-start-cycle> <!-- warn-panel model value -->
+					<!--<eng-start-cycle  type="bool">false</eng-start-cycle>--> <!-- warn-panel model value -->
 					<engine n="0">
-						<running type="bool">0</running>
+						<running type="bool">false</running>
 						<n1 type="float">0.0</n1>
+						<n2 type="float">0.0</n2>
 						<start-state type="float">0.0</start-state>
 					</engine>
 					<engine n="1">
-						<running type="bool">0</running>
+						<running type="bool">false</running>
 						<n1 type="float">0.0</n1>
+						<n2 type="float">0.0</n2>
 						<start-state type="float">0.0</start-state>
 					</engine>
 				</engines>
@@ -521,9 +517,11 @@ Fairchild A-10 simulation config.
 				</instrumentation>
 				<systems>
 					<apu>
-						<start-state type="float">0</start-state>
-						<rpm type="float">0</rpm>
+						<egt-overt type="bool">false</egt-overt>
+						<rpm-norm type="float">0</rpm-norm>
 						<temp type="float">0</temp>
+						<fuel-consumed-lbs type="float">0</fuel-consumed-lbs>
+						<out-of-fuel type="bool">true</out-of-fuel>
 					</apu>
 				</systems>
 			</A-10>
@@ -768,8 +766,73 @@ Fairchild A-10 simulation config.
 
 	<controls>
 		<APU>
-			<off-start-switch type="bool">0</off-start-switch>
+			<off-start-switch type="bool">false</off-start-switch>
+			<serviceable type="bool">true</serviceable>
+			<generator-serviceable type="bool">true</generator-serviceable>
 		</APU>
+		<engines>
+			<engine n="0">
+				<faults>
+					<hydraulic-pump-serviceable type="bool">true</hydraulic-pump-serviceable>
+					<serviceable type="bool">true</serviceable>
+				</faults>
+				<engines-ignitors n="0" type="bool">false</engines-ignitors>
+				<engines-ignitors n="1" type="bool">false</engines-ignitors>
+			</engine>
+			<engine n="1">
+				<faults>
+					<hydraulic-pump-serviceable type="bool">true</hydraulic-pump-serviceable>
+					<serviceable type="bool">true</serviceable>
+				</faults>
+				<engines-ignitors n="0" type="bool">false</engines-ignitors>
+				<engines-ignitors n="1" type="bool">false</engines-ignitors>
+			</engine>
+		</engines>
+		<fuel>
+			<tank n="0">
+				<boost-pump n="0" type="bool">true</boost-pump>
+				<boost-pump-serviceable type="bool">true</boost-pump-serviceable>
+				<fill-dis type="bool">false</fill-dis>
+				<fill-valve-serviceable type="bool">true</fill-valve-serviceable>
+			</tank>
+			<tank n="1">
+				<boost-pump n="0" type="bool">true</boost-pump>
+				<boost-pump-serviceable n="0" type="bool">true</boost-pump-serviceable>
+				<boost-pump-serviceable n="1" type="bool">true</boost-pump-serviceable>
+				<fill-dis type="bool">false</fill-dis>
+				<fill-valve-serviceable type="bool">true</fill-valve-serviceable>
+			</tank>
+			<tank n="2">
+				<boost-pump n="0" type="bool">true</boost-pump>
+				<boost-pump-serviceable type="bool">true</boost-pump-serviceable>
+				<fill-dis type="bool">false</fill-dis>
+				<fill-valve-serviceable type="bool">true</fill-valve-serviceable>
+			</tank>
+			<tank n="3">
+				<boost-pump n="0" type="bool">true</boost-pump>
+				<boost-pump-serviceable type="bool">true</boost-pump-serviceable>
+				<fill-dis type="bool">false</fill-dis>
+				<fill-valve-serviceable type="bool">true</fill-valve-serviceable>
+			</tank>
+			<tank n="4">
+				<boost-pump n="0" type="bool">false</boost-pump>
+				<boost-pump-serviceable type="bool">true</boost-pump-serviceable>
+				<fill-dis type="bool">false</fill-dis>
+				<fill-valve-serviceable type="bool">true</fill-valve-serviceable>
+			</tank>
+			<tank n="5">
+				<boost-pump n="0" type="bool">false</boost-pump>
+				<boost-pump-serviceable type="bool">true</boost-pump-serviceable>
+				<fill-dis type="bool">false</fill-dis>
+				<fill-valve-serviceable type="bool">true</fill-valve-serviceable>
+			</tank>
+			<tank n="6">
+				<boost-pump n="0" type="bool">false</boost-pump>
+				<boost-pump-serviceable type="bool">true</boost-pump-serviceable>
+				<fill-dis type="bool">false</fill-dis>
+				<fill-valve-serviceable type="bool">true</fill-valve-serviceable>
+			</tank>
+		</fuel>
 		<gear>
 			<!-- Start with the Parking Brake on -->
 			<brake-parking type="double">1.0</brake-parking>
@@ -787,16 +850,19 @@ Fairchild A-10 simulation config.
 	<systems>
 		<!-- hydraulic system -->
 		<A-10-hydraulics>
-			<l-hyd-res type="float">1</l-hyd-res>
-			<r-hyd-res type="float">1</r-hyd-res>
+			<hyd-res n="0" type="float">100</hyd-res>
+			<hyd-res n="1" type="float">100</hyd-res>
+			<hyd-psi n="0" type="float">0</hyd-psi><!-- Left hydraulic circuit pressure -->
+			<hyd-psi n="1" type="float">0</hyd-psi><!-- Right hydraulic circuit pressure -->
 		</A-10-hydraulics>
 		<!-- electrical system (logical three remains under /systems/electrical) -->
 		<A-10-electrical>
-			<l-converter-failure type="bool">0</l-converter-failure>
-			<r-converter-failure type="bool">0</r-converter-failure>
-			<l-generator-caution-light type="bool">0</l-generator-caution-light>
-			<r-generator-caution-light type="bool">0</r-generator-caution-light>
-			<instrument-inverter-caution-light type="bool">0</instrument-inverter-caution-light>
+			<l-converter-failure type="bool">false</l-converter-failure>
+			<r-converter-failure type="bool">false</r-converter-failure>
+			<l-generator-caution-light type="bool">false</l-generator-caution-light>
+			<r-generator-caution-light type="bool">false</r-generator-caution-light>
+			<instrument-inverter-caution-light type="bool">false</instrument-inverter-caution-light>
+			<apu-gen-caution-light type="bool">false</apu-gen-caution-light>
 		</A-10-electrical>
 		<!-- oxygen system -->
 		<A-10-oxygen>
@@ -826,26 +892,79 @@ Fairchild A-10 simulation config.
 		</A-10-cadc>
 		<!-- fuel system -->
 		<A-10-fuel>
-			<l-main-pump type="bool">1</l-main-pump>
-			<r-main-pump type="bool">1</r-main-pump>
-			<l-wing-pump type="bool">1</l-wing-pump>
-			<r-wing-pump type="bool">1</r-wing-pump>
-			<l-pressure type="float">0.6</l-pressure><!-- psig -->
-			<r-pressure type="float">0.6</r-pressure><!-- psig -->
+			<tank n="0">
+				<boost-pump n="0" type="bool">false</boost-pump>
+				<fill-valve type="bool">false</fill-valve>
+			</tank>
+			<tank n="1">
+				<boost-pump n="0" type="bool">false</boost-pump>
+				<boost-pump n="1" type="bool">false</boost-pump>
+				<fill-valve type="bool">false</fill-valve>
+			</tank>
+			<tank n="2">
+				<boost-pump n="0" type="bool">false</boost-pump>
+				<fill-valve type="bool">false</fill-valve>
+			</tank>
+			<tank n="3">
+				<boost-pump n="0" type="bool">false</boost-pump>
+				<fill-valve type="bool">false</fill-valve>
+			</tank>
+			<tank n="4">
+				<boost-pump n="0" type="bool">false</boost-pump>
+				<fill-valve type="bool">false</fill-valve>
+			</tank>
+			<tank n="5">
+				<boost-pump n="0" type="bool">false</boost-pump>
+				<fill-valve type="bool">false</fill-valve>
+			</tank>
+			<tank n="6">
+				<boost-pump n="0" type="bool">false</boost-pump>
+				<fill-valve type="bool">false</fill-valve>
+			</tank>
+			<apu-collector-tank type="float">0</apu-collector-tank>
+			<collector-tank n="0" type="float">0</collector-tank>
+			<collector-tank n="1" type="float">0</collector-tank>
+			<!--<apu-pressure type="float">0</apu-pressure>-->
+			<feed-line-press n="0" type="float">0</feed-line-press>
+			<feed-line-press n="1" type="float">0</feed-line-press>
+			<fire-apu-eng-valve type="bool">true</fire-apu-eng-valve>
+			<fire-eng-valve n="0" type="bool">true</fire-eng-valve>
+			<fire-eng-valve n="1" type="bool">true</fire-eng-valve>
 		</A-10-fuel>
 		<!-- iff system in prevision of future impl. -->
 		<A-10-iff>
 			<iff-warn-light type="bool">0</iff-warn-light>
 		</A-10-iff>
 		<bleed-air>
+			<psi type="double">0</psi>
 			<warn-light type="bool">0</warn-light>
+			<ats-valve n="0" type="bool">false</ats-valve>
+			<ats-valve n="1" type="bool">false</ats-valve>
+			<shutoff-valve n="0" type="bool">true</shutoff-valve>
+			<shutoff-valve n="1" type="bool">true</shutoff-valve>
+			<ecs-shutoff-valve type="bool">true</ecs-shutoff-valve>
 		</bleed-air>
 		<electrical>
+			<APU-gen-volts type="float">0</APU-gen-volts>
 			<outputs>
+				<apu-start-system type="double">0</apu-start-system>
 				<fuel-gauge-sel type="double">0</fuel-gauge-sel>
 				<hud type="double">0</hud>
+				<engine n="0">
+					<engines-ignitors n="0" type="double">0</engines-ignitors>
+					<engines-ignitors n="1" type="double">0</engines-ignitors>
+				</engine>
+				<engine n="1">
+					<engines-ignitors n="0" type="double">0</engines-ignitors>
+					<engines-ignitors n="1" type="double">0</engines-ignitors>
+				</engine>
 			</outputs>
 		</electrical>
+		<refuel>
+			<door-lock type="bool">false</door-lock>
+			<receiver-lever type="bool">false</receiver-lever>
+			<state type="int">0</state> <!-- 0: nil 1:ready 2:latched 3:disconnected -->
+		</refuel>
 	</systems>
 
 	<!-- Fuel Tank indexes -->
@@ -928,9 +1047,6 @@ Fairchild A-10 simulation config.
 		<A10autopilot>
 			<file>Aircraft/A-10/Nasal/autopilot.nas</file>
 		</A10autopilot>
-
-
-
 	</nasal>
 
 </PropertyList>

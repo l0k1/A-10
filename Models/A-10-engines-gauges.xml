@@ -56,28 +56,16 @@
       <type>rotate</type>
       <object-name>needle-fan-l</object-name>
       <property>sim/model/A-10/engines/engine[0]/n1</property>
-      <interpolation> 
-        <entry><ind>0</ind><dep>0</dep></entry>
-        <entry><ind>5</ind><dep>1.7</dep></entry>
-        <entry><ind>10</ind><dep>3.5</dep></entry>
-        <entry><ind>15</ind><dep>6.5</dep></entry>
-        <entry><ind>20</ind><dep>9</dep></entry>
-        <entry><ind>25</ind><dep>12.5</dep></entry>
-        <entry><ind>30</ind><dep>15.7</dep></entry>
-        <entry><ind>35</ind><dep>19.5</dep></entry>
-        <entry><ind>40</ind><dep>23.5</dep></entry>
-        <entry><ind>45</ind><dep>30.3</dep></entry>
-        <entry><ind>50</ind><dep>38</dep></entry>
-        <entry><ind>55</ind><dep>50</dep></entry>
-        <entry><ind>60</ind><dep>62</dep></entry>
-        <entry><ind>65</ind><dep>77</dep></entry>
-        <entry><ind>70</ind><dep>96</dep></entry>
-        <entry><ind>75</ind><dep>120</dep></entry>
-        <entry><ind>80</ind><dep>153</dep></entry>
-        <entry><ind>85</ind><dep>185</dep></entry>
-        <entry><ind>90</ind><dep>225</dep></entry>
-        <entry><ind>95</ind><dep>268</dep></entry>
-        <entry><ind>100</ind><dep>314</dep></entry>
+      <interpolation>
+	      <entry><ind>0</ind><dep>0</dep></entry>
+	      <entry><ind>25</ind><dep>47.3</dep></entry>
+	      <entry><ind>50</ind><dep>94.6</dep></entry>
+	      <entry><ind>75</ind><dep>137.4</dep></entry>
+	      <entry><ind>80</ind><dep>173.2</dep></entry>
+	      <entry><ind>85</ind><dep>207.4</dep></entry>
+	      <entry><ind>90</ind><dep>243.7</dep></entry>
+	      <entry><ind>95</ind><dep>280.7</dep></entry>
+	      <entry><ind>100</ind><dep>314.6</dep></entry>
       </interpolation>
       <center>
        <x-m>0.0047</x-m>
@@ -96,28 +84,16 @@
       <type>rotate</type>
       <object-name>needle-fan-r</object-name>
       <property>sim/model/A-10/engines/engine[1]/n1</property>
-      <interpolation> 
-        <entry><ind>0</ind><dep>0</dep></entry>
-        <entry><ind>5</ind><dep>1.7</dep></entry>
-        <entry><ind>10</ind><dep>3.5</dep></entry>
-        <entry><ind>15</ind><dep>6.5</dep></entry>
-        <entry><ind>20</ind><dep>9</dep></entry>
-        <entry><ind>25</ind><dep>12.5</dep></entry>
-        <entry><ind>30</ind><dep>15.7</dep></entry>
-        <entry><ind>35</ind><dep>19.5</dep></entry>
-        <entry><ind>40</ind><dep>23.5</dep></entry>
-        <entry><ind>45</ind><dep>30.3</dep></entry>
-        <entry><ind>50</ind><dep>38</dep></entry>
-        <entry><ind>55</ind><dep>50</dep></entry>
-        <entry><ind>60</ind><dep>62</dep></entry>
-        <entry><ind>65</ind><dep>77</dep></entry>
-        <entry><ind>70</ind><dep>96</dep></entry>
-        <entry><ind>75</ind><dep>120</dep></entry>
-        <entry><ind>80</ind><dep>153</dep></entry>
-        <entry><ind>85</ind><dep>185</dep></entry>
-        <entry><ind>90</ind><dep>225</dep></entry>
-        <entry><ind>95</ind><dep>268</dep></entry>
-        <entry><ind>100</ind><dep>314</dep></entry>
+      <interpolation>
+	      <entry><ind>0</ind><dep>0</dep></entry>
+	      <entry><ind>25</ind><dep>47.3</dep></entry>
+	      <entry><ind>50</ind><dep>94.6</dep></entry>
+	      <entry><ind>75</ind><dep>137.4</dep></entry>
+	      <entry><ind>80</ind><dep>173.2</dep></entry>
+	      <entry><ind>85</ind><dep>207.4</dep></entry>
+	      <entry><ind>90</ind><dep>243.7</dep></entry>
+	      <entry><ind>95</ind><dep>280.7</dep></entry>
+	      <entry><ind>100</ind><dep>314.6</dep></entry>
       </interpolation>
       <center>
        <x-m>0.0047</x-m>
@@ -137,12 +113,19 @@
       <name>core-rpm-l</name>
       <type>rotate</type>
       <object-name>needle-core-l</object-name>
-      <property>sim/model/A-10/engines/engine[0]/n1</property>
-      <interpolation> 
-        <entry><ind>0.0000</ind><dep>0</dep></entry><!--0-->
-        <entry><ind>56.000</ind><dep>133</dep></entry><!--iddle-->
-        <entry><ind>65.800</ind><dep>164</dep></entry><!--25% thrust-->
-        <entry><ind>101.00</ind><dep>251</dep></entry><!--max thrust-->
+      <property>sim/model/A-10/engines/engine[0]/n2</property>
+      <interpolation>
+		<entry><ind>0</ind><dep>0</dep></entry>
+		<entry><ind>10</ind><dep>25</dep></entry>
+		<entry><ind>20</ind><dep>50</dep></entry>
+		<entry><ind>30</ind><dep>75</dep></entry>
+		<entry><ind>40</ind><dep>102.2</dep></entry>
+		<entry><ind>50</ind><dep>128</dep></entry>
+		<entry><ind>60</ind><dep>154</dep></entry>
+		<entry><ind>70</ind><dep>184</dep></entry>
+		<entry><ind>80</ind><dep>210</dep></entry>
+		<entry><ind>90</ind><dep>238</dep></entry>
+		<entry><ind>105</ind><dep>272.5</dep></entry>
       </interpolation>
       <center>
        <x-m>0.0047</x-m>
@@ -159,12 +142,19 @@
       <name>core-rpm-r</name>
       <type>rotate</type>
       <object-name>needle-core-r</object-name>
-      <property>sim/model/A-10/engines/engine[1]/n1</property>
-      <interpolation> 
-        <entry><ind>0.0000</ind><dep>0</dep></entry><!--0-->
-        <entry><ind>56.000</ind><dep>133</dep></entry><!--iddle-->
-        <entry><ind>65.800</ind><dep>164</dep></entry><!--25% thrust-->
-        <entry><ind>101.00</ind><dep>251</dep></entry><!--max thrust-->
+      <property>sim/model/A-10/engines/engine[1]/n2</property>
+      <interpolation>
+		<entry><ind>0</ind><dep>0</dep></entry>
+		<entry><ind>10</ind><dep>25</dep></entry>
+		<entry><ind>20</ind><dep>50</dep></entry>
+		<entry><ind>30</ind><dep>75</dep></entry>
+		<entry><ind>40</ind><dep>102.2</dep></entry>
+		<entry><ind>50</ind><dep>128</dep></entry>
+		<entry><ind>60</ind><dep>154</dep></entry>
+		<entry><ind>70</ind><dep>184</dep></entry>
+		<entry><ind>80</ind><dep>210</dep></entry>
+		<entry><ind>90</ind><dep>238</dep></entry>
+		<entry><ind>105</ind><dep>272.5</dep></entry>
       </interpolation>
       <center>
        <x-m>0.0047</x-m>
@@ -181,17 +171,22 @@
 
 
 <!-- fuel flow -->
-    <!-- JP-4 6.4lbs per gallon -->
     <animation>
       <name>fuel-flow-ppm-l</name>
       <type>rotate</type>
       <object-name>needle-fuel-l</object-name>
-      <property>engines/engine[0]/fuel-flow-gph</property>
+      <property>engines/engine[0]/fuel-flow-pph</property>
       <interpolation> 
-        <entry><ind>0.0000</ind><dep>139</dep></entry><!--0-->
-        <entry><ind>10.64</ind><dep>158</dep></entry><!--iddle-->
-        <entry><ind>92.22</ind><dep>215</dep></entry><!--25% thrust-->
-        <entry><ind>494</ind><dep>383</dep></entry><!--max thrust-->
+        <entry><ind>0</ind><dep>135.8</dep></entry><!-- 0 -->
+        <entry><ind>1000</ind><dep>201.2</dep></entry>
+        <entry><ind>1500</ind><dep>232.1</dep></entry>
+	<entry><ind>2000</ind><dep>262</dep></entry>
+	<entry><ind>2500</ind><dep>293.2</dep></entry>
+	<entry><ind>3000</ind><dep>325.3</dep></entry>
+	<entry><ind>3500</ind><dep>354.6</dep></entry>
+	<entry><ind>4000</ind><dep>386.3</dep></entry>
+	<entry><ind>4500</ind><dep>416.45</dep></entry>
+	<entry><ind>5000</ind><dep>449</dep></entry>
       </interpolation>
       <center>
        <x-m>0.0047</x-m>
@@ -208,12 +203,18 @@
       <name>fuel-flow-ppm-r</name>
       <type>rotate</type>
       <object-name>needle-fuel-r</object-name>
-      <property>engines/engine[1]/fuel-flow-gph</property>
+      <property>engines/engine[1]/fuel-flow-pph</property>
       <interpolation> 
-        <entry><ind>0.0000</ind><dep>139</dep></entry><!--0-->
-        <entry><ind>10.64</ind><dep>158</dep></entry><!--iddle-->
-        <entry><ind>92.22</ind><dep>215</dep></entry><!--25% thrust-->
-        <entry><ind>494</ind><dep>383</dep></entry><!--max thrust-->
+	<entry><ind>0</ind><dep>135.8</dep></entry><!-- 0 -->
+	<entry><ind>1000</ind><dep>201.2</dep></entry>
+	<entry><ind>1500</ind><dep>232.1</dep></entry>
+	<entry><ind>2000</ind><dep>262</dep></entry>
+	<entry><ind>2500</ind><dep>293.2</dep></entry>
+	<entry><ind>3000</ind><dep>325.3</dep></entry>
+	<entry><ind>3500</ind><dep>354.6</dep></entry>
+	<entry><ind>4000</ind><dep>386.3</dep></entry>
+	<entry><ind>4500</ind><dep>416.45</dep></entry>
+	<entry><ind>5000</ind><dep>449</dep></entry>
        </interpolation>
       <center>
        <x-m>0.0047</x-m>
@@ -284,8 +285,17 @@
       <object-name>needle-apu-egt</object-name>
       <property>sim/model/A-10/systems/apu/temp</property>
       <interpolation> 
-        <entry><ind>0.0000</ind><dep>93</dep></entry><!--0-->
-        <entry><ind>1000</ind><dep>347</dep></entry><!--1000-->
+        <entry><ind>0</ind><dep>90.5</dep></entry><!--0-->
+	<entry><ind>100</ind><dep>115</dep></entry>
+	<entry><ind>200</ind><dep>139.5</dep></entry>
+	<entry><ind>300</ind><dep>164</dep></entry>
+	<entry><ind>400</ind><dep>189.5</dep></entry>
+	<entry><ind>500</ind><dep>214.5</dep></entry>
+	<entry><ind>600</ind><dep>241</dep></entry>
+	<entry><ind>700</ind><dep>269</dep></entry>
+	<entry><ind>800</ind><dep>298.5</dep></entry>
+	<entry><ind>900</ind><dep>324</dep></entry>
+        <entry><ind>1000</ind><dep>347.5</dep></entry><!--1000-->
       </interpolation>
       <center>
        <x-m>0.0047</x-m>
@@ -305,10 +315,15 @@
       <name>apu-rpm</name>
       <type>rotate</type>
       <object-name>needle-apu-rpm</object-name>
-      <property>sim/model/A-10/systems/apu/rpm</property>
+      <property>sim/model/A-10/systems/apu/rpm-norm</property>
       <interpolation> 
-        <entry><ind>0.0000</ind><dep>91</dep></entry><!--0-->
-        <entry><ind>120</ind><dep>345</dep></entry><!--max thrust-->
+        <entry><ind>0</ind><dep>87.5</dep></entry><!--0-->
+	<entry><ind>20</ind><dep>127</dep></entry>
+	<entry><ind>40</ind><dep>167.5</dep></entry>
+	<entry><ind>60</ind><dep>211</dep></entry>
+	<entry><ind>80</ind><dep>255</dep></entry>
+	<entry><ind>100</ind><dep>303.5</dep></entry>
+        <entry><ind>120</ind><dep>347.5</dep></entry><!--max rpm-->
       </interpolation>
       <center>
        <x-m>0.0047</x-m>

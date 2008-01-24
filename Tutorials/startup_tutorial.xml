@@ -67,7 +67,7 @@
 			<value>0</value>
 		</set>
 		<set>
-			<property>sim/model/A-10/systems/apu/rpm</property>
+			<property>sim/model/A-10/systems/apu/rpm-norm</property>
 			<value>0</value>
 		</set>
 		<set>
@@ -159,7 +159,7 @@
 		<exit>
 			<condition>
 				<greater-than>
-					<property>/sim/model/A-10/systems/apu/rpm</property>
+					<property>/sim/model/A-10/systems/apu/rpm-norm</property>
 					<value>64</value>
 				</greater-than>
 			</condition>

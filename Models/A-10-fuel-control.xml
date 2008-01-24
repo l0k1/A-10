@@ -10,7 +10,8 @@
 	<animation>
 		<object-name>rcvr-handle</object-name>
 		<type>rotate</type>
-		<property>sim/model/A-10/controls/fuel/receiver-lever</property>
+		<!--<property>sim/model/A-10/controls/fuel/receiver-lever</property>-->
+		<property>systems/refuel/receiver-lever</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>30</dep></entry>
 			<entry><ind>1</ind><dep>-30</dep></entry>
@@ -30,7 +31,7 @@
 	<animation> 
 		<object-name>ext-tks-wing-switch</object-name>
 		<type>rotate</type>
-		<property>sim/model/A-10/controls/fuel/ext-tanks-wing</property>
+		<property>controls/fuel/tank[4]/boost-pump[0]</property>
 		<factor>60</factor>
 		<center>
 			<x-m>-0.0634</x-m>
@@ -47,7 +48,7 @@
 	<animation> 
 		<object-name>ext-tks-fus-switch</object-name>
 		<type>rotate</type>
-		<property>sim/model/A-10/controls/fuel/ext-tanks-fus</property>
+		<property>controls/fuel/tank[5]/boost-pump[0]</property>
 		<factor>60</factor>
 		<center>
 			<x-m>-0.0634</x-m>
@@ -98,7 +99,7 @@
 	<animation> 
 		<object-name>boost-pump-wing-l-switch</object-name>
 		<type>rotate</type>
-		<property>sim/model/A-10/controls/fuel/boost-pumps-wing-l</property>
+		<property>controls/fuel/tank[0]/boost-pump[0]</property>
 		<factor>60</factor>
 		<center>
 			<x-m>0.0260</x-m>
@@ -115,7 +116,7 @@
 	<animation> 
 		<object-name>boost-pump-wing-r-switch</object-name>
 		<type>rotate</type>
-		<property>sim/model/A-10/controls/fuel/boost-pumps-wing-r</property>
+		<property>controls/fuel/tank[3]/boost-pump[0]</property>
 		<factor>60</factor>
 		<center>
 			<x-m>0.0260</x-m>
@@ -132,7 +133,7 @@
 	<animation> 
 		<object-name>boost-pump-main-l-switch</object-name>
 		<type>rotate</type>
-		<property>sim/model/A-10/controls/fuel/boost-pumps-main-l</property>
+		<property>controls/fuel/tank[1]/boost-pump[0]</property>
 		<factor>60</factor>
 		<center>
 			<x-m>0.0701</x-m>
@@ -149,7 +150,7 @@
 	<animation> 
 		<object-name>boost-pump-main-r-switch</object-name>
 		<type>rotate</type>
-		<property>sim/model/A-10/controls/fuel/boost-pumps-main-r</property>
+		<property>controls/fuel/tank[2]/boost-pump[0]</property>
 		<factor>60</factor>
 		<center>
 			<x-m>0.0701</x-m>
@@ -162,7 +163,55 @@
 			<z>0</z>
 		</axis>
 	</animation>
-
+	
+	<!-- fill disable -->
+	<animation>
+		<object-name>fill-disable-wing-l-button</object-name>
+		<type>translate</type>
+		<property>controls/fuel/tank[0]/fill-dis</property>
+		<factor>0.008</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<object-name>fill-disable-main-l-button</object-name>
+		<type>translate</type>
+		<property>controls/fuel/tank[1]/fill-dis</property>
+		<factor>0.008</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<object-name>fill-disable-main-r-button</object-name>
+		<type>translate</type>
+		<property>controls/fuel/tank[2]/fill-dis</property>
+		<factor>0.008</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<object-name>fill-disable-wing-r-button</object-name>
+		<type>translate</type>
+		<property>controls/fuel/tank[3]/fill-dis</property>
+		<factor>0.008</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
 
 <!-- lighting -->
 

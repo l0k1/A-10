@@ -1,7 +1,5 @@
 var UPDATE_PERIOD = 0.1;
 var ikts        = props.globals.getNode("velocities/airspeed-kt");
-var aft_ballast = props.globals.getNode("sim/model/A-10/controls/flight/CG-trim-aft", 1);
-var fwd_ballast = props.globals.getNode("sim/model/A-10/controls/flight/CG-trim-fwd", 1);
 var audio_alt_warn_signal = props.globals.getNode("sim/model/A-10/instrumentation/warnings/audio-alt");
 
 
@@ -14,29 +12,48 @@ var speed_toggle_flap = func {
 	var curr_set = getprop("sim/flaps/current-setting");
 	if(kias_speed > 210) {
 		setprop("controls/flight/flaps", 0.0);
-	} else {
-		if(kias_speed < 190 and curr_set != nil) {
-			# var curr_set_flap = getprop("sim/flaps/setting[" ~ curr_set ~ "]");
-			setprop("controls/flight/flaps", getprop("sim/flaps/setting[" ~ curr_set ~ "]"));
-		}
+	} elsif((kias_speed < 190) and (curr_set != nil)) {
+		setprop("controls/flight/flaps", getprop("sim/flaps/setting["~curr_set~"]"));
 	}
 }
 
 
-# Auto-CGtrim ###############
-# Move a ballast from one YASim weight point to another
-# depending on the airspeed of the a/c. This provides smoother pitch reactions
-# at A-10's high speeds.
-var auto_cgtrim = func {
-	var kts = ikts.getValue();
-	var new_fwd = 0;
-	if (kts > 220) { new_fwd = 11*(kts-220); }
-	if (new_fwd > 2500) { new_fwd = 2500 }
-	var new_aft = 2500 - new_fwd;	
-	aft_ballast.setDoubleValue(new_aft);
-	fwd_ballast.setDoubleValue(new_fwd);
-}
+# SAS #####################
+# Stability Augmentation System.
+# - Smooths the elevator input.
+# - Damps the elevator output when positive ie: diving. (max output = 0.47)
+var pitch_sas_sw  = props.globals.getNode("sim/model/A-10/controls/sas/pitch-sas-switch");
+var raw_elev      = props.globals.getNode("controls/flight/elevator");
+var sas_elev      = props.globals.getNode("sim/model/A-10/controls/flight/sas-elevator");
+var sas_low_aoa_avoid = props.globals.getNode("sim/model/A-10/controls/flight/sas-low-aoa", 1);
+var last_sas_elev = 0;
+var sas_elev_smooth_factor = 0.1;
+var aoa           = props.globals.getNode("orientation/alpha-deg");
 
+var sas = func {
+	var p_sas_sw = pitch_sas_sw.getBoolValue();
+	var raw_e = raw_elev.getValue();
+	var low_aoa_avoid = 0;
+	if (p_sas_sw) {
+		var filtered_move = (raw_e - last_sas_elev) * sas_elev_smooth_factor;
+		var new_sas_elev = last_sas_elev + filtered_move;
+		last_sas_elev = new_sas_elev;
+		if (new_sas_elev > -0.01) {
+			var curr_aoa = aoa.getValue();
+			var curr_kias = ikts.getValue();
+			if ( curr_aoa < 2 and curr_kias > 180 ) {
+				curr_aoa -= 2;
+				low_aoa_avoid = curr_aoa * (0.03 - (0.06 * curr_aoa));
+				if (low_aoa_avoid < -0.13 ){ low_aoa_avoid = -0.13}
+			}
+			new_sas_elev = (new_sas_elev * (0.95 - (0.48 * new_sas_elev))) + low_aoa_avoid;
+		} 
+		sas_elev.setDoubleValue(new_sas_elev);
+	} else {
+		sas_elev.setDoubleValue(raw_e);
+	}
+	sas_low_aoa_avoid.setDoubleValue(low_aoa_avoid);
+}
 
 # Audio Altitude Warning ##
 var audio_alt_vol = props.globals.getNode("sim/model/A-10/instrumentation/warnings/audio-alt-volume");
@@ -50,7 +67,7 @@ var audio_alt_warning = func {
 		audio_alt_warn_signal.setBoolValue(1);
 	}
 	audio_alt_warn_counter += 1;
-	if ( audio_alt_warn_counter == 20 or alt >= 200) {
+	if ( audio_alt_warn_counter == 20 or alt >= 200 ) {
 		audio_alt_warn_counter = 0;
 		audio_alt_warn_signal.setBoolValue(0);
 	}
@@ -82,9 +99,12 @@ var cnt = 0;	# elecrical is done each 0.3 sec.
 
 var main_loop = func {
 	cnt += 1;
-	auto_cgtrim();
+	sas();
 	A10hud.update_loop();
+	apu.update_loop();
 	A10fuel.update_loop();
+	A10engines.update_loop(0);
+	A10engines.update_loop(1);
 	nav_scripts.nav2_homing_devs();
 	nav_scripts.tacan_offset_apply();
 	nav_scripts.compas_card_dev_indicator();
@@ -96,7 +116,7 @@ var main_loop = func {
 		if (cnt == 6 ) {
 			speed_toggle_flap();
 			cnt = 0;
-		}		
+		}
 	}
 	settimer(main_loop, UPDATE_PERIOD);
 }
@@ -122,10 +142,9 @@ var init = func {
 	print("Initializing Nasal Electrical System");
 	electrical.init_electrical();
 	nav_scripts.freq_startup();
-	settimer(speed_toggle_flap, 0.5);
 	settimer(func {canopy.cockpit_state()}, 3);
 	aircraft.data.save();
-	main_loop();
+	settimer(main_loop, 0.5);
 }
 setlistener("/sim/signals/fdm-initialized", init);
 

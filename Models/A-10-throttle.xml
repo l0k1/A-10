@@ -9,7 +9,7 @@
   <animation>
     <object-name>apu-start-switch</object-name>
     <type>rotate</type>
-    <property>sim/model/A-10/controls/APU/off-start-switch</property>
+    <property>controls/APU/off-start-switch</property>
     <interpolation>
       <entry><ind>0</ind><dep>-30</dep></entry>
       <entry><ind>1</ind><dep>30</dep></entry>
@@ -73,7 +73,8 @@
   <animation> 
     <object-name>r-throttle-handle</object-name>
     <type>rotate</type>
-      <property>controls/engines/engine[1]/throttle</property>
+      <!--<property>controls/engines/engine[1]/throttle</property>-->
+      <property>sim/model/A-10/controls/engines/engine[1]/throttle</property>
       <factor>41</factor>
       <center>
         <x-m>0.0000</x-m>
@@ -90,7 +91,7 @@
   <animation> 
     <object-name>r-throttle-arm</object-name>
     <type>rotate</type>
-      <property>controls/engines/engine[1]/throttle</property>
+      <property>sim/model/A-10/controls/engines/engine[1]/throttle</property>
       <factor>41</factor>
       <center>
         <x-m>0.0000</x-m>
@@ -107,7 +108,7 @@
   <animation> 
     <object-name>missile-seeker-head-slew</object-name>
     <type>rotate</type>
-      <property>controls/engines/engine[1]/throttle</property>
+      <property>sim/model/A-10/controls/engines/engine[1]/throttle</property>
       <factor>41</factor>
       <center>
         <x-m>0.0000</x-m>
@@ -124,7 +125,7 @@
   <animation> 
     <object-name>speed-brake-switch</object-name>
     <type>rotate</type>
-      <property>controls/engines/engine[1]/throttle</property>
+      <property>sim/model/A-10/controls/engines/engine[1]/throttle</property>
       <factor>41</factor>
       <center>
         <x-m>0.0000</x-m>
@@ -141,7 +142,7 @@
   <animation> 
     <object-name>speed-brake-sides</object-name>
     <type>rotate</type>
-      <property>controls/engines/engine[1]/throttle</property>
+      <property>sim/model/A-10/controls/engines/engine[1]/throttle</property>
       <factor>41</factor>
       <center>
         <x-m>0.0000</x-m>
@@ -158,7 +159,7 @@
   <animation> 
     <object-name>mic-switch</object-name>
     <type>rotate</type>
-      <property>controls/engines/engine[1]/throttle</property>
+      <property>sim/model/A-10/controls/engines/engine[1]/throttle</property>
       <factor>41</factor>
       <center>
         <x-m>0.0000</x-m>
@@ -175,7 +176,7 @@
   <animation> 
     <object-name>missile-uncage-switch</object-name>
     <type>rotate</type>
-      <property>controls/engines/engine[1]/throttle</property>
+      <property>sim/model/A-10/controls/engines/engine[1]/throttle</property>
       <factor>41</factor>
       <center>
         <x-m>0.0000</x-m>
@@ -192,7 +193,7 @@
   <animation> 
     <object-name>flare-disp-button</object-name>
     <type>rotate</type>
-      <property>controls/engines/engine[1]/throttle</property>
+      <property>sim/model/A-10/controls/engines/engine[1]/throttle</property>
       <factor>41</factor>
       <center>
         <x-m>0.0000</x-m>
@@ -210,7 +211,7 @@
   <animation> 
     <object-name>l-throttle-handle</object-name>
     <type>rotate</type>
-      <property>controls/engines/engine[0]/throttle</property>
+      <property>sim/model/A-10/controls/engines/engine[0]/throttle</property>
       <factor>41</factor>
       <center>
         <x-m>0.0000</x-m>
@@ -227,7 +228,7 @@
   <animation> 
     <object-name>l-throttle-arm</object-name>
     <type>rotate</type>
-      <property>controls/engines/engine[0]/throttle</property>
+      <property>sim/model/A-10/controls/engines/engine[0]/throttle</property>
       <factor>41</factor>
       <center>
         <x-m>0.0000</x-m>
@@ -244,7 +245,7 @@
   <animation> 
     <object-name>master-extern-lt-switch</object-name>
     <type>rotate</type>
-      <property>controls/engines/engine[0]/throttle</property>
+      <property>sim/model/A-10/controls/engines/engine[0]/throttle</property>
       <factor>41</factor>
       <center>
         <x-m>0.0000</x-m>
@@ -261,7 +262,7 @@
   <animation> 
     <object-name>chaff-dispens-button</object-name>
     <type>rotate</type>
-      <property>controls/engines/engine[0]/throttle</property>
+      <property>sim/model/A-10/controls/engines/engine[0]/throttle</property>
       <factor>41</factor>
       <center>
         <x-m>0.0000</x-m>
@@ -274,9 +275,29 @@
         <z>0</z>
       </axis>
   </animation>
-
- 
-
+  
+  <!-- Flaps lever -->
+	<animation>
+		<object-name>flaps-lever-arm</object-name>
+		<object-name>flaps-lever-handle</object-name>
+		<type>rotate</type>
+		<property>sim/flaps/current-setting</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>30</dep></entry>
+			<entry><ind>1</ind><dep>0</dep></entry>
+			<entry><ind>2</ind><dep>-30</dep></entry>
+		</interpolation>
+		<center>
+			<x-m>0.067</x-m>
+			<y-m>-0.059</y-m>
+			<z-m>-0.008</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
 
 <!-- lighting -->
 
@@ -293,7 +314,7 @@
   </animation>
 
   <animation> 
-    <object-name>flaps-lever-handle</object-name>
+    <object-name>flaps-lever-arm</object-name>
     <type>material</type>
     <emission> 
       <factor-prop>controls/lighting/panel-norm</factor-prop>

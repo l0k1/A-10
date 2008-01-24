@@ -9,7 +9,7 @@
   <type>rotate</type>
   <object-name>needle</object-name>
   <property>instrumentation/altimeter/indicated-altitude-ft</property>
-  <factor>3.6</factor>  
+  <factor>3.6</factor>
   <center>
    <x-m>0</x-m>
    <y-m>0</y-m>

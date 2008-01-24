@@ -41,8 +41,22 @@
 
    <actions> 
      
+	<!-- apu-gen-power -->
+	<action>
+		<name>apu-gen-powered</name>
+		<button>0</button>
+		<x>-383</x>
+		<y>-100</y>
+		<w>178</w>
+		<h>188</h>
+		<binding>
+			<command>property-toggle</command>
+			<property>controls/electric/APU-generator</property>
+		</binding>
+	</action>
+
 <!-- apu-gen-power -->
-    <action>
+    <!--<action>
      <name>apu-gen-powered</name>
       <button>0</button>
       <x>-383</x>
@@ -53,7 +67,7 @@
        <command>property-toggle</command>
        <property>controls/electric/APU-generator</property>
       </binding>
-     </action>
+     </action>-->
 
 
 <!-- inverter-stby -->

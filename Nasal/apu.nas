@@ -1,83 +1,52 @@
 # controls:
-# - sim/model/A-10/controls/APU/off-start-switch
-# - apu's start/stop animation
-# - sim/model/A-10/systems/apu/start-state
-# - sim/model/A-10/system/apu/rpm
+# - controls/APU/off-start-switch
+# - controls/APU/serviceable
+# - controls/APU/generator-serviceable
+# - systems/electrical/outputs/apu-start-system
+# - sim/model/A-10/systems/apu/out-of-fuel
+# - sim/model/A-10/systems/apu/egt-overt
+# - apu's start/stop animation:
+# - sim/model/A-10/system/apu/rpm-norm
 # - sim/model/A-10/system/apu/tmp
+# - outputs:
+# - systems/electrical/APU-gen-volts
+# - sim/model/A-10/systems/apu/fuel-consumed-lbs
 
-var off_start_switch = func {
-  var input = arg[0];
-  if (input == 1) {
-    setprop("sim/model/A-10/controls/APU/off-start-switch", 1);
-    settimer( test_start, 0.5);
-  }
-  elsif (input == -1) { test_stop() }
-}
-
-var test_start = func {
-	setprop("sim/model/A-10/controls/APU/off-start-switch", 1);
-	var volts = getprop("systems/electrical/outputs/apu-starter[0]");
-	# we need electric power
-	# we need fuel: L main (aft) tank plus DC pump
-	# we shouldn't be allready running
-	if ( volts > 23.0 ) {
-		var left_main = getprop("consumables/fuel/tank[1]/level-lbs");
-		var start_state = getprop("sim/model/A-10/systems/apu/start-state");
-		if (( left_main > 10.0 ) and ( start_state < 1 )) {
-			transient_start_seq(0.08, start_state);
-			# rpm increase during around 60 sec up to 100%
-			var rpm = (math.sin( ( start_state * 3 ) + 4.7 )+1) * 48;
-			setprop( "sim/model/A-10/systems/apu/rpm", rpm );
-			temp = getprop("sim/model/A-10/systems/apu/temp");
-			# temp stabilize after 30 sec around 600°C
-			if (start_state < 0.52 ) {
-				var new_temp = (((atan((start_state*85.5)-9)+(math.sin(start_state*9)*0.39))/4.2)+0.35) * 950;
-				setprop("sim/model/A-10/systems/apu/temp", new_temp);
-			}
-		}
-	}
-}
-
-var test_stop = func {
-	var rpm_stop = 1;
-	var temp_stop = 1;
-	setprop("sim/model/A-10/controls/APU/off-start-switch", 0);
-	start_state = getprop("sim/model/A-10/systems/apu/start-state");
-	var temp = getprop("sim/model/A-10/systems/apu/temp");
-	var rpm = getprop( "sim/model/A-10/systems/apu/rpm");
-	if ( rpm > 0.3 ) {
-		var new_rpm = rpm - 0.3;
-		setprop( "sim/model/A-10/systems/apu/rpm", new_rpm );
+var update_loop = func {
+	var fuel_cons = 0.0;
+	var apu_rpm = getprop("sim/model/A-10/systems/apu/rpm-norm");
+	var apu_temp = getprop("sim/model/A-10/systems/apu/temp");
+	var apu_start_system = getprop("systems/electrical/outputs/apu-start-system");
+	var apu_gen_volts = getprop("systems/electrical/APU-gen-volts");
+	var apu_temp_goal = 0.0;
+	var temp_fact = 6.0;
+	if((apu_start_system > 23) and !getprop("sim/model/A-10/systems/apu/out-of-fuel") and !getprop("sim/model/A-10/systems/apu/egt-overt") and (getprop("environment/pressure-inhg")>16.89)) {
+		# APU running/starting we try to reach the 100% rpm
+		apu_rpm += (100-apu_rpm) * 0.092 * A10.UPDATE_PERIOD;
 	} else {
-		rpm_stop = 0;
+		# we stop the APU
+		if(apu_rpm > 0) { apu_rpm -= 3.333 * A10.UPDATE_PERIOD; }
+		elsif(apu_rpm < 0) { apu_rpm = 0.0; }
 	}
-	if ( temp > 10 ) {
-		var new_temp = temp - 0.5;
-		#print("temp = ", temp);
-		setprop("sim/model/A-10/systems/apu/temp", new_temp);
-	} else {
-		temp_stop = 0;
+	# APU generator not runnig, while APU running so APU would come very hot.
+	if((apu_gen_volts < 23) and (apu_start_system > 23)) { temp_fact = 10; }
+	apu_temp_goal = (apu_rpm * temp_fact) + getprop("environment/temperature-degc");
+	apu_temp += (apu_temp_goal-apu_temp) * 0.035;
+	# APU overheating: we shutdown it automatically during ground operation
+	if((apu_temp > 720) and getprop("gear/gear[1]/wow")) { setprop("sim/model/A-10/systems/apu/egt-overt", 1); }
+	# RaZ apu/egt-overt if we stop the APU
+	if(getprop("sim/model/A-10/systems/apu/egt-overt") and !getprop("controls/APU/off-start-switch") and (apu_rpm < 10)) { setprop("sim/model/A-10/systems/apu/egt-overt", 0); }
+	# APU overheating we kill it
+	if(apu_temp > 850) { setprop("controls/APU/serviceable", 0); }
+	setprop("sim/model/A-10/systems/apu/rpm-norm", apu_rpm);
+	setprop("sim/model/A-10/systems/apu/temp", apu_temp);
+	# fuel consumption @ rpm 100% => 500pph
+	if((apu_rpm > 10) and (apu_start_system > 23)) {
+		fuel_cons = getprop("sim/model/A-10/systems/apu/fuel-consumed-lbs") + (apu_rpm * 0.00138889 * A10.UPDATE_PERIOD);
 	}
-	if (temp_stop or rpm_stop) {
-		transient_stop_seq(0.04);
-	} else {
-		setprop( "sim/model/A-10/systems/apu/start-state", 0 );
-	}
-}
-
-var transient_start_seq = func {
-  var speed = arg[0];
-  var start_state = arg[1];
-  var new_start_state = start_state + 0.004;
-  setprop( "sim/model/A-10/systems/apu/start-state", new_start_state );
-  settimer( test_start, speed);
-}
-
-var transient_stop_seq = func {
-  var speed = arg[0];
-  settimer( test_stop, speed);
-}
-
-var atan = func {
-  return math.atan2(arg[0], 1);
+	setprop("sim/model/A-10/systems/apu/fuel-consumed-lbs", fuel_cons);
+	# APU generator caution light TODO: complete the number of cases when apu-gen caution light on, see manual page 23 .
+	if(((apu_start_system > 23) and (apu_gen_volts < 23) and getprop("controls/electric/APU-generator")) or ((apu_start_system < 23) and getprop("controls/electric/APU-generator"))) {
+		setprop("systems/A-10-electrical/apu-gen-caution-light", 1);
+	} else { setprop("systems/A-10-electrical/apu-gen-caution-light", 0); }
 }

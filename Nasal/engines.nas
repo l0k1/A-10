@@ -1,90 +1,148 @@
+var eng_ignit_time = [0.0, 0.0];
+var ats_valve_timer = [0.0, 0.0];
+var ign_selected = [0, 0];
 
-
-
-# starter: 3 positions switch
-var starter_switch = func {
-	var input = arg[0];
-	var eng_num = arg[1];
-	var position = "sim/model/A-10/controls/engines/engine["~eng_num~"]/starter-switch-position";
-	var starter = "sim/model/A-10/controls/engines/engine["~eng_num~"]/starter";
-	var running = "sim/model/A-10/engines/engine["~eng_num~ "]/running";
-	var motor = "sim/model/A-10/controls/engines/engine["~eng_num~"]/motor";
-	if (input == 1) {
-		if (getprop(position) == 0) {
-			# up to ignition
-			setprop(position, 1);
-			setprop(starter, 0);
-			setprop(running, 0);
-			setprop(motor, 0)
-		} elsif (getprop(position) == 1) {
-			# up to ignition
-			setprop(position, 2);
-			setprop(starter, 1);
-			settimer(func {test_start(eng_num)}, 0.5);
-			setprop(motor, 0);
-		}
-	} elsif (input == -1) {
-		if (getprop(position) == 1) {
-			# down to motor
-			setprop(position, 0);
-			setprop(starter, 0);
-			setprop(motor, 1)
-		} elsif (getprop(position) == 2) {
-			# down to norm
-			setprop(position, 1);
-			setprop(starter, 0);
-			setprop(motor, 0);
-		}
-		test_stop(eng_num);
+var update_loop = func(engNb=0) {
+	# Declare variables
+	var eng_serviceable = getprop("controls/engines/engine["~engNb~"]/faults/serviceable");
+	var eng_switch_pos = getprop("sim/model/A-10/controls/engines/engine["~engNb~"]/starter-switch-position");
+	var eng_throttle_pos = getprop("controls/engines/engine["~engNb~"]/throttle");
+	var eng_n1 = getprop("sim/model/A-10/engines/engine["~engNb~"]/n1"); # FAN speed
+	var eng_n2 = getprop("sim/model/A-10/engines/engine["~engNb~"]/n2"); # CORE speed
+	var eng_n1_yasim = getprop("engines/engine["~engNb~"]/n1");
+	var eng_n2_yasim = getprop("engines/engine["~engNb~"]/n2");
+	var eng_n1_goal = 0.0;
+	var eng_n2_goal = 0.0;
+	var eng_ign_ramp = [getprop("systems/electrical/outputs/engine["~engNb~"]/engines-ignitors[0]"), getprop("systems/electrical/outputs/engine["~engNb~"]/engines-ignitors[1]")];
+	var ats_valve = getprop("systems/bleed-air/ats-valve["~engNb~"]");
+	var other_eng_numb = 1;
+	if(engNb == 1) { other_eng_numb = 0; }
+	var ats_valve_oth = getprop("systems/bleed-air/ats-valve["~other_eng_numb~"]");
+	var eng_collector_tank = getprop("systems/A-10-fuel/collector-tank["~engNb~"]");
+	var eng_out_of_fuel = 1;
+	var time_now = getprop("sim/time/elapsed-sec");
+	# TODO: Protect engine from overtemperature, overpressure and stall
+	# TODO: motor @ IDLE for manual start
+	# TODO: Ignition effect if n2 > 10 && collector_tank != 0 && !ats_valve
+	# Take care of throttle cut OFF position
+	if(getprop("controls/engines/engine["~engNb~"]/cutoff")) {
+		setprop("controls/engines/engine["~engNb~"]/throttle", 0.0);
+		eng_throttle_pos = 0.0;
+	} elsif(eng_throttle_pos < 0.03) {
+		setprop("controls/engines/engine["~engNb~"]/throttle", 0.03);
+		eng_throttle_pos = 0.03;
 	}
-}
-
-var test_start = func {
-	var eng_num = arg[0];
-	var speed = 0.03;
-	var ignitors_volts = getprop("systems/electrical/outputs/engines-ignitors");
-	var left_main = getprop("consumables/fuel/tank[1]/level-lbs");
-	var start_state = getprop("sim/model/A-10/engines/engine["~eng_num~"]/start-state");
-	var psi = props.globals.getNode("systems/bleed-air/psi").getValue();
-	if (( left_main > 10.0 ) and ( ignitors_volts > 23.0 ) and ( psi > 50 )) {
-		if ( start_state < 1 ) {
-			var new_start_state = start_state + 0.004;
-			setprop("sim/model/A-10/engines/engine["~eng_num~"]/start-state", new_start_state );
-			# rpm increase during around 60 sec up to 60%
-			var rpm = (math.sin( ( start_state * 3 ) + 4.7 )+1) * 27;
-			setprop("sim/model/A-10/engines/engine["~eng_num~"]/n1", rpm);
-			if (( left_main > 10.0 ) and ( start_state > 0.3 )) {
-				setprop("sim/model/A-10/engines/engine["~eng_num~"]/running", 1);
-			}
-			settimer(func {test_start(eng_num)}, speed);
-		} else {
-			setprop("sim/model/A-10/engines/engine["~eng_num~"]/running", 1);
+	setprop("sim/model/A-10/controls/engines/engine["~engNb~"]/throttle", eng_throttle_pos);
+	# Hydraulic pressure
+	var hydr_press = 0.0;
+	if(getprop("controls/engines/engine["~engNb~"]/faults/hydraulic-pump-serviceable") and (getprop("systems/A-10-hydraulics/hyd-res["~engNb~"]") > 40)) { hydr_press = 17.85*eng_n2; }
+	setprop("systems/A-10-hydraulics/hyd-psi["~engNb~"]", hydr_press);
+	# Engines switch Operator position
+	if(eng_switch_pos == 2) {
+		# IGNition position. Switch is spring-loaded => back to NORM position
+		setprop("sim/model/A-10/controls/engines/engine["~engNb~"]/starter-switch-position", 1);
+		# We start a ignition cycle of 30 seconds
+		if((eng_ignit_time[engNb] == 0.0) and (eng_throttle_pos >= 0.03)) {
+			ign_selected[engNb] = 1;
+			eng_ignit_time[engNb] = time_now;
+			setprop("controls/engines/engine["~engNb~"]/engines-ignitors[0]", 1);
+			setprop("controls/engines/engine["~engNb~"]/engines-ignitors[1]", 1);
+			#print("Start engine N"~engNb~" ignition at "~eng_ignit_time[engNb]~".");
+		}
+	} elsif(eng_switch_pos == 1) {
+		# NORM position
+		if((getprop("systems/bleed-air/psi") > 50) and (eng_throttle_pos >= 0.03) and (eng_throttle_pos <= 0.06) and (eng_n2 < 56) and (electrical.AC_ESSEN_bus_volts > 23) and !ats_valve and !ats_valve_oth) {
+			setprop("systems/bleed-air/ats-valve["~engNb~"]", 1);
+			ats_valve = 1;
+		}
+		# We start a ignition cycle of 30 seconds minimum
+		if(ats_valve and (eng_n2 >= 10) and (eng_n2 < 56) and (eng_ignit_time[engNb] == 0.0)) {
+			eng_ignit_time[engNb] = time_now;
+			setprop("controls/engines/engine["~engNb~"]/engines-ignitors[0]", 1);
+			setprop("controls/engines/engine["~engNb~"]/engines-ignitors[1]", 1);
+			#print("Start engine N"~engNb~" ignition at "~eng_ignit_time[engNb]~".");
+		}
+		# ATS valve should close 10 seconds after engine core speed reach 56 % rpm .
+		if(ats_valve and (eng_n2 >= 56) and (ats_valve_timer[engNb] == 0.0)) {
+			ats_valve_timer[engNb] = time_now;
+			#print("Start ATS valve timer of engine N"~engNb~" at "~ats_valve_timer[engNb]~".");
 		}
 	} else {
-		setprop("sim/model/A-10/controls/engines/engine["~eng_num~"]/starter-switch-position", 1);
+		# MOTOR position
+		if((getprop("systems/bleed-air/psi") > 50) and (eng_throttle_pos < 0.03) and (electrical.AC_ESSEN_bus_volts > 23) and !ats_valve and !ats_valve_oth) {
+			setprop("systems/bleed-air/ats-valve["~engNb~"]", 1);
+			ats_valve = 1;
+		}
 	}
+	# Close ATS valve
+	if(ats_valve and ((eng_throttle_pos > 0.06) or ((eng_throttle_pos < 0.03) and (eng_switch_pos != 0)) or ((ats_valve_timer[engNb] != 0.0) and (time_now > (ats_valve_timer[engNb] + 10))))) {
+		#print("Close ATS valve of engine N"~engNb~" at "~time_now~".");
+		#print("=>Engine core: "~eng_n2~" core by YASim: "~eng_n2_yasim~"");
+		setprop("systems/bleed-air/ats-valve["~engNb~"]", 0);
+		ats_valve_timer[engNb] = 0.0;
+		ats_valve = 0;
+	}
+	# Stop engine ignition
+	if((getprop("controls/engines/engine["~engNb~"]/engines-ignitors[0]") or getprop("controls/engines/engine["~engNb~"]/engines-ignitors[1]")) and (((time_now > (eng_ignit_time[engNb] + 30)) and (ign_selected[engNb] or (eng_n2 >= 56))) or (eng_throttle_pos < 0.03))) {
+		eng_ignit_time[engNb] = 0.0;
+		setprop("controls/engines/engine["~engNb~"]/engines-ignitors[0]", 0);
+		setprop("controls/engines/engine["~engNb~"]/engines-ignitors[1]", 0);
+		#print("Stop engine N"~engNb~" ignition at "~time_now~".");
+		#print("=>Engine core: "~eng_n2~" core by YASim: "~eng_n2_yasim~"");
+	}
+	# Simulate engine core speed
+	if(eng_serviceable) {
+		if(!ats_valve and (eng_throttle_pos >= 0.03) and (eng_collector_tank > 0) and !getprop("engines/engine["~engNb~"]/out-of-fuel")) {
+			# Engine running
+			eng_n1 = eng_n1_yasim;
+			eng_n2 = eng_n2_yasim;
+			eng_out_of_fuel = 0;
+		} elsif(ats_valve and ((ats_valve_timer[engNb] != 0.0) or (eng_ign_ramp[0] > 23) or (eng_ign_ramp[1] > 23)) and (eng_collector_tank > 0)) {
+			# NORM startup
+			eng_n1_goal = eng_n1_yasim;
+			eng_n2_goal = eng_n2_yasim; # should be near 56% rpm
+			eng_out_of_fuel = 0;
+		} elsif(ats_valve) {
+			# MOTOR
+			eng_n1_goal = 8;
+			eng_n2_goal = 16;
+		}
+	}
+	if(eng_n2 != eng_n2_yasim) {
+		# we calculate the core engine speed
+		var delta_n1 = eng_n1_goal - eng_n1;
+		var gain = 1.72;
+		var tm = 0.2;
+		var thau = 1.2;
+		eng_n1 += (delta_n1*gain*math.exp(-tm/A10.UPDATE_PERIOD))/(1+(thau/A10.UPDATE_PERIOD));
+		if(eng_n1 < 0) { eng_n1 = 0; }
+		var delta_n2 = eng_n2_goal - eng_n2;
+		eng_n2 += (delta_n2*gain*math.exp(-tm/A10.UPDATE_PERIOD))/(1+(thau/A10.UPDATE_PERIOD));
+		if(eng_n2 < 0) { eng_n2 = 0; }
+	}
+	setprop("engines/engine["~engNb~"]/out-of-fuel", eng_out_of_fuel);
+	setprop("sim/model/A-10/engines/engine["~engNb~"]/n1", eng_n1);
+	setprop("sim/model/A-10/engines/engine["~engNb~"]/n2", eng_n2);
 }
 
-var test_stop = func {
-	var eng_num = arg[0];
-	var rpm_stop = 1;
-	var speed = 0.1;
-	var start_state = getprop("sim/model/A-10/engines/engine["~eng_num~"]/start-state");
-	var rpm = getprop("sim/model/A-10/engines/engine["~eng_num~"]/n1");
-	if ( rpm > 0.3 ) {
-		var new_rpm = rpm - 0.3;
-			setprop("sim/model/A-10/engines/engine["~eng_num~"]/n1", new_rpm);
-			setprop("sim/model/A-10/engines/engine["~eng_num~"]/running", 0);
-	} else {
-		rpm_stop = 0;
+# Move the 3 positions 'ENG OPER' switch
+var eng_oper_switch_move = func(engNb=0, swMov=0) {
+	var switch_pos = getprop("sim/model/A-10/controls/engines/engine["~engNb~"]/starter-switch-position");
+	if((switch_pos < 2) and (swMov == 1)) {
+		switch_pos += 1;
+	} elsif((swMov == 0) and (switch_pos > 0)) {
+		switch_pos -= 1;
 	}
-	if (rpm_stop) {
-		settimer(func {test_stop(eng_num)}, speed);
-	} else {
-		setprop("sim/model/A-10/engines/engine["~eng_num~"]/start-state", 0 );
-	}
+	setprop("sim/model/A-10/controls/engines/engine["~engNb~"]/starter-switch-position", switch_pos);
 }
 
-
-
-
+# Move throttle from OFF to IDLE
+var throttle_cutoff_mov = func(thrNb=0) {
+	if(getprop("controls/engines/engine["~thrNb~"]/cutoff")) {
+		setprop("controls/engines/engine["~thrNb~"]/cutoff", 0);
+		setprop("controls/engines/engine["~thrNb~"]/throttle", 0.03);
+	} elsif(getprop("controls/engines/engine["~thrNb~"]/throttle") < 0.06) {
+		setprop("controls/engines/engine["~thrNb~"]/cutoff", 1);
+		setprop("controls/engines/engine["~thrNb~"]/throttle", 0.0);
+	}
+}
