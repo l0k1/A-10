@@ -5,202 +5,312 @@
 
 	<init>					
 		<set>
-			<property>/sim/current-view/view-number</property>
+			<property>sim/current-view/view-number</property>
 			<value>0</value>
 		</set>
 		<set>
-			<property>/controls/gear/brake-parking</property>
+			<property>controls/gear/brake-parking</property>
 			<value>1</value>
 		</set>
 		<set>
-			<property>/controls/flight/flaps</property>
+			<property>controls/flight/flaps</property>
 			<value>0.0</value>
 		</set>
 		<set>
-			<property>/sim/model/A-10/controls/engines/engine[0]/starter-switch-position</property>
-			<value>1</value>
-		</set>
-		<set>
-			<property>/sim/model/A-10/controls/engines/engine[1]/starter-switch-position</property>
-			<value>1</value>
-		</set>
-
-		<set>
-			<property>/sim/model/A-10/engines/initial-start-state</property>
-			<value>false</value>
-		</set>
-		<set>
-			<property>/sim/model/A-10/engines/eng-start-cycle</property>
-			<value>false</value>
-		</set>
-		<set>
-			<property>/sim/model/A-10/engines/engine[0]/start-state</property>
+			<property>controls/electric/battery-switch</property>
 			<value>0</value>
 		</set>
 		<set>
-			<property>/sim/model/A-10/engines/engine[1]/start-state</property>
-			<value>0</value>
-		</set>
-		<set>
-			<property>/engines/engine[0]/out-of-fuel</property>
+			<property>sim/model/A-10/controls/engines/engine[0]/starter-switch-position</property>
 			<value>1</value>
 		</set>
 		<set>
-			<property>/engines/engine[1]/out-of-fuel</property>
+			<property>sim/model/A-10/controls/engines/engine[1]/starter-switch-position</property>
 			<value>1</value>
 		</set>
 		<set>
-			<property>/controls/engines/engine[0]/throttle</property>
+			<property>sim/model/A-10/controls/fuel/cross-feed-sw</property>
+			<value>false</value>
+		</set>
+		<set>
+			<property>controls/APU/off-start-switch</property>
+			<value>false</value>
+		</set>
+		<set>
+			<property>controls/electric/APU-generator</property>
+			<value>false</value>
+		</set>
+		<set>
+			<property>controls/electric/engine[0]/generator</property>
+			<value>false</value>
+		</set>
+		<set>
+			<property>controls/electric/engine[1]/generator</property>
+			<value>false</value>
+		</set>
+		<set>
+			<property>controls/engines/engine[0]/cutoff</property>
+			<value>true</value>
+		</set>
+		<set>
+			<property>controls/engines/engine[0]/throttle</property>
 			<value>0.0</value>
 		</set>
 		<set>
-			<property>/controls/engines/engine[1]/throttle</property>
+			<property>sim/model/A-10/controls/engines/engine[0]/throttle</property>
 			<value>0.0</value>
 		</set>
-
 		<set>
-			<property>/sim/model/A-10/controls/APU/off-start-switch</property>
-			<value>0</value>
+			<property>engines/engine[0]/out-of-fuel</property>
+			<value>true</value>
 		</set>
 		<set>
-			<property>sim/model/A-10/systems/apu/temp</property>
-			<value>0</value>
+			<property>sim/model/A-10/engines/engine[0]/n1</property>
+			<value>0.0</value>
 		</set>
 		<set>
-			<property>sim/model/A-10/systems/apu/rpm-norm</property>
-			<value>0</value>
+			<property>sim/model/A-10/engines/engine[0]/n2</property>
+			<value>0.0</value>
 		</set>
 		<set>
-			<property>sim/model/A-10/systems/apu/start-state</property>
-			<value>0</value>
-		</set>
-
-		<set>
-			<property>/controls/electric/APU-generator</property>
-			<value>0</value>
+			<property>controls/engines/engine[1]/cutoff</property>
+			<value>true</value>
 		</set>
 		<set>
-			<property>/controls/electric/battery-switch</property>
-			<value>0</value>
+			<property>controls/engines/engine[1]/throttle</property>
+			<value>0.0</value>
 		</set>
 		<set>
-			<property>/controls/electric/engine[0]/generator</property>
-			<value>false</value>
+			<property>sim/model/A-10/controls/engines/engine[1]/throttle</property>
+			<value>0.0</value>
 		</set>
 		<set>
-			<property>/controls/electric/engine[1]/generator</property>
-			<value>0</value>
+			<property>engines/engine[1]/out-of-fuel</property>
+			<value>true</value>
 		</set>
 		<set>
-			<property>/sim/model/A-10/engines/engine[0]/n1</property>
-			<value>0</value>
+			<property>sim/model/A-10/engines/engine[1]/n1</property>
+			<value>0.0</value>
 		</set>
 		<set>
-			<property>/sim/model/A-10/engines/engine[1]/n1</property>
-			<value>0</value>
+			<property>sim/model/A-10/engines/engine[1]/n2</property>
+			<value>0.0</value>
+		</set>
+		<set>
+			<property>systems/A-10-fuel/collector-tank[0]</property>
+			<value>0.0</value>
+		</set>
+		<set>
+			<property>systems/A-10-fuel/collector-tank[1]</property>
+			<value>0.0</value>
+		</set>
+		<set>
+			<property>systems/A-10-fuel/apu-collector-tank</property>
+			<value>0.0</value>
 		</set>
 	</init>
 
 	<step>
 		<message>
 			First, ensure battery is switched on.
-			Use the battery switch on the electrical control panel{|.}
+			Use the battery switch on the electrical control panel.
 		</message>
 		<view>
-			<heading-offset-deg>340</heading-offset-deg>
-			<pitch-offset-deg>-35</pitch-offset-deg>
-			<field-of-view>40</field-of-view>
+			<heading-offset-deg>327.7</heading-offset-deg>
+			<pitch-offset-deg>-40.6</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>1.5</y-offset-m>
+			<z-offset-m>3.2</z-offset-m>
+			<field-of-view>43.1</field-of-view>
 		</view>
 		<marker>
-			<x-m>2.6800</x-m>
-			<y-m>0.4980</y-m>
-			<z-m>0.8150</z-m>
-			<scale>1.5</scale>
+			<x-m>2.6453</x-m>
+			<y-m>0.5333</y-m>
+			<z-m>0.7689</z-m>
+			<scale>1.5689</scale>
 		</marker>
 		<exit>
 			<condition>
-				<property>/controls/electric/battery-switch</property>
+				<property>controls/electric/battery-switch</property>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>
+			Switch on the cross bleed valve, to prevent
+			load inbalance between right and left wing tanks.
+		</message>
+		<view>
+			<heading-offset-deg>28.5</heading-offset-deg>
+			<pitch-offset-deg>-50</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>1.5</y-offset-m>
+			<z-offset-m>3.2</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
+		<marker>
+			<x-m>2.5209</x-m>
+			<y-m>-0.3680</y-m>
+			<z-m>0.8378</z-m>
+			<scale>1.5689</scale>
+		</marker>
+		<exit>
+			<condition>
+				<property>sim/model/A-10/controls/fuel/cross-feed-sw</property>
 			</condition>
 		</exit>
 	</step>
 
 	<step>
-		<message>
-			Then, start the APU{ (Auxiliar Power Unit)|.}
-		</message>
+		<message>You can now start the APU.</message>
 		<view>
-			<heading-offset-deg>353</heading-offset-deg>
-			<pitch-offset-deg>-40</pitch-offset-deg>
-			<field-of-view>55</field-of-view>
+			<heading-offset-deg>28.5</heading-offset-deg>
+			<pitch-offset-deg>-50</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>1.5</y-offset-m>
+			<z-offset-m>3.2</z-offset-m>
+			<field-of-view>55.0</field-of-view>
 		</view>
 		<marker>
-			<x-m>2.7680</x-m>
-			<y-m>-0.2800</y-m>
-			<z-m>0.8200</z-m>
-			<scale>1.5</scale>
+			<x-m>2.7191</x-m>
+			<y-m>-0.3147</y-m>
+			<z-m>0.7538</z-m>
+			<scale>1.7289</scale>
+		</marker>
+		<exit>
+			<condition>
+				<property>controls/APU/off-start-switch</property>
+			</condition>
+		</exit>
+	</step>
+
+	<step>
+		<message>Let the APU rpm raise to 50% RPM.</message>
+		<view>
+			<heading-offset-deg>342.2</heading-offset-deg>
+			<pitch-offset-deg>-34.1</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>1.5</y-offset-m>
+			<z-offset-m>3.2</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
+		<marker>
+			<x-m>2.4262</x-m>
+			<y-m>0.2133</y-m>
+			<z-m>0.9516</z-m>
+			<scale>3.0</scale>
 		</marker>
 		<exit>
 			<condition>
 				<greater-than>
-					<property>/sim/model/A-10/systems/apu/start-state</property>
-					<value>0.05</value>
+					<property>sim/model/A-10/systems/apu/rpm-norm</property>
+					<value>30</value>
 				</greater-than>
 			</condition>
 		</exit>
 	</step>
 
 	<step>
-		<message>Let the APU take its turns until it reach at least{ 90%|.} </message>
+		<message>Now engage the APU generator.</message>
 		<view>
-			<heading-offset-deg>342</heading-offset-deg>
-			<pitch-offset-deg>-34</pitch-offset-deg>
-			<field-of-view>24</field-of-view>
+			<heading-offset-deg>342.2</heading-offset-deg>
+			<pitch-offset-deg>-34.1</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>1.5</y-offset-m>
+			<z-offset-m>3.2</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
+		<marker>
+			<x-m>2.5982</x-m>
+			<y-m>0.4644</y-m>
+			<z-m>0.7787</z-m>
+			<scale>1.5689</scale>
+		</marker>
+		<exit>
+			<condition>
+				<property>controls/electric/APU-generator</property>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>
+			Near 100% rpm, the APU will provide enough power and low pressure output
+			to start an engine.
+		</message>
+		<view>
+			<heading-offset-deg>342.2</heading-offset-deg>
+			<pitch-offset-deg>-34.1</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>1.5</y-offset-m>
+			<z-offset-m>3.2</z-offset-m>
+			<field-of-view>55.0</field-of-view>
 		</view>
 		<exit>
 			<condition>
 				<greater-than>
-					<property>/sim/model/A-10/systems/apu/rpm-norm</property>
-					<value>64</value>
+					<property>sim/model/A-10/systems/apu/rpm-norm</property>
+					<value>95</value>
 				</greater-than>
 			</condition>
 		</exit>
 	</step>
 
 	<step>
-		<message>Now engage the APU generator{|.}</message>
+		<message>
+			Now we can launch the start cycle of the right engine.
+			Move the right throttle from the OFF position to the IDLE position.
+			To do this you have to click on it (move your joystick throttle axis is not sufficient).
+		</message>
 		<view>
-			<heading-offset-deg>340</heading-offset-deg>
-			<pitch-offset-deg>-35</pitch-offset-deg>
-			<field-of-view>40</field-of-view>
+			<heading-offset-deg>7.4</heading-offset-deg>
+			<pitch-offset-deg>-46.8</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>1.5</y-offset-m>
+			<z-offset-m>3.2</z-offset-m>
+			<field-of-view>55.0</field-of-view>
 		</view>
 		<marker>
-			<x-m>2.6300</x-m>
-			<y-m>0.4320</y-m>
-			<z-m>0.8150</z-m>
-			<scale>1.5</scale>
+			<x-m>2.7089</x-m>
+			<y-m>-0.3560</y-m>
+			<z-m>0.7458</z-m>
+			<scale>1.2133</scale>
 		</marker>
 		<exit>
 			<condition>
-				<property>/controls/electric/APU-generator</property>
+				<greater-than>
+					<property>sim/model/A-10/controls/engines/engine[1]/throttle</property>
+					<value>0.029</value>
+				</greater-than>
 			</condition>
 		</exit>
 	</step>
 
 	<step>
 		<message>
-			You don't need anymore the battery to be turned on{|.}
-			Switch it off{|.}
+			Wait the end of the right engine start cycle.
 		</message>
-		<marker>
-			<x-m>2.6800</x-m>
-			<y-m>0.4980</y-m>
-			<z-m>0.8150</z-m>
-			<scale>1.5</scale>
-		</marker>
+		<view>
+			<heading-offset-deg>342.2</heading-offset-deg>
+			<pitch-offset-deg>-34.1</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>1.5</y-offset-m>
+			<z-offset-m>3.2</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
 		<exit>
 			<condition>
 				<not>
-					<property>/controls/electric/battery-switch</property>
+					<property>systems/bleed-air/ats-valve[1]</property>
 				</not>
 			</condition>
 		</exit>
@@ -208,32 +318,29 @@
 
 	<step>
 		<message>
-			Lets go with first engine{|.}
-			Move the throttles to the "Iddle" position{|.}
-			Use PageUp on the keyboard or 9 on the numeric keypad{|.}	
+			Fine, we can now launch the start cycle of the left engine.
+			Move the left throttle from the OFF position to the IDLE position.
 		</message>
 		<view>
-			<heading-offset-deg>20</heading-offset-deg>
-			<pitch-offset-deg>-48</pitch-offset-deg>
-			<field-of-view>40</field-of-view>
+			<heading-offset-deg>7.4</heading-offset-deg>
+			<pitch-offset-deg>-46.8</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>1.5</y-offset-m>
+			<z-offset-m>3.2</z-offset-m>
+			<field-of-view>55.0</field-of-view>
 		</view>
-		<error>
-			<message>
-				Tip:
-				Move the throttles forward until they hide the bottom of the idle{|-}max arrow{|.} 
-			</message>
-			<condition>
-				<less-than>
-					<property>/controls/engines/engine[0]/throttle</property>
-					<value>0.06</value>
-				</less-than>
-			</condition>
-		</error>
+		<marker>
+			<x-m>2.7089</x-m>
+			<y-m>-0.3907</y-m>
+			<z-m>0.7458</z-m>
+			<scale>1.2133</scale>
+		</marker>
 		<exit>
 			<condition>
 				<greater-than>
-					<property>/controls/engines/engine[0]/throttle</property>
-					<value>0.06</value>
+					<property>sim/model/A-10/controls/engines/engine[0]/throttle</property>
+					<value>0.029</value>
 				</greater-than>
 			</condition>
 		</exit>
@@ -241,112 +348,196 @@
 
 	<step>
 		<message>
-			Start the left engine{|.}
-			Push the switch forward in the "ignition" position{ |.}
+			Now engage the right engine generator.
 		</message>
 		<view>
-			<heading-offset-deg>3.61</heading-offset-deg>
-			<pitch-offset-deg>-42</pitch-offset-deg>
-			<field-of-view>44</field-of-view>
+			<heading-offset-deg>340.0</heading-offset-deg>
+			<pitch-offset-deg>-43.8</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>1.5</y-offset-m>
+			<z-offset-m>3.2</z-offset-m>
+			<field-of-view>52.4</field-of-view>
 		</view>
 		<marker>
-			<x-m>2.7230</x-m>
-			<y-m>-0.3000</y-m>
-			<z-m>0.8200</z-m>
-			<scale>1.5</scale>
+			<x-m>2.6378</x-m>
+			<y-m>0.4982</y-m>
+			<z-m>0.7538</z-m>
+			<scale>1.2133</scale>
 		</marker>
 		<exit>
 			<condition>
-				<equals>
-					<property>/sim/model/A-10/controls/engines/engine[0]/starter-switch-position</property>
-					<value>2</value>
-				</equals>
+				<property>controls/electric/engine[1]/generator</property>
 			</condition>
 		</exit>
 	</step>
-
-	<step>
-		<message>Let the left engine spool up until it reach at least{ 25%} rpm{|.}</message>
-		<view>
-			<heading-offset-deg>342</heading-offset-deg>
-			<pitch-offset-deg>-34</pitch-offset-deg>
-			<field-of-view>24</field-of-view>
-		</view>
-		<exit>
-			<condition>
-				<greater-than>
-					<property>/engines/engine/n1</property>
-					<value>57</value>
-				</greater-than>
-			</condition>
-		</exit>
-	</step>
-
+	
 	<step>
 		<message>
-			Now engage the left engine generator{|.}
-			We will use now the same view angle which makes easier all the switch operations'|.}
+			Wait the end of the left engine start cycle.
 		</message>
 		<view>
-			<heading-offset-deg>353</heading-offset-deg>
-			<pitch-offset-deg>-40</pitch-offset-deg>
-			<field-of-view>55</field-of-view>
+			<heading-offset-deg>342.2</heading-offset-deg>
+			<pitch-offset-deg>-34.1</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>1.5</y-offset-m>
+			<z-offset-m>3.2</z-offset-m>
+			<field-of-view>55.0</field-of-view>
 		</view>
-		<marker>
-			<x-m>2.6900</x-m>
-			<y-m>0.4230</y-m>
-			<z-m>0.8150</z-m>
-			<scale>1.5</scale>
-		</marker>
 		<exit>
 			<condition>
-				<property>/controls/electric/engine/generator</property>
+				<not>
+					<property>systems/bleed-air/ats-valve[0]</property>
+				</not>
 			</condition>
 		</exit>
 	</step>
-
+	
 	<step>
 		<message>
-			Start the right engine{|.}
-			Push the switch forward in the "ignition" position{ |.}
-		</message>
-		<marker>
-			<x-m>2.7230</x-m>
-			<y-m>-0.2660</y-m>
-			<z-m>0.8200</z-m>
-			<scale>1.5</scale>
-		</marker>
-		<exit>
-			<condition>
-				<equals>
-					<property>/sim/model/A-10/controls/engines/engine[1]/starter-switch-position</property>
-					<value>2</value>
-				</equals>
-			</condition>
-		</exit>
-	</step>
-
-	<step>
-		<message>
-			Then engage the right engine generator{|.}
+			Now you can engage the left engine generator.
 		</message>
 		<view>
-			<heading-offset-deg>353</heading-offset-deg>
-			<pitch-offset-deg>-40</pitch-offset-deg>
-			<field-of-view>55</field-of-view>
+			<heading-offset-deg>340.0</heading-offset-deg>
+			<pitch-offset-deg>-43.8</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>1.5</y-offset-m>
+			<z-offset-m>3.2</z-offset-m>
+			<field-of-view>52.4</field-of-view>
 		</view>
 		<marker>
-			<x-m>2.6900</x-m>
-			<y-m>0.4450</y-m>
-			<z-m>0.8250</z-m>
-			<scale>1.5</scale>
+			<x-m>2.6378</x-m>
+			<y-m>0.4644</y-m>
+			<z-m>0.7538</z-m>
+			<scale>1.2133</scale>
 		</marker>
 		<exit>
 			<condition>
-				<property>/controls/electric/engine[1]/generator</property>
+				<property>controls/electric/engine[1]/generator</property>
 			</condition>
 		</exit>
 	</step>
-
+	
+	<step>
+		<message>
+			Switch the battery off.
+		</message>
+		<view>
+			<heading-offset-deg>327.7</heading-offset-deg>
+			<pitch-offset-deg>-40.6</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>1.5</y-offset-m>
+			<z-offset-m>3.2</z-offset-m>
+			<field-of-view>43.1</field-of-view>
+		</view>
+		<marker>
+			<x-m>2.6453</x-m>
+			<y-m>0.5333</y-m>
+			<z-m>0.7689</z-m>
+			<scale>1.5689</scale>
+		</marker>
+		<exit>
+			<condition>
+				<not>
+					<property>controls/electric/battery-switch</property>
+				</not>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>Shut off the APU</message>
+		<view>
+			<heading-offset-deg>28.5</heading-offset-deg>
+			<pitch-offset-deg>-50</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>1.5</y-offset-m>
+			<z-offset-m>3.2</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
+		<marker>
+			<x-m>2.7191</x-m>
+			<y-m>-0.3147</y-m>
+			<z-m>0.7538</z-m>
+			<scale>1.7289</scale>
+		</marker>
+		<exit>
+			<condition>
+				<not>
+					<property>controls/APU/off-start-switch</property>
+				</not>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>and the APU generator.</message>
+		<view>
+			<heading-offset-deg>350.5</heading-offset-deg>
+			<pitch-offset-deg>-47.8</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>1.5</y-offset-m>
+			<z-offset-m>3.2</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
+		<marker>
+			<x-m>2.5982</x-m>
+			<y-m>0.4644</y-m>
+			<z-m>0.7787</z-m>
+			<scale>1.5689</scale>
+		</marker>
+		<exit>
+			<condition>
+				<not>
+					<property>controls/electric/APU-generator</property>
+				</not>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>Finally switch off the cross bleed valve.</message>
+		<view>
+			<heading-offset-deg>28.5</heading-offset-deg>
+			<pitch-offset-deg>-50</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>1.5</y-offset-m>
+			<z-offset-m>3.2</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
+		<marker>
+			<x-m>2.5209</x-m>
+			<y-m>-0.3680</y-m>
+			<z-m>0.8378</z-m>
+			<scale>1.5689</scale>
+		</marker>
+		<exit>
+			<condition>
+				<not>
+					<property>sim/model/A-10/controls/fuel/cross-feed-sw</property>
+				</not>
+			</condition>
+		</exit>
+	</step>
+	
+	<end>
+		<message>Congratulations! You have reached the end of this tutorial without
+		starting the ejection sequence.</message>
+		<view>
+			<heading-offset-deg>0.0</heading-offset-deg>
+			<pitch-offset-deg>-10.0</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>1.5</y-offset-m>
+			<z-offset-m>3.2</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
+	</end>
 
 </PropertyList>
