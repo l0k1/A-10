@@ -633,14 +633,13 @@
 			</volume>
 		</alt-warning>
 
-		<!-- gun -->
+		<!-- GAU-8/A Avenger cannon -->
 		<gun>
 			<name>gun</name>
 			<mode>looped</mode>
-			<path>Aircraft/A-10/Sounds/gun2.wav</path>
+			<path>Aircraft/A-10/Sounds/gau-8.wav</path>
 			<condition>
-				<property>ai/submodels/GAU-8A[0]</property>
-				<property>ai/submodels/submodel[1]/count</property>
+				<property>sim/model/A-10/weapons/gun/running</property>
 			</condition>
 			<volume>
 				<value>1</value>

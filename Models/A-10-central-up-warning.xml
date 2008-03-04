@@ -76,15 +76,15 @@
 	</animation>
 
 	<animation>
-		<type>select</type> 
+		<type>select</type>
 		<object-name>gun-ready</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/gun/gun-ready</property>
-			<greater-than>
+			<property>sim/model/A-10/weapons/gun/ready</property>
+			<!--<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
-			</greater-than>
-		</condition>  
+			</greater-than>-->
+		</condition>
 	</animation>
 
 <!-- lighting -->

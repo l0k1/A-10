@@ -141,6 +141,8 @@ var init = func {
 	A10fuel.initialize();
 	print("Initializing Nasal Electrical System");
 	electrical.init_electrical();
+	print("Initializing weapons system.");
+	A10weapons.initialize();
 	nav_scripts.freq_startup();
 	settimer(func {canopy.cockpit_state()}, 3);
 	aircraft.data.save();

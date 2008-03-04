@@ -1945,7 +1945,7 @@
 		<type>spin</type>
 		<object-name>LEFan</object-name>
 		<property>sim/model/A-10/engines/engine[0]/n1</property>
-		<factor>0.4</factor>
+		<factor>73.65</factor>
 		<center>
 			<x-m>0.0</x-m>
 			<y-m>-1.4756</y-m>
@@ -1963,7 +1963,7 @@
 		<type>spin</type>
 		<object-name>REFan</object-name>
 		<property>sim/model/A-10/engines/engine[1]/n1</property>
-		<factor>0.4</factor>
+		<factor>73.65</factor>
 		<center>
 			<x-m>0.0</x-m>
 			<y-m>1.4756</y-m>

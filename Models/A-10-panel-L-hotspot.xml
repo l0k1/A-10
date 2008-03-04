@@ -169,33 +169,33 @@
         </action>
 
         <!-- master arm switch -->
-        <action> 
+        <action>
           <name>master-arm-up</name>
           <button>0</button>
           <x>-28</x>
           <y>-42</y>
           <w>55</w>
           <h>50</h>
-          <binding> 
+          <binding>
             <command>nasal</command>
             <script>A10weapons.master_arm_switch(1)</script>
           </binding>
         </action>
-        <action> 
+        <action>
           <name>master-arm-down</name>
           <button>0</button>
           <x>-28</x>
           <y>-95</y>
           <w>55</w>
           <h>50</h>
-          <binding> 
+          <binding>
             <command>nasal</command>
             <script>A10weapons.master_arm_switch(-1)</script>
           </binding>
         </action>
 		
         <!-- gun rate switch -->
-        <action> 
+        <!--<action> 
           <name>gun-rate-up</name>
           <button>0</button>
           <x>420</x>
@@ -218,6 +218,18 @@
             <command>nasal</command>
             <script>A10weapons.gun_rate_switch(-1)</script>
           </binding>
+        </action>-->
+	<action>
+		<name>gun-rate-toggle</name>
+		<button>0</button>
+		<x>420</x>
+		<y>-70</y>
+		<w>55</w>
+		<h>100</h>
+		<binding>
+			<command>nasal</command>
+			<script>A10weapons.gun_rate_switch()</script>
+		</binding>
         </action>
 
         <!-- ripples counter -->

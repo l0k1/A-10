@@ -126,15 +126,31 @@
  </vstab>
 
 <!-- 2 x GE TF34-100 -->
-	<jet x="-10.8" y="1.5" z="1.27" mass="1440" thrust="9065" spool-time="8" tsfc="0.371" n1-idle="20" n1-max="100" n2-idle="56" n2-max="105" epr="6.42" egt="1223" rotate="9">
+<!-- GE TF34-100 characteristics:
+     thrust (at sea level):	9065 lbs (40422 N)
+     weight:			1,458 lbs
+     fuel consumption:		0.363 lbs per pound of thrust
+     bypass ratio:		6.42
+     pressure ratio:		21
+     fan/core thrust ratio:	0.85
+     spool time (idle to 100%):	10 sec
+     fan airflow:		338 lb/sec
+     fan airflow speed:		223.6 m/s (=> 434.64 kt) ( Vo(m/s)-Vi(m/s)=Thrust(N)/Dm(Kg/s) => (40422*0.85)/(338/2.2) , at takeoff we consider Ve = 0)
+     fan speed:			7,365 rpm
+     compressor airflow:	47 lb/sec
+     compressor airflow speed:	283.8 m/s (=> 551.7 kt)
+     compressor speed:		17,900 rpm
+     exhaust gas temperature:	813 °C
+     -->
+	<jet x="-10.8" y="1.5" z="1.27" mass="1440" thrust="9065" spool-time="8" tsfc="0.371" n1-idle="20" n1-max="100" n2-idle="56" n2-max="102" epr="1.42" egt="1086" rotate="9">
 		<actionpt x="-12.5" y="1.5" z="1.15"/>
 		<control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
 	</jet>
-
-	<jet x="-10.8" y="-1.5" z="1.27" mass="1440" thrust="9065" spool-time="8" tsfc="0.371" n1-idle="20" n1-max="100" n2-idle="56" n2-max="105" epr="6.42" egt="1223" rotate="9">
+	<jet x="-10.8" y="-1.5" z="1.27" mass="1440" thrust="9065" spool-time="8" tsfc="0.371" n1-idle="20" n1-max="100" n2-idle="56" n2-max="102" epr="1.42" egt="1086" rotate="9">
 		<actionpt x="-12.5" y="-1.5" z="1.15"/>
 		<control-input axis="/controls/engines/engine[1]/throttle" control="THROTTLE"/>
 	</jet>
+	
 
 <!-- Internal tanks -->
   <tank x="-8.3" y="2.0" z="0.0" jet="true" capacity="2089.92"/><!-- ppg=6.72, real tank capacity : 311 gallons -> 311*6.72 = 2089.92 lbs -->
@@ -178,20 +194,33 @@
 </gear>
 
 <!-- Ballast -->
-<ballast x="-2.8" y="0" z="0.74" mass="2000"/> <!-- Armored cockpit -->
-<ballast x="-2.0" y="0" z="0.0" mass="1300"/> <!-- Gun (minus ammunition -->
+<ballast x="-3.16" y="0" z="0.78" mass="1200" /><!-- Titanium bathtub (for the mass see: http://www.plane-crazy.net/links/a10.htm) -->
+<ballast x="-1.71" y="0.183" z="-0.823" mass="620"/><!-- GAU-8 barrel (length: 2800mm + 620mm) -->
+<ballast x="-4.91" y="0" z="0" mass="2310"/><!-- GAU-8 feed system + ammunition drum + aluminium alloy cases + plastic driving bands -->
 <ballast x="-6.1" y="0" z="0.0" mass="1000"/> <!-- avionics -->
 <ballast x="-4" y="0" z="0.0" mass="2500"/> <!-- CG trim trim  -->
 
 
 <!--
-    GAU-8/a ammunition drum.
-    1350 rounds x 2.05lb total weight per round.  I've allowed 0.05lb
-    for the case, which is kept on-board after firing, so the total weight
-    for ammo is 1350 x 2lb = 2700lb
+       GAU-8/A characteristics:
+    Magazine capacity:		1,350 max (1,174 is the normal load)
+    Rate of fire:		3900 RPM
+    Barrel length:		2.80 m
+    Total length:		6.4 m (from the muzzle to the rearmost point of the ammunition system)
+    Barrel weight:		620 lb
+    Total weight:		4,029 lb (complete weapon + ammunition load)
+    Recoil force:		10,000 lb
+       Ammo types:
+    PGU-14/B API:		Armor Piercing Incendiary (with depleted uranium)
+    projectile weight:		425 grams
+    velocity:			3250 ft/sec
+    PGU-13/B HEI:		High Explosive Incendiary
+    projectile weight:		360 grams
+    velocity:			3425 ft/sec
+    
+    Note: The standard ammunition mixture for anti-armor use is a four-to-one mix of PGU-14/B and PGU-13/B rounds.
 -->
-  <weight x="-4.0" y="0" z="-0.0" size="0.9"
-      mass-prop="yasim/weights/ammunition-weight-lbs"/>
+  <weight x="-4.91" y="0" z="0.0" size="0" mass-prop="yasim/weights/ammunition-weight-lbs"/>
   <!-- Stations, weight is dynamicly configured while choosing the weapons,
        drag should be too, but it's not possible yet in YASim-->
   <weight x="-7.56" y="5.90"   z="0.00"

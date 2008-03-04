@@ -1,44 +1,4 @@
 <?xml version="1.0"?>
-<!--  Submodels are objects which can be dropped or launched from the user aircraft.
-      The trigger is a boolean property, which you define, which when "true" causes
-      the submodel to be released/launched. 
-      A submodel will create an AIBallistic object which will follow a ballistic path.
-      By default one submodel will be released when the corresponding trigger is "true".
-      The initial conditions (IC) define the object's starting point (relative to the
-      user aircraft's "reported position"), and its initial speed and direction
-      (relative to the user aircraft).  If you want to release many similar objects
-      with similar IC, then you may use the <repeat>, <delay> and <count> properties
-      to define this.  The allowed properties are:
-
-      <name>         The name of the submodel.
-      <model>        The path to the visual model.
-      <trigger>      The property which will act as the trigger. 
-      <speed>        Initial speed, in feet/sec, relative to user aircraft.
-      <repeat>       Set "true" if you want multiple releases of this submodel. Defaults
-                     to false
-      <delay>        Time, in seconds, between repeated releases.
-      <count>        Number of submodels available for multiple release.
-      <x-offset>     Submodel's initial fore/aft position relative to user aircraft.  
-                     Fore is positive. (ft)
-      <y-offset>     Submodel's initial left/right position relative to user aircraft.  
-                     Right is positive. (ft)
-      <z-offset>     Submodel's initial up/down position relative to user aircraft.  
-                     Up is positive. (ft)
-      <yaw-offset>   Submodel's initial azimuth, in degrees, relative to user aircraft's
-                     nose.  Right is positive.
-      <pitch-offset> Submodel's initial elevation, in degrees, relative to user aircraft's
-                     pitch.  Up is positive.
-      <buoyancy>     Submodel's upward acceleration (fps) due to buoyancy in air. 32 is 
-                     neutral (contrails),  > 32 exhaust gas, smoke. 
-      <wind>	   		 If true, Submodel is affected by local wind. Defaults to false.
-      <cd>           The Coeffient of Drag. Varies with submodel shape - 0.295 for a bullet, 
-                 0.045 for an airfoil. Enter an appropriate value. Defaults to 0.295.
-      <eda>          Effective drag area (sq ft). Usually the cross-sectional area of the 
-                     submodel normal to the airflow.
-      <weight>       The weight of the submodel (lbs). Defaults to 0.25	
-      <aero-stabilised> If true, the submodel aligns with the local airflow. Defaults to true
-      
--->
 
 <PropertyList>
 	<submodel>
@@ -61,34 +21,247 @@
 		<aero-stabilised>true</aero-stabilised>
 	</submodel>
 
-	<submodel>
+	<GAU-8>
 		<name>GAU-8/A API round</name>
-		<model>Aircraft/A-10/Models/A-10-GAU-8A-API-round.xml</model>
-		<trigger>ai/submodels/GAU-8A</trigger>
-		<speed>3388</speed>
-		<cd>0.193</cd>
-		<eda>0.0122</eda>
-		<fuse-range>0</fuse-range>
-		<weight>2.0</weight>
-		<life>6</life>
+		<model>Aircraft/A-10/Models/apibullet-tracer.xml</model>
+		<trigger>sim/model/A-10/weapons/gun/running[0]</trigger>
+		<speed>3250.0</speed>
+		<fuse-range>0.5</fuse-range>
 		<repeat>true</repeat>
-		<delay>0.014285714</delay>
-		<count>1350</count>
+		<!--<delay>0.01538461538461538462</delay>-->
+		<delay>0.10769230769230769231</delay><!-- normal delay * 7 to reduce fps loose -->
+		<count>1174</count>
 		<x-offset>0.1</x-offset>
-		<y-offset>0</y-offset>
+		<y-offset>0.0</y-offset>
 		<z-offset>-0.9</z-offset>
 		<yaw-offset>0.0</yaw-offset>
-		<pitch-offset>-2</pitch-offset>
+		<pitch-offset>-3.0</pitch-offset>
+		<life>60.0</life>
 		<buoyancy>0</buoyancy>
 		<wind>false</wind>
-		<aero-stabilised>true</aero-stabilised>
+		<cd>0.193</cd>
+		<random>false</random>
+		<eda>0.007609</eda>
+		<weight>0.9369635</weight>
+		<no-roll>false</no-roll>
 		<collision>true</collision>
-		<collision-report>sim/ai/aircraft/collision/cannon</collision-report>
 		<impact>true</impact>
-		<impact-report>sim/ai/aircraft/impact/droptank</impact-report>
+		<impact-reports>ai/models/model-impact</impact-reports>
 		<submodel-path>Aircraft/A-10/Models/Stores/GAU-8A/gau-8a-submodels.xml</submodel-path>
+	</GAU-8>
+	
+	<submodel>
+		<name>GAU-8/A API round 1</name>
+		<model alias ="../../GAU-8/model"/>
+		<trigger alias="../../GAU-8/trigger"/>
+		<delay alias="../../GAU-8/delay"/>
+		<speed alias="../../GAU-8/speed"/>
+		<fuse-range alias="../../GAU-8/fuse-range"/>
+		<repeat>true</repeat>
+		<count alias="../../GAU-8/count"/>
+		<x-offset alias="../../GAU-8/x-offset"/>
+		<y-offset alias="../../GAU-8/y-offset"/>
+		<z-offset alias="../../GAU-8/z-offset"/>
+		<yaw-offset alias="../../GAU-8/yaw-offset"/>
+		<pitch-offset alias="../../GAU-8/pitch-offset"/>
+		<life alias="../../GAU-8/life"/>
+		<buoyancy alias="../../GAU-8/buoyancy"/>
+		<wind alias="../../GAU-8/wind"/>
+		<cd alias="../../GAU-8/cd"/>
+		<random alias="../../GAU-8/random"/>
+		<eda alias="../../GAU-8/eda"/>
+		<weight alias="../../GAU-8/weight"/>
+		<no-roll alias="../../GAU-8/no-roll"/>
+		<collision alias="../../GAU-8/collision"/>
+		<impact alias="../../GAU-8/impact"/>
+		<impact-reports alias="../../GAU-8/impact-reports"/>
+		<submodel-path alias="../../GAU-8/submodel-path"/>
 	</submodel>
-
+	<submodel>
+		<name>GAU-8/A API round 2</name>
+		<model alias ="../../GAU-8/model"/>
+		<trigger alias="../../GAU-8/trigger"/>
+		<delay>0.12307692307692307693</delay>
+		<speed alias="../../GAU-8/speed"/>
+		<fuse-range alias="../../GAU-8/fuse-range"/>
+		<repeat>true</repeat>
+		<count>-1</count>
+		<x-offset alias="../../GAU-8/x-offset"/>
+		<y-offset alias="../../GAU-8/y-offset"/>
+		<z-offset alias="../../GAU-8/z-offset"/>
+		<yaw-offset alias="../../GAU-8/yaw-offset"/>
+		<pitch-offset alias="../../GAU-8/pitch-offset"/>
+		<life alias="../../GAU-8/life"/>
+		<buoyancy alias="../../GAU-8/buoyancy"/>
+		<wind alias="../../GAU-8/wind"/>
+		<cd alias="../../GAU-8/cd"/>
+		<random alias="../../GAU-8/random"/>
+		<eda alias="../../GAU-8/eda"/>
+		<weight alias="../../GAU-8/weight"/>
+		<no-roll alias="../../GAU-8/no-roll"/>
+		<collision alias="../../GAU-8/collision"/>
+		<impact alias="../../GAU-8/impact"/>
+		<impact-reports alias="../../GAU-8/impact-reports"/>
+		<submodel-path alias="../../GAU-8/submodel-path"/>
+	</submodel>
+	<submodel>
+		<name>GAU-8/A API round 3</name>
+		<model alias ="../../GAU-8/model"/>
+		<trigger alias="../../GAU-8/trigger"/>
+		<delay>0.13846153846153846155</delay>
+		<speed alias="../../GAU-8/speed"/>
+		<fuse-range alias="../../GAU-8/fuse-range"/>
+		<repeat>true</repeat>
+		<count>-1</count>
+		<x-offset alias="../../GAU-8/x-offset"/>
+		<y-offset alias="../../GAU-8/y-offset"/>
+		<z-offset alias="../../GAU-8/z-offset"/>
+		<yaw-offset alias="../../GAU-8/yaw-offset"/>
+		<pitch-offset alias="../../GAU-8/pitch-offset"/>
+		<life alias="../../GAU-8/life"/>
+		<buoyancy alias="../../GAU-8/buoyancy"/>
+		<wind alias="../../GAU-8/wind"/>
+		<cd alias="../../GAU-8/cd"/>
+		<random alias="../../GAU-8/random"/>
+		<eda alias="../../GAU-8/eda"/>
+		<weight alias="../../GAU-8/weight"/>
+		<no-roll alias="../../GAU-8/no-roll"/>
+		<collision alias="../../GAU-8/collision"/>
+		<impact alias="../../GAU-8/impact"/>
+		<impact-reports alias="../../GAU-8/impact-reports"/>
+		<submodel-path alias="../../GAU-8/submodel-path"/>
+	</submodel>
+	<submodel>
+		<name>GAU-8/A API round 4</name>
+		<model alias ="../../GAU-8/model"/>
+		<trigger alias="../../GAU-8/trigger"/>
+		<delay>0.15384615384615384617</delay>
+		<speed alias="../../GAU-8/speed"/>
+		<fuse-range alias="../../GAU-8/fuse-range"/>
+		<repeat>true</repeat>
+		<count>-1</count>
+		<x-offset alias="../../GAU-8/x-offset"/>
+		<y-offset alias="../../GAU-8/y-offset"/>
+		<z-offset alias="../../GAU-8/z-offset"/>
+		<yaw-offset alias="../../GAU-8/yaw-offset"/>
+		<pitch-offset alias="../../GAU-8/pitch-offset"/>
+		<life alias="../../GAU-8/life"/>
+		<buoyancy alias="../../GAU-8/buoyancy"/>
+		<wind alias="../../GAU-8/wind"/>
+		<cd alias="../../GAU-8/cd"/>
+		<random alias="../../GAU-8/random"/>
+		<eda alias="../../GAU-8/eda"/>
+		<weight alias="../../GAU-8/weight"/>
+		<no-roll alias="../../GAU-8/no-roll"/>
+		<collision alias="../../GAU-8/collision"/>
+		<impact alias="../../GAU-8/impact"/>
+		<impact-reports alias="../../GAU-8/impact-reports"/>
+		<submodel-path alias="../../GAU-8/submodel-path"/>
+	</submodel>
+	<submodel>
+		<name>GAU-8/A API round 5</name>
+		<model alias ="../../GAU-8/model"/>
+		<trigger alias="../../GAU-8/trigger"/>
+		<delay>0.16923076923076923079</delay>
+		<speed alias="../../GAU-8/speed"/>
+		<fuse-range alias="../../GAU-8/fuse-range"/>
+		<repeat>true</repeat>
+		<count>-1</count>
+		<x-offset alias="../../GAU-8/x-offset"/>
+		<y-offset alias="../../GAU-8/y-offset"/>
+		<z-offset alias="../../GAU-8/z-offset"/>
+		<yaw-offset alias="../../GAU-8/yaw-offset"/>
+		<pitch-offset alias="../../GAU-8/pitch-offset"/>
+		<life alias="../../GAU-8/life"/>
+		<buoyancy alias="../../GAU-8/buoyancy"/>
+		<wind alias="../../GAU-8/wind"/>
+		<cd alias="../../GAU-8/cd"/>
+		<random alias="../../GAU-8/random"/>
+		<eda alias="../../GAU-8/eda"/>
+		<weight alias="../../GAU-8/weight"/>
+		<no-roll alias="../../GAU-8/no-roll"/>
+		<collision alias="../../GAU-8/collision"/>
+		<impact alias="../../GAU-8/impact"/>
+		<impact-reports alias="../../GAU-8/impact-reports"/>
+		<submodel-path alias="../../GAU-8/submodel-path"/>
+	</submodel>
+	<submodel>
+		<name>GAU-8/A API round 6</name>
+		<model alias ="../../GAU-8/model"/>
+		<trigger alias="../../GAU-8/trigger"/>
+		<delay>0.18461538461538461541</delay>
+		<speed alias="../../GAU-8/speed"/>
+		<fuse-range alias="../../GAU-8/fuse-range"/>
+		<repeat>true</repeat>
+		<count>-1</count>
+		<x-offset alias="../../GAU-8/x-offset"/>
+		<y-offset alias="../../GAU-8/y-offset"/>
+		<z-offset alias="../../GAU-8/z-offset"/>
+		<yaw-offset alias="../../GAU-8/yaw-offset"/>
+		<pitch-offset alias="../../GAU-8/pitch-offset"/>
+		<life alias="../../GAU-8/life"/>
+		<buoyancy alias="../../GAU-8/buoyancy"/>
+		<wind alias="../../GAU-8/wind"/>
+		<cd alias="../../GAU-8/cd"/>
+		<random alias="../../GAU-8/random"/>
+		<eda alias="../../GAU-8/eda"/>
+		<weight alias="../../GAU-8/weight"/>
+		<no-roll alias="../../GAU-8/no-roll"/>
+		<collision alias="../../GAU-8/collision"/>
+		<impact alias="../../GAU-8/impact"/>
+		<impact-reports alias="../../GAU-8/impact-reports"/>
+		<submodel-path alias="../../GAU-8/submodel-path"/>
+	</submodel>
+	<submodel>
+		<name>GAU-8/A API round 7</name>
+		<model alias ="../../GAU-8/model"/>
+		<trigger alias="../../GAU-8/trigger"/>
+		<delay>0.2</delay>
+		<speed alias="../../GAU-8/speed"/>
+		<fuse-range alias="../../GAU-8/fuse-range"/>
+		<repeat>true</repeat>
+		<count>-1</count>
+		<x-offset alias="../../GAU-8/x-offset"/>
+		<y-offset alias="../../GAU-8/y-offset"/>
+		<z-offset alias="../../GAU-8/z-offset"/>
+		<yaw-offset alias="../../GAU-8/yaw-offset"/>
+		<pitch-offset alias="../../GAU-8/pitch-offset"/>
+		<life alias="../../GAU-8/life"/>
+		<buoyancy alias="../../GAU-8/buoyancy"/>
+		<wind alias="../../GAU-8/wind"/>
+		<cd alias="../../GAU-8/cd"/>
+		<random alias="../../GAU-8/random"/>
+		<eda alias="../../GAU-8/eda"/>
+		<weight alias="../../GAU-8/weight"/>
+		<no-roll alias="../../GAU-8/no-roll"/>
+		<collision alias="../../GAU-8/collision"/>
+		<impact alias="../../GAU-8/impact"/>
+		<impact-reports alias="../../GAU-8/impact-reports"/>
+		<submodel-path alias="../../GAU-8/submodel-path"/>
+	</submodel>
+	
+	<submodel>
+		<name>GAU-8/A nuzzle smoke</name>
+		<model>Aircraft/A-10/Models/Stores/GAU-8A/smoke-nuzzle.xml</model>
+		<trigger alias="../../GAU-8/trigger"/>
+		<speed>200</speed>
+		<repeat>true</repeat>
+		<delay>0.08</delay>
+		<count>-1</count>
+		<x-offset>0.1</x-offset>
+		<y-offset>0.0</y-offset>
+		<z-offset>-0.9</z-offset>
+		<yaw-offset>0</yaw-offset>
+		<pitch-offset>-20.0</pitch-offset>
+		<life>12</life>
+		<buoyancy>33</buoyancy>
+		<wind>true</wind>
+		<cd>0.045</cd>
+		<random>true</random>
+		<eda>5</eda>
+		<weight>1</weight>
+		<no-roll>true</no-roll>
+	</submodel>
 
 	<submodel>
 		<name>aim-9-0-0</name>
@@ -110,6 +283,7 @@
 		<buoyancy>31</buoyancy>
 		<aero-stabilised>true</aero-stabilised>
 	</submodel>
+	
 	<submodel>
 		<name>aim-9-0-1</name>
 		<model>Aircraft/A-10/Models/Stores/AIM-9/aim-9smoke.xml</model>
@@ -1258,16 +1432,16 @@
 		<x-offset>-25.1808</x-offset>
 		<yaw-offset>0</yaw-offset>
 		<pitch-offset>-2</pitch-offset>
-		<cd>0.045</cd>
+		<cd>0.16</cd>
 		<weight>500</weight>
-		<eda>0.63</eda>
-		<life>25</life>
+		<fuse-range>2.2</fuse-range><!-- meter or feet ? -->
+		<eda>0.61629</eda>
+		<life>50</life>
 		<buoyancy>0</buoyancy>
 		<aero-stabilised>true</aero-stabilised>
 		<collision>true</collision>
-		<collision-report>sim/ai/aircraft/collision/cannon</collision-report>
 		<impact>true</impact>
-		<impact-report>sim/ai/aircraft/impact/droptank</impact-report>
+		<impact-reports>ai/models/model-impact</impact-reports>
 		<submodel-path>Aircraft/A-10/Models/Stores/MK-82/MK-82-submodels.xml</submodel-path>
 	</MK-82-LD>
 
@@ -1286,14 +1460,14 @@
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
 		<weight alias="../../MK-82-LD/weight"/>
+		<fuse-range alias="../../MK-82-LD/fuse-range"/>
 		<eda alias="../../MK-82-LD/eda"/>
 		<life alias="../../MK-82-LD/life"/>
 		<buoyancy alias="../../MK-82-LD/buoyancy"/>
 		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
-		<collision alias="../../MK-82-LD/buoyancy"/>
-		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<collision alias="../../MK-82-LD/collision"/>
 		<impact alias="../../MK-82-LD/impact"/>
-		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
 	</submodel>
 	<submodel>
@@ -1311,14 +1485,14 @@
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
 		<weight alias="../../MK-82-LD/weight"/>
+		<fuse-range alias="../../MK-82-LD/fuse-range"/>
 		<eda alias="../../MK-82-LD/eda"/>
 		<life alias="../../MK-82-LD/life"/>
 		<buoyancy alias="../../MK-82-LD/buoyancy"/>
 		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
-		<collision alias="../../MK-82-LD/buoyancy"/>
-		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<collision alias="../../MK-82-LD/collision"/>
 		<impact alias="../../MK-82-LD/impact"/>
-		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
 	</submodel>
 	<submodel>
@@ -1336,14 +1510,14 @@
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
 		<weight alias="../../MK-82-LD/weight"/>
+		<fuse-range alias="../../MK-82-LD/fuse-range"/>
 		<eda alias="../../MK-82-LD/eda"/>
 		<life alias="../../MK-82-LD/life"/>
 		<buoyancy alias="../../MK-82-LD/buoyancy"/>
 		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
-		<collision alias="../../MK-82-LD/buoyancy"/>
-		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<collision alias="../../MK-82-LD/collision"/>
 		<impact alias="../../MK-82-LD/impact"/>
-		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
 	</submodel>
 	<submodel>
@@ -1361,14 +1535,14 @@
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
 		<weight alias="../../MK-82-LD/weight"/>
+		<fuse-range alias="../../MK-82-LD/fuse-range"/>
 		<eda alias="../../MK-82-LD/eda"/>
 		<life alias="../../MK-82-LD/life"/>
 		<buoyancy alias="../../MK-82-LD/buoyancy"/>
 		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
-		<collision alias="../../MK-82-LD/buoyancy"/>
-		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<collision alias="../../MK-82-LD/collision"/>
 		<impact alias="../../MK-82-LD/impact"/>
-		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
 	</submodel>
 	<submodel>
@@ -1386,14 +1560,14 @@
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
 		<weight alias="../../MK-82-LD/weight"/>
+		<fuse-range alias="../../MK-82-LD/fuse-range"/>
 		<eda alias="../../MK-82-LD/eda"/>
 		<life alias="../../MK-82-LD/life"/>
 		<buoyancy alias="../../MK-82-LD/buoyancy"/>
 		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
-		<collision alias="../../MK-82-LD/buoyancy"/>
-		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<collision alias="../../MK-82-LD/collision"/>
 		<impact alias="../../MK-82-LD/impact"/>
-		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
 	</submodel>
 	<submodel>
@@ -1411,14 +1585,14 @@
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
 		<weight alias="../../MK-82-LD/weight"/>
+		<fuse-range alias="../../MK-82-LD/fuse-range"/>
 		<eda alias="../../MK-82-LD/eda"/>
 		<life alias="../../MK-82-LD/life"/>
 		<buoyancy alias="../../MK-82-LD/buoyancy"/>
 		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
-		<collision alias="../../MK-82-LD/buoyancy"/>
-		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<collision alias="../../MK-82-LD/collision"/>
 		<impact alias="../../MK-82-LD/impact"/>
-		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
 	</submodel>
 	<submodel>
@@ -1436,14 +1610,14 @@
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
 		<weight alias="../../MK-82-LD/weight"/>
+		<fuse-range alias="../../MK-82-LD/fuse-range"/>
 		<eda alias="../../MK-82-LD/eda"/>
 		<life alias="../../MK-82-LD/life"/>
 		<buoyancy alias="../../MK-82-LD/buoyancy"/>
 		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
-		<collision alias="../../MK-82-LD/buoyancy"/>
-		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<collision alias="../../MK-82-LD/collision"/>
 		<impact alias="../../MK-82-LD/impact"/>
-		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
 	</submodel>
 	<submodel>
@@ -1461,14 +1635,14 @@
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
 		<weight alias="../../MK-82-LD/weight"/>
+		<fuse-range alias="../../MK-82-LD/fuse-range"/>
 		<eda alias="../../MK-82-LD/eda"/>
 		<life alias="../../MK-82-LD/life"/>
 		<buoyancy alias="../../MK-82-LD/buoyancy"/>
 		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
-		<collision alias="../../MK-82-LD/buoyancy"/>
-		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<collision alias="../../MK-82-LD/collision"/>
 		<impact alias="../../MK-82-LD/impact"/>
-		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
 	</submodel>
 	<submodel>
@@ -1486,14 +1660,14 @@
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
 		<weight alias="../../MK-82-LD/weight"/>
+		<fuse-range alias="../../MK-82-LD/fuse-range"/>
 		<eda alias="../../MK-82-LD/eda"/>
 		<life alias="../../MK-82-LD/life"/>
 		<buoyancy alias="../../MK-82-LD/buoyancy"/>
 		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
-		<collision alias="../../MK-82-LD/buoyancy"/>
-		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<collision alias="../../MK-82-LD/collision"/>
 		<impact alias="../../MK-82-LD/impact"/>
-		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
 	</submodel>
 	<submodel>
@@ -1511,14 +1685,14 @@
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
 		<weight alias="../../MK-82-LD/weight"/>
+		<fuse-range alias="../../MK-82-LD/fuse-range"/>
 		<eda alias="../../MK-82-LD/eda"/>
 		<life alias="../../MK-82-LD/life"/>
 		<buoyancy alias="../../MK-82-LD/buoyancy"/>
 		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
-		<collision alias="../../MK-82-LD/buoyancy"/>
-		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<collision alias="../../MK-82-LD/collision"/>
 		<impact alias="../../MK-82-LD/impact"/>
-		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
 	</submodel>
 	<submodel>
@@ -1536,14 +1710,14 @@
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
 		<weight alias="../../MK-82-LD/weight"/>
+		<fuse-range alias="../../MK-82-LD/fuse-range"/>
 		<eda alias="../../MK-82-LD/eda"/>
 		<life alias="../../MK-82-LD/life"/>
 		<buoyancy alias="../../MK-82-LD/buoyancy"/>
 		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
-		<collision alias="../../MK-82-LD/buoyancy"/>
-		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<collision alias="../../MK-82-LD/collision"/>
 		<impact alias="../../MK-82-LD/impact"/>
-		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
 	</submodel>
 	<submodel>
@@ -1561,14 +1735,14 @@
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
 		<weight alias="../../MK-82-LD/weight"/>
+		<fuse-range alias="../../MK-82-LD/fuse-range"/>
 		<eda alias="../../MK-82-LD/eda"/>
 		<life alias="../../MK-82-LD/life"/>
 		<buoyancy alias="../../MK-82-LD/buoyancy"/>
 		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
-		<collision alias="../../MK-82-LD/buoyancy"/>
-		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<collision alias="../../MK-82-LD/collision"/>
 		<impact alias="../../MK-82-LD/impact"/>
-		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
 	</submodel>
 
@@ -1587,14 +1761,14 @@
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
 		<weight alias="../../MK-82-LD/weight"/>
+		<fuse-range alias="../../MK-82-LD/fuse-range"/>
 		<eda alias="../../MK-82-LD/eda"/>
 		<life alias="../../MK-82-LD/life"/>
 		<buoyancy alias="../../MK-82-LD/buoyancy"/>
 		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
-		<collision alias="../../MK-82-LD/buoyancy"/>
-		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<collision alias="../../MK-82-LD/collision"/>
 		<impact alias="../../MK-82-LD/impact"/>
-		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
 	</submodel>
 	<submodel>
@@ -1612,14 +1786,14 @@
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
 		<weight alias="../../MK-82-LD/weight"/>
+		<fuse-range alias="../../MK-82-LD/fuse-range"/>
 		<eda alias="../../MK-82-LD/eda"/>
 		<life alias="../../MK-82-LD/life"/>
 		<buoyancy alias="../../MK-82-LD/buoyancy"/>
 		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
-		<collision alias="../../MK-82-LD/buoyancy"/>
-		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<collision alias="../../MK-82-LD/collision"/>
 		<impact alias="../../MK-82-LD/impact"/>
-		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
 	</submodel>
 	<submodel>
@@ -1637,14 +1811,14 @@
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
 		<weight alias="../../MK-82-LD/weight"/>
+		<fuse-range alias="../../MK-82-LD/fuse-range"/>
 		<eda alias="../../MK-82-LD/eda"/>
 		<life alias="../../MK-82-LD/life"/>
 		<buoyancy alias="../../MK-82-LD/buoyancy"/>
 		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
-		<collision alias="../../MK-82-LD/buoyancy"/>
-		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<collision alias="../../MK-82-LD/collision"/>
 		<impact alias="../../MK-82-LD/impact"/>
-		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
 	</submodel>
 	<submodel>
@@ -1662,14 +1836,14 @@
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
 		<weight alias="../../MK-82-LD/weight"/>
+		<fuse-range alias="../../MK-82-LD/fuse-range"/>
 		<eda alias="../../MK-82-LD/eda"/>
 		<life alias="../../MK-82-LD/life"/>
 		<buoyancy alias="../../MK-82-LD/buoyancy"/>
 		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
-		<collision alias="../../MK-82-LD/buoyancy"/>
-		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<collision alias="../../MK-82-LD/collision"/>
 		<impact alias="../../MK-82-LD/impact"/>
-		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
 	</submodel>
 	<submodel>
@@ -1687,14 +1861,14 @@
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
 		<weight alias="../../MK-82-LD/weight"/>
+		<fuse-range alias="../../MK-82-LD/fuse-range"/>
 		<eda alias="../../MK-82-LD/eda"/>
 		<life alias="../../MK-82-LD/life"/>
 		<buoyancy alias="../../MK-82-LD/buoyancy"/>
 		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
-		<collision alias="../../MK-82-LD/buoyancy"/>
-		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<collision alias="../../MK-82-LD/collision"/>
 		<impact alias="../../MK-82-LD/impact"/>
-		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
 	</submodel>
 	<submodel>
@@ -1712,14 +1886,14 @@
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
 		<weight alias="../../MK-82-LD/weight"/>
+		<fuse-range alias="../../MK-82-LD/fuse-range"/>
 		<eda alias="../../MK-82-LD/eda"/>
 		<life alias="../../MK-82-LD/life"/>
 		<buoyancy alias="../../MK-82-LD/buoyancy"/>
 		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
-		<collision alias="../../MK-82-LD/buoyancy"/>
-		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<collision alias="../../MK-82-LD/collision"/>
 		<impact alias="../../MK-82-LD/impact"/>
-		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
 	</submodel>
 	<submodel>
@@ -1737,14 +1911,14 @@
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
 		<weight alias="../../MK-82-LD/weight"/>
+		<fuse-range alias="../../MK-82-LD/fuse-range"/>
 		<eda alias="../../MK-82-LD/eda"/>
 		<life alias="../../MK-82-LD/life"/>
 		<buoyancy alias="../../MK-82-LD/buoyancy"/>
 		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
-		<collision alias="../../MK-82-LD/buoyancy"/>
-		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<collision alias="../../MK-82-LD/collision"/>
 		<impact alias="../../MK-82-LD/impact"/>
-		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
 	</submodel>
 	<submodel>
@@ -1762,14 +1936,14 @@
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
 		<weight alias="../../MK-82-LD/weight"/>
+		<fuse-range alias="../../MK-82-LD/fuse-range"/>
 		<eda alias="../../MK-82-LD/eda"/>
 		<life alias="../../MK-82-LD/life"/>
 		<buoyancy alias="../../MK-82-LD/buoyancy"/>
 		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
-		<collision alias="../../MK-82-LD/buoyancy"/>
-		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<collision alias="../../MK-82-LD/collision"/>
 		<impact alias="../../MK-82-LD/impact"/>
-		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
 	</submodel>
 	<submodel>
@@ -1787,14 +1961,14 @@
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
 		<weight alias="../../MK-82-LD/weight"/>
+		<fuse-range alias="../../MK-82-LD/fuse-range"/>
 		<eda alias="../../MK-82-LD/eda"/>
 		<life alias="../../MK-82-LD/life"/>
 		<buoyancy alias="../../MK-82-LD/buoyancy"/>
 		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
-		<collision alias="../../MK-82-LD/buoyancy"/>
-		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<collision alias="../../MK-82-LD/collision"/>
 		<impact alias="../../MK-82-LD/impact"/>
-		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
 	</submodel>
 	<submodel>
@@ -1812,14 +1986,14 @@
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
 		<weight alias="../../MK-82-LD/weight"/>
+		<fuse-range alias="../../MK-82-LD/fuse-range"/>
 		<eda alias="../../MK-82-LD/eda"/>
 		<life alias="../../MK-82-LD/life"/>
 		<buoyancy alias="../../MK-82-LD/buoyancy"/>
 		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
-		<collision alias="../../MK-82-LD/buoyancy"/>
-		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<collision alias="../../MK-82-LD/collision"/>
 		<impact alias="../../MK-82-LD/impact"/>
-		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
 	</submodel>
 	<submodel>
@@ -1837,14 +2011,14 @@
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
 		<weight alias="../../MK-82-LD/weight"/>
+		<fuse-range alias="../../MK-82-LD/fuse-range"/>
 		<eda alias="../../MK-82-LD/eda"/>
 		<life alias="../../MK-82-LD/life"/>
 		<buoyancy alias="../../MK-82-LD/buoyancy"/>
 		<aero-stabilised alias="../../MK-82-LD/aero-stabilised"/>
-		<collision alias="../../MK-82-LD/buoyancy"/>
-		<collision-report alias="../../MK-82-LD/collision-report"/>
+		<collision alias="../../MK-82-LD/collision"/>
 		<impact alias="../../MK-82-LD/impact"/>
-		<impact-report alias="../../MK-82-LD/impact-report"/>
+		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
 	</submodel>
 

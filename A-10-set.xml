@@ -24,7 +24,7 @@ Fairchild A-10 simulation config.
 
 		<flight-model>yasim</flight-model>
 		<status>beta</status>
-		<author>Lee Elliott - Alexis Bory</author>
+		<author>Lee Elliott - Alexis Bory - David Bastien</author>
 		<aero>A-10-yasim</aero>
 		<fuel-fraction>1.0</fuel-fraction>
 		<description>Fairchild A-10 (YASim FDM)</description>
@@ -204,8 +204,8 @@ Fairchild A-10 simulation config.
 			<path>Aircraft/A-10/Models/A-10-model.xml</path>
 			<A-10>
 				<weapons>
-					<master-arm-switch type="int">0</master-arm-switch>
-					<gun-rate-switch type="int">0</gun-rate-switch>
+					<master-arm-switch type="int">0</master-arm-switch><!-- -1: CAMERA 0:SAFE, 1:ARM -->
+					<gun-rate-switch type="bool">false</gun-rate-switch> <!-- false is SAFE, true is HI -->
 					<release_lock type="bool">0</release_lock>
 					<station-light-test type="bool">false</station-light-test>
 					<selected-stations></selected-stations>
@@ -264,9 +264,13 @@ Fairchild A-10 simulation config.
 					</single-MK-82-LD>
 
 					<gun>
-						<gun-unsafe type="bool">false</gun-unsafe>
-						<gun-ready type="bool">false</gun-ready>
+						<running type="bool">false</running>
+						<unsafe type="bool">false</unsafe>
+						<ready type="bool">false</ready>
+						<hydr-drive-serviceable n="0" type="bool">true</hydr-drive-serviceable><!-- Left hydraulic drive motor -->
+						<hydr-drive-serviceable n="1" type="bool">true</hydr-drive-serviceable>
 					</gun>
+					
 					<stations>
 						<station n="0">
 							<ammo-weight-lb type="float">0</ammo-weight-lb>
@@ -440,12 +444,14 @@ Fairchild A-10 simulation config.
 						<n1 type="float">0.0</n1>
 						<n2 type="float">0.0</n2>
 						<start-state type="float">0.0</start-state>
+						<egt-degc type="float">0.0</egt-degc>
 					</engine>
 					<engine n="1">
 						<running type="bool">false</running>
 						<n1 type="float">0.0</n1>
 						<n2 type="float">0.0</n2>
 						<start-state type="float">0.0</start-state>
+						<egt-degc type="float">0.0</egt-degc>
 					</engine>
 				</engines>
 				<A-10-nav>
@@ -615,7 +621,21 @@ Fairchild A-10 simulation config.
 				</color>
 			</palette>
 		</hud>
-
+		<menubar>
+			<default>
+				<menu n="10">
+					<label>A-10</label>
+					<enabled type="bool">true</enabled>
+					<item>
+						<label>Engines autostart</label>
+						<binding>
+							<command>nasal</command>
+							<script>A10engines.eng_autostart()</script>
+						</binding>
+					</item>
+				</menu>
+			</default>
+		</menubar>
 	</sim>
 
 	<input>
@@ -770,6 +790,9 @@ Fairchild A-10 simulation config.
 			<serviceable type="bool">true</serviceable>
 			<generator-serviceable type="bool">true</generator-serviceable>
 		</APU>
+		<armament>
+			<trigger type="bool">false</trigger>
+		</armament>
 		<engines>
 			<engine n="0">
 				<faults>
@@ -971,30 +994,37 @@ Fairchild A-10 simulation config.
 	<consumables>
 		<fuel>
 			<tank n="0">
+				<name type="string">Left wing tank</name>
 				<tank-num type="int">0</tank-num>
 				<kill-when-empty type="bool">false</kill-when-empty>
 			</tank>
 			<tank n="1">
+				<name type="string">Left main(aft) tank</name>
 				<tank-num type="int">1</tank-num>
 				<kill-when-empty type="bool">false</kill-when-empty>
 			</tank>
 			<tank n="2">
+				<name type="string">Right main(fwd) tank</name>
 				<tank-num type="int">2</tank-num>
 				<kill-when-empty type="bool">false</kill-when-empty>
 			</tank>
 			<tank n="3">
+				<name type="string">Right wing tank</name>
 				<tank-num type="int">3</tank-num>
 				<kill-when-empty type="bool">false</kill-when-empty>
 			</tank>
 			<tank n="4">
+				<name type="string">Left wing pylon tank</name>
 				<tank-num type="int">4</tank-num>
 				<kill-when-empty type="bool">false</kill-when-empty>
 			</tank>
 			<tank n="5">
+				<name type="string">Fuselage pylon tank</name>
 				<tank-num type="int">5</tank-num>
 				<kill-when-empty type="bool">false</kill-when-empty>
 			</tank>
 			<tank n="6">
+				<name type="string">Right wing pylon tank</name>
 				<tank-num type="int">6</tank-num>
 				<kill-when-empty type="bool">false</kill-when-empty>
 			</tank>
@@ -1005,7 +1035,7 @@ Fairchild A-10 simulation config.
 	<!-- Weight entry for the GAU-8/A ammunition -->
 	<yasim>
 		<weights>
-			<ammunition-weight-lbs type="float">2700</ammunition-weight-lbs>
+			<ammunition-weight-lbs type="float">1099.995</ammunition-weight-lbs>
 		</weights>
 	</yasim>
 

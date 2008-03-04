@@ -123,6 +123,7 @@ var update_loop = func(engNb=0) {
 	setprop("engines/engine["~engNb~"]/out-of-fuel", eng_out_of_fuel);
 	setprop("sim/model/A-10/engines/engine["~engNb~"]/n1", eng_n1);
 	setprop("sim/model/A-10/engines/engine["~engNb~"]/n2", eng_n2);
+	#setprop("sim/model/A-10/engines/engine["~engNb~"]/egt-degc", (getprop("engines/engine["~engNb~"]/egt-degf")-32)*(5/9));
 }
 
 # Move the 3 positions 'ENG OPER' switch
@@ -145,4 +146,23 @@ var throttle_cutoff_mov = func(thrNb=0) {
 		setprop("controls/engines/engine["~thrNb~"]/cutoff", 1);
 		setprop("controls/engines/engine["~thrNb~"]/throttle", 0.0);
 	}
+}
+
+# Autostart engine for lazy user
+var eng_autostart = func() {
+	print("Launch autostart engines sequence.");
+	# Engines power generators
+	setprop("controls/electric/engine[0]/generator", 1);
+	setprop("controls/electric/engine[1]/generator", 1);
+	# Move throttle to IDLE position
+	setprop("controls/engines/engine[0]/cutoff", 0);
+	setprop("controls/engines/engine[0]/throttle", 0.03);
+	setprop("controls/engines/engine[1]/cutoff", 0);
+	setprop("controls/engines/engine[1]/throttle", 0.03);
+	# Feed engines fuel collector tank
+	setprop("systems/A-10-fuel/collector-tank[0]", 1.519);
+	setprop("systems/A-10-fuel/collector-tank[1]", 1.519);
+	# Start the engines for Yasim
+	setprop("engines/engine[0]/out-of-fuel", 0);
+	setprop("engines/engine[1]/out-of-fuel", 0);
 }
