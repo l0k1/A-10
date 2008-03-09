@@ -23,13 +23,13 @@
 
 	<GAU-8>
 		<name>GAU-8/A API round</name>
-		<model>Aircraft/A-10/Models/apibullet-tracer.xml</model>
+		<model>Aircraft/A-10/Models/Stores/GAU-8A/apibullet-tracer.xml</model>
 		<trigger>sim/model/A-10/weapons/gun/running[0]</trigger>
 		<speed>3250.0</speed>
-		<fuse-range>0.5</fuse-range>
+		<fuse-range>0.0</fuse-range>
 		<repeat>true</repeat>
 		<!--<delay>0.01538461538461538462</delay>-->
-		<delay>0.10769230769230769231</delay><!-- normal delay * 7 to reduce fps loose -->
+		<delay>0.1077</delay><!-- normal delay * 7 to reduce fps loose -->
 		<count>1174</count>
 		<x-offset>0.1</x-offset>
 		<y-offset>0.0</y-offset>
@@ -81,7 +81,7 @@
 		<name>GAU-8/A API round 2</name>
 		<model alias ="../../GAU-8/model"/>
 		<trigger alias="../../GAU-8/trigger"/>
-		<delay>0.12307692307692307693</delay>
+		<delay>0.123</delay>
 		<speed alias="../../GAU-8/speed"/>
 		<fuse-range alias="../../GAU-8/fuse-range"/>
 		<repeat>true</repeat>
@@ -108,7 +108,7 @@
 		<name>GAU-8/A API round 3</name>
 		<model alias ="../../GAU-8/model"/>
 		<trigger alias="../../GAU-8/trigger"/>
-		<delay>0.13846153846153846155</delay>
+		<delay>0.1383</delay>
 		<speed alias="../../GAU-8/speed"/>
 		<fuse-range alias="../../GAU-8/fuse-range"/>
 		<repeat>true</repeat>
@@ -135,7 +135,7 @@
 		<name>GAU-8/A API round 4</name>
 		<model alias ="../../GAU-8/model"/>
 		<trigger alias="../../GAU-8/trigger"/>
-		<delay>0.15384615384615384617</delay>
+		<delay>0.1536</delay>
 		<speed alias="../../GAU-8/speed"/>
 		<fuse-range alias="../../GAU-8/fuse-range"/>
 		<repeat>true</repeat>
@@ -162,7 +162,7 @@
 		<name>GAU-8/A API round 5</name>
 		<model alias ="../../GAU-8/model"/>
 		<trigger alias="../../GAU-8/trigger"/>
-		<delay>0.16923076923076923079</delay>
+		<delay>0.1689</delay>
 		<speed alias="../../GAU-8/speed"/>
 		<fuse-range alias="../../GAU-8/fuse-range"/>
 		<repeat>true</repeat>
@@ -189,7 +189,7 @@
 		<name>GAU-8/A API round 6</name>
 		<model alias ="../../GAU-8/model"/>
 		<trigger alias="../../GAU-8/trigger"/>
-		<delay>0.18461538461538461541</delay>
+		<delay>0.1842</delay>
 		<speed alias="../../GAU-8/speed"/>
 		<fuse-range alias="../../GAU-8/fuse-range"/>
 		<repeat>true</repeat>
@@ -216,7 +216,7 @@
 		<name>GAU-8/A API round 7</name>
 		<model alias ="../../GAU-8/model"/>
 		<trigger alias="../../GAU-8/trigger"/>
-		<delay>0.2</delay>
+		<delay>0.1995</delay>
 		<speed alias="../../GAU-8/speed"/>
 		<fuse-range alias="../../GAU-8/fuse-range"/>
 		<repeat>true</repeat>
@@ -244,7 +244,7 @@
 		<name>GAU-8/A nuzzle smoke</name>
 		<model>Aircraft/A-10/Models/Stores/GAU-8A/smoke-nuzzle.xml</model>
 		<trigger alias="../../GAU-8/trigger"/>
-		<speed>200</speed>
+		<speed>20</speed>
 		<repeat>true</repeat>
 		<delay>0.08</delay>
 		<count>-1</count>
@@ -361,9 +361,8 @@
 		<buoyancy>31</buoyancy>
 		<aero-stabilised>true</aero-stabilised>
 		<collision>true</collision>
-		<collision-report>sim/ai/aircraft/collision/cannon</collision-report>
 		<impact>true</impact>
-		<impact-report>sim/ai/aircraft/impact/droptank</impact-report>
+		<impact-report>ai/models/model-impact</impact-report>
 		<submodel-path>Aircraft/A-10/Models/Stores/LAU-68/LAU-68-submodels.xml</submodel-path>
 	</LAU-68>
 
@@ -387,7 +386,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -412,7 +410,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -437,7 +434,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -462,7 +458,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -487,7 +482,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -512,7 +506,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -537,7 +530,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -563,7 +555,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -588,7 +579,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -613,7 +603,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -638,7 +627,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -663,7 +651,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -688,7 +675,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -713,7 +699,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -739,7 +724,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -764,7 +748,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -789,7 +772,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -814,7 +796,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -839,7 +820,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -864,7 +844,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -889,7 +868,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -915,7 +893,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -940,7 +917,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -965,7 +941,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -990,7 +965,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -1015,7 +989,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -1040,7 +1013,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -1065,7 +1037,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -1091,7 +1062,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -1116,7 +1086,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -1141,7 +1110,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -1166,7 +1134,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -1191,7 +1158,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -1216,7 +1182,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -1241,7 +1206,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -1267,7 +1231,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -1292,7 +1255,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -1317,7 +1279,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -1342,7 +1303,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -1367,7 +1327,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -1392,7 +1351,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
@@ -1417,7 +1375,6 @@
 		<buoyancy alias="../../LAU-68/buoyancy"/>
 		<aero-stabilised alias="../../LAU-68/aero-stabilised"/>
 		<collision alias="../../LAU-68/buoyancy"/>
-		<collision-report alias="../../LAU-68/collision-report"/>
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>

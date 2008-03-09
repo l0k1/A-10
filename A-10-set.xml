@@ -93,6 +93,17 @@ Fairchild A-10 simulation config.
 				<path></path><!-- intentionally left empty -->
 			</electrical>
 		</systems>
+		
+		<rendering>
+			<redout>
+				<parameters>
+					<blackout-onset-g type="double">6.5</blackout-onset-g>
+					<blackout-complete-g type="double">8.5</blackout-complete-g>
+					<redout-onset-g type="double">-2.5</redout-onset-g>
+					<redout-complete-g type="double">-3.5</redout-complete-g>
+				</parameters>
+			</redout>
+		</rendering>
 
 		<sound>
 			<audible>true</audible>
@@ -421,7 +432,7 @@ Fairchild A-10 simulation config.
 					</gear>
 					<hud>
 						<intens type="double">1</intens>
-						<depr type="float">0.35</depr>
+						<depr type="float">-0.35</depr>
 						<mode-selector type="int">0</mode-selector>
 						<func-selector type="int">0</func-selector>
 					</hud>
