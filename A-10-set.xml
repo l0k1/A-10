@@ -45,6 +45,11 @@ Fairchild A-10 simulation config.
 				<z-offset-m archive="y">3.20</z-offset-m>
 				<pitch-offset-deg>-15</pitch-offset-deg>
 				<default-field-of-view-deg>55</default-field-of-view-deg>
+				<x-trans-m type="double">0.2</x-trans-m>
+				<x-trans-heading-normdeg-min type="double">-65</x-trans-heading-normdeg-min>
+				<x-trans-heading-normdeg-max type="double">65</x-trans-heading-normdeg-max>
+				<heading-normdeg-min type="double">-140</heading-normdeg-min>
+				<heading-normdeg-max type="double">140</heading-normdeg-max>
 			</config>
 		</view>
 		<view n="1">
