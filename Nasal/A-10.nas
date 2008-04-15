@@ -78,6 +78,7 @@ var audio_alt_warning = func {
 var g_curr 	  	= props.globals.getNode("accelerations/pilot-g");
 var g_max	   	= props.globals.getNode("sim/model/A-10/instrumentation/g-meter/g-max");
 var g_min	   	= props.globals.getNode("sim/model/A-10/instrumentation/g-meter/g-min");
+aircraft.data.add( g_min, g_max );
 
 var g_min_max = func {
 	# records g min and max values
