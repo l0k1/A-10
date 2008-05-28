@@ -193,20 +193,6 @@
 	</pid-controller>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- =============================================================
      Common Elevator controllers.
      All controllers use the same final stage.
@@ -418,24 +404,24 @@
 		</config>
 	</pid-controller>
 
-  <!-- vertical speed hold -->
-  <pid-controller>
-    <name>Vertical Speed Hold</name>
-    <debug>false</debug>
-    <enable>
-      <prop>/autopilot/locks/altitude</prop>
-      <value>vertical-speed-hold</value>
-    </enable>
-    <input>
-      <prop>/velocities/vertical-speed-fps</prop>
-	  </input>
-    <reference>
-      <prop>/autopilot/settings/vertical-speed-fpm</prop>
-    </reference>
-    <output>
-      <prop>/controls/flight/elevator-trim</prop>
-    </output>
-    <config>
+	<!-- vertical speed hold -->
+	<pid-controller>
+		<name>Vertical Speed Hold</name>
+		<debug>false</debug>
+		<enable>
+			<prop>/autopilot/locks/altitude</prop>
+			<value>vertical-speed-hold</value>
+		</enable>
+		<input>
+			<prop>/velocities/vertical-speed-fps</prop>
+		</input>
+		<reference>
+			<prop>/autopilot/settings/vertical-speed-fpm</prop>
+		</reference>
+		<output>
+			<prop>/controls/flight/elevator-trim</prop>
+		</output>
+		<config>
 			<Ts>0.01</Ts>
 			<Kp>-0.004</Kp>
 			<beta>3.5</beta>
@@ -445,8 +431,8 @@
 			<Td>0.01</Td>
 			<u_min>-0.08</u_min>
 			<u_max>0.08</u_max>
-    </config>
-  </pid-controller>
+		</config>
+	</pid-controller>
 
 
 
@@ -479,15 +465,6 @@
 			<u_max>80.0</u_max>
 		</config>
 	</pid-controller>
-
-
-
-
-
-
-
-
-
 
 
 <!--==============
@@ -578,18 +555,13 @@
 			<beta>1.0</beta>    <!-- input value weighing factor -->
 			<alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
 			<gamma>0.0</gamma>  <!-- input value weighing factor for -->
-							  <!-- unfiltered derivative error -->
+							    <!-- unfiltered derivative error -->
 			<Ti>1.0</Ti>        <!-- integrator time -->
 			<Td>0.00001</Td>    <!-- derivator time -->
 			<u_min>-1.0</u_min> <!-- minimum output clamp -->
 			<u_max>1.0</u_max>  <!-- maximum output clamp -->
 		</config>
 	</pid-controller>
-
-
-
-
-
 
 
 
@@ -647,13 +619,13 @@
 			<prop>controls/flight/rudder</prop>
 		</output>
 		<config>
-			<Kp>0.4</Kp>      <!-- proportional gain -->
+			<Kp>0.4</Kp>        <!-- proportional gain -->
 			<beta>1.0</beta>    <!-- input value weighing factor -->
 			<alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
 			<gamma>0.0</gamma>  <!-- input value weighing factor for -->
-							  <!-- unfiltered derivative error -->
+							    <!-- unfiltered derivative error -->
 			<Ti>5.0</Ti>        <!-- integrator time -->
-			<Td>0.1</Td>    <!-- derivator time -->
+			<Td>0.1</Td>        <!-- derivator time -->
 			<u_min>-1.0</u_min> <!-- minimum output clamp -->
 			<u_max>1.0</u_max>  <!-- maximum output clamp -->
 		</config>
@@ -677,15 +649,15 @@
 			<prop>autopilot/settings/target-speed-kt</prop>
 		</output>
 		<config>
-			<Kp>-2.0</Kp>      <!-- proportional gain -->
-			<beta>1.0</beta>    <!-- input value weighing factor -->
-			<alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
-			<gamma>0.0</gamma>  <!-- input value weighing factor for -->
-							  <!-- unfiltered derivative error -->
+			<Kp>-2.0</Kp>        <!-- proportional gain -->
+			<beta>1.0</beta>     <!-- input value weighing factor -->
+			<alpha>0.1</alpha>   <!-- low pass filter weighing factor -->
+			<gamma>0.0</gamma>   <!-- input value weighing factor for -->
+								 <!-- unfiltered derivative error -->
 			<Ti>16.0</Ti>        <!-- integrator time -->
-			<Td>0.00001</Td>    <!-- derivator time -->
-			<u_min>90.0</u_min> <!-- minimum output clamp -->
-			<u_max>160.0</u_max>  <!-- maximum output clamp -->
+			<Td>0.00001</Td>     <!-- derivator time -->
+			<u_min>90.0</u_min>  <!-- minimum output clamp -->
+			<u_max>160.0</u_max> <!-- maximum output clamp -->
 		</config>
 	</pid-controller>
 

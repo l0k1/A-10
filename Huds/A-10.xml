@@ -132,7 +132,7 @@
 	</tape>
 
 	<gauge>
-	<name>rudder</name>
+		<name>rudder</name>
 		<x>-60</x>
 		<y>-118</y>
 		<width>120</width>

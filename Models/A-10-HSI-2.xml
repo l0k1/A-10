@@ -231,7 +231,7 @@
 				<property>sim/model/A-10/A-10-nav/selector-ils</property>
 				<value>true</value>
 			</equals>
-p		</condition>
+		</condition>
 	</animation>
 	<animation>
 		<type>rotate</type>
