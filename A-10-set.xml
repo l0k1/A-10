@@ -48,14 +48,14 @@ Fairchild A-10 simulation config.
 				<limits>
 					<enabled type="bool">true</enabled>
 					<left>
-						<heading-max-deg>140</heading-max-deg>
+						<heading-max-deg>155</heading-max-deg>
 						<x-offset-threshold-deg>65</x-offset-threshold-deg>
-						<x-offset-max-m>0.2</x-offset-max-m>
+						<x-offset-max-m>0.29</x-offset-max-m>
 					</left>
 					<right>
-						<heading-max-deg>140</heading-max-deg>
+						<heading-max-deg>155</heading-max-deg>
 						<x-offset-threshold-deg>65</x-offset-threshold-deg>
-						<x-offset-max-m>0.2</x-offset-max-m>
+						<x-offset-max-m>0.29</x-offset-max-m>
 					</right>
 				</limits>
 			</config>
@@ -136,7 +136,7 @@ Fairchild A-10 simulation config.
 			<name>Pylon 1</name>
 			<weight-lb type="float">0</weight-lb>
 			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs>  </opt>
+			<opt><name>none</name><lbs>0</lbs></opt>
 			<opt><name>LAU-68</name><lbs>202.5</lbs></opt>
 			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
 		</weight>
@@ -158,13 +158,13 @@ Fairchild A-10 simulation config.
 			<opt><name>LAU-68</name><lbs>202.5</lbs></opt>
 			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
 			<opt><name>triple-MK-82-LD</name><lbs>1800</lbs></opt>
-			<opt><name>600 Gallons Fuel Tank</name><lbs>4032</lbs><gals>600</gals></opt>
+			<opt><name>600 Gallons Fuel Tank</name><lbs>280</lbs><gals>600</gals></opt>
 		</weight>
 		<weight n="4">
 			<name>Pylon 4</name>
 			<weight-lb type="float">0</weight-lb>
 			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs>  </opt>
+			<opt><name>none</name><lbs>0</lbs></opt>
 			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
 		</weight>
 		<weight n="5">
@@ -172,15 +172,15 @@ Fairchild A-10 simulation config.
 			<tank>5</tank> <!-- FDM tank index on this pylon -->
 			<weight-lb type="float">0</weight-lb>
 			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs>  </opt>
+			<opt><name>none</name><lbs>0</lbs></opt>
 			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
-			<opt><name>600 Gallons Fuel Tank</name><lbs>4032</lbs><gals>600</gals></opt>
+			<opt><name>600 Gallons Fuel Tank</name><lbs>280</lbs><gals>600</gals></opt>
 		</weight>
 		<weight n="6">
 			<name>Pylon 6</name>
 			<weight-lb type="float">0</weight-lb>
 			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs>  </opt>
+			<opt><name>none</name><lbs>0</lbs></opt>
 			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
 		</weight>
 		<weight n="7">
@@ -188,26 +188,26 @@ Fairchild A-10 simulation config.
 			<tank>6</tank> <!-- FDM tank index on this pylon -->
 			<weight-lb type="float">0</weight-lb>
 			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs>  </opt>
+			<opt><name>none</name><lbs>0</lbs></opt>
 			<opt><name>LAU-68</name><lbs>202.5</lbs></opt>
 			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
 			<opt><name>triple-MK-82-LD</name><lbs>1800</lbs></opt>
-			<opt><name>600 Gallons Fuel Tank</name><lbs>4032</lbs><gals>600</gals></opt>
+			<opt><name>600 Gallons Fuel Tank</name><lbs>280</lbs><gals>600</gals></opt>
 		</weight>
 		<weight n="8">
 			<name>Pylon 8</name>
 			<weight-lb type="float">0</weight-lb>
 			<selected>none</selected>
+			<opt><name>none</name><lbs>0</lbs></opt>
 			<opt><name>LAU-68</name><lbs>202.5</lbs></opt>
 			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
 			<opt><name>triple-MK-82-LD</name><lbs>1800</lbs></opt>
-			<opt><name>test</name><lbs>500</lbs></opt>
 		</weight>
 		<weight n="9">
 			<name>Pylon 9</name>
 			<weight-lb type="float">0</weight-lb>
 			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs>  </opt>
+			<opt><name>none</name><lbs>0</lbs></opt>
 			<opt><name>LAU-68</name><lbs>202.5</lbs></opt>
 			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
 		</weight>
@@ -215,7 +215,7 @@ Fairchild A-10 simulation config.
 			<name>Pylon 10</name>
 			<weight-lb type="float">0</weight-lb>
 			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs>  </opt>
+			<opt><name>none</name><lbs>0</lbs></opt>
 			<opt><name>dual-AIM-9</name><lbs>612</lbs></opt>
 			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
 		</weight>
@@ -233,8 +233,8 @@ Fairchild A-10 simulation config.
 					<release_lock type="bool">0</release_lock>
 					<station-light-test type="bool">false</station-light-test>
 					<selected-stations></selected-stations>
-					<rip type="int">3</rip>
-					<interval type="float">0.08</interval>
+					<rip type="int">1</rip>
+					<interval type="float">0.35</interval>
 
 					<tank-600-gals>
 						<description type="string">tank-600-gals</description>

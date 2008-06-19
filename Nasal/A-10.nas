@@ -17,6 +17,9 @@ var speed_toggle_flap = func {
 	}
 }
 
+# APU lowpass filters
+var apuTempFilter = nil;
+var apuRpmFilter = nil;
 
 # SAS #####################
 # Stability Augmentation System.
@@ -109,7 +112,6 @@ var main_loop = func {
 	nav_scripts.nav2_homing_devs();
 	nav_scripts.tacan_offset_apply();
 	nav_scripts.compas_card_dev_indicator();
-	pilot_g.update_pilot_g();
 	g_min_max();
 	if ((cnt == 3 ) or (cnt == 6 )) {
 		audio_alt_warning();
@@ -139,6 +141,8 @@ var init = func {
 	settimer(A10autopilot.altimeter_monitor, 0.5);
 	print("Initializing A-10 CCIP range calculator");
 	print("Initializing Nasal Fuel System");
+	apuTempFilter = aircraft.lowpass.new(35);
+	apuRpmFilter = aircraft.lowpass.new(5);
 	A10fuel.initialize();
 	print("Initializing Nasal Electrical System");
 	electrical.init_electrical();
@@ -165,5 +169,4 @@ aircraft.light.new("sim/model/A-10/lighting/nav-lights", [0.62, 0.62], nav_light
 # warning lights medium speed
 var warn_medium_lights_switch = props.globals.getNode("sim/model/A-10/controls/lighting/warn-medium-lights-switch", 1);
 aircraft.light.new("sim/model/A-10/lighting/warn-medium-lights", [0.40, 0.30], warn_medium_lights_switch);
-
 

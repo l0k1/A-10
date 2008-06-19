@@ -14,7 +14,7 @@
 
 
 	<!-- Select the external loads as appropriate -->
-	<!-- Select extermal tanks -->
+	<!-- Select external tanks -->
 	<animation>
 		<type>select</type>
 		<nopreview/>
@@ -714,16 +714,6 @@
 			<x-m>3.0753</x-m>
 			<y-m>-0.3551</y-m>
 			<z-m>0.7098</z-m>
-		</offsets>
-	</model>
-
-	<model>
-		<path>Aircraft/A-10/Models/blackout.xml</path>
-		<name>Blackout</name>
-		<offsets>
-			<x-m>3.2000</x-m>
-			<y-m>0.0000</y-m>
-			<z-m>1.5400</z-m>
 		</offsets>
 	</model>
 

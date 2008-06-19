@@ -17,11 +17,11 @@
 # the right wing and right main tanks feeds the right engine. The two feed lines could
 # be interconnected by opening the cross feed valve.
 # The wing boost pumps will supply the respective engine until the wing tanks are empty,
-# at wich time the wing boost pumps will automatically shut off. The main boost pumps will
+# at which time the wing boost pumps will automatically shut off. The main boost pumps will
 # then supply the respective engine with the remainder of the fuel in the airplane.
 #
-# In case of a wing tank boost pump failure, the wing tank fuel will gravity feed to his respective
-# main tank fuel when his fuel level will be below 600 lbs. Check valves prevent reverse fuel
+# In case of a wing tank boost pump failure, the wing tank fuel will gravity feed to its respective
+# main tank fuel when its fuel level will be below 600 lbs. Check valves prevent reverse fuel
 # flow from the main tank to the wing tank.
 #
 # In the event of a main tank boost pump failure, the affected engine will suction-feed from the

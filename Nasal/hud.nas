@@ -1,4 +1,5 @@
 var hud_mode_knob_pos = props.globals.getNode("sim/model/A-10/controls/hud/mode-selector");
+var hud_alpha         = props.globals.getNode("sim[0]/hud/color/alpha", 1);
 
 var speed_east_fps   = props.globals.getNode("/velocities/speed-east-fps");
 var speed_north_fps  = props.globals.getNode("/velocities/speed-north-fps");
@@ -13,6 +14,14 @@ var D2R         = math.pi / 180;
 # main loop ####################
 var update_loop = func {
 	var mode = hud_mode_knob_pos.getValue();
+	if(getprop("/systems/electrical/outputs/hud") >= 23) {
+		var redout_alpha = getprop("/sim/rendering/redout/alpha");
+		if(redout_alpha > 1)
+			redout_alpha = 1;
+		hud_alpha.setDoubleValue(getprop("/sim/model/A-10/controls/hud/intens") - redout_alpha);
+	} else {
+		hud_alpha.setDoubleValue(0.0);
+	}
 	if ( mode == 3 ) {
 		var se_fps = speed_east_fps.getValue();
 		var sn_fps = speed_north_fps.getValue();

@@ -295,10 +295,11 @@ var update_virtual_bus = func( dt ) {
     # charge/discharge the battery
     if ( power_source == "battery" ) {
         battery.apply_load( load, dt );
-        setprop( "systems/electrical/power_source", power_source );
+        #setprop( "systems/electrical/power_source", power_source );
     } elsif ( bat_src_volts > battery_volts ) {
         battery.apply_load( -battery.charge_amps, dt );
     }
+    setprop("systems/electrical/power_source", power_source);
     # filter ammeter needle pos
     #ammeter_ave = 0.8 * ammeter_ave + 0.2 * ammeter;
     # outputs
@@ -348,6 +349,7 @@ var DC_ESSEN_bus = func() {
 	if(getprop("controls/APU/off-start-switch") and getprop("controls/APU/serviceable")) {
 		setprop("systems/electrical/outputs/apu-start-system", DC_ESSEN_bus_volts);
 		# at APU RPM > 60% the starter disengages and he his self-sufficient.
+		# TODO: APU's start-system stop to load energy from the battery even if the APU generator is not engaged ?
 		if(getprop("sim/model/A-10/systems/apu/rpm-norm") < 60) { load += 120.0; }
 	} else { setprop("systems/electrical/outputs/apu-start-system", 0.0); }
 	if(getprop("sim/model/A-10/controls/fuel/cross-feed-sw") and (DC_ESSEN_bus_volts >= 20)) {
