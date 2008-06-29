@@ -87,6 +87,26 @@
 	</panel>
 
 	<panel>
+		<name>Panel-C-pedestal</name>
+		<path>Aircraft/A-10/Models/A-10-panel-C-pedestal-hotspot.xml</path>
+		<top-left>
+			<x-m>2.4391</x-m>
+			<y-m>-0.1149</y-m>
+			<z-m>0.9021</z-m>
+		</top-left>
+		<bottom-left>
+			<x-m>2.5014</x-m>
+			<y-m>-0.1149</y-m>
+			<z-m>0.5117</z-m>
+		</bottom-left>
+		<bottom-right>
+			<x-m>2.5014</x-m>
+			<y-m>0.1162</y-m>
+			<z-m>0.5117</z-m>
+		</bottom-right>
+	</panel>
+
+	<panel>
 		<name>Panel-R</name>
 		<path>Aircraft/A-10/Models/A-10-panel-R-hotspot.xml</path>
 		<bottom-left>

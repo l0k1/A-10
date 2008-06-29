@@ -32,6 +32,19 @@
     </emission>
   </animation>
 
+	<!-- aux-lg-ext-handle -->
+	<animation>
+		<type>translate</type>
+		<object-name>aux-lg-ext-handle</object-name>
+		<property>sim/model/A-10/controls/gear/aux-lg-ext</property>
+		<factor>0.04</factor>
+		<axis>
+			<x>0.1372</x>
+			<y>0.00</y>
+			<z>0.0232</z>
+		</axis>
+	</animation>
+
 	<animation>
 		<object-name>detail-cpt</object-name>
 		<type>noshadow</type>
