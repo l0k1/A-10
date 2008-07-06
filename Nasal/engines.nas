@@ -33,10 +33,18 @@ var update_loop = func(engNb=0) {
 		eng_throttle_pos = 0.03;
 	}
 	setprop("sim/model/A-10/controls/engines/engine["~engNb~"]/throttle", eng_throttle_pos);
-	# Hydraulic pressure
+	# Hydraulic pressure: normal pressure: 2800-3350 psi
 	var hydr_press = 0.0;
-	if(getprop("controls/engines/engine["~engNb~"]/faults/hydraulic-pump-serviceable") and (getprop("systems/A-10-hydraulics/hyd-res["~engNb~"]") > 40)) { hydr_press = 17.85*eng_n2; }
+	if(getprop("controls/engines/engine["~engNb~"]/faults/hydraulic-pump-serviceable") and (getprop("systems/A-10-hydraulics/hyd-res["~engNb~"]") > 40)) {
+		if(eng_n2 >= 56)
+			hydr_press = (10.78431*eng_n2)+2250;
+		else
+			hydr_press = 50*eng_n2;
+	}
 	setprop("systems/A-10-hydraulics/hyd-psi["~engNb~"]", hydr_press);
+	# Auxiliary landing gear extend accumulator is pressurised by right hydraulic circuit. 
+	if((engNb == 1) and (getprop("/systems/A-10-hydraulics/aux-lg-ext-accumulator") < 900) and (getprop("systems/A-10-hydraulics/hyd-psi[1]") > 900))
+		setprop("/systems/A-10-hydraulics/aux-lg-ext-accumulator", hydr_press);
 	# Engines switch Operator position
 	if(eng_switch_pos == 2) {
 		# IGNition position. Switch is spring-loaded => back to NORM position

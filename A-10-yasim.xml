@@ -162,27 +162,26 @@
 	<tank x="-7.6" y="0" z="-0.86" jet="true" capacity="4032"/>
 	<tank x="-7.6" y="-1.29" z="-0.86" jet="true" capacity="4032"/>
 
-
-	<!-- Undercarriage ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- Undercarriage -->
 	<!-- nose -->
-	<gear x="-2.9" y="0.4" z="-2.15" compression="0.7" spring="1.4" damp="1.4">
-		<control-input axis="controls/flight/rudder" control="STEER" square="true"/>
-		<control-input axis="controls/gear/gear-down" control="EXTEND"/>
+	<gear x="-2.9" y="0.4" z="-2.15" retract-time="6" compression="0.7" spring="1.4" damp="1.4">
+		<control-input axis="/controls/flight/rudder" control="STEER" square="true"/>
+		<control-input axis="/controls/gear/gear-down" control="EXTEND"/>
 		<control-speed control="EXTEND" transition-time="7"/>
 		<control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
 	</gear>
 
 	<!-- left main -->
-	<gear x="-8.3" y="2.5" z="-2.22" compression="0.7" spring="1.6" damp="1.4">
+	<gear x="-8.3" y="2.5" z="-2.22" retract-time="6" compression="0.7" spring="1.6" damp="1.4">
 		<control-input axis="/controls/gear/brake-left" control="BRAKE"/>
 		<control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
 		<control-input axis="/controls/gear/gear-down" control="EXTEND"/>
 		<control-speed control="EXTEND" transition-time="7"/>
 		<control-output control="EXTEND" prop="gear/gear[1]/position-norm"/>
 	</gear>
-
+	
 	<!-- right main -->
-	<gear x="-8.3" y="-2.5" z="-2.22" compression="0.7" spring="1.6" damp="1.4">
+	<gear x="-8.3" y="-2.5" z="-2.22" retract-time="6" compression="0.7" spring="1.6" damp="1.4">
 		<control-input axis="/controls/gear/brake-right" control="BRAKE"/>
 		<control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
 		<control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -190,12 +189,12 @@
 		<control-output control="EXTEND" prop="gear/gear[2]/position-norm"/>
 	</gear>
 
-<!-- Ballast -->
-<ballast x="-3.16" y="0" z="0.78" mass="1200" /><!-- Titanium bathtub (for the mass see: http://www.plane-crazy.net/links/a10.htm) -->
-<ballast x="-1.71" y="0.183" z="-0.823" mass="620"/><!-- GAU-8 barrel (length: 2800mm + 620mm) -->
-<ballast x="-4.91" y="0" z="0" mass="2310"/><!-- GAU-8 feed system + ammunition drum + aluminium alloy cases + plastic driving bands -->
-<ballast x="-6.1" y="0" z="0.0" mass="1000"/> <!-- avionics -->
-<ballast x="-4" y="0" z="0.0" mass="2500"/> <!-- CG trim trim  -->
+	<!-- Ballast -->
+	<ballast x="-3.16" y="0" z="0.78" mass="1200" /><!-- Titanium bathtub (for the mass see: http://www.plane-crazy.net/links/a10.htm) -->
+	<ballast x="-1.71" y="0.183" z="-0.823" mass="620"/><!-- GAU-8 barrel (length: 2800mm + 620mm) -->
+	<ballast x="-4.91" y="0" z="0" mass="2310"/><!-- GAU-8 feed system + ammunition drum + aluminium alloy cases + plastic driving bands -->
+	<ballast x="-6.1" y="0" z="0.0" mass="1000"/> <!-- avionics -->
+	<ballast x="-4" y="0" z="0.0" mass="2500"/> <!-- CG trim trim  -->
 
 
 <!--

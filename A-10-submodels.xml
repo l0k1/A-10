@@ -36,7 +36,7 @@
 		<z-offset>-0.9</z-offset>
 		<yaw-offset>0.0</yaw-offset>
 		<pitch-offset>-3.0</pitch-offset>
-		<life>60.0</life>
+		<life>8.0</life>
 		<buoyancy>0</buoyancy>
 		<wind>false</wind>
 		<cd>0.193</cd>

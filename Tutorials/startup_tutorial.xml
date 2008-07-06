@@ -189,7 +189,7 @@
 	</step>
 
 	<step>
-		<message>Let the APU rpm raise to 50% RPM.</message>
+		<message>Let the APU rpm raise to 60% RPM.</message>
 		<view>
 			<heading-offset-deg>342.2</heading-offset-deg>
 			<pitch-offset-deg>-34.1</pitch-offset-deg>
@@ -209,7 +209,7 @@
 			<condition>
 				<greater-than>
 					<property>sim/model/A-10/systems/apu/rpm-norm</property>
-					<value>30</value>
+					<value>60</value>
 				</greater-than>
 			</condition>
 		</exit>
@@ -262,12 +262,64 @@
 			</condition>
 		</exit>
 	</step>
+	
+	<step>
+		<message>
+			Now we can launch the start cycle of the left engine.
+			Move the left throttle from the OFF position to the IDLE position.
+			To do this you have to click on it (move your joystick throttle axis is not sufficient).
+		</message>
+		<view>
+			<heading-offset-deg>7.4</heading-offset-deg>
+			<pitch-offset-deg>-46.8</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>1.5</y-offset-m>
+			<z-offset-m>3.2</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
+		<marker>
+			<x-m>2.7089</x-m>
+			<y-m>-0.3907</y-m>
+			<z-m>0.7458</z-m>
+			<scale>1.2133</scale>
+		</marker>
+		<exit>
+			<condition>
+				<greater-than>
+					<property>sim/model/A-10/controls/engines/engine[0]/throttle</property>
+					<value>0.029</value>
+				</greater-than>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>
+			Wait the end of the left engine start cycle.
+		</message>
+		<view>
+			<heading-offset-deg>342.2</heading-offset-deg>
+			<pitch-offset-deg>-34.1</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>1.5</y-offset-m>
+			<z-offset-m>3.2</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
+		<exit>
+			<condition>
+				<not>
+					<property>systems/bleed-air/ats-valve[0]</property>
+				</not>
+			</condition>
+		</exit>
+	</step>
 
 	<step>
 		<message>
-			Now we can launch the start cycle of the right engine.
+			Fine, we can now launch the start cycle of the right engine.
 			Move the right throttle from the OFF position to the IDLE position.
-			To do this you have to click on it (move your joystick throttle axis is not sufficient).
 		</message>
 		<view>
 			<heading-offset-deg>7.4</heading-offset-deg>
@@ -316,7 +368,7 @@
 		</exit>
 	</step>
 
-	<step>
+	<!--<step>
 		<message>
 			Fine, we can now launch the start cycle of the left engine.
 			Move the left throttle from the OFF position to the IDLE position.
@@ -344,11 +396,11 @@
 				</greater-than>
 			</condition>
 		</exit>
-	</step>
+	</step>-->
 
 	<step>
 		<message>
-			Now engage the right engine generator.
+			Now engage the right engine generator
 		</message>
 		<view>
 			<heading-offset-deg>340.0</heading-offset-deg>
@@ -372,7 +424,7 @@
 		</exit>
 	</step>
 	
-	<step>
+	<!--<step>
 		<message>
 			Wait the end of the left engine start cycle.
 		</message>
@@ -392,11 +444,11 @@
 				</not>
 			</condition>
 		</exit>
-	</step>
+	</step>-->
 	
 	<step>
 		<message>
-			Now you can engage the left engine generator.
+			and the left engine generator.
 		</message>
 		<view>
 			<heading-offset-deg>340.0</heading-offset-deg>
@@ -416,6 +468,86 @@
 		<exit>
 			<condition>
 				<property>controls/electric/engine[1]/generator</property>
+			</condition>
+		</exit>
+	</step>
+	
+	<!--<step>
+		<message>
+			Switch the battery off.
+		</message>
+		<view>
+			<heading-offset-deg>327.7</heading-offset-deg>
+			<pitch-offset-deg>-40.6</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>1.5</y-offset-m>
+			<z-offset-m>3.2</z-offset-m>
+			<field-of-view>43.1</field-of-view>
+		</view>
+		<marker>
+			<x-m>2.6453</x-m>
+			<y-m>0.5333</y-m>
+			<z-m>0.7689</z-m>
+			<scale>1.5689</scale>
+		</marker>
+		<exit>
+			<condition>
+				<not>
+					<property>controls/electric/battery-switch</property>
+				</not>
+			</condition>
+		</exit>
+	</step>-->
+	
+	<step>
+		<message>Shut off the APU generator</message>
+		<view>
+			<heading-offset-deg>350.5</heading-offset-deg>
+			<pitch-offset-deg>-47.8</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>1.5</y-offset-m>
+			<z-offset-m>3.2</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
+		<marker>
+			<x-m>2.5982</x-m>
+			<y-m>0.4644</y-m>
+			<z-m>0.7787</z-m>
+			<scale>1.5689</scale>
+		</marker>
+		<exit>
+			<condition>
+				<not>
+					<property>controls/electric/APU-generator</property>
+				</not>
+			</condition>
+		</exit>
+	</step>
+	
+	<step>
+		<message>and the APU.</message>
+		<view>
+			<heading-offset-deg>28.5</heading-offset-deg>
+			<pitch-offset-deg>-50</pitch-offset-deg>
+			<roll-offset-deg>0.0</roll-offset-deg>
+			<x-offset-m>0.0</x-offset-m>
+			<y-offset-m>1.5</y-offset-m>
+			<z-offset-m>3.2</z-offset-m>
+			<field-of-view>55.0</field-of-view>
+		</view>
+		<marker>
+			<x-m>2.7191</x-m>
+			<y-m>-0.3147</y-m>
+			<z-m>0.7538</z-m>
+			<scale>1.7289</scale>
+		</marker>
+		<exit>
+			<condition>
+				<not>
+					<property>controls/APU/off-start-switch</property>
+				</not>
 			</condition>
 		</exit>
 	</step>
@@ -449,58 +581,6 @@
 	</step>
 	
 	<step>
-		<message>Shut off the APU</message>
-		<view>
-			<heading-offset-deg>28.5</heading-offset-deg>
-			<pitch-offset-deg>-50</pitch-offset-deg>
-			<roll-offset-deg>0.0</roll-offset-deg>
-			<x-offset-m>0.0</x-offset-m>
-			<y-offset-m>1.5</y-offset-m>
-			<z-offset-m>3.2</z-offset-m>
-			<field-of-view>55.0</field-of-view>
-		</view>
-		<marker>
-			<x-m>2.7191</x-m>
-			<y-m>-0.3147</y-m>
-			<z-m>0.7538</z-m>
-			<scale>1.7289</scale>
-		</marker>
-		<exit>
-			<condition>
-				<not>
-					<property>controls/APU/off-start-switch</property>
-				</not>
-			</condition>
-		</exit>
-	</step>
-	
-	<step>
-		<message>and the APU generator.</message>
-		<view>
-			<heading-offset-deg>350.5</heading-offset-deg>
-			<pitch-offset-deg>-47.8</pitch-offset-deg>
-			<roll-offset-deg>0.0</roll-offset-deg>
-			<x-offset-m>0.0</x-offset-m>
-			<y-offset-m>1.5</y-offset-m>
-			<z-offset-m>3.2</z-offset-m>
-			<field-of-view>55.0</field-of-view>
-		</view>
-		<marker>
-			<x-m>2.5982</x-m>
-			<y-m>0.4644</y-m>
-			<z-m>0.7787</z-m>
-			<scale>1.5689</scale>
-		</marker>
-		<exit>
-			<condition>
-				<not>
-					<property>controls/electric/APU-generator</property>
-				</not>
-			</condition>
-		</exit>
-	</step>
-	
-	<step>
 		<message>Finally switch off the cross bleed valve.</message>
 		<view>
 			<heading-offset-deg>28.5</heading-offset-deg>
@@ -528,7 +608,7 @@
 	
 	<end>
 		<message>Congratulations! You have reached the end of this tutorial without
-		starting the ejection sequence.</message>
+		starting the ejection seat sequence.</message>
 		<view>
 			<heading-offset-deg>0.0</heading-offset-deg>
 			<pitch-offset-deg>-10.0</pitch-offset-deg>

@@ -21,6 +21,9 @@ var speed_toggle_flap = func {
 var apuTempFilter = nil;
 var apuRpmFilter = nil;
 
+# A-10 dialogs
+var A10_dlg_syst_fail = gui.Dialog.new("dialog","Aircraft/A-10/Dialogs/system-failures.xml");
+
 # SAS #####################
 # Stability Augmentation System.
 # - Smooths the elevator input.
@@ -144,6 +147,7 @@ var init = func {
 	apuTempFilter = aircraft.lowpass.new(35);
 	apuRpmFilter = aircraft.lowpass.new(5);
 	A10fuel.initialize();
+	#print("Initializing Nasal Hydraulic System");
 	print("Initializing Nasal Electrical System");
 	electrical.init_electrical();
 	print("Initializing weapons system.");
@@ -154,7 +158,6 @@ var init = func {
 	settimer(main_loop, 0.5);
 }
 setlistener("/sim/signals/fdm-initialized", init);
-
 
 
 # Lighting ################

@@ -1,33 +1,34 @@
-# used to the animation of the landing gear handle
-
-
-setlistener( "controls/gear/gear-down", func {ldg_hdl_main();} );
-
-var ld_hdl = props.globals.getNode("sim/model/A-10/controls/gear/ld-gear-handle-anim", 1);
-
-ldg_hdl_main = func {
-	pos = ld_hdl.getValue();
-	if ( getprop("controls/gear/gear-down") == 1 ) {
-		if ( pos > -1 ) {
-			ldg_hdl_anim(-1, pos);
-		}
-	} else {
-		if ( pos < 0 ) {
-		  ldg_hdl_anim(1, pos);
+##
+# Override generic gear handling.
+#
+controls.gearDown = func(v) {
+	#print("A-10 gear handling.", v);
+	var gearHandlerGoal = nil;
+	if((v == -1) and !getprop("/gear/gear[1]/wow") and (electrical.DC_ESSEN_bus_volts >= 23)) {  # handler gear up
+		gearHandlerGoal = 0.0;
+	} elsif(v == 1) {
+		gearHandlerGoal = -1; }
+	if(gearHandlerGoal != nil) {
+		# Cockpit handler gear animation
+		interpolate(props.globals.getNode("/sim/model/A-10/controls/gear/ld-gear-handle-anim", 1), gearHandlerGoal, 2);
+		# Landing gear animation
+		if((gearHandlerGoal == 0.0) and (getprop("/systems/A-10-hydraulics/hyd-psi[0]") >= 900)) { # up gear
+			setprop("/controls/gear/gear-down", 0);
+		} elsif((gearHandlerGoal == -1) and (getprop("/systems/A-10-hydraulics/hyd-psi[0]") >= 900)) {
+			setprop("/controls/gear/gear-down", 1);
 		}
 	}
 }
 
-
-var ldg_hdl_anim = func {
-	var incr = arg[0]/10;
-	var pos = arg[1] + incr;
-	if (( arg[0] = 1 ) and ( pos >= 0 )){    
-		ld_hdl.setDoubleValue(0);
-	} elsif  (( arg[0] = -1 ) and ( pos <= -1 )) {
-		ld_hdl.setDoubleValue(-1);
-	} else {
-		ld_hdl.setDoubleValue(pos);
-		settimer( ldg_hdl_main, 0.05 );
+# Auxiliary landing gear extension (in case of left hydraulic system failure):
+# First: place the landing gear handle DOWN,
+# then pull up AUX LG EXT handle
+var aux_lg_extension = func() {
+	print("aux_lg_extension called.");
+	if((getprop("/sim/model/A-10/controls/gear/ld-gear-handle-anim") == -1) and (getprop("/systems/A-10-hydraulics/hyd-psi[0]") < 900) and (getprop("/systems/A-10-hydraulics/aux-lg-ext-accumulator") >= 900) and (getprop("/sim/model/A-10/controls/gear/aux-lg-ext"))) {
+		setprop("/systems/A-10-hydraulics/aux-lg-ext-accumulator", 0.0);
+		setprop("/controls/gear/gear-down", 1);
 	}
 }
+
+setlistener("/sim/model/A-10/controls/gear/aux-lg-ext", aux_lg_extension);
