@@ -546,6 +546,11 @@ Fairchild A-10 simulation config.
 						<audio-alt-volume type="float">0.7</audio-alt-volume>
 					</warnings>
 				</instrumentation>
+				<mp-systems>
+					<radar-enabled type="bool">false</radar-enabled>
+					<ecm-rwr-enabled type="bool">false</ecm-rwr-enabled>
+					<combat-enabled type="bool">true</combat-enabled>
+				</mp-systems>
 				<systems>
 					<apu>
 						<egt-overt type="bool">false</egt-overt>
@@ -645,6 +650,12 @@ Fairchild A-10 simulation config.
 					<blue type="float">0.0</blue>
 				</color>
 			</palette>
+			<clipping>
+				<left type="double">-70</left>
+				<right type="double">70</right>
+				<top type="double">21</top>
+				<bottom type="double">-118</bottom>
+			</clipping>
 		</hud>
 		<menubar>
 			<default>
@@ -1074,6 +1085,9 @@ Fairchild A-10 simulation config.
 
 	<!-- Nasal files & scripts -->
 	<nasal>
+		<!--<A10test_impact>
+			<file>Aircraft/A-10/Nasal/test_impact.nas</file>
+		</A10test_impact>-->
 		<A10fuel>
 			<file>Aircraft/A-10/Nasal/A-10-fuel.nas</file>
 		</A10fuel>
