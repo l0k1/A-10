@@ -32,6 +32,7 @@
 		<glide-slope>0.0</glide-slope>
 		<enable-energy-worm>true</enable-energy-worm>
 		<enable-waypoint-marker>true</enable-waypoint-marker>
+		 <zero-bar-overlength>150</zero-bar-overlength>
 	</ladder>
 
 	<label>
