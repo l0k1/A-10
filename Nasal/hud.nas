@@ -9,7 +9,7 @@ var pitch            = props.globals.getNode("/orientation/pitch-deg");
 var ccip_deviation_m = props.globals.getNode("sim/model/A-10/instrumentation/hud/ccip_dev_m", 1);
 
 var lbs_to_slugs    = 0.031080950172;   # conversion factor.
-var D2R         = math.pi / 180;
+var D2R             = math.pi / 180;
 
 # main loop ####################
 var update_loop = func {
