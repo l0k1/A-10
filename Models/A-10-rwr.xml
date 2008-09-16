@@ -7,8 +7,15 @@
 
   <animation> 
    <type>material</type>
+   <object-name>face</object-name>
+	<condition>
+		<greater-than>
+			<property>systems/electrical/L-conv-volts</property>
+			<value>20</value>
+		</greater-than>
+	</condition>
     <emission> 
-      <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <factor-prop>sim/model/A-10/systems/utilities/numeral-1</factor-prop>
         <red>0.05</red>
         <green>0.20</green>
         <blue>0.05</blue>

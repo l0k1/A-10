@@ -559,6 +559,9 @@ Fairchild A-10 simulation config.
 						<fuel-consumed-lbs type="float">0</fuel-consumed-lbs>
 						<out-of-fuel type="bool">true</out-of-fuel>
 					</apu>
+					<utilities>
+						<numeral-1 type="int">1</numeral-1>
+					</utilities>
 				</systems>
 			</A-10>
 		</model>

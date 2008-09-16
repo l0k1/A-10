@@ -4,7 +4,7 @@ MATERIAL "ac3dmat12" rgb 0.266667 0.266667 0.266667  amb 0.2 0.2 0.2  emis 0 0 0
 OBJECT world
 kids 3
 OBJECT poly
-name "rect"
+name "face"
 loc -1.14262e-10 5.23215e-05 0.000337823
 texture "A-10-rwr-screen.rgb"
 crease 45.000000
