@@ -702,9 +702,9 @@
 	<model>
 		<path>Aircraft/A-10/Models/A-10-ld-gear-panel.xml</path>
 		<offsets>
-			<x-m>2.4250</x-m>
-			<y-m>-0.3585</y-m>
-			<z-m>0.9985</z-m>
+			<x-m>2.4130</x-m>
+			<y-m>-0.3630</y-m>
+			<z-m>0.9960</z-m>
 			<pitch-deg>-5</pitch-deg>
 		</offsets>
 	</model>

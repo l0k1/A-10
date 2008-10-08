@@ -258,66 +258,6 @@
 		</emission>
 	</animation>
 
-	<animation> 
-		<object-name>l-gear-warn</object-name>
-		<type>material</type>
-		<emission> 
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-		</emission>
-	</animation>
-
-	<animation> 
-		<object-name>n-gear-warn</object-name>
-		<type>material</type>
-		<emission> 
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-		</emission>
-	</animation>
-
-	<animation> 
-		<object-name>r-gear-warn</object-name>
-		<type>material</type>
-		<emission> 
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-		</emission>
-	</animation>
-
-	<animation> 
-		<object-name>l-gear-safe</object-name>
-		<type>material</type>
-		<emission> 
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-		</emission>
-	</animation>
-
-	<animation> 
-		<object-name>n-gear-safe</object-name>
-		<type>material</type>
-		<emission> 
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-		</emission>
-	</animation>
-
-	<animation> 
-		<object-name>r-gear-safe</object-name>
-		<type>material</type>
-		<emission> 
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-		</emission>
-	</animation>
-
 	<animation>
 		<object-name>ldg-panel</object-name>
 		<type>noshadow</type>
