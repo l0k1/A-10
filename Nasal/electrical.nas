@@ -422,13 +422,14 @@ var DC_ESSEN_bus = func() {
 }
 
 var AUX_DC_ESSEN_bus = func() {
-    load = 0.0;
-    setprop("systems/electrical/outputs/engines-ignitors", AC_ESSEN_bus_volts);
-    return load;
+	load = 0.0;
+	setprop("systems/electrical/outputs/engines-ignitors", AC_ESSEN_bus_volts);
+	return load;
 }
 
 var L_DC_bus = func() {
 	load = 0.0;
+	setprop("systems/electrical/outputs/rwr", L_DC_bus_volts);
 	if(!getprop("controls/fuel/tank[0]/fill-dis") and getprop("controls/fuel/tank[0]/fill-valve-serviceable") and (getprop("consumables/fuel/tank[0]/level-gal_us") < 246) and (L_DC_bus_volts >= 20)) {
 		setprop("systems/A-10-fuel/tank[0]/fill-valve", 1);
 		load += 0.2;
