@@ -798,6 +798,10 @@ Fairchild A-10 simulation config.
 	</autopilot>
 
 	<instrumentation>
+		<ecm>
+			<enabled type="bool">true</enabled>			
+			<on-off type="bool">true</on-off>
+		</ecm>
 		<g-meter>
 			<g-max type="float">1</g-max>
 			<g-min type="float">1</g-min>
@@ -806,11 +810,8 @@ Fairchild A-10 simulation config.
 			<switch-position>0</switch-position>
 		</tacan>
 		<radar>
-			<minimized type="bool">0</minimized>
-			<range type="double">32</range>
-			<range-control type="int">5</range-control>
-			<serviceable type="bool">1</serviceable>
-			<switch type="string">ON</switch>
+			<enabled type="bool">false</enabled>			
+			<range type="double">120</range>
 		</radar>
 		<nav n="2">
 			<radials>
@@ -828,6 +829,9 @@ Fairchild A-10 simulation config.
 			</to-from>
 			<slaved-to-gps type="bool">false</slaved-to-gps>
 		</nav>
+		<rwr>
+			<display-lighting-intens type="double">0.5</display-lighting-intens>
+		</rwr>
 	</instrumentation>
 
 	<controls>
@@ -1128,6 +1132,12 @@ Fairchild A-10 simulation config.
 		<A10autopilot>
 			<file>Aircraft/A-10/Nasal/autopilot.nas</file>
 		</A10autopilot>
+		<radardist>
+			<file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
+		</radardist>
+		<radar2>
+			<file>Aircraft/Instruments-3d/radar2/radar2.nas</file>
+		</radar2>
 	</nasal>
 
 </PropertyList>
