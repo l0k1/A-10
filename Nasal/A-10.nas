@@ -116,6 +116,7 @@ var main_loop = func {
 	nav_scripts.tacan_offset_apply();
 	nav_scripts.compas_card_dev_indicator();
 	g_min_max();
+	radar2.watch_aimp_models();
 	if ((cnt == 3 ) or (cnt == 6 )) {
 		audio_alt_warning();
 		electrical.update_electrical();
@@ -153,6 +154,8 @@ var init = func {
 	print("Initializing weapons system.");
 	A10weapons.initialize();
 	nav_scripts.freq_startup();
+	radardist.init();
+	radar2.init();
 	settimer(func {canopy.cockpit_state()}, 3);
 	aircraft.data.save();
 	settimer(main_loop, 0.5);
