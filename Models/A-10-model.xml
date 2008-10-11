@@ -598,9 +598,9 @@
 	<model>
 		<path>Aircraft/A-10/Models/A-10-sas.xml</path>
 		<offsets>
-			<x-m>2.6704</x-m>
+			<x-m>2.6710</x-m>
 			<y-m>-0.5034</y-m>
-			<z-m>0.7504</z-m>
+			<z-m>0.7514</z-m>
 			<pitch-deg>27</pitch-deg>
 			<roll-deg>-14</roll-deg>
 		</offsets>
