@@ -69,8 +69,8 @@ var update_loop = func {
 
 
 # hide hud if view-number != 0
-setlistener("/sim/current-view/view-number", func {
-	setprop("/sim/hud/visibility[1]", cmdarg().getValue() == 0);
+setlistener("/sim/current-view/view-number", func(n) {
+	setprop("/sim/hud/visibility[1]", n.getValue() == 0);
 }, 1);
 
 

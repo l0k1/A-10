@@ -321,8 +321,8 @@ var initialize = func {
 		#aircraft.data.add(t.getNode("level-gal_us", 1)); # BUG: data saved but not restored
 	}
 
-	setlistener("sim/freeze/fuel", func { fuel_freeze = cmdarg().getBoolValue() }, 1);
-	setlistener("sim/ai/enabled", func { ai_enabled = cmdarg().getBoolValue() }, 1);
+	setlistener("sim/freeze/fuel", func(n) { fuel_freeze = n.getBoolValue() }, 1);
+	setlistener("sim/ai/enabled", func(n) { ai_enabled = n.getBoolValue() }, 1);
 }
 
 
