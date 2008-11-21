@@ -60,6 +60,14 @@
 
 	<!-- Cockpit -->
 
+	<animation>
+		<type>shader</type>
+		<shader>chrome</shader>
+		<texture>Aircraft/A-10/Models/glass_shader.png</texture>
+		<object-name>FCanopyGlass</object-name>
+		<object-name>BCanopyGlass</object-name>
+	</animation>
+
 	<model>
 		<path>Aircraft/A-10/Models/pilot.xml</path>
 	</model>
@@ -789,7 +797,7 @@
 		<condition>
 			<property>sim/model/A-10/canopy-safe</property>
 		</condition>
-	</animation>-->
+	</animation>
 
 	<animation>
 		<type>select</type>
@@ -803,13 +811,14 @@
 				</not-equals>
 			</and>
 		</condition>
-	</animation>
+	</animation>-->
 
 	<animation>
 		<type>rotate</type>
 		<object-name>BCanopyFrame</object-name>
 		<object-name>BCanopyFrameInner</object-name>
 		<object-name>BCanopyGlass</object-name>
+		<object-name>BCanopyGlass-int</object-name>
 		<object-name>CanopyLock</object-name>
 		<property>canopy/position-norm</property>
 		<factor>35</factor>
