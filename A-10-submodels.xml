@@ -253,7 +253,7 @@
 		<z-offset>-0.9</z-offset>
 		<yaw-offset>0</yaw-offset>
 		<pitch-offset>-20.0</pitch-offset>
-		<life>12</life>
+		<life>30</life>
 		<buoyancy>33</buoyancy>
 		<wind>true</wind>
 		<cd>0.045</cd>
@@ -1412,7 +1412,7 @@
 		<count alias="../../MK-82-LD/count"/>
 		<x-offset alias="../../MK-82-LD/x-offset"/>
 		<y-offset>-12.8343</y-offset>
-		<z-offset>-1.6936</z-offset>
+		<z-offset>-1.7936</z-offset>
 		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
@@ -1437,7 +1437,7 @@
 		<count alias="../../MK-82-LD/count"/>
 		<x-offset alias="../../MK-82-LD/x-offset"/>
 		<y-offset>-11.9081</y-offset>
-		<z-offset>-2.5866</z-offset>
+		<z-offset>-2.6866</z-offset>
 		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
@@ -1462,7 +1462,7 @@
 		<count alias="../../MK-82-LD/count"/>
 		<x-offset alias="../../MK-82-LD/x-offset"/>
 		<y-offset>-10.9820</y-offset>
-		<z-offset>-1.6936</z-offset>
+		<z-offset>-1.7936</z-offset>
 		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
@@ -1485,9 +1485,9 @@
 		<repeat alias="../../MK-82-LD/repeat"/>
 		<delay alias="../../MK-82-LD/delay"/>
 		<count alias="../../MK-82-LD/count"/>
-		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<x-offset>-24.8493</x-offset>
 		<y-offset>-6.4659</y-offset>
-		<z-offset>-1.9797</z-offset>
+		<z-offset>-2.1797</z-offset>
 		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
@@ -1510,9 +1510,9 @@
 		<repeat alias="../../MK-82-LD/repeat"/>
 		<delay alias="../../MK-82-LD/delay"/>
 		<count alias="../../MK-82-LD/count"/>
-		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<x-offset>-24.8493</x-offset>
 		<y-offset>-5.5420</y-offset>
-		<z-offset>-2.8727</z-offset>
+		<z-offset>-3.0727</z-offset>
 		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
@@ -1535,9 +1535,9 @@
 		<repeat alias="../../MK-82-LD/repeat"/>
 		<delay alias="../../MK-82-LD/delay"/>
 		<count alias="../../MK-82-LD/count"/>
-		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<x-offset>-24.8493</x-offset>
 		<y-offset>-4.6135</y-offset>
-		<z-offset>-1.9797</z-offset>
+		<z-offset>-2.1797</z-offset>
 		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
@@ -1560,9 +1560,9 @@
 		<repeat alias="../../MK-82-LD/repeat"/>
 		<delay alias="../../MK-82-LD/delay"/>
 		<count alias="../../MK-82-LD/count"/>
-		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<x-offset>-24.8493</x-offset>
 		<y-offset>4.6135</y-offset>
-		<z-offset>-1.9797</z-offset>
+		<z-offset>-2.1797</z-offset>
 		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
@@ -1585,9 +1585,9 @@
 		<repeat alias="../../MK-82-LD/repeat"/>
 		<delay alias="../../MK-82-LD/delay"/>
 		<count alias="../../MK-82-LD/count"/>
-		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<x-offset>-24.8493</x-offset>
 		<y-offset>5.5420</y-offset>
-		<z-offset>-2.8727</z-offset>
+		<z-offset>-3.0727</z-offset>
 		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
@@ -1610,9 +1610,9 @@
 		<repeat alias="../../MK-82-LD/repeat"/>
 		<delay alias="../../MK-82-LD/delay"/>
 		<count alias="../../MK-82-LD/count"/>
-		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<x-offset>-24.8493</x-offset>
 		<y-offset>6.4659</y-offset>
-		<z-offset>-1.9797</z-offset>
+		<z-offset>-2.1797</z-offset>
 		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
@@ -1637,7 +1637,7 @@
 		<count alias="../../MK-82-LD/count"/>
 		<x-offset alias="../../MK-82-LD/x-offset"/>
 		<y-offset>10.9820</y-offset>
-		<z-offset>-1.6936</z-offset>
+		<z-offset>-1.7936</z-offset>
 		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
@@ -1662,7 +1662,7 @@
 		<count alias="../../MK-82-LD/count"/>
 		<x-offset alias="../../MK-82-LD/x-offset"/>
 		<y-offset>11.9081</y-offset>
-		<z-offset>-2.5866</z-offset>
+		<z-offset>-2.6866</z-offset>
 		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
@@ -1687,7 +1687,7 @@
 		<count alias="../../MK-82-LD/count"/>
 		<x-offset alias="../../MK-82-LD/x-offset"/>
 		<y-offset>12.8343</y-offset>
-		<z-offset>-1.6936</z-offset>
+		<z-offset>-1.7936</z-offset>
 		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
@@ -1711,7 +1711,7 @@
 		<repeat alias="../../MK-82-LD/repeat"/>
 		<delay alias="../../MK-82-LD/delay"/>
 		<count alias="../../MK-82-LD/count"/>
-		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<x-offset>-24.1808</x-offset>
 		<y-offset>-19.3652</y-offset>
 		<z-offset>-0.6909</z-offset>
 		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
@@ -1786,9 +1786,9 @@
 		<repeat alias="../../MK-82-LD/repeat"/>
 		<delay alias="../../MK-82-LD/delay"/>
 		<count alias="../../MK-82-LD/count"/>
-		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<x-offset>-24.9323</x-offset>
 		<y-offset>-5.5548</y-offset>
-		<z-offset>-1.9062</z-offset>
+		<z-offset>-2.0380</z-offset>
 		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
@@ -1811,9 +1811,9 @@
 		<repeat alias="../../MK-82-LD/repeat"/>
 		<delay alias="../../MK-82-LD/delay"/>
 		<count alias="../../MK-82-LD/count"/>
-		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<x-offset>-24.8323</x-offset>
 		<y-offset>-1.8615</y-offset>
-		<z-offset>-1.9062</z-offset>
+		<z-offset>-2.1380</z-offset>
 		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
@@ -1836,9 +1836,9 @@
 		<repeat alias="../../MK-82-LD/repeat"/>
 		<delay alias="../../MK-82-LD/delay"/>
 		<count alias="../../MK-82-LD/count"/>
-		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<x-offset>-24.8323</x-offset>
 		<y-offset>0</y-offset>
-		<z-offset>-1.6936</z-offset>
+		<z-offset>-2.1380</z-offset>
 		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
@@ -1861,9 +1861,9 @@
 		<repeat alias="../../MK-82-LD/repeat"/>
 		<delay alias="../../MK-82-LD/delay"/>
 		<count alias="../../MK-82-LD/count"/>
-		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<x-offset>-24.8323</x-offset>
 		<y-offset>1.8615</y-offset>
-		<z-offset>-1.9062</z-offset>
+		<z-offset>-2.1380</z-offset>
 		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
@@ -1886,9 +1886,9 @@
 		<repeat alias="../../MK-82-LD/repeat"/>
 		<delay alias="../../MK-82-LD/delay"/>
 		<count alias="../../MK-82-LD/count"/>
-		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<x-offset>-24.9323</x-offset>
 		<y-offset>5.5548</y-offset>
-		<z-offset>-1.9062</z-offset>
+		<z-offset>-2.0380</z-offset>
 		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
 		<pitch-offset alias="../../MK-82-LD/pitch-offset"/>
 		<cd alias="../../MK-82-LD/cd"/>
@@ -1961,7 +1961,7 @@
 		<repeat alias="../../MK-82-LD/repeat"/>
 		<delay alias="../../MK-82-LD/delay"/>
 		<count alias="../../MK-82-LD/count"/>
-		<x-offset alias="../../MK-82-LD/x-offset"/>
+		<x-offset>-24.1808</x-offset>
 		<y-offset>19.3652</y-offset>
 		<z-offset>-0.6909</z-offset>
 		<yaw-offset alias="../../MK-82-LD/yaw-offset"/>
