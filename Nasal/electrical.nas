@@ -22,6 +22,9 @@ var DC_ESSEN_bus_volts  = 0.0;
 var ammeter_ave = 0.0;
 
 
+var APU_Running   = props.globals.getNode("sim/model/A-10/systems/apu/running");
+var APU_Rpm       = props.globals.getNode("sim/model/A-10/systems/apu/rpm-norm");
+
 var init_electrical = func {
     battery = BatteryClass.new();
     alternator = AlternatorClass.new();
@@ -129,7 +132,7 @@ var update_virtual_bus = func( dt ) {
     var eng_outof         = getprop("engines/engine[0]/out-of-fuel");
     var eng_outof1        = getprop("engines/engine[1]/out-of-fuel");
     var master_bat        = getprop("controls/electric/battery-switch");
-    var master_apu        = getprop("controls/electric/APU-generator");
+    var master_apu        = getprop("controls/APU/generator");
     var master_alt        = getprop("controls/electric/engine[0]/generator");
     var master_alt1       = getprop("controls/electric/engine[1]/generator");
     var master_inv        = getprop("sim/model/A-10/controls/switches/inverter");
@@ -330,6 +333,7 @@ var BATT_bus = func() {
 
 var DC_ESSEN_bus = func() {
 	load = 0.0;
+	var DC_ESSEN_ok = 0;
 	setprop("systems/electrical/outputs/nav[0]", DC_ESSEN_bus_volts);
 	setprop("systems/electrical/outputs/com[0]", DC_ESSEN_bus_volts);
 	setprop("systems/electrical/outputs/nav[1]", DC_ESSEN_bus_volts);
@@ -338,88 +342,122 @@ var DC_ESSEN_bus = func() {
 	setprop("systems/electrical/outputs/ldg-warning-system", DC_ESSEN_bus_volts);
 	#setprop("systems/electrical/outputs/apu-start-system", DC_ESSEN_bus_volts);
 	setprop("systems/electrical/outputs/caution-panel", DC_ESSEN_bus_volts);
-	# DC pump in main left tank, to feed APU at start.
-	if((getprop("controls/APU/off-start-switch") or (getprop("sim/model/A-10/controls/engines/engine[0]/throttle") >= 0.03) or (getprop("sim/model/A-10/controls/engines/engine[1]/throttle") >= 0.03)) and (getprop("consumables/fuel/tank[1]/level-gal_us") > 1.56) and (!getprop("systems/A-10-fuel/tank[0]/boost-pump[0]")) and (!getprop("systems/A-10-fuel/tank[1]/boost-pump[0]")) and (getprop("controls/fuel/tank[1]/boost-pump-serviceable[1]")) and (DC_ESSEN_bus_volts >= 20)) {
-		setprop("systems/A-10-fuel/tank[1]/boost-pump[1]", 1);
-		load += 15.0;
-	} else {
-		setprop("systems/A-10-fuel/tank[1]/boost-pump[1]", 0);
+
+	if ( DC_ESSEN_bus_volts >= 20) {
+		DC_ESSEN_ok = 1;
 	}
+
+	load += A10fuel.DC_boost_pump.getBoolValue() * 15;
+		
+	
 	# APU starter
-	if(getprop("controls/APU/off-start-switch") and getprop("controls/APU/serviceable")) {
-		setprop("systems/electrical/outputs/apu-start-system", DC_ESSEN_bus_volts);
-		# at APU RPM > 60% the starter disengages and he his self-sufficient.
-		# TODO: APU's start-system stop to load energy from the battery even if the APU generator is not engaged ?
-		if(getprop("sim/model/A-10/systems/apu/rpm-norm") < 60) { load += 120.0; }
-	} else { setprop("systems/electrical/outputs/apu-start-system", 0.0); }
-	if(getprop("sim/model/A-10/controls/fuel/cross-feed-sw") and (DC_ESSEN_bus_volts >= 20)) {
-		#setprop("systems/A-10-fuel/cross-feed-valve", 1);
-		setprop("controls/fuel/tank[0]/to_engine", -1);
-		setprop("controls/fuel/tank[1]/to_engine", -1);
-		setprop("controls/fuel/tank[2]/to_engine", -1);
-		setprop("controls/fuel/tank[3]/to_engine", -1);
-		load += 0.2;
-	} else {
-		#setprop("systems/A-10-fuel/cross-feed-valve", 0);
-		setprop("controls/fuel/tank[0]/to_engine", 0);
-		setprop("controls/fuel/tank[1]/to_engine", 0);
-		setprop("controls/fuel/tank[2]/to_engine", 1);
-		setprop("controls/fuel/tank[3]/to_engine", 1);
+	if ( APU_Rpm.getValue() < 60 and APU_Running.getBoolValue() ) {
+		load += 120.0;
 	}
-	# tank gate valve between left and right main tank
-	if(getprop("sim/model/A-10/controls/fuel/tk-gate-open") and (getprop("consumables/fuel/tank[1]/level-gal_us") < 203.1) and (getprop("consumables/fuel/tank[2]/level-gal_us") < 203.1) and (DC_ESSEN_bus_volts >= 20)) {
-		#setprop("systems/A-10-fuel/tk-gate-valve", 1);
-		setprop("controls/fuel/tank[1]/to_tank", 2);
-		setprop("controls/fuel/tank[2]/to_tank", 1);
+
+
+	# Cross Feed switch
+	if ( getprop("sim/model/A-10/controls/fuel/cross-feed-sw") and DC_ESSEN_ok ) {
+		setprop("systems/A-10-fuel/cross-feed-valve", 1);
 		load += 0.2;
 	} else {
-		setprop("controls/fuel/tank[1]/to_tank", -1);
-		setprop("controls/fuel/tank[2]/to_tank", -1);
+		setprop("systems/A-10-fuel/cross-feed-valve", 0);
+	}
+
+	# Tank Gate switch
+	if ( getprop("sim/model/A-10/controls/fuel/tk-gate-switch") and DC_ESSEN_ok ) {
+		setprop("systems/A-10-fuel/tank-gate-valve", 1);
+		load += 0.2;
+	} else {
+		setprop("systems/A-10-fuel/tank-gate-valve", 0)
 	}
 
 	# external tank pumps to feed internal tanks
 	var int_tanks_filled = 0;
-	for(var i=0; i<4; i+=1) {
-		if(getprop("systems/A-10-fuel/tank["~i~"]/fill-valve")) { int_tanks_filled += 1; }
+	for( var i = 0; i < 4; i += 1 ) {
+		if ( getprop("consumables/fuel/tank["~i~"]/fill-valve") ) {
+			int_tanks_filled += 1;
+		}
 	}
+
 	# external wing tanks
-	if((int_tanks_filled > 0) and getprop("controls/fuel/tank[4]/boost-pump[0]") and !getprop("systems/refuel/receiver-lever") and getprop("controls/fuel/tank[4]/boost-pump-serviceable[0]") and (getprop("consumables/fuel/tank[4]/level-gal_us") > 1.56) and (getprop("systems/bleed-air/psi") > 7) and (DC_ESSEN_bus_volts >= 20)) {
-		setprop("systems/A-10-fuel/tank[4]/boost-pump[0]", 1);
+	if (
+		int_tanks_filled > 0
+		and getprop("controls/fuel/tank[4]/boost-pump[0]")
+		and !getprop("systems/refuel/receiver-lever")
+		and getprop("controls/fuel/tank[4]/boost-pump-serviceable")
+		and getprop("consumables/fuel/tank[4]/level-gal_us") > 1.56
+		and getprop("systems/bleed-air/psi") > 7
+		and DC_ESSEN_ok
+	) {
+		A10fuel.Left_External.set_boost_pump(1);
 		load += 15.0;
 	} else {
-		setprop("systems/A-10-fuel/tank[4]/boost-pump[0]", 0);
+		A10fuel.Left_External.set_boost_pump(0);
 	}
+
 	# note: right external wing pump is controlled by controls/fuel/tank[4]/boost-pump[0] too
-	if((int_tanks_filled > 0) and getprop("controls/fuel/tank[4]/boost-pump[0]") and !getprop("systems/refuel/receiver-lever") and getprop("controls/fuel/tank[6]/boost-pump-serviceable[0]") and (getprop("consumables/fuel/tank[6]/level-gal_us") > 1.56) and (getprop("systems/bleed-air/psi") > 7) and (DC_ESSEN_bus_volts >= 20)) {
-		setprop("systems/A-10-fuel/tank[6]/boost-pump[0]", 1);
+	if (
+		int_tanks_filled > 0
+		and getprop("controls/fuel/tank[4]/boost-pump[0]")
+		and !getprop("systems/refuel/receiver-lever")
+		and getprop("controls/fuel/tank[6]/boost-pump-serviceable")
+		and getprop("consumables/fuel/tank[6]/level-gal_us") > 1.56
+		and getprop("systems/bleed-air/psi") > 7
+		and DC_ESSEN_ok
+	) {
+		A10fuel.Right_External.set_boost_pump(1);
 		load += 15.0;
 	} else {
-		setprop("systems/A-10-fuel/tank[6]/boost-pump[0]", 0);
+		A10fuel.Right_External.set_boost_pump(0);
 	}
+
 	# external fuselage tank
-	if((int_tanks_filled > 0) and getprop("controls/fuel/tank[5]/boost-pump[0]") and !getprop("systems/refuel/receiver-lever") and getprop("controls/fuel/tank[5]/boost-pump-serviceable[0]") and (getprop("consumables/fuel/tank[5]/level-gal_us") > 1.56) and !getprop("systems/A-10-fuel/tank[4]/boost-pump[0]") and !getprop("systems/A-10-fuel/tank[6]/boost-pump[0]") and (getprop("systems/bleed-air/psi") > 7) and (DC_ESSEN_bus_volts >= 20)) {
-		setprop("systems/A-10-fuel/tank[5]/boost-pump[0]", 1);
+	if (
+		int_tanks_filled > 0
+		and getprop("controls/fuel/tank[5]/boost-pump[0]")
+		and !getprop("systems/refuel/receiver-lever")
+		and getprop("controls/fuel/tank[5]/boost-pump-serviceable")
+		and getprop("consumables/fuel/tank[5]/level-gal_us") > 1.56
+		and ! A10fuel.Left_External.get_boost_pump()
+		and ! A10fuel.Right_External.get_boost_pump()
+		and getprop("systems/bleed-air/psi") > 7
+		and DC_ESSEN_ok
+	) {
+		A10fuel.Fuse_External.set_boost_pump(1);
 		load += 15.0;
 	} else {
-		setprop("systems/A-10-fuel/tank[5]/boost-pump[0]", 0);
+		A10fuel.Fuse_External.set_boost_pump(0);
 	}
-	# left and right gravity valve, in case of wing pump failure
-	if((getprop("consumables/fuel/tank[1]/level-gal_us") < 93.75) and (getprop("consumables/fuel/tank[0]/level-gal_us") > 2.34) and (!getprop("systems/A-10-fuel/tank[0]/boost-pump[0]")) and (DC_ESSEN_bus_volts >= 20)) {
-		#setprop("systems/A-10-fuel/l-gravity-valve", 1);
-		setprop("controls/fuel/tank[0]/to_tank", 1);
+
+	# Left and right gravity valve.
+	if (
+		getprop("consumables/fuel/tank[1]/level-gal_us") < 93.75
+		and getprop("consumables/fuel/tank[0]/level-gal_us") > 2.34
+		and ! A10fuel.Left_Wing.get_boost_pump()
+		and DC_ESSEN_ok
+	) {
+		A10fuel.Left_Wing.set_transfering(1);
 		load += 0.2;
 	} else {
-		setprop("controls/fuel/tank[0]/to_tank", -1);
+		A10fuel.Left_Wing.set_transfering(0);
 	}
-	if((getprop("consumables/fuel/tank[2]/level-gal_us") < 93.75) and (getprop("consumables/fuel/tank[3]/level-gal_us") > 2.34) and (!getprop("systems/A-10-fuel/tank[3]/boost-pump[0]")) and (DC_ESSEN_bus_volts >= 20)) {
-		#setprop("systems/A-10-fuel/r-gravity-valve", 1);
-		setprop("controls/fuel/tank[3]/to_tank", 2);
+
+	if (
+		getprop("consumables/fuel/tank[2]/level-gal_us") < 93.75
+		and getprop("consumables/fuel/tank[3]/level-gal_us") > 2.34
+		and ! A10fuel.Right_Wing.get_boost_pump()
+		and DC_ESSEN_ok
+	) {
+		A10fuel.Right_Wing.set_transfering(1);
 		load += 0.2;
 	} else {
-		setprop("controls/fuel/tank[3]/to_tank", -1);
+		A10fuel.Right_Wing.set_transfering(0)
 	}
+
 	return load;
 }
+
 
 var AUX_DC_ESSEN_bus = func() {
 	load = 0.0;
@@ -430,48 +468,7 @@ var AUX_DC_ESSEN_bus = func() {
 var L_DC_bus = func() {
 	load = 0.0;
 	setprop("systems/electrical/outputs/rwr", L_DC_bus_volts);
-	if(!getprop("controls/fuel/tank[0]/fill-dis") and getprop("controls/fuel/tank[0]/fill-valve-serviceable") and (getprop("consumables/fuel/tank[0]/level-gal_us") < 246) and (L_DC_bus_volts >= 20)) {
-		setprop("systems/A-10-fuel/tank[0]/fill-valve", 1);
-		load += 0.2;
-	} elsif((getprop("systems/A-10-fuel/tank[0]/fill-valve") and (getprop("consumables/fuel/tank[0]/level-gal_us") > 308)) or getprop("controls/fuel/tank[0]/fill-dis") or !getprop("controls/fuel/tank[0]/fill-valve-serviceable") or (L_DC_bus_volts < 20)) {
-		setprop("systems/A-10-fuel/tank[0]/fill-valve", 0);
-	}
-	if(!getprop("controls/fuel/tank[1]/fill-dis") and getprop("controls/fuel/tank[1]/fill-valve-serviceable") and (getprop("consumables/fuel/tank[1]/level-gal_us") < 446) and (L_DC_bus_volts >= 20)) {
-		setprop("systems/A-10-fuel/tank[1]/fill-valve", 1);
-		load += 0.2;
-	} elsif((getprop("systems/A-10-fuel/tank[1]/fill-valve") and (getprop("consumables/fuel/tank[1]/level-gal_us") > 508)) or getprop("controls/fuel/tank[1]/fill-dis") or !getprop("controls/fuel/tank[1]/fill-valve-serviceable") or (L_DC_bus_volts < 20)) {
-		setprop("systems/A-10-fuel/tank[1]/fill-valve", 0);
-	}
-	if(!getprop("controls/fuel/tank[2]/fill-dis") and getprop("controls/fuel/tank[2]/fill-valve-serviceable") and (getprop("consumables/fuel/tank[2]/level-gal_us") < 446) and (L_DC_bus_volts >= 20)) {
-		setprop("systems/A-10-fuel/tank[2]/fill-valve", 1);
-		load += 0.2;
-	} elsif((getprop("systems/A-10-fuel/tank[2]/fill-valve") and (getprop("consumables/fuel/tank[2]/level-gal_us") > 508)) or getprop("controls/fuel/tank[2]/fill-dis") or !getprop("controls/fuel/tank[2]/fill-valve-serviceable") or (L_DC_bus_volts < 20)) {
-		setprop("systems/A-10-fuel/tank[2]/fill-valve", 0);
-	}
-	if(!getprop("controls/fuel/tank[3]/fill-dis") and getprop("controls/fuel/tank[3]/fill-valve-serviceable") and (getprop("consumables/fuel/tank[3]/level-gal_us") < 246) and (L_DC_bus_volts >= 20)) {
-		setprop("systems/A-10-fuel/tank[3]/fill-valve", 1);
-		load += 0.2;
-	} elsif((getprop("systems/A-10-fuel/tank[3]/fill-valve") and (getprop("consumables/fuel/tank[3]/level-gal_us") > 308)) or getprop("controls/fuel/tank[3]/fill-dis") or !getprop("controls/fuel/tank[3]/fill-valve-serviceable") or (L_DC_bus_volts < 20)) {
-		setprop("systems/A-10-fuel/tank[3]/fill-valve", 0);
-	}
-	if(getprop("controls/fuel/tank[4]/fill-valve-serviceable") and (getprop("consumables/fuel/tank[4]/level-gal_us") < 595) and (L_DC_bus_volts >= 20) and (getprop("consumables/fuel/tank[4]/capacity-gal_us") == 600)) {
-		setprop("systems/A-10-fuel/tank[4]/fill-valve", 1);
-		load += 0.2;
-	} else {
-		setprop("systems/A-10-fuel/tank[4]/fill-valve", 0);
-	}
-	if(getprop("controls/fuel/tank[5]/fill-valve-serviceable") and (getprop("consumables/fuel/tank[5]/level-gal_us") < 595) and (L_DC_bus_volts >= 20) and (getprop("consumables/fuel/tank[5]/capacity-gal_us") == 600)) {
-		setprop("systems/A-10-fuel/tank[5]/fill-valve", 1);
-		load += 0.2;
-	} else {
-		setprop("systems/A-10-fuel/tank[5]/fill-valve", 0);
-	}
-	if(getprop("controls/fuel/tank[6]/fill-valve-serviceable") and (getprop("consumables/fuel/tank[6]/level-gal_us") < 595) and (L_DC_bus_volts >= 20) and (getprop("consumables/fuel/tank[6]/capacity-gal_us") == 600)) {
-		setprop("systems/A-10-fuel/tank[6]/fill-valve", 1);
-		load += 0.2;
-	} else {
-		setprop("systems/A-10-fuel/tank[6]/fill-valve", 0);
-	}
+	foreach (var t; A10fuel.Tank.list) { load += t.get_fill_valve() * 0.2 }
 	return load;
 }
 
@@ -486,18 +483,31 @@ var R_DC_bus = func() {
 
 var L_AC_bus = func() {
 	load = 0.0;
+
 	# Left wing and main fuel pumps power
-	if(getprop("controls/fuel/tank[0]/boost-pump[0]") and (getprop("controls/fuel/tank[0]/boost-pump-serviceable[0]")) and (getprop("consumables/fuel/tank[0]/level-gal_us") > 1.56) and (L_AC_bus_volts >= 20)) {
-		setprop("systems/A-10-fuel/tank[0]/boost-pump[0]", 1);
+	if (
+		getprop("controls/fuel/tank[0]/boost-pump[0]")
+		and getprop("controls/fuel/tank[0]/boost-pump-serviceable")
+		and getprop("consumables/fuel/tank[0]/level-gal_us") > 1.56
+		and L_AC_bus_volts >= 20
+	) {
+		A10fuel.Left_Wing.set_boost_pump(1);
 		load += 15.0;
 	} else {
-		setprop("systems/A-10-fuel/tank[0]/boost-pump[0]", 0);
+		A10fuel.Left_Wing.set_boost_pump(0);
 	}
-	if(getprop("controls/fuel/tank[1]/boost-pump[0]") and (getprop("controls/fuel/tank[1]/boost-pump-serviceable[0]")) and (getprop("consumables/fuel/tank[1]/level-gal_us") > 1.56) and (L_AC_bus_volts >= 20) and !getprop("systems/A-10-fuel/tank[0]/boost-pump[0]")) {
-		setprop("systems/A-10-fuel/tank[1]/boost-pump[0]", 1);
+
+	if (
+		getprop("controls/fuel/tank[1]/boost-pump[0]")
+		and getprop("controls/fuel/tank[1]/boost-pump-serviceable")
+		and getprop("consumables/fuel/tank[1]/level-gal_us") > 1.56
+		and L_AC_bus_volts >= 20
+		and ! A10fuel.Left_Wing.get_boost_pump()
+	) {
+		A10fuel.Left_Main.set_boost_pump(1);
 		load += 15.0;
 	} else {
-		setprop("systems/A-10-fuel/tank[1]/boost-pump[0]", 0);
+		A10fuel.Left_Main.set_boost_pump(0);
 	}
 	return load;
 }
@@ -518,18 +528,31 @@ var R_AC_bus = func() {
 	}
 	setprop("instrumentation/attitude-indicator/spin", R_AC_bus_volts/30);
 	setprop("systems/electrical/outputs/DG", R_AC_bus_volts);
+
 	# Right wing and main fuel pumps power
-	if(getprop("controls/fuel/tank[3]/boost-pump[0]") and (getprop("controls/fuel/tank[3]/boost-pump-serviceable[0]")) and (getprop("consumables/fuel/tank[3]/level-gal_us") > 1.56) and (R_AC_bus_volts >= 20)) {
-		setprop("systems/A-10-fuel/tank[3]/boost-pump[0]", 1);
+	if (
+		getprop("controls/fuel/tank[3]/boost-pump[0]")
+		and getprop("controls/fuel/tank[3]/boost-pump-serviceable")
+		and getprop("consumables/fuel/tank[3]/level-gal_us") > 1.56
+		and R_AC_bus_volts >= 20
+	) {
+		A10fuel.Right_Wing.set_boost_pump(1);
 		load += 15.0;
 	} else {
-		setprop("systems/A-10-fuel/tank[3]/boost-pump[0]", 0);
+		A10fuel.Right_Wing.set_boost_pump(0);
 	}
-	if(getprop("controls/fuel/tank[2]/boost-pump[0]") and (getprop("controls/fuel/tank[2]/boost-pump-serviceable[0]")) and (getprop("consumables/fuel/tank[2]/level-gal_us") > 1.56) and (R_AC_bus_volts >= 20) and !getprop("systems/A-10-fuel/tank[3]/boost-pump[0]")) {
-		setprop("systems/A-10-fuel/tank[2]/boost-pump[0]", 1);
+
+	if (
+		getprop("controls/fuel/tank[2]/boost-pump[0]")
+		and getprop("controls/fuel/tank[2]/boost-pump-serviceable")
+		and getprop("consumables/fuel/tank[2]/level-gal_us") > 1.56
+		and R_AC_bus_volts >= 20
+		and ! A10fuel.Right_Wing.get_boost_pump()
+	) {
+		A10fuel.Right_Main.set_boost_pump(1);
 		load += 15.0;
 	} else {
-		setprop("systems/A-10-fuel/tank[2]/boost-pump[0]", 0);
+		A10fuel.Right_Main.set_boost_pump(0);
 	}
 	return load;
 }
@@ -537,10 +560,7 @@ var R_AC_bus = func() {
 var AC_ESSEN_bus = func() {
 	load = 0.0;
 	setprop("systems/electrical/outputs/fuel-gauge-sel", AC_ESSEN_bus_volts);
-	#if((getprop("systems/bleed-air/ats-valve[0]") and (getprop("sim/model/A-10/controls/engines/engine[0]/starter-switch-position") == 1)) or (getprop("systems/bleed-air/ats-valve[1]") and (getprop("sim/model/A-10/controls/engines/engine[1]/starter-switch-position") == 1))) {
-	#	setprop("systems/electrical/outputs/engines-ignitors", AC_ESSEN_bus_volts);
-	#	load += 50.0;
-	#} else { setprop("systems/electrical/outputs/engines-ignitors", 0); }
+
 	for(var i=0; i<2; i+=1) {
 		for(var j=0; j<2; j+=1) {
 			if(getprop("controls/engines/engine["~i~"]/engines-ignitors["~j~"]")) {

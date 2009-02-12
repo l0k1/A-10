@@ -17,9 +17,6 @@ var speed_toggle_flap = func {
 	}
 }
 
-# APU lowpass filters
-var apuTempFilter = nil;
-var apuRpmFilter = nil;
 
 # A-10 dialogs
 var A10_dlg_syst_fail = gui.Dialog.new("dialog","Aircraft/A-10/Dialogs/system-failures.xml");
@@ -143,15 +140,14 @@ var init = func {
 	settimer(A10autopilot.ap_common_aileron_monitor, 0.5);
 	settimer(A10autopilot.ap_common_elevator_monitor, 0.5);
 	settimer(A10autopilot.altimeter_monitor, 0.5);
-	print("Initializing A-10 CCIP range calculator");
-	print("Initializing Nasal Fuel System");
-	apuTempFilter = aircraft.lowpass.new(35);
-	apuRpmFilter = aircraft.lowpass.new(5);
-	A10fuel.initialize();
-	#print("Initializing Nasal Hydraulic System");
-	print("Initializing Nasal Electrical System");
+	#print("Initializing A-10 CCIP range calculator");
+	print("Initializing Electrical System");
 	electrical.init_electrical();
-	print("Initializing weapons system.");
+	print("Initializing Engines");
+	A10engines.initialize();
+	print("Initializing Fuel System");
+	A10fuel.init();
+	print("Initializing Weapons System.");
 	A10weapons.initialize();
 	nav_scripts.freq_startup();
 	radardist.init();
