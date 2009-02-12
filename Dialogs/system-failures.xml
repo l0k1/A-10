@@ -86,7 +86,7 @@
 		<width>20</width>
 		<height>20</height>
 		<label>Left main fuel tank pump</label>
-		<property>/controls/fuel/tank[1]/boost-pump-serviceable[0]</property>
+		<property>/controls/fuel/tank[1]/boost-pump-serviceable</property>
 	</checkbox>
 	
 	<checkbox>
@@ -113,7 +113,7 @@
 		<width>20</width>
 		<height>20</height>
 		<label>DC pump</label>
-		<property>/controls/fuel/tank[1]/boost-pump-serviceable[1]</property>
+		<property>/controls/fuel/tank[1]/DC-boost-pump-serviceable</property>
 	</checkbox>
 
 	<group>
