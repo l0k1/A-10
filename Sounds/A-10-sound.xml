@@ -812,7 +812,7 @@
 			<mode>once</mode>
 			<path>Aircraft/A-10/Sounds/click.wav</path>
 			<condition>
-				<property>sim/model/A-10/controls/fuel/tk-gate-open</property>
+				<property>sim/model/A-10/controls/fuel/tk-gate-switch</property>
 			</condition>
 			<volume>
 				<factor>0.35</factor>
@@ -824,7 +824,7 @@
 			<path>Aircraft/A-10/Sounds/click.wav</path>
 			<condition>
 				<not>
-					<property>sim/model/A-10/controls/fuel/tk-gate-open</property>
+					<property>sim/model/A-10/controls/fuel/tk-gate-switch</property>
 				</not>
 			</condition>
 			<volume>
@@ -957,8 +957,8 @@
 			</volume>
 		</boost-pumps-main-r-off>
 		
-		<fill-valve-wing-l-on>
-			<name>fill-valve-wing-l-on</name>
+		<fill-dis-wing-l-on>
+			<name>fill-dis-wing-l-on</name>
 			<mode>once</mode>
 			<path>Aircraft/A-10/Sounds/click2.wav</path>
 			<condition>
@@ -967,9 +967,9 @@
 			<volume>
 				<factor>0.35</factor>
 			</volume>
-		</fill-valve-wing-l-on>
-		<fill-valve-wing-l-off>
-			<name>fill-valve-wing-l-off</name>
+		</fill-dis-wing-l-on>
+		<fill-dis-wing-l-off>
+			<name>fill-dis-wing-l-off</name>
 			<mode>once</mode>
 			<path>Aircraft/A-10/Sounds/click2.wav</path>
 			<condition>
@@ -980,10 +980,10 @@
 			<volume>
 				<factor>0.35</factor>
 			</volume>
-		</fill-valve-wing-l-off>
+		</fill-dis-wing-l-off>
 		
-		<fill-valve-wing-r-on>
-			<name>fill-valve-wing-r-on</name>
+		<fill-dis-wing-r-on>
+			<name>fill-dis-wing-r-on</name>
 			<mode>once</mode>
 			<path>Aircraft/A-10/Sounds/click2.wav</path>
 			<condition>
@@ -992,9 +992,9 @@
 			<volume>
 				<factor>0.35</factor>
 			</volume>
-		</fill-valve-wing-r-on>
-		<fill-valve-wing-r-off>
-			<name>fill-valve-wing-r-off</name>
+		</fill-dis-wing-r-on>
+		<fill-dis-wing-r-off>
+			<name>fill-dis-wing-r-off</name>
 			<mode>once</mode>
 			<path>Aircraft/A-10/Sounds/click2.wav</path>
 			<condition>
@@ -1005,10 +1005,10 @@
 			<volume>
 				<factor>0.35</factor>
 			</volume>
-		</fill-valve-wing-r-off>
+		</fill-dis-wing-r-off>
 		
-		<fill-valve-main-l-on>
-			<name>fill-valve-main-l-on</name>
+		<fill-dis-main-l-on>
+			<name>fill-dis-main-l-on</name>
 			<mode>once</mode>
 			<path>Aircraft/A-10/Sounds/click2.wav</path>
 			<condition>
@@ -1017,9 +1017,9 @@
 			<volume>
 				<factor>0.35</factor>
 			</volume>
-		</fill-valve-main-l-on>
-		<fill-valve-main-l-off>
-			<name>fill-valve-main-l-off</name>
+		</fill-dis-main-l-on>
+		<fill-dis-main-l-off>
+			<name>fill-dis-main-l-off</name>
 			<mode>once</mode>
 			<path>Aircraft/A-10/Sounds/click2.wav</path>
 			<condition>
@@ -1030,10 +1030,10 @@
 			<volume>
 				<factor>0.35</factor>
 			</volume>
-		</fill-valve-main-l-off>
+		</fill-dis-main-l-off>
 		
-		<fill-valve-main-r-on>
-			<name>fill-valve-main-r-on</name>
+		<fill-dis-main-r-on>
+			<name>fill-dis-main-r-on</name>
 			<mode>once</mode>
 			<path>Aircraft/A-10/Sounds/click2.wav</path>
 			<condition>
@@ -1042,9 +1042,9 @@
 			<volume>
 				<factor>0.35</factor>
 			</volume>
-		</fill-valve-main-r-on>
-		<fill-valve-main-r-off>
-			<name>fill-valve-main-r-off</name>
+		</fill-dis-main-r-on>
+		<fill-dis-main-r-off>
+			<name>fill-dis-main-r-off</name>
 			<mode>once</mode>
 			<path>Aircraft/A-10/Sounds/click2.wav</path>
 			<condition>
@@ -1055,7 +1055,7 @@
 			<volume>
 				<factor>0.35</factor>
 			</volume>
-		</fill-valve-main-r-off>
+		</fill-dis-main-r-off>
 
 		<!-- A-10-nav-selector -->
 		<nav-selector-tacan-on>
@@ -1510,7 +1510,7 @@
 		<mode>once</mode>
 		<path>Aircraft/A-10/Sounds/click.wav</path>
 		<condition>
-			<property>controls/electric/APU-generator</property>
+			<property>controls/APU/generator</property>
 		</condition>
 		<volume>
 			<factor>0.45</factor>
@@ -1522,7 +1522,7 @@
 		<path>Aircraft/A-10/Sounds/click.wav</path>
 		<condition>
 			<not>
-				<property>controls/electric/APU-generator</property>
+				<property>controls/APU/generator</property>
 			</not>
 		</condition>
 		<volume>
