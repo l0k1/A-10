@@ -1,9 +1,9 @@
 AC3Db
 MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.2 0.2 0.2  shi 128  trans 0
 MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
-MATERIAL "ac3dmat12" rgb 0.266667 0.266667 0.266667  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
-MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.5 0.5 0.5  shi 10  trans 0
 MATERIAL "ac3dmat0" rgb 0 0 0  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.5 0.5 0.5  shi 10  trans 0
+MATERIAL "ac3dmat12" rgb 0.266667 0.266667 0.266667  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
 OBJECT world
 kids 13
 OBJECT poly
@@ -121,7 +121,7 @@ kids 0
 OBJECT poly
 name "drum-1"
 loc -0.0159829 0.0183449 -0.00920439
-texture "A-10-altimeter-gauge.rgb"
+texture "altimeter-gauge.png"
 crease 45.000000
 numvert 4
 0.0166414 0.00779338 6.61733e-05
@@ -140,7 +140,7 @@ kids 0
 OBJECT poly
 name "drum-2"
 loc -0.0159829 0.0183449 -0.00478841
-texture "A-10-altimeter-gauge.rgb"
+texture "altimeter-gauge.png"
 crease 45.000000
 numvert 4
 0.0167313 -0.0124678 -0.00405708
@@ -159,7 +159,7 @@ kids 0
 OBJECT poly
 name "drum-3"
 loc -0.0159829 0.0183449 -0.000256396
-texture "A-10-altimeter-gauge.rgb"
+texture "altimeter-gauge.png"
 crease 45.000000
 numvert 4
 0.0166414 0.00779338 0.00316225
@@ -178,7 +178,7 @@ kids 0
 OBJECT poly
 name "drum-4"
 loc -0.0159829 0.0183449 0.0040796
-texture "A-10-altimeter-gauge.rgb"
+texture "altimeter-gauge.png"
 crease 45.000000
 numvert 4
 0.0167313 -0.0124678 -0.00104091
@@ -197,7 +197,7 @@ kids 0
 OBJECT poly
 name "drum-5"
 loc -0.0159829 0.0183449 0.00843059
-texture "A-10-altimeter-gauge.rgb"
+texture "altimeter-gauge.png"
 crease 45.000000
 numvert 4
 0.0166414 0.00779338 0.00606387
@@ -258,13 +258,13 @@ numvert 4
 0 0.0222385 0.00340958
 numsurf 2
 SURF 0x0
-mat 4
+mat 2
 refs 3
 2 1 0.00458717
 1 0.280001 0
 0 0.840002 0.087156
 SURF 0x0
-mat 4
+mat 2
 refs 3
 3 0.320001 0.0733945
 0 0.840002 0.087156
@@ -315,13 +315,13 @@ numvert 4
 0 0.0290114 -0.00344618
 numsurf 2
 SURF 0x0
-mat 4
+mat 2
 refs 3
 0 0.320001 0.0733945
 1 0.840002 0.087156
 2 0.280001 0
 SURF 0x0
-mat 4
+mat 2
 refs 3
 3 1 0.00458717
 2 0.280001 0
@@ -347,72 +347,72 @@ numvert 13
 0.00353241 -0.0147884 -0.00927603
 numsurf 11
 SURF 0x10
-mat 2
+mat 4
 refs 4
 1 0.833333 1
 7 0.833333 0
 6 1 0
 0 1 1
 SURF 0x10
-mat 2
+mat 4
 refs 4
 2 0.666667 1
 8 0.666667 0
 7 0.833333 0
 1 0.833333 1
 SURF 0x10
-mat 2
+mat 4
 refs 4
 3 0.5 1
 9 0.5 0
 8 0.666667 0
 2 0.666667 1
 SURF 0x10
-mat 2
+mat 4
 refs 4
 5 0.166667 1
 11 0.166667 0
 10 0.333333 0
 4 0.333333 1
 SURF 0x10
-mat 2
+mat 4
 refs 4
 0 0 1
 6 0 0
 11 0.166667 0
 5 0.166667 1
 SURF 0x0
-mat 2
+mat 4
 refs 3
 12 0 0
 1 0 0
 0 0 0
 SURF 0x0
-mat 2
+mat 4
 refs 3
 12 0 0
 2 0 0
 1 0 0
 SURF 0x0
-mat 2
+mat 4
 refs 3
 12 0 0
 3 0 0
 2 0 0
 SURF 0x0
-mat 2
+mat 4
 refs 3
 12 0 0
 4 0 0
 3 0 0
 SURF 0x0
-mat 2
+mat 4
 refs 3
 12 0 0
 5 0 0
 4 0 0
 SURF 0x0
-mat 2
+mat 4
 refs 3
 12 0 0
 0 0 0

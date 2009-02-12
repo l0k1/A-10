@@ -67,6 +67,19 @@
 		<object-name>FCanopyGlass</object-name>
 		<object-name>BCanopyGlass</object-name>
 	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>FCanopyGlass</object-name>
+		<object-name>BCanopyGlass</object-name>
+		<condition>
+			<not>
+				<equals>
+					<property>sim/current-view/name</property>
+					<value>Cockpit View</value>
+				</equals>
+			</not>
+		</condition>
+	</animation>
 
 	<model>
 		<path>Aircraft/A-10/Models/pilot.xml</path>
@@ -315,28 +328,7 @@
 		</top-left>
 	</panel>
 
-	<!--electrical power control panel -->
-	<panel>
-		<name>Panel-r4</name>
-		<path>Aircraft/A-10/Models/A-10-panel-r4-hotspot.xml</path>
-		<bottom-left>
-			<x-m>2.6809</x-m>
-			<y-m>0.4348</y-m>
-			<z-m>0.7148</z-m>
-		</bottom-left>
-		<bottom-right>
-			<x-m>2.6809</x-m>
-			<y-m>0.5806</y-m>
-			<z-m>0.7497</z-m>
-		</bottom-right>
-		<top-left>
-			<x-m>2.5073</x-m>
-			<y-m>0.4348</y-m>
-			<z-m>0.8181</z-m>
-		</top-left>
-	</panel>
-
- 	<!-- cockpit switch -->
+	<!-- cockpit switch -->
 	<panel>
 		<name>Panel-r5</name>
 		<path>Aircraft/A-10/Models/A-10-panel-r5-hotspot.xml</path>
@@ -414,7 +406,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-alti.xml</path>
+		<path>Aircraft/A-10/Models/altimeter.xml</path>
 		<offsets>
 			<x-m>2.4015</x-m>
 			<y-m>0.1145</y-m>
@@ -678,11 +670,11 @@
 
 <!-- left panel -->
 	<model>
-		<path>Aircraft/A-10/Models/A-10-stdby-adi.xml</path>
+		<path>Aircraft/A-10/Models/stdby-adi.xml</path>
 		<offsets>
-			<x-m>2.3970</x-m>
-			<y-m>-0.1857</y-m>
-			<z-m>1.1895</z-m>
+			<x-m>2.3930</x-m>
+			<y-m>-0.1917</y-m>
+			<z-m>1.1925</z-m>
 			<pitch-deg>-5</pitch-deg>
 		</offsets>
 	</model>
@@ -691,8 +683,8 @@
 		<path>Aircraft/A-10/Models/A-10-master-caution.xml</path>
 		<offsets>
 			<x-m>2.3970</x-m>
-			<y-m>-0.1857</y-m>
-			<z-m>1.2295</z-m>
+			<y-m>-0.1917</y-m>
+			<z-m>1.2395</z-m>
 			<pitch-deg>-5</pitch-deg>
 		</offsets>
 	</model>
@@ -701,7 +693,7 @@
 		<path>Aircraft/A-10/Models/A-10-hud-panel.xml</path>
 		<offsets>
 			<x-m>2.3969</x-m>
-			<y-m>-0.2806</y-m>
+			<y-m>-0.2846</y-m>
 			<z-m>1.1951</z-m>
 			<pitch-deg>-5</pitch-deg>
 		</offsets>
@@ -2006,7 +1998,7 @@
 	</animation>
 
 	<!-- exhausts -->
-	<animation>
+	<!--<animation>
 		<type>shader</type>
 		<nopreview/>
 		<shader>heat-haze</shader>
@@ -2130,7 +2122,8 @@
 	<animation>
 		<object-name>Exhaust3</object-name>
 		<type>noshadow</type>
-	</animation>
+	</animation> -->
+
 	<!-- lighting -->
 	<!-- strobe tail -->
 	<animation>
