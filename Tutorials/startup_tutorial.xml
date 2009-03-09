@@ -234,7 +234,10 @@
 		</marker>
 		<exit>
 			<condition>
-				<property>controls/electric/APU-generator</property>
+				<greater-than>
+					<property>systems/electrical/APU-gen-volts</property>
+					<value>23</value>
+				</greater-than>
 			</condition>
 		</exit>
 	</step>
