@@ -1,14 +1,14 @@
 AC3Db
-MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.2 0.2 0.2  shi 128  trans 0
-MATERIAL "ac3dmat14" rgb 0.8 0.8 0.8  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.2 0.2 0.2  shi 128  trans 0
-MATERIAL "ac3dmat14" rgb 0.122 0.122 0.122  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.31 0.31 0.314  shi 57  trans 0
-MATERIAL "ac3dmat7" rgb 0.616 0.51 0.404  amb 0.651 0.557 0.349  emis 0 0 0  spec 0 0 0  shi 0  trans 0
-MATERIAL "ac3dmat12" rgb 0.267 0.267 0.267  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 0  trans 0
-MATERIAL "ac3dmat3" rgb 0.831 0.114 0.141  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 128  trans 0
-MATERIAL "ac3dmat12" rgb 0.192 0.192 0.192  amb 0.522 0.522 0.522  emis 0 0 0  spec 0.141 0.141 0.137  shi 29  trans 0
-MATERIAL "ac3dmat0" rgb 0 0 0  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.537 0.537 0.533  shi 47  trans 0
-MATERIAL "ac3dmat0" rgb 0 0 0  amb 0.2 0.2 0.2  emis 0 0 0  spec 1 1 1  shi 8  trans 0
-MATERIAL "ac3dmat7" rgb 0.384 0.384 0.275  amb 0.463 0.118 0.239  emis 0 0 0  spec 0.514 0.427 0.416  shi 102  trans 0
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.2 0.2 0.2  shi 128  trans 0
+MATERIAL "ac3dmat14" rgb 0.8 0.8 0.8  amb 0.8 0.8 0.8  emis 0 0 0  spec 0.2 0.2 0.2  shi 128  trans 0
+MATERIAL "ac3dmat14" rgb 0.122 0.122 0.122  amb 0.122 0.122 0.122  emis 0 0 0  spec 0.31 0.31 0.314  shi 57  trans 0
+MATERIAL "ac3dmat7" rgb 0.616 0.51 0.404  amb 0.616 0.51 0.404  emis 0 0 0  spec 0 0 0  shi 0  trans 0
+MATERIAL "ac3dmat12" rgb 0.267 0.267 0.267  amb 0.267 0.267 0.267  emis 0 0 0  spec 0 0 0  shi 0  trans 0
+MATERIAL "ac3dmat3" rgb 0.831 0.114 0.141  amb 0.831 0.114 0.141  emis 0 0 0  spec 0 0 0  shi 128  trans 0
+MATERIAL "ac3dmat12" rgb 0.192 0.192 0.192  amb 0.192 0.192 0.192  emis 0 0 0  spec 0.141 0.141 0.137  shi 29  trans 0
+MATERIAL "ac3dmat0" rgb 0 0 0  amb 0 0 0  emis 0 0 0  spec 0.537 0.537 0.533  shi 47  trans 0
+MATERIAL "ac3dmat0" rgb 0 0 0  amb 0 0 0  emis 0 0 0  spec 1 1 1  shi 8  trans 0
+MATERIAL "ac3dmat7" rgb 0.384 0.384 0.275  amb 0.384 0.384 0.275  emis 0 0 0  spec 0.514 0.427 0.416  shi 102  trans 0
 OBJECT world
 kids 1
 OBJECT group
