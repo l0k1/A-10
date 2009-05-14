@@ -346,11 +346,10 @@
     <emission> 
       <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.45</red>
-        <green>0.34</green>
-        <blue>0.18</blue>
+        <green>0.22</green>
+        <blue>0.12</blue>
       </emission>
   </animation>
-
 
   <animation>
    <object-name>face</object-name>
@@ -359,141 +358,22 @@
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.50</red>
         <green>0.25</green>
-        <blue>0.18</blue>
+        <blue>0.14</blue>
       </emission>
   </animation>
 
   <animation>
-   <object-name>needle-temp-l</object-name>
+   <object-name>needles</object-name>
    <type>material</type>
     <emission> 
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.75</red>
-        <green>0.55</green>
-        <blue>0.35</blue>
+        <red>0.70</red>
+        <green>0.35</green>
+        <blue>0.15</blue>
       </emission>
   </animation>
 
-  <animation>
-   <object-name>needle-temp-r</object-name>
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.75</red>
-        <green>0.55</green>
-        <blue>0.35</blue>
-      </emission>
-  </animation>
 
-  <animation>
-   <object-name>needle-core-l</object-name>
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.75</red>
-        <green>0.55</green>
-        <blue>0.35</blue>
-      </emission>
-  </animation>
-
-  <animation>
-   <object-name>needle-core-r</object-name>
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.75</red>
-        <green>0.55</green>
-        <blue>0.35</blue>
-      </emission>
-  </animation>
-
-  <animation>
-   <object-name>needle-fan-l</object-name>
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.75</red>
-        <green>0.55</green>
-        <blue>0.35</blue>
-      </emission>
-  </animation>
-
-  <animation>
-   <object-name>needle-fan-r</object-name>
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.75</red>
-        <green>0.55</green>
-        <blue>0.35</blue>
-      </emission>
-  </animation>
-
-  <animation>
-   <object-name>needle-oil-l</object-name>
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.75</red>
-        <green>0.55</green>
-        <blue>0.35</blue>
-      </emission>
-  </animation>
-
-  <animation>
-   <object-name>needle-oil-r</object-name>
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.75</red>
-        <green>0.55</green>
-        <blue>0.35</blue>
-      </emission>
-  </animation>
-
-  <animation>
-   <object-name>needle-fuel-l</object-name>
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.75</red>
-        <green>0.55</green>
-        <blue>0.35</blue>
-      </emission>
-  </animation>
-
-  <animation>
-   <object-name>needle-fuel-r</object-name>
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.75</red>
-        <green>0.55</green>
-        <blue>0.35</blue>
-      </emission>
-  </animation>
-
-  <animation>
-   <object-name>needle-apu-rpm</object-name>
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.75</red>
-        <green>0.55</green>
-        <blue>0.35</blue>
-      </emission>
-  </animation>
-
-  <animation>
-   <object-name>needle-apu-egt</object-name>
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.75</red>
-        <green>0.55</green>
-        <blue>0.35</blue>
-      </emission>
-  </animation>
 
     <!-- *** LoD *** -->
     <animation> 
