@@ -80,10 +80,10 @@
 		<object-name>gun-ready</object-name>
 		<condition>
 			<property>sim/model/A-10/weapons/gun/ready</property>
-			<!--<greater-than>
-				<property>systems/electrical/R-AC-volts</property>
+			<greater-than>
+				<property>systems/electrical/outputs/gau-8</property>
 				<value>24</value>
-			</greater-than>-->
+			</greater-than>
 		</condition>
 	</animation>
 
