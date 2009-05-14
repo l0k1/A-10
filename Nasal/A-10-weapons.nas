@@ -1,21 +1,23 @@
-var a10weapons = props.globals.getNode("sim/model/A-10/weapons");
-var arm_sw = props.globals.getNode("sim/model/A-10/weapons/master-arm-switch");
-var aim9_knob = props.globals.getNode("sim/model/A-10/weapons/dual-AIM-9/aim9-knob");
-var gun_running = props.globals.getNode("sim/model/A-10/weapons/gun/running[0]");
-var gr_switch = props.globals.getNode("sim/model/A-10/weapons/gun-rate-switch");
-var gun_count = props.globals.getNode("ai/submodels/submodel[1]/count");
-var lastGunCount = 0;
+var a10weapons    = props.globals.getNode("sim/model/A-10/weapons");
+var arm_sw        = props.globals.getNode("sim/model/A-10/weapons/master-arm-switch");
+var aim9_knob     = props.globals.getNode("sim/model/A-10/weapons/dual-AIM-9/aim9-knob");
+var gun_running   = props.globals.getNode("sim/model/A-10/weapons/gun/running[0]");
+var gr_switch     = props.globals.getNode("sim/model/A-10/weapons/gun-rate-switch");
+var gun_count     = props.globals.getNode("ai/submodels/submodel[1]/count");
+var GunReady      = props.globals.getNode("sim/model/A-10/weapons/gun/ready");
+var GunHydrDriveL = props.globals.getNode("sim/model/A-10/weapons/gun/hydr-drive-serviceable[0]");
+var GunHydrDriveR = props.globals.getNode("sim/model/A-10/weapons/gun/hydr-drive-serviceable[1]");
+var HydrPsiL      = props.globals.getNode("systems/A-10-hydraulics/hyd-psi[0]");
+var HydrPsiR      = props.globals.getNode("systems/A-10-hydraulics/hyd-psi[1]");
+var z_pov         = props.globals.getNode("sim/current-view/z-offset-m");
 
-# gun: vibrations visual effect
-# ----------------------------------------
-var z_pov = props.globals.getNode("sim/current-view/z-offset-m");
+var lastGunCount = 0;
 var z_povhold = 0;
 
-# Weapons init function
+# Init
 var initialize = func() {
-	# generic canon trigger linked to fire_gau8a()
-	setlistener("controls/armament/trigger", func(trig) {
-		if(trig.getBoolValue()) {
+	setlistener("controls/armament/trigger", func( Trig ) {
+		if ( Trig.getBoolValue()) {
 			A10weapons.fire_gau8a();
 		} else {
 			A10weapons.cfire_gau8a(); }
@@ -27,7 +29,7 @@ var initialize = func() {
 var fire_gau8a = func {
 	var gunRun = gun_running.getValue();
 	var gready = update_gun_ready();
-	if(gready and !gunRun) {
+	if (gready and !gunRun) {
 		gun_running.setBoolValue(1);
 		gunRun = 1;
 		gau8a_vibs(0.002, z_pov.getValue());
@@ -35,14 +37,14 @@ var fire_gau8a = func {
 		gun_running.setBoolValue(0);
 		return;
 	}
-	if(gunRun) {
+	if (gunRun) {
 		# update gun count and yasim weight
 		var realGunCount = gun_count.getValue();
 		# init lastGunCount
 		if((lastGunCount == 0) and (realGunCount > 0)) { lastGunCount = realGunCount + 1; }
 		realGunCount -= (lastGunCount - realGunCount) * 7;
-		if(realGunCount < 0) { realGunCount = 0; }
-		gun_count.setIntValue(realGunCount);
+		if(realGunCount < 0) { realGunCount = 0 }
+		gun_count.setValue(realGunCount);
 		setprop("yasim/weights/ammunition-weight-lbs", (realGunCount*0.9369635));
 		# for the next loop
 		lastGunCount = realGunCount;
@@ -55,8 +57,8 @@ var cfire_gau8a = func {
 }
 
 var gau8a_vibs = func(v, zpov) {
-	if(getprop("sim/current-view/view-number") == 0) {
-		if(gun_running.getBoolValue()) {
+	if (getprop("sim/current-view/view-number") == 0) {
+		if (gun_running.getBoolValue()) {
 			var newZpos = v+zpov;
 			z_pov.setValue(newZpos);
 			settimer( func { gau8a_vibs(-v, zpov) }, 0.02);
@@ -65,16 +67,19 @@ var gau8a_vibs = func(v, zpov) {
 }
 
 var update_gun_ready = func() {
-	# update light panel "GUN READY" and return true if the gun is ready.
-	var gunIsReady = 0;
+	var ready = 0;
 	# TODO: electrical bus should be DC ARM BUS
-	if(gr_switch.getValue() and (arm_sw.getValue() == 1) and (gun_count.getValue() > 0)) {
-		if((electrical.R_DC_bus_volts >= 24) and (((getprop("sim/model/A-10/weapons/gun/hydr-drive-serviceable[0]") == 1) and (getprop("systems/A-10-hydraulics/hyd-psi[0]") > 900)) or ((getprop("sim/model/A-10/weapons/gun/hydr-drive-serviceable[1]") == 1) and (getprop("systems/A-10-hydraulics/hyd-psi[1]") > 900)))) {
-			gunIsReady= 1;
+	if (gr_switch.getValue() and arm_sw.getValue() == 1 and gun_count.getValue() > 0) {
+		var drive_l = GunHydrDriveL.getValue();
+		var drive_r = GunHydrDriveR.getValue();
+		var psi_l   = HydrPsiL.getValue();
+		var psi_r   = HydrPsiR.getValue();
+		if (electrical.R_DC_bus_volts >= 24 and ((drive_l == 1 and psi_l > 900) or (drive_r == 1 and psi_r > 900))) {
+			ready = 1;
 		}
 	}
-	props.globals.getNode("sim/model/A-10/weapons/gun/ready").setBoolValue(gunIsReady);
-	return gunIsReady;
+	GunReady.setBoolValue(ready);
+	return ready;
 }
 
 # station selection
@@ -85,11 +90,11 @@ var update_gun_ready = func() {
 # Activates the search sound flag for AIM-9s (wich will be played only if the AIM-9
 # knob is on the correct position). Ask for deactivation of the search sound flag
 # in case of station deselection.
-var stations = props.globals.getNode("sim/model/A-10/weapons/stations");
+var stations      = props.globals.getNode("sim/model/A-10/weapons/stations");
 var stations_list = stations.getChildren("station");
-var weights = props.globals.getNode("sim").getChildren("weight");
-var aim9_knob = a10weapons.getNode("dual-AIM-9/aim9-knob");
-var aim9_sound = a10weapons.getNode("dual-AIM-9/search-sound");
+var weights       = props.globals.getNode("sim").getChildren("weight");
+var aim9_knob     = a10weapons.getNode("dual-AIM-9/aim9-knob");
+var aim9_sound    = a10weapons.getNode("dual-AIM-9/search-sound");
 var cdesc = "";
 
 var select_station = func {

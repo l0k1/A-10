@@ -478,6 +478,7 @@ var R_DC_bus = func() {
     setprop("systems/electrical/outputs/vhf-comm", R_DC_bus_volts);
     setprop("systems/electrical/outputs/vhf-fm", R_DC_bus_volts);
     setprop("systems/electrical/outputs/ils", R_DC_bus_volts);
+    setprop("systems/electrical/outputs/gau-8", R_DC_bus_volts);
     return load;
 }
 
