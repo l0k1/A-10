@@ -65,8 +65,8 @@ properties' values.
     <emission> 
       <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.45</red>
-        <green>0.34</green>
-        <blue>0.18</blue>
+        <green>0.20</green>
+        <blue>0.10</blue>
       </emission>
   </animation>
  
@@ -86,8 +86,8 @@ properties' values.
     <emission> 
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
         <red>0.75</red>
-        <green>0.55</green>
-        <blue>0.35</blue>
+        <green>0.30</green>
+        <blue>0.14</blue>
       </emission>
   </animation>
 

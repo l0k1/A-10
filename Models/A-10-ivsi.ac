@@ -8,7 +8,7 @@ kids 3
 OBJECT poly
 name "face"
 loc 0.0261587 -1.70991 0.000128838
-texture "ivsi-6kfpm.rgb"
+texture "ivsi-6kfpm.png"
 crease 61.000000
 numvert 17
 -0.0253338 1.70989 0.000104324
