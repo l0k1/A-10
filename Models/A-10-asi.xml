@@ -31,7 +31,7 @@
  </animation>
  <animation>
   <type>rotate</type>
-  <object-name>drum-1</object-name>
+  <object-name>drum</object-name>
   <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
   <factor>3.6</factor>
   <center>
@@ -69,7 +69,7 @@
   </animation>
 
   <animation>
-   <object-name>drum-1</object-name>
+   <object-name>drum</object-name>
    <type>material</type>
      <emission> 
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
@@ -80,13 +80,13 @@
   </animation>
 
   <animation>
-   <object-name>needle-w</object-name>
+   <object-name>needle</object-name>
    <type>material</type>
     <emission> 
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.75</red>
-        <green>0.55</green>
-        <blue>0.35</blue>
+        <red>0.625</red>
+        <green>0.312</green>
+        <blue>0.225</blue>
       </emission>
   </animation>
 

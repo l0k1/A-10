@@ -85,9 +85,9 @@ properties' values.
    <type>material</type>
     <emission> 
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.75</red>
-        <green>0.30</green>
-        <blue>0.14</blue>
+        <red>0.625</red>
+        <green>0.312</green>
+        <blue>0.225</blue>
       </emission>
   </animation>
 
