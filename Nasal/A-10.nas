@@ -113,7 +113,6 @@ var main_loop = func {
 	nav_scripts.tacan_offset_apply();
 	nav_scripts.compas_card_dev_indicator();
 	g_min_max();
-	radar2.watch_aimp_models();
 	if ((cnt == 3 ) or (cnt == 6 )) {
 		audio_alt_warning();
 		electrical.update_electrical();
@@ -150,8 +149,6 @@ var init = func {
 	print("Initializing Weapons System.");
 	A10weapons.initialize();
 	nav_scripts.freq_startup();
-	radardist.init();
-	radar2.init();
 	settimer(func {canopy.cockpit_state()}, 3);
 	aircraft.data.save();
 	settimer(main_loop, 0.5);
@@ -172,3 +169,7 @@ aircraft.light.new("sim/model/A-10/lighting/nav-lights", [0.62, 0.62], nav_light
 var warn_medium_lights_switch = props.globals.getNode("sim/model/A-10/controls/lighting/warn-medium-lights-switch", 1);
 aircraft.light.new("sim/model/A-10/lighting/warn-medium-lights", [0.40, 0.30], warn_medium_lights_switch);
 
+# warning lights low speed
+var warn_slow_lights_switch = props.globals.getNode("sim/model/A-10/controls/lighting/warn-slow-lights-switch", 1);
+aircraft.light.new("sim/model/A-10/lighting/warn-slow-lights", [0.12, 1.5], warn_slow_lights_switch);
+warn_slow_lights_switch.setBoolValue(1);
