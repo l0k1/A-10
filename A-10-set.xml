@@ -817,8 +817,12 @@ Fairchild A-10 simulation config.
 		</tacan>
 		<radar>
 			<enabled type="bool">false</enabled>			
-			<range type="double">120</range>
+			<range type="double">150</range>
 		</radar>
+		<rwr>
+			<display-lighting-intens type="double">0.4</display-lighting-intens>
+			<symbology-lighting-intens type="double">1</symbology-lighting-intens>
+		</rwr>
 		<nav n="2">
 			<radials>
 				<selected-deg type="double">029.0</selected-deg>
@@ -835,9 +839,6 @@ Fairchild A-10 simulation config.
 			</to-from>
 			<slaved-to-gps type="bool">false</slaved-to-gps>
 		</nav>
-		<rwr>
-			<display-lighting-intens type="double">0.5</display-lighting-intens>
-		</rwr>
 	</instrumentation>
 
 	<controls>
@@ -1126,12 +1127,12 @@ Fairchild A-10 simulation config.
 		<A10autopilot>
 			<file>Aircraft/A-10/Nasal/autopilot.nas</file>
 		</A10autopilot>
+		<rwr>
+			<file>Aircraft/Instruments-3d/rwr/rwr.nas</file>
+		</rwr>
 		<radardist>
 			<file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
 		</radardist>
-		<radar2>
-			<file>Aircraft/Instruments-3d/radar2/radar2.nas</file>
-		</radar2>
 	</nasal>
 
 </PropertyList>
