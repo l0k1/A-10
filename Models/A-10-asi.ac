@@ -1,10 +1,14 @@
 AC3Db
 MATERIAL "white" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0 0 0  shi 0  trans 0
 OBJECT world
+kids 1
+OBJECT group
+name "asi"
+loc -0.000159988 0.00981617 0.000115264
 kids 5
 OBJECT poly
 name "mount"
-loc 0.00859401 0.00170893 -3.27565e-05
+loc 0.008754 -0.00810724 -0.000148021
 texture "A-10-asi-mount.png"
 crease 45.000000
 numvert 44
@@ -296,7 +300,7 @@ refs 4
 kids 0
 OBJECT poly
 name "drum"
-loc -0.0155265 0.0203007 0.000139397
+loc -0.0153665 0.0104845 2.41327e-05
 texture "A-10-asi.png"
 crease 45.000000
 numvert 20
@@ -394,7 +398,7 @@ refs 4
 kids 0
 OBJECT poly
 name "bkg"
-loc -0.00193249 0.00143633 0.000448786
+loc -0.0017725 -0.00837984 0.000333522
 texture "A-10-asi.png"
 crease 45.000000
 numvert 4
@@ -413,7 +417,7 @@ refs 4
 kids 0
 OBJECT poly
 name "needle"
-loc 0.0042859 0.0245075 2.73507e-05
+loc 0.00444589 0.0146913 -8.79136e-05
 texture "A-10-asi.png"
 crease 61.000000
 numvert 5
@@ -444,7 +448,7 @@ refs 3
 kids 0
 OBJECT poly
 name "face"
-loc 0.00377914 0.00112741 -6.45593e-06
+loc 0.00393913 -0.00868876 -0.00012172
 texture "A-10-asi.png"
 crease 180.000000
 numvert 21
