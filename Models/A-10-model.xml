@@ -399,9 +399,9 @@
 	<model>
 		<path>Aircraft/A-10/Models/A-10-vsi-6kfpm.xml</path>
 		<offsets>
-			<x-m>2.4030</x-m>
-			<y-m>0.1165</y-m>
-			<z-m>1.2130</z-m>
+			<x-m>2.4010</x-m>
+			<y-m>0.1150</y-m>
+			<z-m>1.2175</z-m>
 		</offsets>
 	</model>
 

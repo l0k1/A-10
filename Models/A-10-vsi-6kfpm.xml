@@ -1,100 +1,66 @@
 <?xml version="1.0"?>
 
-<!--
-IVSI (Instantaneous Vertical Speed Indicator),
-David Culp, 16 Feb 2003, davidculp2@attbi.com,
-based on the:
-
-6K foot per minute Vertical velocity indicator instrument.
-
-December 2001
-John Check j4strngs@rockfish.net
-
-This is an instrument configuration file for the open-source flight
-simulator FlightGear (www.flightgear.org).  The file is an XML-encoded
-FlightGear property list defining the instrument's layers and actions.
-
-Each instrument is composed of layers stacked on top of each other.
-A layer may be a texture (with transparent parts to show the layers
-underneath), text, or a special layer that switches between two
-others (say, to turn an indicator light on or off).  Each layer can
-move independently in proportion to a property value, and text
-can be generated from property values as well: all of the layer's
-movements are defined as transformations.
-
-Actions are hotspots on the instrument that will respond to a mouse
-click.  Actions always modify the values of properties, either by
-adjusting them, toggling them, or swaping them with other
-properties' values.
--->
 
 <PropertyList>
-<path>A-10-ivsi.ac</path>
+	<path>A-10-ivsi.ac</path>
 
+	<animation>
+		<type>rotate</type>
+		<object-name>needle</object-name>
+		<property>instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+		<interpolation>
+			<entry><ind>-6000.0</ind><dep>-255.0</dep></entry>
+			<entry><ind>-4000.0</ind><dep>-214.8</dep></entry>
+			<entry><ind>-2000.0</ind><dep>-170.0</dep></entry>
+			<entry><ind>-1000.0</ind><dep>-135.0</dep></entry>
+			<entry><ind>-500.0</ind><dep>-112.4</dep></entry>
+			<entry><ind>0.0</ind><dep>-90.0</dep></entry>
+			<entry><ind>500.0</ind><dep>-67.6</dep></entry>
+			<entry><ind>1000.0</ind><dep>-45.0</dep></entry>
+			<entry><ind>2000.0</ind><dep>-10.0</dep></entry>
+			<entry><ind>4000.0</ind><dep>34.8</dep></entry>
+			<entry><ind>6000.0</ind><dep>75.0</dep></entry>
+		</interpolation>
+		<axis><x>-1</x></axis>
+	</animation>
 
-<!-- fix misc.rgb -->
-<animation>
- <type>rotate</type>
- <object-name>needle</object-name>
- <property>instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
- <interpolation>
-	 <entry><ind>-6000.0</ind><dep>-255.0</dep></entry>
-	 <entry><ind>-4000.0</ind><dep>-214.8</dep></entry>
-	 <entry><ind>-2000.0</ind><dep>-170.0</dep></entry>
-	 <entry><ind>-1000.0</ind><dep>-135.0</dep></entry>
-	 <entry><ind>-500.0</ind><dep>-112.4</dep></entry>
-	 <entry><ind>0.0</ind><dep>-90.0</dep></entry>
-	 <entry><ind>500.0</ind><dep>-67.6</dep></entry>
-	 <entry><ind>1000.0</ind><dep>-45.0</dep></entry>
-	 <entry><ind>2000.0</ind><dep>-10.0</dep></entry>
-	 <entry><ind>4000.0</ind><dep>34.8</dep></entry>
-	 <entry><ind>6000.0</ind><dep>75.0</dep></entry>
-  </interpolation>
-  <axis>
-   <x>-1</x>
-   <y>0</y>
-   <z>0</z>
-  </axis>
- </animation>
+	<!-- lighting -->
+	<animation> 
+		<object-name>mount</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.55</red>
+			<green>0.24</green>
+			<blue>0.10</blue>
+		</emission>
+	</animation>
+ 	<animation>
+		<object-name>face</object-name> 
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.55</red>
+			<green>0.24</green>
+			<blue>0.10</blue>
+		</emission>
+	</animation>
+	<animation>
+		<object-name>needle-w</object-name> 
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.55</red>
+			<green>0.24</green>
+			<blue>0.10</blue>
+		</emission>
+	</animation>
 
-<!-- lighting -->
-
-  <animation> 
-   <object-name>mount</object-name>
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/panel-norm</factor-prop>
-        <red>0.45</red>
-        <green>0.20</green>
-        <blue>0.10</blue>
-      </emission>
-  </animation>
- 
-  <animation>
-   <object-name>face</object-name> 
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.50</red>
-        <green>0.25</green>
-        <blue>0.18</blue>
-      </emission>
-  </animation>
-  <animation>
-   <object-name>needle-w</object-name> 
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.625</red>
-        <green>0.312</green>
-        <blue>0.225</blue>
-      </emission>
-  </animation>
-
- <animation>
-  <type>range</type>
-  <min-m>0</min-m>
-  <max-m>5</max-m>
- </animation>
+	<!-- LOD -->
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
 
 </PropertyList>
