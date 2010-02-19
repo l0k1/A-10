@@ -62,7 +62,8 @@ Fairchild A-10 simulation config.
 		</view>
 		<view n="1">
 			<config>
-				<target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
+				<target-y-offset-m archive="y" type="double">1</target-y-offset-m>
+				<target-z-offset-m archive="y" type="double">3</target-z-offset-m>
 				<pitch-offset-deg>0</pitch-offset-deg>
 			</config>
 		</view>
