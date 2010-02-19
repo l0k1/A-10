@@ -51,7 +51,7 @@
         camber="0.0">
     <stall aoa="15" width="3" peak="1.3"/>
     <flap0 start="0.04" end="0.51" lift="1.3" drag="1.3"/>
-    <flap1 start="0.54" end="0.86" lift="1.3" drag="1.3"/>
+    <flap1 start="0.54" end="0.86" lift="1.6" drag="1.3"/>
     <spoiler start="0.54" end="0.86" lift="0.6" drag="10.0"/>
 
     <control-input axis="/controls/flight/flaps" control="FLAP0"/>
