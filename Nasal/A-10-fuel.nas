@@ -229,7 +229,7 @@ var update_loop = func {
 	var apu_outoffuel = 0;
 	apu_collector_tank -= APU_FuelCons.getValue() / PPG;
 	APU_FuelCons.setValue(0);
-	if ( apu_collector_tank < 0 ) {
+	if ( apu_collector_tank <= 0 ) {
 		apu_collector_tank = 0;
 		apu_outoffuel = 1;
 	}
