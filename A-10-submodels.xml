@@ -19,6 +19,9 @@
 		<buoyancy>32</buoyancy>
 		<wind>false</wind>
 		<aero-stabilised>true</aero-stabilised>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 
 	<GAU-8>
@@ -48,6 +51,9 @@
 		<impact>true</impact>
 		<impact-reports>ai/models/model-impact</impact-reports>
 		<submodel-path>Aircraft/A-10/Models/Stores/GAU-8A/gau-8a-submodels.xml</submodel-path>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</GAU-8>
 	
 	<submodel>
@@ -76,6 +82,9 @@
 		<impact alias="../../GAU-8/impact"/>
 		<impact-reports alias="../../GAU-8/impact-reports"/>
 		<submodel-path alias="../../GAU-8/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>GAU-8/A API round 2</name>
@@ -103,6 +112,9 @@
 		<impact alias="../../GAU-8/impact"/>
 		<impact-reports alias="../../GAU-8/impact-reports"/>
 		<submodel-path alias="../../GAU-8/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>GAU-8/A API round 3</name>
@@ -130,6 +142,9 @@
 		<impact alias="../../GAU-8/impact"/>
 		<impact-reports alias="../../GAU-8/impact-reports"/>
 		<submodel-path alias="../../GAU-8/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>GAU-8/A API round 4</name>
@@ -157,6 +172,9 @@
 		<impact alias="../../GAU-8/impact"/>
 		<impact-reports alias="../../GAU-8/impact-reports"/>
 		<submodel-path alias="../../GAU-8/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>GAU-8/A API round 5</name>
@@ -184,6 +202,9 @@
 		<impact alias="../../GAU-8/impact"/>
 		<impact-reports alias="../../GAU-8/impact-reports"/>
 		<submodel-path alias="../../GAU-8/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>GAU-8/A API round 6</name>
@@ -211,6 +232,9 @@
 		<impact alias="../../GAU-8/impact"/>
 		<impact-reports alias="../../GAU-8/impact-reports"/>
 		<submodel-path alias="../../GAU-8/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>GAU-8/A API round 7</name>
@@ -238,8 +262,11 @@
 		<impact alias="../../GAU-8/impact"/>
 		<impact-reports alias="../../GAU-8/impact-reports"/>
 		<submodel-path alias="../../GAU-8/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
-	
+
 	<submodel>
 		<name>GAU-8/A nuzzle smoke</name>
 		<model>Aircraft/A-10/Models/Stores/GAU-8A/smoke-nuzzle.xml</model>
@@ -261,6 +288,9 @@
 		<eda>5</eda>
 		<weight>1</weight>
 		<no-roll>true</no-roll>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 
 	<submodel>
@@ -282,6 +312,9 @@
 		<life>25</life>
 		<buoyancy>31</buoyancy>
 		<aero-stabilised>true</aero-stabilised>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	
 	<submodel>
@@ -303,6 +336,9 @@
 		<life>25</life>
 		<buoyancy>31</buoyancy>
 		<aero-stabilised>true</aero-stabilised>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>aim-9-10-0</name>
@@ -323,6 +359,9 @@
 		<life>25</life>
 		<buoyancy>31</buoyancy>
 		<aero-stabilised>true</aero-stabilised>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>aim-9-10-1</name>
@@ -343,6 +382,9 @@
 		<life>25</life>
 		<buoyancy>31</buoyancy>
 		<aero-stabilised>true</aero-stabilised>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 
 	<LAU-68>
@@ -364,6 +406,9 @@
 		<impact>true</impact>
 		<impact-report>ai/models/model-impact</impact-report>
 		<submodel-path>Aircraft/A-10/Models/Stores/LAU-68/LAU-68-submodels.xml</submodel-path>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</LAU-68>
 
 	<submodel>
@@ -389,6 +434,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-1-1</name>
@@ -413,6 +461,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-1-2</name>
@@ -437,6 +488,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-1-3</name>
@@ -461,6 +515,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-1-4</name>
@@ -485,6 +542,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-1-5</name>
@@ -509,6 +569,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-1-6</name>
@@ -533,6 +596,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 
 	<submodel>
@@ -558,6 +624,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-2-1</name>
@@ -582,6 +651,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-2-2</name>
@@ -607,6 +679,9 @@
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
 	</submodel>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	<submodel>
 		<name>WP-2-3</name>
 		<model alias="../../LAU-68/model"/>
@@ -630,6 +705,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-2-4</name>
@@ -654,6 +732,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-2-5</name>
@@ -678,6 +759,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-2-6</name>
@@ -702,6 +786,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 
 	<submodel>
@@ -727,6 +814,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-3-1</name>
@@ -751,6 +841,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-3-2</name>
@@ -775,6 +868,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-3-3</name>
@@ -799,6 +895,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-3-4</name>
@@ -823,6 +922,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-3-5</name>
@@ -847,6 +949,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-3-6</name>
@@ -871,6 +976,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 
 	<submodel>
@@ -896,6 +1004,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-7-1</name>
@@ -920,6 +1031,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-7-2</name>
@@ -944,6 +1058,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-7-3</name>
@@ -968,6 +1085,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-7-4</name>
@@ -992,6 +1112,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-7-5</name>
@@ -1016,6 +1139,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-7-6</name>
@@ -1040,6 +1166,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 
 	<submodel>
@@ -1065,6 +1194,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-8-1</name>
@@ -1089,6 +1221,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-8-2</name>
@@ -1113,6 +1248,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-8-3</name>
@@ -1137,6 +1275,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-8-4</name>
@@ -1161,6 +1302,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-8-5</name>
@@ -1185,6 +1329,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-8-6</name>
@@ -1209,6 +1356,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 
 	<submodel>
@@ -1234,6 +1384,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-9-1</name>
@@ -1258,6 +1411,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-9-2</name>
@@ -1282,6 +1438,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-9-3</name>
@@ -1306,6 +1465,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-9-4</name>
@@ -1330,6 +1492,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-9-5</name>
@@ -1354,6 +1519,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>WP-9-6</name>
@@ -1378,6 +1546,9 @@
 		<impact alias="../../LAU-68/impact"/>
 		<impact-report alias="../../LAU-68/impact-report"/>
 		<submodel-path alias="../../LAU-68/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 
 	<MK-82-LD>
@@ -1400,6 +1571,9 @@
 		<impact>true</impact>
 		<impact-reports>ai/models/model-impact</impact-reports>
 		<submodel-path>Aircraft/A-10/Models/Stores/MK-82/MK-82-submodels.xml</submodel-path>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</MK-82-LD>
 
 	<submodel>
@@ -1426,6 +1600,9 @@
 		<impact alias="../../MK-82-LD/impact"/>
 		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>MK-82-LD-ter-2-1</name>
@@ -1451,6 +1628,9 @@
 		<impact alias="../../MK-82-LD/impact"/>
 		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>MK-82-LD-ter-2-2</name>
@@ -1476,6 +1656,9 @@
 		<impact alias="../../MK-82-LD/impact"/>
 		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>MK-82-LD-ter-3-0</name>
@@ -1501,6 +1684,9 @@
 		<impact alias="../../MK-82-LD/impact"/>
 		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>MK-82-LD-ter-3-1</name>
@@ -1526,6 +1712,9 @@
 		<impact alias="../../MK-82-LD/impact"/>
 		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>MK-82-LD-ter-3-2</name>
@@ -1551,6 +1740,9 @@
 		<impact alias="../../MK-82-LD/impact"/>
 		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>MK-82-LD-ter-7-0</name>
@@ -1576,6 +1768,9 @@
 		<impact alias="../../MK-82-LD/impact"/>
 		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>MK-82-LD-ter-7-1</name>
@@ -1601,6 +1796,9 @@
 		<impact alias="../../MK-82-LD/impact"/>
 		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>MK-82-LD-ter-7-2</name>
@@ -1626,6 +1824,9 @@
 		<impact alias="../../MK-82-LD/impact"/>
 		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>MK-82-LD-ter-8-0</name>
@@ -1651,6 +1852,9 @@
 		<impact alias="../../MK-82-LD/impact"/>
 		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>MK-82-LD-ter-8-1</name>
@@ -1676,6 +1880,9 @@
 		<impact alias="../../MK-82-LD/impact"/>
 		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>MK-82-LD-ter-8-2</name>
@@ -1701,6 +1908,9 @@
 		<impact alias="../../MK-82-LD/impact"/>
 		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 
 	<submodel>
@@ -1727,6 +1937,9 @@
 		<impact alias="../../MK-82-LD/impact"/>
 		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>MK-82-LD-single-1</name>
@@ -1752,6 +1965,9 @@
 		<impact alias="../../MK-82-LD/impact"/>
 		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>MK-82-LD-single-2</name>
@@ -1777,6 +1993,9 @@
 		<impact alias="../../MK-82-LD/impact"/>
 		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>MK-82-LD-single-3</name>
@@ -1802,6 +2021,9 @@
 		<impact alias="../../MK-82-LD/impact"/>
 		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>MK-82-LD-single-4</name>
@@ -1827,6 +2049,9 @@
 		<impact alias="../../MK-82-LD/impact"/>
 		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>MK-82-LD-single-5</name>
@@ -1852,6 +2077,9 @@
 		<impact alias="../../MK-82-LD/impact"/>
 		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>MK-82-LD-single-6</name>
@@ -1877,6 +2105,9 @@
 		<impact alias="../../MK-82-LD/impact"/>
 		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>MK-82-LD-single-7</name>
@@ -1902,6 +2133,9 @@
 		<impact alias="../../MK-82-LD/impact"/>
 		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>MK-82-LD-single-8</name>
@@ -1927,6 +2161,9 @@
 		<impact alias="../../MK-82-LD/impact"/>
 		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>MK-82-LD-single-9</name>
@@ -1952,6 +2189,9 @@
 		<impact alias="../../MK-82-LD/impact"/>
 		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 	<submodel>
 		<name>MK-82-LD-single-10</name>
@@ -1977,6 +2217,9 @@
 		<impact alias="../../MK-82-LD/impact"/>
 		<impact-reports alias="../../MK-82-LD/impact-reports"/>
 		<submodel-path alias="../../MK-82-LD/submodel-path"/>
+		<animation>
+			<enable-hot type="bool">false</enable-hot>
+		</animation>
 	</submodel>
 
 </PropertyList>

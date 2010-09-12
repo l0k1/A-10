@@ -9,7 +9,7 @@
 		<path>Aircraft/A-10/Models/ext-stores.xml</path>
 	</model>
 
-	<path>A10-004-015l2.ac</path>
+	<path>A10-004-015l3.ac</path>
 
 
 
@@ -1489,64 +1489,50 @@
 <!-- Extend/Retract -->
 <!-- Gear -->
 
+
+
 	<animation>
 		<type>rotate</type>
-		<object-name>UC-LeftMainTop</object-name>
-		<object-name>UC-LeftMainTopJackSupport</object-name>
-		<object-name>UC-LeftMainBottom</object-name>
-		<object-name>UC-LeftMainBottomShaft</object-name>
-		<object-name>UC-LeftTyre</object-name>
-		<object-name>UC-LeftAftMainLowerDamper</object-name>
-		<object-name>UC-LeftAftMainUpperDamper</object-name>
-		<object-name>UC-LeftFrontMainLowerDamper</object-name>
-		<object-name>UC-LeftFrontMainUpperDamper</object-name>
+		<object-name>UC-LeftTop</object-name>
+		<object-name>UC-LeftLower</object-name>
 		<property>gear/gear[1]/position-norm</property>
-		<interpolation>
-			<entry>
-				<ind>0.0</ind>
-				<dep>73.0</dep>
-			</entry>
-			<entry>
-				<ind>1.0</ind>
-				<dep>-10.0</dep>
-			</entry>
-		</interpolation>
-		<center>
-			<x-m>8.00</x-m>
-			<y-m>0.0</y-m>
-			<z-m>-0.25</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>-0.04</z>
-		</axis>
+		<factor>-90</factor>
+		<center><x-m>8.006</x-m><z-m>-0.3429</z-m></center>
+		<axis><y>1</y></axis>
 	</animation>
 
 	<animation>
 		<type>rotate</type>
-		<object-name>UC-LeftMainJack</object-name>
+		<object-name>UC-LeftMainJack-Bottom</object-name>
 		<property>gear/gear[1]/position-norm</property>
 		<interpolation>
-			<entry>
-				<ind>0.0</ind>
-				<dep>50.0</dep>
-			</entry>
-			<entry>
-				<ind>1.0</ind>
-				<dep>-8</dep>
-			</entry>
+			<entry><ind>0.0</ind><dep>0</dep></entry>
+			<entry><ind>0.2222</ind><dep>7</dep></entry>
+			<entry><ind>0.4444</ind><dep>13.5</dep></entry>
+			<entry><ind>0.6666</ind><dep>19</dep></entry>
+			<entry><ind>0.8888</ind><dep>22.5</dep></entry>
+			<entry><ind>1.0</ind><dep>23.5</dep></entry>
 		</interpolation>
-		<center>
-			<x-m>8.33</x-m>
-			<y-m>0.0</y-m>
-			<z-m>0.0</z-m>
+		<center><x-m>7.4109</x-m><z-m>-0.5306</z-m>
 		</center>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>-0.04</z>
-		</axis>
+		<axis><y>1</y></axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>UC-LeftMainJack-Top</object-name>
+		<property>gear/gear[1]/position-norm</property>
+		<interpolation>
+			<entry><ind>0.0</ind><dep>0</dep></entry>
+			<entry><ind>0.2222</ind><dep>13</dep></entry>
+			<entry><ind>0.4444</ind><dep>26.5</dep></entry>
+			<entry><ind>0.6666</ind><dep>41</dep></entry>
+			<entry><ind>0.8888</ind><dep>57</dep></entry>
+			<entry><ind>1.0</ind><dep>66</dep></entry>
+		</interpolation>
+		<center><x-m>8.3602</x-m><z-m>-0.4524</z-m>
+		</center>
+		<axis><y>-1</y></axis>
 	</animation>
 
 <!-- Rear Door -->
@@ -1555,166 +1541,120 @@
 		<object-name>UC-LeftWHousingDoor</object-name>
 		<property>gear/gear[1]/position-norm</property>
 		<interpolation>
-			<entry>
-				<ind>0.0</ind>
-				<dep>0.0</dep>
-			</entry>
-			<entry>
-				<ind>1.0</ind>
-				<dep>-100.0</dep>
-			</entry>
+			<entry><ind>0.0</ind><dep>0</dep></entry>
+			<entry><ind>0.2</ind><dep>23</dep></entry>
+			<entry><ind>0.4</ind><dep>43.5</dep></entry>
+			<entry><ind>0.6</ind><dep>64.5</dep></entry>
+			<entry><ind>0.8</ind><dep>86.5</dep></entry>
+			<entry><ind>1.0</ind><dep>110</dep></entry>
 		</interpolation>
-		<center>
-			<x-m>8.40</x-m>
-			<y-m>0.0</y-m>
-			<z-m>-0.35</z-m>
+		<center><x-m>8.3808</x-m><z-m>-0.5019</z-m>
 		</center>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>UC-LeftWHousingDoorJonction</object-name>
+		<property>gear/gear[1]/position-norm</property>
+		<interpolation>
+			<entry><ind>0.0</ind><dep>0</dep></entry>
+			<entry><ind>0.2</ind><dep>17.5</dep></entry>
+			<entry><ind>0.4</ind><dep>32.5</dep></entry>
+			<entry><ind>0.6</ind><dep>47.5</dep></entry>
+			<entry><ind>0.8</ind><dep>61</dep></entry>-
+			<entry><ind>1.0</ind><dep>72.5</dep></entry>-
+		</interpolation>
+		<center><x-m>7.4469</x-m><z-m>-0.3212</z-m>
+		</center>
+		<axis><y>1</y></axis>
+	</animation>
+
 
 <!-- Compression -->
 	<animation>
 		<type>translate</type>
-		<object-name>UC-LeftMainBottom</object-name>
-		<object-name>UC-LeftMainBottomShaft</object-name>
-		<object-name>UC-LeftFrontMainLowerDamper</object-name>
-		<object-name>UC-LeftAftMainLowerDamper</object-name>
-		<object-name>UC-LeftTyre</object-name>
+		<object-name>UC-LeftLower</object-name>
 		<property>gear/gear[1]/compression-norm</property>
-		<factor>0.7</factor>
-		<axis>
-			<x>0</x>
-			<y>0</y>
-			<z>1</z>
-		</axis>
+		<factor>0.40</factor>
+		<axis><x>2</x><z>0.1756</z></axis>
 	</animation>
 
 	<animation>
 		<type>rotate</type>
 		<object-name>UC-LeftFrontMainLowerDamper</object-name>
 		<property>gear/gear[1]/compression-norm</property>
-		<factor>-70</factor>
-		<center>
-			<x-m>7.66</x-m>
-			<y-m>0</y-m>
-			<z-m>-1.72</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0</z>
-		</axis>
+		<!--<factor>-117</factor>-->
+		<interpolation>
+			<entry><ind>0.0</ind><dep>0</dep></entry>
+			<entry><ind>0.2</ind><dep>18</dep></entry>
+			<entry><ind>0.4</ind><dep>28.5</dep></entry>
+			<entry><ind>0.6</ind><dep>37</dep></entry>
+			<entry><ind>0.8</ind><dep>43</dep></entry>
+			<entry><ind>1.0</ind><dep>46</dep></entry>
+		</interpolation>
+		<center><x-m>6.4101</x-m><z-m>-0.3743</z-m></center>
+		<axis><y>-1</y></axis>
 	</animation>
 
 	<animation>
 		<type>rotate</type>
 		<object-name>UC-LeftFrontMainUpperDamper</object-name>
 		<property>gear/gear[1]/compression-norm</property>
-		<factor>70</factor>
-		<center>
-			<x-m>7.66</x-m>
-			<y-m>0</y-m>
-			<z-m>-1.2</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0</z>
-		</axis>
+		<!--<factor>143</factor>-->
+		<interpolation>
+			<entry><ind>0.0</ind><dep>0</dep></entry>
+			<entry><ind>0.2</ind><dep>21</dep></entry>
+			<entry><ind>0.4</ind><dep>34</dep></entry>
+			<entry><ind>0.6</ind><dep>46.5</dep></entry>
+			<entry><ind>0.8</ind><dep>59</dep></entry>
+			<entry><ind>1.0</ind><dep>73.5</dep></entry>
+		</interpolation>
+		<center><x-m>6.9588</x-m><z-m>-0.3196</z-m></center>
+		<axis><y>1</y></axis>
 	</animation>
 
 	<animation>
 		<type>rotate</type>
 		<object-name>UC-LeftAftMainLowerDamper</object-name>
+		<object-name>UC-Left-DoorLower</object-name>
 		<property>gear/gear[1]/compression-norm</property>
-		<factor>70</factor>
-		<center>
-			<x-m>7.91</x-m>
-			<y-m>0</y-m>
-			<z-m>-1.72</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0</z>
-		</axis>
+		<!--<factor>117</factor>-->
+		<interpolation>
+			<entry><ind>0.0</ind><dep>0</dep></entry>
+			<entry><ind>0.2</ind><dep>18</dep></entry>
+			<entry><ind>0.4</ind><dep>28.5</dep></entry>
+			<entry><ind>0.6</ind><dep>37</dep></entry>
+			<entry><ind>0.8</ind><dep>43</dep></entry>
+			<entry><ind>1.0</ind><dep>46</dep></entry>
+		</interpolation>
+		<center><x-m>6.4305</x-m><z-m>-0.6071</z-m></center>
+		<axis><y>1</y></axis>
 	</animation>
 
 	<animation>
 		<type>rotate</type>
 		<object-name>UC-LeftAftMainUpperDamper</object-name>
 		<property>gear/gear[1]/compression-norm</property>
-		<factor>-70</factor>
-		<center>
-			<x-m>7.91</x-m>
-			<y-m>0</y-m>
-			<z-m>-1.2</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0</z>
-		</axis>
-	</animation>
-
-<!-- Hub -->
-	<animation>
-		<type>rotate</type>
-		<object-name>UC-LeftMainHub</object-name>
-		<property>gear/gear[1]/position-norm</property>
+		<!--<factor>-143</factor>-->
 		<interpolation>
-			<entry>
-				<ind>0.0</ind>
-				<dep>73.0</dep>
-			</entry>
-			<entry>
-				<ind>1.0</ind>
-				<dep>-10.0</dep>
-			</entry>
+			<entry><ind>0.0</ind><dep>0</dep></entry>
+			<entry><ind>0.2</ind><dep>21</dep></entry>
+			<entry><ind>0.4</ind><dep>34</dep></entry>
+			<entry><ind>0.6</ind><dep>46.5</dep></entry>
+			<entry><ind>0.8</ind><dep>59</dep></entry>
+			<entry><ind>1.0</ind><dep>73.5</dep></entry>
 		</interpolation>
-		<center>
-			<x-m>8.00</x-m>
-			<y-m>0.0</y-m>
-			<z-m>-0.25</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>-0.04</z>
-		</axis>
-	</animation>
-
-<animation>
-		<type>translate</type>
-		<object-name>UC-LeftMainHub</object-name>
-		<property>gear/gear[1]/compression-norm</property>
-		<factor>0.7</factor>
-		<axis>
-			<x>0</x>
-			<y>0</y>
-			<z>1</z>
-		</axis>
+		<center><x-m>6.9801</x-m><z-m>-0.5633</z-m></center>
+		<axis><y>-1</y></axis>
 	</animation>
 
 	<animation>
 		<type>spin</type>
-		<object-name>UC-LeftMainHub</object-name>
+		<object-name>UC-LeftTyre</object-name>
 		<property>gear/gear[1]/rollspeed-ms</property>
 		<factor>17</factor>
-		<center>
-			<x-m>7.8034</x-m>
-			<y-m>0.0</y-m>
-			<z-m>-1.7063</z-m>
-		</center>
-		<axis>
-			<x>0.0</x>
-			<y>-1.0</y>
-			<z>0.0</z>
-		</axis>
+		<center><x-m>6.4328</x-m><z-m>-0.49</z-m></center>
+		<axis><y>-1.0</y></axis>
 	</animation>
 
 
@@ -1722,64 +1662,53 @@
 <!-- Extend/Retract -->
 <!-- Gear -->
 
-<animation>
+
+
+
+
+
+	<animation>
 		<type>rotate</type>
-		<object-name>UC-RightMainTop</object-name>
-		<object-name>UC-RightMainTopJackSupport</object-name>
-		<object-name>UC-RightMainBottom</object-name>
-		<object-name>UC-RightMainBottomShaft</object-name>
-		<object-name>UC-RightTyre</object-name>
-		<object-name>UC-RightAftMainLowerDamper</object-name>
-		<object-name>UC-RightAftMainUpperDamper</object-name>
-		<object-name>UC-RightFrontMainLowerDamper</object-name>
-		<object-name>UC-RightFrontMainUpperDamper</object-name>
+		<object-name>UC-RightTop</object-name>
+		<object-name>UC-RightLower</object-name>
 		<property>gear/gear[2]/position-norm</property>
-		<interpolation>
-			<entry>
-				<ind>0.0</ind>
-				<dep>73.0</dep>
-			</entry>
-			<entry>
-				<ind>1.0</ind>
-				<dep>-10.0</dep>
-			</entry>
-		</interpolation>
-		<center>
-			<x-m>8.00</x-m>
-			<y-m>0.0</y-m>
-			<z-m>-0.25</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0.04</z>
-		</axis>
+		<factor>-90</factor>
+		<center><x-m>8.006</x-m><z-m>-0.3429</z-m></center>
+		<axis><y>1</y></axis>
 	</animation>
 
-<animation>
+	<animation>
 		<type>rotate</type>
-		<object-name>UC-RightMainJack</object-name>
+		<object-name>UC-RightMainJack-Bottom</object-name>
 		<property>gear/gear[2]/position-norm</property>
 		<interpolation>
-			<entry>
-				<ind>0.0</ind>
-				<dep>50.0</dep>
-			</entry>
-			<entry>
-				<ind>1.0</ind>
-				<dep>-8</dep>
-			</entry>
+			<entry><ind>0.0</ind><dep>0</dep></entry>
+			<entry><ind>0.2222</ind><dep>7</dep></entry>
+			<entry><ind>0.4444</ind><dep>13.5</dep></entry>
+			<entry><ind>0.6666</ind><dep>19</dep></entry>
+			<entry><ind>0.8888</ind><dep>22.5</dep></entry>
+			<entry><ind>1.0</ind><dep>23.5</dep></entry>
 		</interpolation>
-		<center>
-			<x-m>8.33</x-m>
-			<y-m>0.0</y-m>
-			<z-m>0.0</z-m>
+		<center><x-m>7.4109</x-m><z-m>-0.5306</z-m>
 		</center>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0.04</z>
-		</axis>
+		<axis><y>1</y></axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>UC-RightMainJack-Top</object-name>
+		<property>gear/gear[2]/position-norm</property>
+		<interpolation>
+			<entry><ind>0.0</ind><dep>0</dep></entry>
+			<entry><ind>0.2222</ind><dep>13</dep></entry>
+			<entry><ind>0.4444</ind><dep>26.5</dep></entry>
+			<entry><ind>0.6666</ind><dep>41</dep></entry>
+			<entry><ind>0.8888</ind><dep>57</dep></entry>
+			<entry><ind>1.0</ind><dep>66</dep></entry>
+		</interpolation>
+		<center><x-m>8.3602</x-m><z-m>-0.4524</z-m>
+		</center>
+		<axis><y>-1</y></axis>
 	</animation>
 
 <!-- Rear Door -->
@@ -1788,168 +1717,121 @@
 		<object-name>UC-RightWHousingDoor</object-name>
 		<property>gear/gear[2]/position-norm</property>
 		<interpolation>
-			<entry>
-				<ind>0.0</ind>
-				<dep>0.0</dep>
-			</entry>
-			<entry>
-				<ind>1.0</ind>
-				<dep>-100.0</dep>
-			</entry>
+			<entry><ind>0.0</ind><dep>0</dep></entry>
+			<entry><ind>0.2</ind><dep>23</dep></entry>
+			<entry><ind>0.4</ind><dep>43.5</dep></entry>
+			<entry><ind>0.6</ind><dep>64.5</dep></entry>
+			<entry><ind>0.8</ind><dep>86.5</dep></entry>
+			<entry><ind>1.0</ind><dep>110</dep></entry>
 		</interpolation>
-		<center>
-			<x-m>8.40</x-m>
-			<y-m>0.0</y-m>
-			<z-m>-0.35</z-m>
+		<center><x-m>8.3808</x-m><z-m>-0.5019</z-m>
 		</center>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>UC-RightWHousingDoorJonction</object-name>
+		<property>gear/gear[2]/position-norm</property>
+		<interpolation>
+			<entry><ind>0.0</ind><dep>0</dep></entry>
+			<entry><ind>0.2</ind><dep>17.5</dep></entry>
+			<entry><ind>0.4</ind><dep>32.5</dep></entry>
+			<entry><ind>0.6</ind><dep>47.5</dep></entry>
+			<entry><ind>0.8</ind><dep>61</dep></entry>-
+			<entry><ind>1.0</ind><dep>72.5</dep></entry>-
+		</interpolation>
+		<center><x-m>7.4469</x-m><z-m>-0.3212</z-m>
+		</center>
+		<axis><y>1</y></axis>
+	</animation>
+
 
 <!-- Compression -->
 	<animation>
 		<type>translate</type>
-		<object-name>UC-RightMainBottom</object-name>
-		<object-name>UC-RightMainBottomShaft</object-name>
-		<object-name>UC-RightFrontMainLowerDamper</object-name>
-		<object-name>UC-RightAftMainLowerDamper</object-name>
-		<object-name>UC-RightTyre</object-name>
+		<object-name>UC-RightLower</object-name>
 		<property>gear/gear[2]/compression-norm</property>
-		<factor>0.7</factor>
-		<axis>
-			<x>0</x>
-			<y>0</y>
-			<z>1</z>
-		</axis>
+		<factor>0.40</factor>
+		<axis><x>2</x><z>0.1756</z></axis>
 	</animation>
 
 	<animation>
 		<type>rotate</type>
 		<object-name>UC-RightFrontMainLowerDamper</object-name>
 		<property>gear/gear[2]/compression-norm</property>
-		<factor>-70</factor>
-		<center>
-			<x-m>7.66</x-m>
-			<y-m>0</y-m>
-			<z-m>-1.72</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0</z>
-		</axis>
+		<!--<factor>-117</factor>-->
+		<interpolation>
+			<entry><ind>0.0</ind><dep>0</dep></entry>
+			<entry><ind>0.2</ind><dep>18</dep></entry>
+			<entry><ind>0.4</ind><dep>28.5</dep></entry>
+			<entry><ind>0.6</ind><dep>37</dep></entry>
+			<entry><ind>0.8</ind><dep>43</dep></entry>
+			<entry><ind>1.0</ind><dep>46</dep></entry>
+		</interpolation>
+		<center><x-m>6.4101</x-m><z-m>-0.3743</z-m></center>
+		<axis><y>-1</y></axis>
 	</animation>
 
 	<animation>
 		<type>rotate</type>
 		<object-name>UC-RightFrontMainUpperDamper</object-name>
 		<property>gear/gear[2]/compression-norm</property>
-		<factor>70</factor>
-		<center>
-			<x-m>7.66</x-m>
-			<y-m>0</y-m>
-			<z-m>-1.2</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0</z>
-		</axis>
+		<!--<factor>143</factor>-->
+		<interpolation>
+			<entry><ind>0.0</ind><dep>0</dep></entry>
+			<entry><ind>0.2</ind><dep>21</dep></entry>
+			<entry><ind>0.4</ind><dep>34</dep></entry>
+			<entry><ind>0.6</ind><dep>46.5</dep></entry>
+			<entry><ind>0.8</ind><dep>59</dep></entry>
+			<entry><ind>1.0</ind><dep>73.5</dep></entry>
+		</interpolation>
+		<center><x-m>6.9588</x-m><z-m>-0.3196</z-m></center>
+		<axis><y>1</y></axis>
 	</animation>
 
 	<animation>
 		<type>rotate</type>
 		<object-name>UC-RightAftMainLowerDamper</object-name>
+		<object-name>UC-Right-DoorLower</object-name>
 		<property>gear/gear[2]/compression-norm</property>
-		<factor>70</factor>
-		<center>
-			<x-m>7.91</x-m>
-			<y-m>0</y-m>
-			<z-m>-1.72</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0</z>
-		</axis>
+		<!--<factor>117</factor>-->
+		<interpolation>
+			<entry><ind>0.0</ind><dep>0</dep></entry>
+			<entry><ind>0.2</ind><dep>18</dep></entry>
+			<entry><ind>0.4</ind><dep>28.5</dep></entry>
+			<entry><ind>0.6</ind><dep>37</dep></entry>
+			<entry><ind>0.8</ind><dep>43</dep></entry>
+			<entry><ind>1.0</ind><dep>46</dep></entry>
+		</interpolation>
+		<center><x-m>6.4305</x-m><z-m>-0.6071</z-m></center>
+		<axis><y>1</y></axis>
 	</animation>
 
 	<animation>
 		<type>rotate</type>
 		<object-name>UC-RightAftMainUpperDamper</object-name>
 		<property>gear/gear[2]/compression-norm</property>
-		<factor>-70</factor>
-		<center>
-			<x-m>7.91</x-m>
-			<y-m>0</y-m>
-			<z-m>-1.2</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0</z>
-		</axis>
-	</animation>
-
-<!-- Hub -->
-	<animation>
-		<type>rotate</type>
-		<object-name>UC-RightMainHub</object-name>
-		<property>gear/gear[2]/position-norm</property>
+		<!--<factor>-143</factor>-->
 		<interpolation>
-			<entry>
-				<ind>0.0</ind>
-				<dep>73.0</dep>
-			</entry>
-			<entry>
-				<ind>1.0</ind>
-				<dep>-10.0</dep>
-			</entry>
+			<entry><ind>0.0</ind><dep>0</dep></entry>
+			<entry><ind>0.2</ind><dep>21</dep></entry>
+			<entry><ind>0.4</ind><dep>34</dep></entry>
+			<entry><ind>0.6</ind><dep>46.5</dep></entry>
+			<entry><ind>0.8</ind><dep>59</dep></entry>
+			<entry><ind>1.0</ind><dep>73.5</dep></entry>
 		</interpolation>
-		<center>
-			<x-m>8.00</x-m>
-			<y-m>0.0</y-m>
-			<z-m>-0.25</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0.04</z>
-		</axis>
-	</animation>
-
-<animation>
-		<type>translate</type>
-		<object-name>UC-RightMainHub</object-name>
-		<property>gear/gear[2]/compression-norm</property>
-		<factor>0.7</factor>
-		<axis>
-			<x>0</x>
-			<y>0</y>
-			<z>1</z>
-		</axis>
+		<center><x-m>6.9801</x-m><z-m>-0.5633</z-m></center>
+		<axis><y>-1</y></axis>
 	</animation>
 
 	<animation>
 		<type>spin</type>
-		<object-name>UC-RightMainHub</object-name>
+		<object-name>UC-RightTyre</object-name>
 		<property>gear/gear[2]/rollspeed-ms</property>
 		<factor>17</factor>
-		<center>
-			<x-m>7.8034</x-m>
-			<y-m>0.0</y-m>
-			<z-m>-1.7063</z-m>
-		</center>
-		<axis>
-			<x>0.0</x>
-			<y>-1.0</y>
-			<z>0.0</z>
-		</axis>
+		<center><x-m>6.4328</x-m><z-m>-0.49</z-m></center>
+		<axis><y>-1.0</y></axis>
 	</animation>
-
 
 <!-- Egine fans spin -->
 	<animation>
