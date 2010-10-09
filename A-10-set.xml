@@ -62,7 +62,6 @@ Fairchild A-10 simulation config.
 		</view>
 		<view n="1">
 			<config>
-				<target-y-offset-m archive="y" type="double">1</target-y-offset-m>
 				<target-z-offset-m archive="y" type="double">3</target-z-offset-m>
 				<pitch-offset-deg>0</pitch-offset-deg>
 			</config>
@@ -92,6 +91,21 @@ Fairchild A-10 simulation config.
 		<view n="6">
 			<config>
 				<target-z-offset-m archive="y" type="double">8.0</target-z-offset-m>
+			</config>
+		</view>
+		<view n="100">
+			<name>Internal Nose UC</name>
+			<type>lookfrom</type>
+			<ground-level-nearplane-m type="double">0</ground-level-nearplane-m>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">0.43</x-offset-m>
+				<y-offset-m archive="y">0.3</y-offset-m>
+				<z-offset-m archive="y">1.5</z-offset-m>
+				<pitch-offset-deg>-47</pitch-offset-deg>
+				<heading-offset-deg>182.5</heading-offset-deg>
+				<default-field-of-view-deg>61.5</default-field-of-view-deg>
 			</config>
 		</view>
 
