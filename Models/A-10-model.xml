@@ -1162,7 +1162,7 @@
 
 <!-- Landing Gear -->
 <!-- Nose -->
-<!-- Select/Deslect u/c and doors -->
+<!-- Select/Deslect u/c and doors 
 	<animation>
 		<type>select</type>
 		<object-name>UC-NoseStrutTop</object-name>
@@ -1187,121 +1187,129 @@
 				</equals>
 			</not>
 		</condition>
-	</animation>
+	</animation>-->
 
 <!-- Extend/Retract -->
 <!-- Nose Gear -->
+
+<!-- Front Door and Up Lock Assembly -->
 	<animation>
 		<type>rotate</type>
-		<object-name>UC-NoseStrutTop</object-name>
-		<object-name>UC-NoseStrutBottom</object-name>
-		<object-name>UC-NoseStrutBottomShaft</object-name>
-		<object-name>UC-NoseTyre</object-name>
-		<object-name>UC-NoseStrutLowerDamper</object-name>
-		<object-name>UC-NoseStrutUpperDamper</object-name>
+		<object-name>UC-NoseFrontDoor</object-name>
 		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
-			<entry><ind>0.0</ind><dep>93.0</dep></entry>
-			<entry><ind>0.5</ind><dep>93.0</dep></entry>
-			<entry><ind>1.0</ind><dep>10.0</dep></entry>
+			<entry><ind>0.0</ind><dep>0.0</dep></entry>
+			<entry><ind>0.034</ind><dep>18</dep></entry>
+			<entry><ind>0.068</ind><dep>36</dep></entry>
+			<entry><ind>0.102</ind><dep>56</dep></entry>
+			<entry><ind>0.136</ind><dep>77.5</dep></entry>
+			<entry><ind>0.17</ind><dep>102</dep></entry>
+			<entry><ind>1.0</ind><dep>102</dep></entry>
 		</interpolation>
-		<center>
-			<x-m>3.07</x-m>
-			<y-m>0.0</y-m>
-			<z-m>-0.037</z-m>
-		</center>
 		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0</z>
+			<x1-m>0.9048</x1-m><y1-m>0.5494</y1-m><z1-m>-0.2814</z1-m>
+			<x2-m>2.3675</x2-m><y2-m>0.6004</y2-m><z2-m>-0.2814</z2-m>
 		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>UC-NFD-Arm</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry><ind>0.0</ind><dep>-1.5</dep></entry>
+			<entry><ind>0.034</ind><dep>-20</dep></entry>
+			<entry><ind>0.068</ind><dep>-37.5</dep></entry>
+			<entry><ind>0.102</ind><dep>-54.5</dep></entry>
+			<entry><ind>0.136</ind><dep>-73</dep></entry>
+			<entry><ind>0.17</ind><dep>-92.5</dep></entry>
+			<entry><ind>1.0</ind><dep>-92.5</dep></entry>
+		</interpolation>
+		<center><z-m>-0.2639</z-m><y-m>0.5317</y-m></center>
+		<axis><x>1</x></axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>UC-NFD-Arm</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry><ind>0.0</ind><dep>0.0</dep></entry>
+			<entry><ind>0.034</ind><dep>-2.5</dep></entry>
+			<entry><ind>0.068</ind><dep>-3</dep></entry>
+			<entry><ind>0.102</ind><dep>-2</dep></entry>
+			<entry><ind>0.136</ind><dep>2</dep></entry>
+			<entry><ind>0.17</ind><dep>10</dep></entry>
+			<entry><ind>1.0</ind><dep>10</dep></entry>
+		</interpolation>
+		<center><x-m>1.8553</x-m><z-m>-0.2639</z-m></center>
+		<axis><y>1</y></axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>UC-NFD-secondary-axis</object-name>
+		<object-name>UC-NFD-rod</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry><ind>0.0</ind><dep>0.0</dep></entry>
+			<entry><ind>0.034</ind><dep>23.5</dep></entry>
+			<entry><ind>0.068</ind><dep>42</dep></entry>
+			<entry><ind>0.102</ind><dep>59.5</dep></entry>
+			<entry><ind>0.136</ind><dep>82</dep></entry>
+			<entry><ind>0.17</ind><dep>114</dep></entry>
+			<entry><ind>1.0</ind><dep>114</dep></entry>
+		</interpolation>
+		<center><x-m>1.8535</x-m><z-m>-0.0309</z-m></center>
+		<axis><y>-1</y></axis>
 	</animation>
 
 	<animation>
 		<type>rotate</type>
-		<object-name>UC-NoseStrutUpperBrace</object-name>
-		<object-name>UC-NoseStrutUpperBraceShaft</object-name>
+		<object-name>UC-NFD-rod</object-name>
 		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
-			<entry>
-				<ind>0.0</ind>
-				<dep>65.0</dep>
-			</entry>
-			<entry>
-				<ind>0.5</ind>
-				<dep>65.0</dep>
-			</entry>
-			<entry>
-				<ind>1.0</ind>
-				<dep>10.0</dep>
-			</entry>
+			<entry><ind>0.0</ind><dep>0.0</dep></entry>
+			<entry><ind>0.017</ind><dep>11</dep></entry>
+			<entry><ind>0.034</ind><dep>22.5</dep></entry>
+			<entry><ind>0.068</ind><dep>40</dep></entry>
+			<entry><ind>0.102</ind><dep>56</dep></entry>
+			<entry><ind>0.136</ind><dep>77</dep></entry>
+			<entry><ind>0.17</ind><dep>104</dep></entry>
+			<entry><ind>1.0</ind><dep>104</dep></entry>
 		</interpolation>
-		<center>
-			<x-m>3.58</x-m>
-			<y-m>0.0</y-m>
-			<z-m>-0.09</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0</z>
-		</axis>
+		<center><x-m>1.8296</x-m><z-m>-0.0206</z-m></center>
+		<axis><y>1</y></axis>
 	</animation>
-
-	<animation>
-		<type>translate</type>
-		<object-name>UC-NoseStrutUpperBraceShaft</object-name>
-		<property>gear/gear[0]/position-norm</property>
-		<interpolation>
-			<entry>
-				<ind>0.0</ind>
-				<dep>0.50</dep>
-			</entry>
-			<entry>
-				<ind>0.5</ind>
-				<dep>0.50</dep>
-			</entry>
-			<entry>
-				<ind>1.0</ind>
-				<dep>0.05</dep>
-			</entry>
-		</interpolation>
-		<axis>
-			<x>-0.45</x>
-			<y>0</y>
-			<z>-1</z>
-		</axis>
-	</animation>
-
-<!-- Front Door -->
 	<animation>
 		<type>rotate</type>
-		<object-name>UC-NoseWheelDoorFront</object-name>
+		<object-name>UC-NFD-main-axis</object-name>
 		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
-			<entry>
-				<ind>0.0</ind>
-				<dep>0.0</dep>
-			</entry>
-			<entry>
-				<ind>0.5</ind>
-				<dep>90.0</dep>
-			</entry>
-			<entry>
-				<ind>1.0</ind>
-				<dep>90.0</dep>
-			</entry>
+			<entry><ind>0.0</ind><dep>0.0</dep></entry>
+			<entry><ind>0.034</ind><dep>7.5</dep></entry>
+			<entry><ind>0.068</ind><dep>15</dep></entry>
+			<entry><ind>0.102</ind><dep>22.5</dep></entry>
+			<entry><ind>0.136</ind><dep>30</dep></entry>
+			<entry><ind>0.17</ind><dep>37.5</dep></entry>
+			<entry><ind>1.0</ind><dep>37.5</dep></entry>
 		</interpolation>
-		<center>
-			<x-m>3.38</x-m>
-			<y-m>0.56</y-m>
-			<z-m>-0.36</z-m>
-		</center>
-		<axis>
-			<x>1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
+		<center><x-m>1.8531</x-m><z-m>0.1185</z-m></center>
+		<axis><y>-1</y></axis>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>UC-NFD-lock-0</object-name>
+		<condition>
+			<not>
+				<property>gear/gear[0]/position-norm</property>
+			</not>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>UC-NFD-lock-1</object-name>
+		<condition>
+			<property>gear/gear[0]/position-norm</property>
+		</condition>
 	</animation>
 
 <!-- Rear Door -->
@@ -1310,66 +1318,129 @@
 		<object-name>UC-NoseWheelDoorRear</object-name>
 		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
-			<entry>
-				<ind>0.0</ind>
-				<dep>0.0</dep>
-				</entry>
-			<entry>
-				<ind>0.5</ind>
-				<dep>0.0</dep>
-			</entry>
-				<entry>
-				<ind>1.0</ind>
-				<dep>-85.0</dep>
-			</entry>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>0.1</ind><dep>1.5</dep></entry>
+			<entry><ind>0.2</ind><dep>4.5</dep></entry>
+			<entry><ind>0.3</ind><dep>8.5</dep></entry>
+			<entry><ind>0.4</ind><dep>13.5</dep></entry>
+			<entry><ind>0.5</ind><dep>20</dep></entry>
+			<entry><ind>0.6</ind><dep>28</dep></entry>
+			<entry><ind>0.7</ind><dep>38</dep></entry>
+			<entry><ind>0.8</ind><dep>50</dep></entry>
+			<entry><ind>0.9</ind><dep>65</dep></entry>
+			<entry><ind>1</ind><dep>88</dep></entry>
 		</interpolation>
-		<center>
-			<x-m>3.58</x-m>
-			<y-m>-0.30</y-m>
-			<z-m>-0.35</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0</z>
-		</axis>
+		<center><x-m>3.5262</x-m><z-m>-0.3663</z-m></center>
+		<axis><y>-1</y></axis>
+	</animation>
+
+<!-- Main -->
+	<animation>
+		<type>rotate</type>
+		<object-name>UC-NoseMain</object-name>
+		<object-name>UC-NoseSteer</object-name>
+		<object-name>UC-NoseLow</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>0.1</ind><dep>1.4</dep></entry>
+			<entry><ind>0.2</ind><dep>3.85</dep></entry>
+			<entry><ind>0.3</ind><dep>7.57</dep></entry>
+			<entry><ind>0.4</ind><dep>12.42</dep></entry>
+			<entry><ind>0.5</ind><dep>18.6</dep></entry>
+			<entry><ind>0.6</ind><dep>26.44</dep></entry>
+			<entry><ind>0.7</ind><dep>36.18</dep></entry>
+			<entry><ind>0.8</ind><dep>48.24</dep></entry>
+			<entry><ind>0.9</ind><dep>64.08</dep></entry>
+			<entry><ind>1</ind><dep>88</dep></entry>
+		</interpolation>
+		<center><x-m>3.1170</x-m><z-m>-0.1343</z-m></center>
+		<axis><y>-1</y><z>0</z></axis>
+	</animation>
+
+<!-- Rear door jonction -->
+	<animation>
+		<type>rotate</type>
+		<object-name>UC-NoseDoorJonction</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>0.1</ind><dep>2</dep></entry>
+			<entry><ind>0.2</ind><dep>5.5</dep></entry>
+			<entry><ind>0.3</ind><dep>10.5</dep></entry>
+			<entry><ind>0.4</ind><dep>16</dep></entry>
+			<entry><ind>0.5</ind><dep>23.5</dep></entry>
+			<entry><ind>0.6</ind><dep>32.5</dep></entry>
+			<entry><ind>0.7</ind><dep>43.5</dep></entry>
+			<entry><ind>0.8</ind><dep>57</dep></entry>
+			<entry><ind>0.9</ind><dep>75</dep></entry>
+			<entry><ind>1</ind><dep>102</dep></entry>
+		</interpolation>
+		<center><x-m>2.3272</x-m><z-m>-0.1603</z-m></center>
+		<axis><y>1</y></axis>
+	</animation>
+
+<!-- Hydraulic -->
+	<animation>
+		<type>rotate</type>
+		<object-name>UC-NoseStrutUpperBrace</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>0.1</ind><dep>1</dep></entry>
+			<entry><ind>0.2</ind><dep>2.7</dep></entry>
+			<entry><ind>0.3</ind><dep>5.5</dep></entry>
+			<entry><ind>0.4</ind><dep>9</dep></entry>
+			<entry><ind>0.5</ind><dep>13.5</dep></entry>
+			<entry><ind>0.6</ind><dep>19.5</dep></entry>
+			<entry><ind>0.7</ind><dep>27</dep></entry>
+			<entry><ind>0.8</ind><dep>36.7</dep></entry>
+			<entry><ind>0.9</ind><dep>50.5</dep></entry>
+			<entry><ind>1</ind><dep>75</dep></entry>
+		</interpolation>
+		<center><x-m>3.3838</x-m><z-m>-0.3357</z-m></center>
+		<axis><y>-1</y></axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>UC-NoseStrutUpperBraceShaft</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>0.1</ind><dep>0.5</dep></entry>
+			<entry><ind>0.2</ind><dep>1</dep></entry>
+			<entry><ind>0.3</ind><dep>2</dep></entry>
+			<entry><ind>0.4</ind><dep>3.5</dep></entry>
+			<entry><ind>0.5</ind><dep>5.5</dep></entry>
+			<entry><ind>0.6</ind><dep>7</dep></entry>
+			<entry><ind>0.7</ind><dep>9</dep></entry>
+			<entry><ind>0.8</ind><dep>11.5</dep></entry>
+			<entry><ind>0.9</ind><dep>13.5</dep></entry>
+			<entry><ind>1</ind><dep>13</dep></entry>
+		</interpolation>
+		<center><x-m>2.3739</x-m><z-m>-0.1982</z-m></center>
+		<axis><y>1</y></axis>
 	</animation>
 
 <!-- Steering -->
 	<animation>
 		<type>rotate</type>
-		<object-name>UC-NoseStrutBottom</object-name>
-		<object-name>UC-NoseStrutBottomShaft</object-name>
-		<object-name>UC-NoseTyre</object-name>
-		<object-name>UC-NoseStrutLowerDamper</object-name>
-		<object-name>UC-NoseStrutUpperDamper</object-name>
+		<object-name>UC-NoseLow</object-name>
+		<object-name>UC-NoseSteer</object-name>
 		<property>surface-positions/rudder-pos-norm</property>
-		<factor>-20</factor>
-		<center>
-			<x-m>3.09</x-m>
-			<y-m>0.35</y-m>
-			<z-m>0.0</z-m>
-		</center>
-		<axis>
-			<x>0.0</x>
-			<y>0</y>
-			<z>-1</z>
-		</axis>
+		<factor>20</factor>
+		<center><x-m>3.3137</x-m><y-m>0.3073</y-m><z-m>-0.1534</z-m></center>
+		<axis><x>2.0882</x><z>-0.2016</z></axis>
 	</animation>
 
 <!-- Compression -->
 	<animation>
 		<type>translate</type>
-		<object-name>UC-NoseStrutBottom</object-name>
-		<object-name>UC-NoseStrutBottomShaft</object-name>
-		<object-name>UC-NoseTyre</object-name>
-		<object-name>UC-NoseStrutLowerDamper</object-name>
+		<object-name>UC-NoseLow</object-name>
 		<property>gear/gear[0]/compression-norm</property>
-		<factor>0.5</factor>
-		<axis>
-			<x>0</x>
-			<y>0</y>
-			<z>1</z>
+		<factor>0.312</factor>
+		<axis><x>2.0882</x><y>0</y><z>-0.2016</z>
 		</axis>
 	</animation>
 
@@ -1377,119 +1448,47 @@
 		<type>rotate</type>
 		<object-name>UC-NoseStrutLowerDamper</object-name>
 		<property>gear/gear[0]/compression-norm</property>
-		<factor>35</factor>
-		<center>
-			<x-m>3.10</x-m>
-			<y-m>0</y-m>
-			<z-m>-1.53</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0</z>
-		</axis>
+		<interpolation>
+			<entry><ind>1</ind><dep>62.5</dep></entry>
+			<entry><ind>0.8</ind><dep>49.5</dep></entry>
+			<entry><ind>0.6</ind><dep>38.5</dep></entry>
+			<entry><ind>0.4</ind><dep>27.5</dep></entry>
+			<entry><ind>0.2</ind><dep>15</dep></entry>
+			<entry><ind>0</ind><dep>0</dep></entry>
+		</interpolation>
+		<center><x-m>1.6753</x-m><z-m>-0.0836</z-m></center>
+		<axis><y>1</y></axis>
 	</animation>
 
 	<animation>
 		<type>rotate</type>
 		<object-name>UC-NoseStrutUpperDamper</object-name>
 		<property>gear/gear[0]/compression-norm</property>
-		<factor>-35</factor>
-		<center>
-			<x-m>3.10</x-m>
-			<y-m>0</y-m>
-			<z-m>-1.2</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0</z>
-		</axis>
-	</animation>
-
-<!-- Noze Gear Hub -->
-
-	<animation>
-		<type>rotate</type>
-		<object-name>UC-NoseStrutHub</object-name>
-		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
-			<entry>
-				<ind>0.0</ind>
-				<dep>93.0</dep>
-			</entry>
-			<entry>
-				<ind>0.5</ind>
-				<dep>93.0</dep>
-			</entry>
-			<entry>
-				<ind>1.0</ind>
-				<dep>10.0</dep>
-			</entry>
+			<entry><ind>1</ind><dep>42</dep></entry>
+			<entry><ind>0.8</ind><dep>38.5</dep></entry>
+			<entry><ind>0.6</ind><dep>32.5</dep></entry>
+			<entry><ind>0.4</ind><dep>24.5</dep></entry>
+			<entry><ind>0.2</ind><dep>14</dep></entry>
+			<entry><ind>0</ind><dep>0</dep></entry>
 		</interpolation>
-		<center>
-			<x-m>3.07</x-m>
-			<y-m>0.0</y-m>
-			<z-m>-0.037</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0</z>
-		</axis>
+		<center><x-m>2.0960</x-m><z-m>-0.1492</z-m></center>
+		<axis><y>-1</y></axis>
 	</animation>
 
-	<animation>
-		<type>rotate</type>
-		<object-name>UC-NoseStrutHub</object-name>
-		<property>surface-positions/rudder-pos-norm</property>
-		<factor>-20</factor>
-		<center>
-			<x-m>3.09</x-m>
-			<y-m>0.35</y-m>
-			<z-m>0.0</z-m>
-		</center>
-		<axis>
-			<x>0.0</x>
-			<y>0</y>
-			<z>-1</z>
-		</axis>
-	</animation>
-
-	<animation>
-		<type>translate</type>
-		<object-name>UC-NoseStrutHub</object-name>
-		<property>gear/gear[0]/compression-norm</property>
-		<factor>0.5</factor>
-		<axis>
-			<x>0</x>
-			<y>0</y>
-			<z>1</z>
-		</axis>
-	</animation>
-
+<!-- Tyre spin -->
 	<animation>
 		<type>spin</type>
-		<object-name>UC-NoseStrutHub</object-name>
+		<object-name>UC-NoseTyre</object-name>
 		<property>gear/gear/rollspeed-ms</property>
 		<factor>30</factor>
-		<center>
-			<x-m>3.0861</x-m>
-			<y-m>0</y-m>
-			<z-m>-1.8836</z-m>
-		</center>
-		<axis>
-			<x>0.0</x>
-			<y>-1.0</y>
-			<z>0.0</z>
-		</axis>
+		<center><x-m>1.2261</x-m><z-m>0.0484</z-m></center>
+		<axis><y>-1.0</y></axis>
 	</animation>
 
-<!-- Left Main -->
+
 <!-- Extend/Retract -->
-<!-- Gear -->
-
-
+<!-- Left Main Gear -->
 
 	<animation>
 		<type>rotate</type>
