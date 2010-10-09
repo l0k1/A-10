@@ -164,7 +164,7 @@
 
 	<!-- Undercarriage -->
 	<!-- nose -->
-	<gear x="-2.9" y="0.4" z="-2.15" compression="0.7" spring="1.4" damp="1.4">
+	<gear x="-2.85" y="0.4" z="-2.33" compression="0.30" spring="0.25" damp="1.4">
 		<control-input axis="/controls/flight/rudder" control="STEER" square="true"/>
 		<control-input axis="/controls/gear/gear-down" control="EXTEND"/>
 		<control-speed control="EXTEND" transition-time="7"/>
@@ -172,7 +172,7 @@
 	</gear>
 
 	<!-- left main -->
-	<gear x="-8.3" y="2.5" z="-2.37" upx="0" upy="0" upz="1" compression="0.4" spring="0.25" damp="1.4">
+	<gear x="-8.3" y="2.5" z="-2.37" compression="0.4" spring="0.25" damp="1.4">
 		<control-input axis="/controls/gear/brake-left" control="BRAKE"/>
 		<control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
 		<control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -182,7 +182,7 @@
 	
 	<!-- right main -->
 	<!--<gear x="-8.3" y="-2.5" z="-2.22" retract-time="6" compression="0.7" spring="1.6" damp="1.4">-->
-	<gear x="-8.3" y="-2.5" z="-2.37" upx="0" upy="0" upz="1" compression="0.4" spring="0.25" damp="1.4">
+	<gear x="-8.3" y="-2.5" z="-2.37" compression="0.4" spring="0.25" damp="1.4">
 		<control-input axis="/controls/gear/brake-right" control="BRAKE"/>
 		<control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
 		<control-input axis="/controls/gear/gear-down" control="EXTEND"/>
