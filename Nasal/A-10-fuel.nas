@@ -83,33 +83,38 @@ var APU_Switch     = props.globals.getNode("controls/APU/off-start-switch");
 var DC_Boost_Serv  = props.globals.getNode("controls/fuel/tank[1]/DC-boost-pump-serviceable");
 var APU_OutofFuel  = props.globals.getNode("sim/model/A-10/systems/apu/out-of-fuel", 1);
 var APU_FuelCons   = props.globals.getNode("sim/model/A-10/systems/apu/fuel-consumed-lbs", 1);
+var SysFuelInit    = props.globals.initNode("systems/A-10-fuel/initialized", 0, "BOOL");
 var APU_Collector  = props.globals.getNode("systems/A-10-fuel/apu-collector-tank", 1);
 var LFeedLinePress = props.globals.getNode("systems/A-10-fuel/feed-line-press[0]", 1);
 var RFeedLinePress = props.globals.getNode("systems/A-10-fuel/feed-line-press[1]", 1);
 var TotalFuelGals  = props.globals.getNode("consumables/fuel/total-fuel-gals", 1);
+var TotalFuelLbs   = props.globals.getNode("consumables/fuel/total-fuel-lbs", 1);
 var FuelGaugeVolts = props.globals.getNode("systems/electrical/outputs/fuel-gauge-sel", 1);
 
 
-var init = func {
-	# Kill $FG_ROOT/Nasal/fuel.nas loop.
-	fuel.update = func {}
-	# Valves ("name", "property", intitial status):
-	TankGateValve   = Valve.new("systems/A-10-fuel/tank-gate-valve", 0);
-	CrossFeedValve  = Valve.new("systems/A-10-fuel/cross-feed-valve", 0);
-	APU_FireValve   = Valve.new("systems/A-10-fuel/eng-valve-apu-fire", 1);
-	Left_FireValve  = Valve.new("systems/A-10-fuel/eng-valve-left-fire", 1);
-	Right_FireValve = Valve.new("systems/A-10-fuel/eng-valve-right-fire", 1);
-	# Tanks ("name", number, type (1 = internal), selected, control_fill_dis, fill_valve, density):
-	Left_Wing       = Tank.new("Left Wing",           0, 1, 1, 0, 1, 6.4);
-	Left_Main       = Tank.new("Left Main (Aft)",     1, 1, 1, 0, 1, 6.4);
-	Right_Main      = Tank.new("Right Main (Fwd)",    2, 1, 1, 0, 1, 6.4);
-	Right_Wing      = Tank.new("Right Wing",          3, 1, 1, 0, 1, 6.4);
-	Left_External   = Tank.new("Left Wing External",  4, 0, 1, 0, 1, 6.4);
-	Fuse_External   = Tank.new("Fuselage External",   5, 0, 1, 0, 1, 6.4);
-	Right_External  = Tank.new("Right Wing External", 6, 0, 1, 0, 1, 6.4);
-	DC_boost_pump   = Left_Main.prop.getNode("DC-boost-pump");
-	foreach ( var e; A10engines.Engine.list ) {	e.set_out_of_fuel(1) }
-	APU_OutofFuel.setBoolValue(1);
+var init = func {	
+	if ( ! SysFuelInit.getBoolValue() ) {
+		# Don't do it twice. ie: case of fgcommand("reinit"). 
+		fuel.update = func {}; # Kill $FG_ROOT/Nasal/fuel.nas loop.
+		# Valves ("name", "property", intitial status):
+		TankGateValve   = Valve.new("systems/A-10-fuel/tank-gate-valve", 0);
+		CrossFeedValve  = Valve.new("systems/A-10-fuel/cross-feed-valve", 0);
+		APU_FireValve   = Valve.new("systems/A-10-fuel/eng-valve-apu-fire", 1);
+		Left_FireValve  = Valve.new("systems/A-10-fuel/eng-valve-left-fire", 1);
+		Right_FireValve = Valve.new("systems/A-10-fuel/eng-valve-right-fire", 1);
+		# Tanks ("name", number, type (1 = internal), selected, control_fill_dis, fill_valve, density):
+		Left_Wing       = Tank.new("Left Wing",           0, 1, 1, 0, 1, 6.4);
+		Left_Main       = Tank.new("Left Main (Aft)",     1, 1, 1, 0, 1, 6.4);
+		Right_Main      = Tank.new("Right Main (Fwd)",    2, 1, 1, 0, 1, 6.4);
+		Right_Wing      = Tank.new("Right Wing",          3, 1, 1, 0, 1, 6.4);
+		Left_External   = Tank.new("Left Wing External",  4, 0, 1, 0, 1, 6.4);
+		Fuse_External   = Tank.new("Fuselage External",   5, 0, 1, 0, 1, 6.4);
+		Right_External  = Tank.new("Right Wing External", 6, 0, 1, 0, 1, 6.4);
+		DC_boost_pump   = Left_Main.prop.getNode("DC-boost-pump");
+		foreach ( var e; A10engines.Engine.list ) {	e.set_out_of_fuel(1) }
+		APU_OutofFuel.setBoolValue(1);
+		SysFuelInit.setBoolValue(1);
+	}
 }
 
 
@@ -432,7 +437,7 @@ var update_loop = func {
 	}
 
 	TotalFuelGals.setValue(gal_total); # TODO delete 2D panels.
-	
+	TotalFuelLbs.setValue(lbs_total);
 	# Prepare values for the A-10's fuel quantity gauge and warnings.
 	FuelDiffLbs.setValue(math.abs(right_main_tank - left_main_tank));
 	if ( FuelGaugeVolts.getValue() < 23) {
