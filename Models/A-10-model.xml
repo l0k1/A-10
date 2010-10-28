@@ -496,16 +496,6 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-HSI-2.xml</path>
-		<offsets>
-			<x-m>2.4330</x-m>
-			<y-m>0.0000</y-m>
-			<z-m>1.0250</z-m>
-			<pitch-deg>-5</pitch-deg>
-		</offsets>
-	</model>
-
-	<model>
 		<path>Aircraft/A-10/Models/A-10-nav-mode-selector.xml</path>
 		<offsets>
 			<x-m>2.4330</x-m>
