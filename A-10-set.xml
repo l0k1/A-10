@@ -121,7 +121,7 @@ Fairchild A-10 simulation config.
 				<path></path><!-- intentionally left empty -->
 			</electrical>
 		</systems>
-		
+
 		<rendering>
 			<redout>
 				<parameters>
@@ -1035,6 +1035,12 @@ Fairchild A-10 simulation config.
 			<state type="int">0</state> <!-- 0: nil 1:ready 2:latched 3:disconnected -->
 			<type>boom</type>
 		</refuel>
+		<vacuum>
+			<name>vacuum</name>
+			<number>0</number>
+			<rpm>sim/model/A-10/engines/engine[0]n1</rpm>
+			<scale>15.0</scale>
+		</vacuum>
 	</systems>
 
 	<!-- Fuel Tank indexes -->
