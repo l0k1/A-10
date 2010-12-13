@@ -430,9 +430,9 @@
 		<type>material</type>
 		<emission> 
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.55</red>
-			<green>0.24</green>
-			<blue>0.10</blue>
+			<red>0.385</red>
+			<green>0.168</green>
+			<blue>0.07</blue>
 		</emission>
 	</animation>
 	<animation>

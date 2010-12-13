@@ -2,7 +2,7 @@
 
 <PropertyList>
 
- <path>A-10-elec-pwr-ctrl.ac</path>
+	<path>A-10-elec-pwr-ctrl.ac</path>
 
 	<!-- apu-gen-power -->
 	<animation>
@@ -15,14 +15,9 @@
 		</interpolation>
 		<center>
 			<x-m>-0.0275</x-m>
-			<y-m>0</y-m>
 			<z-m>0.0031</z-m>
 		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -51,14 +46,9 @@
 		</interpolation>
 		<center>
 			<x-m>-0.0275</x-m>
-			<y-m>0</y-m>
 			<z-m>0.0031</z-m>
 		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -99,14 +89,9 @@
 		</interpolation>
 		<center>
 			<x-m>0.0191</x-m>
-			<y-m>0</y-m>
 			<z-m>0.0031</z-m>
 		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -133,14 +118,9 @@
 		</interpolation>
 		<center>
 			<x-m>0.0191</x-m>
-			<y-m>0</y-m>
 			<z-m>0.0031</z-m>
 		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -167,14 +147,9 @@
 		</interpolation>
 		<center>
 			<x-m>0.0191</x-m>
-			<y-m>0</y-m>
 			<z-m>0.0031</z-m>
 		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -190,34 +165,28 @@
 		</action>
 	</animation>
 
-<!-- Lighting -->
-	<animation> 
+	<!-- Lighting -->
+	<animation>
 		<object-name>mount</object-name>
 		<type>material</type>
-		<emission> 
+		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.45</red>
-			<green>0.34</green>
-			<blue>0.18</blue>
+			<red>0.385</red>
+			<green>0.168</green>
+			<blue>0.07</blue>
 		</emission>
 	</animation>
 
 	<animation> 
 		<object-name>switches</object-name>
 		<type>material</type>
-		<emission> 
+		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.45</red>
-			<green>0.34</green>
-			<blue>0.18</blue>
+			<red>0.385</red>
+			<green>0.168</green>
+			<blue>0.07</blue>
 		</emission>
 	</animation>
-
-	<animation>
-		<object-name>elec-pwr-panel</object-name>
-		<type>noshadow</type>
-	</animation>
-
 
 	<animation>
 		<type>range</type>

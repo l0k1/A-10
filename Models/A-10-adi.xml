@@ -50,8 +50,10 @@
 		<type>translate</type>
 		<object-name>turn-indicator</object-name>
 		<property>instrumentation/turn-indicator/indicated-turn-rate</property>
-		<factor>0.113</factor>
+		<factor>0.0114</factor>
 		<axis><y>1</y></axis>
+		<min-m>-0.0185</min-m>
+		<max-m>0.0185</max-m>
 	</animation>
 	<!--based on 1.08 indicated-turn-rate corresponding to a standard 360° turn in 2 minutes at cruise configuration (FL 320 M0.72) -->
 
@@ -334,9 +336,9 @@
 		<type>material</type>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.45</red>
-			<green>0.34</green>
-			<blue>0.18</blue>
+			<red>0.385</red>
+			<green>0.168</green>
+			<blue>0.07</blue>
 		</emission>
 	</animation>
 
@@ -345,9 +347,9 @@
 		<type>material</type>
 		<emission>
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>0.45</red>
-			<green>0.34</green>
-			<blue>0.18</blue>
+			<red>0.55</red>
+			<green>0.24</green>
+			<blue>0.10</blue>
 		</emission>
 	</animation>
 

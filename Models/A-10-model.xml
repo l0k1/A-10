@@ -50,9 +50,9 @@
 			</equals>
 		</condition>
 	</animation>
-	
 
-	
+
+
 	<!-- tutorial marker -->
 	<model>
 		<path>Models/Aircraft/marker.xml</path>
@@ -478,7 +478,7 @@
 	<model>
 		<path>Aircraft/A-10/Models/A-10-armament-panel.xml</path>
 		<offsets>
-			<x-m>2.4080</x-m>
+			<x-m>2.4100</x-m>
 			<y-m>-0.1881</y-m>
 			<z-m>0.9980</z-m>
 			<pitch-deg>-5</pitch-deg>
@@ -692,8 +692,8 @@
 	<model>
 		<path>Aircraft/A-10/Models/A-10-ld-gear-panel.xml</path>
 		<offsets>
-			<x-m>2.4130</x-m>
-			<y-m>-0.3630</y-m>
+			<x-m>2.4100</x-m>
+			<y-m>-0.3650</y-m>
 			<z-m>0.9960</z-m>
 			<pitch-deg>-5</pitch-deg>
 		</offsets>
@@ -703,8 +703,8 @@
 		<path>Aircraft/A-10/Models/A-10-hars-fast-erect.xml</path>
 		<offsets>
 			<x-m>2.4104</x-m>
-			<y-m>-0.2850</y-m>
-			<z-m>0.8770</z-m>
+			<y-m>-0.2840</y-m>
+			<z-m>0.8810</z-m>
 			<pitch-deg>-5</pitch-deg>
 		</offsets>
 	</model>
@@ -2231,7 +2231,7 @@
 			<entry><ind>16000</ind><dep>7</dep></entry>
 		</interpolation>
 	</animation>
- 
+
 
 	<!-- green nav light (right)-->
 	<animation>

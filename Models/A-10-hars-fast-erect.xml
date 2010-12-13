@@ -2,36 +2,27 @@
 
 <PropertyList>
 
- <path>A-10-hars-fast-erect.ac</path>
+	<path>A-10-hars-fast-erect.ac</path>
 
-<!-- lighting -->
+	<!-- lighting -->
 
-  <animation> 
-   <object-name>mount</object-name>
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/panel-norm</factor-prop>
-        <red>0.45</red>
-        <green>0.34</green>
-        <blue>0.18</blue>
-      </emission>
-  </animation>
+	<animation>
+		<object-name>mount</object-name>
+		<object-name>button</object-name>
+		<type>material</type>
+		<emission>
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.385</red>
+			<green>0.168</green>
+			<blue>0.07</blue>
+		</emission>
+	</animation>
 
-  <animation> 
-   <object-name>button</object-name>
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/panel-norm</factor-prop>
-        <red>0.10</red>
-        <green>0.05</green>
-        <blue>0.025</blue>
-      </emission>
-  </animation>
 
-  <animation>
-  <type>range</type>
-  <min-m>0</min-m>
-  <max-m>5</max-m>
- </animation>
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
 
 </PropertyList>

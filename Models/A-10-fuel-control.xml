@@ -412,50 +412,15 @@
 
 	
 <!-- lighting -->
-
 	<animation> 
-		<object-name>mount</object-name>
+		<object-name>fuel-control</object-name>
 		<type>material</type>
 		<emission> 
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.45</red>
-			<green>0.34</green>
-			<blue>0.18</blue>
+			<red>0.385</red>
+			<green>0.168</green>
+			<blue>0.07</blue>
 			</emission>
-	</animation>
-
-
-	<animation> 
-		<object-name>switches</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.20</red>
-			<green>0.10</green>
-			<blue>0.05</blue>
-		</emission>
-	</animation>
-
-	<animation> 
-		<object-name>rcvr-handle</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.20</red>
-			<green>0.10</green>
-			<blue>0.05</blue>
-		</emission>
-	</animation>
-
-	<animation> 
-		<object-name>buttons</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.20</red>
-			<green>0.10</green>
-			<blue>0.05</blue>
-		</emission>
 	</animation>
 
 	<animation>

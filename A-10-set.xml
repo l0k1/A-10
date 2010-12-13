@@ -3,8 +3,8 @@
 ************************************************************************
 Fairchild A-10 simulation config.
 
-2006-02-02 Lee Elliott
-2006-08-15 Alexis Bory xiii@g2ms.com (3D cockpit)
+2006-02-02 Lee Elliott (Original 3D model and FDM)
+2006-2010 Alexis Bory (Cockpit, avionics, engines, weapons, 3D model revamping)
 ************************************************************************
 -->
 
@@ -1035,12 +1035,6 @@ Fairchild A-10 simulation config.
 			<state type="int">0</state> <!-- 0: nil 1:ready 2:latched 3:disconnected -->
 			<type>boom</type>
 		</refuel>
-		<vacuum>
-			<name>vacuum</name>
-			<number>0</number>
-			<rpm>sim/model/A-10/engines/engine[0]n1</rpm>
-			<scale>15.0</scale>
-		</vacuum>
 	</systems>
 
 	<!-- Fuel Tank indexes -->

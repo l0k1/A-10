@@ -528,6 +528,7 @@ var R_AC_bus = func() {
 		setprop("systems/electrical/outputs/hud", 0);
 	}
 	setprop("instrumentation/attitude-indicator/spin", R_AC_bus_volts/30);
+	setprop("instrumentation/turn-indicator/spin", R_AC_bus_volts/30);
 	setprop("systems/electrical/outputs/DG", R_AC_bus_volts);
 
 	# Right wing and main fuel pumps power

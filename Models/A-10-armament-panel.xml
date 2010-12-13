@@ -15,11 +15,7 @@
 			<y-m>0.0948</y-m>
 			<z-m>0.0575</z-m>
 		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
 
 	<animation>
@@ -32,11 +28,7 @@
 			<y-m>-0.0929</y-m>
 			<z-m>0.0575</z-m>
 		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
 
 	<animation>
@@ -49,12 +41,20 @@
 			<y-m>-0.0535</y-m>
 			<z-m>-0.0628</z-m>
 		</center>
-		<axis>
-			<x>-1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
+		<axis><x>-1</x></axis>
 	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>aim-9-light-on</object-name>
+		<condition>
+			<equals>
+				<property>sim/model/A-10/weapons/aim-9/cooled</property>
+				<value>2</value>
+			</equals>
+		</condition>
+	</animation>
+
 
 	<!--stations-->
 	<!--station[0] only AN-ALQ-131 (error on select)-->
@@ -81,7 +81,7 @@
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
-			</greater-than>		
+			</greater-than>
 		</condition>
 	</animation>
 	<animation>
@@ -135,7 +135,7 @@
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
-			</greater-than>			
+			</greater-than>
 		</condition>
 	</animation>
 	<animation>
@@ -189,7 +189,7 @@
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
-			</greater-than>			
+			</greater-than>
 		</condition>
 	</animation>
 	<animation>
@@ -243,7 +243,7 @@
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
-			</greater-than>			
+			</greater-than>
 		</condition>
 	</animation>
 	<animation>
@@ -297,7 +297,7 @@
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
-			</greater-than>			
+			</greater-than>
 		</condition>
 	</animation>
 	<animation>
@@ -351,7 +351,7 @@
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
-			</greater-than>		
+			</greater-than>
 		</condition>
 	</animation>
 	<animation>
@@ -405,7 +405,7 @@
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
-			</greater-than>			
+			</greater-than>
 		</condition>
 	</animation>
 	<animation>
@@ -459,7 +459,7 @@
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
-			</greater-than>			
+			</greater-than>
 		</condition>
 	</animation>
 	<animation>
@@ -513,7 +513,7 @@
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
-			</greater-than>			
+			</greater-than>
 		</condition>
 	</animation>
 	<animation>
@@ -567,7 +567,7 @@
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
-			</greater-than>			
+			</greater-than>
 		</condition>
 	</animation>
 	<animation>
@@ -651,7 +651,7 @@
 		</condition>
 	</animation>
 
-	<!-- tests all lights togather-->
+	<!-- tests all w togather-->
 	<!--<animation>
 		<type>select</type>
 		<object-name>lights</object-name>
@@ -715,16 +715,7 @@
 		<object-name>rds-rem-x1</object-name>
 		<property>ai/submodels/submodel[1]/count</property>
 		<factor>0.1</factor>
-		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
-			<z-m>0</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
 
 	<animation>
@@ -734,16 +725,7 @@
 		<factor>0.01</factor>
 		<step>10</step>
 		<scroll>0.5</scroll>
-		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
-			<z-m>0</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
 
 	<animation>
@@ -753,16 +735,7 @@
 		<factor>0.001</factor>
 		<step>100</step>
 		<scroll>0.5</scroll>
-		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
-			<z-m>0</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
 
 
@@ -773,16 +746,7 @@
 		<factor>0.0001</factor>
 		<step>1000</step>
 		<scroll>0.5</scroll>
-		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
-			<z-m>0</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
 
 	<!--rip counter-->
@@ -791,16 +755,7 @@
 		<object-name>rip-qty-x1</object-name>
 		<property>sim/model/A-10/weapons/rip</property>
 		<factor>0.1</factor>
-		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
-			<z-m>0</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
 
 	<animation>
@@ -810,16 +765,7 @@
 		<factor>0.01</factor>
 		<step>10</step>
 		<scroll>0.5</scroll>
-		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
-			<z-m>0</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
 
 	<!--interval counter-->
@@ -828,16 +774,7 @@
 		<object-name>rip-intvl-x1</object-name>
 		<property>sim/model/A-10/weapons/interval</property>
 		<factor>10</factor>
-		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
-			<z-m>0</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
 
 	<animation>
@@ -846,246 +783,51 @@
 		<property>sim/model/A-10/weapons/interval</property>
 		<factor>1</factor>
 		<step>0.0999</step>
-		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
-			<z-m>0</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
 
 
 	<!-- lighting -->
-	
+
 	<!--switches and knobs-->
-	<animation> 
-		<object-name>mount</object-name>
-		<object-name>stations-lt-off</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.45</red>
-			<green>0.34</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
-
-	<animation> 
-		<object-name>gun-rate-switch</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.10</red>
-			<green>0.05</green>
-			<blue>0.025</blue>
-		</emission>
-	</animation>
-
-	<animation> 
-		<object-name>mech-fuzing-knob</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.10</red>
-			<green>0.05</green>
-			<blue>0.025</blue>
-		</emission>
-	</animation>
-
-	<animation> 
-		<object-name>panel-lights-knob</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.10</red>
-			<green>0.05</green>
-			<blue>0.025</blue>
-		</emission>
-	</animation>
-
-	<animation> 
-		<object-name>eo-pwr-switch</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.10</red>
-			<green>0.05</green>
-			<blue>0.025</blue>
-		</emission>
-	</animation>
-
-	<animation> 
-		<object-name>master-arm-switch</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.10</red>
-			<green>0.05</green>
-			<blue>0.025</blue>
-		</emission>
-	</animation>
-
-	<animation> 
-		<object-name>rds-rem-reset-button</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.10</red>
-			<green>0.05</green>
-			<blue>0.025</blue>
-		</emission>
-	</animation>
-
-	<animation> 
-		<object-name>test-lamp-button</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.10</red>
-			<green>0.05</green>
-			<blue>0.025</blue>
-		</emission>
-	</animation>
-
-	<animation> 
-		<object-name>jettison</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.10</red>
-			<green>0.05</green>
-			<blue>0.025</blue>
-		</emission>
-	</animation>
-
-	<animation> 
-		<object-name>release-mode-knob</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.10</red>
-			<green>0.05</green>
-			<blue>0.025</blue>
-		</emission>
-	</animation>
-
-	<animation> 
-		<object-name>panel-lights-knob</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.10</red>
-			<green>0.05</green>
-			<blue>0.025</blue>
-		</emission>
-	</animation>
-
-	<animation> 
-		<object-name>aim-9-knob</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.10</red>
-			<green>0.05</green>
-			<blue>0.025</blue>
-		</emission>
-	</animation>
-
-	<!--rds counter-->
 	<animation>
-		<object-name>rds-rem-x1000</object-name>
+		<object-name>panel</object-name>
 		<type>material</type>
-		<emission> 
-			<red>0.85</red>
-			<green>0.60</green>
-			<blue>0.45</blue>
+		<emission>
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.385</red>
+			<green>0.168</green>
+			<blue>0.07</blue>
 		</emission>
 	</animation>
 
-	<animation>
-		<object-name>rds-rem-x100</object-name>
-		<type>material</type>
-		<emission> 
-			<red>0.85</red>
-			<green>0.60</green>
-			<blue>0.45</blue>
-		</emission>
-	</animation>
 
+	<!--rds counter
 	<animation>
-		<object-name>rds-rem-x10</object-name>
+		<object-name>rds</object-name>
 		<type>material</type>
-		<emission> 
-			<red>0.85</red>
-			<green>0.60</green>
-			<blue>0.45</blue>
+		<emission>
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.55</red>
+			<green>0.24</green>
+			<blue>0.10</blue>
 		</emission>
-	</animation>
+	</animation>-->
 
-	<animation>
-		<object-name>rds-rem-x1</object-name>
-		<type>material</type>
-		<emission> 
-			<red>0.85</red>
-			<green>0.60</green>
-			<blue>0.45</blue>
-		</emission>
-	</animation>
 
 	<!-- rip counter-->
 	<animation>
-		<object-name>rip-qty-x10</object-name>
+		<object-name>rip-qty</object-name>
 		<type>material</type>
-		<emission> 
+		<emission>
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>0.75</red>
-			<green>0.55</green>
-			<blue>0.35</blue>
-		</emission>
-	</animation>
-
-	<animation>
-		<object-name>rip-qty-x1</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>0.75</red>
-			<green>0.55</green>
-			<blue>0.35</blue>
-		</emission>
-	</animation>
-
-	<animation>
-		<object-name>rip-intvl-x10</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>0.75</red>
-			<green>0.55</green>
-			<blue>0.35</blue>
-		</emission>
-	</animation>
-
-	<animation>
-		<object-name>rip-intvl-x1</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>0.75</red>
-			<green>0.55</green>
-			<blue>0.35</blue>
+			<red>0.55</red>
+			<green>0.24</green>
+			<blue>0.10</blue>
 		</emission>
 	</animation>
 
 
-	<animation>
-		<object-name>arm-panel</object-name>
-		<type>noshadow</type>
-	</animation>
 
 	<!--LOD-->
 	<animation>

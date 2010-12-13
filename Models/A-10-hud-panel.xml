@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
-  <PropertyList> 
-    <path>A-10-hud-panel.ac</path>
+<PropertyList> 
+	<path>A-10-hud-panel.ac</path>
 
 	<animation>
 		<object-name>mode-selector</object-name>
@@ -9,90 +9,27 @@
 		<property>sim/model/A-10/controls/hud/mode-selector</property>
 		<factor>45</factor>
 		<center>
-			<x-m>0.0031</x-m>
 			<y-m>0.0238</y-m>
 			<z-m>0.0180</z-m>
 		</center>
-		<axis>
-			<x>-1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
+		<axis><x>-1</x></axis>
 	</animation>
 
 <!-- lighting -->
+	<animation>
+		<object-name>hud-panel</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.385</red>
+			<green>0.168</green>
+			<blue>0.07</blue>
+		</emission>
+	</animation>
 
-  <animation> 
-   <object-name>mount</object-name>
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/panel-norm</factor-prop>
-        <red>0.45</red>
-        <green>0.34</green>
-        <blue>0.18</blue>
-      </emission>
-  </animation>
-
-  <animation>
-   <object-name>mode-selector</object-name>
-   <type>material</type>
-     <emission> 
-      <factor-prop>controls/lighting/panel-norm</factor-prop>
-        <red>0.25</red>
-        <green>0.17</green>
-        <blue>0.08</blue>
-      </emission>
-  </animation>
-
-  <animation>
-   <object-name>function-knob</object-name>
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/panel-norm</factor-prop>
-        <red>0.25</red>
-        <green>0.17</green>
-        <blue>0.08</blue>
-      </emission>
-  </animation>
-
-  <animation>
-   <object-name>depr-knob</object-name>
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/panel-norm</factor-prop>
-        <red>0.25</red>
-        <green>0.17</green>
-        <blue>0.08</blue>
-     </emission>
-  </animation>
-
-  <animation>
-   <object-name>inten-knob</object-name>
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/panel-norm</factor-prop>
-        <red>0.25</red>
-        <green>0.17</green>
-        <blue>0.08</blue>
-      </emission>
-  </animation>
-
-  <animation>
-   <object-name>malf-warning-light-button</object-name>
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/panel-norm</factor-prop>
-        <red>0.25</red>
-        <green>0.17</green>
-        <blue>0.08</blue>
-      </emission>
-  </animation>
-
-
-    <!-- *** LoD *** -->
-    <animation> 
-      <type>range</type>
-      <min-m>0</min-m>
-      <max-m>5</max-m>
-    </animation>
-  </PropertyList>
+		<animation>
+			<type>range</type>
+			<min-m>0</min-m>
+			<max-m>5</max-m>
+		</animation>
+	</PropertyList>

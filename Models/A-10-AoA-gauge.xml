@@ -48,10 +48,10 @@
    <type>material</type>
     <emission> 
       <factor-prop>controls/lighting/panel-norm</factor-prop>
-        <red>0.45</red>
-        <green>0.34</green>
-        <blue>0.18</blue>
-      </emission>
+			<red>0.385</red>
+			<green>0.168</green>
+			<blue>0.07</blue>
+    </emission>
   </animation>
 
   <animation>
@@ -59,10 +59,10 @@
    <type>material</type>
      <emission> 
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.50</red>
-        <green>0.25</green>
-        <blue>0.18</blue>
-      </emission>
+			<red>0.55</red>
+			<green>0.24</green>
+			<blue>0.10</blue>
+     </emission>
   </animation>
 
   <animation>
@@ -70,10 +70,10 @@
    <type>material</type>
      <emission> 
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.50</red>
-        <green>0.25</green>
-        <blue>0.18</blue>
-      </emission>
+			<red>0.55</red>
+			<green>0.24</green>
+			<blue>0.10</blue>
+     </emission>
   </animation>
 
   <animation>
@@ -81,10 +81,10 @@
    <type>material</type>
     <emission> 
       <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.75</red>
-        <green>0.55</green>
-        <blue>0.35</blue>
-      </emission>
+			<red>0.55</red>
+			<green>0.24</green>
+			<blue>0.10</blue>
+     </emission>
   </animation>
 
 

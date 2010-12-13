@@ -16,15 +16,10 @@
 			<entry><ind>1</ind><dep>90</dep></entry>
 		</interpolation>
 		<center>
-			<x-m>0.0000</x-m>
 			<y-m>-0.0167</y-m>
 			<z-m>-0.0314</z-m>
 		</center>
-		<axis> 
-			<x>-1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
+		<axis><x>-1</x></axis>
 	</animation>
 
 	<!-- gear warning lights -->
@@ -146,14 +141,9 @@
 		<factor>52</factor>
 		<center>
 			<x-m>-0.0121</x-m>
-			<y-m>0.0327</y-m>
 			<z-m>-0.0177</z-m>
 		</center>
-		<axis> 
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
 
 
@@ -169,103 +159,40 @@
 		</interpolation>
 		<center>
 			<x-m>-0.0027</x-m>
-			<y-m>0.0236</y-m>
 			<z-m>0.0636</z-m>
 		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
 
 
 	<!-- lighting -->
-	<animation> 
-		<object-name>mount</object-name>
+	<animation>
+		<object-name>panel</object-name>
 		<type>material</type>
 		<emission> 
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.45</red>
-			<green>0.34</green>
-			<blue>0.18</blue>
+			<red>0.385</red>
+			<green>0.168</green>
+			<blue>0.07</blue>
 		</emission>
 	</animation>
 
 	<animation>
-		<object-name>face</object-name>
+		<object-name>instrument</object-name>
 		<type>material</type>
 		<emission> 
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.25</green>
-			<blue>0.18</blue>
+			<red>0.55</red>
+			<green>0.24</green>
+			<blue>0.10</blue>
 		</emission>
 	</animation>
 
-	<animation>
-		<object-name>needle</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>0.75</red>
-			<green>0.55</green>
-			<blue>0.35</blue>
-		</emission>
-	</animation>
-
-	<animation> 
-		<object-name>anti-skid-button</object-name>
-		<type>material</type>
-		<emission> 
-		<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.10</red>
-			<green>0.05</green>
-			<blue>0.025</blue>
-		</emission>
-	</animation>
-
-	<animation> 
-		<object-name>light-land-switch</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.10</red>
-			<green>0.05</green>
-			<blue>0.025</blue>
-		</emission>
-	</animation>
-
-	<animation> 
-		<object-name>ld-gear-handle</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.10</red>
-			<green>0.05</green>
-			<blue>0.025</blue>
-		</emission>
-	</animation>
-
-	<animation> 
-		<object-name>override-button</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.10</red>
-			<green>0.05</green>
-			<blue>0.025</blue>
-		</emission>
-	</animation>
-
-	<animation>
-		<object-name>ldg-panel</object-name>
-		<type>noshadow</type>
-	</animation>
 
 	<animation> 
 		<type>range</type>
 		<min-m>0</min-m>
 		<max-m>5</max-m>
 	</animation>
+
 </PropertyList>
