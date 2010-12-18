@@ -44,16 +44,15 @@ VHF AM/FM Transceiver: Collins AN/ARC-186(V)
 		- EMER AM       - not used yet (cyphered coms)
 		- MAN           - Enables manual frequency selection.
 		- PRE           - Enables preset chanel selection.
-		(Left mouse button rotates CW, center mouse button (linux) rotates CCW)
 
 		Load pushbutton - Inserts manualy selected frequency into selected
 		preseted channel. 
 
 	Center:
-		Frequency indicator - indicates the frequency selected by the frequency
+		Frequency indicator - displays the frequency selected by the frequency
 		selector   knobs. (in some case it doesn't reflect the frequency in use)
 
-		Frequency selector knobs - select frequency.
+		Frequency selector buttons - select frequency.
 		(Left mouse button rotates CW, center mouse button (linux) rotates CCW)
 
 		Preset chanel indicator - indicates the preset number (1-20)
@@ -96,13 +95,13 @@ VHF AM/FM Transceiver: Collins AN/ARC-186(V)
 		- Mode selector knob - DF
 		- Frequency control/emergency select knob - MAN or PRE
 		
-		When the signal strong enough (in range) the course warning flag is
+		When the signal is strong enough (in range) the course warning flag is
 		stowed away. then the bank steering bar of the ADI will indicate course
 		deviation to the left or right of the center line, relative to the
 		selected station.
-		Turing the aircraft toward the bank steerg bar will correct the
+		Turning the aircraft toward the bank steering bar will correct the
 		deviation. As the aircraft approaches the station, the pitch steering
-		bar will move up toward the cnterline in accordance with the increasing
+		bar will move up toward the centerline in accordance with the increasing
 		strengh of the received signal. If the station is in the opposite
 		direction (aircraft flying away from station), the pitch steering bar
 		will move down from the center bar to the bottom of the ADI.

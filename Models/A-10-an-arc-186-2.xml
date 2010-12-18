@@ -18,76 +18,25 @@
 <!-- lighting-->
 
 	<animation>
-		<object-name>tone-sqdis-switch</object-name> 
-		<object-name>pressets-wheel</object-name> 
-		<object-name>vol-knob</object-name> 
-		<object-name>freq-knob-10</object-name> 
-		<object-name>freq-knob-1</object-name> 
-		<object-name>freq-knob-01</object-name> 
-		<object-name>freq-knob-0001</object-name> 
-		<type>material</type>
-		<emission>
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.35</red>
-			<green>0.24</green>
-			<blue>0.14</blue>
-		</emission>
-	</animation>
-
-	<animation>
-		<object-name>freq-select-knob</object-name> 
-		<object-name>load-button</object-name> 
-		<object-name>mode-knob</object-name> 
-		<type>material</type>
-		<emission>
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.35</red>
-			<green>0.24</green>
-			<blue>0.14</blue>
-		</emission>
-	</animation>
-
-	<animation>
-		<object-name>dot</object-name> 
-		<object-name>ring-01</object-name> 
-		<object-name>ring-1</object-name> 
-		<object-name>ring-10</object-name> 
-		<object-name>pressets-01</object-name> 
-		<object-name>pressets-10</object-name> 
-		<type>material</type>
-		<emission>
-			<factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>0.75</red>
-			<green>0.55</green>
-			<blue>0.35</blue>
-		</emission>
-	</animation>
-
-	<animation>
 		<object-name>mount</object-name> 
 		<type>material</type>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.49</red>
-			<green>0.35</green>
-			<blue>0.25</blue>
+			<red>0.385</red>
+			<green>0.168</green>
+			<blue>0.07</blue>
 		</emission>
 	</animation>
 
 	<animation>
-		<object-name>00</object-name>
+		<object-name>numbers</object-name> 
 		<type>material</type>
 		<emission>
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>0.75</red>
-			<green>0.55</green>
-			<blue>0.35</blue>
+			<red>0.55</red>
+			<green>0.24</green>
+			<blue>0.10</blue>
 		</emission>
-	</animation>
-
-	<animation>
-		<object-name>uhf</object-name>
-		<type>noshadow</type>
 	</animation>
 
 	<animation>

@@ -171,19 +171,19 @@
 		<name>Panel-l1</name>
 		<path>Aircraft/A-10/Models/A-10-panel-l1-hotspot.xml</path>
 		<bottom-left>
-			<x-m>2.7732</x-m>
+			<x-m>2.7752</x-m>
 			<y-m>-0.4353</y-m>
-			<z-m>0.7110</z-m>
+			<z-m>0.7140</z-m>
 		</bottom-left>
 		<bottom-right>
-			<x-m>2.7732</x-m>
+			<x-m>2.7752</x-m>
 			<y-m>-0.2751</y-m>
-			<z-m>0.7110</z-m>
+			<z-m>0.7140</z-m>
 		</bottom-right>
 		<top-left>
-			<x-m>2.4324</x-m>
+			<x-m>2.4344</x-m>
 			<y-m>-0.4353</y-m>
-			<z-m>0.8550</z-m>
+			<z-m>0.8580</z-m>
 		</top-left>
 	</panel>
 	
@@ -193,17 +193,17 @@
 		<bottom-left>
 			<x-m>3.2026</x-m>
 			<y-m>-0.4353</y-m>
-			<z-m>0.7128</z-m>
+			<z-m>0.7178</z-m>
 		</bottom-left>
 		<bottom-right>
 			<x-m>3.2026</x-m>
 			<y-m>-0.2747</y-m>
-			<z-m>0.7128</z-m>
+			<z-m>0.7178</z-m>
 		</bottom-right>
 		<top-left>
 			<x-m>2.7728</x-m>
 			<y-m>-0.4353</y-m>
-			<z-m>0.7128</z-m>
+			<z-m>0.7178</z-m>
 		</top-left>
 	</panel>
 
