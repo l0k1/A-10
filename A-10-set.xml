@@ -10,26 +10,28 @@ Fairchild A-10 simulation config.
 
 <PropertyList>
 
-	<ai>
-		<submodels>
-			<trajectory-markers type="bool">0</trajectory-markers>
-		</submodels>
-	</ai>
-
 	<sim>
+
+		<description>Fairchild A-10 (YASim FDM)</description>
+		<author>Lee Elliott - Alexis Bory - David Bastien</author>
+		<status>production</status>
+		<rating>
+			<FDM type="int">4</FDM>
+			<systems type="int">5</systems>
+			<cockpit type="int">4</cockpit>
+			<model type="int">4</model>
+		</rating>
+
+		<flight-model>yasim</flight-model>
+		<aero>A-10-yasim</aero>
+		<fuel-fraction>1.0</fuel-fraction>
+
+		<virtual-cockpit archive="y">false</virtual-cockpit>
+		<chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
 
 		<startup>
 			<splash-texture>Aircraft/A-10/A-10-splash.rgb</splash-texture>
 		</startup>
-
-		<flight-model>yasim</flight-model>
-		<status>production</status>
-		<author>Lee Elliott - Alexis Bory - David Bastien</author>
-		<aero>A-10-yasim</aero>
-		<fuel-fraction>1.0</fuel-fraction>
-		<description>Fairchild A-10 (YASim FDM)</description>
-		<virtual-cockpit archive="y">false</virtual-cockpit>
-		<chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
 
 		<tutorials>
 			<tutorial include="Tutorials/startup_tutorial.xml"/>
@@ -704,6 +706,12 @@ Fairchild A-10 simulation config.
 		</sound>
 
 	</sim>
+
+	<ai>
+		<submodels>
+			<trajectory-markers type="bool">0</trajectory-markers>
+		</submodels>
+	</ai>
 
 	<input>
 
