@@ -18,7 +18,7 @@
     <control-setting axis="/controls/engines/engine[1]/throttle" value="0.5"/>
     <control-setting axis="/controls/flight/flaps" value="1.0"/>
     <control-setting axis="/controls/flight/spoilers" value="0.5"/>
-    <control-setting axis="/controls/gear/gear-down" value="1"/>
+    <control-setting axis="/controls/gear/gear-down" value="1.0"/>
     <solve-weight idx="0" weight="2700"/>
   </approach>
 
@@ -27,7 +27,8 @@
     <control-setting axis="/controls/engines/engine[0]/throttle" value="1.0"/>
     <control-setting axis="/controls/engines/engine[1]/throttle" value="1.0"/>
     <control-setting axis="/controls/flight/flaps" value="0.0"/>
-    <control-setting axis="/controls/gear/gear-down" value="0"/>
+    <control-setting axis="/controls/flight/spoilers" value="0.0"/>
+    <control-setting axis="/controls/gear/gear-down" value="0.0"/>
     <solve-weight idx="0" weight="2700"/>
   </cruise>
 
@@ -46,10 +47,10 @@
   <fuselage ax="-9.44" ay="-1.50" az="1.3" bx="-12.73" by="-1.50" bz="1.18"
             width="1.5"/>
 
-  <wing x="-8.32" y="0.63" z="0.0" taper="0.7" incidence="-1.0"
+ <wing x="-8.32" y="0.63" z="0.0" taper="0.7" incidence="-0.8"
         length="8.31" chord="3.23" sweep="0.0" dihedral="3.0"
-        camber="0.0">
-    <stall aoa="15" width="3" peak="1.3"/>
+        camber="0.0" twist="-1">
+    <stall aoa="15" width="6" peak="1.3"/>
     <flap0 start="0.04" end="0.51" lift="1.3" drag="1.3"/>
     <flap1 start="0.54" end="0.86" lift="1.6" drag="1.3"/>
     <spoiler start="0.54" end="0.86" lift="0.6" drag="10.0"/>
