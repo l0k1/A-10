@@ -636,17 +636,36 @@ Fairchild A-10 simulation config.
 				<name>K</name>
 				<desc>Toggle trajectory markers</desc>
 			</key>
-			<line>External fuel tanks ?</line>
-			<line>  Menu > Equipment > Fuel and Payload</line>
-			<line>__________________________________________________</line>
-			<line>External stores ? (ECM Pod, AIM-9, LAU-68...)</line>
-			<line>  Menu > Equipement > Fuel and Payload</line>
-			<line>__________________________________________________</line>
+			<line></line>
+
 			<line>How to start it ?</line>
 			<line>  Menu > Help > Start Tutorial > Engines Start</line>
-			<line>__________________________________________________</line>
-			<line>Find more A-10 information on wiki.flightgear.org</line>
+			<line></line>
+			<line>External fuel tanks ?</line>
+			<line>  Menu > Equipment > Fuel and Payload</line>
+			<line></line>
+			<line>External stores ? (ECM Pod, AIM-9, LAU-68...)</line>
+			<line>  Menu > Equipment > Fuel and Payload</line>
+			<line></line>
+			<line>HUD ?</line>
+			<line>  Mouse click HUD knob from "Off" to "Nav"; turns on green HUD display </line>
+			<line></line>
+			<line>Weapons ?</line>
+			<line>  "Master Arm" to "ARM" to enable weapons systems.</line>
+			<line> "Gun Rate" switch to "Hi" to activate the GAU-8/A gun.</line>
+			<line>  Mouse click some of the 11 squares under "Weapon Stations" to activate bombs</line>
+			<line>  RIP QTY and RIP INTVL (mouse click) allow you to release several bombs at one go.</line>
+			<line>  Aim GAU-8/A gun with the cross on the HUD. You can lower/upper the cross in the </line>
+			<line>  HUD with the "DEPR" knob in the HUD panel</line>
+			<line>  Shoot gun with 'e'; release bombs with ','.</line>
+			<line>  Swith HUD knob to CCIP and aim bombs via the circle.</line>
+			<line></line>
+			<line>Reload GAU-8/A Avenger gatling gun?</line>
+			<line>  Menu > A-10 > Reload</line>
+			<line></line>
+			<line>     More A-10 information on wiki.flightgear.org</line>
 		</help>
+
 
 		<!-- Hud -->
 		<hud>
@@ -687,6 +706,13 @@ Fairchild A-10 simulation config.
 						<binding>
 							<command>nasal</command>
 							<script>A10engines.eng_autostart()</script>
+						</binding>
+					</item>
+					<item>
+						<label>Reload GAU-8/A gatling gun</label>
+						<binding>
+							<command>nasal</command>
+							<script>A10weapons.reload_guns()</script>
 						</binding>
 					</item>
 					<item>
