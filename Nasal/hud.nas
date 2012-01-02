@@ -69,10 +69,13 @@ var update_loop = func {
 
 
 # hide hud if view-number != 0
-setlistener("/sim/current-view/view-number", func(n) {
-	setprop("/sim/hud/visibility[1]", n.getValue() == 0);
-}, 1);
-
+var launched = 0; # Used to avoid to setlisteners more than once.
+if (! launched) {
+	setlistener("/sim/current-view/view-number", func(n) {
+		setprop("/sim/hud/visibility[1]", n.getValue() == 0);
+	}, 1);
+	launched = 1;
+}
 
 # controls #################
 var hud_mode_knob_move = func(v) {

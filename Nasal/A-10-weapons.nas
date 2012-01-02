@@ -140,7 +140,7 @@ var select_station = func {
 # station release
 # ---------------
 # Handles ripples and intervales.
-# Handles the avaibality lights (3 green lights each station).
+# Handles the availability lights (3 green lights each station).
 # LAU-68, with 7 ammos by station turns only one light until the dispenser is empty.
 # Releases and substract the released weight from the station weight.
 # Ask for deactivation of the search sound flag after the last AIM-9 has been released.
@@ -376,3 +376,27 @@ var aim9_knob_switch = func {
 		}
 	}
 }
+
+
+
+# reloads ammos for GAU-8
+# -----------------------
+# Thanks to Bombable/Brent Hugh, 2011-09
+
+reload_guns = func {
+	var gau8_ammo_count="/ai/submodels/submodel[1]/count";  
+	var a10_ammo_weight="/yasim/weights/ammunition-weight-lbs";
+	groundspeed=getprop("velocities/groundspeed-kt");
+	engine_rpm=getprop("engines/engine/rpm");
+
+	#only allow it if on ground and stopped.
+	if (  groundspeed < 5  ) {
+		setprop ( gau8_ammo_count, 1174); #ammo loaded
+		var bweight=1174*0.9369635; #.9369635 = weight of one round in lbs
+		setprop(a10_ammo_weight, bweight);
+		gui.popupTip ("GAU-8 reloaded--1174 rounds.", 5);
+	} else {
+	gui.popupTip ("You must be on the ground and at a dead stop to re-load ammo.",5);
+	}
+}
+

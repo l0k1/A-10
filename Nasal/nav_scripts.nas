@@ -1,5 +1,5 @@
 # Fairchild A-10 radio and navigation system
-# Alexis BORY  < xiii at g2ms dot com >  -- Public Domain
+# Alexis BORY -- Public Domain
 
 
 # ILS: nav[0]
@@ -11,6 +11,7 @@ var ils_btn          = props.globals.getNode("sim/model/A-10/A-10-nav/selector-i
 
 
 # update selected-mhz with translated decimals
+
 var nav0_freq_update = func {
 	var test = getprop("instrumentation/nav[0]/frequencies/selected-mhz");
 	if (! test) {
@@ -24,7 +25,11 @@ var nav0_freq_update = func {
 # TACAN: nav[1]
 # ------------- 
 var nav1_back = 0;
-setlistener( "instrumentation/tacan/switch-position", func {nav1_freq_update();} );
+var launched = 0; # Used to avoid to setlisteners more than once.
+if (! launched) {
+	setlistener( "instrumentation/tacan/switch-position", func {nav1_freq_update();} );
+	launched = 1;
+}
 
 var tc              = props.globals.getNode("instrumentation/tacan/");
 var tc_sw_pos       = tc.getNode("switch-position");

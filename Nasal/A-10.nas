@@ -135,25 +135,39 @@ var toggle_traj_mkr = func {
 
 
 # Init ####################
+var launched = 0; # Used to avoid to setlisteners and span loops more than once. Thanks Brent Hugh
 var init = func {
-	settimer(A10autopilot.ap_common_aileron_monitor, 0.5);
-	settimer(A10autopilot.ap_common_elevator_monitor, 0.5);
-	settimer(A10autopilot.altimeter_monitor, 0.5);
-	#print("Initializing A-10 CCIP range calculator");
+	var msg = ( launched ) ? " - warm reboot" : " - cold start";
+	print ("Initializing A-10", msg);
+	if (! launched) {
+		settimer(A10autopilot.ap_common_aileron_monitor, 0.5);
+		settimer(A10autopilot.ap_common_elevator_monitor, 0.5);
+		settimer(A10autopilot.altimeter_monitor, 0.5);
+	}
 	print("Initializing Electrical System");
 	electrical.init_electrical();
 	print("Initializing Engines");
 	A10engines.initialize();
 	print("Initializing Fuel System");
 	A10fuel.init();
-	print("Initializing Weapons System.");
-	A10weapons.initialize();
+	if (! launched ) {
+		print("Initializing Weapons System.");
+		A10weapons.initialize();
+	#} else {
+		#bhugh, 2011-09, this updates our weapons buttons and sets them so they can be released, 
+		#based on the pre-loaded/default weapons config in the -set.xml file
+		#A10weapons.update_stations();
+	}
 	nav_scripts.freq_startup();
-	settimer(func {canopy.cockpit_state()}, 3);
+	if (! launched) settimer(func {canopy.cockpit_state()}, 3);
 	aircraft.data.save();
-	settimer(main_loop, 0.5);
+	if (! launched ) settimer(main_loop, 0.5);
+	launched = 1;
 }
-setlistener("/sim/signals/fdm-initialized", init);
+
+if (! launched) {
+	setlistener("/sim/signals/fdm-initialized", init);
+}
 
 
 # Lighting ################

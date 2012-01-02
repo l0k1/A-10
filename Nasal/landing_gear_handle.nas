@@ -31,4 +31,9 @@ var aux_lg_extension = func() {
 	}
 }
 
-setlistener("/sim/model/A-10/controls/gear/aux-lg-ext", aux_lg_extension);
+var launched = 0; # Used to avoid to setlisteners more than once.
+if (! launched) {
+	setlistener("/sim/model/A-10/controls/gear/aux-lg-ext", aux_lg_extension);
+	launched = 1;
+}
+
