@@ -5,6 +5,12 @@
 
 	<path>detail-cpt.ac</path>
 
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>CPT-hud-screen</object-name>
+	</effect>
+
+
 <!-- panels-light -->
 	<animation> 
 		<object-name>CPT-video-frame-l</object-name>

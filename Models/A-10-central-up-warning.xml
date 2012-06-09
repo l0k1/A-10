@@ -22,7 +22,7 @@
 				<value>0</value>
 			</equals>
 			<property>sim/model/A-10/lighting/warn-medium-lights/state</property>
-		</condition>  
+		</condition>
 	</animation>
 
 	<animation>
@@ -76,7 +76,7 @@
 			<x>-1</x>
 			<y>0</y>
 			<z>0</z>
-		</axis>  
+		</axis>
 	</animation>
 
 	<animation>
@@ -91,7 +91,7 @@
 				<property>canopy/position-norm</property>
 				<value>0</value>
 			</greater-than>
-		</condition>  
+		</condition>
 	</animation>
 
 	<animation>
@@ -110,7 +110,7 @@
 				<property>gear/gear[0]/position-norm</property>
 				<value>1</value>
 			</equals>
-		</condition>  
+		</condition>
 	</animation>
 
 	<animation>
@@ -127,10 +127,11 @@
 
 <!-- lighting -->
 
-	<animation> 
+	<animation>
 		<object-name>mount</object-name>
 		<type>material</type>
-		<emission> 
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.45</red>
 			<green>0.34</green>
@@ -138,49 +139,31 @@
 		</emission>
 	</animation>
 
-	<animation> 
+	<animation>
 		<object-name>gun-steering-marker-canopy</object-name>
 		<type>material</type>
-		<emission> 
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.45</red>
 			<green>0.34</green>
 			<blue>0.18</blue>
 		</emission>
 	</animation>
-	
-	<animation> 
-		<object-name>button-dim</object-name>
+
+	<animation>
+		<object-name>buttons</object-name>
 		<type>material</type>
-		<emission> 
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.30</red>
 			<green>0.16</green>
 			<blue>0.08</blue>
 		</emission>
 	</animation>
-	
-	<animation> 
-		<object-name>button-audio</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.30</red>
-			<green>0.16</green>
-			<blue>0.08</blue>
-		</emission>
-	</animation>
-	
-	<animation> 
-		<object-name>lights</object-name>
-		<type>material</type>
-		<emission> 
-			<red>1</red>
-			<green>1</green>
-			<blue>1</blue>
-		</emission>
-	</animation>
-	
+
+
 	<animation>
 		<type>range</type>
 		<min-m>0</min-m>

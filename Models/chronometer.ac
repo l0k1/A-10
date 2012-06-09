@@ -6,11 +6,11 @@ OBJECT world
 kids 1
 OBJECT group
 name "chrono"
-loc 0.00187552 -0.00293869 0.00213477
-kids 10
+loc 0.00442651 -0.00701994 0.00484666
+kids 4
 OBJECT poly
 name "mount"
-loc -0.000326144 0.00292979 -0.00215939
+loc -0.00287713 0.00701104 -0.00487128
 texture "chronometer.png"
 crease 45.000000
 numvert 120
@@ -949,7 +949,7 @@ refs 4
 kids 0
 OBJECT poly
 name "mask"
-loc -0.00154863 0.00311191 -0.00226867
+loc -0.00409962 0.00719316 -0.00498056
 texture "chronometer.png"
 crease 45.000000
 numvert 4
@@ -967,46 +967,8 @@ refs 4
 0 0.872343 0.400533
 kids 0
 OBJECT poly
-name "h10"
-loc -0.00169357 0.00326075 0.0178512
-texture "lcd-green.png"
-crease 45.000000
-numvert 4
-0 0.00608467 -0.00346241
-0 0.00608467 0.00346241
-0 -0.00608467 0.00346241
-0 -0.00608467 -0.00346241
-numsurf 1
-SURF 0x10
-mat 1
-refs 4
-0 0.0888871 0.945991
-1 0.0101521 0.945991
-2 0.0101521 0.022548
-3 0.0888871 0.022548
-kids 0
-OBJECT poly
-name "background"
-loc -0.0017713 0.00311191 -0.00226867
-texture "chronometer.png"
-crease 45.000000
-numvert 4
-0 0.00681161 -0.0238588
-0 0.00681161 0.0238588
-0 -0.00681161 0.0238588
-0 -0.00681161 -0.0238588
-numsurf 1
-SURF 0x10
-mat 0
-refs 4
-0 0.872343 0.605183
-1 0.137846 0.605183
-2 0.137846 0.400533
-3 0.872343 0.400533
-kids 0
-OBJECT poly
 name "buttons"
-loc 0.0137834 -0.0256062 0.0174617
+loc 0.0112324 -0.0215249 0.0147498
 texture "chronometer.png"
 crease 79.000000
 numvert 102
@@ -1794,9 +1756,51 @@ refs 3
 91 0.487475 0.924422
 101 0.503533 0.924422
 kids 0
+OBJECT group
+name "leds"
+loc -0.00425566 0.00732074 -0.00489796
+kids 7
+OBJECT poly
+name "h10"
+loc 1.11043e-05 2.12629e-05 0.0200373
+texture "lcd-green.png"
+crease 45.000000
+numvert 4
+0 0.00608467 -0.00346241
+0 0.00608467 0.00346241
+0 -0.00608467 0.00346241
+0 -0.00608467 -0.00346241
+numsurf 1
+SURF 0x10
+mat 1
+refs 4
+0 0.0888871 0.945991
+1 0.0101521 0.945991
+2 0.0101521 0.022548
+3 0.0888871 0.022548
+kids 0
+OBJECT poly
+name "background"
+loc -6.66257e-05 -0.000127577 -8.26029e-05
+texture "chronometer.png"
+crease 45.000000
+numvert 4
+0 0.00681161 -0.0238588
+0 0.00681161 0.0238588
+0 -0.00681161 0.0238588
+0 -0.00681161 -0.0238588
+numsurf 1
+SURF 0x10
+mat 0
+refs 4
+0 0.872343 0.605183
+1 0.137846 0.605183
+2 0.137846 0.400533
+3 0.872343 0.400533
+kids 0
 OBJECT poly
 name "h1"
-loc -0.00169357 0.00326075 0.0103056
+loc 1.11043e-05 2.12629e-05 0.0124917
 texture "lcd-green.png"
 crease 45.000000
 numvert 4
@@ -1815,7 +1819,7 @@ refs 4
 kids 0
 OBJECT poly
 name "m10"
-loc -0.00169357 0.00326075 0.00163621
+loc 1.11043e-05 2.12629e-05 0.00382228
 texture "lcd-green.png"
 crease 45.000000
 numvert 4
@@ -1834,7 +1838,7 @@ refs 4
 kids 0
 OBJECT poly
 name "m1"
-loc -0.00169357 0.00326075 -0.00590941
+loc 1.11043e-05 2.12629e-05 -0.00372334
 texture "lcd-green.png"
 crease 45.000000
 numvert 4
@@ -1853,7 +1857,7 @@ refs 4
 kids 0
 OBJECT poly
 name "s10"
-loc -0.00169357 0.00326075 -0.0146859
+loc 1.11043e-05 2.12629e-05 -0.0124998
 texture "lcd-green.png"
 crease 45.000000
 numvert 4
@@ -1872,7 +1876,7 @@ refs 4
 kids 0
 OBJECT poly
 name "s1"
-loc -0.00169357 0.00326075 -0.0222315
+loc 1.11043e-05 2.12629e-05 -0.0200454
 texture "lcd-green.png"
 crease 45.000000
 numvert 4

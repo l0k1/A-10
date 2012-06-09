@@ -60,6 +60,15 @@
 
 	<!-- Cockpit -->
 
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>FCanopyGlass</object-name>
+		<object-name>BCanopyGlass</object-name>
+		<object-name>FCanopyGlass-int</object-name>
+		<object-name>BCanopyGlass-int</object-name>
+	</effect>
+
+
 	<animation>
 		<type>shader</type>
 		<shader>chrome</shader>
@@ -246,27 +255,8 @@
 			<z-m>0.8538</z-m>
 		</top-left>
 	</panel>
-	<!-- g-meter -->
-	<panel>
-		<name>Panel-l5</name>
-		<path>Aircraft/A-10/Models/A-10-panel-l5-hotspot.xml</path>
-		<bottom-left>
-			<x-m>2.2969</x-m>
-			<y-m>-0.1992</y-m>
-			<z-m>1.4510</z-m>
-		</bottom-left>
-		<bottom-right>
-			<x-m>2.2969</x-m>
-			<y-m>-0.1357</y-m>
-			<z-m>1.4510</z-m>
-		</bottom-right>
-		<top-left>
-			<x-m>2.2969</x-m>
-			<y-m>-0.1992</y-m>
-			<z-m>1.5097</z-m>
-		</top-left>
-	</panel>
- 	<!-- ILS panel -->
+
+	<!-- ILS panel -->
 	<panel>
 		<name>Panel-r1</name>
 		<path>Aircraft/A-10/Models/A-10-panel-r1-hotspot.xml</path>

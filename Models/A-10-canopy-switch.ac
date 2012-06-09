@@ -1,10 +1,14 @@
 AC3Db
 MATERIAL "ac3dmat1" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.2 0.2 0.2  shi 128  trans 0
 OBJECT world
+kids 1
+OBJECT group
+name "canopy-switch"
+loc 2.48033 0.886487 -0.462783
 kids 2
 OBJECT poly
 name "switch"
-loc 2.48677 0.890588 -0.468489
+loc 0.00643492 0.00410098 -0.00570601
 texture "A-10-canopy-switch.png"
 crease 64.000000
 numvert 17
@@ -133,7 +137,7 @@ refs 3
 kids 0
 OBJECT poly
 name "mount"
-loc 2.4739 0.882386 -0.457077
+loc -0.00643492 -0.00410098 0.00570598
 texture "A-10-canopy-switch.png"
 crease 45.000000
 numvert 81
