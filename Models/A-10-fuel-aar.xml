@@ -16,7 +16,7 @@
 			<greater-than>
 				<property>systems/electrical/outputs/caution-panel</property>
 				<value>24</value>
-      			</greater-than>
+			</greater-than>
 		</condition>
 	</animation>
 
@@ -31,7 +31,7 @@
 			<greater-than>
 				<property>systems/electrical/outputs/caution-panel</property>
 				<value>24</value>
-      			</greater-than>
+ 			</greater-than>
 		</condition>
 	</animation>
 
@@ -46,39 +46,21 @@
 			<greater-than>
 				<property>systems/electrical/outputs/caution-panel</property>
 				<value>24</value>
-      			</greater-than>
+			</greater-than>
 		</condition>
 	</animation>
 
 	<!-- lighting -->
 
-	<animation>
-		<object-name>refuel-ready</object-name>
+	<animation> 
+		<object-name>refuel-none</object-name>
 		<type>material</type>
-		<emission> 
-			<red>1</red>
-			<green>1</green>
-			<blue>1</blue>
-		</emission>
-	</animation>
-
-	<animation>
-		<object-name>refuel-latched</object-name>
-		<type>material</type>
-		<emission> 
-			<red>1</red>
-			<green>1</green>
-			<blue>1</blue>
-		</emission>
-	</animation>
-
-	<animation>
-		<object-name>refuel-disconnect</object-name>
-		<type>material</type>
-		<emission> 
-			<red>1</red>
-			<green>1</green>
-			<blue>1</blue>
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<emission>
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.11</red>
+			<green>0.055</green>
+			<blue>0.03</blue>
 		</emission>
 	</animation>
 
