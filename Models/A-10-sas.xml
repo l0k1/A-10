@@ -7,37 +7,27 @@
 
 	<!-- Pitch SAS switch -->
 	<animation>
-		<object-name>pitch-L-switch</object-name>
+		<object-name>pitch-switch</object-name>
 		<type>rotate</type>
 		<property>sim/model/A-10/controls/sas/pitch-sas-switch</property>
 		<factor>60</factor>
-		<center>
-			<x-m>-0.0213</x-m>
-			<y-m>0.0178</y-m>
-			<z-m>0.0000</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<center><x-m>-0.0213</x-m></center>
+		<axis><y>-1</y></axis>
 	</animation>
 
+
 	<animation>
-		<object-name>pitch-R-switch</object-name>
-		<type>rotate</type>
-		<property>sim/model/A-10/controls/sas/pitch-sas-switch</property>
-		<factor>60</factor>
-		<center>
-			<x-m>-0.0213</x-m>
-			<y-m>0.0537</y-m>
-			<z-m>0.0000</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>pitch-switch</object-name>
+		<action>
+			<name>Toggle-pitch-sas</name>
+			<button>0</button>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/model/A-10/controls/sas/pitch-sas-switch</property>
+			</binding>
+		</action>
 	</animation>
 
 
@@ -46,6 +36,7 @@
 	<animation>
 		<object-name>sas</object-name>
 		<type>material</type>
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.385</red>
