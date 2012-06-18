@@ -21,11 +21,7 @@
 			<y-m>0.0735</y-m>
 			<z-m>-0.0505</z-m>
 		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
 	<!-- close refueling receiver door -->
 	<animation>
@@ -68,11 +64,7 @@
 			<y-m>-0.0520</y-m>
 			<z-m>0.0040</z-m>
 		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -99,11 +91,7 @@
 			<y-m>-0.0157</y-m>
 			<z-m>0.0040</z-m>
 		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -131,10 +119,7 @@
 			<y-m>-0.0520</y-m>
 			<z-m>0.0040</z-m>
 		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
+		<axis><y>-1</y><z>0</z>
 		</axis>
 	</animation>
 	<animation>
@@ -163,11 +148,7 @@
 			<y-m>-0.0157</y-m>
 			<z-m>0.0040</z-m>
 		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -195,11 +176,7 @@
 			<y-m>-0.0520</y-m>
 			<z-m>0.0040</z-m>
 		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -225,11 +202,7 @@
 			<y-m>-0.0157</y-m>
 			<z-m>0.0040</z-m>
 		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -257,11 +230,7 @@
 			<y-m>-0.0520</y-m>
 			<z-m>0.0040</z-m>
 		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -287,11 +256,7 @@
 			<y-m>-0.0157</y-m>
 			<z-m>0.0040</z-m>
 		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
+		<axis><y>-1</y></axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -314,11 +279,7 @@
 		<type>translate</type>
 		<property>controls/fuel/tank[0]/fill-dis</property>
 		<factor>0.008</factor>
-		<axis>
-			<x>0</x>
-			<y>0</y>
-			<z>1</z>
-		</axis>
+		<axis><z>1</z></axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -339,11 +300,7 @@
 		<type>translate</type>
 		<property>controls/fuel/tank[3]/fill-dis</property>
 		<factor>0.008</factor>
-		<axis>
-			<x>0</x>
-			<y>0</y>
-			<z>1</z>
-		</axis>
+		<axis><z>1</z></axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -364,11 +321,7 @@
 		<type>translate</type>
 		<property>controls/fuel/tank[1]/fill-dis</property>
 		<factor>0.008</factor>
-		<axis>
-			<x>0</x>
-			<y>0</y>
-			<z>1</z>
-		</axis>
+		<axis><z>1</z></axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -389,11 +342,7 @@
 		<type>translate</type>
 		<property>controls/fuel/tank[2]/fill-dis</property>
 		<factor>0.008</factor>
-		<axis>
-			<x>0</x>
-			<y>0</y>
-			<z>1</z>
-		</axis>
+		<axis><z>1</z></axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -410,11 +359,12 @@
 	</animation>
 
 
-	
+
 <!-- lighting -->
 	<animation> 
 		<object-name>fuel-control</object-name>
 		<type>material</type>
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
 		<emission> 
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.385</red>

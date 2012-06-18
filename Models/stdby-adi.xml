@@ -83,8 +83,9 @@
 	<!-- lighting -->
 
 	<animation>
-		<object-name>mount</object-name>
+		<object-name>panel</object-name>
 		<type>material</type>
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.55</red>
@@ -94,30 +95,9 @@
 	</animation>
 
 	<animation>
-		<object-name>button</object-name>
+		<object-name>instrument</object-name>
 		<type>material</type>
-		<emission>
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.44</red>
-			<green>0.192</green>
-			<blue>0.08</blue>
-		</emission>
-	</animation>
-
-	<animation>
-		<object-name>scale</object-name>
-		<type>material</type>
-		<emission>
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.55</red>
-			<green>0.24</green>
-			<blue>0.10</blue>
-		</emission>
-	</animation>
-
-	<animation>
-		<object-name>bank-index</object-name>
-		<type>material</type>
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
 		<emission>
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
 			<red>0.55</red>
@@ -126,49 +106,6 @@
 		</emission>
 	</animation>
 
-	<animation>
-		<object-name>ring</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>0.55</red>
-			<green>0.24</green>
-			<blue>0.10</blue>
-		</emission>
-	</animation>
-
-	<animation>
-		<object-name>bkg</object-name>
-		<type>material</type>
-		<emission>
-		<factor-prop>controls/lighting/instruments-norm</factor-prop>
-				<red>0.55</red>
-				<green>0.24</green>
-				<blue>0.10</blue>
-		</emission>
-	</animation>
-
-	<animation>
-		<object-name>drum</object-name>
-		<type>material</type>
-		<emission>
-			<factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>0.55</red>
-			<green>0.24</green>
-			<blue>0.10</blue>
-		</emission>
-	</animation>
-
-	<animation>
-		<object-name>plane</object-name>
-		<type>material</type>
-		<emission>
-			<factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>0.55</red>
-			<green>0.24</green>
-			<blue>0.10</blue>
-		</emission>
-	</animation>
 
 	<animation>
 		<type>range</type>

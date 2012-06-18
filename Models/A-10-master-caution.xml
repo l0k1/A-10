@@ -20,7 +20,7 @@
 	<animation> 
 		<object-name>master-caution-on</object-name>
 		<type>material</type>
-		<emission> 
+		<emission>
 			<red>1</red>
 			<green>1</green>
 			<blue>1</blue>
@@ -30,7 +30,8 @@
 	<animation> 
 		<object-name>master-caution-off</object-name>
 		<type>material</type>
-		<emission> 
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.45</red>
 			<green>0.34</green>

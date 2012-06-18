@@ -2,10 +2,14 @@ AC3Db
 MATERIAL "ac3dmat13" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.302 0.302 0.302  shi 97  trans 0
 MATERIAL "ac3dmat1" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0 0 0  shi 20  trans 0
 OBJECT world
+kids 1
+OBJECT group
+name "panel"
+loc 2.47705 0.889334 0.001091
 kids 2
 OBJECT poly
 name "mount"
-loc 2.4739 0.882386 -0.457077
+loc -0.00314999 -0.00694799 -0.458168
 texture "A-10-seat-switch.png"
 crease 45.000000
 numvert 81
@@ -694,7 +698,7 @@ refs 3
 kids 0
 OBJECT poly
 name "switch"
-loc 2.4802 0.896282 0.459259
+loc 0.00314999 0.00694799 0.458168
 texture "A-10-seat-switch.png"
 crease 92.000000
 numvert 17

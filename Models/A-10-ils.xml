@@ -59,31 +59,10 @@
 
 	<!-- lighting -->
 	<animation>
-		<object-name>mount</object-name>
+		<object-name>panel</object-name>
 		<type>material</type>
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
 		<emission>
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.385</red>
-			<green>0.168</green>
-			<blue>0.07</blue>
-		</emission>
-	</animation>
-
-	<animation>
-		<object-name>deci-knob</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.385</red>
-			<green>0.168</green>
-			<blue>0.07</blue>
-		</emission>
-	</animation>
-
-	<animation>
-		<object-name>units-knob</object-name>
-		<type>material</type>
-		<emission> 
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.385</red>
 			<green>0.168</green>
@@ -94,6 +73,7 @@
 	<animation>
 		<object-name>digits</object-name>
 		<type>material</type>
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
 		<emission> 
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
 			<red>0.55</red>

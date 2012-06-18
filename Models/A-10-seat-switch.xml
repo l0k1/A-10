@@ -3,38 +3,25 @@
 
 <PropertyList>
 
-  <path>A-10-seat-switch.ac</path>
+	<path>A-10-seat-switch.ac</path>
 
-
-
-<!-- lighting -->
-
-  <animation> 
-    <object-name>mount</object-name>
-    <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/panel-norm</factor-prop>
+	<!-- lighting -->
+	<animation>
+		<object-name>panel</object-name>
+		<type>material</type>
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<emission>
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.385</red>
 			<green>0.168</green>
 			<blue>0.07</blue>
-      </emission>
-  </animation>
+		</emission>
+	</animation>
 
-  <animation> 
-    <object-name>switch</object-name>
-    <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.385</red>
-			<green>0.168</green>
-			<blue>0.07</blue>
-    </emission>
-  </animation>
-
-  <animation>
-    <type>range</type>
-    <min-m>0</min-m>
-    <max-m>5</max-m>
-  </animation>
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
 
 </PropertyList>

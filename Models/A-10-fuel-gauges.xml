@@ -167,21 +167,11 @@
 
 <!-- lighting -->
 
-	<animation> 
-		<object-name>mount</object-name>
+	<animation>
+		<object-name>panel</object-name>
 		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.385</red>
-			<green>0.168</green>
-			<blue>0.07</blue>
-		</emission>
-	</animation>
-
-	<animation> 
-		<object-name>knob</object-name>
-		<type>material</type>
-		<emission> 
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.385</red>
 			<green>0.168</green>
@@ -190,9 +180,10 @@
 	</animation>
 
 	<animation>
-		<object-name>face</object-name>
+		<object-name>instrument</object-name>
 		<type>material</type>
-		<emission> 
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<emission>
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
 			<red>0.55</red>
 			<green>0.24</green>
@@ -200,38 +191,6 @@
 		</emission>
 	</animation>
 
-	<animation>
-		<object-name>needles</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>0.55</red>
-			<green>0.24</green>
-			<blue>0.10</blue>
-		</emission>
-	</animation>
-
-	<animation>
-		<object-name>drums</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>0.55</red>
-			<green>0.24</green>
-			<blue>0.10</blue>
-		</emission>
-	</animation>
-
-	<animation> 
-		<object-name>test-button</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.385</red>
-			<green>0.168</green>
-			<blue>0.07</blue>
-		</emission>
-	</animation>
 
 	<!-- LoD -->
 	<animation> 

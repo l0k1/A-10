@@ -18,17 +18,30 @@
 		<object-name>CPT-video-screen</object-name>
 		<object-name>CPT-main-panel</object-name>
 		<type>material</type>
-		<emission> 
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.45</red>
-			<green>0.34</green>
+			<red>0.50</red>
+			<green>0.25</green>
 			<blue>0.18</blue>
+		</emission>
+	</animation>
+	<animation> 
+		<object-name>consoles</object-name>
+		<type>material</type>
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<emission>
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.225</red>
+			<green>0.17</green>
+			<blue>0.09</blue>
 		</emission>
 	</animation>
 	<animation>
 		<object-name>CPT-fake-panel</object-name>
 		<type>material</type>
-		<emission> 
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<emission>
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
 			<red>0.50</red>
 			<green>0.25</green>

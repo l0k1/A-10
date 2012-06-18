@@ -98,8 +98,7 @@
 		<offset>-100</offset>
 		<step>100</step>
 		<scroll>0.5</scroll>
-		<axis>
-		<x>0</x><y>-1</y></axis>
+		<axis><y>-1</y></axis>
 	</animation>
 
 <!-- course digital display -->
@@ -137,7 +136,6 @@
 	<object-name>course-knob</object-name>
 	<property>instrumentation/nav[1]/radials/selected-deg</property>
 	<center>
-		<x-m>0.0075</x-m>
 		<y-m>0.0491</y-m>
 		<z-m>-0.0413</z-m>
 	</center>
@@ -149,7 +147,6 @@
 	<object-name>heading-set-knob</object-name>
 	<property>instrumentation/heading-indicator-fg/offset-deg</property>
 	<center>
-		<x-m>0.0075</x-m>
 		<y-m>-0.0491</y-m>
 		<z-m>-0.0413</z-m>
 	</center>
@@ -426,8 +423,9 @@
 	<!-- lighting -->
 
 	<animation>
-		<object-name>ext</object-name>
+		<object-name>panel</object-name>
 		<type>material</type>
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
 		<emission> 
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.385</red>
@@ -436,8 +434,9 @@
 		</emission>
 	</animation>
 	<animation>
-		<object-name>hsi</object-name>
+		<object-name>instrument</object-name>
 		<type>material</type>
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
 		<emission> 
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
 			<red>0.55</red>
@@ -445,27 +444,6 @@
 			<blue>0.10</blue>
 		</emission>
 	</animation>
-	<animation>
-		<object-name>static</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>0.55</red>
-			<green>0.24</green>
-			<blue>0.10</blue>
-		</emission>
-	</animation>
-	<animation>
-		<object-name>cdi</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>0.55</red>
-			<green>0.24</green>
-			<blue>0.10</blue>
-		</emission>
-	</animation>
-
 
 	<animation>
 		<type>range</type>
