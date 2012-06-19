@@ -3,7 +3,7 @@
 
 
 <PropertyList>
-	<path>../../Instruments-3d/altimeter/altimeter.ac</path>
+	<path>/Aircraft/Instruments-3d/altimeter/altimeter.ac</path>
 
 	<animation>
 		<type>select</type>
