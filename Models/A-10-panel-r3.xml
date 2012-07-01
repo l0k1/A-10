@@ -18,6 +18,19 @@
 		</center>
 		<axis><y>-1</y></axis>
 	</animation>
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>strobe-switch</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/lighting/strobe</property>
+			</binding>
+		</action>
+	</animation>
 
 	<animation>
 		<object-name>nav-flash-switch</object-name>
@@ -34,6 +47,27 @@
 		</center>
 		<axis><y>-1</y></axis>
 	</animation>
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>nav-flash-switch</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>electrical.nav_lights_switcher(1)</script>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>electrical.nav_lights_switcher(-1)</script>
+			</binding>
+		</action>
+	</animation>
 
 	<animation>
 		<object-name>console-adjustable</object-name>
@@ -47,16 +81,29 @@
 		<axis><z>-1</z></axis>
 	</animation>
 	<animation>
-		<object-name>console-adjustable-cap</object-name>
-		<type>rotate</type>
-		<property>controls/lighting/panel-norm</property>
-		<factor>274</factor>
-		<center>
-			<x-m>0.0326</x-m>
-			<y-m>0.0372</y-m>
-		</center>
-		<axis><z>-1</z></axis>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>console-adjustable</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/lighting/panel-norm</property>
+				<step>0.1</step>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/lighting/panel-norm</property>
+				<step>-0.1</step>
+			</binding>
+		</action>
 	</animation>
+
 
 	<animation>
 		<object-name>fly-inst-knob</object-name>
@@ -68,6 +115,29 @@
 		</center>
 		<axis><z>-1</z></axis>
 	</animation>
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>fly-inst-knob</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/lighting/instruments-norm</property>
+				<step>0.1</step>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/lighting/instruments-norm</property>
+				<step>-0.1</step>
+			</binding>
+		</action>
+	</animation>
 
 	<animation>
 		<object-name>formation-knob</object-name>
@@ -78,6 +148,31 @@
 			<x-m>-0.0920</x-m>
 		</center>
 		<axis><z>-1</z></axis>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>formation-knob</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>sim/model/A-10/controls/lighting/formation</property>
+				<step>0.1</step>
+				<max>1.0</max>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>sim/model/A-10/controls/lighting/formation</property>
+				<step>-0.1</step>
+				<min>0.0</min>
+			</binding>
+		</action>
 	</animation>
 
 

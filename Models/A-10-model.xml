@@ -277,26 +277,6 @@
 			<z-m>0.7146</z-m>
 		</top-left>
 	</panel>
- 
-	<panel>
-		<name>Panel-r3</name>
-		<path>Aircraft/A-10/Models/A-10-panel-r3-hotspot.xml</path>
-		<bottom-left>
-			<x-m>3.2029</x-m>
-			<y-m>0.4277</y-m>
-			<z-m>0.7126</z-m>
-		</bottom-left>
-		<bottom-right>
-			<x-m>3.2029</x-m>
-			<y-m>0.5764</y-m>
-			<z-m>0.7500</z-m>
-		</bottom-right>
-		<top-left>
-			<x-m>2.7123</x-m>
-			<y-m>0.4277</y-m>
-			<z-m>0.7126</z-m>
-		</top-left>
-	</panel>
 
 	<!-- cockpit switch -->
 	<panel>
@@ -2028,6 +2008,10 @@
 	<!-- external lights -->
 	<model>
 		<path>Aircraft/A-10/Models/lights-external.xml</path>
+	</model>
+	<!-- internal lights -->
+	<model>
+		<path>Aircraft/A-10/Models/lights-internal.xml</path>
 	</model>
 
 

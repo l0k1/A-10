@@ -188,6 +188,6 @@ var warn_slow_lights_switch = props.globals.getNode("sim/model/A-10/controls/lig
 aircraft.light.new("sim/model/A-10/lighting/warn-slow-lights", [0.12, 1.5], warn_slow_lights_switch);
 warn_slow_lights_switch.setBoolValue(1);
 
-aircraft.data.add("controls/lighting/panel-norm", "controls/lighting/instruments-norm");
+aircraft.data.add("controls/lighting/panel-norm", "controls/lighting/instruments-norm", "sim/model/A-10/controls/lighting/formation");
 
 # EOF #####################
