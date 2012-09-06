@@ -15,7 +15,13 @@
 		<object-name>nav_halo_L</object-name>
 		<object-name>nav_halo_R</object-name>
 	</effect>
-f
+
+	<animation>
+		<type>select</type>
+		<condition><property>sim/rendering/rembrandt/enabled</property></condition>
+		<object-name>taxi-light-cone</object-name>
+		<object-name>taxi-halo-sphere</object-name>
+	</animation>
 
 	<!-- strobe tail -->
 	<animation>
