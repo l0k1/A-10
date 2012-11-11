@@ -15,6 +15,7 @@
 		<object-name>lgt-pilot-console-R-aft</object-name>
 		<object-name>lgt-pilot-front-L</object-name>
 		<object-name>lgt-pilot-front-R</object-name>
+		<object-name>lgt-pilot-front-C</object-name>
 		<condition>
 			<equals>
 				<property>sim/current-view/name</property>
