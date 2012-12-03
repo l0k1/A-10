@@ -710,7 +710,7 @@
 		<type>select</type>
 		<object-name>FCanopyGlass</object-name>
 		<object-name>BCanopyGlass</object-name>
-		<object-name>Fuselage-Ext</object-name>
+		<!--<object-name>Fuselage-Ext</object-name>-->
 		<condition>
 			<not>
 				<equals>

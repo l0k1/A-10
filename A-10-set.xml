@@ -30,8 +30,19 @@ Fairchild A-10 simulation config.
 		<chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
 
 		<startup>
-			<splash-texture>Aircraft/A-10/A-10-splash.rgb</splash-texture>
+			<splash-texture>Aircraft/A-10/A-10-splash.png</splash-texture>
 		</startup>
+ 		<gui>
+ 			<style>
+ 				<colors>
+ 					<splash-screen>
+ 						<red>0.4431</red>
+ 						<green>0.4353</green>
+ 						<blue>0.4117</blue>
+ 					</splash-screen>
+ 				</colors>
+ 			</style>
+ 		</gui>
 
 		<tutorials>
 			<tutorial include="Tutorials/startup_tutorial.xml"/>
