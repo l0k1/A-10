@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+
+	<path>A-10-sas.ac</path>
+
+	<!-- Pitch SAS switch -->
+	<animation>
+		<object-name>pitch-switch</object-name>
+		<type>rotate</type>
+		<property>sim/model/A-10/controls/sas/pitch-sas-switch</property>
+		<factor>60</factor>
+		<center><x-m>-0.0213</x-m></center>
+		<axis><y>-1</y></axis>
+	</animation>
+
+
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>pitch-switch</object-name>
+		<action>
+			<name>Toggle-pitch-sas</name>
+			<button>0</button>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/model/A-10/controls/sas/pitch-sas-switch</property>
+			</binding>
+		</action>
+	</animation>
+
+
+	<!-- lighting -->
+
+	<animation>
+		<object-name>sas</object-name>
+		<type>material</type>
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<emission>
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.385</red>
+			<green>0.168</green>
+			<blue>0.07</blue>
+		</emission>
+	</animation>
+
+
+	<!--<animation> 
+		<object-name>to-trim-light-on</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</emission>
+	</animation>-->
+
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+
+</PropertyList>

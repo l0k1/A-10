@@ -1,0 +1,567 @@
+<PropertyList>
+
+	<path>lights-external.ac</path>
+
+	<!-- External lighting -->
+
+	<!-- Formation lights (fluorescent tapes) are in the main model.xml file -->
+
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>strobe_halo_T</object-name>
+		<object-name>strobe_halo_R</object-name>
+		<object-name>strobe_halo_L</object-name>
+		<object-name>nav_halo_T</object-name>
+		<object-name>nav_halo_L</object-name>
+		<object-name>nav_halo_R</object-name>
+	</effect>
+
+	<animation>
+		<type>select</type>
+		<condition><property>sim/rendering/rembrandt/enabled</property></condition>
+		<object-name>taxi-light-cone</object-name>
+		<object-name>taxi-halo-sphere</object-name>
+	</animation>
+
+	<!-- strobe tail -->
+	<animation>
+		<type>select</type>
+		<object-name>strobe_halo_T</object-name>
+		<condition>
+			<property>sim/model/A-10/lighting/strobe/state</property>
+		</condition>
+		<condition>
+			<property>controls/lighting/strobe</property>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<object-name>strobe_halo_T</object-name>
+		<threshold>0.001</threshold>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>strobe_halo_T</object-name>
+		<offset-m>16.11</offset-m>
+		<axis>
+			<x>16.11</x>
+			<y>0</y>
+			<z>0.53</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>billboard</type>
+		<object-name>strobe_halo_T</object-name>
+	</animation>
+
+	<animation>
+		<type>scale</type>
+		<object-name>strobe_halo_T</object-name>
+		<property>sim/time/sun-angle-rad</property>
+		<offset>-1.4</offset>
+		<x-min>1</x-min>
+		<y-min>1</y-min>
+		<z-min>1</z-min>
+		<x-factor>12</x-factor>
+		<y-factor>12</y-factor>
+		<z-factor>12</z-factor>
+		<x-offset>1</x-offset>
+		<y-offset>1</y-offset>
+		<z-offset>1</z-offset>
+	</animation>
+	<animation>
+		<type>dist-scale</type>
+		<object-name>strobe_halo_T</object-name>
+		<interpolation>
+			<entry><ind>0</ind><dep>1</dep></entry>
+			<entry><ind>500</ind><dep>2.5</dep></entry>
+			<entry><ind>16000</ind><dep>7</dep></entry>
+		</interpolation>
+	</animation>
+
+	<!-- strobe Right -->
+	<animation>
+		<type>select</type>
+		<object-name>strobe_halo_R</object-name>
+		<condition>
+			<property>sim/model/A-10/lighting/strobe/state</property>
+		</condition>
+		<condition>
+			<property>controls/lighting/strobe</property>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<object-name>strobe_halo_R</object-name>
+		<threshold>0.001</threshold>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>strobe_halo_R</object-name>
+		<offset-m>12.49</offset-m>
+		<axis>
+			<x>8.69</x>
+			<y>-8.98</y>
+			<z>0.45</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>billboard</type>
+		<object-name>strobe_halo_R</object-name>
+	</animation>
+
+	<animation>
+		<type>scale</type>
+		<object-name>strobe_halo_R</object-name>
+		<property>sim/time/sun-angle-rad</property>
+		<offset>-1.4</offset>
+		<x-min>1</x-min>
+		<y-min>1</y-min>
+		<z-min>1</z-min>
+		<x-factor>12</x-factor>
+		<y-factor>12</y-factor>
+		<z-factor>12</z-factor>
+		<x-offset>1</x-offset>
+		<y-offset>1</y-offset>
+		<z-offset>1</z-offset>
+	</animation>
+	<animation>
+		<type>dist-scale</type>
+		<object-name>strobe_halo_R</object-name>
+		<interpolation>
+			<entry><ind>0</ind><dep>1</dep></entry>
+			<entry><ind>500</ind><dep>2.5</dep></entry>
+			<entry><ind>16000</ind><dep>7</dep></entry>
+		</interpolation>
+	</animation>
+
+	<!-- strobe Left -->
+	<animation>
+		<type>select</type>
+		<object-name>strobe_halo_L</object-name>
+		<condition>
+			<property>sim/model/A-10/lighting/strobe/state</property>
+		</condition>
+		<condition>
+			<property>controls/lighting/strobe</property>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<object-name>strobe_halo_L</object-name>
+		<threshold>0.001</threshold>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>strobe_halo_L</object-name>
+		<offset-m>12.47</offset-m>
+		<axis>
+			<x>8.61</x>
+			<y>8.98</y>
+			<z>0.45</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>billboard</type>
+		<object-name>strobe_halo_L</object-name>
+	</animation>
+
+	<animation>
+		<type>scale</type>
+		<object-name>strobe_halo_L</object-name>
+		<property>sim/time/sun-angle-rad</property>
+		<offset>-1.4</offset>
+		<x-min>1</x-min>
+		<y-min>1</y-min>
+		<z-min>1</z-min>
+		<x-factor>12</x-factor>
+		<y-factor>12</y-factor>
+		<z-factor>12</z-factor>
+		<x-offset>1</x-offset>
+		<y-offset>1</y-offset>
+		<z-offset>1</z-offset>
+	</animation>
+	<animation>
+		<type>dist-scale</type>
+		<object-name>strobe_halo_L</object-name>
+		<interpolation>
+			<entry><ind>0</ind><dep>1</dep></entry>
+			<entry><ind>500</ind><dep>2.5</dep></entry>
+			<entry><ind>16000</ind><dep>7</dep></entry>
+		</interpolation>
+	</animation>
+
+	<!-- red nav light (left) -->
+	<animation>
+		<type>select</type>
+		<object-name>nav_halo_L</object-name>
+		<condition>
+			<or>
+				<and>
+					<property>sim/model/A-10/lighting/nav-lights/state</property>
+					<property>sim/model/A-10/controls/lighting/nav-lights-flash</property>
+				</and>
+				<equals>
+					<property>sim/model/A-10/controls/lighting/nav-lights-switch</property>
+					<value>0</value>
+				</equals>
+			</or>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>nav_halo_L</object-name>
+		<offset-m>12.44</offset-m>
+		<axis>
+			<x>8.69</x>
+			<y>-8.99</y>
+			<z>0.45</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>billboard</type>
+		<object-name>nav_halo_L</object-name>
+	</animation>
+
+	<animation>
+		<type>scale</type>
+		<object-name>nav_halo_L</object-name>
+		<property>sim/time/sun-angle-rad</property>
+		<offset>-1.4</offset>
+		<x-min>1</x-min>
+		<y-min>1</y-min>
+		<z-min>1</z-min>
+		<x-factor>4</x-factor>
+		<y-factor>4</y-factor>
+		<z-factor>4</z-factor>
+		<x-offset>1</x-offset>
+		<y-offset>1</y-offset>
+		<z-offset>1</z-offset>
+	</animation>
+	<animation>
+		<type>dist-scale</type>
+		<object-name>nav_halo_L</object-name>
+		<interpolation>
+			<entry><ind>0</ind><dep>1</dep></entry>
+			<entry><ind>500</ind><dep>2.5</dep></entry>
+			<entry><ind>16000</ind><dep>7</dep></entry>
+		</interpolation>
+	</animation>
+
+
+	<!-- green nav light (right)-->
+	<animation>
+		<type>select</type>
+		<object-name>nav_halo_R</object-name>
+		<condition>
+			<or>
+				<and>
+					<property>sim/model/A-10/lighting/nav-lights/state</property>
+					<property>sim/model/A-10/controls/lighting/nav-lights-flash</property>
+				</and>
+				<equals>
+					<property>sim/model/A-10/controls/lighting/nav-lights-switch</property>
+					<value>0</value>
+				</equals>
+			</or>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>nav_halo_R</object-name>
+		<offset-m>12.44</offset-m>
+		<axis>
+			<x>8.69</x>
+			<y>8.99</y>
+			<z>0.45</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>billboard</type>
+		<object-name>nav_halo_R</object-name>
+	</animation>
+
+	<animation>
+		<type>scale</type>
+		<object-name>nav_halo_R</object-name>
+		<property>sim/time/sun-angle-rad</property>
+		<offset>-1.4</offset>
+		<x-min>1</x-min>
+		<y-min>1</y-min>
+		<z-min>1</z-min>
+		<x-factor>4</x-factor>
+		<y-factor>4</y-factor>
+		<z-factor>4</z-factor>
+		<x-offset>1</x-offset>
+		<y-offset>1</y-offset>
+		<z-offset>1</z-offset>
+	</animation>
+	<animation>
+		<type>dist-scale</type>
+		<object-name>nav_halo_R</object-name>
+		<interpolation>
+			<entry><ind>0</ind><dep>1</dep></entry>
+			<entry><ind>500</ind><dep>2.5</dep></entry>
+			<entry><ind>16000</ind><dep>7</dep></entry>
+		</interpolation>
+	</animation>
+
+	<!-- white nav light (tail) -->
+	<animation>
+		<type>select</type>
+		<object-name>nav_halo_T</object-name>
+		<condition>
+			<or>
+				<and>
+					<property>sim/model/A-10/lighting/nav-lights/state</property>
+					<property>sim/model/A-10/controls/lighting/nav-lights-flash</property>
+				</and>
+				<equals>
+					<property>sim/model/A-10/controls/lighting/nav-lights-switch</property>
+					<value>0</value>
+				</equals>
+			</or>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>nav_halo_T</object-name>
+		<offset-m>16.10</offset-m>
+		<axis>
+			<x>16.10</x>
+			<y>0</y>
+			<z>0.53</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>billboard</type>
+		<object-name>nav_halo_T</object-name>
+	</animation>
+
+	<animation>
+		<type>scale</type>
+		<object-name>nav_halo_T</object-name>
+		<property>sim/time/sun-angle-rad</property>
+		<offset>-1.4</offset>
+		<x-min>1</x-min>
+		<y-min>1</y-min>
+		<z-min>1</z-min>
+		<x-factor>4</x-factor>
+		<y-factor>4</y-factor>
+		<z-factor>4</z-factor>
+		<x-offset>1</x-offset>
+		<y-offset>1</y-offset>
+		<z-offset>1</z-offset>
+	</animation>
+	<animation>
+		<type>dist-scale</type>
+		<object-name>nav_halo_T</object-name>
+		<interpolation>
+			<entry><ind>0</ind><dep>1</dep></entry>
+			<entry><ind>500</ind><dep>2.5</dep></entry>
+			<entry><ind>16000</ind><dep>7</dep></entry>
+		</interpolation>
+	</animation>
+
+
+ <!-- UC-Nose taxi and landing lights -->
+
+	<!-- taxi light -->
+	<animation>
+		<type>select</type>
+		<object-name>Taxi-halo</object-name>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+			<equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>1</value>
+			</equals>
+			<not>
+				<equals>
+					<property>sim/model/A-10/controls/lighting/land-lights-switch</property>
+					<value>1</value>
+				</equals>
+			</not>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>Taxi-halo</object-name>
+		<offset-m>3,075</offset-m>
+		<axis>
+			<x>2.797</x>
+			<y>0.351</y>
+			<z>-1.284</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>scale</type>
+		<object-name>Taxi-halo</object-name>
+		<property>sim/time/sun-angle-rad</property>
+		<offset>-1.4</offset>
+		<x-min>1</x-min>
+		<y-min>1</y-min>
+		<z-min>1</z-min>
+		<x-factor>9</x-factor>
+		<y-factor>9</y-factor>
+		<z-factor>9</z-factor>
+		<x-offset>1</x-offset>
+		<y-offset>1</y-offset>
+		<z-offset>1</z-offset>
+	</animation>
+	<animation>
+		<type>dist-scale</type>
+		<object-name>Taxi-halo</object-name>
+		<interpolation>
+			<entry><ind>0</ind><dep>1</dep></entry>
+			<entry><ind>500</ind><dep>2.5</dep></entry>
+			<entry><ind>16000</ind><dep>7</dep></entry>
+		</interpolation>
+	</animation>
+
+	<!-- Taxi light rembrandt cone -->
+	<animation>
+		<type>select</type>
+		<object-name>taxi-light-cone</object-name>
+		<condition>
+			<equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>1</value>
+			</equals>
+			<equals>
+				<property>sim/model/A-10/controls/lighting/land-lights-switch</property>
+				<value>2</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>light</type>
+		<light-type>spot</light-type>
+		<name>taxi-light</name>
+		<object-name>taxi-light-cone</object-name>
+		<nopreview/>
+		<direction><x>-1</x><y>0</y><z>-0.024</z></direction>
+		<position><x>-0.6859</x><y>0</y><z>-0.7586</z></position>
+		<ambient><r>0.95</r><g>0.9</g><b>0.9</b><a>1</a></ambient>
+		<diffuse><r>0.95</r><g>0.9</g><b>0.9</b><a>1</a></diffuse>
+		<specular><r>0.95</r><g>0.9</g><b>0.9</b><a>1</a></specular>
+		<attenuation><c>0.5</c><l>0.07</l><q>0</q></attenuation>
+		<exponent>30.0</exponent>
+		<cutoff>200</cutoff>
+		<near-m>0.01</near-m>
+		<far-m>200</far-m>
+	</animation>
+	<!-- Taxi light halo -->
+	<animation>
+		<type>select</type>
+		<object-name>taxi-halo-sphere</object-name>
+		<condition>
+			<not>
+				<equals>
+					<property>sim/current-view/name</property>
+					<value>Cockpit View</value>
+				</equals>
+			</not>
+			<equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>1</value>
+			</equals>
+			<equals>
+				<property>sim/model/A-10/controls/lighting/land-lights-switch</property>
+				<value>2</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>light</type>
+		<light-type>point</light-type>
+		<name>taxi-halo</name>
+		<object-name>taxi-halo-sphere</object-name>
+		<nopreview/>
+		<position><x>3.1463</x><y>-0.33</y><z>-0.6753</z></position>
+		<ambient><r>0.95</r><g>0.9</g><b>0.9</b><a>1</a></ambient>
+		<diffuse><r>0.95</r><g>0.9</g><b>0.9</b><a>1</a></diffuse>
+		<specular><r>0.95</r><g>0.9</g><b>0.9</b><a>1</a></specular>
+		<attenuation><c>1</c><l>1.7</l><q>4</q></attenuation>
+		<cutoff>4</cutoff>
+		<near-m>0.01</near-m>
+		<far-m>4</far-m>
+	</animation>
+
+
+
+	<!-- landing light (upper light on the nose strut). For this one, no rembrandt effect yet. -->
+	<animation>
+		<type>select</type>
+		<object-name>Landing-halo</object-name>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+			<equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>1</value>
+			</equals>
+			<equals>
+				<property>sim/model/A-10/controls/lighting/land-lights-switch</property>
+				<value>2</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>Landing-halo</object-name>
+		<offset-m>2.90</offset-m>
+		<axis>
+			<x>2.68</x>
+			<y>0.351</y>
+			<z>-0.710</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>scale</type>
+		<object-name>Landing-halo</object-name>
+		<property>sim/time/sun-angle-rad</property>
+		<offset>-1.4</offset>
+		<x-min>1</x-min>
+		<y-min>1</y-min>
+		<z-min>1</z-min>
+		<x-factor>12</x-factor>
+		<y-factor>12</y-factor>
+		<z-factor>12</z-factor>
+		<x-offset>1</x-offset>
+		<y-offset>1</y-offset>
+		<z-offset>1</z-offset>
+	</animation>
+	<animation>
+		<type>dist-scale</type>
+		<object-name>Landing-halo</object-name>
+		<interpolation>
+			<entry><ind>0</ind><dep>1</dep></entry>
+			<entry><ind>500</ind><dep>4</dep></entry>
+			<entry><ind>16000</ind><dep>10</dep></entry>
+		</interpolation>
+	</animation>
+
+</PropertyList>

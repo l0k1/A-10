@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>mag-compass.ac</path>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>INS-ring</object-name>
+		<property>instrumentation/magnetic-compass/indicated-heading-deg</property>
+		<center>
+			<x-m>-0.025</x-m>
+			<z-m>-0.02</z-m>
+		</center>
+		<axis><z>1.0</z></axis>
+	</animation>
+
+	<animation> 
+		<type>material</type>
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<emission> 
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.65</red>
+			<green>0.45</green>
+			<blue>0.25</blue>
+		</emission>
+	</animation>
+
+
+</PropertyList>

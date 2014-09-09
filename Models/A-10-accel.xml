@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>A-10-accel.ac</path>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>needle</object-name>
+		<property>accelerations/pilot-g</property>
+		<interpolation>
+			<entry><ind>-5</ind><dep>-202.5</dep></entry>
+			<entry><ind>-4</ind><dep>-112.5</dep></entry>
+			<entry><ind>-3</ind><dep>-90</dep></entry>
+			<entry><ind>-1</ind><dep>-45</dep></entry>
+			<entry><ind>0</ind><dep>-22.5</dep></entry>
+			<entry><ind>1</ind><dep>0</dep></entry>
+			<entry><ind>3</ind><dep>45</dep></entry>
+			<entry><ind>5</ind><dep>90</dep></entry>
+			<entry><ind>7</ind><dep>135</dep></entry>
+			<entry><ind>9</ind><dep>180</dep></entry>
+			<entry><ind>10</ind><dep>202.5</dep></entry>
+		</interpolation>
+		<axis><x>-1</x></axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>needle-max</object-name>
+		<property>sim/model/A-10/instrumentation/g-meter/g-max</property>
+		<interpolation>
+			<entry><ind>-5</ind><dep>-202.5</dep></entry>
+			<entry><ind>-4</ind><dep>-112.5</dep></entry>
+			<entry><ind>-3</ind><dep>-90</dep></entry>
+			<entry><ind>-1</ind><dep>-45</dep></entry>
+			<entry><ind>0</ind><dep>-22.5</dep></entry>
+			<entry><ind>1</ind><dep>0</dep></entry>
+			<entry><ind>3</ind><dep>45</dep></entry>
+			<entry><ind>5</ind><dep>90</dep></entry>
+			<entry><ind>7</ind><dep>135</dep></entry>
+			<entry><ind>9</ind><dep>180</dep></entry>
+			<entry><ind>10</ind><dep>202.5</dep></entry>
+		</interpolation>
+		<axis><x>-1</x></axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>needle-min</object-name>
+		<property>sim/model/A-10/instrumentation/g-meter/g-min</property>
+		<interpolation>
+			<entry><ind>-5</ind><dep>-202.5</dep></entry>
+			<entry><ind>-4</ind><dep>-112.5</dep></entry>
+			<entry><ind>-3</ind><dep>-90</dep></entry>
+			<entry><ind>-1</ind><dep>-45</dep></entry>
+			<entry><ind>0</ind><dep>-22.5</dep></entry>
+			<entry><ind>1</ind><dep>0</dep></entry>
+			<entry><ind>3</ind><dep>45</dep></entry>
+			<entry><ind>5</ind><dep>90</dep></entry>
+			<entry><ind>7</ind><dep>135</dep></entry>
+			<entry><ind>9</ind><dep>180</dep></entry>
+			<entry><ind>10</ind><dep>202.5</dep></entry>
+		</interpolation>
+		<axis><x>-1</x></axis>
+	</animation>
+
+
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>button</object-name>
+		<action>
+			<name>Reset Accelerometer</name>
+			<button>0</button>
+			<binding> 
+				<command>property-assign</command>
+				<property>sim/model/A-10/instrumentation/g-meter/g-max</property>
+				<value>1</value>
+			</binding>
+			<binding> 
+				<command>property-assign</command>
+				<property>sim/model/A-10/instrumentation/g-meter/g-min</property>
+				<value>1</value>
+			</binding>
+		</action>
+	</animation>
+
+
+	<animation>
+		<object-name>mount</object-name> 
+		<type>material</type>
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.15</red>
+			<green>0.11</green>
+			<blue>0.09</blue>
+		</emission>
+	</animation>
+	<animation>
+		<object-name>button</object-name> 
+		<type>material</type>
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.25</red>
+			<green>0.12</green>
+			<blue>0.09</blue>
+		</emission>
+	</animation>
+	<animation>
+		<object-name>face</object-name> 
+		<type>material</type>
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<emission> 
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.50</red>
+			<green>0.25</green>
+			<blue>0.18</blue>
+		</emission>
+	</animation>
+	<animation>
+		<object-name>needles</object-name> 
+		<type>material</type>
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<emission> 
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.75</red>
+			<green>0.55</green>
+			<blue>0.35</blue>
+			</emission>
+	</animation>
+
+
+	<!-- *** LoD *** -->
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+
+</PropertyList>
