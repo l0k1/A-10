@@ -2,7 +2,6 @@ var UPDATE_PERIOD = 0.1;
 var ikts        = props.globals.getNode("velocities/airspeed-kt");
 var audio_alt_warn_signal = props.globals.getNode("sim/model/A-10/instrumentation/warnings/audio-alt");
 
-
 # Flaps ###################
 # automatic retraction of the flaps if speed exceed 210 KIAS
 # flap will automatically reextended if speed is reduced to 190

@@ -1193,6 +1193,9 @@ Fairchild A-10 simulation config.
 		<radardist>
 			<file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
 		</radardist>
+		<damage>
+			<file>Aircraft/A-10/Nasal/damage.nas</file>
+		</damage>
 	</nasal>
 
 </PropertyList>

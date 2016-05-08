@@ -156,6 +156,11 @@ var release = func {
 	# FIXME: riple compatible release types should be defined in the foo-set.file 
 	if ( cdesc == "LAU-68" or cdesc == "triple-MK-82-LD" or cdesc == "single-MK-82-LD") {
 		release_operate(rip, interval);
+		if ( cdesc == "LAU-68" ) {
+			setprop("/sim/multiplay/chat", defeatSpamFilter("LAU-68 fired"));
+		} else {
+			setprop("/sim/multiplay/chat", defeatSpamFilter("MK-82 released"));
+		}
 	} else {
 		release_operate(1, interval);
 	}
@@ -400,3 +405,16 @@ reload_guns = func {
 	}
 }
 
+var spams = 0;
+
+var defeatSpamFilter = func (str) {
+  spams += 1;
+  if (spams == 15) {
+    spams = 1;
+  }
+  str = str~":";
+  for (var i = 1; i <= spams; i+=1) {
+    str = str~".";
+  }
+  return str;
+}
