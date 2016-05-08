@@ -156,11 +156,6 @@ var release = func {
 	# FIXME: riple compatible release types should be defined in the foo-set.file 
 	if ( cdesc == "LAU-68" or cdesc == "triple-MK-82-LD" or cdesc == "single-MK-82-LD") {
 		release_operate(rip, interval);
-		if ( cdesc == "LAU-68" ) {
-			setprop("/sim/multiplay/chat", defeatSpamFilter("LAU-68 fired"));
-		} else {
-			setprop("/sim/multiplay/chat", defeatSpamFilter("MK-82 released"));
-		}
 	} else {
 		release_operate(1, interval);
 	}
@@ -189,6 +184,11 @@ var release_operate = func(rip_counter, interval) {
 				if ( cdesc != "LAU-68" ) { var iready = s.getNode(iready_node); }
 				var t = itrigger.getBoolValue();
 				if ( !t and a > 0) {
+					if ( cdesc == "LAU-68" ) {
+						setprop("/sim/multiplay/chat", defeatSpamFilter("LAU-68 fired"));
+					} elsif (cdesc != "dual-AIM-9") {
+						setprop("/sim/multiplay/chat", defeatSpamFilter("MK-82 released"));
+					}
 					itrigger.setBoolValue(1);
 					a -= 1;
 					avail.setValue(a);
