@@ -14,6 +14,9 @@ var z_pov         = props.globals.getNode("sim/current-view/z-offset-m");
 var lastGunCount = 0;
 var z_povhold = 0;
 
+#enable/disable messages
+setprop("payload/armament/msg",1);
+
 # Init
 var initialize = func() {
 	setlistener("controls/armament/trigger", func( Trig ) {
@@ -185,9 +188,9 @@ var release_operate = func(rip_counter, interval) {
 				var t = itrigger.getBoolValue();
 				if ( !t and a > 0) {
 					if ( cdesc == "LAU-68" ) {
-						setprop("/sim/multiplay/chat", defeatSpamFilter("LAU-68 fired"));
+						defeatSpamFilter("LAU-68 fired");
 					} elsif (cdesc != "dual-AIM-9") {
-						setprop("/sim/multiplay/chat", defeatSpamFilter("MK-82 released"));
+						defeatSpamFilter("MK-82 released");
 					}
 					itrigger.setBoolValue(1);
 					a -= 1;
@@ -405,6 +408,89 @@ reload_guns = func {
 	}
 }
 
+############ Cannon impact messages #####################
+
+input = {
+  elapsed:          "/sim/time/elapsed-sec",
+  impact:           "/ai/models/model-impact",
+};
+
+foreach(var name; keys(input)) {
+      input[name] = props.globals.getNode(input[name], 1);
+}
+
+var last_impact = 0;
+
+var hit_count = 0;
+
+var impact_listener = func {
+    var ballistic_name = input.impact.getValue();
+    var ballistic = props.globals.getNode(ballistic_name, 0);
+	print(ballistic_name);
+    if (ballistic != nil) {
+      var typeNode = ballistic.getNode("impact/type");
+	  var typeOrd = ballistic.getNode("name").getValue();
+	  print(typeOrd);
+	  if ( typeNode != nil ) {
+		#impact position
+        var lat = ballistic.getNode("impact/latitude-deg").getValue();
+        var lon = ballistic.getNode("impact/longitude-deg").getValue();
+		var alt = ballistic.getNode("impact/elevation-m").getValue();
+        var impactPos = geo.Coord.new().set_latlon(lat, lon, alt);
+		
+		#GAU-8/A impact logic
+		
+		if ( find("GAU-8/A", typeOrd) != -1 and typeNode.getValue() != "terrain" and (input.elapsed.getValue()-last_impact) > 1) {
+			foreach(var mp; props.globals.getNode("/ai/models").getChildren("multiplayer")){
+				var mlat = mp.getNode("position/latitude-deg").getValue();
+				var mlon = mp.getNode("position/longitude-deg").getValue();
+				var malt = mp.getNode("position/altitude-ft").getValue() * FT2M;
+				var selectionPos = geo.Coord.new().set_latlon(mlat, mlon, alt);
+				var distance = impactPos.distance_to(selectionPos);
+				
+				if (distance < 15) {
+				  last_impact = input.elapsed.getValue();
+				  typeOrd = "GAU-8/A";
+				  defeatSpamFilter(typeOrd ~ " hit: " ~  mp.getNode("callsign").getValue());
+				}
+			}
+			
+		#LAU-68 impact logic
+		
+		} elsif ( find("WP-", typeOrd) != -1 ) {
+			foreach(var mp; props.globals.getNode("/ai/models").getChildren("multiplayer")){
+				var mlat = mp.getNode("position/latitude-deg").getValue();
+				var mlon = mp.getNode("position/longitude-deg").getValue();
+				var malt = mp.getNode("position/altitude-ft").getValue() * FT2M;
+				var selectionPos = geo.Coord.new().set_latlon(mlat, mlon, alt);
+				var distance = impactPos.distance_to(selectionPos);
+				
+				if (distance < 100) {
+				  typeOrd = "LAU-68";
+				  defeatSpamFilter(sprintf( typeOrd~" exploded: %01.1f", distance) ~ " meters from: " ~ mp.getNode("callsign").getValue());
+				}
+			}
+			
+		#MK-82 impact logic
+			
+		} elsif ( find("MK-82", typeOrd) != -1 ) {
+			foreach(var mp; props.globals.getNode("/ai/models").getChildren("multiplayer")){
+				var mlat = mp.getNode("position/latitude-deg").getValue();
+				var mlon = mp.getNode("position/longitude-deg").getValue();
+				var malt = mp.getNode("position/altitude-ft").getValue() * FT2M;
+				var selectionPos = geo.Coord.new().set_latlon(mlat, mlon, alt);
+				var distance = impactPos.distance_to(selectionPos);
+				
+				if (distance < 100) {
+				  typeOrd = "MK-82";
+				  defeatSpamFilter(sprintf( typeOrd~" exploded: %01.1f", distance) ~ " meters from: " ~ mp.getNode("callsign").getValue());
+				}
+			}
+		}
+      }
+    }
+}
+
 var spams = 0;
 
 var defeatSpamFilter = func (str) {
@@ -416,5 +502,15 @@ var defeatSpamFilter = func (str) {
   for (var i = 1; i <= spams; i+=1) {
     str = str~".";
   }
+  
+  if (getprop("payload/armament/msg")) {
+	setprop("/sim/multiplay/chat", str);
+  } else {
+	setprop("/sim/messages/atc", str);
+  }
+  
   return str;
 }
+
+
+setlistener("/ai/models/model-impact", impact_listener, 0, 0);
