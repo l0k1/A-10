@@ -42,11 +42,18 @@
 		<factor>0.03</factor>
 		<axis><z>1</z></axis>
 	</animation>
+	
 	<animation>
 		<type>translate</type>
 		<object-name>ccip</object-name>
-		<property>sim/model/A-10/instrumentation/hud/ccip_dev_m</property>
+		<property>sim/model/A-10/instrumentation/hud/ccip_dev_v_m</property>
 		<axis><z>-1</z></axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>ccip</object-name>
+		<property>sim/model/A-10/instrumentation/hud/ccip_dev_h_m</property>
+		<axis><y>-1</y></axis>
 	</animation>
 
 <!-- lighting -->

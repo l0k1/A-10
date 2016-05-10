@@ -442,6 +442,7 @@ var impact_listener = func {
 		
 		if ( find("GAU-8/A", typeOrd) != -1 and typeNode.getValue() != "terrain" and (input.elapsed.getValue()-last_impact) > 1) {
 			foreach(var mp; props.globals.getNode("/ai/models").getChildren("multiplayer")){
+				print("Gau impact - hit: " ~ typeNode.getValue());
 				var mlat = mp.getNode("position/latitude-deg").getValue();
 				var mlon = mp.getNode("position/longitude-deg").getValue();
 				var malt = mp.getNode("position/altitude-ft").getValue() * FT2M;

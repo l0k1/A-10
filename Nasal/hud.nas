@@ -1,12 +1,15 @@
-var hud_mode_knob_pos = props.globals.getNode("sim/model/A-10/controls/hud/mode-selector");
-var hud_alpha         = props.globals.getNode("sim[0]/hud/color/alpha", 1);
+var hud_mode_knob_pos  = props.globals.getNode("sim/model/A-10/controls/hud/mode-selector");
+var hud_alpha          = props.globals.getNode("sim[0]/hud/color/alpha", 1);
 
-var speed_east_fps   = props.globals.getNode("/velocities/speed-east-fps");
-var speed_north_fps  = props.globals.getNode("/velocities/speed-north-fps");
-var speed_down_fps   = props.globals.getNode("/velocities/speed-down-fps");
-var agl_ft           = props.globals.getNode("/position/altitude-agl-ft");
-var pitch            = props.globals.getNode("/orientation/pitch-deg");
-var ccip_deviation_m = props.globals.getNode("sim/model/A-10/instrumentation/hud/ccip_dev_m", 1);
+var speed_east_fps     = props.globals.getNode("/velocities/speed-east-fps");
+var speed_north_fps    = props.globals.getNode("/velocities/speed-north-fps");
+var speed_down_fps     = props.globals.getNode("/velocities/speed-down-fps");
+var agl_ft             = props.globals.getNode("/position/altitude-agl-ft");
+var pitch              = props.globals.getNode("/orientation/pitch-deg");
+var roll               = props.globals.getNode("/orientation/roll-deg");
+var ccip_deviation_v_m = props.globals.getNode("sim/model/A-10/instrumentation/hud/ccip_dev_v_m", 1);
+var ccip_deviation_h_m = props.globals.getNode("sim/model/A-10/instrumentation/hud/ccip_dev_h_m", 1);
+ccip_deviation_h_m.setDoubleValue(0);
 
 var lbs_to_slugs    = 0.031080950172;   # conversion factor.
 var D2R             = math.pi / 180;
@@ -49,8 +52,19 @@ var update_loop = func {
 
 		var impact_pitch_deg =  180 / math.pi  * ( math.atan2( agl, range_ft ));
 		var ccip_dev_deg = impact_pitch_deg + p;
-		var ccip_dev_m = math.sin( ccip_dev_deg * D2R ) * 0.95 * math.cos( ccip_dev_deg * D2R );
-		ccip_deviation_m.setDoubleValue(ccip_dev_m);
+		var ccip_dev_v_m = math.sin( ccip_dev_deg * D2R ) * 0.95 * math.cos( ccip_dev_deg * D2R );
+		if ( ccip_dev_v_m < -0.025 ) { ccip_dev_v_m = -0.025; }
+		ccip_deviation_v_m.setDoubleValue(ccip_dev_v_m);
+		
+		var ccip_dev_h_m = -1 * (roll.getValue() * D2R / 15);
+		
+		if ( ccip_dev_h_m < -0.08 ) {
+			ccip_dev_h_m = -0.08;
+		} elsif ( ccip_dev_h_m > 0.08 ) {
+			ccip_dev_h_m = 0.08;
+		}
+		
+		ccip_deviation_h_m.setDoubleValue(ccip_dev_h_m);
 
 		#print("     agl: " ~ agl ~ "ft");
 		#print("vertical vel deg: " ~ a ~ "deg");
@@ -59,7 +73,7 @@ var update_loop = func {
 		#print("     range: " ~ range_ft ~ "ft");
 		#print(" imp-pitch: " ~ impact_pitch_deg ~ "deg");
 		#print(" ccip-dev: " ~ ccip_dev_deg ~ "deg");
-		#print(" ccip-dev: " ~ ccip_dev_m ~ "m");
+		#print(" ccip-dev: " ~ ccip_dev_v_m ~ "m");
 		#print(" ");
 	}
 }
