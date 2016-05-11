@@ -426,11 +426,11 @@ var hit_count = 0;
 var impact_listener = func {
     var ballistic_name = input.impact.getValue();
     var ballistic = props.globals.getNode(ballistic_name, 0);
-	print(ballistic_name);
+	#print(ballistic_name);
     if (ballistic != nil) {
       var typeNode = ballistic.getNode("impact/type");
 	  var typeOrd = ballistic.getNode("name").getValue();
-	  print(typeOrd);
+	  #print(typeOrd);
 	  if ( typeNode != nil ) {
 		#impact position
         var lat = ballistic.getNode("impact/latitude-deg").getValue();
@@ -442,7 +442,7 @@ var impact_listener = func {
 		
 		if ( find("GAU-8/A", typeOrd) != -1 and typeNode.getValue() != "terrain" and (input.elapsed.getValue()-last_impact) > 1) {
 			foreach(var mp; props.globals.getNode("/ai/models").getChildren("multiplayer")){
-				print("Gau impact - hit: " ~ typeNode.getValue());
+				#print("Gau impact - hit: " ~ typeNode.getValue());
 				var mlat = mp.getNode("position/latitude-deg").getValue();
 				var mlon = mp.getNode("position/longitude-deg").getValue();
 				var malt = mp.getNode("position/altitude-ft").getValue() * FT2M;
