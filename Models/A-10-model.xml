@@ -5,11 +5,204 @@
 
 <PropertyList>
 
+	<path>A10-004-015l3.ac</path>
+
+	<nasal>
+	  <load>
+		<!--
+		  ##############################################################################
+		  # The on-load Nasal is not executed when this file is loaded as the user
+		  # aircraft. The code is only executed if the file is loaded for a remote
+		  # aircraft in Multi-Player mode (MP)
+		  ##############################################################################
+		-->
+		<![CDATA[
+		  var livery_update = aircraft.livery_update.new("Aircraft/A-10/Models/Liveries");
+		]]>
+		</load>
+	  
+	  <unload><![CDATA[
+		livery_update.stop();
+	  ]]></unload>
+	</nasal>
+
+	<animation>
+		<type>material</type>
+		<object-name>BCanopyFrame</object-name>
+		<object-name>FCanopyFrame</object-name>
+		<object-name>FCanopyFrameInner</object-name>
+		<object-name>FTank1</object-name>
+		<object-name>FTank2</object-name>
+		<object-name>FTank3</object-name>
+		<object-name>Fuselage</object-name>
+		<object-name>Fuselage-Att4</object-name>
+		<object-name>TopLightBase</object-name>
+		<object-name>UC-NoseWheelDoorRear</object-name>
+		<object-name>Vents</object-name>
+		<object-name>lader-door</object-name>
+		<object-name>Hull-Antennae</object-name>
+		<object-name>LEnginePodCasing</object-name>
+		<object-name>LEnginePostB</object-name>
+		<object-name>LEnginePostT</object-name>
+		<object-name>REnginePodCasing</object-name>
+		<object-name>REnginePostB</object-name>
+		<object-name>REnginePostT</object-name>
+		<object-name>L-StrobeLight-off</object-name>
+		<object-name>R-StrobeLight-off</object-name>
+		<object-name>L-Fin-L</object-name>
+		<object-name>L-Fin-R</object-name>
+		<object-name>L-Tailplane-B</object-name>
+		<object-name>L-Tailplane-S</object-name>
+		<object-name>L-Tailplane-T</object-name>
+		<object-name>LElevator</object-name>
+		<object-name>LElevatorTrimTab</object-name>
+		<object-name>LEndCap</object-name>
+		<object-name>LRudder-L</object-name>
+		<object-name>LRudder-R</object-name>
+		<object-name>R-Fin-L</object-name>
+		<object-name>R-Fin-R</object-name>
+		<object-name>R-Tailplane-B</object-name>
+		<object-name>R-Tailplane-S</object-name>
+		<object-name>R-Tailplane-T</object-name>
+		<object-name>RElevator</object-name>
+		<object-name>RElevatorTrimTab</object-name>
+		<object-name>REndCap</object-name>
+		<object-name>RRudder-L</object-name>
+		<object-name>RRudder-R</object-name>
+		<object-name>UC-Left-DoorLower</object-name>
+		<object-name>UC-LeftWHousingDoor-Lower</object-name>
+		<object-name>UC-LeftWHousingDoor</object-name>
+		<object-name>UC-LeftWHousingECM</object-name>
+		<object-name>UC-LeftWSponson</object-name>
+		<object-name>UC-RightLower</object-name>
+		<object-name>UC-RightWHousingDoor-Lower</object-name>
+		<object-name>UC-RightWHousingDoor</object-name>
+		<object-name>UC-RightWHousingECM</object-name>
+		<object-name>UC-RightWSponson</object-name>
+		<object-name>UC-NoseWheelDoorFront</object-name>
+		<object-name>L-Wing-B</object-name>
+		<object-name>L-Wing-S1</object-name>
+		<object-name>L-Wing-S2</object-name>
+		<object-name>L-Wing-Slat</object-name>
+		<object-name>L-Wing-Slat-side</object-name>
+		<object-name>L-Wing-T</object-name>		
+		<object-name>LAileronTrimTab</object-name>
+		<object-name>LIFlap-F</object-name>
+		<object-name>LIFlap-R</object-name>
+		<object-name>LLAileron</object-name>
+		<object-name>LOFlap-F</object-name>
+		<object-name>LOFlap-R</object-name>
+		<object-name>LUAileron</object-name>
+		<object-name>R-Wing-B</object-name>
+		<object-name>R-Wing-S1</object-name>
+		<object-name>R-Wing-S2</object-name>
+		<object-name>R-Wing-Slat</object-name>
+		<object-name>R-Wing-Slat-side</object-name>
+		<object-name>R-Wing-T</object-name>
+		<object-name>RAileronTrimTab</object-name>
+		<object-name>RIFlap-F</object-name>
+		<object-name>RIFlap-R</object-name>
+		<object-name>RLAileron</object-name>
+		<object-name>ROFlap-F</object-name>
+		<object-name>ROFlap-R</object-name>
+		<object-name>RUAileron</object-name>
+		<object-name>pave-peny-pylon</object-name>
+		<object-name>pave-peny-body</object-name>
+		<property-base>sim/model/livery</property-base>
+		<texture-prop>texture-main</texture-prop>
+		<texture>Liveries/default.png</texture>
+	</animation>
+	
+	<animation>
+		<type>material</type>
+		<object-name>Cannon</object-name>
+		<object-name>FuseSideL-Formation</object-name>
+		<object-name>FuseSideR-Formation</object-name>
+		<object-name>WingL-Formation</object-name>
+		<object-name>WingR-Formation</object-name>
+		<object-name>AAR-casing</object-name>
+		<object-name>AAR-door</object-name>
+		<object-name>UC-NFD-Arm</object-name>
+		<object-name>Hull-Att1</object-name>
+		<object-name>Hull-Att2</object-name>
+		<object-name>Hull-Att3</object-name>
+		<object-name>L-Wing-Att-1</object-name>
+		<object-name>L-Wing-Att-2</object-name>
+		<object-name>L-Wing-Att-3</object-name>
+		<object-name>L-Wing-Att-4</object-name>
+		<object-name>R-Wing-Att-1</object-name>
+		<object-name>R-Wing-Att-2</object-name>
+		<object-name>R-Wing-Att-3</object-name>
+		<object-name>R-Wing-Att-4</object-name>
+		<object-name>cylinder</object-name>
+		<object-name>UC-LeftWHousingTop</object-name>
+		<object-name>UC-LeftWHousingSide-details</object-name>
+		<object-name>UC-LeftWHousingSide</object-name>
+		<object-name>UC-LeftAftMainUpperDamper</object-name>
+		<object-name>UC-LeftFrontMainUpperDamper</object-name>
+		<object-name>UC-LeftMainJack-Bottom</object-name>
+		<object-name>UC-LeftMainTop</object-name>
+		<object-name>UC-LeftMainTop-details</object-name>
+		<object-name>UC-LeftMainTop-details.001</object-name>
+		<object-name>UC-LeftMainTopJShaft</object-name>
+		<object-name>UC-LeftWHousingDoorJonction</object-name>
+		<object-name>UC-LeftMainJack-Top</object-name>
+		<object-name>UC-LeftAftMainLowerDamper</object-name>
+		<object-name>UC-LeftFrontMainLowerDamper</object-name>
+		<object-name>UC-LeftMainBottom</object-name>
+		<object-name>UC-LeftTyre</object-name>
+		<object-name>UC-LeftECMCanisters</object-name>
+		<object-name>UC-NFD-assembly</object-name>
+		<object-name>UC-NFD-lock-0</object-name>
+		<object-name>UC-NFD-lock-1</object-name>
+		<object-name>UC-NFD-main-axis</object-name>
+		<object-name>UC-NFD-rod</object-name>
+		<object-name>UC-NFD-secondary-axis</object-name>
+		<object-name>UC-NoseStrutBottom</object-name>
+		<object-name>UC-NoseStrutBottom-details</object-name>
+		<object-name>UC-NoseStrutLowerDamper</object-name>
+		<object-name>UC-NoseTyre</object-name>
+		<object-name>UC-NoseDoorJonction</object-name>
+		<object-name>UC-NoseStrutTop</object-name>
+		<object-name>UC-NoseStrutTop-details</object-name>
+		<object-name>UC-NoseStrutTop-light-off</object-name>
+		<object-name>UC-NoseStrutUpperBraceShaft</object-name>
+		<object-name>UC-NoseStrutSteerRing</object-name>
+		<object-name>UC-NoseStrutSteerRing-details</object-name>
+		<object-name>UC-NoseStrutSteerRing-light-off</object-name>
+		<object-name>UC-NoseStrutUpperDamper</object-name>
+		<object-name>UC-NoseStrutUpperBrace</object-name>
+		<object-name>UC-NoseWell</object-name>
+		<object-name>UC-NoseWhell-details</object-name>
+		<object-name>UC-NoseWhell-details-balast</object-name>
+		<object-name>UC-RightECMCanisters</object-name>
+		<object-name>UC-RightAftMainLowerDamper</object-name>
+		<object-name>UC-RightFrontMainLowerDamper</object-name>
+		<object-name>UC-RightMainBottom</object-name>
+		<object-name>UC-RightTyre</object-name>
+		<object-name>UC-RightMainJack-Top</object-name>
+		<object-name>UC-RightAftMainUpperDamper</object-name>
+		<object-name>UC-RightFrontMainUpperDamper</object-name>
+		<object-name>UC-RightMainJack-Bottom</object-name>
+		<object-name>UC-RightMainTop</object-name>
+		<object-name>UC-RightMainTop-details</object-name>
+		<object-name>UC-RightMainTopJShaft</object-name>
+		<object-name>UC-RightWHousingDoorJonction</object-name>
+		<object-name>UC-RightWHousingSide</object-name>
+		<object-name>UC-RightWHousingSide-details</object-name>
+		<object-name>UC-RightWHousingTop</object-name>
+		<object-name>L-wing-ECMCanisters</object-name>
+		<object-name>R-wing-ECMCanisters</object-name> 
+		<property-base>sim/model/livery</property-base>
+		<texture-prop>texture-detail</texture-prop>
+		<texture>Liveries/default-detail.png</texture>
+	</animation>
+	
 	<model>
 		<path>Aircraft/A-10/Models/ext-stores.xml</path>
 	</model>
 
-	<path>A10-004-015l3.ac</path>
+
 
 
 
