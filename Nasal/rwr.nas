@@ -49,22 +49,29 @@ var rwr_loop = func() {
 				u_ecm_signal_norm = 0;
 				u_radar_standby   = 0;
 				u_ecm_type_num    = 0;
-				if ( u.Range != nil) {
+				var is_not_hiding = radar_logic.isNotBehindTerrain(c);
+				if ( u.Range != nil and is_not_hiding == 1 ) {
 					# Test if target has a radar. Compute if we are illuminated. This propery used by ECM
 					# over MP, should be standardized, like "ai/models/multiplayer[0]/radar/radar-standby".
 					var u_name = radardist.get_aircraft_name(u.string);
 					var u_maxrange = radardist.my_maxrange(u_name); # in kilometer, 0 is unknown or no radar.
+					if ( u_maxrange == 0 ) { u_maxrange = 230; }
 					var horizon = u.get_horizon( our_alt );
 					var u_rng = u.get_range();
 					var u_carrier = u.check_carrier_type();
+					#print(u.get_rdr_standby() ~ " | " ~ u_maxrange ~ " | " ~ u_rng ~ " | " ~ horizon);
 					if ( u.get_rdr_standby() == 0 and u_maxrange > 0  and u_rng < horizon ) {
+						#print("In ecm_signal for " ~ c.getNode("callsign").getValue());
 						# Test if we are in its radar field (hard coded 74°) or if we have a MPcarrier.
 						# Compute the signal strength.
 						var our_deviation_deg = deviation_normdeg(u.get_heading(), u.get_reciprocal_bearing());
+						#print(our_deviation_deg);
 						if ( our_deviation_deg < 0 ) { our_deviation_deg *= -1 }
-						if ( our_deviation_deg < 37 or u_carrier == 1 ) {
+						if ( our_deviation_deg < 180 or u_carrier == 1 ) {
 							u_ecm_signal = (((-our_deviation_deg/20)+2.5)*(!u_carrier )) + (-u_rng/20) + 2.6 + (u_carrier*1.8);
+							u_ecm_signal = 2;
 							u_ecm_type_num = radardist.get_ecm_type_num(u_name);
+							#print(u_ecm_signal ~ " | " ~ u_ecm_type_num);
 						}
 					} else {
 						u_ecm_signal = 0;
@@ -83,6 +90,7 @@ var rwr_loop = func() {
 					u.EcmSignal.setValue(u_ecm_signal);
 					u.EcmSignalNorm.setIntValue(u_ecm_signal_norm);
 					u.EcmTypeNum.setIntValue(u_ecm_type_num);
+					u.EcmRange.setValue(u_rng);
 				}
 			}
 		}
@@ -99,6 +107,7 @@ var rwr_loop = func() {
 			u.EcmSignal.setValue(0);
 			u.EcmSignalNorm.setIntValue(0);
 			u.EcmTypeNum.setIntValue(0);
+			u.EcmRange(0);
 		}
 	}
 	settimer(rwr_loop, 0.05);
@@ -143,6 +152,7 @@ var Threat = {
 		obj.EcmSignal      = obj.TgtsFiles.getNode("ecm-signal", 1);
 		obj.EcmSignalNorm  = obj.TgtsFiles.getNode("ecm-signal-norm", 1);
 		obj.EcmTypeNum     = obj.TgtsFiles.getNode("ecm_type_num", 1);
+		obj.EcmRange       = obj.TgtsFiles.getNode("range-nm", 1);
 
 		obj.RadarStandby = c.getNode("sim/multiplay/generic/int[2]");
 		obj.deviation = nil;

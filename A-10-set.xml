@@ -1203,6 +1203,9 @@ Fairchild A-10 simulation config.
 		<radardist>
 			<file>Aircraft/A-10/Nasal/radardist.nas</file>
 		</radardist>
+		<radar_logic>
+			<file>Aircraft/A-10/Nasal/radar-logic.nas</file>
+		</radar_logic>
 		<liveries>
 			<file>Aircraft/A-10/Nasal/liveries.nas</file>
 		</liveries>

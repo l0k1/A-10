@@ -67,7 +67,7 @@
 		<type2-name>MP1type2</type2-name>
 		<symb-ship-name>MP1symb-ship</symb-ship-name>
 		<symb-aircraft-name>MP1symb-aircraft</symb-aircraft-name>
-		<ecm-signal-norm>instrumentation/radar2/targets/multiplayer[0]/ecm-signal-norm</ecm-signal-norm>
+		<range-nm>instrumentation/radar2/targets/multiplayer[0]/range-nm</range-nm>
 		<bearing-deg>instrumentation/radar2/targets/multiplayer[0]/bearing-deg</bearing-deg>
 		<true-heading-deg>instrumentation/radar2/targets/multiplayer[0]/orientation/true-heading-deg</true-heading-deg>
 		<ecm_type_num>instrumentation/radar2/targets/multiplayer[0]/ecm_type_num</ecm_type_num>
@@ -79,9 +79,13 @@
 		<object-name alias="../../MP1/group-name"/>
 		<condition>
 			<greater-than>
-				<property alias="../../../../MP1/ecm-signal-norm"/>
+				<property alias="../../../../MP1/range-nm"/>
 				<value>0</value>
 			</greater-than>
+			<less-than>
+				<property alias="../../../../MP1/range-nm"/>
+				<value>30</value>
+			</less-than>
 		</condition>
 	</animation>
 	<animation>
@@ -99,8 +103,8 @@
 	<animation>
 		<type>translate</type>
 		<object-name alias="../../MP1/group-name"/>
-		<property alias="../../MP1/ecm-signal-norm"/>
-		<factor>0.01</factor>
+		<property alias="../../MP1/range-nm"/>
+		<factor>0.001</factor>
 		<axis>
 			<x>0</x>
 			<y>0</y>
@@ -167,7 +171,7 @@
 		<type2-name>MP2type2</type2-name>
 		<symb-ship-name>MP2symb-ship</symb-ship-name>
 		<symb-aircraft-name>MP2symb-aircraft</symb-aircraft-name>
-		<ecm-signal-norm>instrumentation/radar2/targets/multiplayer[1]/ecm-signal-norm</ecm-signal-norm>
+		<range-nm>instrumentation/radar2/targets/multiplayer[1]/range-nm</range-nm>
 		<bearing-deg>instrumentation/radar2/targets/multiplayer[1]/bearing-deg</bearing-deg>
 		<true-heading-deg>instrumentation/radar2/targets/multiplayer[1]/orientation/true-heading-deg</true-heading-deg>
 		<ecm_type_num>instrumentation/radar2/targets/multiplayer[1]/ecm_type_num</ecm_type_num>
@@ -179,9 +183,13 @@
 		<object-name alias="../../MP2/group-name"/>
 		<condition>
 			<greater-than>
-				<property alias="../../../../MP2/ecm-signal-norm"/>
+				<property alias="../../../../MP2/range-nm"/>
 				<value>0</value>
 			</greater-than>
+			<less-than>
+				<property alias="../../../../MP2/range-nm"/>
+				<value>30</value>
+			</less-than>
 		</condition>
 	</animation>
 	<animation>
@@ -199,8 +207,8 @@
 	<animation>
 		<type>translate</type>
 		<object-name alias="../../MP2/group-name"/>
-		<property alias="../../MP2/ecm-signal-norm"/>
-		<factor>0.01</factor>
+		<property alias="../../MP2/range-nm"/>
+		<factor>0.001</factor>
 		<axis>
 			<x>0</x>
 			<y>0</y>
@@ -268,7 +276,7 @@
 		<type2-name>MP3type2</type2-name>
 		<symb-ship-name>MP3symb-ship</symb-ship-name>
 		<symb-aircraft-name>MP3symb-aircraft</symb-aircraft-name>
-		<ecm-signal-norm>instrumentation/radar2/targets/multiplayer[2]/ecm-signal-norm</ecm-signal-norm>
+		<range-nm>instrumentation/radar2/targets/multiplayer[2]/range-nm</range-nm>
 		<bearing-deg>instrumentation/radar2/targets/multiplayer[2]/bearing-deg</bearing-deg>
 		<true-heading-deg>instrumentation/radar2/targets/multiplayer[2]/orientation/true-heading-deg</true-heading-deg>
 		<ecm_type_num>instrumentation/radar2/targets/multiplayer[2]/ecm_type_num</ecm_type_num>
@@ -280,9 +288,13 @@
 		<object-name alias="../../MP3/group-name"/>
 		<condition>
 			<greater-than>
-				<property alias="../../../../MP3/ecm-signal-norm"/>
+				<property alias="../../../../MP3/range-nm"/>
 				<value>0</value>
 			</greater-than>
+			<less-than>
+				<property alias="../../../../MP3/range-nm"/>
+				<value>30</value>
+			</less-than>
 		</condition>
 	</animation>
 	<animation>
@@ -300,8 +312,8 @@
 	<animation>
 		<type>translate</type>
 		<object-name alias="../../MP3/group-name"/>
-		<property alias="../../MP3/ecm-signal-norm"/>
-		<factor>0.01</factor>
+		<property alias="../../MP3/range-nm"/>
+		<factor>0.001</factor>
 		<axis>
 			<x>0</x>
 			<y>0</y>
@@ -368,7 +380,7 @@
 		<type2-name>MP4type2</type2-name>
 		<symb-ship-name>MP4symb-ship</symb-ship-name>
 		<symb-aircraft-name>MP4symb-aircraft</symb-aircraft-name>
-		<ecm-signal-norm>instrumentation/radar2/targets/multiplayer[3]/ecm-signal-norm</ecm-signal-norm>
+		<range-nm>instrumentation/radar2/targets/multiplayer[3]/range-nm</range-nm>
 		<bearing-deg>instrumentation/radar2/targets/multiplayer[3]/bearing-deg</bearing-deg>
 		<true-heading-deg>instrumentation/radar2/targets/multiplayer[3]/orientation/true-heading-deg</true-heading-deg>
 		<ecm_type_num>instrumentation/radar2/targets/multiplayer[3]/ecm_type_num</ecm_type_num>
@@ -380,9 +392,13 @@
 		<object-name alias="../../MP4/group-name"/>
 		<condition>
 			<greater-than>
-				<property alias="../../../../MP4/ecm-signal-norm"/>
+				<property alias="../../../../MP4/range-nm"/>
 				<value>0</value>
 			</greater-than>
+			<less-than>
+				<property alias="../../../../MP4/range-nm"/>
+				<value>30</value>
+			</less-than>
 		</condition>
 	</animation>
 	<animation>
@@ -400,8 +416,8 @@
 	<animation>
 		<type>translate</type>
 		<object-name alias="../../MP4/group-name"/>
-		<property alias="../../MP4/ecm-signal-norm"/>
-		<factor>0.01</factor>
+		<property alias="../../MP4/range-nm"/>
+		<factor>0.001</factor>
 		<axis>
 			<x>0</x>
 			<y>0</y>
@@ -469,7 +485,7 @@
 		<type2-name>MP5type2</type2-name>
 		<symb-ship-name>MP5symb-ship</symb-ship-name>
 		<symb-aircraft-name>MP5symb-aircraft</symb-aircraft-name>
-		<ecm-signal-norm>instrumentation/radar2/targets/multiplayer[4]/ecm-signal-norm</ecm-signal-norm>
+		<range-nm>instrumentation/radar2/targets/multiplayer[4]/range-nm</range-nm>
 		<bearing-deg>instrumentation/radar2/targets/multiplayer[4]/bearing-deg</bearing-deg>
 		<true-heading-deg>instrumentation/radar2/targets/multiplayer[4]/orientation/true-heading-deg</true-heading-deg>
 		<ecm_type_num>instrumentation/radar2/targets/multiplayer[4]/ecm_type_num</ecm_type_num>
@@ -481,9 +497,13 @@
 		<object-name alias="../../MP5/group-name"/>
 		<condition>
 			<greater-than>
-				<property alias="../../../../MP5/ecm-signal-norm"/>
+				<property alias="../../../../MP5/range-nm"/>
 				<value>0</value>
 			</greater-than>
+			<less-than>
+				<property alias="../../../../MP5/range-nm"/>
+				<value>30</value>
+			</less-than>
 		</condition>
 	</animation>
 	<animation>
@@ -501,8 +521,8 @@
 	<animation>
 		<type>translate</type>
 		<object-name alias="../../MP5/group-name"/>
-		<property alias="../../MP5/ecm-signal-norm"/>
-		<factor>0.01</factor>
+		<property alias="../../MP5/range-nm"/>
+		<factor>0.001</factor>
 		<axis>
 			<x>0</x>
 			<y>0</y>
@@ -570,7 +590,7 @@
 		<type2-name>MP6type2</type2-name>
 		<symb-ship-name>MP6symb-ship</symb-ship-name>
 		<symb-aircraft-name>MP6symb-aircraft</symb-aircraft-name>
-		<ecm-signal-norm>instrumentation/radar2/targets/multiplayer[5]/ecm-signal-norm</ecm-signal-norm>
+		<range-nm>instrumentation/radar2/targets/multiplayer[5]/range-nm</range-nm>
 		<bearing-deg>instrumentation/radar2/targets/multiplayer[5]/bearing-deg</bearing-deg>
 		<true-heading-deg>instrumentation/radar2/targets/multiplayer[5]/orientation/true-heading-deg</true-heading-deg>
 		<ecm_type_num>instrumentation/radar2/targets/multiplayer[5]/ecm_type_num</ecm_type_num>
@@ -582,9 +602,13 @@
 		<object-name alias="../../MP6/group-name"/>
 		<condition>
 			<greater-than>
-				<property alias="../../../../MP6/ecm-signal-norm"/>
+				<property alias="../../../../MP6/range-nm"/>
 				<value>0</value>
 			</greater-than>
+			<less-than>
+				<property alias="../../../../MP6/range-nm"/>
+				<value>30</value>
+			</less-than>
 		</condition>
 	</animation>
 	<animation>
@@ -602,8 +626,8 @@
 	<animation>
 		<type>translate</type>
 		<object-name alias="../../MP6/group-name"/>
-		<property alias="../../MP6/ecm-signal-norm"/>
-		<factor>0.01</factor>
+		<property alias="../../MP6/range-nm"/>
+		<factor>0.001</factor>
 		<axis>
 			<x>0</x>
 			<y>0</y>
@@ -671,7 +695,7 @@
 		<type2-name>MP7type2</type2-name>
 		<symb-ship-name>MP7symb-ship</symb-ship-name>
 		<symb-aircraft-name>MP7symb-aircraft</symb-aircraft-name>
-		<ecm-signal-norm>instrumentation/radar2/targets/multiplayer[6]/ecm-signal-norm</ecm-signal-norm>
+		<range-nm>instrumentation/radar2/targets/multiplayer[6]/range-nm</range-nm>
 		<bearing-deg>instrumentation/radar2/targets/multiplayer[6]/bearing-deg</bearing-deg>
 		<true-heading-deg>instrumentation/radar2/targets/multiplayer[6]/orientation/true-heading-deg</true-heading-deg>
 		<ecm_type_num>instrumentation/radar2/targets/multiplayer[6]/ecm_type_num</ecm_type_num>
@@ -683,9 +707,13 @@
 		<object-name alias="../../MP7/group-name"/>
 		<condition>
 			<greater-than>
-				<property alias="../../../../MP7/ecm-signal-norm"/>
+				<property alias="../../../../MP7/range-nm"/>
 				<value>0</value>
 			</greater-than>
+			<less-than>
+				<property alias="../../../../MP7/range-nm"/>
+				<value>30</value>
+			</less-than>
 		</condition>
 	</animation>
 	<animation>
@@ -703,8 +731,8 @@
 	<animation>
 		<type>translate</type>
 		<object-name alias="../../MP7/group-name"/>
-		<property alias="../../MP7/ecm-signal-norm"/>
-		<factor>0.01</factor>
+		<property alias="../../MP7/range-nm"/>
+		<factor>0.001</factor>
 		<axis>
 			<x>0</x>
 			<y>0</y>
@@ -772,7 +800,7 @@
 		<type2-name>MP8type2</type2-name>
 		<symb-ship-name>MP8symb-ship</symb-ship-name>
 		<symb-aircraft-name>MP8symb-aircraft</symb-aircraft-name>
-		<ecm-signal-norm>instrumentation/radar2/targets/multiplayer[7]/ecm-signal-norm</ecm-signal-norm>
+		<range-nm>instrumentation/radar2/targets/multiplayer[7]/range-nm</range-nm>
 		<bearing-deg>instrumentation/radar2/targets/multiplayer[7]/bearing-deg</bearing-deg>
 		<true-heading-deg>instrumentation/radar2/targets/multiplayer[7]/orientation/true-heading-deg</true-heading-deg>
 		<ecm_type_num>instrumentation/radar2/targets/multiplayer[7]/ecm_type_num</ecm_type_num>
@@ -784,9 +812,13 @@
 		<object-name alias="../../MP8/group-name"/>
 		<condition>
 			<greater-than>
-				<property alias="../../../../MP8/ecm-signal-norm"/>
+				<property alias="../../../../MP8/range-nm"/>
 				<value>0</value>
 			</greater-than>
+			<less-than>
+				<property alias="../../../../MP8/range-nm"/>
+				<value>30</value>
+			</less-than>
 		</condition>
 	</animation>
 	<animation>
@@ -804,8 +836,8 @@
 	<animation>
 		<type>translate</type>
 		<object-name alias="../../MP8/group-name"/>
-		<property alias="../../MP8/ecm-signal-norm"/>
-		<factor>0.01</factor>
+		<property alias="../../MP8/range-nm"/>
+		<factor>0.001</factor>
 		<axis>
 			<x>0</x>
 			<y>0</y>
@@ -874,7 +906,7 @@
 		<type2-name>MP9type2</type2-name>
 		<symb-ship-name>MP9symb-ship</symb-ship-name>
 		<symb-aircraft-name>MP9symb-aircraft</symb-aircraft-name>
-		<ecm-signal-norm>instrumentation/radar2/targets/multiplayer[8]/ecm-signal-norm</ecm-signal-norm>
+		<range-nm>instrumentation/radar2/targets/multiplayer[8]/range-nm</range-nm>
 		<bearing-deg>instrumentation/radar2/targets/multiplayer[8]/bearing-deg</bearing-deg>
 		<true-heading-deg>instrumentation/radar2/targets/multiplayer[8]/orientation/true-heading-deg</true-heading-deg>
 		<ecm_type_num>instrumentation/radar2/targets/multiplayer[8]/ecm_type_num</ecm_type_num>
@@ -886,9 +918,13 @@
 		<object-name alias="../../MP9/group-name"/>
 		<condition>
 			<greater-than>
-				<property alias="../../../../MP9/ecm-signal-norm"/>
+				<property alias="../../../../MP9/range-nm"/>
 				<value>0</value>
 			</greater-than>
+			<less-than>
+				<property alias="../../../../MP9/range-nm"/>
+				<value>30</value>
+			</less-than>
 		</condition>
 	</animation>
 	<animation>
@@ -906,8 +942,8 @@
 	<animation>
 		<type>translate</type>
 		<object-name alias="../../MP9/group-name"/>
-		<property alias="../../MP9/ecm-signal-norm"/>
-		<factor>0.01</factor>
+		<property alias="../../MP9/range-nm"/>
+		<factor>0.001</factor>
 		<axis>
 			<x>0</x>
 			<y>0</y>
@@ -976,7 +1012,7 @@
 		<type2-name>MP10type2</type2-name>
 		<symb-ship-name>MP10symb-ship</symb-ship-name>
 		<symb-aircraft-name>MP10symb-aircraft</symb-aircraft-name>
-		<ecm-signal-norm>instrumentation/radar2/targets/multiplayer[9]/ecm-signal-norm</ecm-signal-norm>
+		<range-nm>instrumentation/radar2/targets/multiplayer[9]/range-nm</range-nm>
 		<bearing-deg>instrumentation/radar2/targets/multiplayer[9]/bearing-deg</bearing-deg>
 		<true-heading-deg>instrumentation/radar2/targets/multiplayer[9]/orientation/true-heading-deg</true-heading-deg>
 		<ecm_type_num>instrumentation/radar2/targets/multiplayer[9]/ecm_type_num</ecm_type_num>
@@ -988,9 +1024,13 @@
 		<object-name alias="../../MP10/group-name"/>
 		<condition>
 			<greater-than>
-				<property alias="../../../../MP10/ecm-signal-norm"/>
+				<property alias="../../../../MP10/range-nm"/>
 				<value>0</value>
 			</greater-than>
+			<less-than>
+				<property alias="../../../../MP10/range-nm"/>
+				<value>30</value>
+			</less-than>
 		</condition>
 	</animation>
 	<animation>
@@ -1008,8 +1048,8 @@
 	<animation>
 		<type>translate</type>
 		<object-name alias="../../MP10/group-name"/>
-		<property alias="../../MP10/ecm-signal-norm"/>
-		<factor>0.01</factor>
+		<property alias="../../MP10/range-nm"/>
+		<factor>0.001</factor>
 		<axis>
 			<x>0</x>
 			<y>0</y>
@@ -1077,7 +1117,7 @@
 		<type2-name>MP11type2</type2-name>
 		<symb-ship-name>MP11symb-ship</symb-ship-name>
 		<symb-aircraft-name>MP11symb-aircraft</symb-aircraft-name>
-		<ecm-signal-norm>instrumentation/radar2/targets/multiplayer[10]/ecm-signal-norm</ecm-signal-norm>
+		<range-nm>instrumentation/radar2/targets/multiplayer[10]/range-nm</range-nm>
 		<bearing-deg>instrumentation/radar2/targets/multiplayer[10]/bearing-deg</bearing-deg>
 		<true-heading-deg>instrumentation/radar2/targets/multiplayer[10]/orientation/true-heading-deg</true-heading-deg>
 		<ecm_type_num>instrumentation/radar2/targets/multiplayer[10]/ecm_type_num</ecm_type_num>
@@ -1089,9 +1129,13 @@
 		<object-name alias="../../MP11/group-name"/>
 		<condition>
 			<greater-than>
-				<property alias="../../../../MP11/ecm-signal-norm"/>
+				<property alias="../../../../MP11/range-nm"/>
 				<value>0</value>
 			</greater-than>
+			<less-than>
+				<property alias="../../../../MP11/range-nm"/>
+				<value>30</value>
+			</less-than>
 		</condition>
 	</animation>
 	<animation>
@@ -1109,8 +1153,8 @@
 	<animation>
 		<type>translate</type>
 		<object-name alias="../../MP11/group-name"/>
-		<property alias="../../MP11/ecm-signal-norm"/>
-		<factor>0.01</factor>
+		<property alias="../../MP11/range-nm"/>
+		<factor>0.001</factor>
 		<axis>
 			<x>0</x>
 			<y>0</y>
@@ -1178,7 +1222,7 @@
 		<type2-name>MP12type2</type2-name>
 		<symb-ship-name>MP12symb-ship</symb-ship-name>
 		<symb-aircraft-name>MP12symb-aircraft</symb-aircraft-name>
-		<ecm-signal-norm>instrumentation/radar2/targets/multiplayer[11]/ecm-signal-norm</ecm-signal-norm>
+		<range-nm>instrumentation/radar2/targets/multiplayer[11]/range-nm</range-nm>
 		<bearing-deg>instrumentation/radar2/targets/multiplayer[11]/bearing-deg</bearing-deg>
 		<true-heading-deg>instrumentation/radar2/targets/multiplayer[11]/orientation/true-heading-deg</true-heading-deg>
 		<ecm_type_num>instrumentation/radar2/targets/multiplayer[11]/ecm_type_num</ecm_type_num>
@@ -1190,9 +1234,13 @@
 		<object-name alias="../../MP12/group-name"/>
 		<condition>
 			<greater-than>
-				<property alias="../../../../MP12/ecm-signal-norm"/>
+				<property alias="../../../../MP12/range-nm"/>
 				<value>0</value>
 			</greater-than>
+			<less-than>
+				<property alias="../../../../MP12/range-nm"/>
+				<value>30</value>
+			</less-than>
 		</condition>
 	</animation>
 	<animation>
@@ -1210,8 +1258,8 @@
 	<animation>
 		<type>translate</type>
 		<object-name alias="../../MP12/group-name"/>
-		<property alias="../../MP12/ecm-signal-norm"/>
-		<factor>0.01</factor>
+		<property alias="../../MP12/range-nm"/>
+		<factor>0.001</factor>
 		<axis>
 			<x>0</x>
 			<y>0</y>
@@ -1279,7 +1327,7 @@
 		<type2-name>MP13type2</type2-name>
 		<symb-ship-name>MP13symb-ship</symb-ship-name>
 		<symb-aircraft-name>MP13symb-aircraft</symb-aircraft-name>
-		<ecm-signal-norm>instrumentation/radar2/targets/multiplayer[12]/ecm-signal-norm</ecm-signal-norm>
+		<range-nm>instrumentation/radar2/targets/multiplayer[12]/range-nm</range-nm>
 		<bearing-deg>instrumentation/radar2/targets/multiplayer[12]/bearing-deg</bearing-deg>
 		<true-heading-deg>instrumentation/radar2/targets/multiplayer[12]/orientation/true-heading-deg</true-heading-deg>
 		<ecm_type_num>instrumentation/radar2/targets/multiplayer[12]/ecm_type_num</ecm_type_num>
@@ -1291,9 +1339,13 @@
 		<object-name alias="../../MP13/group-name"/>
 		<condition>
 			<greater-than>
-				<property alias="../../../../MP13/ecm-signal-norm"/>
+				<property alias="../../../../MP13/range-nm"/>
 				<value>0</value>
 			</greater-than>
+			<less-than>
+				<property alias="../../../../MP13/range-nm"/>
+				<value>30</value>
+			</less-than>
 		</condition>
 	</animation>
 	<animation>
@@ -1311,8 +1363,8 @@
 	<animation>
 		<type>translate</type>
 		<object-name alias="../../MP13/group-name"/>
-		<property alias="../../MP13/ecm-signal-norm"/>
-		<factor>0.01</factor>
+		<property alias="../../MP13/range-nm"/>
+		<factor>0.001</factor>
 		<axis>
 			<x>0</x>
 			<y>0</y>
@@ -1379,7 +1431,7 @@
 		<type2-name>TK1type2</type2-name>
 		<symb-ship-name>TK1symb-ship</symb-ship-name>
 		<symb-aircraft-name>TK1symb-aircraft</symb-aircraft-name>
-		<ecm-signal-norm>instrumentation/radar2/targets/tanker[0]/ecm-signal-norm</ecm-signal-norm>
+		<range-nm>instrumentation/radar2/targets/tanker[0]/range-nm</range-nm>
 		<bearing-deg>instrumentation/radar2/targets/tanker[0]/bearing-deg</bearing-deg>
 		<true-heading-deg>instrumentation/radar2/targets/tanker[0]/orientation/true-heading-deg</true-heading-deg>
 		<ecm_type_num>instrumentation/radar2/targets/tanker[0]/ecm_type_num</ecm_type_num>
@@ -1391,9 +1443,13 @@
 		<object-name alias="../../TK1/group-name"/>
 		<condition>
 			<greater-than>
-				<property alias="../../../../TK1/ecm-signal-norm"/>
+				<property alias="../../../../TK1/range-nm"/>
 				<value>0</value>
 			</greater-than>
+			<less-than>
+				<property alias="../../../../TK1/range-nm"/>
+				<value>30</value>
+			</less-than>
 		</condition>
 	</animation>
 	<animation>
@@ -1411,8 +1467,8 @@
 	<animation>
 		<type>translate</type>
 		<object-name alias="../../TK1/group-name"/>
-		<property alias="../../TK1/ecm-signal-norm"/>
-		<factor>0.01</factor>
+		<property alias="../../TK1/range-nm"/>
+		<factor>0.001</factor>
 		<axis>
 			<x>0</x>
 			<y>0</y>
@@ -1480,7 +1536,7 @@
 		<type2-name>TK2type2</type2-name>
 		<symb-ship-name>TK2symb-ship</symb-ship-name>
 		<symb-aircraft-name>TK2symb-aircraft</symb-aircraft-name>
-		<ecm-signal-norm>instrumentation/radar2/targets/tanker[1]/ecm-signal-norm</ecm-signal-norm>
+		<range-nm>instrumentation/radar2/targets/tanker[1]/range-nm</range-nm>
 		<bearing-deg>instrumentation/radar2/targets/tanker[1]/bearing-deg</bearing-deg>
 		<true-heading-deg>instrumentation/radar2/targets/tanker[1]/orientation/true-heading-deg</true-heading-deg>
 		<ecm_type_num>instrumentation/radar2/targets/tanker[1]/ecm_type_num</ecm_type_num>
@@ -1492,9 +1548,13 @@
 		<object-name alias="../../TK2/group-name"/>
 		<condition>
 			<greater-than>
-				<property alias="../../../../TK2/ecm-signal-norm"/>
+				<property alias="../../../../TK2/range-nm"/>
 				<value>0</value>
 			</greater-than>
+			<less-than>
+				<property alias="../../../../TK2/range-nm"/>
+				<value>30</value>
+			</less-than>
 		</condition>
 	</animation>
 	<animation>
@@ -1512,8 +1572,8 @@
 	<animation>
 		<type>translate</type>
 		<object-name alias="../../TK2/group-name"/>
-		<property alias="../../TK2/ecm-signal-norm"/>
-		<factor>0.01</factor>
+		<property alias="../../TK2/range-nm"/>
+		<factor>0.001</factor>
 		<axis>
 			<x>0</x>
 			<y>0</y>
@@ -1580,7 +1640,7 @@
 		<type2-name>TK3type2</type2-name>
 		<symb-ship-name>TK3symb-ship</symb-ship-name>
 		<symb-aircraft-name>TK3symb-aircraft</symb-aircraft-name>
-		<ecm-signal-norm>instrumentation/radar2/targets/tanker[2]/ecm-signal-norm</ecm-signal-norm>
+		<range-nm>instrumentation/radar2/targets/tanker[2]/range-nm</range-nm>
 		<bearing-deg>instrumentation/radar2/targets/tanker[2]/bearing-deg</bearing-deg>
 		<true-heading-deg>instrumentation/radar2/targets/tanker[2]/orientation/true-heading-deg</true-heading-deg>
 		<ecm_type_num>instrumentation/radar2/targets/tanker[2]/ecm_type_num</ecm_type_num>
@@ -1592,9 +1652,13 @@
 		<object-name alias="../../TK3/group-name"/>
 		<condition>
 			<greater-than>
-				<property alias="../../../../TK3/ecm-signal-norm"/>
+				<property alias="../../../../TK3/range-nm"/>
 				<value>0</value>
 			</greater-than>
+			<less-than>
+				<property alias="../../../../TK3/range-nm"/>
+				<value>30</value>
+			</less-than>
 		</condition>
 	</animation>
 	<animation>
@@ -1612,8 +1676,8 @@
 	<animation>
 		<type>translate</type>
 		<object-name alias="../../TK3/group-name"/>
-		<property alias="../../TK3/ecm-signal-norm"/>
-		<factor>0.01</factor>
+		<property alias="../../TK3/range-nm"/>
+		<factor>0.001</factor>
 		<axis>
 			<x>0</x>
 			<y>0</y>
@@ -1679,7 +1743,7 @@
 		<type2-name>TK4type2</type2-name>
 		<symb-ship-name>TK4symb-ship</symb-ship-name>
 		<symb-aircraft-name>TK4symb-aircraft</symb-aircraft-name>
-		<ecm-signal-norm>instrumentation/radar2/targets/tanker[3]/ecm-signal-norm</ecm-signal-norm>
+		<range-nm>instrumentation/radar2/targets/tanker[3]/range-nm</range-nm>
 		<bearing-deg>instrumentation/radar2/targets/tanker[3]/bearing-deg</bearing-deg>
 		<true-heading-deg>instrumentation/radar2/targets/tanker[3]/orientation/true-heading-deg</true-heading-deg>
 		<ecm_type_num>instrumentation/radar2/targets/tanker[3]/ecm_type_num</ecm_type_num>
@@ -1691,9 +1755,13 @@
 		<object-name alias="../../TK4/group-name"/>
 		<condition>
 			<greater-than>
-				<property alias="../../../../TK4/ecm-signal-norm"/>
+				<property alias="../../../../TK4/range-nm"/>
 				<value>0</value>
 			</greater-than>
+			<less-than>
+				<property alias="../../../../TK4/range-nm"/>
+				<value>30</value>
+			</less-than>
 		</condition>
 	</animation>
 	<animation>
@@ -1711,8 +1779,8 @@
 	<animation>
 		<type>translate</type>
 		<object-name alias="../../TK4/group-name"/>
-		<property alias="../../TK4/ecm-signal-norm"/>
-		<factor>0.01</factor>
+		<property alias="../../TK4/range-nm"/>
+		<factor>0.001</factor>
 		<axis>
 			<x>0</x>
 			<y>0</y>

@@ -80,7 +80,7 @@ max. radar range target seize(RCS)m2, 4th root of radar RCS -->
 					<max-radar-rng-km>0</max-radar-rng-km>
 					<max-target-sq-meter>0</max-target-sq-meter>
 					<max-target-4th-root>0</max-target-4th-root>
-					<ecm-type-num>00</ecm-type-num>
+					<ecm-type-num>10</ecm-type-num>
 				</aircraft>
 				<aircraft n="7">
 					<name>A300</name>
