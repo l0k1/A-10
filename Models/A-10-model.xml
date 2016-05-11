@@ -74,7 +74,6 @@
 		<object-name>UC-LeftWHousingDoor</object-name>
 		<object-name>UC-LeftWHousingECM</object-name>
 		<object-name>UC-LeftWSponson</object-name>
-		<object-name>UC-RightLower</object-name>
 		<object-name>UC-RightWHousingDoor-Lower</object-name>
 		<object-name>UC-RightWHousingDoor</object-name>
 		<object-name>UC-RightWHousingECM</object-name>
@@ -179,7 +178,6 @@
 		<object-name>UC-RightAftMainLowerDamper</object-name>
 		<object-name>UC-RightFrontMainLowerDamper</object-name>
 		<object-name>UC-RightMainBottom</object-name>
-		<object-name>UC-RightTyre</object-name>
 		<object-name>UC-RightMainJack-Top</object-name>
 		<object-name>UC-RightAftMainUpperDamper</object-name>
 		<object-name>UC-RightFrontMainUpperDamper</object-name>
@@ -193,8 +191,9 @@
 		<object-name>UC-RightWHousingTop</object-name>
 		<object-name>L-wing-ECMCanisters</object-name>
 		<object-name>R-wing-ECMCanisters</object-name> 
+		<object-name>UC-RightTyre</object-name>
 		<property-base>sim/model/livery</property-base>
-		<texture-prop>texture-detail</texture-prop>
+		<texture-prop>texture-detaasdil</texture-prop>
 		<texture>Liveries/default-detail.png</texture>
 	</animation>
 	
