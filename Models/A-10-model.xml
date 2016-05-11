@@ -202,7 +202,13 @@
 	</model>
 
 
-
+	<multiplay>
+		<refuel>
+			<offset-x-m type="double">0.9612</offset-x-m>
+			<offset-y-m type="double">0.0</offset-y-m>
+			<offset-z-m type="double">0.6841</offset-z-m>
+		</refuel>
+	</multiplay>
 
 
 	<!-- Select the external loads as appropriate -->
