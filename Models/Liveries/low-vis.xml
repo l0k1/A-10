@@ -6,7 +6,7 @@
   <model>
     <livery>
       <name type="string">Low vis</name>
-      <texture-main>Liveries/new.png</texture-main>
+      <texture-main>Liveries/low vis.png</texture-main>
 	  <texture-detail>Liveries/default-detail.png</texture-detail>
     </livery>
   </model>
