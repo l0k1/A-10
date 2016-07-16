@@ -9,7 +9,7 @@
 		<name>temp-l</name>
 		<type>rotate</type>
 		<object-name>needle-temp-l</object-name>
-		<property>engines/engine[0]/itt-norm</property>
+		<property>engines/engine[0]/egt-degf</property>
 		<interpolation> 
 			<entry><ind>0.0000</ind><dep>118</dep></entry><!--0-->
 			<entry><ind>0.0213</ind><dep>179</dep></entry><!--iddle-->
@@ -27,7 +27,7 @@
 		<name>temp-r</name>
 		<type>rotate</type>
 		<object-name>needle-temp-r</object-name>
-		<property>engines/engine[1]/itt-norm</property>
+		<property>engines/engine[1]/egt-degf</property>
 		<interpolation> 
 			<entry><ind>0.0000</ind><dep>118</dep></entry><!--0-->
 			<entry><ind>0.0213</ind><dep>179</dep></entry><!--iddle-->
@@ -46,7 +46,7 @@
 		<name>fan-percent-l</name>
 		<type>rotate</type>
 		<object-name>needle-fan-l</object-name>
-		<property>sim/model/A-10/engines/engine[0]/n1</property>
+		<property>engines/engine[0]/n1</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>0</dep></entry>
 			<entry><ind>25</ind><dep>47.3</dep></entry>
@@ -69,7 +69,7 @@
 		<name>fan-percent-r</name>
 		<type>rotate</type>
 		<object-name>needle-fan-r</object-name>
-		<property>sim/model/A-10/engines/engine[1]/n1</property>
+		<property>engines/engine[1]/n1</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>0</dep></entry>
 			<entry><ind>25</ind><dep>47.3</dep></entry>
@@ -94,7 +94,7 @@
 		<name>core-rpm-l</name>
 		<type>rotate</type>
 		<object-name>needle-core-l</object-name>
-		<property>sim/model/A-10/engines/engine[0]/n2</property>
+		<property>engines/engine[0]/n2</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>0</dep></entry>
 			<entry><ind>10</ind><dep>25</dep></entry>
@@ -119,7 +119,7 @@
 		<name>core-rpm-r</name>
 		<type>rotate</type>
 		<object-name>needle-core-r</object-name>
-		<property>sim/model/A-10/engines/engine[1]/n2</property>
+		<property>engines/engine[1]/n2</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>0</dep></entry>
 			<entry><ind>10</ind><dep>25</dep></entry>
@@ -147,7 +147,7 @@
 		<name>fuel-flow-ppm-l</name>
 		<type>rotate</type>
 		<object-name>needle-fuel-l</object-name>
-		<property>engines/engine[0]/fuel-flow-pph</property>
+		<property>engines/engine[0]/fuel-flow_pph</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>135.8</dep></entry><!-- 0 -->
 			<entry><ind>1000</ind><dep>201.2</dep></entry>
@@ -171,7 +171,7 @@
 		<name>fuel-flow-ppm-r</name>
 		<type>rotate</type>
 		<object-name>needle-fuel-r</object-name>
-		<property>engines/engine[1]/fuel-flow-pph</property>
+		<property>engines/engine[1]/fuel-flow_pph</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>135.8</dep></entry><!-- 0 -->
 			<entry><ind>1000</ind><dep>201.2</dep></entry>
@@ -199,7 +199,7 @@
 		<name>oil-pressure-psi-l</name>
 		<type>rotate</type>
 		<object-name>needle-oil-l</object-name>
-		<property>engines/engine[0]/oilp-norm</property>
+		<property>engines/engine[0]/oil-pressure-psi</property>
 		<interpolation>
 			<entry><ind>0.0000</ind><dep>159</dep></entry><!--0-->
 			<entry><ind>0.0214</ind><dep>265</dep></entry><!--iddle-->
@@ -217,7 +217,7 @@
 		<name>oil-pressure-psi-r</name>
 		<type>rotate</type>
 		<object-name>needle-oil-r</object-name>
-		<property>engines/engine[1]/oilp-norm</property>
+		<property>engines/engine[1]/oil-pressure-psi</property>
 		<interpolation> 
 			<entry><ind>0.0000</ind><dep>159</dep></entry><!--0-->
 			<entry><ind>0.0214</ind><dep>265</dep></entry><!--iddle-->

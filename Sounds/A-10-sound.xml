@@ -125,7 +125,7 @@
   	              </and>
   	          </condition>
   	    <volume>
-  	      <property>/engines/engine[1]/thrust-lbs</property>
+  	      <property>/engines/engine[1]/thrust_lb</property>
   	      <factor>0.00006062</factor>
   	    </volume>
   	         <pitch>
@@ -161,7 +161,7 @@
 	                </and>
 	            </condition>
 	      <volume>
-	        <property>/engines/engine/thrust-lbs</property>
+	        <property>/engines/engine/thrust_lb</property>
 	        <factor>0.00005062</factor>
 	      </volume>
 	           <pitch>
@@ -197,7 +197,7 @@
 	                </and>
 	            </condition>
 	      <volume>
-	        <property>/engines/engine[1]/thrust-lbs</property>
+	        <property>/engines/engine[1]/thrust_lb</property>
 	        <factor>0.00005062</factor>
 	      </volume>
 	           <pitch>
@@ -232,7 +232,7 @@
 		                </and>
 		            </condition>
 		      <volume>
-		        <property>/engines/engine/thrust-lbs</property>
+		        <property>/engines/engine/thrust_lb</property>
 		        <factor>0.00005062</factor>
 		      </volume>
 		           <pitch>
@@ -266,7 +266,7 @@
 	                </and>
 	            </condition>
 	      <volume>
-	        <property>/engines/engine[1]/thrust-lbs</property>
+	        <property>/engines/engine[1]/thrust_lb</property>
 	        <factor>0.00005062</factor>
 	      </volume>
 	           <pitch>
@@ -300,7 +300,7 @@
 	                </and>
 	            </condition>
 	      <volume>
-	        <property>/engines/engine/thrust-lbs</property>
+	        <property>/engines/engine/thrust_lb</property>
 	        <factor>0.00009062</factor>
 	      </volume>
 	           <pitch>
@@ -334,7 +334,7 @@
         	        </and>
         	    </condition>
 	      <volume>
-        	<property>/engines/engine[1]/thrust-lbs</property>
+        	<property>/engines/engine[1]/thrust_lb</property>
         	<factor>0.00009062</factor>				
 	      </volume>
         	   <pitch>
