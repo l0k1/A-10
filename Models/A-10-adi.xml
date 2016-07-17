@@ -8,7 +8,7 @@
 		<object-name>off-flag</object-name>
 		<condition>
 			<less-than>
-				<property>systems/electrical/outputs/adi</property>
+				<property>sim/current-view/name</property>
 				<value>24</value>
 			</less-than>
 		</condition>
@@ -17,7 +17,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>sphere</object-name>
-		<property>instrumentation/attitude-indicator/indicated-roll-deg</property>
+		<property>orientation/roll-deg</property>
 		<center>
 			<x-m>0</x-m>
 			<y-m>0.0</y-m>
@@ -33,7 +33,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>sphere</object-name>
-		<property>instrumentation/attitude-indicator/indicated-pitch-deg</property>
+		<property>orientation/pitch-deg</property>
 		<center>
 			<x-m>-0.0522</x-m>
 			<y-m>0.0</y-m>
@@ -49,7 +49,7 @@
 	<animation>
 		<type>translate</type>
 		<object-name>turn-indicator</object-name>
-		<property>instrumentation/turn-indicator/indicated-turn-rate</property>
+		<property>orientation/roll-deg</property>
 		<factor>0.0114</factor>
 		<axis><y>1</y></axis>
 		<min-m>-0.0185</min-m>
@@ -132,7 +132,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>bank-index</object-name>
-		<property>instrumentation/attitude-indicator/indicated-roll-deg</property>
+		<property>orientation/roll-deg</property>
 		<min-deg>-120</min-deg>
 		<max-deg>120</max-deg>
 		<center>

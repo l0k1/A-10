@@ -11,10 +11,10 @@
 		<width>20</width>
 		<height>130</height>
 		<roll-input>
-			<property>instrumentation/attitude-indicator/indicated-roll-deg</property>
+			<property>orientation/roll-deg</property>
 		</roll-input>
 		<pitch-input>
-			<property>instrumentation/attitude-indicator/indicated-pitch-deg</property>
+			<property>orientation/pitch-deg</property>
 		</pitch-input>
 		<compression-factor>10.00</compression-factor>
 		<display-span>14.0</display-span>
@@ -82,7 +82,7 @@
 		<height>8</height>
 		<box>true</box>
 		<input>
-			<property>instrumentation/attitude-indicator/indicated-pitch-deg</property>
+			<property>orientation/pitch-deg</property>
 		</input>
 		<format>%4.2f</format>
 		<halign>right</halign>
