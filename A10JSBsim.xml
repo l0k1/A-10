@@ -26,7 +26,7 @@
      mean chord:   8.11 ft
      aspect ratio: 6.54:1
      taper ratio:  0.65:1
-     incidence:    1.00 degrees
+     incidence:    -1.00 degrees
      dihedral:     2.00 degrees
      sweep:        0.00 degrees
 
@@ -54,7 +54,7 @@
  <metrics>
    <wingarea  unit="FT2">   506.00 </wingarea>
    <wingspan  unit="FT" >    57.60 </wingspan>
-   <wing_incidence>          1.00 </wing_incidence>
+   <wing_incidence>          -1.00 </wing_incidence>
    <chord     unit="FT" >     8.11 </chord>
    <htailarea unit="FT2">   118.40 </htailarea>
    <htailarm  unit="FT" >    21.36 </htailarm>
@@ -102,7 +102,7 @@
 
    <engine file="TF34">
     <location unit="IN">
-      <x>   580.80 </x>
+      <x>   460.80 </x>
       <y>   -20.00 </y>
       <z>     0.00 </z>
     </location>
@@ -118,12 +118,12 @@
     <thruster file="direct">
      <sense> 1 </sense>
      <location unit="IN">
-       <x>   580.80 </x>
+       <x>   460.80 </x>
        <y>   -20.00 </y>
        <z>     0.00 </z>
      </location>
      <orient unit="DEG">
-       <pitch>     0.00 </pitch>
+       <pitch>     -5.00 </pitch>
         <roll>     0.00 </roll>
          <yaw>     0.00 </yaw>
      </orient>
@@ -132,12 +132,12 @@
 
    <engine file="TF34">
     <location unit="IN">
-      <x>   580.80 </x>
+      <x>   460.80 </x>
       <y>    20.00 </y>
       <z>     0.00 </z>
     </location>
     <orient unit="DEG">
-      <pitch>     0.00 </pitch>
+      <pitch>    0.00 </pitch>
        <roll>     0.00 </roll>
         <yaw>     0.00 </yaw>
     </orient>
@@ -148,12 +148,12 @@
    <thruster file="direct">
      <sense> 1 </sense>
      <location unit="IN">
-       <x>   580.80 </x>
+       <x>   460.80 </x>
        <y>    20.00 </y>
        <z>     0.00 </z>
      </location>
      <orient unit="DEG">
-       <pitch>     0.00 </pitch>
+       <pitch>     -5.00 </pitch>
         <roll>     0.00 </roll>
          <yaw>     0.00 </yaw>
      </orient>
@@ -288,10 +288,10 @@
           <table>
             <independentVar lookup="row">aero/alpha-rad</independentVar>
             <tableData>
-              -0.20 -0.6259
-               0.00  0.4086
-               0.31  2.0269
-               0.60  1.0559
+              -0.20   -0.620
+               0.00    0.280
+               0.26    1.000
+               0.60    0.548
             </tableData>
           </table>
       </product>
@@ -352,11 +352,11 @@
           <table>
             <independentVar lookup="row">aero/alpha-rad</independentVar>
             <tableData>
-             -1.57    1.4087
-             -0.31    0.0908
-              0.00    0.0240
-              0.31    0.0908
-              1.57    1.4087
+             -1.57       1.500
+             -0.26       0.027
+              0.00       0.021
+              0.26       0.027
+              1.57       1.500
             </tableData>
           </table>
        </product>
@@ -512,7 +512,7 @@
            <property>metrics/Sw-sqft</property>
            <property>metrics/cbarw-ft</property>
            <property>aero/alpha-rad</property>
-           <value> -1.3937 </value>
+           <value> -1.5937 </value>
        </product>
     </function>
 
@@ -553,7 +553,7 @@
            <property>metrics/cbarw-ft</property>
            <property>aero/ci2vel</property>
            <property>aero/alphadot-rad_sec</property>
-           <value> -6.4232 </value>
+           <value> -9.4232 </value>
        </product>
     </function>
 
