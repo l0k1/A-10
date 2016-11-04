@@ -11,6 +11,20 @@ var clamp = func(v, min, max) { v < min ? min : v > max ? max : v }
 var TRUE  = 1;
 var FALSE = 0;
 
+
+var cannon_types = {
+    " M70 rocket hit":        0.30,
+    " M55 cannon shell hit":  0.20,
+    " KCA cannon shell hit":  0.20,
+    " Gun Splash On ":        0.30,
+    " M61A1 shell hit":       0.20,
+    " GAU-8/A hit":           0.30,
+    " BK27 cannon hit":       0.20,
+    " GSh-30 hit":            0.20,
+};
+    
+    
+    
 var warhead_lbs = {
     "aim-120":              44.00,
     "AIM120":               44.00,
@@ -18,6 +32,7 @@ var warhead_lbs = {
     "aim-7":                88.00,
     "RB-71":                88.00,
     "aim-9":                20.80,
+    "AIM9":                 20.80,
     "AIM-9":                20.80,
     "RB-24":                20.80,
     "RB-24J":               20.80,
@@ -44,8 +59,13 @@ var warhead_lbs = {
     "LAU-68":               10.00,
     "M317":                145.00,
     "GBU-31":              945.00,
+    "AIM132":               22.05,
+    "ALARM":               450.00,
+    "STORMSHADOW":         850.00,
+    "R-60":                  6.60,
+    "R-27R1":               85.98,
+    "R-27T1":               85.98,
 };
-
 
 var incoming_listener = func {
   var history = getprop("/sim/multiplay/chat-history");
@@ -63,10 +83,11 @@ var incoming_listener = func {
         # a m2000 is firing at us
         m2000 = TRUE;
       }
-      if (last_vector[1] == " FOX2 at" or last_vector[1] == " aim7 at" or last_vector[1] == " aim9 at"
-          or last_vector[1] == " aim120 at" or last_vector[1] == " RB-24J fired at" or last_vector[1] == " RB-74 fired at"
-          or last_vector[1] == " RB-71 fired at" or last_vector[1] == " RB-15F fired at"
-          or last_vector[1] == " RB-99 fired at" or last_vector[1] == " KN-06 fired at" or m2000 == TRUE) {
+      if (last_vector[1] == " FOX2 at" or last_vector[1] == " Fox 1 at" or last_vector[1] == " Fox 2 at" or last_vector[1] == " Fox 3 at"
+          or last_vector[1] == " Greyhound at" or last_vector[1] == " Bombs away at" or last_vector[1] == " Bruiser at" or last_vector[1] == " Rifle at" or last_vector[1] == " Bird away at"
+          or last_vector[1] == " aim7 at" or last_vector[1] == " aim9 at"
+          or last_vector[1] == " aim120 at"
+          or m2000 == TRUE) {
         # air2air being fired
         if (size(last_vector) > 2 or m2000 == TRUE) {
           #print("Missile launch detected at"~last_vector[2]~" from "~author);
@@ -140,6 +161,16 @@ var incoming_listener = func {
             #print(type~"|");
             if(distance != nil) {
               var dist = distance;
+
+              if (type == "M90") {
+                var prob = rand()*0.5;
+                var failed = fail_systems(prob);
+                var percent = 100 * prob;
+                printf("Took %.1f%% damage from %s clusterbombs at %0.1f meters. %s systems was hit", percent,type,dist,failed);
+                nearby_explosion();
+                return;
+              }
+
               distance = clamp(distance-3, 0, 1000000);
               var maxDist = 0;
 
@@ -164,17 +195,16 @@ var incoming_listener = func {
               nearby_explosion();
             }
           } 
-        } elsif (last_vector[1] == " M70 rocket hit" or last_vector[1] == " KCA cannon shell hit" or last_vector[1] == " Gun Splash On " or last_vector[1] == " M61A1 shell hit" or last_vector[1] == " GAU-8/A hit") {
+        } elsif (cannon_types[last_vector[1]] != nil) {
           # cannon hitting someone
           #print("cannon");
           if (size(last_vector) > 2 and last_vector[2] == " "~callsign) {
             # that someone is me!
             #print("hitting me");
 
-            var probability = 0.20; # take 20% damage from each hit
-            if (last_vector[1] == " M70 rocket hit" or last_vector[1] == " Gun Splash On " or last_vector[1] == " GAU-8/A hit") {
-              probability = 0.30;
-            }
+            var probability = cannon_types[last_vector[1]];
+            #print("probability: " ~ probability);
+            
             var failed = fail_systems(probability);
             printf("Took %.1f%% damage from cannon! %s systems was hit.", probability*100, failed);
             nearby_explosion();
