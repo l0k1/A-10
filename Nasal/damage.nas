@@ -318,6 +318,12 @@ var fail_systems = func (probability) {
             FailureMgr.set_failure_level(failure_mode_id, 1);
             failed += 1;
         }
+      }
+  for(var i = 0;i < 2; i = i + 1) {
+        if (rand() < probability) {
+            setprop("controls/engines/engine["~i~"]/faults/serviceable",0);
+            failed += 1;
+        }
     }
     return failed;
 };
