@@ -152,7 +152,6 @@
 		<control-input axis="/controls/engines/engine[1]/throttle" control="THROTTLE"/>
 	</jet>
 	
-
 	<!-- Internal tanks -->
 	<tank x="-8.3" y="2.0" z="0.0" jet="true" capacity="2089.92"/><!-- ppg=6.72, real tank capacity : 311 gallons -> 311*6.72 = 2089.92 lbs -->
 	<tank x="-8.8" y="0.0" z="0.63" jet="true" capacity="3433.92"/><!-- real tank capacity: 511 gallons -> 511*6.72 = 3433.92 lbs -->

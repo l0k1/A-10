@@ -650,6 +650,10 @@ Fairchild A-10 simulation config.
 				<name>K</name>
 				<desc>Toggle trajectory markers</desc>
 			</key>
+			<key>
+				<name>q</name>
+				<desc>Release chaff/flare</desc>
+			</key>
 			<line></line>
 
 			<line>How to start it ?</line>
@@ -734,6 +738,36 @@ Fairchild A-10 simulation config.
 						<binding>
 							<command>nasal</command>
 							<script>A10weapons.reload_guns()</script>
+						</binding>
+					</item>
+
+					<item>
+						<label>Reload chaff/flare</label>
+						<condition>
+							<and>
+								<not-equals>
+									<property>/gear/gear[0]/wow</property>
+									<value>0</value>
+								</not-equals>
+								<less-than>
+									<property>/valocities/groundspeed-kt</property>
+									<value>1</value>
+								</less-than>
+							</and>
+						</condition>
+						<binding>
+							<command>nasal</command>
+							<script>
+								<![CDATA[
+
+								if(getprop("/gear/gear[0]/wow") and getprop("/velocities/groundspeed-kt") <= 1.0){
+									setprop("/ai/submodels/submodel[78]/count", 480);
+									screen.log.write("480 flares loaded", 1, 1, 1);
+								} else {
+									screen.log.write("Can't load flares while airborne or moveing", 1, 1, 1);
+								}
+								]]>
+							</script>
 						</binding>
 					</item>
 					<item>
@@ -827,8 +861,25 @@ Fairchild A-10 simulation config.
 					<script>A10.update_drop_view_pos()</script>
 				</binding>
 			</key>
-		</keyboard>
 
+			<!-- Flare release -->
+			<key n="113">
+				<name>q</name>
+				<desc>Trigger flare release</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>/ai/submodels/submodel[78]/flare-release-cmd</property>
+					<value type="bool">true</value>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>property-assign</command>
+						<property>/ai/submodels/submodel[78]/flare-release-cmd</property>
+						<value type="bool">false</value>
+					</binding>
+				</mod-up>
+			</key>
+		</keyboard>
 	</input>
 
 	<autopilot>
@@ -921,6 +972,10 @@ Fairchild A-10 simulation config.
 		<armament>
 			<trigger type="bool">false</trigger>
 		</armament>
+
+		<payload>
+			<flare type="int">240</flare>
+		</payload>
 		<engines>
 			<engine n="0">
 				<faults>
