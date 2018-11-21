@@ -9,7 +9,7 @@ kids 9
 OBJECT poly
 name "strobe_halo_T"
 loc 0 1.01328e-06 1.00136e-05
-texture "panel-up.rgb"
+texture "Cockpit/panel-up.rgb"
 crease 45.000000
 numvert 4
 -0.021989 0.021989 0
@@ -33,7 +33,7 @@ kids 0
 OBJECT poly
 name "strobe_halo_R"
 loc 0 1.01328e-06 1.00136e-05
-texture "panel-up.rgb"
+texture "Cockpit/panel-up.rgb"
 crease 45.000000
 numvert 4
 0.021989 0.021989 0
@@ -57,7 +57,7 @@ kids 0
 OBJECT poly
 name "strobe_halo_L"
 loc 0 1.01328e-06 1.00136e-05
-texture "panel-up.rgb"
+texture "Cockpit/panel-up.rgb"
 crease 45.000000
 numvert 4
 0.021989 0.021989 0
@@ -81,7 +81,7 @@ kids 0
 OBJECT poly
 name "nav_halo_T"
 loc 0 2.98023e-07 0
-texture "panel-up.rgb"
+texture "Cockpit/panel-up.rgb"
 crease 45.000000
 numvert 4
 -0.021989 0.021989 0
@@ -105,7 +105,7 @@ kids 0
 OBJECT poly
 name "nav_halo_R"
 loc 0 2.98023e-07 0
-texture "panel-up.rgb"
+texture "Cockpit/panel-up.rgb"
 crease 45.000000
 numvert 4
 0.021989 0.021989 0
@@ -129,7 +129,7 @@ kids 0
 OBJECT poly
 name "nav_halo_L"
 loc 0 2.98023e-07 0
-texture "panel-up.rgb"
+texture "Cockpit/panel-up.rgb"
 crease 45.000000
 numvert 4
 0.021989 0.021989 0
@@ -153,7 +153,7 @@ kids 0
 OBJECT poly
 name "Landing-halo"
 loc 0 2.98023e-07 0
-texture "panel-up.rgb"
+texture "Cockpit/panel-up.rgb"
 crease 45.000000
 numvert 4
 -9.6117e-10 0.021989 0.021989
@@ -177,7 +177,7 @@ kids 0
 OBJECT poly
 name "Taxi-halo"
 loc 0 2.98023e-07 0
-texture "panel-up.rgb"
+texture "Cockpit/panel-up.rgb"
 crease 45.000000
 numvert 4
 9.6117e-10 0.021989 -0.021989

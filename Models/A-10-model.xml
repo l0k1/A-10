@@ -270,7 +270,7 @@
 	<animation>
 		<type>shader</type>
 		<shader>chrome</shader>
-		<texture>Aircraft/A-10/Models/glass_shader.png</texture>
+		<texture>Aircraft/A-10/Models/Cockpit/glass_shader.png</texture>
 		<object-name>FCanopyGlass</object-name>
 		<object-name>BCanopyGlass</object-name>
 	</animation>
@@ -296,7 +296,7 @@
 	<!-- 3D panels for hot-spots -->
 	<panel>
 		<name>Panel-C</name>
-		<path>Aircraft/A-10/Models/A-10-panel-C-hotspot.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-panel-C-hotspot.xml</path>
 		<bottom-left>
 			<x-m>2.4445</x-m>
 			<y-m>-0.0712</y-m>
@@ -316,7 +316,7 @@
 
 	<panel>
 		<name>Panel-C-pedestal</name>
-		<path>Aircraft/A-10/Models/A-10-panel-C-pedestal-hotspot.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-panel-C-pedestal-hotspot.xml</path>
 		<top-left>
 			<x-m>2.4391</x-m>
 			<y-m>-0.1149</y-m>
@@ -336,7 +336,7 @@
 
 	<panel>
 		<name>Panel-R</name>
-		<path>Aircraft/A-10/Models/A-10-panel-R-hotspot.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-panel-R-hotspot.xml</path>
 		<bottom-left>
 			<x-m>2.4354</x-m>
 			<y-m>0.0690</y-m>
@@ -356,7 +356,7 @@
 
 	<panel>
 		<name>Panel-L</name>
-		<path>Aircraft/A-10/Models/A-10-panel-L-hotspot.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-panel-L-hotspot.xml</path>
 		<bottom-left>
 			<x-m>2.4354</x-m>
 			<y-m>-0.4885</y-m>
@@ -376,7 +376,7 @@
 	<!-- fuel panel -->
 	<panel>
 		<name>Panel-l1</name>
-		<path>Aircraft/A-10/Models/A-10-panel-l1-hotspot.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-panel-l1-hotspot.xml</path>
 		<bottom-left>
 			<x-m>2.7752</x-m>
 			<y-m>-0.4353</y-m>
@@ -396,7 +396,7 @@
 	
 	<panel>
 		<name>Panel-l2</name>
-		<path>Aircraft/A-10/Models/A-10-panel-l2-hotspot.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-panel-l2-hotspot.xml</path>
 		<bottom-left>
 			<x-m>3.2026</x-m>
 			<y-m>-0.4353</y-m>
@@ -416,7 +416,7 @@
 
 	<panel>
 		<name>Panel-l4</name>
-		<path>Aircraft/A-10/Models/A-10-panel-l4-hotspot.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-panel-l4-hotspot.xml</path>
 		<bottom-left>
 			<x-m>2.7120</x-m>
 			<y-m>-0.5814</y-m>
@@ -437,7 +437,7 @@
 	<!-- ILS panel -->
 	<panel>
 		<name>Panel-r1</name>
-		<path>Aircraft/A-10/Models/A-10-panel-r1-hotspot.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-panel-r1-hotspot.xml</path>
 		<bottom-left>
 			<x-m>2.6923</x-m>
 			<y-m>0.2685</y-m>
@@ -458,7 +458,7 @@
 	<!-- TACAN panel -->
 	<panel>
 		<name>Panel-r2</name>
-		<path>Aircraft/A-10/Models/A-10-panel-r2-hotspot.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-panel-r2-hotspot.xml</path>
 		<bottom-left>
 			<x-m>3.2029</x-m>
 			<y-m>0.2785</y-m>
@@ -479,7 +479,7 @@
 	<!-- cockpit switch -->
 	<panel>
 		<name>Panel-r5</name>
-		<path>Aircraft/A-10/Models/A-10-panel-r5-hotspot.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-panel-r5-hotspot.xml</path>
 		<bottom-left>
 			<x-m>2.4587</x-m>
 			<y-m>0.4237</y-m>
@@ -500,7 +500,7 @@
 
 <!-- instruments-->
 	<model>
-		<path>Aircraft/A-10/Models/A-10-hud.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-hud.xml</path>
 		<offsets>
 			<x-m>2.2800</x-m>
 			<y-m>0.0000</y-m>
@@ -509,7 +509,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-detail-cpt.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-detail-cpt.xml</path>
 		<offsets>
 			<x-m>0.0000</x-m>
 			<y-m>0.0000</y-m>
@@ -518,7 +518,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/mag-compass.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/mag-compass.xml</path>
 		<offsets>
 			<x-m>2.2800</x-m>
 			<y-m>0.1670</y-m>
@@ -527,7 +527,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-accel.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-accel.xml</path>
 		<offsets>
 			<x-m>2.2850</x-m>
 			<y-m>-0.1660</y-m>
@@ -536,7 +536,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-fuel-aar.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-fuel-aar.xml</path>
 		<offsets>
 			<x-m>2.2800</x-m>
 			<y-m>0.1630</y-m>
@@ -545,7 +545,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-vsi-6kfpm.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-vsi-6kfpm.xml</path>
 		<offsets>
 			<x-m>2.4010</x-m>
 			<y-m>0.1150</y-m>
@@ -554,7 +554,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/altimeter.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/altimeter.xml</path>
 		<offsets>
 			<x-m>2.4015</x-m>
 			<y-m>0.1145</y-m>
@@ -564,7 +564,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-asi.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-asi.xml</path>
 		<offsets>
 			<x-m>2.4185</x-m>
 			<y-m>-0.1125</y-m>
@@ -574,7 +574,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/rwr.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/rwr.xml</path>
 		<offsets>
 			<x-m>2.4250</x-m>
 			<y-m>-0.1115</y-m>
@@ -584,7 +584,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-AoA-gauge.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-AoA-gauge.xml</path>
 		<offsets>
 			<x-m>2.4000</x-m>
 			<y-m>-0.1881</y-m>
@@ -594,7 +594,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-chronometer.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-chronometer.xml</path>
 		<offsets>
 			<x-m>2.4000</x-m>
 			<y-m>-0.2530</y-m>
@@ -604,7 +604,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-uhf-disp.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-uhf-disp.xml</path>
 		<offsets>
 			<x-m>2.4000</x-m>
 			<y-m>-0.318</y-m>
@@ -614,7 +614,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-adi.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-adi.xml</path>
 		<offsets>
 			<x-m>2.4235</x-m>
 			<y-m>0.0000</y-m>
@@ -624,7 +624,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-armament-panel.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-armament-panel.xml</path>
 		<offsets>
 			<x-m>2.4100</x-m>
 			<y-m>-0.1881</y-m>
@@ -634,7 +634,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-HSI.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-HSI.xml</path>
 		<offsets>
 			<x-m>2.4330</x-m>
 			<y-m>0.0000</y-m>
@@ -644,7 +644,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-nav-mode-selector.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-nav-mode-selector.xml</path>
 		<offsets>
 			<x-m>2.4330</x-m>
 			<y-m>0.0005</y-m>
@@ -654,7 +654,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-alt-ap.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-alt-ap.xml</path>
 		<offsets>
 			<x-m>2.3800</x-m>
 			<y-m>0.0000</y-m>
@@ -664,7 +664,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-central-up-warning.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-central-up-warning.xml</path>
 		<offsets>
 			<x-m>2.4235</x-m>
 			<y-m>0.0000</y-m>
@@ -674,7 +674,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-engines-gauges.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-engines-gauges.xml</path>
 		<offsets>
 			<x-m>2.4140</x-m>
 			<y-m>0.1875</y-m>
@@ -684,7 +684,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-fuel-gauges.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-fuel-gauges.xml</path>
 		<offsets>
 			<x-m>2.4140</x-m>
 			<y-m>0.3635</y-m>
@@ -694,7 +694,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-seat-switch.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-seat-switch.xml</path>
 		<offsets>
 			<x-m>0.0000</x-m>
 			<y-m>0.0000</y-m>
@@ -703,7 +703,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-emer-brake.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-emer-brake.xml</path>
 		<offsets>
 			<x-m>2.5178</x-m>
 			<y-m>-0.5075</y-m>
@@ -714,7 +714,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-fuel-control.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-fuel-control.xml</path>
 		<offsets>
 			<x-m>2.5232</x-m>
 			<y-m>-0.3572</y-m>
@@ -724,7 +724,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-throttle.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-throttle.xml</path>
 		<offsets>
 			<x-m>2.6942</x-m>
 			<y-m>-0.3552</y-m>
@@ -734,7 +734,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-sas.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-sas.xml</path>
 		<offsets>
 			<x-m>2.6710</x-m>
 			<y-m>-0.5034</y-m>
@@ -746,7 +746,7 @@
 
 <!-- right console -->
 	<model>
-		<path>Aircraft/A-10/Models/A-10-canopy-switch.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-canopy-switch.xml</path>
 		<offsets>
 			<x-m>0.0000</x-m>
 			<y-m>0.0000</y-m>
@@ -755,7 +755,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-elec-pwr-ctrl.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-elec-pwr-ctrl.xml</path>
 		<offsets>
 			<x-m>2.6214</x-m>
 			<y-m>0.5074</y-m>
@@ -767,7 +767,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-warn-panel.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-warn-panel.xml</path>
 		<offsets>
 			<x-m>2.5100</x-m>
 			<y-m>0.3542</y-m>
@@ -777,7 +777,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-ils.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-ils.xml</path>
 		<offsets>
 			<x-m>2.6670</x-m>
 			<y-m>0.3512</y-m>
@@ -788,7 +788,7 @@
 	
 	<model>
 		<object-name>Panel-r3</object-name>
-		<path>Aircraft/A-10/Models/A-10-panel-r3.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-panel-r3.xml</path>
 		<offsets>
 			<x-m>3.0335</x-m>
 			<y-m>0.5070</y-m>
@@ -798,7 +798,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-tacan.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-tacan.xml</path>
 		<offsets>
 			<x-m>2.8500</x-m>
 			<y-m>0.3542</y-m>
@@ -808,7 +808,7 @@
 
 <!-- left panel -->
 	<model>
-		<path>Aircraft/A-10/Models/stdby-adi.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/stdby-adi.xml</path>
 		<offsets>
 			<x-m>2.3930</x-m>
 			<y-m>-0.1917</y-m>
@@ -818,7 +818,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-master-caution.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-master-caution.xml</path>
 		<offsets>
 			<x-m>2.3970</x-m>
 			<y-m>-0.1917</y-m>
@@ -828,7 +828,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-hud-panel.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-hud-panel.xml</path>
 		<offsets>
 			<x-m>2.3969</x-m>
 			<y-m>-0.2846</y-m>
@@ -838,7 +838,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-ld-gear-panel.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-ld-gear-panel.xml</path>
 		<offsets>
 			<x-m>2.4100</x-m>
 			<y-m>-0.3650</y-m>
@@ -848,7 +848,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-hars-fast-erect.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-hars-fast-erect.xml</path>
 		<offsets>
 			<x-m>2.4104</x-m>
 			<y-m>-0.2840</y-m>
@@ -858,7 +858,7 @@
 	</model>
  
 	<model>
-		<path>Aircraft/A-10/Models/A-10-an-arc-186-1.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-an-arc-186-1.xml</path>
 			<offsets>
 				<x-m>2.8427</x-m>
 				<y-m>-0.3551</y-m>
@@ -867,7 +867,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-an-arc-186-2.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-an-arc-186-2.xml</path>
 		<offsets> 
 			<x-m>3.0753</x-m>
 			<y-m>-0.3551</y-m>
@@ -876,7 +876,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/A-10-aoa-indexer.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-aoa-indexer.xml</path>
 		<offsets>
 			<x-m>2.2640</x-m>
 			<y-m>-0.1671</y-m>
@@ -885,7 +885,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/stick.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/stick.xml</path>
 		<offsets>
 			<x-m>2.6127</x-m>
 			<y-m>0.0000</y-m>
@@ -894,7 +894,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/pedals.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/pedals.xml</path>
 		<offsets>
 			<x-m>2.0800</x-m>
 			<y-m>0.0000</y-m>

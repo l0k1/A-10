@@ -713,7 +713,7 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>rds-rem-x1</object-name>
-		<property>ai/submodels/submodel[1]/count</property>
+		<property>ai/subModels/Cockpit/submodel[1]/count</property>
 		<factor>0.1</factor>
 		<axis><y>-1</y></axis>
 	</animation>
@@ -721,7 +721,7 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>rds-rem-x10</object-name>
-		<property>ai/submodels/submodel[1]/count</property>
+		<property>ai/subModels/Cockpit/submodel[1]/count</property>
 		<factor>0.01</factor>
 		<step>10</step>
 		<scroll>0.5</scroll>
@@ -731,7 +731,7 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>rds-rem-x100</object-name>
-		<property>ai/submodels/submodel[1]/count</property>
+		<property>ai/subModels/Cockpit/submodel[1]/count</property>
 		<factor>0.001</factor>
 		<step>100</step>
 		<scroll>0.5</scroll>
@@ -742,7 +742,7 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>rds-rem-x1000</object-name>
-		<property>ai/submodels/submodel[1]/count</property>
+		<property>ai/subModels/Cockpit/submodel[1]/count</property>
 		<factor>0.0001</factor>
 		<step>1000</step>
 		<scroll>0.5</scroll>

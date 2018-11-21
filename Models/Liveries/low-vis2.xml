@@ -5,8 +5,8 @@
 <sim>
   <model>
     <livery>
-      <name type="string">Low vis</name>
-      <texture-main>Liveries/low vis.png</texture-main>
+      <name type="string">Low vis 2</name>
+      <texture-main>Liveries/low vis2.png</texture-main>
 	  <texture-detail>Liveries/default-detail.png</texture-detail>
     </livery>
   </model>
