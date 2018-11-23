@@ -2225,7 +2225,7 @@
 	<submodel>
     <name>flares</name>
   	<model>Aircraft/A-10/Models/Effects/flare.xml</model>
-		<trigger>ai/submodels/submodel[78]/flare-release-cmd</trigger>
+		<trigger>ai/submodels/submodel[78]/flare-release</trigger>
     <speed>100.0</speed>   <!-- ft/sec -->
     <repeat>true</repeat>
     <delay>0.75</delay>
