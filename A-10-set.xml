@@ -761,8 +761,8 @@ Fairchild A-10 simulation config.
 								<![CDATA[
 
 								if(getprop("/gear/gear[0]/wow") and getprop("/velocities/groundspeed-kt") <= 1.0){
-									setprop("/ai/submodels/submodel[78]/count", 480);
-									screen.log.write("480 flares loaded", 1, 1, 1);
+									setprop("/ai/submodels/submodel[78]/count", 100);#480 seems very high
+									screen.log.write("100 flares loaded", 1, 1, 1);
 								} else {
 									screen.log.write("Can't load flares while airborne or moveing", 1, 1, 1);
 								}
