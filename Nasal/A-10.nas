@@ -202,14 +202,16 @@ var loop_flare = func {
     if (getprop("ai/submodels/submodel[78]/flare-release-out-snd") == TRUE and (flareStart + 1) < getprop("sim/time/elapsed-sec")) {
         setprop("ai/submodels/submodel[78]/flare-release-out-snd", FALSE);
     }
-    if (flareCount > getprop("ai/submodels/submodel[79]/count")) {
+    if (flareCount > getprop("ai/submodels/submodel[78]/count")) {
         # A flare was released in last loop, we stop releasing flares, so user have to press button again to release new.
         setprop("ai/submodels/submodel[78]/flare-release", FALSE);
         flareCount = -1;
     }
     settimer(loop_flare, 0.10);
 }
-
+var flareCount = -1;
+var flareStart = -1;
+loop_flare();
 
 # Lighting ################
 # strobes
