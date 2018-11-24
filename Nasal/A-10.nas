@@ -169,7 +169,8 @@ if (! launched) {
 }
 
 # Flares ##################
-
+var TRUE = 1;
+var FALSE = 0;
 var loop_flare = func {
     # Flare/chaff release
     if (getprop("ai/submodels/submodel[78]/flare-release-snd") == nil) {
