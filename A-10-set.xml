@@ -596,7 +596,7 @@ Fairchild A-10 simulation config.
 				</systems>
 			</A-10>
 		</model>
-
+	
 		<!--sub models -->
 		<submodels>
 			<serviceable type="bool">1</serviceable>
@@ -649,6 +649,10 @@ Fairchild A-10 simulation config.
 			<key>
 				<name>K</name>
 				<desc>Toggle trajectory markers</desc>
+			</key>
+			<key>
+				<name>q</name>
+				<desc>Release chaff/flare</desc>
 			</key>
 			<line></line>
 
@@ -736,6 +740,36 @@ Fairchild A-10 simulation config.
 							<script>A10weapons.reload_guns()</script>
 						</binding>
 					</item>
+
+					<item>
+						<label>Reload chaff/flare</label>
+						<condition>
+							<and>
+								<not-equals>
+									<property>/gear/gear[0]/wow</property>
+									<value>0</value>
+								</not-equals>
+								<less-than>
+									<property>/valocities/groundspeed-kt</property>
+									<value>1</value>
+								</less-than>
+							</and>
+						</condition>
+						<binding>
+							<command>nasal</command>
+							<script>
+								<![CDATA[
+
+								if(getprop("/gear/gear[0]/wow") and getprop("/velocities/groundspeed-kt") <= 1.0){
+									setprop("/ai/submodels/submodel[78]/count", 480);
+									screen.log.write("480 flares loaded", 1, 1, 1);
+								} else {
+									screen.log.write("Can't load flares while airborne or moveing", 1, 1, 1);
+								}
+								]]>
+							</script>
+						</binding>
+					</item>
 					<item>
 						<label>System failures</label>
 						<binding>
@@ -757,6 +791,9 @@ Fairchild A-10 simulation config.
 	<ai>
 		<submodels>
 			<trajectory-markers type="bool">0</trajectory-markers>
+			<submodel n="78">
+				<flare-release-cmd type="bool">false</flare-release-cmd>
+			</submodel>
 		</submodels>
 	</ai>
 
@@ -827,8 +864,25 @@ Fairchild A-10 simulation config.
 					<script>A10.update_drop_view_pos()</script>
 				</binding>
 			</key>
-		</keyboard>
 
+			<!-- Flare release -->
+			<key n="113">
+				<name>q</name>
+				<desc>Trigger flare release</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>/ai/submodels/submodel[78]/flare-release-cmd</property>
+					<value type="bool">true</value>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>property-assign</command>
+						<property>/ai/submodels/submodel[78]/flare-release-cmd</property>
+						<value type="bool">false</value>
+					</binding>
+				</mod-up>
+			</key>
+		</keyboard>
 	</input>
 
 	<autopilot>
@@ -921,6 +975,7 @@ Fairchild A-10 simulation config.
 		<armament>
 			<trigger type="bool">false</trigger>
 		</armament>
+
 		<engines>
 			<engine n="0">
 				<faults>
@@ -1155,6 +1210,8 @@ Fairchild A-10 simulation config.
 			<ammunition-weight-lbs type="float">1099.995</ammunition-weight-lbs>
 		</weights>
 	</yasim>
+
+	
 
 	<!-- Nasal files & scripts -->
 	<nasal>

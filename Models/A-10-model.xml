@@ -199,8 +199,7 @@
 	
 	<model>
 		<path>Aircraft/A-10/Models/ext-stores.xml</path>
-	</model>
-
+	</model>	
 
 	<multiplay>
 		<refuel>

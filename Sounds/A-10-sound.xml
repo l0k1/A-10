@@ -2746,7 +2746,20 @@
 			</volume>
 		</lau-68-shoot-9-6>
 
-
+		<flare>
+			<name>flare-voice</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/flare.wav</path>
+			<condition>
+				<equals>
+					<property>ai/submodels/submodel[78]/flare-release</property>
+					<value>true</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>5</factor>
+			</volume>
+		</flare>
 	</fx>
 
 </PropertyList>
