@@ -5,8 +5,8 @@
 <sim>
   <model>
     <livery>
-      <name type="string">USAF ACC</name>
-      <texture-main>Liveries/ACC.png</texture-main>
+      <name type="string">USAF WR (Low Vis 2)</name>
+      <texture-main>Liveries/USAF2.png</texture-main>
 	  <texture-detail>Liveries/default-detail.png</texture-detail>
     </livery>
   </model>

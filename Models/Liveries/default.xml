@@ -6,8 +6,8 @@
   <model>
     <livery>
       <name type="string">Default "WR"</name>
-      <texture-main>Liveries/default.png</texture-main>
-	  <texture-detail>Liveries/default-detail.png</texture-detail>
+      <texture-main>A-10-000.png</texture-main>
+	  <texture-detail>A-10-000B.png</texture-detail>
     </livery>
   </model>
 </sim>
