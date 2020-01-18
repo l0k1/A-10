@@ -313,7 +313,7 @@ kids 0
 OBJECT poly
 name "body"
 loc -0.00728484 -0.000159161 0.000913751
-texture "aim-9.rgb"
+texture "aim-9.png"
 crease 45.000000
 numvert 128
 1.40957 -0.0661807 0.0130899

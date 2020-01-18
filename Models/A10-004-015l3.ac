@@ -64819,7 +64819,7 @@ kids 0
 OBJECT poly
 name "CPT-inst-panel-cover-sides"
 loc 1.89769 1.02321 -1.01305e-06
-texture "black-cinetic.rgb"
+texture "Cockpit/black-cinetic.rgb"
 crease 45.000000
 numvert 58
 0.550763 0.275871 0.251233
@@ -75797,7 +75797,7 @@ kids 0
 OBJECT poly
 name "CPTBorder"
 loc 0.761046 -0.950758 0.237558
-texture "gradiants-buttons.png"
+texture "Cockpit/gradiants-buttons.png"
 crease 45.000000
 numvert 64
 0.2246 1.49974 -0.0589119
@@ -76131,7 +76131,7 @@ kids 0
 OBJECT poly
 name "Fuselage-int-sides"
 loc -2.51662 -0.926028 -0.0281912
-texture "A-10-isolant.rgb"
+texture "Cockpit/A-10-isolant.rgb"
 crease 45.000000
 numvert 50
 2.03805 0.486663 -0.612594
@@ -84466,7 +84466,7 @@ kids 0
 OBJECT poly
 name "CanopyLock"
 loc 0.155166 0.209578 0.443842
-texture "A-10-canopy-lock.rgb"
+texture "Cockpit/A-10-canopy-lock.rgb"
 crease 45.000000
 numvert 136
 0.00117373 -0.0186468 0.0106037

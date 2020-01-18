@@ -650,7 +650,7 @@ kids 0
 OBJECT poly
 name "R-lau-105-body"
 loc -0.0836773 -0.0448514 0.13148
-texture "aim-9.rgb"
+texture "aim-9.png"
 crease 75.000000
 numvert 56
 -1.09641 -0.0988903 -0.261198
@@ -1203,7 +1203,7 @@ kids 0
 OBJECT poly
 name "L-lau-105-body"
 loc -0.0836773 -0.0448514 -0.131481
-texture "aim-9.rgb"
+texture "aim-9.png"
 crease 75.000000
 numvert 56
 -1.09641 -0.0988903 0.261198
@@ -1645,7 +1645,7 @@ kids 0
 OBJECT poly
 name "lau-114"
 loc -0.157801 -0.0392996 -0.000559807
-texture "aim-9.rgb"
+texture "aim-9.png"
 crease 45.000000
 numvert 160
 0.547513 0.0519759 -0.162825
@@ -3036,7 +3036,7 @@ kids 0
 OBJECT poly
 name "body"
 loc -0.00726652 -0.000540197 0.00091362
-texture "aim-9.rgb"
+texture "aim-9.png"
 crease 45.000000
 numvert 128
 1.43415 0.0845219 0.0475693
@@ -4244,7 +4244,7 @@ kids 0
 OBJECT poly
 name "body"
 loc -0.00726652 -0.000540197 0.00091362
-texture "aim-9.rgb"
+texture "aim-9.png"
 crease 45.000000
 numvert 128
 1.4111 0.00768119 0.0130901
@@ -5788,7 +5788,7 @@ kids 0
 OBJECT poly
 name "R-lau-105-body"
 loc -0.0836773 -0.0448514 0.13148
-texture "aim-9.rgb"
+texture "aim-9.png"
 crease 75.000000
 numvert 56
 0.959925 0.0170062 -0.195086
@@ -6341,7 +6341,7 @@ kids 0
 OBJECT poly
 name "L-lau-105-body"
 loc -0.0836773 -0.0448514 -0.131481
-texture "aim-9.rgb"
+texture "aim-9.png"
 crease 75.000000
 numvert 56
 0.959925 0.0170062 0.195086
@@ -6783,7 +6783,7 @@ kids 0
 OBJECT poly
 name "lau-114"
 loc -0.157801 -0.0392996 -0.000559807
-texture "aim-9.rgb"
+texture "aim-9.png"
 crease 45.000000
 numvert 160
 -0.186833 0.0349916 -0.0237665
@@ -8174,7 +8174,7 @@ kids 0
 OBJECT poly
 name "body"
 loc -0.00726652 -0.000540197 0.00091362
-texture "aim-9.rgb"
+texture "aim-9.png"
 crease 45.000000
 numvert 128
 1.4111 0.00768119 0.0130901
@@ -9382,7 +9382,7 @@ kids 0
 OBJECT poly
 name "body"
 loc -0.00726652 -0.000540197 0.00091362
-texture "aim-9.rgb"
+texture "aim-9.png"
 crease 45.000000
 numvert 128
 1.43415 0.0845219 0.0475693

@@ -30,6 +30,7 @@ Fairchild A-10 simulation config.
 			<tag>1990s</tag>
 			<tag>2000s</tag>
 			<tag>2010s</tag>
+			<tag>2020s</tag>
 			<tag>gulfwar1</tag>
 			<tag>gulfwar2</tag>
 			<tag>hud</tag>
@@ -71,11 +72,11 @@ Fairchild A-10 simulation config.
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
 			<config>
-				<x-offset-m archive="y">0.0</x-offset-m>
+				<x-offset-m archive="y">0.00</x-offset-m>
 				<y-offset-m archive="y">1.50</y-offset-m>
 				<z-offset-m archive="y">3.20</z-offset-m>
-				<pitch-offset-deg>-15</pitch-offset-deg>
-				<default-field-of-view-deg>55</default-field-of-view-deg>
+				<pitch-offset-deg>-12.5</pitch-offset-deg>
+				<default-field-of-view-deg>62</default-field-of-view-deg>
 				<limits>
 					<enabled type="bool">true</enabled>
 					<left>
