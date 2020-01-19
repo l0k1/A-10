@@ -9058,7 +9058,7 @@ kids 0
 OBJECT poly
 name "mk82-2-0"
 loc 7.72453 -0.515525 3.91258
-texture "mk-82.rgb"
+texture "mk-82.png"
 crease 45.000000
 numvert 195
 -0.954775 -0.0236925 -0.0367
@@ -11101,7 +11101,7 @@ kids 0
 OBJECT poly
 name "mk82-2-1"
 loc 7.73877 -0.787773 3.62981
-texture "mk-82.rgb"
+texture "mk-82.png"
 crease 45.000000
 numvert 195
 -1.12551 -0.111327 -0.000897884
@@ -13144,7 +13144,7 @@ kids 0
 OBJECT poly
 name "mk82-2-2"
 loc 7.72453 -0.515525 3.34758
-texture "mk-82.rgb"
+texture "mk-82.png"
 crease 45.000000
 numvert 195
 -1.12552 -0.111765 0.0010488
@@ -15159,7 +15159,7 @@ kids 0
 OBJECT poly
 name "mk82-3-0"
 loc 7.6275 -0.602836 1.97215
-texture "mk-82.rgb"
+texture "mk-82.png"
 crease 45.000000
 numvert 195
 -1.12552 -0.111765 -0.00104892
@@ -17202,7 +17202,7 @@ kids 0
 OBJECT poly
 name "mk82-3-1"
 loc 7.64174 -0.875085 1.68937
-texture "mk-82.rgb"
+texture "mk-82.png"
 crease 45.000000
 numvert 195
 -0.95388 -0.0401894 -0.0614235
@@ -19245,7 +19245,7 @@ kids 0
 OBJECT poly
 name "mk82-3-2"
 loc 7.6275 -0.602836 1.40714
-texture "mk-82.rgb"
+texture "mk-82.png"
 crease 45.000000
 numvert 195
 -0.954775 -0.0236925 0.0366999
@@ -21260,7 +21260,7 @@ kids 0
 OBJECT poly
 name "mk82-7-0"
 loc 7.6275 -0.602836 -1.40769
-texture "mk-82.rgb"
+texture "mk-82.png"
 crease 45.000000
 numvert 195
 -0.954775 -0.0236925 -0.0367
@@ -23303,7 +23303,7 @@ kids 0
 OBJECT poly
 name "mk82-7-1"
 loc 7.64174 -0.875085 -1.69047
-texture "mk-82.rgb"
+texture "mk-82.png"
 crease 45.000000
 numvert 195
 -1.12551 -0.111327 -0.000897884
@@ -25346,7 +25346,7 @@ kids 0
 OBJECT poly
 name "mk82-7-2"
 loc 7.6275 -0.602836 -1.9727
-texture "mk-82.rgb"
+texture "mk-82.png"
 crease 45.000000
 numvert 195
 -1.12552 -0.111765 0.00104904
@@ -27361,7 +27361,7 @@ kids 0
 OBJECT poly
 name "mk82-8-0"
 loc 7.72453 -0.515525 -3.33071
-texture "mk-82.rgb"
+texture "mk-82.png"
 crease 45.000000
 numvert 195
 -0.954775 -0.0236925 -0.0367
@@ -29404,7 +29404,7 @@ kids 0
 OBJECT poly
 name "mk82-8-1"
 loc 7.73877 -0.787773 -3.61348
-texture "mk-82.rgb"
+texture "mk-82.png"
 crease 45.000000
 numvert 195
 -0.95388 -0.0401894 -0.0614235
@@ -31447,7 +31447,7 @@ kids 0
 OBJECT poly
 name "mk82-8-2"
 loc 7.72453 -0.515525 -3.89572
-texture "mk-82.rgb"
+texture "mk-82.png"
 crease 45.000000
 numvert 195
 -0.954775 -0.0236925 0.0367

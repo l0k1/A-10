@@ -5,7 +5,7 @@ kids 1
 OBJECT poly
 name "mk82"
 loc 0.00264891 0.0021344 -0.000269502
-texture "mk-82.rgb"
+texture "mk-82.png"
 crease 45.000000
 numvert 195
 -1.12607 -0.000491839 -0.00089772

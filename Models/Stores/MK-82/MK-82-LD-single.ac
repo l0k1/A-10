@@ -499,7 +499,7 @@ kids 0
 OBJECT poly
 name "mk82-0"
 loc -0.259647 0.271455 5.89975
-texture "mk-82.rgb"
+texture "mk-82.png"
 crease 45.000000
 numvert 195
 -0.95388 -0.0401894 -0.0614233
@@ -3031,7 +3031,7 @@ kids 0
 OBJECT poly
 name "mk82-1"
 loc 0.0400152 0.119763 4.83993
-texture "mk-82.rgb"
+texture "mk-82.png"
 crease 45.000000
 numvert 195
 -1.12551 -0.111327 -0.000897408
@@ -5563,7 +5563,7 @@ kids 0
 OBJECT poly
 name "mk82-2"
 loc -0.00773525 -0.0252365 3.63162
-texture "mk-82.rgb"
+texture "mk-82.png"
 crease 45.000000
 numvert 195
 -0.95388 -0.0401894 -0.0614235
@@ -8095,7 +8095,7 @@ kids 0
 OBJECT poly
 name "mk82-3"
 loc -0.115726 -0.139056 1.68838
-texture "mk-82.rgb"
+texture "mk-82.png"
 crease 45.000000
 numvert 195
 -1.12551 -0.111327 -0.000897884
@@ -10627,7 +10627,7 @@ kids 0
 OBJECT poly
 name "mk82-4"
 loc -0.146709 -0.139056 0.55955
-texture "mk-82.rgb"
+texture "mk-82.png"
 crease 45.000000
 numvert 195
 -0.95388 -0.0401894 -0.0614235
@@ -13159,7 +13159,7 @@ kids 0
 OBJECT poly
 name "mk82-5"
 loc -0.146709 -0.139056 -0.00251106
-texture "mk-82.rgb"
+texture "mk-82.png"
 crease 45.000000
 numvert 195
 -1.12551 -0.111327 -0.000897884
@@ -15691,7 +15691,7 @@ kids 0
 OBJECT poly
 name "mk82-6"
 loc -0.146709 -0.139056 -0.568338
-texture "mk-82.rgb"
+texture "mk-82.png"
 crease 45.000000
 numvert 195
 -0.95388 -0.0401894 -0.0614235
@@ -18223,7 +18223,7 @@ kids 0
 OBJECT poly
 name "mk82-7"
 loc -0.115726 -0.139056 -1.69405
-texture "mk-82.rgb"
+texture "mk-82.png"
 crease 45.000000
 numvert 195
 -1.12551 -0.111327 -0.000897884
@@ -20755,7 +20755,7 @@ kids 0
 OBJECT poly
 name "mk82-8"
 loc -0.00773525 -0.0252365 -3.61242
-texture "mk-82.rgb"
+texture "mk-82.png"
 crease 45.000000
 numvert 195
 -1.12551 -0.111327 -0.000897884
@@ -23287,7 +23287,7 @@ kids 0
 OBJECT poly
 name "mk82-9"
 loc 0.0400152 0.119763 -4.84603
-texture "mk-82.rgb"
+texture "mk-82.png"
 crease 45.000000
 numvert 195
 -0.95388 -0.0401894 -0.0614233
@@ -25819,7 +25819,7 @@ kids 0
 OBJECT poly
 name "mk82-10"
 loc -0.259647 0.271455 -5.90342
-texture "mk-82.rgb"
+texture "mk-82.png"
 crease 45.000000
 numvert 195
 -1.12551 -0.111327 -0.000897408

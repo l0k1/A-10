@@ -143,11 +143,11 @@
      compressor speed:		17,900 rpm
      exhaust gas temperature:	813 °C
      -->
-	<jet x="-10.8" y="1.5" z="1.27" mass="1440" thrust="20000" spool-time="8" tsfc="0.394" n1-idle="20" n1-max="100" n2-idle="56" n2-max="102" epr="2.0" exhaust-speed="2500.0" egt="1086" rotate="9">
+	<jet x="-10.8" y="1.5" z="1.27" mass="1440" thrust="18000" spool-time="8" tsfc="0.394" n1-idle="20" n1-max="100" n2-idle="56" n2-max="102" epr="2.0" exhaust-speed="2500.0" egt="1086" rotate="9">
 		<actionpt x="-12.5" y="1.5" z="1.15"/>
 		<control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
 	</jet>
-	<jet x="-10.8" y="-1.5" z="1.27" mass="1440" thrust="20000" spool-time="8" tsfc="0.394" n1-idle="20" n1-max="100" n2-idle="56" n2-max="102" exhaust-speed="2500.0" epr="2.0" egt="1086" rotate="9">
+	<jet x="-10.8" y="-1.5" z="1.27" mass="1440" thrust="18000" spool-time="8" tsfc="0.394" n1-idle="20" n1-max="100" n2-idle="56" n2-max="102" exhaust-speed="2500.0" epr="2.0" egt="1086" rotate="9">
 		<actionpt x="-12.5" y="-1.5" z="1.15"/>
 		<control-input axis="/controls/engines/engine[1]/throttle" control="THROTTLE"/>
 	</jet>
