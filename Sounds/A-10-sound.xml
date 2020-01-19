@@ -733,7 +733,7 @@
 			<path>Aircraft/A-10/Sounds/canopy-trans.wav</path>
 			<property>canopy/position-norm</property>
 			<volume>
-				<factor>0.08</factor>
+				<factor>0.1</factor>
 			</volume>
 		</canopy>
 

@@ -8,12 +8,12 @@ Fairchild A-10 simulation config.
 ************************************************************************
 -->
 
-<PropertyList>
+<PropertyList include="Aircraft/Generic/Human/Include/walker-include.xml">
 
 	<sim>
 
 		<description>Fairchild A-10 Thunderbolt II (JSBsim FDM)</description>
-		<author>Lee Elliott - Alexis Bory - David Bastien, Steve Brown JSBsim FDM</author>
+		<author>Lee Elliott, Alexis Bory, David Bastien, Steve Brown (JSBsim FDM), Pinto, J Maverick 16</author>
 		<status>production</status>
 		<rating>
 			<FDM type="int">4</FDM>
