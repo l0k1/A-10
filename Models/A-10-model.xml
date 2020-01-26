@@ -193,7 +193,7 @@
 		<object-name>R-wing-ECMCanisters</object-name> 
 		<object-name>UC-RightTyre</object-name>
 		<property-base>sim/model/livery</property-base>
-		<texture-prop>texture-detaasdil</texture-prop>
+		<texture-prop>texture-detail</texture-prop>
 		<texture>Liveries/default-detail.png</texture>
 	</animation>
 	
