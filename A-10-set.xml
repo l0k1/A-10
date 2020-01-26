@@ -1078,9 +1078,9 @@ Fairchild A-10 simulation config.
 		</lighting>
 	</controls>
 
-	<!-- Start with the Canopy open -->
+	<!-- Start with the Canopy closed -->
 	<canopy>
-		<position-norm type="double">1.0</position-norm>
+		<position-norm type="double">0.0</position-norm>
 	</canopy>
 
 	<engines>
