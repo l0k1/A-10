@@ -22,7 +22,7 @@
 		<width>20</width>
 		<height>20</height>
 		<label>Left hydraulic system</label>
-		<property>/controls/engines/engine[0]/faults/hydraulic-pump-serviceable</property>
+		<property>/controls/engines/engine[0]/faults/hydraulic-pump/serviceable</property>
 	</checkbox>
 
 	<checkbox>
@@ -31,7 +31,7 @@
 		<width>20</width>
 		<height>20</height>
 		<label>Right hydraulic system</label>
-		<property>/controls/engines/engine[1]/faults/hydraulic-pump-serviceable</property>
+		<property>/controls/engines/engine[1]/faults/hydraulic-pump/serviceable</property>
 	</checkbox>
 
 	<checkbox>
@@ -67,7 +67,7 @@
 		<width>20</width>
 		<height>20</height>
 		<label>APU generator</label>
-		<property>/controls/APU/generator-serviceable</property>
+		<property>/controls/APU/generator/serviceable</property>
 	</checkbox>
 	
 	<!-- Column 2 of checkbox -->
@@ -77,7 +77,7 @@
 		<width>20</width>
 		<height>20</height>
 		<label>Left wing fuel tank pump</label>
-		<property>/controls/fuel/tank[0]/boost-pump-serviceable</property>
+		<property>/controls/fuel/tank[0]/boost-pump/serviceable</property>
 	</checkbox>
 	
 	<checkbox>
@@ -86,7 +86,7 @@
 		<width>20</width>
 		<height>20</height>
 		<label>Left main fuel tank pump</label>
-		<property>/controls/fuel/tank[1]/boost-pump-serviceable</property>
+		<property>/controls/fuel/tank[1]/boost-pump/serviceable</property>
 	</checkbox>
 	
 	<checkbox>
@@ -95,7 +95,7 @@
 		<width>20</width>
 		<height>20</height>
 		<label>Right main fuel tank pump</label>
-		<property>/controls/fuel/tank[2]/boost-pump-serviceable</property>
+		<property>/controls/fuel/tank[2]/boost-pump/serviceable</property>
 	</checkbox>
 	
 	<checkbox>
@@ -104,7 +104,7 @@
 		<width>20</width>
 		<height>20</height>
 		<label>Right wing fuel tank pump</label>
-		<property>/controls/fuel/tank[3]/boost-pump-serviceable</property>
+		<property>/controls/fuel/tank[3]/boost-pump/serviceable</property>
 	</checkbox>
 	
 	<checkbox>
@@ -113,7 +113,7 @@
 		<width>20</width>
 		<height>20</height>
 		<label>DC pump</label>
-		<property>/controls/fuel/tank[1]/DC-boost-pump-serviceable</property>
+		<property>/controls/fuel/tank[1]/DC-boost-pump/serviceable</property>
 	</checkbox>
 
 	<group>
