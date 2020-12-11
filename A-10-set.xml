@@ -800,8 +800,8 @@ Fairchild A-10 simulation config.
 								<![CDATA[
 
 								if(getprop("/gear/gear[0]/wow") and getprop("/velocities/groundspeed-kt") <= 1.0){
-									setprop("/ai/submodels/submodel[78]/count", 480);
-									screen.log.write("480 flares loaded", 1, 1, 1);
+									setprop("/ai/submodels/submodel[78]/count", 120);
+									screen.log.write("120 flares loaded", 1, 1, 1);
 								} else {
 									screen.log.write("Can't load flares while airborne or moveing", 1, 1, 1);
 								}
@@ -813,8 +813,31 @@ Fairchild A-10 simulation config.
 						<label>System failures</label>
 						<binding>
 							<command>nasal</command>
-							<script>A10.A10_dlg_syst_fail.open()</script>
+							<script>
+								<![CDATA[
+
+								if(getprop("/payload/armament/msg") != 1){
+								    A10.A10_dlg_syst_fail.open()
+								} else {
+							            screen.log.write("Can't open that when damage is on", 1, 1, 1);
+								}
+								]]>
+							</script>
 						</binding>
+					</item>
+					<item>
+					    <label>Toggle Damage</label>
+					    <binding>
+						<command>nasal</command>
+						<script>
+						    setprop("/payload/armament/msg/", 1 - getprop("/payload/armament/msg/"));
+						    if (getprop("/payload/armament/msg/")) {
+						        screen.log.write("Damage ON", 1, 0, 0);
+						    } else {
+						        screen.log.write("Damage OFF", 1, 0, 0);
+						    }
+						</script>
+					    </binding>
 					</item>
 					<item>
 					    <label>Combat log</label>
