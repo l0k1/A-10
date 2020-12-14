@@ -882,9 +882,9 @@ Fairchild A-10 simulation config.
 					<script>A10weapons.config_dialog.toggle()</script>
 				</binding>
 			</key>
-			<key n="44">
-				<name>,</name>
-				<desc>Left brake</desc>
+			<key n="69">
+				<name>E</name>
+				<desc>Weapon Release</desc>
 				<binding>
 					<command>nasal</command>
 					<script>A10weapons.release()</script>
