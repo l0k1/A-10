@@ -499,6 +499,46 @@ var impact_listener = func {
 		    }
 		}
 	    }
+	}
+	if (typeNode != nil and find("MK-82", typeOrd) != -1) {
+	    var typeOrd = "MK-82";
+	    var lat = ballistic.getNode("impact/latitude-deg").getValue();
+	    var lon = ballistic.getNode("impact/longitude-deg").getValue();
+	    var elev = ballistic.getNode("impact/elevation-m").getValue();
+	    var impactPos = geo.Coord.new().set_latlon(lat, lon, elev);
+	    target = findmultiplayer(impactPos, 200);
+	    # get range to target
+	    var raw_list = Mp.getChildren();
+	    foreach (var c; raw_list) {
+		var is_valid = c.getNode("valid");
+		if(is_valid == nil or !is_valid.getBoolValue()) continue;
+		var type = c.getName();
+	
+		var position = c.getNode("position");
+		var name = c.getValue("callsign");
+		if(name == nil or name == "") {
+		    # fallback, for some AI objects
+		    var name = c.getValue("name");
+		}
+		if(position == nil or name == nil or name == "" or !contains(valid_mp_types, type)) continue;
+
+		if (name == target) {
+		    var lat = position.getValue("latitude-deg");
+		    var lon = position.getValue("longitude-deg");
+		    var elev = position.getValue("altitude-ft") * FT2M;
+		    if(lat == nil or lon == nil or elev == nil) continue;
+		    
+		    var MpCoord = geo.Coord.new().set_latlon(lat, lon, elev);
+		    var dist = MpCoord.direct_distance_to(impactPos);
+		    var msg = notifications.ArmamentNotification.new("mhit", 4, -1*(damage.warheads[typeOrd][0]+1));
+		    msg.RelativeAltitude = 0;
+		    msg.Bearing = 0;
+		    msg.Distance = dist;
+		    msg.RemoteCallsign = target;
+		    notifications.hitBridgedTransmitter.NotifyAll(msg);
+		    damage.damageLog.push(sprintf("You hit %s with %s at %.1f meters.", target, typeOrd, dist));
+		}
+	    }
 	}	    
     }
 }
