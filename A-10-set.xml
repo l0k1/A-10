@@ -21,7 +21,10 @@ Fairchild A-10 simulation config.
 			<cockpit type="int">4</cockpit>
 			<model type="int">4</model>
 		</rating>
-
+		<dimensions>
+		    <radius-m type="double">18.0</radius-m>
+		    <parkpos-offset-m type="double">-7.0</parkpos-offset-m>
+		</dimensions>
 		<tags>
 			<tag>bomber</tag>
 			<tag>fairchild</tag>
@@ -80,6 +83,8 @@ Fairchild A-10 simulation config.
  				</colors>
  			</style>
  		</gui>
+
+		<aircraft-class type="string">mil-fighter</aircraft-class>
 
 		<tutorials>
 			<tutorial include="Tutorials/startup_tutorial.xml"/>
@@ -357,8 +362,10 @@ Fairchild A-10 simulation config.
 						<running type="bool">false</running>
 						<unsafe type="bool">false</unsafe>
 						<ready type="bool">false</ready>
-						<hydr-drive-serviceable n="0" type="bool">true</hydr-drive-serviceable><!-- Left hydraulic drive motor -->
-						<hydr-drive-serviceable n="1" type="bool">true</hydr-drive-serviceable>
+						<hydr-drive>
+						    <serviceable n="0" type="bool">true</serviceable><!-- Left hydraulic drive motor -->
+						    <serviceable n="1" type="bool">true</serviceable>
+						</hydr-drive>
 					</gun>
 					
 					<stations>
@@ -798,8 +805,8 @@ Fairchild A-10 simulation config.
 								<![CDATA[
 
 								if(getprop("/gear/gear[0]/wow") and getprop("/velocities/groundspeed-kt") <= 1.0){
-									setprop("/ai/submodels/submodel[78]/count", 480);
-									screen.log.write("480 flares loaded", 1, 1, 1);
+									setprop("/ai/submodels/submodel[78]/count", 120);
+									screen.log.write("120 flares loaded", 1, 1, 1);
 								} else {
 									screen.log.write("Can't load flares while airborne or moveing", 1, 1, 1);
 								}
@@ -811,8 +818,38 @@ Fairchild A-10 simulation config.
 						<label>System failures</label>
 						<binding>
 							<command>nasal</command>
-							<script>A10.A10_dlg_syst_fail.open()</script>
+							<script>
+								<![CDATA[
+
+								if(getprop("/payload/armament/msg") != 1){
+								    A10.A10_dlg_syst_fail.open()
+								} else {
+							            screen.log.write("Can't open that when damage is on", 1, 1, 1);
+								}
+								]]>
+							</script>
 						</binding>
+					</item>
+					<item>
+					    <label>Toggle Damage</label>
+					    <binding>
+						<command>nasal</command>
+						<script>
+						    setprop("/payload/armament/msg/", 1 - getprop("/payload/armament/msg/"));
+						    if (getprop("/payload/armament/msg/")) {
+						        screen.log.write("Damage ON", 1, 0, 0);
+						    } else {
+						        screen.log.write("Damage OFF", 1, 0, 0);
+						    }
+						</script>
+					    </binding>
+					</item>
+					<item>
+					    <label>Combat log</label>
+					    <binding>
+						<command>dialog-show</command>
+						<dialog-name>flightlog</dialog-name>
+					    </binding>
 					</item>
 				</menu>
 			</default>
@@ -845,9 +882,9 @@ Fairchild A-10 simulation config.
 					<script>A10weapons.config_dialog.toggle()</script>
 				</binding>
 			</key>
-			<key n="44">
-				<name>,</name>
-				<desc>Left brake</desc>
+			<key n="69">
+				<name>E</name>
+				<desc>Weapon Release</desc>
 				<binding>
 					<command>nasal</command>
 					<script>A10weapons.release()</script>
@@ -1007,7 +1044,9 @@ Fairchild A-10 simulation config.
 			<generator-switch type="bool">false</generator-switch>
 			<off-start-switch type="bool">false</off-start-switch>
 			<serviceable type="bool">true</serviceable>
-			<generator-serviceable type="bool">true</generator-serviceable>
+			<generator>
+			    <serviceable type="bool">true</serviceable>
+			</generator>
 		</APU>
 		<armament>
 			<trigger type="bool">false</trigger>
@@ -1016,16 +1055,20 @@ Fairchild A-10 simulation config.
 		<engines>
 			<engine n="0">
 				<faults>
-					<hydraulic-pump-serviceable type="bool">true</hydraulic-pump-serviceable>
+				    <hydraulic-pump>
 					<serviceable type="bool">true</serviceable>
+				    </hydraulic-pump>
+				    <serviceable type="bool">true</serviceable>
 				</faults>
 				<engines-ignitors n="0" type="bool">false</engines-ignitors>
 				<engines-ignitors n="1" type="bool">false</engines-ignitors>
 			</engine>
 			<engine n="1">
 				<faults>
-					<hydraulic-pump-serviceable type="bool">true</hydraulic-pump-serviceable>
+				    <hydraulic-pump>
 					<serviceable type="bool">true</serviceable>
+				    </hydraulic-pump>
+				    <serviceable type="bool">true</serviceable>
 				</faults>
 				<engines-ignitors n="0" type="bool">false</engines-ignitors>
 				<engines-ignitors n="1" type="bool">false</engines-ignitors>
@@ -1034,38 +1077,54 @@ Fairchild A-10 simulation config.
 		<fuel>
 			<tank n="0">
 				<boost-pump n="0" type="bool">true</boost-pump>
-				<boost-pump-serviceable type="bool">true</boost-pump-serviceable>
+				<boost-pump>
+				    <serviceable type="bool">true</serviceable>
+				</boost-pump>
 				<fill-dis type="bool">false</fill-dis>
 			</tank>
 			<tank n="1">
 				<boost-pump n="0" type="bool">true</boost-pump>
-				<boost-pump-serviceable type="bool">true</boost-pump-serviceable>
-				<DC-boost-pump-serviceable type="bool">true</DC-boost-pump-serviceable>
+				<boost-pump>
+				    <serviceable type="bool">true</serviceable>
+				</boost-pump>
+				<DC-boost-pump>
+				    <serviceable type="bool">true</serviceable>
+				</DC-boost-pump>
 				<fill-dis type="bool">false</fill-dis>
 			</tank>
 			<tank n="2">
 				<boost-pump n="0" type="bool">true</boost-pump>
-				<boost-pump-serviceable type="bool">true</boost-pump-serviceable>
+				<boost-pump>
+				    <serviceable type="bool">true</serviceable>
+				</boost-pump>
 				<fill-dis type="bool">false</fill-dis>
 			</tank>
 			<tank n="3">
 				<boost-pump n="0" type="bool">true</boost-pump>
-				<boost-pump-serviceable type="bool">true</boost-pump-serviceable>
+				<boost-pump>
+				    <serviceable type="bool">true</serviceable>
+				</boost-pump>
 				<fill-dis type="bool">false</fill-dis>
 			</tank>
 			<tank n="4">
 				<boost-pump n="0" type="bool">false</boost-pump>
-				<boost-pump-serviceable type="bool">true</boost-pump-serviceable>
+				<boost-pump>
+				    <serviceable type="bool">true</serviceable>
+				</boost-pump>
 				<fill-dis type="bool">false</fill-dis>
 			</tank>
 			<tank n="5">
 				<boost-pump n="0" type="bool">false</boost-pump>
-				<boost-pump-serviceable type="bool">true</boost-pump-serviceable>
+				<boost-pump>
+				    <serviceable type="bool">true</serviceable>
+				</boost-pump>
 				<fill-dis type="bool">false</fill-dis>
 			</tank>
 			<tank n="6">
 				<boost-pump n="0" type="bool">false</boost-pump>
-				<boost-pump-serviceable type="bool">true</boost-pump-serviceable>
+				<boost-pump>
+				    <serviceable type="bool">true</serviceable>
+				</boost-pump>
 				<fill-dis type="bool">false</fill-dis>
 			</tank>
 		</fuel>
@@ -1184,6 +1243,14 @@ Fairchild A-10 simulation config.
 		</refuel>
 	</systems>
 
+	<payload>
+	    <armament>
+		<models type="string">Aircraft/A-10/Models/MParmaments/</models>
+		<msg type="bool">true</msg>
+		<MLW-count type="int">0</MLW-count>
+	    </armament>
+	</payload>
+
 	<!-- Fuel Tank indexes -->
 	<consumables>
 		<fuel>
@@ -1254,7 +1321,12 @@ Fairchild A-10 simulation config.
 	<nasal>
 		<!--<A10test_impact>
 			<file>Aircraft/A-10/Nasal/test_impact.nas</file>
-		</A10test_impact>-->
+			</A10test_impact>-->
+		<notifications>
+		    <file>Aircraft/f16/Nasal/ArmamentNotification.nas</file>
+		    <!-- <file>Aircraft/f16/Nasal/M_frame_notification.nas</file> -->
+		    <file>Aircraft/f16/Nasal/GeoBridgedTransmitter.nas</file>
+		</notifications>
 		<A10fuel>
 			<file>Aircraft/A-10/Nasal/A-10-fuel.nas</file>
 		</A10fuel>
@@ -1304,11 +1376,14 @@ Fairchild A-10 simulation config.
 			<file>Aircraft/A-10/Nasal/liveries.nas</file>
 		</liveries>
 		<aar>
-            <file>Aircraft/Generic/aar.nas</file>
-        </aar>
+		    <file>Aircraft/Generic/aar.nas</file>
+		</aar>
 		<damage>
 			<file>Aircraft/A-10/Nasal/damage.nas</file>
 		</damage>
+		<failures>
+		    <file>Aircraft/A-10/Nasal/A-10-failures.nas</file>
+		</failures>
 	</nasal>
 
 </PropertyList>

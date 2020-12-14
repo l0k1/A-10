@@ -274,7 +274,7 @@ Engine = {
 		obj.control_prop.getChild("engines-ignitors", 0, 1).setBoolValue(0);
 		obj.control_prop.getChild("engines-ignitors", 1, 1).setBoolValue(0);
 		obj.serviceable        = obj.control_fault_prop.getNode("serviceable", 1);
-		obj.hydraulic_pump_serviceable = obj.control_fault_prop.getNode("hydraulic-pump-serviceable", 1);
+		obj.hydraulic_pump_serviceable = obj.control_fault_prop.getNode("hydraulic-pump/serviceable", 1);
 
 		obj.alt_prop           = props.globals.getNode("sim/model/A-10/engines").getChild("engine", number , 1);
 		obj.n1                 = obj.alt_prop.getNode("n1", 1);
