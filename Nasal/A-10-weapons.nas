@@ -189,11 +189,6 @@ var release_operate = func(rip_counter, interval) {
 				if ( cdesc != "LAU-68" ) { var iready = s.getNode(iready_node); }
 				var t = itrigger.getBoolValue();
 				if ( !t and a > 0) {
-					if ( cdesc == "LAU-68" ) {
-						defeatSpamFilter("LAU-68 fired");
-					} elsif (cdesc != "dual-AIM-9") {
-						defeatSpamFilter("MK-82 released");
-					}
 					itrigger.setBoolValue(1);
 					a -= 1;
 					avail.setValue(a);
@@ -547,7 +542,6 @@ var hitmessage = func(typeOrd) {
     #print("inside hitmessage");
     var phrase = typeOrd ~ " hit: " ~ hit_callsign ~ ": " ~ hits_count ~ " hits";
     if (getprop("payload/armament/msg") == TRUE) {
-	#armament.defeatSpamFilter(phrase);
 	var msg = notifications.ArmamentNotification.new("mhit", 4, -1*(damage.shells[typeOrd][0]+1));
 	msg.RelativeAltitude = 0;
 	msg.Bearing = 0;
@@ -567,25 +561,5 @@ var hitmessage = func(typeOrd) {
 setlistener("/ai/models/model-impact", impact_listener, 0, 0);
 
 var spams = 0;
-
-var defeatSpamFilter = func (str) {
-  spams += 1;
-  if (spams == 15) {
-    spams = 1;
-  }
-  str = str~":";
-  for (var i = 1; i <= spams; i+=1) {
-    str = str~".";
-  }
-  
-  if (getprop("payload/armament/msg")) {
-	setprop("/sim/multiplay/chat", str);
-  } else {
-	setprop("/sim/messages/atc", str);
-  }
-  
-  return str;
-}
-
 
 setlistener("/ai/models/model-impact", impact_listener, 0, 0);
