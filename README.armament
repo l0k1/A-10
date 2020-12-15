@@ -90,7 +90,7 @@ is settable on the armament panel left side counter (when set to 0, one ordnance
 is released as when set to 1). The time interval between releases is set on the
 right counter wich is msec x10.
 
-To release a selected weapon, press ',' key.
+To release a selected weapon, press 'E' key.
 
 That's all folks, enjoy !
 
