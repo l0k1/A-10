@@ -851,7 +851,7 @@ Fairchild A-10 simulation config.
 					    </binding>
 					</item>
 					<item>
-					    <label>Combat log</label>
+					    <label>Combat event log</label>
 					    <binding>
 						<command>dialog-show</command>
 						<dialog-name>flightlog</dialog-name>
