@@ -851,6 +851,13 @@ Fairchild A-10 simulation config.
 					    </binding>
 					</item>
 					<item>
+				    	<label>IFF Channel</label>
+					    <binding>
+							<command>dialog-show</command>
+							<dialog-name>iff</dialog-name>
+					    </binding>
+				    </item>
+					<item>
 					    <label>Combat event log</label>
 					    <binding>
 						<command>dialog-show</command>
@@ -876,6 +883,10 @@ Fairchild A-10 simulation config.
 			</submodel>
 		</submodels>
 	</ai>
+
+	<iff>
+	    <channel type="int">0000</channel>
+	</iff>
 
 	<input>
 
@@ -1016,6 +1027,13 @@ Fairchild A-10 simulation config.
 			<g-max type="float">1</g-max>
 			<g-min type="float">1</g-min>
 		</g-meter>
+		<iff>
+		    <power_prop type="string">instrumentation/iff/power</power_prop>
+		    <channel_prop
+			type="string">instrumentation/iff/channel</channel_prop>
+		    <channel type="int">0000</channel>
+		    <power type="bool">true</power>
+		</iff>
 		<tacan>
 			<switch-position>0</switch-position>
 		</tacan>
@@ -1390,6 +1408,9 @@ Fairchild A-10 simulation config.
 		<failures>
 		    <file>Aircraft/A-10/Nasal/A-10-failures.nas</file>
 		</failures>
+		<iff>
+	        <file>Aircraft/A-10/Nasal/iff.nas</file>
+	    </iff>
 	</nasal>
 
 </PropertyList>
