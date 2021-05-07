@@ -853,26 +853,12 @@ Fairchild A-10 simulation config.
 						</binding>
 					</item>
 					<item>
-					    <label>DLINK Channel</label>
-					    <binding>
-							<command>dialog-show</command>
-							<dialog-name>dlink</dialog-name>
-					    </binding>
-			        </item>
-					<item>
-				    	<label>IFF Channel</label>
+					    <label>IFF/DLINK Settings</label>
 					    <binding>
 							<command>dialog-show</command>
 							<dialog-name>iff</dialog-name>
 					    </binding>
-				    </item>
-					<item>
-					    <label>Combat event log</label>
-					    <binding>
-						<command>dialog-show</command>
-						<dialog-name>flightlog</dialog-name>
-					    </binding>
-					</item>
+			    	</item>
 				</menu>
 			</default>
 		</menubar>
