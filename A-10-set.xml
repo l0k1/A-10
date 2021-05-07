@@ -168,6 +168,8 @@ Fairchild A-10 simulation config.
 			<path>Aircraft/A-10/Systems/instrumentation.xml</path>
 		</instrumentation>
 
+		<gui n="0" include="gui/a10-gui.xml"/>
+
 		<systems>
 			<autopilot>
 				<path>Aircraft/A-10/Systems/A-10-autopilot.xml</path>
@@ -764,18 +766,18 @@ Fairchild A-10 simulation config.
 					<label>A-10</label>
 					<enabled type="bool">true</enabled>
 					<item>
-					  <label>Select Livery</label>
-					  <binding>
-						<command>nasal</command>
-						<script>aircraft.livery.dialog.open();</script>
-					  </binding>
-					</item>
-					<item>
 						<label>Engines autostart</label>
 						<binding>
 							<command>nasal</command>
 							<script>A10engines.eng_autostart()</script>
 						</binding>
+					</item>
+					<item>
+					  <label>Select Livery</label>
+					  <binding>
+						<command>nasal</command>
+						<script>aircraft.livery.dialog.open();</script>
+					  </binding>
 					</item>
 					<item>
 						<label>Reload GAU-8/A gatling gun</label>
@@ -815,22 +817,6 @@ Fairchild A-10 simulation config.
 						</binding>
 					</item>
 					<item>
-						<label>System failures</label>
-						<binding>
-							<command>nasal</command>
-							<script>
-								<![CDATA[
-
-								if(getprop("/payload/armament/msg") != 1){
-								    A10.A10_dlg_syst_fail.open()
-								} else {
-							            screen.log.write("Can't open that when damage is on", 1, 1, 1);
-								}
-								]]>
-							</script>
-						</binding>
-					</item>
-					<item>
 					    <label>Toggle Damage</label>
 					    <binding>
 						<command>nasal</command>
@@ -850,6 +836,29 @@ Fairchild A-10 simulation config.
 						</script>
 					    </binding>
 					</item>
+					<item>
+						<label>System failures</label>
+						<binding>
+							<command>nasal</command>
+							<script>
+								<![CDATA[
+
+								if(getprop("/payload/armament/msg") != 1){
+								    A10.A10_dlg_syst_fail.open()
+								} else {
+							            screen.log.write("Can't open that when damage is on", 1, 1, 1);
+								}
+								]]>
+							</script>
+						</binding>
+					</item>
+					<item>
+					    <label>DLINK Channel</label>
+					    <binding>
+							<command>dialog-show</command>
+							<dialog-name>dlink</dialog-name>
+					    </binding>
+			        </item>
 					<item>
 				    	<label>IFF Channel</label>
 					    <binding>
@@ -1019,6 +1028,13 @@ Fairchild A-10 simulation config.
 	</autopilot>
 
 	<instrumentation>
+		<datalink>
+	        <channel type="int">42</channel>
+	        <power_prop type="string">controls/electric/engine[0]/generator</power_prop>
+	        <channel_prop type="string">instrumentation/datalink/channel</channel_prop>
+	        <receive_period type="double">1</receive_period>
+	        <!--identifier_prop type="string">instrumentation/datalink/ident</identifier_prop-->
+    	</datalink>
 		<ecm>
 			<enabled type="bool">true</enabled>			
 			<on-off type="bool">true</on-off>
@@ -1408,6 +1424,9 @@ Fairchild A-10 simulation config.
 		<failures>
 		    <file>Aircraft/A-10/Nasal/A-10-failures.nas</file>
 		</failures>
+		<datalink>
+            <file>Aircraft/A-10/Nasal/datalink.nas</file>
+        </datalink>
 		<iff>
 	        <file>Aircraft/A-10/Nasal/iff.nas</file>
 	    </iff>
