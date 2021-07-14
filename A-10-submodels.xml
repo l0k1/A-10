@@ -2229,7 +2229,7 @@
 	    <speed>100.0</speed>   <!-- ft/sec -->
 	    <repeat>false</repeat>
 	    <delay>0.75</delay>
-	    <count>120</count>
+	    <count>480</count>
 	    <x-offset>28.5</x-offset>
 	    <y-offset> 8.8</y-offset>
 	    <z-offset>-1.6</z-offset>
@@ -2246,7 +2246,7 @@
 	    <speed>100.0</speed>   <!-- ft/sec -->
 	    <repeat>false</repeat>
 	    <delay>0.75</delay>
-	    <count>120</count>
+	    <count>480</count>
 	    <x-offset>28.5</x-offset>
 	    <y-offset>-8.8</y-offset>
 	    <z-offset>-1.6</z-offset>
