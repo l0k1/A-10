@@ -13,7 +13,7 @@ Fairchild A-10 simulation config.
 	<sim>
 
 		<description>Fairchild A-10 Thunderbolt II (YASim FDM)</description>
-		<author>Lee Elliott, Alexis Bory, David Bastien, Pinto, Steve Brown, J Maverick 16</author>
+		<author>Lee Elliott, Alexis Bory, David Bastien, Pinto, Steve Brown, J Maverick 16, Zorka</author>
 		<status>production</status>
 		<rating>
 			<FDM type="int">4</FDM>
@@ -369,7 +369,7 @@ Fairchild A-10 simulation config.
 						    <serviceable n="1" type="bool">true</serviceable>
 						</hydr-drive>
 					</gun>
-					
+
 					<stations>
 						<station n="0">
 							<ammo-weight-lb type="float">0</ammo-weight-lb>
@@ -642,7 +642,7 @@ Fairchild A-10 simulation config.
 				</systems>
 			</A-10>
 		</model>
-	
+
 		<!--sub models -->
 		<submodels>
 			<serviceable type="bool">1</serviceable>
@@ -655,7 +655,7 @@ Fairchild A-10 simulation config.
 			<setting>0.233</setting>
 			<setting>0.666</setting>
 		</flaps>
-		
+
 		<!-- Speedbrake settings -->
 		<spoilers>
 			<setting>0.00</setting>
@@ -807,8 +807,9 @@ Fairchild A-10 simulation config.
 								<![CDATA[
 
 								if(getprop("/gear/gear[0]/wow") and getprop("/velocities/groundspeed-kt") <= 1.0){
-									setprop("/ai/submodels/submodel[78]/count", 120);
-									screen.log.write("120 flares loaded", 1, 1, 1);
+									setprop("/ai/submodels/submodel[78]/count", 480);
+                                    setprop("/ai/submodels/submodel[79]/count", 480);
+									screen.log.write("480 flares loaded", 1, 1, 1);
 								} else {
 									screen.log.write("Can't load flares while airborne or moveing", 1, 1, 1);
 								}
@@ -1029,7 +1030,7 @@ Fairchild A-10 simulation config.
 	        <!--identifier_prop type="string">instrumentation/datalink/ident</identifier_prop-->
     	</datalink>
 		<ecm>
-			<enabled type="bool">true</enabled>			
+			<enabled type="bool">true</enabled>
 			<on-off type="bool">true</on-off>
 		</ecm>
 		<g-meter>
@@ -1047,7 +1048,7 @@ Fairchild A-10 simulation config.
 			<switch-position>0</switch-position>
 		</tacan>
 		<radar>
-			<enabled type="bool">false</enabled>			
+			<enabled type="bool">false</enabled>
 			<range type="double">150</range>
 		</radar>
 		<rwr>
@@ -1348,7 +1349,7 @@ Fairchild A-10 simulation config.
 		</weights>
 	</yasim>
 
-	
+
 
 	<!-- Nasal files & scripts -->
 	<nasal>
