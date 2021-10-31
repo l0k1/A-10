@@ -556,7 +556,7 @@ var hitmessage = func(typeOrd) {
     hit_timer = nil;
     hits_count = 0;
 }
-
+<!--
 # Disable external views with damage on
 	view.stepView = func(step, force = 0) {
     step = step > 0 ? 1 : -1;
@@ -581,7 +581,7 @@ var hitmessage = func(typeOrd) {
     var popup=getprop("/sim/view-name-popup");
     if(popup == 1 or popup==nil) gui.popupTip(view.views[n].getNode("name").getValue());
 }
-		
+-->		
 # setup impact listener
 setlistener("/ai/models/model-impact", impact_listener, 0, 0);
 
