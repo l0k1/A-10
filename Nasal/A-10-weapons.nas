@@ -571,7 +571,7 @@ var hitmessage = func(typeOrd) {
 #        var internal = view.views[n].getNode("internal");
 #
 #        if ((force or e == nil or e.getBoolValue())
-##            and view.views[n].getNode("name") != nil
+#            and view.views[n].getNode("name") != nil
 #            and ((internal != nil and internal.getBoolValue()) or !getprop("/payload/armament/msg")))
 #            break;
 #    }
