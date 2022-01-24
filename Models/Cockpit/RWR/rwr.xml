@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>rwr.ac</path>
+
+    <animation>
+        <object-name>bkg</object-name>
+        <type>material</type>
+        <condition>
+            <greater-than-equals>
+                <property>systems/electrical/outputs/rwr</property>
+                <value>20</value>
+            </greater-than-equals>
+        </condition>
+        <emission>
+            <red>  1</red>
+            <green>1</green>
+            <blue> 1</blue>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>button</object-name>
+        <property>instrumentation/rwr/display-lighting-intens</property>
+        <factor>-180</factor>
+        <offset-deg>0</offset-deg>
+        <center>
+            <x-m>  0.003947 </x-m>
+            <y-m> -0.0335 </y-m>
+            <z-m>  0.0341 </z-m>
+        </center>
+        <axis>
+            <x> 1.0 </x>
+            <y> 0.0 </y>
+            <z> 0.0 </z>
+        </axis>
+        <increase>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/rwr/display-lighting-intens</property>
+                <factor>1</factor>
+                <step>0.1</step>
+                <min>0</min>
+                <max>2</max>
+                <wrap>false</wrap>
+            </binding>
+        </increase>
+        <decrease>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/rwr/display-lighting-intens</property>
+                <factor>1</factor>
+                <step>-0.1</step>
+                <min>0</min>
+                <max>2</max>
+                <wrap>false</wrap>
+            </binding>
+        </decrease>
+    </animation>
+
+</PropertyList>
