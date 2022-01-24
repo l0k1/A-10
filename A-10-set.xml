@@ -1277,13 +1277,34 @@ Fairchild A-10 simulation config.
 		</refuel>
 	</systems>
 
-	<payload>
-	    <armament>
-		<models type="string">Aircraft/A-10/Models/MParmaments/</models>
-		<msg type="bool">true</msg>
-		<MLW-count type="int">0</MLW-count>
-	    </armament>
-	</payload>
+    <payload>
+         <armament>
+             <models>Aircraft/A-10/Models/MParmaments/</models>
+             <enable-craters type="bool">true</enable-craters>
+             <MLW-bearing type="double">0</MLW-bearing>
+             <MLW-count type="int">0</MLW-count>
+             <MLW-launcher type="string"></MLW-launcher>
+             <MAW-bearing type="double">0</MAW-bearing>
+             <MAW-active type="bool">false</MAW-active>
+             <msg type="bool">false</msg>
+             <spike type="bool">false</spike>
+         </armament>
+         <d-config>
+             <full_damage_dist_m type="double">0</full_damage_dist_m>
+             <use_hitpoints_instead_of_failure_modes_bool type="bool">false</use_hitpoints_instead_of_failure_modes_bool>
+             <hp_max type="double">80</hp_max>
+             <hitable_by_air_munitions type="bool">true</hitable_by_air_munitions>
+             <hitable_by_cannon type="bool">true</hitable_by_cannon>
+             <is_fleet type="bool">false</is_fleet>
+             <rwr_to_screen type="bool">true</rwr_to_screen>
+             <rwr_audio_extended type="bool">false</rwr_audio_extended>
+             <tacview_supported type="bool">false</tacview_supported>
+             <m28_auto type="bool">false</m28_auto>
+             <mlw_max type="double">2.25</mlw_max>
+             <auto_flare_caller type="bool">false</auto_flare_caller>
+         </d-config>
+     </payload>
+
 
 	<!-- Fuel Tank indexes -->
 	<consumables>
@@ -1357,10 +1378,16 @@ Fairchild A-10 simulation config.
 			<file>Aircraft/A-10/Nasal/test_impact.nas</file>
 			</A10test_impact>-->
 		<notifications>
-		    <file>Aircraft/f16/Nasal/ArmamentNotification.nas</file>
+		    <file>Aircraft/A-10/Nasal/ArmamentNotification.nas</file>
 		    <!-- <file>Aircraft/f16/Nasal/M_frame_notification.nas</file> -->
-		    <file>Aircraft/f16/Nasal/GeoBridgedTransmitter.nas</file>
+		    <file>Aircraft/A-10/Nasal/GeoBridgedTransmitter.nas</file>
 		</notifications>
+        <vector>
+            <file>Aircraft/A-10/Nasal/vector.nas</file>
+        </vector>
+        <armament>
+            <file>Aircraft/A-10/Nasal/missile-code.nas</file>
+        </armament>
 		<A10fuel>
 			<file>Aircraft/A-10/Nasal/A-10-fuel.nas</file>
 		</A10fuel>
