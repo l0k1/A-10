@@ -25,6 +25,20 @@
 		</condition>
 	</animation>
 
+    <animation>
+		<type>select</type>
+		<object-name>launch-warning</object-name>
+		<condition>
+            <not>
+                <equals>
+                    <property>sound/rwr-launch</property>
+                    <value type="string"></value>
+                </equals>
+            </not>
+			<property>sim/model/A-10/lighting/warn-medium-lights/state</property>
+		</condition>
+	</animation>
+
 	<animation>
 		<type>select</type>
 		<object-name>search-warning1</object-name>
@@ -58,6 +72,16 @@
 		</condition>
 	</animation>
 
+    <animation><!--Not Currently used - prop assigned to diable light-->
+        <type>select</type>
+        <object-name>activity</object-name>
+        <condition>
+            <greater-than>
+                <property>systems/electrical/output/rwr</property>
+                <value>90</value>
+            </greater-than>
+        </condition>
+    </animation>
 
 	<animation>
 		<type>rotate</type>
@@ -95,7 +119,7 @@
 	</animation>
 
 	<animation>
-		<type>select</type> 
+		<type>select</type>
 		<object-name>steering-engaged</object-name>
 		<condition>
 			<greater-than>
