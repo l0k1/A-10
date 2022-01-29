@@ -1308,7 +1308,7 @@ Fairchild A-10 simulation config.
              <rwr_audio_extended type="bool">false</rwr_audio_extended>
              <tacview_supported type="bool">false</tacview_supported>
              <m28_auto type="bool">false</m28_auto>
-             <mlw_max type="double">2.25</mlw_max>
+             <mlw_max type="double">0</mlw_max>
              <auto_flare_caller type="bool">false</auto_flare_caller>
          </d-config>
      </payload>
