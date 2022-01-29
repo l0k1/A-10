@@ -2,7 +2,7 @@
 
   <particlesystem>
      <name>rocket-explosion</name>
-     <texture>../smoke.png</texture>
+     <texture>smoke.png</texture>
 
      <emissive type="bool">false</emissive>
      <lighting type="bool">false</lighting>
@@ -10,7 +10,7 @@
      <attach>world</attach>
 
      <placer>
-       <type>point</type> 
+       <type>point</type>
      </placer>
 
      <shooter>
@@ -38,7 +38,7 @@
          <spread>10</spread>
        </particles-per-sec>
      </counter>
-        
+
      <align>billboard</align>
 
      <particle>
@@ -69,7 +69,7 @@
        <life-sec>
          <value>0.5</value>
        </life-sec>
-          
+
        <mass-kg>  5 </mass-kg>
        <radius-m> 0.5 </radius-m>
      </particle>
@@ -84,7 +84,7 @@
 
   <particlesystem>
      <name>rocket-explosion-smoke</name>
-     <texture>../smoke.png</texture>
+     <texture>smoke.png</texture>
 
      <emissive type="bool">false</emissive>
      <lighting type="bool">false</lighting>
@@ -92,7 +92,7 @@
      <attach>world</attach>
 
      <placer>
-       <type>point</type> 
+       <type>point</type>
      </placer>
 
      <shooter>
@@ -120,7 +120,7 @@
          <spread>15</spread>
        </particles-per-sec>
      </counter>
-        
+
      <align>billboard</align>
 
      <particle>
@@ -151,7 +151,7 @@
        <life-sec>
          <value>60</value>
        </life-sec>
-          
+
        <mass-kg>  5 </mass-kg>
        <radius-m> 0.5 </radius-m>
      </particle>

@@ -5,6 +5,10 @@
 <PropertyList>
 
 	<path>MK-82-LD.ac</path>
+	
+	<animation>
+    		<enable-hot type="bool">false</enable-hot>
+  	</animation>
 
 	
 </PropertyList>

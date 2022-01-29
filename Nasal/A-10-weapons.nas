@@ -131,7 +131,7 @@ var select_station = func {
 				}
 			}
 		} elsif ( cdesc != sdesc ) {
-			# TODO: code triple and single MK82 mixed release ? 
+			# TODO: code triple and single MK82 mixed release ?
 			ssel.setBoolValue(0);
 			sel_list.removeChildren(tsnode);
 			if ( sdesc == "dual-AIM-9" ) {
@@ -158,7 +158,7 @@ var release = func {
 	sl_list = a10weapons.getNode("selected-stations").getChildren();
 	var rip = a10weapons.getNode("rip").getValue();
 	var interval = a10weapons.getNode("interval").getValue();
-	# FIXME: riple compatible release types should be defined in the foo-set.file 
+	# FIXME: riple compatible release types should be defined in the foo-set.file
 	if ( cdesc == "LAU-68" or cdesc == "triple-MK-82-LD" or cdesc == "single-MK-82-LD") {
 		release_operate(rip, interval);
 	} else {
@@ -169,13 +169,13 @@ var release = func {
 var release_operate = func(rip_counter, interval) {
 	foreach(sl; sl_list) {
 		var slidx = sl.getValue();
-		var snode = "sim/model/A-10/weapons/stations/station[" ~ slidx ~ "]";		
+		var snode = "sim/model/A-10/weapons/stations/station[" ~ slidx ~ "]";
 		var s = props.globals.getNode(snode);
-		var wnode = "sim/weight[" ~ slidx ~ "]";		
+		var wnode = "sim/weight[" ~ slidx ~ "]";
 		var w = props.globals.getNode(wnode);
 		var wght = w.getNode("weight-lb").getValue();
 		var awght = s.getNode("ammo-weight-lb").getValue();
-		if ( cdesc == "LAU-68" ) { var lau68ready = s.getNode("ready-0"); } 
+		if ( cdesc == "LAU-68" ) { var lau68ready = s.getNode("ready-0"); }
 		var avail = s.getNode("available");
 		var a = avail.getValue();
 		if ( a != 0 ) {
@@ -313,7 +313,7 @@ var station_load = func(s, w, type) {
 		s.getNode("ready-0").setBoolValue(1);
 		s.getNode("ready-1").setBoolValue(1);
 		s.getNode("ready-2").setBoolValue(1);
-	} 
+	}
 	for( i = 0; i < avail; i = i + 1 ) {
 		# TODO: here to add submodels reload
 		itrigger_node = desc ~ "/trigger[" ~ i ~ "]";
@@ -389,7 +389,7 @@ var aim9_knob_switch = func {
 # Thanks to Bombable/Brent Hugh, 2011-09
 
 reload_guns = func {
-	var gau8_ammo_count="/ai/submodels/submodel[1]/count";  
+	var gau8_ammo_count="/ai/submodels/submodel[1]/count";
 	var a10_ammo_weight="/yasim/weights/ammunition-weight-lbs";
 	groundspeed=getprop("velocities/groundspeed-kt");
 	engine_rpm=getprop("engines/engine/rpm");
@@ -423,12 +423,12 @@ var findmultiplayer = func(targetCoord, dist) {
     var raw_list = Mp.getChildren();
     var SelectedMP = nil;
     foreach(var c ; raw_list)
-    {    
+    {
 	var is_valid = c.getNode("valid");
 	if(is_valid == nil or !is_valid.getBoolValue()) continue;
-	
+
 	var type = c.getName();
-	
+
 	var position = c.getNode("position");
 	var name = c.getValue("callsign");
 	if(name == nil or name == "") {
@@ -508,7 +508,7 @@ var impact_listener = func {
 		var is_valid = c.getNode("valid");
 		if(is_valid == nil or !is_valid.getBoolValue()) continue;
 		var type = c.getName();
-	
+
 		var position = c.getNode("position");
 		var name = c.getValue("callsign");
 		if(name == nil or name == "") {
@@ -522,7 +522,7 @@ var impact_listener = func {
 		    var lon = position.getValue("longitude-deg");
 		    var elev = position.getValue("altitude-ft") * FT2M;
 		    if(lat == nil or lon == nil or elev == nil) continue;
-		    
+
 		    var MpCoord = geo.Coord.new().set_latlon(lat, lon, elev);
 		    var dist = MpCoord.direct_distance_to(impactPos);
 		    var msg = notifications.ArmamentNotification.new("mhit", 4, -1*(damage.warheads[typeOrd][0]+1));
@@ -534,7 +534,7 @@ var impact_listener = func {
 		    damage.damageLog.push(sprintf("You hit %s with %s at %.1f meters.", target, typeOrd, dist));
 		}
 	    }
-	}	    
+	}
     }
 }
 
@@ -558,30 +558,30 @@ var hitmessage = func(typeOrd) {
 }
 
 # Disable external views with damage on
-	view.stepView = func(step, force = 0) {
-    step = step > 0 ? 1 : -1;
-    var n = view.index;
-    for (var i = 0; i < size(view.views); i += 1) {
-        n += step;
-        if (n < 0)
-            n = size(view.views) - 1;
-        elsif (n >= size(view.views))
-            n = 0;
-        var e = view.views[n].getNode("enabled");
-        var internal = view.views[n].getNode("internal");
+#	view.stepView = func(step, force = 0) {
+#    step = step > 0 ? 1 : -1;
+#    var n = view.index;
+#    for (var i = 0; i < size(view.views); i += 1) {
+#        n += step;
+#        if (n < 0)
+#            n = size(view.views) - 1;
+#        elsif (n >= size(view.views))
+#            n = 0;
+#        var e = view.views[n].getNode("enabled");
+#        var internal = view.views[n].getNode("internal");
+#
+#        if ((force or e == nil or e.getBoolValue())
+#            and view.views[n].getNode("name") != nil
+#            and ((internal != nil and internal.getBoolValue()) or !getprop("/payload/armament/msg")))
+#            break;
+#    }
+#    view.setView(n);
+#
+#    # And pop up a nice reminder
+#    var popup=getprop("/sim/view-name-popup");
+#    if(popup == 1 or popup==nil) gui.popupTip(view.views[n].getNode("name").getValue());
+#}
 
-        if ((force or e == nil or e.getBoolValue())
-            and view.views[n].getNode("name") != nil
-            and ((internal != nil and internal.getBoolValue()) or !getprop("/payload/armament/msg")))
-            break;
-    }
-    view.setView(n);
-
-    # And pop up a nice reminder
-    var popup=getprop("/sim/view-name-popup");
-    if(popup == 1 or popup==nil) gui.popupTip(view.views[n].getNode("name").getValue());
-}
-		
 # setup impact listener
 setlistener("/ai/models/model-impact", impact_listener, 0, 0);
 

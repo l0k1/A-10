@@ -20,7 +20,7 @@
 		  var livery_update = aircraft.livery_update.new("Aircraft/A-10/Models/Liveries");
 		]]>
 		</load>
-	  
+
 	  <unload><![CDATA[
 		livery_update.stop();
 	  ]]></unload>
@@ -84,7 +84,7 @@
 		<object-name>L-Wing-S2</object-name>
 		<object-name>L-Wing-Slat</object-name>
 		<object-name>L-Wing-Slat-side</object-name>
-		<object-name>L-Wing-T</object-name>		
+		<object-name>L-Wing-T</object-name>
 		<object-name>LAileronTrimTab</object-name>
 		<object-name>LIFlap-F</object-name>
 		<object-name>LIFlap-R</object-name>
@@ -111,7 +111,7 @@
 		<texture-prop>texture-main</texture-prop>
 		<texture>Liveries/default.png</texture>
 	</animation>
-	
+
 	<animation>
 		<type>material</type>
 		<object-name>Cannon</object-name>
@@ -190,16 +190,16 @@
 		<object-name>UC-RightWHousingSide-details</object-name>
 		<object-name>UC-RightWHousingTop</object-name>
 		<object-name>L-wing-ECMCanisters</object-name>
-		<object-name>R-wing-ECMCanisters</object-name> 
+		<object-name>R-wing-ECMCanisters</object-name>
 		<object-name>UC-RightTyre</object-name>
 		<property-base>sim/model/livery</property-base>
 		<texture-prop>texture-detail</texture-prop>
 		<texture>Liveries/default-detail.png</texture>
 	</animation>
-	
+
 	<model>
 		<path>Aircraft/A-10/Models/ext-stores.xml</path>
-	</model>	
+	</model>
 
 	<multiplay>
 		<refuel>
@@ -392,7 +392,7 @@
 			<z-m>0.8580</z-m>
 		</top-left>
 	</panel>
-	
+
 	<panel>
 		<name>Panel-l2</name>
 		<path>Aircraft/A-10/Models/Cockpit/A-10-panel-l2-hotspot.xml</path>
@@ -495,7 +495,7 @@
 			<z-m>0.9273</z-m>
 		</top-left>
 	</panel>
- 
+
 
 <!-- instruments-->
 	<model>
@@ -573,7 +573,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/Cockpit/rwr.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/RWR/rwr.xml</path>
 		<offsets>
 			<x-m>2.4250</x-m>
 			<y-m>-0.1115</y-m>
@@ -784,7 +784,7 @@
 			<pitch-deg>30.00</pitch-deg>
 		</offsets>
 	</model>
-	
+
 	<model>
 		<object-name>Panel-r3</object-name>
 		<path>Aircraft/A-10/Models/Cockpit/A-10-panel-r3.xml</path>
@@ -855,7 +855,7 @@
 			<pitch-deg>-5</pitch-deg>
 		</offsets>
 	</model>
- 
+
 	<model>
 		<path>Aircraft/A-10/Models/Cockpit/A-10-an-arc-186-1.xml</path>
 			<offsets>
@@ -867,7 +867,7 @@
 
 	<model>
 		<path>Aircraft/A-10/Models/Cockpit/A-10-an-arc-186-2.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>3.0753</x-m>
 			<y-m>-0.3551</y-m>
 			<z-m>0.7098</z-m>
@@ -1299,7 +1299,7 @@
 
 <!-- Landing Gear -->
 <!-- Nose -->
-<!-- Select/Deslect u/c and doors 
+<!-- Select/Deslect u/c and doors
 	<animation>
 		<type>select</type>
 		<object-name>UC-NoseStrutTop</object-name>
