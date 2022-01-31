@@ -295,7 +295,7 @@ var AIToNasal = {
 		#
 		me.vector_raw_index += 1;
         if (me.vector_raw_index < size(me.vector_raw)) {
-        	var mt = maketimer(0,func me.readTreeFrame());
+        	var mt = maketimer(0, me, func me.readTreeFrame());
         	mt.singleShot = 1;
         	mt.start();
         } else {
