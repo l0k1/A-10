@@ -413,7 +413,7 @@ RWRCanvas = {
                 break;
             }
             if (me.typ == nil) {
-                if (me.contact[0].propNode.getName() != "multiplayer") {
+                if (me.contact[0].prop.getName() != "multiplayer") {
                     # AI planes are allowed to be unknowns
                     me.typ = me.AIRCRAFT_UNKNOWN;
                     me.unk = 1;
