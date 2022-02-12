@@ -177,7 +177,7 @@ RWRCanvas = {
 #        }
 # Threat list ID:
 
-        #REVISION: 2022/02/02
+        #REVISION: 2022/02/12
         #OPRF Fleet
         rwr.AIRCRAFT_WARTHOG  = "10";
         rwr.AIRCRAFT_TOMCAT   = "14";
@@ -331,6 +331,7 @@ RWRCanvas = {
                 "mb339pan":                 rwr.AIRCRAFT_MB339,
                 "alphajet":                 rwr.AIRCRAFT_ALPHAJET,
                 "MiG-15bis":                rwr.AIRCRAFT_FAGOT,
+                "MiG-23ML":                 rwr.AIRCRAFT_FLOGGER,
                 "MiG-23MLD":                rwr.AIRCRAFT_FLOGGER,
                 "Su-25":                    rwr.AIRCRAFT_FROGFOOT,
                 "MiG-25":                   rwr.AIRCRAFT_FOXBAT,
