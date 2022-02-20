@@ -198,7 +198,7 @@
 	</animation>
 
 	<model>
-		<path>Aircraft/A-10/Models/Stores/stores.xml</path>
+		<path>Aircraft/A-10/Models/Stores/loads.xml</path>
 	</model>
 
 	<multiplay>
