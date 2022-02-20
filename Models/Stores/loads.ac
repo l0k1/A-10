@@ -23,7 +23,7 @@ MATERIAL "ac3dmat1.006" rgb 1.000 1.000 1.000  amb 0.800 0.800 0.800  emis 0.000
 MATERIAL "ac3dmat1.027" rgb 1.000 1.000 1.000  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.200 0.200 0.200  shi 64 trans 0.000
 MATERIAL "ac3dmat12.020" rgb 0.267 0.267 0.267  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.000 0.000 0.000  shi 64 trans 0.000
 OBJECT world
-name "Blender_exporter_v3.3__loads.ac"
+name "Blender_exporter_v3.3__Hog-loads.ac"
 kids 32
 OBJECT group
 name "AIM-9-0-0"
@@ -33,7 +33,7 @@ name "body"
 data 9
 body.mesh
 crease 45.0
-texture "aim-9.png"
+texture "AIM-9/aim-9.png"
 numvert 128
 8.58864 -0.0744 6.29516
 8.58773 -0.05695 6.28797
@@ -1243,7 +1243,7 @@ name "body.001"
 data 13
 body.mesh.001
 crease 45.0
-texture "aim-9.png"
+texture "AIM-9/aim-9.png"
 numvert 128
 8.56559 -0.15124 5.57351
 8.56507 -0.14123 5.59785
@@ -2453,7 +2453,7 @@ name "body.002"
 data 13
 body.mesh.002
 crease 45.0
-texture "aim-9.png"
+texture "AIM-9/aim-9.png"
 numvert 128
 8.56559 -0.15124 -5.54694
 8.56507 -0.14123 -5.5226
@@ -3663,7 +3663,7 @@ name "body.003"
 data 13
 body.mesh.003
 crease 45.0
-texture "aim-9.png"
+texture "AIM-9/aim-9.png"
 numvert 128
 8.58864 -0.0744 -6.19963
 8.58773 -0.05695 -6.20682
@@ -16382,7 +16382,7 @@ name "L-lau-105-body"
 data 19
 L-lau-105-body.mesh
 crease 75.0
-texture "aim-9.png"
+texture "AIM-9/aim-9.png"
 numvert 56
 6.3114 -0.22374 6.16475
 6.31116 -0.21879 6.12439
@@ -16933,7 +16933,7 @@ name "lau-114"
 data 12
 lau-114.mesh
 crease 45.0
-texture "aim-9.png"
+texture "AIM-9/aim-9.png"
 numvert 160
 8.01877 -0.04919 5.73998
 8.02227 -0.11596 5.74936
@@ -18022,7 +18022,7 @@ name "R-lau-105-body"
 data 19
 R-lau-105-body.mesh
 crease 75.0
-texture "aim-9.png"
+texture "AIM-9/aim-9.png"
 numvert 56
 6.3114 -0.22374 5.64236
 6.31116 -0.21879 5.68272
@@ -19107,7 +19107,7 @@ name "L-lau-105-body.001"
 data 23
 L-lau-105-body.mesh.001
 crease 75.0
-texture "aim-9.png"
+texture "AIM-9/aim-9.png"
 numvert 56
 8.36773 -0.10784 -5.70728
 8.36404 -0.03737 -5.69861
@@ -19658,7 +19658,7 @@ name "lau-114.001"
 data 16
 lau-114.mesh.001
 crease 45.0
-texture "aim-9.png"
+texture "AIM-9/aim-9.png"
 numvert 160
 7.28443 -0.06618 -5.92688
 8.0142 -0.02793 -5.92688
@@ -20747,7 +20747,7 @@ name "R-lau-105-body.001"
 data 23
 R-lau-105-body.mesh.001
 crease 75.0
-texture "aim-9.png"
+texture "AIM-9/aim-9.png"
 numvert 56
 8.36773 -0.10784 -6.09745
 8.36404 -0.03737 -6.10611
@@ -21301,7 +21301,7 @@ name "lau68-1"
 data 12
 lau68-1.mesh
 crease 45.0
-texture "lau68.rgb"
+texture "/LAU-68/lau68.rgb"
 numvert 90
 7.41703 -0.15706 4.7365
 7.39617 -0.15815 4.7365
@@ -23848,7 +23848,7 @@ name "lau68-9"
 data 12
 lau68-9.mesh
 crease 45.0
-texture "lau68.rgb"
+texture "/LAU-68/lau68.rgb"
 numvert 90
 7.97884 -0.12762 -4.7308
 7.95798 -0.12871 -4.7308
@@ -26395,7 +26395,7 @@ name "lau68-2"
 data 12
 lau68-2.mesh
 crease 45.0
-texture "lau68.rgb"
+texture "/LAU-68/lau68.rgb"
 numvert 90
 7.91336 -0.26413 3.73979
 7.89251 -0.26522 3.73979
@@ -28942,7 +28942,7 @@ name "lau68-3"
 data 12
 lau68-3.mesh
 crease 45.0
-texture "lau68.rgb"
+texture "/LAU-68/lau68.rgb"
 numvert 90
 7.27447 -0.40807 1.57755
 7.25362 -0.40916 1.57755
@@ -31489,7 +31489,7 @@ name "lau68-7"
 data 12
 lau68-7.mesh
 crease 45.0
-texture "lau68.rgb"
+texture "/LAU-68/lau68.rgb"
 numvert 90
 7.83628 -0.37862 -1.58026
 7.81543 -0.37972 -1.58026
@@ -34036,7 +34036,7 @@ name "lau68-8"
 data 12
 lau68-8.mesh
 crease 45.0
-texture "lau68.rgb"
+texture "/LAU-68/lau68.rgb"
 numvert 90
 7.35155 -0.29357 -3.72036
 7.33069 -0.29466 -3.72036
@@ -41973,7 +41973,7 @@ name "mk82-0"
 data 11
 mk82-0.mesh
 crease 45.0
-texture "mk-82.png"
+texture "MK-82/mk-82.png"
 numvert 195
 6.54938 -0.19823 5.83932
 6.55086 -0.22636 5.8205
@@ -44017,7 +44017,7 @@ name "mk82-1"
 data 11
 mk82-1.mesh
 crease 45.0
-texture "mk-82.png"
+texture "MK-82/mk-82.png"
 numvert 195
 6.67741 -0.42106 4.84002
 6.68052 -0.40699 4.82622
@@ -46061,7 +46061,7 @@ name "mk82-10"
 data 12
 mk82-10.mesh
 crease 45.0
-texture "mk-82.png"
+texture "MK-82/mk-82.png"
 numvert 195
 6.37775 -0.26937 -5.90333
 6.38086 -0.25529 -5.91713
@@ -48105,7 +48105,7 @@ name "mk82-2"
 data 11
 mk82-2.mesh
 crease 45.0
-texture "mk-82.png"
+texture "MK-82/mk-82.png"
 numvert 195
 6.80129 -0.49493 3.57119
 6.80277 -0.52305 3.55237
@@ -50149,7 +50149,7 @@ name "mk82-3"
 data 11
 mk82-3.mesh
 crease 45.0
-texture "mk-82.png"
+texture "MK-82/mk-82.png"
 numvert 195
 6.52167 -0.67988 1.68847
 6.52478 -0.6658 1.67467
@@ -52193,7 +52193,7 @@ name "mk82-4"
 data 11
 mk82-4.mesh
 crease 45.0
-texture "mk-82.png"
+texture "MK-82/mk-82.png"
 numvert 195
 6.66232 -0.60874 0.49912
 6.66379 -0.63687 0.4803
@@ -54237,7 +54237,7 @@ name "mk82-5"
 data 11
 mk82-5.mesh
 crease 45.0
-texture "mk-82.png"
+texture "MK-82/mk-82.png"
 numvert 195
 6.49069 -0.67988 -0.00242
 6.4938 -0.6658 -0.01622
@@ -56281,7 +56281,7 @@ name "mk82-6"
 data 11
 mk82-6.mesh
 crease 45.0
-texture "mk-82.png"
+texture "MK-82/mk-82.png"
 numvert 195
 6.66232 -0.60874 -0.62877
 6.66379 -0.63687 -0.64759
@@ -58325,7 +58325,7 @@ name "mk82-7"
 data 11
 mk82-7.mesh
 crease 45.0
-texture "mk-82.png"
+texture "MK-82/mk-82.png"
 numvert 195
 6.52167 -0.67988 -1.69396
 6.52478 -0.6658 -1.70776
@@ -60369,7 +60369,7 @@ name "mk82-8"
 data 11
 mk82-8.mesh
 crease 45.0
-texture "mk-82.png"
+texture "MK-82/mk-82.png"
 numvert 195
 6.62966 -0.56606 -3.61233
 6.63277 -0.55198 -3.62613
@@ -62413,7 +62413,7 @@ name "mk82-9"
 data 11
 mk82-9.mesh
 crease 45.0
-texture "mk-82.png"
+texture "MK-82/mk-82.png"
 numvert 195
 6.84905 -0.34992 -4.90646
 6.85052 -0.37805 -4.92528
@@ -64457,7 +64457,7 @@ name "mk82-2-0"
 data 13
 mk82-2-0.mesh
 crease 45.0
-texture "mk-82.png"
+texture "MK-82/mk-82.png"
 numvert 195
 6.76976 -0.53922 3.87588
 6.7708 -0.55921 3.84856
@@ -66501,7 +66501,7 @@ name "mk82-2-1"
 data 13
 mk82-2-1.mesh
 crease 45.0
-texture "mk-82.png"
+texture "MK-82/mk-82.png"
 numvert 195
 6.61326 -0.8991 3.62891
 6.61637 -0.88502 3.61511
@@ -68545,7 +68545,7 @@ name "mk82-2-2"
 data 13
 mk82-2-2.mesh
 crease 45.0
-texture "mk-82.png"
+texture "MK-82/mk-82.png"
 numvert 195
 6.59901 -0.62729 3.34863
 6.60192 -0.60933 3.35684
@@ -70561,7 +70561,7 @@ name "mk82-3-0"
 data 13
 mk82-3-0.mesh
 crease 45.0
-texture "mk-82.png"
+texture "MK-82/mk-82.png"
 numvert 195
 6.50198 -0.7146 1.9711
 6.50489 -0.69665 1.96289
@@ -72605,7 +72605,7 @@ name "mk82-3-1"
 data 13
 mk82-3-1.mesh
 crease 45.0
-texture "mk-82.png"
+texture "MK-82/mk-82.png"
 numvert 195
 6.68786 -0.91527 1.62795
 6.68933 -0.9434 1.60912
@@ -74649,7 +74649,7 @@ name "mk82-3-2"
 data 13
 mk82-3-2.mesh
 crease 45.0
-texture "mk-82.png"
+texture "MK-82/mk-82.png"
 numvert 195
 6.67273 -0.62653 1.44384
 6.67377 -0.64652 1.47116
@@ -76665,7 +76665,7 @@ name "mk82-7-0"
 data 13
 mk82-7-0.mesh
 crease 45.0
-texture "mk-82.png"
+texture "MK-82/mk-82.png"
 numvert 195
 6.67273 -0.62653 -1.44439
 6.67377 -0.64652 -1.47171
@@ -78709,7 +78709,7 @@ name "mk82-7-1"
 data 13
 mk82-7-1.mesh
 crease 45.0
-texture "mk-82.png"
+texture "MK-82/mk-82.png"
 numvert 195
 6.51623 -0.98641 -1.69137
 6.51934 -0.97233 -1.70517
@@ -80753,7 +80753,7 @@ name "mk82-7-2"
 data 13
 mk82-7-2.mesh
 crease 45.0
-texture "mk-82.png"
+texture "MK-82/mk-82.png"
 numvert 195
 6.50198 -0.7146 -1.97165
 6.50489 -0.69665 -1.96343
@@ -82769,7 +82769,7 @@ name "mk82-8-0"
 data 13
 mk82-8-0.mesh
 crease 45.0
-texture "mk-82.png"
+texture "MK-82/mk-82.png"
 numvert 195
 6.76976 -0.53922 -3.36741
 6.7708 -0.55921 -3.39473
@@ -84813,7 +84813,7 @@ name "mk82-8-1"
 data 13
 mk82-8-1.mesh
 crease 45.0
-texture "mk-82.png"
+texture "MK-82/mk-82.png"
 numvert 195
 6.78489 -0.82796 -3.6749
 6.78636 -0.85608 -3.69373
@@ -86857,7 +86857,7 @@ name "mk82-8-2"
 data 13
 mk82-8-2.mesh
 crease 45.0
-texture "mk-82.png"
+texture "MK-82/mk-82.png"
 numvert 195
 6.76976 -0.53922 -3.85902
 6.7708 -0.55921 -3.8317
@@ -94455,7 +94455,7 @@ name "box"
 data 8
 box.mesh
 crease 45.0
-texture "mer.rgb"
+texture "MK-82/mer.rgb"
 numvert 194
 7.90479 -0.69193 3.63038
 7.93848 -0.69016 3.63038
@@ -96719,7 +96719,7 @@ name "box.001"
 data 12
 box.mesh.001
 crease 45.0
-texture "mer.rgb"
+texture "MK-82/mer.rgb"
 numvert 194
 7.74001 -0.62959 1.71795
 7.84267 -0.62421 1.71795
@@ -98983,7 +98983,7 @@ name "box.002"
 data 12
 box.mesh.002
 crease 45.0
-texture "mer.rgb"
+texture "MK-82/mer.rgb"
 numvert 194
 7.80776 -0.77924 -1.68989
 7.84144 -0.77748 -1.68989
@@ -101247,7 +101247,7 @@ name "box.003"
 data 12
 box.mesh.003
 crease 45.0
-texture "mer.rgb"
+texture "MK-82/mer.rgb"
 numvert 194
 7.83704 -0.54228 -3.5849
 7.9397 -0.5369 -3.5849
