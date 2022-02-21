@@ -284,7 +284,7 @@
         <condition>
             <equals>
                 <property>payload/armament/station/id-3-type</property>
-                <value>600lb Drop Tank</value>
+                <value>600 Gal Fuel Tank</value>
             </equals>
             <greater-than>
                 <property>payload/armament/station/id-3-count</property>
@@ -315,7 +315,7 @@
         <condition>
             <equals>
                 <property>payload/armament/station/id-5-type</property>
-                <value>600lb Drop Tank</value>
+                <value>600 Gal Fuel Tank</value>
             </equals>
             <greater-than>
                 <property>payload/armament/station/id-5-count</property>
@@ -446,7 +446,7 @@
         <condition>
             <equals>
                 <property>payload/armament/station/id-7-type</property>
-                <value>600lb Drop Tank</value>
+                <value>600 Gal Fuel Tank</value>
             </equals>
             <greater-than>
                 <property>payload/armament/station/id-7-count</property>
