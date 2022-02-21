@@ -198,103 +198,41 @@ Fairchild A-10 simulation config.
 				<znear type="double">0.1</znear>
 			</camera-group>
 		</rendering>
-
+<!--Pylon weightpoint-->
 		<weight n="0">
-			<name>Pylon 0</name>
 			<weight-lb type="float">0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>AN-ALQ-131</name><lbs>535</lbs></opt>
-			<opt><name>dual-AIM-9</name><lbs>612</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
 		</weight>
 		<weight n="1">
-			<name>Pylon 1</name>
 			<weight-lb type="float">0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>LAU-68</name><lbs>202.5</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
 		</weight>
 		<weight n="2">
-			<name>Pylon 2</name>
 			<weight-lb type="float">0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>LAU-68</name><lbs>202.5</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
-			<opt><name>triple-MK-82-LD</name><lbs>1800</lbs></opt>
 		</weight>
 		<weight n="3">
-			<name>Pylon 3</name>
-			<tank>4</tank> <!-- FDM tank index on this pylon -->
 			<weight-lb type="float">0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>LAU-68</name><lbs>202.5</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
-			<opt><name>triple-MK-82-LD</name><lbs>1800</lbs></opt>
-			<opt><name>600 Gallons Fuel Tank</name><lbs>280</lbs><gals>600</gals></opt>
 		</weight>
 		<weight n="4">
-			<name>Pylon 4</name>
 			<weight-lb type="float">0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
 		</weight>
 		<weight n="5">
-			<name>Pylon 5</name>
-			<tank>5</tank> <!-- FDM tank index on this pylon -->
 			<weight-lb type="float">0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
-			<opt><name>600 Gallons Fuel Tank</name><lbs>280</lbs><gals>600</gals></opt>
 		</weight>
 		<weight n="6">
-			<name>Pylon 6</name>
 			<weight-lb type="float">0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
 		</weight>
 		<weight n="7">
-			<name>Pylon 7</name>
-			<tank>6</tank> <!-- FDM tank index on this pylon -->
 			<weight-lb type="float">0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>LAU-68</name><lbs>202.5</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
-			<opt><name>triple-MK-82-LD</name><lbs>1800</lbs></opt>
-			<opt><name>600 Gallons Fuel Tank</name><lbs>280</lbs><gals>600</gals></opt>
 		</weight>
 		<weight n="8">
-			<name>Pylon 8</name>
 			<weight-lb type="float">0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>LAU-68</name><lbs>202.5</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
-			<opt><name>triple-MK-82-LD</name><lbs>1800</lbs></opt>
 		</weight>
 		<weight n="9">
-			<name>Pylon 9</name>
 			<weight-lb type="float">0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>LAU-68</name><lbs>202.5</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
 		</weight>
 		<weight n="10">
-			<name>Pylon 10</name>
 			<weight-lb type="float">0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>dual-AIM-9</name><lbs>612</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
 		</weight>
+
 
 		<canopy>
 			<position-norm type="double">0</position-norm>
@@ -314,180 +252,9 @@ Fairchild A-10 simulation config.
 					<selected-stations></selected-stations>
 					<rip type="int">1</rip>
 					<interval type="float">0.35</interval>
-
-					<tank-600-gals>
-						<description type="string">tank-600-gals</description>
-						<weight-lb type="float">280</weight-lb>
-						<ammo-weight-lb type="float">0</ammo-weight-lb>
-						<available type="int">1</available>
-						<ready-number>0</ready-number>
-					</tank-600-gals>
-
-					<AN-ALQ-131>
-						<description type="string">AN-ALQ-131</description>
-						<weight-lb type="float">535</weight-lb>
-						<ammo-weight-lb type="float">0</ammo-weight-lb>
-						<available type="int">1</available>
-						<ready-number>0</ready-number>
-					</AN-ALQ-131>
-
-					<dual-AIM-9>
-						<description type="string">dual-AIM-9</description>
-						<weight-lb type="float">612</weight-lb>
-						<ammo-weight-lb type="float">191</ammo-weight-lb>
-						<aim9-knob type="int">0</aim9-knob>
-						<available type="int">2</available>
-						<ready-number>2</ready-number>
-						<search-sound type="bool">false</search-sound>
-						<reticle-diam type="int">20</reticle-diam>
-					</dual-AIM-9>
-
-					<LAU-68>
-						<description type="string">LAU-68</description>
-						<weight-lb type="float">202.5</weight-lb>
-						<ammo-weight-lb type="float">23.9</ammo-weight-lb>
-						<available type="int">7</available>
-						<ready-number>1</ready-number>
-					</LAU-68>
-
-					<triple-MK-82-LD>
-						<description type="string">triple-MK-82-LD</description>
-						<weight-lb type="float">1800</weight-lb>
-						<ammo-weight-lb type="float">500</ammo-weight-lb>
-						<available type="int">3</available>
-						<ready-number>3</ready-number>
-					</triple-MK-82-LD>
-
-					<single-MK-82-LD>
-						<description type="string">single-MK-82-LD</description>
-						<weight-lb type="float">500</weight-lb>
-						<ammo-weight-lb type="float">500</ammo-weight-lb>
-						<available type="int">1</available>
-						<ready-number>1</ready-number>
-					</single-MK-82-LD>
-
-					<gun>
-						<running type="bool">false</running>
-						<unsafe type="bool">false</unsafe>
-						<ready type="bool">false</ready>
-						<hydr-drive>
-						    <serviceable n="0" type="bool">true</serviceable><!-- Left hydraulic drive motor -->
-						    <serviceable n="1" type="bool">true</serviceable>
-						</hydr-drive>
-					</gun>
-
-					<stations>
-						<station n="0">
-							<ammo-weight-lb type="float">0</ammo-weight-lb>
-							<available type="int">0</available>
-							<description type="string">none</description>
-							<error type="bool">true</error>
-							<ready-0 type="bool">false</ready-0>
-							<ready-1 type="bool">false</ready-1>
-							<ready-2 type="bool">false</ready-2>
-							<selected type="bool">false</selected>
-						</station>
-						<station n="1">
-							<ammo-weight-lb type="float">0</ammo-weight-lb>
-							<available type="int">0</available>
-							<description type="string">none</description>
-							<error type="bool">true</error>
-							<ready-0 type="bool">false</ready-0>
-							<ready-1 type="bool">false</ready-1>
-							<ready-2 type="bool">false</ready-2>
-							<selected type="bool">false</selected>
-						</station>
-						<station n="2">
-							<ammo-weight-lb type="float">0</ammo-weight-lb>
-							<available type="int">0</available>
-							<description type="string">none</description>
-							<error type="bool">true</error>
-							<ready-0 type="bool">false</ready-0>
-							<ready-1 type="bool">false</ready-1>
-							<ready-2 type="bool">false</ready-2>
-							<selected type="bool">false</selected>
-						</station>
-						<station n="3">
-							<ammo-weight-lb type="float">0</ammo-weight-lb>
-							<available type="int">0</available>
-							<description type="string">none</description>
-							<error type="bool">true</error>
-							<ready-0 type="bool">false</ready-0>
-							<ready-1 type="bool">false</ready-1>
-							<ready-2 type="bool">false</ready-2>
-							<selected type="bool">false</selected>
-						</station>
-						<station n="4">
-							<ammo-weight-lb type="float">0</ammo-weight-lb>
-							<available type="int">0</available>
-							<description type="string">none</description>
-							<error type="bool">true</error>
-							<ready-0 type="bool">false</ready-0>
-							<ready-1 type="bool">false</ready-1>
-							<ready-2 type="bool">false</ready-2>
-							<selected type="bool">false</selected>
-						</station>
-						<station n="5">
-							<ammo-weight-lb type="float">0</ammo-weight-lb>
-							<available type="int">0</available>
-							<description type="string">none</description>
-							<error type="bool">true</error>
-							<ready-0 type="bool">false</ready-0>
-							<ready-1 type="bool">false</ready-1>
-							<ready-2 type="bool">false</ready-2>
-							<selected type="bool">false</selected>
-						</station>
-						<station n="6">
-							<ammo-weight-lb type="float">0</ammo-weight-lb>
-							<available type="int">0</available>
-							<description type="string">none</description>
-							<error type="bool">true</error>
-							<ready-0 type="bool">false</ready-0>
-							<ready-1 type="bool">false</ready-1>
-							<ready-2 type="bool">false</ready-2>
-							<selected type="bool">false</selected>
-						</station>
-						<station n="7">
-							<ammo-weight-lb type="float">0</ammo-weight-lb>
-							<available type="int">0</available>
-							<description type="string">none</description>
-							<error type="bool">true</error>
-							<ready-0 type="bool">false</ready-0>
-							<ready-1 type="bool">false</ready-1>
-							<ready-2 type="bool">false</ready-2>
-							<selected type="bool">false</selected>
-						</station>
-						<station n="8">
-							<ammo-weight-lb type="float">0</ammo-weight-lb>
-							<available type="int">0</available>
-							<description type="string">none</description>
-							<error type="bool">true</error>
-							<ready-0 type="bool">false</ready-0>
-							<ready-1 type="bool">false</ready-1>
-							<ready-2 type="bool">false</ready-2>
-							<selected type="bool">false</selected>
-						</station>
-						<station n="9">
-							<ammo-weight-lb type="float">0</ammo-weight-lb>
-							<available type="int">0</available>
-							<description type="string">none</description>
-							<error type="bool">true</error>
-							<ready-0 type="bool">false</ready-0>
-							<ready-1 type="bool">false</ready-1>
-							<ready-2 type="bool">false</ready-2>
-							<selected type="bool">false</selected>
-						</station>
-						<station n="10">
-							<ammo-weight-lb type="float">0</ammo-weight-lb>
-							<available type="int">0</available>
-							<description type="string">none</description>
-							<error type="bool">true</error>
-							<ready-0 type="bool">false</ready-0>
-							<ready-1 type="bool">false</ready-1>
-							<ready-2 type="bool">false</ready-2>
-							<selected type="bool">false</selected>
-						</station>
-					</stations>
+					<wingtankL type="bool">false</wingtankL>
+					<wingtankC type="bool">false</wingtankC>
+					<wingtankR type="bool">false</wingtankR>
 				</weapons>
 				<canopy-safe type="bool">true</canopy-safe>
 				<consumables>
@@ -923,6 +690,12 @@ Fairchild A-10 simulation config.
 		</sound>
 
 	</sim>
+
+	<A-10>
+		<stores>
+			<ecm-mounted type="bool">false</ecm-mounted>
+		</stores>
+	</A-10>
 
 	<ai>
 		<submodels>
@@ -1453,10 +1226,10 @@ Fairchild A-10 simulation config.
             <file>Aircraft/A-10/Nasal/missile-code.nas</file>
         </armament>
 		<stations>
-			<file>Aircraft/A-10/Nasal/station-manager.nas</file>
+			<file>Aircraft/A-10/Nasal/WEAPONS/station-manager.nas</file>
 		</stations>
 		<fc>
-			<file>Aiecraft/A-10/Nasal/fire-control.nas</file>
+			<file>Aircraft/A-10/Nasal/WEAPONS/fire-control.nas</file>
 		</fc>
 		<A10fuel>
 			<file>Aircraft/A-10/Nasal/A-10-fuel.nas</file>
@@ -1485,9 +1258,9 @@ Fairchild A-10 simulation config.
 		<pilot_g>
 			<file>Aircraft/A-10/Nasal/pilot-g.nas</file>
 		</pilot_g>
-		<!--<A10weapons>
-			<file>Aircraft/A-10/Nasal/A-10-weapons.nas</file>
-		</A10weapons>-->
+		<pylons>
+			<file>Aircraft/A-10/Nasal/WEAPONS/pylons.nas</file>
+		</pylons>
 		<A10hud>
 			<file>Aircraft/A-10/Nasal/hud.nas</file>
 		</A10hud>
