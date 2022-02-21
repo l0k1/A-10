@@ -149,14 +149,14 @@ var init = func {
 	A10engines.initialize();
 	print("Initializing Fuel System");
 	A10fuel.init();
-	if (! launched ) {
-		print("Initializing Weapons System.");
-		A10weapons.initialize();
+	#if (! launched ) {
+	#	print("Initializing Weapons System.");
+		#A10weapons.initialize();
 	#} else {
 		#bhugh, 2011-09, this updates our weapons buttons and sets them so they can be released, 
 		#based on the pre-loaded/default weapons config in the -set.xml file
 		#A10weapons.update_stations();
-	}
+	#}
 	nav_scripts.freq_startup();
 	if (! launched) settimer(func {canopy.cockpit_state()}, 3);
 	aircraft.data.save();
