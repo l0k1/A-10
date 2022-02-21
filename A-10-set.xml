@@ -337,8 +337,6 @@ Fairchild A-10 simulation config.
 						<trigger type="bool">false</trigger>
 						<trigger-gun type="bool">false</trigger-gun>
 						<dual type="int">1</dual>
-						<ripple type="int">1</ripple>
-						<ripple-dist type="int">150</ripple-dist>
 					</armament>
 					<flight>
 						<sas-elevator type="double">0</sas-elevator>
@@ -740,6 +738,12 @@ Fairchild A-10 simulation config.
 		</submodels>
 	</ai>
 
+	<controls>
+		<armament>
+			<ripple type="int">1</ripple>
+			<ripple-dist type="int">150</ripple-dist>
+		</armament>
+	</controls>
 	<iff>
 	    <channel type="int">0000</channel>
 	</iff>
