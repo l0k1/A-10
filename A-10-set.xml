@@ -300,44 +300,6 @@ Fairchild A-10 simulation config.
 					</fuel>
 				</consumables>
 				<controls>
-					<armament>
-						<station n="0">
-							<release type="bool">false</release>
-						</station>
-						<station n="1">
-							<release type="bool">false</release>
-						</station>
-						<station n="2">
-							<release type="bool">false</release>
-						</station>
-						<station n="3">
-							<release type="bool">false</release>
-						</station>
-						<station n="4">
-							<release type="bool">false</release>
-						</station>
-						<station n="5">
-							<release type="bool">false</release>
-						</station>
-						<station n="6">
-							<release type="bool">false</release>
-						</station>
-						<station n="7">
-							<release type="bool">false</release>
-						</station>
-						<station n="8">
-							<release type="bool">false</release>
-						</station>
-						<station n="9">
-							<release type="bool">false</release>
-						</station>
-						<station n="10">
-							<release type="bool">false</release>
-						</station>
-						<trigger type="bool">false</trigger>
-						<trigger-gun type="bool">false</trigger-gun>
-						<dual type="int">1</dual>
-					</armament>
 					<flight>
 						<sas-elevator type="double">0</sas-elevator>
 					</flight>
@@ -827,6 +789,41 @@ Fairchild A-10 simulation config.
 					</binding>
 				</mod-up>
 			</key>
+
+			<key n="109">
+				<name>m</name>
+				<desc>Masterarm</desc>
+				<binding>
+					<command>nasal</command>
+					<script><![CDATA[
+							setprop("controls/armament/master-arm",!getprop("controls/armament/master-arm"));
+							screen.log.write("Master-arm "~(getprop("controls/armament/master-arm")==0?"OFF":"ON"), 0.5, 0.5, 1);
+						
+					]]></script>
+				</binding>
+			</key>
+
+			<key n="119">
+                <name>w</name>
+                <desc>Cycle Weapon Type</desc>
+                <binding n="2">
+                    <command>nasal</command>
+                    <condition>
+                            <and>
+                            <not-equals>
+                                <property>sim/current-view/name</property>
+                                <value>Walk View</value>
+                            </not-equals>
+                            <not-equals>
+                                <property>sim/current-view/name</property>
+                                <value>Walker Orbit View</value>
+                            </not-equals>
+                            </and>
+                     </condition>
+                    <script>pylons.fcs.cycleLoadedWeapon();</script>
+                </binding>
+            </key>
+
 		</keyboard>
 	</input>
 
@@ -938,6 +935,42 @@ Fairchild A-10 simulation config.
 			<trigger type="bool">false</trigger>
 			<ripple type="int">1</ripple>
 			<ripple-dist type="int">150</ripple-dist>
+			<station n="0">
+				<release type="bool">false</release>
+			</station>
+			<station n="1">
+				<release type="bool">false</release>
+			</station>
+			<station n="2">
+				<release type="bool">false</release>
+			</station>
+			<station n="3">
+				<release type="bool">false</release>
+			</station>
+			<station n="4">
+				<release type="bool">false</release>
+			</station>
+			<station n="5">
+				<release type="bool">false</release>
+			</station>
+			<station n="6">
+				<release type="bool">false</release>
+			</station>
+			<station n="7">
+				<release type="bool">false</release>
+			</station>
+			<station n="8">
+				<release type="bool">false</release>
+			</station>
+			<station n="9">
+				<release type="bool">false</release>
+			</station>
+			<station n="10">
+				<release type="bool">false</release>
+			</station>
+			<trigger type="bool">false</trigger>
+			<trigger-gun type="bool">false</trigger-gun>
+			<dual type="int">1</dual>
 		</armament>
 
 		<engines>
