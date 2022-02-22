@@ -38,8 +38,8 @@ fuelTankRight600.del();
 var pylonSets = {
     empty: {name: "Empty", content: [], fireOrder: [], launcherDragArea: 0.0, launcherMass: 0, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 1},
     mm20: {name: "30mm Cannon", content: [cannon], fireOrder: [0], launcherDragArea: 0.0, launcherMass: 0, launcherJettisonable: 0, showLongTypeInsteadOfCount: 1, category: 1},
-    mk82: {name: "1 x MK-82", content: ["MK-82"], fireOrder: [0], launcherDragArea: 0.0, launcherMass: 500, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 2},
-    mk82tri: {name: "3 x MK-82", content: ["MK-82","MK-82","MK-82"], fireOrder: [0,1,2], launcherDragArea: 0.0, launcherMass: 500, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 2},
+    mk82: {name: "1 x MK-82", content: ["MK-82"], fireOrder: [0], launcherDragArea: 0.0, launcherMass: 100, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 2},
+    mk82tri: {name: "3 x MK-82", content: ["MK-82","MK-82","MK-82"], fireOrder: [0,1,2], launcherDragArea: 0.0, launcherMass: 313, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 2},
     Daim9: {name: "2 x AIM-9", content: ["AIM-9","AIM-9"], fireOrder: [0,1], launcherDragArea: 0.0, launcherMass: 90, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 1},
     lau68: {name: "LAU-68", content: [lau], fireOrder: [0], launcherDragArea: 0.0, launcherMass: 202.5, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 3},
     left600: {name: fuelTankLeft600.type, content: [fuelTankLeft600], fireOrder: [0], launcherDragArea: 0, launcherMass: 531, launcherJettisonable: 1, showLongTypeInsteadOfCount: 1, category: 2},
