@@ -53,7 +53,7 @@ var pylon2set = [pylonSets.empty, pylonSets.mk82, pylonSets.lau68];
 var pylon3set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82tri, pylonSets.lau68];
 var pylon4set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82tri, pylonSets.lau68, pylonSets.left600];
 var pylon5set = [pylonSets.empty, pylonSets.mk82];
-var pylon6set = [pylonSets.empty, pylonSets.mk82, pylonSets.center600];
+var pylon6set = [pylonSets.empty, pylonSets.center600];
 var pylon7set = [pylonSets.empty, pylonSets.mk82];
 var pylon8set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82tri, pylonSets.lau68, pylonSets.right600];
 var pylon9set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82tri, pylonSets.lau68];
@@ -80,7 +80,7 @@ var pylons = [pylon1,pylon2,pylon3,pylon4,pylon5,pylon6,pylon7,pylon8,pylon9,pyl
 
 # The order of first vector in this line is the default pylon order weapons is released in.
 # The order of second vector in this line is the order cycle key would cycle through the weapons:
-fcs = fc.FireControl.new(pylons, [11,7,3,10,0,9,1,8,2], ["30mm Cannon", "AIM-9", "MK-82", "LAU-68"]);
+fcs = fc.FireControl.new(pylons, [11,7,3,10,0,9,1,8,2,6,4], ["30mm Cannon", "AIM-9", "MK-82", "LAU-68"]);
 
 #print("** Pylon & fire control system started. **");
 var getDLZ = func {
