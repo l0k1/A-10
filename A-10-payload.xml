@@ -10,6 +10,7 @@
         <MAW-active type="bool">false</MAW-active>
         <msg type="bool">false</msg>
         <spike type="bool">false</spike>
+        <station-name type="string">station</station-name>
         <station>
             <id-0-set type="string">Empty</id-0-set>
             <id-1-set type="string">Empty</id-1-set>
