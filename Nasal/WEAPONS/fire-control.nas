@@ -1177,5 +1177,5 @@ var dualWeapons = ["MK-82"];
 var getCompleteRadarTargetsList = func {
 	# A list of all MP/AI aircraft/ships/surface-targets around the aircraft, including those that is outside radar line of sight etc..
 
-	return radar_system.getCompleteList;
+	return radar_system.getCompleteList();
 }
