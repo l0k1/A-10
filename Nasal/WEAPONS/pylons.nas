@@ -80,7 +80,7 @@ var pylons = [pylon1,pylon2,pylon3,pylon4,pylon5,pylon6,pylon7,pylon8,pylon9,pyl
 
 # The order of first vector in this line is the default pylon order weapons is released in.
 # The order of second vector in this line is the order cycle key would cycle through the weapons:
-fcs = fc.FireControl.new(pylons, [11,7,3,10,0,9,1,8,2,6,4], ["30mm Cannon", "AIM-9", "MK-82", "LAU-68"]);
+fcs = fc.FireControl.new(pylons, [11,7,3,10,0,9,1,8,2,6,4], ["30mm Cannon", "AIM-9M", "MK-82", "LAU-68"]);
 
 #print("** Pylon & fire control system started. **");
 var getDLZ = func {
@@ -117,7 +117,7 @@ var bore_loop = func {
     if (fcs != nil) {
         var standby = 1;#getprop("sim/multiplay/generic/int[2]");
         var aim = fcs.getSelectedWeapon();
-        if (aim != nil and (aim.type == "AIM-9")) {
+        if (aim != nil and (aim.type == "AIM-9M")) {
             if (standby == 1) {
                 #aim.setBore(1);
                 aim.setContacts(radar_system.getCompleteList());
