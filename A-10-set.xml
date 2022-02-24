@@ -982,6 +982,14 @@ Fairchild A-10 simulation config.
 					</binding>
 				</mod-up>
 			</key>
+			<key n="108">
+        			<name>l</name>
+        			<desc>Landing Light</desc>
+        			<binding>
+            				<command>property-toggle</command>
+            				<property>fdm/jsbsim/electric/switches/landinglight</property>
+        			</binding>
+    			</key>
 		</keyboard>
 	</input>
 
