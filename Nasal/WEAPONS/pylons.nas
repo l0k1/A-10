@@ -45,10 +45,11 @@ var pylonSets = {
     left600: {name: fuelTankLeft600.type, content: [fuelTankLeft600], fireOrder: [0], launcherDragArea: 0, launcherMass: 531, launcherJettisonable: 1, showLongTypeInsteadOfCount: 1, category: 2},
     center600: {name: fuelTankCenter600.type, content: [fuelTankCenter600], fireOrder: [0], launcherDragArea: 0, launcherMass: 531, launcherJettisonable: 1, showLongTypeInsteadOfCount: 1, category: 2},
     right600: {name: fuelTankRight600.type, content: [fuelTankRight600], fireOrder: [0], launcherDragArea: 0, launcherMass: 531, launcherJettisonable: 1, showLongTypeInsteadOfCount: 1, category: 2},
+    alq131: {name: "AN/ALQ-131(V) ECM Pod", content: [ecm131], fireOrder: [0], launcherDragArea: 0, launcherMass: 480, launcherJettisonable: 0, showLongTypeInsteadOfCount: 1, category: 2},
 };
 
 #sets
-var pylon1set = [pylonSets.empty, pylonSets.Daim9, pylonSets.mk82];
+var pylon1set = [pylonSets.empty, pylonSets.Daim9, pylonSets.mk82, pylonSets.alq131];
 var pylon2set = [pylonSets.empty, pylonSets.mk82, pylonSets.lau68];
 var pylon3set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82tri, pylonSets.lau68];
 var pylon4set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82tri, pylonSets.lau68, pylonSets.left600];
@@ -58,7 +59,7 @@ var pylon7set = [pylonSets.empty, pylonSets.mk82];
 var pylon8set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82tri, pylonSets.lau68, pylonSets.right600];
 var pylon9set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82tri, pylonSets.lau68];
 var pylon10set = [pylonSets.empty, pylonSets.mk82, pylonSets.lau68];
-var pylon11set = [pylonSets.empty, pylonSets.Daim9, pylonSets.mk82];
+var pylon11set = [pylonSets.empty, pylonSets.Daim9, pylonSets.mk82, pylonSets.alq131];
 
 # pylons
 pylonI = stations.InternalStation.new("Internal gun mount", 11, [pylonSets.mm20], props.globals.getNode("sim/weight[11]/weight-lb",1));
