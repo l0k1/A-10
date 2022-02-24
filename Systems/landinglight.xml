@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- рация -->
+<PropertyList>
+    <path>A-10-master-caution.ac</path> <!-- ###############   NEEDS TO BE CHANGED ################ -->
+    <animation>
+        <type>pick</type>
+        <object-name>lever</object-name>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>landinglight-bug</tooltip-id>
+                <label>Landing Light %s</label>
+                <property>fdm/jsbsim/electric/switches/landinglight</property>
+                <mapping>nasal</mapping>
+                <script>
+                    var modes = ['OFF', 'ON'];
+                    return modes[arg[0]];
+                </script>
+            </binding>
+        </hovered>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>fdm/jsbsim/electric/switches/landinglight</property>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>lever</object-name>
+        <property>fdm/jsbsim/electric/switches/landinglight</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>-25</dep></entry>
+            <entry><ind>1.0</ind><dep>25</dep></entry>
+        </interpolation>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+</PropertyList>
