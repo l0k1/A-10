@@ -200,6 +200,26 @@
 	<model>
 		<path>Aircraft/A-10/Models/ext-stores.xml</path>
 	</model>
+	<model>
+        	<name>landing light1</name>
+        	<path>Aircraft/A-10/Models/Effects/landing-light.xml</path>
+        	<offsets>
+            		<x-m>-3.35</x-m>
+            		<y-m>-0.73</y-m>
+            		<z-m>-0.72</z-m>
+            		<heading-deg>5</heading-deg>
+        	</offsets>
+    	</model>
+    	<model>
+        	<name>landing light2</name>
+        	<path>Aircraft/A-10/Models/Effects/landing-light.xml</path>
+        	<offsets>
+            		<x-m>-3.35</x-m>
+            		<y-m> 0.73</y-m>
+            		<z-m>-0.72</z-m>
+            		<heading-deg>-5</heading-deg>
+        	</offsets>
+    	</model>
 
 	<multiplay>
 		<refuel>
