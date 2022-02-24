@@ -42,6 +42,7 @@ var pylonSets = {
     mk82tri: {name: "3 x MK-82", content: ["MK-82","MK-82","MK-82"], fireOrder: [0,1,2], launcherDragArea: 0.0, launcherMass: 313, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 2},
     Daim9: {name: "2 x AIM-9M", content: ["AIM-9M","AIM-9M"], fireOrder: [0,1], launcherDragArea: 0.0, launcherMass: 90, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 1},
     lau68: {name: "LAU-68", content: [lau], fireOrder: [0], launcherDragArea: 0.0, launcherMass: 202.5, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 3},
+    agm65tri: {name: "3 x AGM-65B", content: ["AGM-65B","AGM-65B","AGM-65B"], fireOrder: [0,1,2], launcherDragArea: 0.0, launcherMass: 689, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 3},
     left600: {name: fuelTankLeft600.type, content: [fuelTankLeft600], fireOrder: [0], launcherDragArea: 0, launcherMass: 531, launcherJettisonable: 1, showLongTypeInsteadOfCount: 1, category: 2},
     center600: {name: fuelTankCenter600.type, content: [fuelTankCenter600], fireOrder: [0], launcherDragArea: 0, launcherMass: 531, launcherJettisonable: 1, showLongTypeInsteadOfCount: 1, category: 2},
     right600: {name: fuelTankRight600.type, content: [fuelTankRight600], fireOrder: [0], launcherDragArea: 0, launcherMass: 531, launcherJettisonable: 1, showLongTypeInsteadOfCount: 1, category: 2},
@@ -51,13 +52,13 @@ var pylonSets = {
 #sets
 var pylon1set = [pylonSets.empty, pylonSets.Daim9, pylonSets.mk82, pylonSets.alq131];
 var pylon2set = [pylonSets.empty, pylonSets.mk82, pylonSets.lau68];
-var pylon3set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82tri, pylonSets.lau68];
+var pylon3set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82tri, pylonSets.lau68, pylonSets.agm65tri];
 var pylon4set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82tri, pylonSets.lau68, pylonSets.left600];
 var pylon5set = [pylonSets.empty, pylonSets.mk82];
 var pylon6set = [pylonSets.empty, pylonSets.center600];
 var pylon7set = [pylonSets.empty, pylonSets.mk82];
 var pylon8set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82tri, pylonSets.lau68, pylonSets.right600];
-var pylon9set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82tri, pylonSets.lau68];
+var pylon9set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82tri, pylonSets.lau68,pylonSets.agm65tri];
 var pylon10set = [pylonSets.empty, pylonSets.mk82, pylonSets.lau68];
 var pylon11set = [pylonSets.empty, pylonSets.Daim9, pylonSets.mk82, pylonSets.alq131];
 
@@ -81,7 +82,7 @@ var pylons = [pylon1,pylon2,pylon3,pylon4,pylon5,pylon6,pylon7,pylon8,pylon9,pyl
 
 # The order of first vector in this line is the default pylon order weapons is released in.
 # The order of second vector in this line is the order cycle key would cycle through the weapons:
-fcs = fc.FireControl.new(pylons, [11,7,3,10,0,9,1,8,2,6,4], ["30mm Cannon", "AIM-9M", "MK-82", "LAU-68"]);
+fcs = fc.FireControl.new(pylons, [11,7,3,10,0,9,1,8,2,6,4], ["30mm Cannon", "AIM-9M", "MK-82","AGM-65B", "LAU-68"]);
 
 #print("** Pylon & fire control system started. **");
 var getDLZ = func {
