@@ -292,7 +292,7 @@
 			<enable-hot type="bool">false</enable-hot>
 		</animation>
 	</submodel>
-
+<!--
 	<submodel>
 		<name>aim-9-0-0</name>
 		<model>Aircraft/A-10/Models/Stores/AIM-9/aim-9smoke.xml</model>
@@ -386,7 +386,7 @@
 			<enable-hot type="bool">false</enable-hot>
 		</animation>
 	</submodel>
-
+-->
 	<LAU-68>
 		<model>Aircraft/A-10/Models/Stores/LAU-68/wp.xml</model>
 		<speed>300</speed>
@@ -1550,7 +1550,7 @@
 			<enable-hot type="bool">false</enable-hot>
 		</animation>
 	</submodel>
-
+<!--
 	<MK-82-LD>
 		<model>Aircraft/A-10/Models/Stores/MK-82/MK-82-LD.xml</model>
 		<speed>0</speed>
@@ -1562,7 +1562,7 @@
 		<pitch-offset>-2</pitch-offset>
 		<cd>0.16</cd>
 		<weight>500</weight>
-		<fuse-range>2.2</fuse-range><!-- meter or feet ? -->
+		<fuse-range>2.2</fuse-range>
 		<eda>0.61629</eda>
 		<life>50</life>
 		<buoyancy>0</buoyancy>
@@ -2221,7 +2221,7 @@
 			<enable-hot type="bool">false</enable-hot>
 		</animation>
 	</submodel>
-
+		-->
 	<submodel>
 	    <name>flares_R</name>
   	    <model>Aircraft/A-10/Models/Effects/flare.xml</model>
