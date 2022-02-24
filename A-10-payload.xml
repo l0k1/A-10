@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PropertyList>
     <armament>
-        <models>Aircraft/A-10/Models/MParmaments/</models>
+        <models>Aircraft/A-10/Models/Stores/Weapons/</models>
         <enable-craters type="bool">true</enable-craters>
         <MLW-bearing type="double">0</MLW-bearing>
         <MLW-count type="int">0</MLW-count>
