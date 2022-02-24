@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+    <light>
+        <name>my-spotlight</name>
+        <type>spot</type>
+        <position>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+        </position>
+        <direction>
+            <pitch-deg>80</pitch-deg>
+            <roll-deg>0</roll-deg>
+            <heading-deg>0</heading-deg>
+        </direction>
+        <ambient>
+            <r>10.0</r>
+            <g>10.0</g>
+            <b>8.0</b>
+            <a>1</a>
+        </ambient>
+        <diffuse>
+            <r>30.0</r>
+            <g>30.0</g>
+            <b>28.0</b>
+            <a>1</a>
+        </diffuse>
+        <specular>
+            <r>0.0</r>
+            <g>0.0</g>
+            <b>0.0</b>
+            <a>1</a>
+        </specular>
+        <attenuation>
+            <c>1.0</c>
+            <l>0.022</l>
+            <q>0.0019</q>
+        </attenuation>
+        <spot-exponent>100</spot-exponent>
+        <spot-cutoff>20</spot-cutoff>
+        <range-m>300</range-m>
+        <dim-factor>
+            <property>fdm/jsbsim/electric/output/landinglight</property>
+        </dim-factor>
+    </light>
+</PropertyList>
