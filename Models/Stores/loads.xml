@@ -191,6 +191,18 @@
             </greater-than>
         </condition>
     </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Station2_3xAGM-65B</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-2-set</property>
+                <value>3 x AGM-65B</value>
+            </equals>
+        </condition>
+    </animation>
+
     <!--Pylon3[4]-->
     <animation>
         <type>select</type>
@@ -540,6 +552,18 @@
             </greater-than>
         </condition>
     </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Station8_3xAGM-65B</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-8-set</property>
+                <value>3 x AGM-65B</value>
+            </equals>
+        </condition>
+    </animation>
+
     <!--Pylon9[10]-->
     <animation>
         <type>select</type>
