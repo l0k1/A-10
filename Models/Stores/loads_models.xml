@@ -9,7 +9,7 @@
         <path>Aircraft/A-10/Models/Stores/Ext-Stores/AN_ALQ-131/AN_ALQ-131.xml</path>
         <offsets>
          <x-m>7.3844</x-m>
-         <y-m>7.3869</y-m>
+         <y-m>-5.9169</y-m>
          <z-m>-0.39</z-m>
          <pitch-deg>-2.8</pitch-deg>
         </offsets>
@@ -408,6 +408,7 @@
          <z-m>-0.061869</z-m>
         </offsets>
     </model>
+
     <model>
         <name>AN-ALQ-131-10</name>
         <path>Aircraft/A-10/Models/Stores/Ext-Stores/AN_ALQ-131/AN_ALQ-131.xml</path>
