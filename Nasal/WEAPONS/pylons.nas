@@ -39,7 +39,9 @@ var pylonSets = {
     empty: {name: "Empty", content: [], fireOrder: [], launcherDragArea: 0.0, launcherMass: 0, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 1},
     mm20: {name: "30mm Cannon", content: [cannon], fireOrder: [0], launcherDragArea: 0.0, launcherMass: 0, launcherJettisonable: 0, showLongTypeInsteadOfCount: 1, category: 1},
     mk82: {name: "1 x MK-82", content: ["MK-82"], fireOrder: [0], launcherDragArea: 0.0, launcherMass: 100, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 2},
+    mk82air: {name: "1 x MK-82AIR", content: ["MK-82AIR"], fireOrder: [0], launcherDragArea: 0.0, launcherMass: 100, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 2},
     mk82tri: {name: "3 x MK-82", content: ["MK-82","MK-82","MK-82"], fireOrder: [0,1,2], launcherDragArea: 0.0, launcherMass: 313, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 2},
+    mk82atri: {name: "3 x MK-82AIR", content: ["MK-82AIR","MK-82AIR","MK-82AIR"], fireOrder: [0,1,2], launcherDragArea: 0.0, launcherMass: 313, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 2},
     Daim9: {name: "2 x AIM-9M", content: ["AIM-9M","AIM-9M"], fireOrder: [0,1], launcherDragArea: 0.0, launcherMass: 90, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 1},
     lau68: {name: "LAU-68", content: [lau], fireOrder: [0], launcherDragArea: 0.0, launcherMass: 202.5, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 3},
     agm65tri: {name: "3 x AGM-65B", content: ["AGM-65B","AGM-65B","AGM-65B"], fireOrder: [0,1,2], launcherDragArea: 0.0, launcherMass: 689, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 3},
@@ -50,31 +52,31 @@ var pylonSets = {
 };
 
 #sets
-var pylon1set = [pylonSets.empty, pylonSets.Daim9, pylonSets.mk82, pylonSets.alq131];
-var pylon2set = [pylonSets.empty, pylonSets.mk82, pylonSets.lau68];
-var pylon3set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82tri, pylonSets.lau68, pylonSets.agm65tri];
-var pylon4set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82tri, pylonSets.lau68, pylonSets.left600];
-var pylon5set = [pylonSets.empty, pylonSets.mk82];
+var pylon1set = [pylonSets.empty, pylonSets.Daim9, pylonSets.mk82, pylonSets.mk82air, pylonSets.alq131];
+var pylon2set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.lau68];
+var pylon3set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.lau68, pylonSets.agm65tri];
+var pylon4set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.lau68, pylonSets.left600];
+var pylon5set = [pylonSets.empty, pylonSets.mk82air, pylonSets.mk82];
 var pylon6set = [pylonSets.empty, pylonSets.center600];
-var pylon7set = [pylonSets.empty, pylonSets.mk82];
-var pylon8set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82tri, pylonSets.lau68, pylonSets.right600];
-var pylon9set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82tri, pylonSets.lau68,pylonSets.agm65tri];
-var pylon10set = [pylonSets.empty, pylonSets.mk82, pylonSets.lau68];
-var pylon11set = [pylonSets.empty, pylonSets.Daim9, pylonSets.mk82, pylonSets.alq131];
+var pylon7set = [pylonSets.empty, pylonSets.mk82air, pylonSets.mk82];
+var pylon8set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.lau68, pylonSets.right600];
+var pylon9set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.lau68, pylonSets.agm65tri];
+var pylon10set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.lau68];
+var pylon11set = [pylonSets.empty, pylonSets.Daim9, pylonSets.mk82, pylonSets.mk82air, pylonSets.alq131];
 
 # pylons
 pylonI = stations.InternalStation.new("Internal gun mount", 11, [pylonSets.mm20], props.globals.getNode("sim/weight[11]/weight-lb",1));
-pylon1 = stations.Pylon.new("Pylon 1", 0, [0.103, 0.310,  2.875], pylon1set,  0, props.globals.getNode("sim/weight[0]/weight-lb",1),props.globals.getNode("sim/drag[0]/dragarea-sqft",1),func{return 1});
-pylon2 = stations.Pylon.new("Pylon 2",         1, [0.108, 0.085, 1.824], pylon2set,  1, props.globals.getNode("sim/weight[1]/weight-lb",1),props.globals.getNode("sim/drag[1]/dragarea-sqft",1),func{return 1});
-pylon3 = stations.Pylon.new("Pylon 3",          2, [0.022, -0.058, 0.604], pylon3set,  2, props.globals.getNode("sim/weight[2]/weight-lb",1),props.globals.getNode("sim/drag[2]/dragarea-sqft",1),func{return 1});
-pylon4 = stations.Pylon.new("Pylon 4",             3, [-0.075, -0.141, -1.339], pylon4set,  3, props.globals.getNode("sim/weight[3]/weight-lb",1),props.globals.getNode("sim/drag[3]/dragarea-sqft",1),func{return 1});
-pylon5 = stations.Pylon.new("Pylon 5",         4, [-0.105, -0.130, -2.455], pylon5set,  4, props.globals.getNode("sim/weight[4]/weight-lb",1),props.globals.getNode("sim/drag[4]/dragarea-sqft",1),func{return 1});
-pylon6 = stations.Pylon.new("Pylon 6",        5, [-0.106, -0.131, -3.022], pylon6set,  5, props.globals.getNode("sim/weight[5]/weight-lb",1),props.globals.getNode("sim/drag[5]/dragarea-sqft",1),func{return 1});
-pylon7 = stations.Pylon.new("Pylon 7",            6, [-0.106, -0.131, -2.454], pylon7set,  6, props.globals.getNode("sim/weight[6]/weight-lb",1),props.globals.getNode("sim/drag[6]/dragarea-sqft",1),func{return 1});
-pylon8 = stations.Pylon.new("Pylon 8",            7, [-0.076, -0.142, -1.339], pylon8set,  7, props.globals.getNode("sim/weight[7]/weight-lb",1),props.globals.getNode("sim/drag[7]/dragarea-sqft",1),func{return 1});
-pylon9 = stations.Pylon.new("Pylon 9",            8, [0.022, -0.058, 0.604], pylon9set,  8, props.globals.getNode("sim/weight[8]/weight-lb",1),props.globals.getNode("sim/drag[8]/dragarea-sqft",1),func{return 1});
-pylon10 = stations.Pylon.new("Pylon 10",            9, [0.108, 0.085, 1.825], pylon10set,  9, props.globals.getNode("sim/weight[9]/weight-lb",1),props.globals.getNode("sim/drag[9]/dragarea-sqft",1),func{return 1});
-pylon11 = stations.Pylon.new("Pylon 11",            10, [0.103, 0.310, 2.875], pylon11set,  10, props.globals.getNode("sim/weight[10]/weight-lb",1),props.globals.getNode("sim/drag[10]/dragarea-sqft",1),func{return 1});
+pylon1 = stations.Pylon.new("Pylon 1", 0, [7.38, -5.93, -0.22], pylon1set,  0, props.globals.getNode("sim/weight[0]/weight-lb",1),props.globals.getNode("sim/drag[0]/dragarea-sqft",1),func{return 1});
+pylon2 = stations.Pylon.new("Pylon 2", 1, [7.70, -4.86, -0.38], pylon2set,  1, props.globals.getNode("sim/weight[1]/weight-lb",1),props.globals.getNode("sim/drag[1]/dragarea-sqft",1),func{return 1});
+pylon3 = stations.Pylon.new("Pylon 3", 2, [7.65, -3.61, -0.52], pylon3set,  2, props.globals.getNode("sim/weight[2]/weight-lb",1),props.globals.getNode("sim/drag[2]/dragarea-sqft",1),func{return 1});
+pylon4 = stations.Pylon.new("Pylon 4", 3, [7.64, -1.68, -0.63], pylon4set,  3, props.globals.getNode("sim/weight[3]/weight-lb",1),props.globals.getNode("sim/drag[3]/dragarea-sqft",1),func{return 1});
+pylon5 = stations.Pylon.new("Pylon 5", 4, [7.61, -0.56, -0.63], pylon5set,  4, props.globals.getNode("sim/weight[4]/weight-lb",1),props.globals.getNode("sim/drag[4]/dragarea-sqft",1),func{return 1});
+pylon6 = stations.Pylon.new("Pylon 6", 5, [7.61, 0, 0], pylon6set,  5, props.globals.getNode("sim/weight[5]/weight-lb",1),props.globals.getNode("sim/drag[5]/dragarea-sqft",1),func{return 1});
+pylon7 = stations.Pylon.new("Pylon 7", 6, [7.61, 0.56, -0.63], pylon7set,  6, props.globals.getNode("sim/weight[6]/weight-lb",1),props.globals.getNode("sim/drag[6]/dragarea-sqft",1),func{return 1});
+pylon8 = stations.Pylon.new("Pylon 8", 7, [7.64, 1.68, -0.63], pylon8set,  7, props.globals.getNode("sim/weight[7]/weight-lb",1),props.globals.getNode("sim/drag[7]/dragarea-sqft",1),func{return 1});
+pylon9 = stations.Pylon.new("Pylon 9", 8, [7.65, 3.61, -0.52], pylon9set,  8, props.globals.getNode("sim/weight[8]/weight-lb",1),props.globals.getNode("sim/drag[8]/dragarea-sqft",1),func{return 1});
+pylon10 = stations.Pylon.new("Pylon 10", 9, [7.70, 4.86, -0.38], pylon10set,  9, props.globals.getNode("sim/weight[9]/weight-lb",1),props.globals.getNode("sim/drag[9]/dragarea-sqft",1),func{return 1});
+pylon11 = stations.Pylon.new("Pylon 11", 10, [7.38, -5.93, -0.22], pylon11set,  10, props.globals.getNode("sim/weight[10]/weight-lb",1),props.globals.getNode("sim/drag[10]/dragarea-sqft",1),func{return 1});
 
 
 
@@ -82,7 +84,7 @@ var pylons = [pylon1,pylon2,pylon3,pylon4,pylon5,pylon6,pylon7,pylon8,pylon9,pyl
 
 # The order of first vector in this line is the default pylon order weapons is released in.
 # The order of second vector in this line is the order cycle key would cycle through the weapons:
-fcs = fc.FireControl.new(pylons, [11,7,3,10,0,9,1,8,2,6,4], ["30mm Cannon", "AIM-9M", "MK-82","AGM-65B", "LAU-68"]);
+fcs = fc.FireControl.new(pylons, [11,7,3,10,0,9,1,8,2,6,4], ["30mm Cannon", "AIM-9M", "MK-82", "MK-82AIR", "AGM-65B", "LAU-68"]);
 
 #print("** Pylon & fire control system started. **");
 var getDLZ = func {
