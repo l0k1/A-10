@@ -4,7 +4,7 @@
     <path>Aircraft/A-10/Models/Stores/Racks/LAU-114/LAU-114.xml</path>
 
     <model>
-        <name>AIM-9-0-0</name>
+        <name>AIM-9-10-0</name>
         <path>Aircraft/A-10/Models/Stores/Weapons/AIM-9M/AIM-9M_LW.xml</path>
         <offsets>
             <x-m>-0</x-m>
@@ -15,7 +15,7 @@
     </model>
 
     <model>
-        <name>AIM-9-0-1</name>
+        <name>AIM-9-10-1</name>
         <path>Aircraft/A-10/Models/Stores/Weapons/AIM-9M/AIM-9M_RW.xml</path>
         <offsets>
             <x-m>-0</x-m>

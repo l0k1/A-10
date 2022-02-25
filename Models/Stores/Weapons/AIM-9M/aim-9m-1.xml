@@ -21,7 +21,7 @@
       		<object-name>AIM9_Frontwing</object-name>
       		<object-name>AIM9_IRsphere</object-name>
 		<condition>
-			<property>payload/armament/aim-9m/flags/msl-id-100</property>
+			<property>payload/armament/aim-9m/flags/msl-id-1</property>
 		</condition>
 	</animation>
 
@@ -33,7 +33,7 @@
 	   <lighting type="bool">false</lighting>
 
 	   <condition>
-	         <property>payload/armament/aim-9m/flags/smoke-id-100</property>
+	         <property>payload/armament/aim-9m/flags/smoke-id-1</property>
 	   </condition>
 
 	   <attach>world</attach>
@@ -132,7 +132,7 @@
       <object-name>flaminghot</object-name>
       <condition>
            <and>
-           <property>payload/armament/aim-9m/flags/smoke-id-100</property>
+           <property>payload/armament/aim-9m/flags/smoke-id-1</property>
            <property>/sim/rendering/shaders/skydome</property>
        </and>
      </condition>
@@ -146,7 +146,7 @@
 	   <lighting type="bool">false</lighting>
 
 	   <condition>
-	         <property>payload/armament/aim-9m/flags/smoke-id-100</property>
+	         <property>payload/armament/aim-9m/flags/smoke-id-1</property>
 	         <not>
                  <property>/sim/rendering/shaders/skydome</property>
              </not>
@@ -241,7 +241,7 @@
 	   <lighting type="bool">false</lighting>
 
 	   <condition>
-	         <property>payload/armament/aim-9m/flags/explode-id-100</property>
+	         <property>payload/armament/aim-9m/flags/explode-id-1</property>
 	   </condition>
 
 	   <attach>world</attach>
@@ -333,7 +333,7 @@
 	   <lighting type="bool">false</lighting>
 
 	   <condition>
-	         <property>payload/armament/aim-9m/flags/explode-smoke-id-100</property>
+	         <property>payload/armament/aim-9m/flags/explode-smoke-id-1</property>
 	   </condition>
 
 	   <attach>world</attach>
