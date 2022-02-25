@@ -85,11 +85,11 @@
       <object-name>Station3_MK82AIR_left</object-name>
       <condition><and>
         <equals>
-          <property>payload/armament/station/id-2-type</property>
+          <property>payload/armament/station/id-3-type</property>
           <value>MK-82AIR</value>
         </equals>
         <greater-than>
-          <property>payload/armament/station/id-2-count</property>
+          <property>payload/armament/station/id-3-count</property>
           <value>0</value>
         </greater-than></and>
       </condition>
@@ -101,11 +101,11 @@
       <condition>
         <and>
         <equals>
-          <property>payload/armament/station/id-2-type</property>
+          <property>payload/armament/station/id-3-type</property>
           <value>MK-82AIR</value>
         </equals>
         <greater-than>
-          <property>payload/armament/station/id-2-count</property>
+          <property>payload/armament/station/id-3-count</property>
           <value>1</value>
         </greater-than>
       </and>
@@ -117,11 +117,11 @@
       <object-name>Station3_MK82AIR_center</object-name>
       <condition><and>
         <equals>
-          <property>payload/armament/station/id-2-type</property>
+          <property>payload/armament/station/id-3-type</property>
           <value>MK-82AIR</value>
         </equals>
         <greater-than>
-          <property>payload/armament/station/id-2-count</property>
+          <property>payload/armament/station/id-3-count</property>
           <value>2</value>
         </greater-than></and>
       </condition>

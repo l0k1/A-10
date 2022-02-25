@@ -9,7 +9,7 @@
         <path>Aircraft/A-10/Models/Stores/Ext-Stores/AN_ALQ-131/AN_ALQ-131.xml</path>
         <offsets>
          <x-m>7.3844</x-m>
-         <y-m>-5.9169</y-m>
+         <y-m>7.3869</y-m>
          <z-m>-0.39</z-m>
          <pitch-deg>-2.8</pitch-deg>
         </offsets>
@@ -18,6 +18,17 @@
     <model>
         <name>mk82-0</name>
         <path>Aircraft/A-10/Models/Stores/Weapons/MK-82/MK-82.xml</path>
+        <offsets>
+         <x-m>7.53579</x-m>
+         <y-m>-5.93762</y-m>
+         <z-m>-0.223433</z-m>
+         <pitch-deg>-4.5</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>MK82AIR-0</name>
+        <path>Aircraft/A-10/Models/Stores/Weapons/MK-82AIR/MK-82AIR.xml</path>
         <offsets>
          <x-m>7.53579</x-m>
          <y-m>-5.93762</y-m>
@@ -62,6 +73,17 @@
         </offsets>
     </model>
 
+    <model>
+        <name>MK82AIR-1</name>
+        <path>Aircraft/A-10/Models/Stores/Weapons/MK-82AIR/MK-82AIR.xml</path>
+        <offsets>
+         <x-m>7.70347</x-m>
+         <y-m>-4.86602</y-m>
+         <z-m>-0.385557</z-m>
+         <pitch-deg>-4.5</pitch-deg>
+        </offsets>
+    </model>
+
 
     <!-- =============================================================================================================  --> 
     <!-- =========================================== Station 2 =======================================================  -->
@@ -75,6 +97,39 @@
          <y-m>-3.61687</y-m>
          <z-m>-0.523256</z-m>
          <pitch-deg>-4.5</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>MK82AIR-2</name>
+        <path>Aircraft/A-10/Models/Stores/Weapons/MK-82AIR/MK-82AIR.xml</path>
+        <offsets>
+         <x-m>7.65796</x-m>
+         <y-m>-3.61687</y-m>
+         <z-m>-0.523256</z-m>
+         <pitch-deg>-4.5</pitch-deg>
+        </offsets>
+    </model>
+    
+    <model>
+        <name>Station2_MK82</name>
+        <path>Aircraft/A-10/Models/Stores/Weapons/MK-82/ter-9a-2.xml</path>
+        <offsets>
+         <x-m>7.64603</x-m>
+         <y-m>-3.62648</y-m>
+         <z-m>-0.548871</z-m>
+         <pitch-deg>-3.5</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>tMK82AIR-2</name>
+        <path>Aircraft/A-10/Models/Stores/Weapons/MK-82AIR/ter-9a-2.xml</path>
+        <offsets>
+         <x-m>7.64603</x-m>
+         <y-m>-3.62648</y-m>
+         <z-m>-0.548871</z-m>
+         <pitch-deg>-3.5</pitch-deg>
         </offsets>
     </model>
 
@@ -104,6 +159,40 @@
         </offsets>
     </model>
 
+    <model>
+        <name>MK82AIR-3</name>
+        <path>Aircraft/A-10/Models/Stores/Weapons/MK-82AIR/MK-82AIR.xml</path>
+        <offsets>
+         <x-m>7.64689</x-m>
+         <y-m>-1.68181</y-m>
+         <z-m>-0.638785</z-m>
+         <pitch-deg>-4.5</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>Station3_MK82</name>
+        <path>Aircraft/A-10/Models/Stores/Weapons/MK-82/ter-9a-3.xml</path>
+        <offsets>
+         <x-m>7.64603</x-m>
+         <y-m>-1.67292</y-m>
+         <z-m>-0.651047</z-m>
+         <pitch-deg>-3.5</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>tMK82AIR-3</name>
+        <path>Aircraft/A-10/Models/Stores/Weapons/MK-82AIR/ter-9a-3.xml</path>
+        <offsets>
+         <x-m>7.64603</x-m>
+         <y-m>-1.67292</y-m>
+         <z-m>-0.651047</z-m>
+         <pitch-deg>-3.5</pitch-deg>
+        </offsets>
+    </model>
+
+
     <!-- =============================================================================================================  --> 
     <!-- =========================================== Station 4 =======================================================  -->
     <!-- =============================================================================================================  -->  
@@ -111,6 +200,17 @@
     <model>
         <name>mk82-4</name>
         <path>Aircraft/A-10/Models/Stores/Weapons/MK-82/MK-82.xml</path>
+        <offsets>
+         <x-m>7.61031</x-m>
+         <y-m>-0.564421</y-m>
+         <z-m>-0.638674</z-m>
+         <pitch-deg>-4.5</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>MK82AIR-4</name>
+        <path>Aircraft/A-10/Models/Stores/Weapons/MK-82AIR/MK-82AIR.xml</path>
         <offsets>
          <x-m>7.61031</x-m>
          <y-m>-0.564421</y-m>
@@ -139,6 +239,17 @@
         </offsets>
     </model>
 
+    <model>
+        <name>MK82AIR-6</name>
+        <path>Aircraft/A-10/Models/Stores/Weapons/MK-82AIR/MK-82AIR.xml</path>
+        <offsets>
+         <x-m>7.61031</x-m>
+         <y-m>0.564421</y-m>
+         <z-m>-0.638674</z-m>
+         <pitch-deg>-4.5</pitch-deg>
+        </offsets>
+    </model>
+
     <!-- =============================================================================================================  --> 
     <!-- =========================================== Station 7 =======================================================  -->
     <!-- =============================================================================================================  -->  
@@ -154,6 +265,39 @@
         </offsets>
     </model>
 
+    <model>
+        <name>MK82AIR-7</name>
+        <path>Aircraft/A-10/Models/Stores/Weapons/MK-82AIR/MK-82AIR.xml</path>
+        <offsets>
+         <x-m>7.64689</x-m>
+         <y-m>1.68181</y-m>
+         <z-m>-0.638785</z-m>
+         <pitch-deg>-4.5</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>Station7_MK82</name>
+        <path>Aircraft/A-10/Models/Stores/Weapons/MK-82/ter-9a-7.xml</path>
+        <offsets>
+         <x-m>7.64603</x-m>
+         <y-m>1.68148</y-m>
+         <z-m>-0.661878</z-m>
+         <pitch-deg>-3.5</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>tMK82AIR-7</name>
+        <path>Aircraft/A-10/Models/Stores/Weapons/MK-82AIR/ter-9a-7.xml</path>
+        <offsets>
+         <x-m>7.64603</x-m>
+         <y-m>1.68148</y-m>
+         <z-m>-0.661878</z-m>
+         <pitch-deg>-3.5</pitch-deg>
+        </offsets>
+    </model>
+
     <!-- =============================================================================================================  --> 
     <!-- =========================================== Station 8 =======================================================  -->
     <!-- =============================================================================================================  -->  
@@ -166,6 +310,39 @@
          <y-m>3.61687</y-m>
          <z-m>-0.523256</z-m>
          <pitch-deg>-4.5</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>MK82AIR-8</name>
+        <path>Aircraft/A-10/Models/Stores/Weapons/MK-82AIR/MK-82AIR.xml</path>
+        <offsets>
+         <x-m>7.65796</x-m>
+         <y-m>3.61687</y-m>
+         <z-m>-0.523256</z-m>
+         <pitch-deg>-4.5</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>Station8_MK82</name>
+        <path>Aircraft/A-10/Models/Stores/Weapons/MK-82/ter-9a-8.xml</path>
+        <offsets>
+         <x-m>7.64603</x-m>
+         <y-m>3.62648</y-m>
+         <z-m>-0.548871</z-m>
+         <pitch-deg>-3.5</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>tMK82AIR-8</name>
+        <path>Aircraft/A-10/Models/Stores/Weapons/MK-82AIR/ter-9a-8.xml</path>
+        <offsets>
+         <x-m>7.64603</x-m>
+         <y-m>3.62648</y-m>
+         <z-m>-0.548871</z-m>
+         <pitch-deg>-3.5</pitch-deg>
         </offsets>
     </model>
 
@@ -205,6 +382,17 @@
          <pitch-deg>-4.5</pitch-deg>
         </offsets>
     </model>
+
+    <model>
+        <name>MK82AIR-9</name>
+        <path>Aircraft/A-10/Models/Stores/Weapons/MK-82AIR/MK-82AIR.xml</path>
+        <offsets>
+         <x-m>7.70347</x-m>
+         <y-m>4.86602</y-m>
+         <z-m>-0.385557</z-m>
+         <pitch-deg>-4.5</pitch-deg>
+        </offsets>
+    </model>
     
     
     <!-- =============================================================================================================  --> 
@@ -234,6 +422,17 @@
     <model>
         <name>mk82-10</name>
         <path>Aircraft/A-10/Models/Stores/Weapons/MK-82/MK-82.xml</path>
+        <offsets>
+         <x-m>7.53579</x-m>
+         <y-m>5.93762</y-m>
+         <z-m>-0.223433</z-m>
+         <pitch-deg>-4.5</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>MK82AIR-10</name>
+        <path>Aircraft/A-10/Models/Stores/Weapons/MK-82AIR/MK-82AIR.xml</path>
         <offsets>
          <x-m>7.53579</x-m>
          <y-m>5.93762</y-m>

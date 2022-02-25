@@ -16,7 +16,7 @@
          <object-name>MK-82AIR_Mounts</object-name>
          <object-name>MK-82AIR_Chute</object-name>
       <condition>
-         <property>payload/armament/mk-82air/flags/msl-id-501</property>
+         <property>payload/armament/mk-82air/flags/msl-id-100</property>
       </condition>
    </animation>
 
@@ -25,7 +25,7 @@
          <object-name>MK-82AIR_Wiring</object-name>
       <condition>
       <not>
-         <property>payload/armament/mk-82air/flags/msl-id-501</property>
+         <property>payload/armament/mk-82air/flags/msl-id-100</property>
       </not>
       </condition>
    </animation>
@@ -52,7 +52,7 @@
     <object-name>MK-82AIR_Chute</object-name>
     <condition>
       <equals>
-        <property>payload/armament/mk-82air/flags/deploy-id-501</property>
+        <property>payload/armament/mk-82air/flags/deploy-id-100</property>
         <value>1</value>
       </equals>
     </condition>
@@ -66,7 +66,7 @@
          <lighting type="bool">false</lighting>
 
          <condition>
-               <property>payload/armament/mk-82air/flags/explode-id-501</property>
+               <property>payload/armament/mk-82air/flags/explode-id-100</property>
          </condition>
 
          <attach>world</attach>
@@ -152,7 +152,7 @@
          <lighting type="bool">false</lighting>
 
          <condition>
-               <property>payload/armament/mk-82air/flags/explode-id-501</property>
+               <property>payload/armament/mk-82air/flags/explode-id-100</property>
          </condition>
 
          <attach>world</attach>
@@ -239,9 +239,9 @@
 
          <condition>
              <and>
-               <property>payload/armament/mk-82air/flags/explode-smoke-id-501</property>
+               <property>payload/armament/mk-82air/flags/explode-smoke-id-100</property>
              <not>
-                <property>payload/armament/mk-82air/flags/explode-water-id-501</property>
+                <property>payload/armament/mk-82air/flags/explode-water-id-100</property>
              </not>
              </and>
          </condition>
@@ -333,9 +333,9 @@
 
          <condition>
              <and>
-               <property>payload/armament/mk-82air/flags/explode-smoke-id-501</property>
+               <property>payload/armament/mk-82air/flags/explode-smoke-id-100</property>
              <not>
-                <property>payload/armament/mk-82air/flags/explode-water-id-501</property>
+                <property>payload/armament/mk-82air/flags/explode-water-id-100</property>
              </not>
              </and>
          </condition>
@@ -424,9 +424,9 @@
 
          <condition>
           <and>
-             <property>payload/armament/mk-82air/flags/explode-id-501</property>
+             <property>payload/armament/mk-82air/flags/explode-id-100</property>
           <not>
-             <property>payload/armament/mk-82air/flags/explode-water-id-501</property>
+             <property>payload/armament/mk-82air/flags/explode-water-id-100</property>
            </not>
           </and>
          </condition>
@@ -516,8 +516,8 @@
 
          <condition>
           <and>
-             <property>payload/armament/mk-82air/flags/explode-id-501</property>
-             <property>payload/armament/mk-82air/flags/explode-water-id-501</property>
+             <property>payload/armament/mk-82air/flags/explode-id-100</property>
+             <property>payload/armament/mk-82air/flags/explode-water-id-100</property>
           </and>
          </condition>
 
@@ -606,8 +606,8 @@
 
          <condition>
           <and>
-             <property>payload/armament/mk-82air/flags/explode-smoke-id-501</property>
-             <property>payload/armament/mk-82air/flags/explode-water-id-501</property>
+             <property>payload/armament/mk-82air/flags/explode-smoke-id-100</property>
+             <property>payload/armament/mk-82air/flags/explode-water-id-100</property>
           </and>
          </condition>
 

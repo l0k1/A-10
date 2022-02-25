@@ -12,7 +12,7 @@
     </offsets>
 
     <model>
-      <name>Station4_MK82AIR_left</name>
+      <name>Station2_MK82AIR_left</name>
       <path>Aircraft/A-10/Models/Stores/Weapons/MK-82AIR/MK-82AIR.xml</path>
       <offsets>
         <x-m>-0.015</x-m>
@@ -24,7 +24,7 @@
     </model>
 
     <model>
-      <name>Station4_MK82AIR_center</name>
+      <name>Station2_MK82AIR_center</name>
       <path>Aircraft/A-10/Models/Stores/Weapons/MK-82AIR/MK-82AIR.xml</path>
       <offsets>
         <x-m>-0.015</x-m>
@@ -35,7 +35,7 @@
     </model>
 
     <model>
-      <name>Station4_MK82AIR_right</name>
+      <name>Station2_MK82AIR_right</name>
       <path>Aircraft/A-10/Models/Stores/Weapons/MK-82AIR/MK-82AIR.xml</path>
       <offsets>
         <x-m>-0.015</x-m>
@@ -48,7 +48,7 @@
 
     <animation>
         <type>rotate</type>
-        <object-name>Station4_MK82AIR_left</object-name>
+        <object-name>Station2_MK82AIR_left</object-name>
         <factor>0</factor>
         <offset-deg>-50</offset-deg>
         <center>
@@ -65,7 +65,7 @@
 
     <animation>
         <type>rotate</type>
-        <object-name>Station4_MK82AIR_right</object-name>
+        <object-name>Station2_MK82AIR_right</object-name>
         <factor>0</factor>
         <offset-deg>50</offset-deg>
         <center>
@@ -82,14 +82,14 @@
 
     <animation>
       <type>select</type>
-      <object-name>Station4_MK82AIR_left</object-name>
+      <object-name>Station2_MK82AIR_left</object-name>
       <condition><and>
         <equals>
-          <property>payload/armament/station/id-3-type</property>
+          <property>payload/armament/station/id-2-type</property>
           <value>MK-82AIR</value>
         </equals>
         <greater-than>
-          <property>payload/armament/station/id-3-count</property>
+          <property>payload/armament/station/id-2-count</property>
           <value>0</value>
         </greater-than></and>
       </condition>
@@ -97,15 +97,15 @@
 
      <animation>
       <type>select</type>
-      <object-name>Station4_MK82AIR_right</object-name>
+      <object-name>Station2_MK82AIR_right</object-name>
       <condition>
         <and>
         <equals>
-          <property>payload/armament/station/id-3-type</property>
+          <property>payload/armament/station/id-2-type</property>
           <value>MK-82AIR</value>
         </equals>
         <greater-than>
-          <property>payload/armament/station/id-3-count</property>
+          <property>payload/armament/station/id-2-count</property>
           <value>1</value>
         </greater-than>
       </and>
@@ -114,14 +114,14 @@
 
      <animation>
       <type>select</type>
-      <object-name>Station4_MK82AIR_center</object-name>
+      <object-name>Station2_MK82AIR_center</object-name>
       <condition><and>
         <equals>
-          <property>payload/armament/station/id-3-type</property>
+          <property>payload/armament/station/id-2-type</property>
           <value>MK-82AIR</value>
         </equals>
         <greater-than>
-          <property>payload/armament/station/id-3-count</property>
+          <property>payload/armament/station/id-2-count</property>
           <value>2</value>
         </greater-than></and>
       </condition>

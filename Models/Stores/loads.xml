@@ -35,6 +35,21 @@
 
     <animation>
         <type>select</type>
+        <object-name>MK82AIR-0</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-0-set</property>
+                <value>1 x MK-82AIR</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-0-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
         <object-name>LAU-114-0</object-name>
         <condition>
             <equals>
@@ -44,34 +59,6 @@
         </condition>
     </animation>
 
-    <animation>
-        <type>select</type>
-        <object-name>AIM-9-0-0</object-name>
-        <condition>
-            <equals>
-                <property>payload/armament/station/id-0-set</property>
-                <value>2 x AIM-9M</value>
-            </equals>
-            <greater-than>
-                <property>payload/armament/station/id-0-count</property>
-                <value>0</value>
-            </greater-than>
-        </condition>
-    </animation>
-    <animation>
-        <type>select</type>
-        <object-name>AIM-9-0-1</object-name>
-        <condition>
-            <equals>
-                <property>payload/armament/station/id-0-set</property>
-                <value>2 x AIM-9M</value>
-            </equals>
-            <greater-than>
-                <property>payload/armament/station/id-0-count</property>
-                <value>1</value>
-            </greater-than>
-        </condition>
-    </animation>
     <!--Pylon1[2]-->
 
     <animation>
@@ -81,6 +68,21 @@
             <equals>
                 <property>payload/armament/station/id-1-set</property>
                 <value>1 x MK-82</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-1-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>MK82AIR-1</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-1-set</property>
+                <value>1 x MK-82AIR</value>
             </equals>
             <greater-than>
                 <property>payload/armament/station/id-1-count</property>
@@ -123,6 +125,21 @@
 
     <animation>
         <type>select</type>
+        <object-name>MK82AIR-2</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-2-set</property>
+                <value>1 x MK-82AIR</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-2-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
         <object-name>LAU-68-2</object-name>
         <condition>
             <equals>
@@ -138,59 +155,25 @@
 
     <animation>
         <type>select</type>
-        <object-name>ter-2</object-name>
+        <object-name>Station2_MK82</object-name>
         <condition>
-            <equals>
-                <property>payload/armament/station/id-2-set</property>
-                <value>3 x MK-82</value>
+          <equals>
+              <property>payload/armament/station/id-2-set</property>
+              <value>3 x MK-82</value>
             </equals>
         </condition>
-    </animation>
+       </animation>
 
-    <animation>
+       <animation>
         <type>select</type>
-        <object-name>mk82-2-0</object-name>
+        <object-name>tMK82AIR-2</object-name>
         <condition>
-            <equals>
-                <property>payload/armament/station/id-2-set</property>
-                <value>3 x MK-82</value>
+          <equals>
+              <property>payload/armament/station/id-2-set</property>
+              <value>3 x MK-82AIR</value>
             </equals>
-            <greater-than>
-                <property>payload/armament/station/id-2-count</property>
-                <value>0</value>
-            </greater-than>
         </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>mk82-2-1</object-name>
-        <condition>
-            <equals>
-                <property>payload/armament/station/id-2-set</property>
-                <value>3 x MK-82</value>
-            </equals>
-            <greater-than>
-                <property>payload/armament/station/id-2-count</property>
-                <value>1</value>
-            </greater-than>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>mk82-2-2</object-name>
-        <condition>
-            <equals>
-                <property>payload/armament/station/id-2-set</property>
-                <value>3 x MK-82</value>
-            </equals>
-            <greater-than>
-                <property>payload/armament/station/id-2-count</property>
-                <value>2</value>
-            </greater-than>
-        </condition>
-    </animation>
+       </animation>
 
     <animation>
         <type>select</type>
@@ -221,6 +204,21 @@
 
     <animation>
         <type>select</type>
+        <object-name>MK82AIR-3</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-3-set</property>
+                <value>1 x MK-82AIR</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-3-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
         <object-name>LAU-68-3</object-name>
         <condition>
             <equals>
@@ -236,59 +234,25 @@
 
     <animation>
         <type>select</type>
-        <object-name>ter-3</object-name>
+        <object-name>Station3_MK82</object-name>
         <condition>
-            <equals>
-                <property>payload/armament/station/id-3-set</property>
-                <value>3 x MK-82</value>
+          <equals>
+              <property>payload/armament/station/id-3-set</property>
+              <value>3 x MK-82</value>
             </equals>
         </condition>
-    </animation>
+       </animation>
 
-    <animation>
+       <animation>
         <type>select</type>
-        <object-name>mk82-3-0</object-name>
+        <object-name>tMK82AIR-3</object-name>
         <condition>
-            <equals>
-                <property>payload/armament/station/id-3-set</property>
-                <value>3 x MK-82</value>
+          <equals>
+              <property>payload/armament/station/id-3-set</property>
+              <value>3 x MK-82AIR</value>
             </equals>
-            <greater-than>
-                <property>payload/armament/station/id-3-count</property>
-                <value>0</value>
-            </greater-than>
         </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>mk82-3-1</object-name>
-        <condition>
-            <equals>
-                <property>payload/armament/station/id-3-set</property>
-                <value>3 x MK-82</value>
-            </equals>
-            <greater-than>
-                <property>payload/armament/station/id-3-count</property>
-                <value>1</value>
-            </greater-than>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>mk82-3-2</object-name>
-        <condition>
-            <equals>
-                <property>payload/armament/station/id-3-set</property>
-                <value>3 x MK-82</value>
-            </equals>
-            <greater-than>
-                <property>payload/armament/station/id-3-count</property>
-                <value>2</value>
-            </greater-than>
-        </condition>
-    </animation>
+       </animation>
 
     <animation>
         <type>select</type>
@@ -320,6 +284,22 @@
             </greater-than>
         </condition>
     </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>MK82AIR-4</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-4-set</property>
+                <value>1 x MK-82AIR</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-4-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
     <!--Pylon5[6]-->
     <animation>
         <type>select</type>
@@ -335,21 +315,7 @@
             </greater-than>
         </condition>
     </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>mk82-5</object-name>
-        <condition>
-            <equals>
-                <property>payload/armament/station/id-5-set</property>
-                <value>1 x MK-82</value>
-            </equals>
-            <greater-than>
-                <property>payload/armament/station/id-5-count</property>
-                <value>0</value>
-            </greater-than>
-        </condition>
-    </animation>
+    
     <!--Pylon6[7]-->
     <animation>
         <type>select</type>
@@ -365,6 +331,22 @@
             </greater-than>
         </condition>
     </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>MK82AIR-6</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-6-set</property>
+                <value>1 x MK-82AIR</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-6-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+    
     <!--Pylon7[8]-->
     <animation>
         <type>select</type>
@@ -373,6 +355,21 @@
             <equals>
                 <property>payload/armament/station/id-7-set</property>
                 <value>1 x MK-82</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-7-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>MK82AIR-7</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-7-set</property>
+                <value>1 x MK-82AIR</value>
             </equals>
             <greater-than>
                 <property>payload/armament/station/id-7-count</property>
@@ -398,9 +395,9 @@
 
     <animation>
         <type>select</type>
-        <object-name>ter-7</object-name>
+        <object-name>Station7_MK82</object-name>
         <condition>
-            <equals>
+          <equals>
                 <property>payload/armament/station/id-7-set</property>
                 <value>3 x MK-82</value>
             </equals>
@@ -409,48 +406,14 @@
 
     <animation>
         <type>select</type>
-        <object-name>mk82-7-0</object-name>
+        <object-name>tMK82AIR-7</object-name>
         <condition>
-            <equals>
-                <property>payload/armament/station/id-7-set</property>
-                <value>3 x MK-82</value>
+          <equals>
+              <property>payload/armament/station/id-7-set</property>
+              <value>3 x MK-82AIR</value>
             </equals>
-            <greater-than>
-                <property>payload/armament/station/id-7-count</property>
-                <value>0</value>
-            </greater-than>
         </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>mk82-7-1</object-name>
-        <condition>
-            <equals>
-                <property>payload/armament/station/id-7-set</property>
-                <value>3 x MK-82</value>
-            </equals>
-            <greater-than>
-                <property>payload/armament/station/id-7-count</property>
-                <value>1</value>
-            </greater-than>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>mk82-7-2</object-name>
-        <condition>
-            <equals>
-                <property>payload/armament/station/id-7-set</property>
-                <value>3 x MK-82</value>
-            </equals>
-            <greater-than>
-                <property>payload/armament/station/id-7-count</property>
-                <value>2</value>
-            </greater-than>
-        </condition>
-    </animation>
+       </animation>
 
     <animation>
         <type>select</type>
@@ -484,6 +447,21 @@
 
     <animation>
         <type>select</type>
+        <object-name>MK82AIR-8</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-8-set</property>
+                <value>1 x MK-82AIR</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-8-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
         <object-name>LAU-68-8</object-name>
         <condition>
             <equals>
@@ -499,59 +477,25 @@
 
     <animation>
         <type>select</type>
-        <object-name>ter-8</object-name>
+        <object-name>Station8_MK82</object-name>
         <condition>
-            <equals>
+          <equals>
                 <property>payload/armament/station/id-8-set</property>
                 <value>3 x MK-82</value>
             </equals>
         </condition>
-    </animation>
+       </animation>
 
-    <animation>
+       <animation>
         <type>select</type>
-        <object-name>mk82-8-0</object-name>
+        <object-name>tMK82AIR-8</object-name>
         <condition>
-            <equals>
-                <property>payload/armament/station/id-8-set</property>
-                <value>3 x MK-82</value>
+          <equals>
+              <property>payload/armament/station/id-8-set</property>
+              <value>3 x MK-82AIR</value>
             </equals>
-            <greater-than>
-                <property>payload/armament/station/id-8-count</property>
-                <value>0</value>
-            </greater-than>
         </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>mk82-8-1</object-name>
-        <condition>
-            <equals>
-                <property>payload/armament/station/id-8-set</property>
-                <value>3 x MK-82</value>
-            </equals>
-            <greater-than>
-                <property>payload/armament/station/id-8-count</property>
-                <value>1</value>
-            </greater-than>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>mk82-8-2</object-name>
-        <condition>
-            <equals>
-                <property>payload/armament/station/id-8-set</property>
-                <value>3 x MK-82</value>
-            </equals>
-            <greater-than>
-                <property>payload/armament/station/id-8-count</property>
-                <value>2</value>
-            </greater-than>
-        </condition>
-    </animation>
+       </animation>
 
     <animation>
         <type>select</type>
@@ -572,6 +516,21 @@
             <equals>
                 <property>payload/armament/station/id-9-set</property>
                 <value>1 x MK-82</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-9-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>MK82AIR-9</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-9-set</property>
+                <value>1 x MK-82AIR</value>
             </equals>
             <greater-than>
                 <property>payload/armament/station/id-9-count</property>
@@ -612,22 +571,11 @@
 
     <animation>
         <type>select</type>
-        <object-name>LAU-114-10</object-name>
+        <object-name>MK82AIR-10</object-name>
         <condition>
             <equals>
                 <property>payload/armament/station/id-10-set</property>
-                <value>2 x AIM-9M</value>
-            </equals>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>AIM-9-10-0</object-name>
-        <condition>
-            <equals>
-                <property>payload/armament/station/id-10-set</property>
-                <value>2 x AIM-9M</value>
+                <value>1 x MK-82AIR</value>
             </equals>
             <greater-than>
                 <property>payload/armament/station/id-10-count</property>
@@ -635,18 +583,15 @@
             </greater-than>
         </condition>
     </animation>
+
     <animation>
         <type>select</type>
-        <object-name>AIM-9-10-1</object-name>
+        <object-name>LAU-114-10</object-name>
         <condition>
             <equals>
                 <property>payload/armament/station/id-10-set</property>
                 <value>2 x AIM-9M</value>
             </equals>
-            <greater-than>
-                <property>payload/armament/station/id-10-count</property>
-                <value>1</value>
-            </greater-than>
         </condition>
     </animation>
 
