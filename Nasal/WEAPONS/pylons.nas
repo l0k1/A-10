@@ -57,7 +57,7 @@ var pylonSets = {
 
 #sets
 var pylon1set = [pylonSets.empty, pylonSets.Daim9, pylonSets.mk82, pylonSets.mk82air, pylonSets.cbu87, pylonSets.alq131, pylonSets.alq184];
-var pylon2set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.cbu87 pylonSets.lau68];
+var pylon2set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.cbu87, pylonSets.lau68];
 var pylon3set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk84, pylonSets.cbu87, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.lau68, pylonSets.agm65tri];
 var pylon4set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk84, pylonSets.cbu87, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.lau68, pylonSets.left600];
 var pylon5set = [pylonSets.empty, pylonSets.mk82air, pylonSets.mk82, pylonSets.mk84, pylonSets.cbu87];
