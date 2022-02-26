@@ -16,6 +16,17 @@
     </model>
 
     <model>
+        <name>AN-ALQ-184-0</name>
+        <path>Aircraft/A-10/Models/Stores/Ext-Stores/AN_ALQ-184/AN_ALQ-184.xml</path>
+        <offsets>
+         <x-m>7.93</x-m>
+         <y-m>-5.9</y-m>
+         <z-m>-0.18</z-m>
+         <pitch-deg>-2.8</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
         <name>mk82-0</name>
         <path>Aircraft/A-10/Models/Stores/Weapons/MK-82/MK-82.xml</path>
         <offsets>
@@ -416,6 +427,17 @@
          <x-m>7.3844</x-m>
          <y-m>5.9169</y-m>
          <z-m>-0.39</z-m>
+         <pitch-deg>-2.8</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>AN-ALQ-184-10</name>
+        <path>Aircraft/A-10/Models/Stores/Ext-Stores/AN_ALQ-184/AN_ALQ-184.xml</path>
+        <offsets>
+            <x-m>7.93</x-m>
+            <y-m>5.9</y-m>
+            <z-m>-0.18</z-m>
          <pitch-deg>-2.8</pitch-deg>
         </offsets>
     </model>

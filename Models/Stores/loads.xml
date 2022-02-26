@@ -20,6 +20,21 @@
 
     <animation>
         <type>select</type>
+        <object-name>AN-ALQ-184-0</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-0-type</property>
+                <value>AN/ALQ-184</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-0-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
         <object-name>mk82-0</object-name>
         <condition>
             <equals>
@@ -602,6 +617,21 @@
             <equals>
                 <property>payload/armament/station/id-10-type</property>
                 <value>AN/ALQ-131</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-10-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>AN-ALQ-184-10</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-10-type</property>
+                <value>AN/ALQ-184</value>
             </equals>
             <greater-than>
                 <property>payload/armament/station/id-10-count</property>
