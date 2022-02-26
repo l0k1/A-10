@@ -50,6 +50,21 @@
 
     <animation>
         <type>select</type>
+        <object-name>CBU87-0</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-0-set</property>
+                <value>1 x CBU-87</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-0-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
         <object-name>MK82AIR-0</object-name>
         <condition>
             <equals>
@@ -108,6 +123,21 @@
 
     <animation>
         <type>select</type>
+        <object-name>CBU87-1</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-1-set</property>
+                <value>1 x CBU-87</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-1-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
         <object-name>LAU-68-1</object-name>
         <condition>
             <equals>
@@ -145,6 +175,21 @@
             <equals>
                 <property>payload/armament/station/id-2-set</property>
                 <value>1 x MK-82AIR</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-2-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CBU87-2</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-2-set</property>
+                <value>1 x CBU-87</value>
             </equals>
             <greater-than>
                 <property>payload/armament/station/id-2-count</property>
@@ -239,6 +284,21 @@
             <equals>
                 <property>payload/armament/station/id-3-set</property>
                 <value>1 x MK-82AIR</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-3-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CBU87-3</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-3-set</property>
+                <value>1 x CBU-87</value>
             </equals>
             <greater-than>
                 <property>payload/armament/station/id-3-count</property>
@@ -347,6 +407,21 @@
 
     <animation>
         <type>select</type>
+        <object-name>CBU87-4</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-4-set</property>
+                <value>1 x CBU-87</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-4-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
         <object-name>mk84-4</object-name>
         <condition>
             <equals>
@@ -409,6 +484,21 @@
 
     <animation>
         <type>select</type>
+        <object-name>CBU87-6</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-6-set</property>
+                <value>1 x CBU-87</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-6-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
         <object-name>mk84-6</object-name>
         <condition>
             <equals>
@@ -460,6 +550,21 @@
             <equals>
                 <property>payload/armament/station/id-7-set</property>
                 <value>1 x MK-84</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-7-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CBU87-7</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-7-set</property>
+                <value>1 x CBU-87</value>
             </equals>
             <greater-than>
                 <property>payload/armament/station/id-7-count</property>
@@ -542,6 +647,21 @@
             <equals>
                 <property>payload/armament/station/id-8-set</property>
                 <value>1 x MK-82AIR</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-8-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CBU87-8</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-8-set</property>
+                <value>1 x CBU-87</value>
             </equals>
             <greater-than>
                 <property>payload/armament/station/id-8-count</property>
@@ -646,6 +766,21 @@
 
     <animation>
         <type>select</type>
+        <object-name>CBU87-9</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-9-set</property>
+                <value>1 x CBU-87</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-9-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
         <object-name>LAU-68-9</object-name>
         <condition>
             <equals>
@@ -681,6 +816,21 @@
             <equals>
                 <property>payload/armament/station/id-10-set</property>
                 <value>1 x MK-82AIR</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-10-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>CBU87-10</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-10-set</property>
+                <value>1 x CBU-87</value>
             </equals>
             <greater-than>
                 <property>payload/armament/station/id-10-count</property>
