@@ -155,6 +155,21 @@
 
     <animation>
         <type>select</type>
+        <object-name>mk84-2</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-2-set</property>
+                <value>1 x MK-84</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-2-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
         <object-name>LAU-68-2</object-name>
         <condition>
             <equals>
@@ -224,6 +239,21 @@
             <equals>
                 <property>payload/armament/station/id-3-set</property>
                 <value>1 x MK-82AIR</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-3-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>mk84-3</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-3-set</property>
+                <value>1 x MK-84</value>
             </equals>
             <greater-than>
                 <property>payload/armament/station/id-3-count</property>
@@ -315,6 +345,21 @@
         </condition>
     </animation>
 
+    <animation>
+        <type>select</type>
+        <object-name>mk84-4</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-4-set</property>
+                <value>1 x MK-84</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-4-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
     <!--Pylon5[6]-->
     <animation>
         <type>select</type>
@@ -361,6 +406,21 @@
             </greater-than>
         </condition>
     </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>mk84-6</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-6-set</property>
+                <value>1 x MK-84</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-6-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
     
     <!--Pylon7[8]-->
     <animation>
@@ -385,6 +445,21 @@
             <equals>
                 <property>payload/armament/station/id-7-set</property>
                 <value>1 x MK-82AIR</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-7-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>mk84-7</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-7-set</property>
+                <value>1 x MK-84</value>
             </equals>
             <greater-than>
                 <property>payload/armament/station/id-7-count</property>
@@ -467,6 +542,21 @@
             <equals>
                 <property>payload/armament/station/id-8-set</property>
                 <value>1 x MK-82AIR</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-8-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>mk84-8</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-8-set</property>
+                <value>1 x MK-84</value>
             </equals>
             <greater-than>
                 <property>payload/armament/station/id-8-count</property>
