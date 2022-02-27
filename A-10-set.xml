@@ -715,14 +715,6 @@ Fairchild A-10 simulation config.
 					<script>A10weapons.config_dialog.toggle()</script>
 				</binding>
 			</key>
-			<key n="69">
-				<name>E</name>
-				<desc>Weapon Release</desc>
-				<binding>
-					<command>nasal</command>
-					<script>A10weapons.release()</script>
-				</binding>
-			</key>
 			<key n="67">
 				<name>C</name>
 				<desc>Toggle canopy on or off</desc>
@@ -733,15 +725,17 @@ Fairchild A-10 simulation config.
 			</key>
 			<key n="101">
 				<name>e</name>
-				<desc>Fire GAU-8/A cannon</desc>
+				<desc>Trigger</desc>
 				<binding>
-					<command>nasal</command>
-					<script>A10weapons.fire_gau8a()</script>
+					<command>property-assign</command>
+					<property>controls/armament/trigger</property>
+					<value>1</value>
 				</binding>
 				<mod-up>
 					<binding>
-						<command>nasal</command>
-						<script>A10weapons.cfire_gau8a()</script>
+						<command>property-assign</command>
+						<property>controls/armament/trigger</property>
+						<value>0</value>
 					</binding>
 				</mod-up>
 			</key>
