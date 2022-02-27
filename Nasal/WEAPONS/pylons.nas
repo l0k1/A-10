@@ -80,7 +80,7 @@ pylon7 = stations.Pylon.new("Pylon 7", 6, [7.61, 0.56, -0.63], pylon7set,  6, pr
 pylon8 = stations.Pylon.new("Pylon 8", 7, [7.64, 1.68, -0.63], pylon8set,  7, props.globals.getNode("sim/weight[7]/weight-lb",1),props.globals.getNode("sim/drag[7]/dragarea-sqft",1),func{return 1});
 pylon9 = stations.Pylon.new("Pylon 9", 8, [7.65, 3.61, -0.52], pylon9set,  8, props.globals.getNode("sim/weight[8]/weight-lb",1),props.globals.getNode("sim/drag[8]/dragarea-sqft",1),func{return 1});
 pylon10 = stations.Pylon.new("Pylon 10", 9, [7.70, 4.86, -0.38], pylon10set,  9, props.globals.getNode("sim/weight[9]/weight-lb",1),props.globals.getNode("sim/drag[9]/dragarea-sqft",1),func{return 1});
-pylon11 = stations.Pylon.new("Pylon 11", 10, [7.38, -5.93, -0.22], pylon11set,  10, props.globals.getNode("sim/weight[10]/weight-lb",1),props.globals.getNode("sim/drag[10]/dragarea-sqft",1),func{return 1});
+pylon11 = stations.Pylon.new("Pylon 11", 10, [7.38, 5.93, -0.22], pylon11set,  10, props.globals.getNode("sim/weight[10]/weight-lb",1),props.globals.getNode("sim/drag[10]/dragarea-sqft",1),func{return 1});
 
 
 
