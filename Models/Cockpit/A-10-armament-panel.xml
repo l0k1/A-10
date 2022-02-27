@@ -7,15 +7,26 @@
 	
 	<animation>
 		<object-name>master-arm-switch</object-name>
-		<type>rotate</type>
-		<property>sim/model/A-10/weapons/master-arm-switch</property>
+		<type>knob</type>
+		<property>controls/armament/master-arm</property>
 		<factor>30</factor>
+		<drag-direction>vertical</drag-direction>
 		<center>
 			<x-m>0.0029</x-m>
 			<y-m>0.0948</y-m>
 			<z-m>0.0575</z-m>
 		</center>
 		<axis><y>-1</y></axis>
+		<action>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/armament/master-arm</property>
+                <factor>1</factor>
+                <min>-1</min>
+                <max>1</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
 	</animation>
 
 	<animation>
@@ -62,9 +73,9 @@
 		<type>select</type>
 		<object-name>s-0-0</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[0]/ready-0</property>
-			<property>sim/model/A-10/weapons/stations/station[0]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[0]/ready-0</property>-->
+			<property>A-10/stations/station[0]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -75,9 +86,9 @@
 		<type>select</type>
 		<object-name>s-0-1</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[0]/ready-1</property>
-			<property>sim/model/A-10/weapons/stations/station[0]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[0]/ready-1</property>-->
+			<property>A-10/stations/station[0]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -88,9 +99,9 @@
 		<type>select</type>
 		<object-name>s-0-2</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[0]/ready-2</property>
-			<property>sim/model/A-10/weapons/stations/station[0]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[0]/ready-2</property>-->
+			<property>A-10/stations/station[0]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -101,9 +112,9 @@
 		<type>select</type>
 		<object-name>s-0-E</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[0]/error</property>
-			<property>sim/model/A-10/weapons/stations/station[0]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<property>A-10/stations/station[0]/error</property>
+			<property>A-10/stations/station[0]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -116,9 +127,9 @@
 		<type>select</type>
 		<object-name>s-1-0</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[1]/ready-0</property>
-			<property>sim/model/A-10/weapons/stations/station[1]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[1]/ready-0</property>-->
+			<property>A-10/stations/station[1]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -129,9 +140,9 @@
 		<type>select</type>
 		<object-name>s-1-1</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[1]/ready-1</property>
-			<property>sim/model/A-10/weapons/stations/station[1]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[1]/ready-1</property>-->
+			<property>A-10/stations/station[1]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -142,9 +153,9 @@
 		<type>select</type>
 		<object-name>s-1-2</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[1]/ready-2</property>
-			<property>sim/model/A-10/weapons/stations/station[1]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[1]/ready-2</property>-->
+			<property>A-10/stations/station[1]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -155,9 +166,9 @@
 		<type>select</type>
 		<object-name>s-1-E</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[1]/error</property>
-			<property>sim/model/A-10/weapons/stations/station[1]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<property>A-10/stations/station[1]/error</property>
+			<property>A-10/stations/station[1]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -170,9 +181,9 @@
 		<type>select</type>
 		<object-name>s-2-0</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[2]/ready-0</property>
-			<property>sim/model/A-10/weapons/stations/station[2]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[2]/ready-0</property>-->
+			<property>A-10/stations/station[2]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -183,9 +194,9 @@
 		<type>select</type>
 		<object-name>s-2-1</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[2]/ready-1</property>
-			<property>sim/model/A-10/weapons/stations/station[2]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[2]/ready-1</property>-->
+			<property>A-10/stations/station[2]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -196,9 +207,9 @@
 		<type>select</type>
 		<object-name>s-2-2</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[2]/ready-2</property>
-			<property>sim/model/A-10/weapons/stations/station[2]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[2]/ready-1</property>-->
+			<property>A-10/stations/station[2]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -209,9 +220,9 @@
 		<type>select</type>
 		<object-name>s-2-E</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[2]/error</property>
-			<property>sim/model/A-10/weapons/stations/station[2]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<property>A-10/stations/station[2]/error</property>
+			<property>A-10/stations/station[2]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -224,9 +235,9 @@
 		<type>select</type>
 		<object-name>s-3-0</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[3]/ready-0</property>
-			<property>sim/model/A-10/weapons/stations/station[3]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[2]/ready-1</property>-->
+			<property>A-10/stations/station[3]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -237,9 +248,9 @@
 		<type>select</type>
 		<object-name>s-3-1</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[3]/ready-1</property>
-			<property>sim/model/A-10/weapons/stations/station[3]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[2]/ready-1</property>-->
+			<property>A-10/stations/station[3]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -250,9 +261,9 @@
 		<type>select</type>
 		<object-name>s-3-2</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[3]/ready-2</property>
-			<property>sim/model/A-10/weapons/stations/station[3]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[2]/ready-1</property>-->
+			<property>A-10/stations/station[3]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -263,9 +274,9 @@
 		<type>select</type>
 		<object-name>s-3-E</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[3]/error</property>
-			<property>sim/model/A-10/weapons/stations/station[3]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<property>A-10/stations/station[3]/error</property>
+			<property>A-10/stations/station[3]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -278,9 +289,9 @@
 		<type>select</type>
 		<object-name>s-4-0</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[4]/ready-0</property>
-			<property>sim/model/A-10/weapons/stations/station[4]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[2]/ready-1</property>-->
+			<property>A-10/stations/station[4]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -291,9 +302,9 @@
 		<type>select</type>
 		<object-name>s-4-1</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[4]/ready-1</property>
-			<property>sim/model/A-10/weapons/stations/station[4]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[2]/ready-1</property>-->
+			<property>A-10/stations/station[4]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -304,9 +315,9 @@
 		<type>select</type>
 		<object-name>s-4-2</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[4]/ready-2</property>
-			<property>sim/model/A-10/weapons/stations/station[4]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[2]/ready-1</property>-->
+			<property>A-10/stations/station[4]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -317,9 +328,9 @@
 		<type>select</type>
 		<object-name>s-4-E</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[4]/error</property>
-			<property>sim/model/A-10/weapons/stations/station[4]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<property>A-10/stations/station[4]/error</property>
+			<property>A-10/stations/station[4]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -332,9 +343,9 @@
 		<type>select</type>
 		<object-name>s-5-0</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[5]/ready-0</property>
-			<property>sim/model/A-10/weapons/stations/station[5]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[2]/ready-1</property>-->
+			<property>A-10/stations/station[5]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -345,9 +356,9 @@
 		<type>select</type>
 		<object-name>s-5-1</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[5]/ready-1</property>
-			<property>sim/model/A-10/weapons/stations/station[5]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[2]/ready-1</property>-->
+			<property>A-10/stations/station[5]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -358,9 +369,9 @@
 		<type>select</type>
 		<object-name>s-5-2</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[5]/ready-2</property>
-			<property>sim/model/A-10/weapons/stations/station[5]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[2]/ready-1</property>-->
+			<property>A-10/stations/station[5]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -371,9 +382,9 @@
 		<type>select</type>
 		<object-name>s-5-E</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[5]/error</property>
-			<property>sim/model/A-10/weapons/stations/station[5]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<property>A-10/stations/station[5]/error</property>
+			<property>A-10/stations/station[5]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -386,9 +397,9 @@
 		<type>select</type>
 		<object-name>s-6-0</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[6]/ready-0</property>
-			<property>sim/model/A-10/weapons/stations/station[6]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[2]/ready-1</property>-->
+			<property>A-10/stations/station[6]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -399,9 +410,9 @@
 		<type>select</type>
 		<object-name>s-6-1</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[6]/ready-1</property>
-			<property>sim/model/A-10/weapons/stations/station[6]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[2]/ready-1</property>-->
+			<property>A-10/stations/station[6]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -412,9 +423,9 @@
 		<type>select</type>
 		<object-name>s-6-2</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[6]/ready-2</property>
-			<property>sim/model/A-10/weapons/stations/station[6]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[2]/ready-1</property>-->
+			<property>A-10/stations/station[6]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -425,9 +436,9 @@
 		<type>select</type>
 		<object-name>s-6-E</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[6]/error</property>
-			<property>sim/model/A-10/weapons/stations/station[6]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<property>A-10/stations/station[6]/error</property>
+			<property>A-10/stations/station[6]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -440,9 +451,9 @@
 		<type>select</type>
 		<object-name>s-7-0</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[7]/ready-0</property>
-			<property>sim/model/A-10/weapons/stations/station[7]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[2]/ready-1</property>-->
+			<property>A-10/stations/station[7]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -453,9 +464,9 @@
 		<type>select</type>
 		<object-name>s-7-1</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[7]/ready-1</property>
-			<property>sim/model/A-10/weapons/stations/station[7]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[2]/ready-1</property>-->
+			<property>A-10/stations/station[7]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -466,9 +477,9 @@
 		<type>select</type>
 		<object-name>s-7-2</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[7]/ready-2</property>
-			<property>sim/model/A-10/weapons/stations/station[7]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[2]/ready-1</property>-->
+			<property>A-10/stations/station[7]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -479,9 +490,9 @@
 		<type>select</type>
 		<object-name>s-7-E</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[7]/error</property>
-			<property>sim/model/A-10/weapons/stations/station[7]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<property>A-10/stations/station[7]/error</property>
+			<property>A-10/stations/station[7]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -494,9 +505,9 @@
 		<type>select</type>
 		<object-name>s-8-0</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[8]/ready-0</property>
-			<property>sim/model/A-10/weapons/stations/station[8]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[2]/ready-1</property>-->
+			<property>A-10/stations/station[8]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -507,9 +518,9 @@
 		<type>select</type>
 		<object-name>s-8-1</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[8]/ready-1</property>
-			<property>sim/model/A-10/weapons/stations/station[8]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[2]/ready-1</property>-->
+			<property>A-10/stations/station[8]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -520,9 +531,9 @@
 		<type>select</type>
 		<object-name>s-8-2</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[8]/ready-2</property>
-			<property>sim/model/A-10/weapons/stations/station[8]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[2]/ready-1</property>-->
+			<property>A-10/stations/station[8]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -533,9 +544,9 @@
 		<type>select</type>
 		<object-name>s-8-E</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[8]/error</property>
-			<property>sim/model/A-10/weapons/stations/station[8]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<property>A-10/stations/station[8]/error</property>
+			<property>A-10/stations/station[8]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -548,9 +559,9 @@
 		<type>select</type>
 		<object-name>s-9-0</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[9]/ready-0</property>
-			<property>sim/model/A-10/weapons/stations/station[9]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[9]/ready-0</property>-->
+			<property>A-10/stations/station[9]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -561,9 +572,9 @@
 		<type>select</type>
 		<object-name>s-9-1</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[9]/ready-1</property>
-			<property>sim/model/A-10/weapons/stations/station[9]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[9]/ready-1</property>-->
+			<property>A-10/stations/station[9]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -574,9 +585,9 @@
 		<type>select</type>
 		<object-name>s-9-2</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[9]/ready-2</property>
-			<property>sim/model/A-10/weapons/stations/station[9]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[2]/ready-0</property>-->
+			<property>A-10/stations/station[9]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -587,9 +598,9 @@
 		<type>select</type>
 		<object-name>s-9-E</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[9]/error</property>
-			<property>sim/model/A-10/weapons/stations/station[9]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<property>A-10/stations/station[9]/error</property>
+			<property>A-10/stations/station[9]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -602,9 +613,9 @@
 		<type>select</type>
 		<object-name>s-10-0</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[10]/ready-0</property>
-			<property>sim/model/A-10/weapons/stations/station[10]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[10]/ready-0</property>-->
+			<property>A-10/stations/station[10]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -615,9 +626,9 @@
 		<type>select</type>
 		<object-name>s-10-1</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[10]/ready-1</property>
-			<property>sim/model/A-10/weapons/stations/station[10]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[10]/ready-1</property>-->
+			<property>A-10/stations/station[10]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -628,9 +639,9 @@
 		<type>select</type>
 		<object-name>s-10-2</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[10]/ready-2</property>
-			<property>sim/model/A-10/weapons/stations/station[10]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<!--<property>A-10/stations/station[10]/ready-2</property>-->
+			<property>A-10/stations/station[10]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -641,9 +652,9 @@
 		<type>select</type>
 		<object-name>s-10-E</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
-			<property>sim/model/A-10/weapons/stations/station[10]/error</property>
-			<property>sim/model/A-10/weapons/stations/station[10]/selected</property>
+			<property>controls/armament/master-arm</property>
+			<property>A-10/stations/station[10]/error</property>
+			<property>A-10/stations/station[10]/selected</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -656,7 +667,7 @@
 		<type>select</type>
 		<object-name>lights</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/master-arm-switch</property>
+			<property>controls/armament/master-arm</property>
 			<property>sim/model/A-10/weapons/station-light-test</property>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>

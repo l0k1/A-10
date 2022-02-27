@@ -283,7 +283,6 @@ Fairchild A-10 simulation config.
 					<gun-rate-switch type="bool">false</gun-rate-switch> <!-- false is SAFE, true is HI -->
 					<release_lock type="bool">0</release_lock>
 					<station-light-test type="bool">false</station-light-test>
-					<selected-stations></selected-stations>
 					<rip type="int">1</rip>
 					<interval type="float">0.35</interval>
 					<wingtankL type="bool">false</wingtankL>
@@ -689,6 +688,51 @@ Fairchild A-10 simulation config.
 		<stores>
 			<ecm-mounted type="bool">false</ecm-mounted>
 		</stores>
+		<stations>
+			<station n="0">
+				<selected type="bool">false</selected>
+			</station>
+			
+			<station n="1">
+				<selected type="bool">false</selected>
+			</station>
+
+			<station n="2">
+				<selected type="bool">false</selected>
+			</station>
+
+			<station n="3">
+				<selected type="bool">false</selected>
+			</station>
+
+			<station n="4">
+				<selected type="bool">false</selected>
+			</station>
+
+			<station n="5">
+				<selected type="bool">false</selected>
+			</station>
+
+			<station n="6">
+				<selected type="bool">false</selected>
+			</station>
+
+			<station n="7">
+				<selected type="bool">false</selected>
+			</station>
+
+			<station n="8">
+				<selected type="bool">false</selected>
+			</station>
+
+			<station n="9">
+				<selected type="bool">false</selected>
+			</station>
+
+			<station n="10">
+				<selected type="bool">false</selected>
+			</station>
+		</stations>
 	</A-10>
 
 	<ai>

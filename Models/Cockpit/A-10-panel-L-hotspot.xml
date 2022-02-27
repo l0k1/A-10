@@ -167,32 +167,6 @@
             <script>electrical.land_lights_switcher(-1)</script>
           </binding>
         </action>
-
-        <!-- master arm switch -->
-        <action>
-          <name>master-arm-up</name>
-          <button>0</button>
-          <x>-28</x>
-          <y>-42</y>
-          <w>55</w>
-          <h>50</h>
-          <binding>
-            <command>nasal</command>
-            <script>A10weapons.master_arm_switch(1)</script>
-          </binding>
-        </action>
-        <action>
-          <name>master-arm-down</name>
-          <button>0</button>
-          <x>-28</x>
-          <y>-95</y>
-          <w>55</w>
-          <h>50</h>
-          <binding>
-            <command>nasal</command>
-            <script>A10weapons.master_arm_switch(-1)</script>
-          </binding>
-        </action>
 		
         <!-- gun rate switch -->
         <!--<action> 
@@ -242,7 +216,7 @@
           <h>40</h>
           <binding> 
             <command>property-adjust</command>
-            <property>sim/model/A-10/weapons/rip</property>
+            <property>controls/armament/ripple</property>
             <step>-1</step>
             <min>0</min>
             <max>99</max>
@@ -258,7 +232,7 @@
           <h>40</h>
           <binding> 
             <command>property-adjust</command>
-            <property>sim/model/A-10/weapons/rip</property>
+            <property>controls/armament/ripple</property>
             <step>1</step>
             <min>0</min>
             <max>99</max>
@@ -326,7 +300,7 @@
           </binding>
         </action>
 
-        <!-- station #5 -->
+        <!-- station #4 -->
         <action> 
           <name>station-5</name>
           <button>0</button>
@@ -336,10 +310,10 @@
           <h>45</h>
           <binding>
             <command>nasal</command>
-            <script>A10weapons.select_station(4)</script>
+            <script>setprop("A-10/stations/station[4]/selected",1)</script>
           </binding>
         </action>
-        <!-- station #6 -->
+        <!-- station #5 -->
         <action> 
           <name>station-6</name>
           <button>0</button>
@@ -349,10 +323,10 @@
           <h>45</h>
           <binding> 
             <command>nasal</command>
-            <script>A10weapons.select_station(5)</script>
+            <script>setprop("A-10/stations/station[5]/selected",1)</script>
           </binding>
         </action>
-        <!-- station #7 -->
+        <!-- station #6 -->
         <action> 
           <name>station-7</name>
           <button>0</button>
@@ -362,11 +336,11 @@
           <h>45</h>
           <binding> 
             <command>nasal</command>
-            <script>A10weapons.select_station(6)</script>
+            <script>setprop("A-10/stations/station[6]/selected",1)</script>
           </binding>
         </action>
 
-        <!-- station #1 -->
+        <!-- station #0 -->
         <action> 
           <name>station-1</name>
           <button>0</button>
@@ -376,10 +350,10 @@
           <h>45</h>
           <binding> 
             <command>nasal</command>
-            <script>A10weapons.select_station(0)</script>
+            <script>setprop("A-10/stations/station[0]/selected",1)</script>
           </binding>
         </action>
-        <!-- station #2 -->
+        <!-- station #1 -->
         <action> 
           <name>station-2</name>
           <button>0</button>
@@ -389,10 +363,10 @@
           <h>45</h>
           <binding> 
             <command>nasal</command>
-            <script>A10weapons.select_station(1)</script>
+            <script>setprop("A-10/stations/station[1]/selected",1)</script>
           </binding>
         </action>
-        <!-- station #3 -->
+        <!-- station #2 -->
         <action> 
           <name>station-3</name>
           <button>0</button>
@@ -402,10 +376,10 @@
           <h>45</h>
           <binding> 
             <command>nasal</command>
-            <script>A10weapons.select_station(2)</script>
+            <script>setprop("A-10/stations/station[2]/selected",1)</script>
           </binding>
         </action>
-        <!-- station #4 -->
+        <!-- station #3 -->
         <action> 
           <name>station-4</name>
           <button>0</button>
@@ -415,10 +389,10 @@
           <h>45</h>
           <binding> 
             <command>nasal</command>
-            <script>A10weapons.select_station(3)</script>
+            <script>setprop("A-10/stations/station[3]/selected",1)</script>
           </binding>
         </action>
-        <!-- station #8 -->
+        <!-- station #7 -->
         <action> 
           <name>station-8</name>
           <button>0</button>
@@ -428,10 +402,10 @@
           <h>45</h>
           <binding> 
             <command>nasal</command>
-            <script>A10weapons.select_station(7)</script>
+            <script>setprop("A-10/stations/station[7]/selected",1)</script>
           </binding>
         </action>
-        <!-- station #9 -->
+        <!-- station #8 -->
         <action> 
           <name>station-9</name>
           <button>0</button>
@@ -441,10 +415,10 @@
           <h>45</h>
           <binding> 
             <command>nasal</command>
-            <script>A10weapons.select_station(8)</script>
+            <script>setprop("A-10/stations/station[8]/selected",1)</script>
           </binding>
         </action>
-        <!-- station #10 -->
+        <!-- station #9 -->
         <action> 
           <name>station-10</name>
           <button>0</button>
@@ -454,10 +428,10 @@
           <h>45</h>
           <binding> 
             <command>nasal</command>
-            <script>A10weapons.select_station(9)</script>
+            <script>setprop("A-10/stations/station[9]/selected",1)</script>
           </binding>
         </action>
-        <!-- station #11 -->
+        <!-- station #10 -->
         <action> 
           <name>station-11</name>
           <button>0</button>
@@ -467,7 +441,7 @@
           <h>45</h>
           <binding> 
             <command>nasal</command>
-            <script>A10weapons.select_station(10)</script>
+            <script>setprop("A-10/stations/station[10]/selected",1)</script>
           </binding>
         </action>
 
