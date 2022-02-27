@@ -772,7 +772,7 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>rip-qty-x10</object-name>
-		<property>controls/armament/ripple</property>
+		<property>controls/armament/rippleq</property>
 		<factor>0.01</factor>
 		<step>10</step>
 		<scroll>0.5</scroll>
