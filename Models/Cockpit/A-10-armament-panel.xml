@@ -764,7 +764,7 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>rip-qty-x1</object-name>
-		<property>sim/model/A-10/weapons/rip</property>
+		<property>controls/armament/ripple</property>
 		<factor>0.1</factor>
 		<axis><y>-1</y></axis>
 	</animation>
@@ -772,7 +772,7 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>rip-qty-x10</object-name>
-		<property>sim/model/A-10/weapons/rip</property>
+		<property>controls/armament/ripple</property>
 		<factor>0.01</factor>
 		<step>10</step>
 		<scroll>0.5</scroll>
