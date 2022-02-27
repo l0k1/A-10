@@ -29,8 +29,10 @@ var lau = stations.SubModelWeapon.new("LAU-68", 0.254, 150, [0], [], props.globa
 var fuelTankLeft600 = stations.FuelTank.new("600 Gal Fuel Tank", "TK600", 4, 600, "sim/model/A-10/weapons/wingtankL");
 var fuelTankCenter600 = stations.FuelTank.new("600 Gal Fuel Tank", "TK600", 5, 600, "sim/model/A-10/weapons/wingtankC");
 var fuelTankRight600 = stations.FuelTank.new("600 Gal Fuel Tank", "TK600", 6, 600, "sim/model/A-10/weapons/wingtankR");
-var ecm131 = stations.Smoker.new("AN/ALQ-131", "AL131", "A-10/stores/ecm-mounted");
-var ecm184 = stations.Smoker.new("AN/ALQ-184", "AL184", "A-10/stores/ecm-mounted");
+var ecm131L = stations.Smoker.new("AN/ALQ-131", "AL131", "A-10/stores/ecm-mounted-left");
+var ecm184L = stations.Smoker.new("AN/ALQ-184", "AL184", "A-10/stores/ecm-mounted-left");
+var ecm131R = stations.Smoker.new("AN/ALQ-131", "AL131", "A-10/stores/ecm-mounted-right");
+var ecm184R = stations.Smoker.new("AN/ALQ-184", "AL184", "A-10/stores/ecm-mounted-right");
 
 fuelTankLeft600.del();
 fuelTankCenter600.del();
@@ -51,12 +53,14 @@ var pylonSets = {
     left600: {name: fuelTankLeft600.type, content: [fuelTankLeft600], fireOrder: [0], launcherDragArea: 0, launcherMass: 531, launcherJettisonable: 1, showLongTypeInsteadOfCount: 1, category: 2},
     center600: {name: fuelTankCenter600.type, content: [fuelTankCenter600], fireOrder: [0], launcherDragArea: 0, launcherMass: 531, launcherJettisonable: 1, showLongTypeInsteadOfCount: 1, category: 2},
     right600: {name: fuelTankRight600.type, content: [fuelTankRight600], fireOrder: [0], launcherDragArea: 0, launcherMass: 531, launcherJettisonable: 1, showLongTypeInsteadOfCount: 1, category: 2},
-    alq131: {name: "AN/ALQ-131(V) ECM Pod", content: [ecm131], fireOrder: [0], launcherDragArea: 0, launcherMass: 480, launcherJettisonable: 0, showLongTypeInsteadOfCount: 1, category: 2},
-    alq184: {name: "AN/ALQ-184(V) ECM Pod", content: [ecm184], fireOrder: [0], launcherDragArea: 0, launcherMass: 480, launcherJettisonable: 0, showLongTypeInsteadOfCount: 1, category: 2},
+    alq131L: {name: "AN/ALQ-131(V) ECM Pod", content: [ecm131L], fireOrder: [0], launcherDragArea: 0, launcherMass: 480, launcherJettisonable: 0, showLongTypeInsteadOfCount: 1, category: 2},
+    alq184L: {name: "AN/ALQ-184(V) ECM Pod", content: [ecm184L], fireOrder: [0], launcherDragArea: 0, launcherMass: 480, launcherJettisonable: 0, showLongTypeInsteadOfCount: 1, category: 2},
+    alq131R: {name: "AN/ALQ-131(V) ECM Pod", content: [ecm131R], fireOrder: [0], launcherDragArea: 0, launcherMass: 480, launcherJettisonable: 0, showLongTypeInsteadOfCount: 1, category: 2},
+    alq184R: {name: "AN/ALQ-184(V) ECM Pod", content: [ecm184R], fireOrder: [0], launcherDragArea: 0, launcherMass: 480, launcherJettisonable: 0, showLongTypeInsteadOfCount: 1, category: 2},
 };
 
 #sets
-var pylon1set = [pylonSets.empty, pylonSets.Daim9, pylonSets.mk82, pylonSets.mk82air, pylonSets.cbu87, pylonSets.alq131, pylonSets.alq184];
+var pylon1set = [pylonSets.empty, pylonSets.Daim9, pylonSets.mk82, pylonSets.mk82air, pylonSets.cbu87, pylonSets.alq131L, pylonSets.alq184L];
 var pylon2set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.cbu87, pylonSets.lau68];
 var pylon3set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk84, pylonSets.cbu87, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.lau68, pylonSets.agm65tri];
 var pylon4set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk84, pylonSets.cbu87, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.lau68, pylonSets.left600];
@@ -66,7 +70,7 @@ var pylon7set = [pylonSets.empty, pylonSets.mk82air, pylonSets.mk82, pylonSets.m
 var pylon8set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk84, pylonSets.cbu87, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.lau68, pylonSets.right600];
 var pylon9set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk84, pylonSets.cbu87, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.lau68, pylonSets.agm65tri];
 var pylon10set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.cbu87, pylonSets.lau68];
-var pylon11set = [pylonSets.empty, pylonSets.Daim9, pylonSets.mk82, pylonSets.mk82air, pylonSets.cbu87, pylonSets.alq131, pylonSets.alq184];
+var pylon11set = [pylonSets.empty, pylonSets.Daim9, pylonSets.mk82, pylonSets.mk82air, pylonSets.cbu87, pylonSets.alq131R, pylonSets.alq184R];
 
 # pylons
 pylonI = stations.InternalStation.new("Internal gun mount", 11, [pylonSets.mm20], props.globals.getNode("sim/weight[11]/weight-lb",1));
