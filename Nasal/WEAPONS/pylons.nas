@@ -21,7 +21,7 @@ var msgA = "If you need to repair now, then use Menu-Location-SelectAirport inst
 var msgB = "Please land before changing payload.";
 var msgC = "Please land before refueling.";
 
-var cannon = stations.SubModelWeapon.new("30mm Cannon", 0.254, 150, [0], [], props.globals.getNode("sim/model/A-10/weapons/gun-rate-switch",1), 0, nil,0);
+var cannon = stations.SubModelWeapon.new("30mm Cannon", 0.254, 1174, [1], [], props.globals.getNode("controls/armament/trigger-gun",1), 0, nil,0);
 cannon.typeShort = "GUN";
 cannon.brevity = "Guns guns";
 var lau = stations.SubModelWeapon.new("LAU-68", 0.254, 150, [0], [], props.globals.getNode("controls/armament/trigger",1), 0, nil,0);
@@ -62,13 +62,13 @@ var pylonSets = {
 #sets
 var pylon1set = [pylonSets.empty, pylonSets.Daim9, pylonSets.mk82, pylonSets.mk82air, pylonSets.cbu87, pylonSets.alq131L, pylonSets.alq184L];
 var pylon2set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.cbu87, pylonSets.lau68];
-var pylon3set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk84, pylonSets.cbu87, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.lau68, pylonSets.agm65tri];
+var pylon3set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk84, pylonSets.cbu87, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.lau68];
 var pylon4set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk84, pylonSets.cbu87, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.lau68, pylonSets.left600];
 var pylon5set = [pylonSets.empty, pylonSets.mk82air, pylonSets.mk82, pylonSets.mk84, pylonSets.cbu87];
 var pylon6set = [pylonSets.empty, pylonSets.center600];
 var pylon7set = [pylonSets.empty, pylonSets.mk82air, pylonSets.mk82, pylonSets.mk84, pylonSets.cbu87];
 var pylon8set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk84, pylonSets.cbu87, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.lau68, pylonSets.right600];
-var pylon9set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk84, pylonSets.cbu87, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.lau68, pylonSets.agm65tri];
+var pylon9set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk84, pylonSets.cbu87, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.lau68];
 var pylon10set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.cbu87, pylonSets.lau68];
 var pylon11set = [pylonSets.empty, pylonSets.Daim9, pylonSets.mk82, pylonSets.mk82air, pylonSets.cbu87, pylonSets.alq131R, pylonSets.alq184R];
 

@@ -2770,7 +2770,7 @@
 			<path>Aircraft/A-10/Sounds/flare.wav</path>
 			<condition>
 				<equals>
-					<property>ai/submodels/submodel[78]/flare-release</property>
+					<property>ai/submodels/submodel[3]/flare-release</property>
 					<value>true</value>
 				</equals>
 			</condition>

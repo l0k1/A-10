@@ -4,7 +4,7 @@
 
 	<submodel>
 		<name>GAU-8a impact smoke</name>
-		<model>Aircraft/A-10/Models/smoke-impact.xml</model>
+		<model>Aircraft/A-10/Models/Weapons/GAU-8A/smoke-impact.xml</model>
 		<speed>0</speed>
 		<repeat>false</repeat>
 		<delay>0</delay>

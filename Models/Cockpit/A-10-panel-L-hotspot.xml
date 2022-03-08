@@ -232,7 +232,7 @@
           <h>40</h>
           <binding> 
             <command>property-adjust</command>
-            <property>controls/armament/ripple</property>
+            <property>sim/model/A-10/weapons/rip</property>
             <step>1</step>
             <min>0</min>
             <max>99</max>

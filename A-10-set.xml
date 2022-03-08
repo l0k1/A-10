@@ -613,8 +613,8 @@ Fairchild A-10 simulation config.
 								<![CDATA[
 
 								if(getprop("/gear/gear[0]/wow") and getprop("/velocities/groundspeed-kt") <= 1.0){
-									setprop("/ai/submodels/submodel[78]/count", 480);
-                                    setprop("/ai/submodels/submodel[79]/count", 480);
+									setprop("/ai/submodels/submodel[3]/count", 480);
+                                    setprop("/ai/submodels/submodel[4]/count", 480);
 									screen.log.write("480 flares loaded", 1, 1, 1);
 								} else {
 									screen.log.write("Can't load flares while airborne or moveing", 1, 1, 1);
@@ -739,7 +739,7 @@ Fairchild A-10 simulation config.
 	<ai>
 		<submodels>
 			<trajectory-markers type="bool">0</trajectory-markers>
-			<submodel n="78">
+			<submodel n="3">
 				<flare-release-cmd type="bool">false</flare-release-cmd>
 			</submodel>
 		</submodels>
@@ -817,13 +817,13 @@ Fairchild A-10 simulation config.
 				<desc>Trigger flare release</desc>
 				<binding>
 					<command>property-assign</command>
-					<property>/ai/submodels/submodel[78]/flare-release-cmd</property>
+					<property>/ai/submodels/submodel[3]/flare-release-cmd</property>
 					<value type="bool">true</value>
 				</binding>
 				<mod-up>
 					<binding>
 						<command>property-assign</command>
-						<property>/ai/submodels/submodel[78]/flare-release-cmd</property>
+						<property>/ai/submodels/submodel[3]/flare-release-cmd</property>
 						<value type="bool">false</value>
 					</binding>
 				</mod-up>
@@ -972,8 +972,10 @@ Fairchild A-10 simulation config.
 		</APU>
 		<armament>
 			<trigger type="bool">false</trigger>
+			<trigger-gun type="bool">false</trigger-gun>
 			<ripple type="int">1</ripple>
 			<ripple-dist type="int">150</ripple-dist>
+			<dual type="int">1</dual>
 			<station n="0">
 				<release type="bool">false</release>
 			</station>
@@ -1007,9 +1009,6 @@ Fairchild A-10 simulation config.
 			<station n="10">
 				<release type="bool">false</release>
 			</station>
-			<trigger type="bool">false</trigger>
-			<trigger-gun type="bool">false</trigger-gun>
-			<dual type="int">1</dual>
 		</armament>
 
 		<engines>
