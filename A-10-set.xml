@@ -882,7 +882,7 @@ Fairchild A-10 simulation config.
 			<path>Aircraft/A-10/Sounds/A-10-sound.xml</path>
 		</sound>
 		
-		<expected-aircraft-dir-name>A-10-master</expected-aircraft-dir-name>
+		<expected-aircraft-dir-name>A-10</expected-aircraft-dir-name>
 
 	</sim>
 
