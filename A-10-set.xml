@@ -198,103 +198,75 @@ Fairchild A-10 simulation config.
 				<znear type="double">0.1</znear>
 			</camera-group>
 		</rendering>
-
+<!--Pylon weightpoint-->
 		<weight n="0">
-			<name>Pylon 0</name>
 			<weight-lb type="float">0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>AN-ALQ-131</name><lbs>535</lbs></opt>
-			<opt><name>dual-AIM-9</name><lbs>612</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
 		</weight>
 		<weight n="1">
-			<name>Pylon 1</name>
 			<weight-lb type="float">0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>LAU-68</name><lbs>202.5</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
 		</weight>
 		<weight n="2">
-			<name>Pylon 2</name>
 			<weight-lb type="float">0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>LAU-68</name><lbs>202.5</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
-			<opt><name>triple-MK-82-LD</name><lbs>1800</lbs></opt>
 		</weight>
 		<weight n="3">
-			<name>Pylon 3</name>
-			<tank>4</tank> <!-- FDM tank index on this pylon -->
 			<weight-lb type="float">0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>LAU-68</name><lbs>202.5</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
-			<opt><name>triple-MK-82-LD</name><lbs>1800</lbs></opt>
-			<opt><name>600 Gallons Fuel Tank</name><lbs>280</lbs><gals>600</gals></opt>
 		</weight>
 		<weight n="4">
-			<name>Pylon 4</name>
 			<weight-lb type="float">0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
 		</weight>
 		<weight n="5">
-			<name>Pylon 5</name>
-			<tank>5</tank> <!-- FDM tank index on this pylon -->
 			<weight-lb type="float">0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
-			<opt><name>600 Gallons Fuel Tank</name><lbs>280</lbs><gals>600</gals></opt>
 		</weight>
 		<weight n="6">
-			<name>Pylon 6</name>
 			<weight-lb type="float">0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
 		</weight>
 		<weight n="7">
-			<name>Pylon 7</name>
-			<tank>6</tank> <!-- FDM tank index on this pylon -->
 			<weight-lb type="float">0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>LAU-68</name><lbs>202.5</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
-			<opt><name>triple-MK-82-LD</name><lbs>1800</lbs></opt>
-			<opt><name>600 Gallons Fuel Tank</name><lbs>280</lbs><gals>600</gals></opt>
 		</weight>
 		<weight n="8">
-			<name>Pylon 8</name>
 			<weight-lb type="float">0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>LAU-68</name><lbs>202.5</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
-			<opt><name>triple-MK-82-LD</name><lbs>1800</lbs></opt>
 		</weight>
 		<weight n="9">
-			<name>Pylon 9</name>
 			<weight-lb type="float">0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>LAU-68</name><lbs>202.5</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
 		</weight>
 		<weight n="10">
-			<name>Pylon 10</name>
 			<weight-lb type="float">0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>dual-AIM-9</name><lbs>612</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
 		</weight>
+
+		<!--Not used with YASim but needed for fcs-->
+		<drag n="0">
+			<dragarea-sqft type="float">0</dragarea-sqft>
+		</drag>
+		<drag n="1">
+			<dragarea-sqft type="float">0</dragarea-sqft>
+		</drag>
+		<drag n="2">
+			<dragarea-sqft type="float">0</dragarea-sqft>
+		</drag>
+		<drag n="3">
+			<dragarea-sqft type="float">0</dragarea-sqft>
+		</drag>
+		<drag n="4">
+			<dragarea-sqft type="float">0</dragarea-sqft>
+		</drag>
+		<drag n="5">
+			<dragarea-sqft type="float">0</dragarea-sqft>
+		</drag>
+		<drag n="6">
+			<dragarea-sqft type="float">0</dragarea-sqft>
+		</drag>
+		<drag n="7">
+			<dragarea-sqft type="float">0</dragarea-sqft>
+		</drag>
+		<drag n="8">
+			<dragarea-sqft type="float">0</dragarea-sqft>
+		</drag>
+		<drag n="9">
+			<dragarea-sqft type="float">0</dragarea-sqft>
+		</drag>
+		<drag n="10">
+			<dragarea-sqft type="float">0</dragarea-sqft>
+		</drag>
 
 		<canopy>
 			<position-norm type="double">0</position-norm>
@@ -311,183 +283,11 @@ Fairchild A-10 simulation config.
 					<gun-rate-switch type="bool">false</gun-rate-switch> <!-- false is SAFE, true is HI -->
 					<release_lock type="bool">0</release_lock>
 					<station-light-test type="bool">false</station-light-test>
-					<selected-stations></selected-stations>
 					<rip type="int">1</rip>
 					<interval type="float">0.35</interval>
-
-					<tank-600-gals>
-						<description type="string">tank-600-gals</description>
-						<weight-lb type="float">280</weight-lb>
-						<ammo-weight-lb type="float">0</ammo-weight-lb>
-						<available type="int">1</available>
-						<ready-number>0</ready-number>
-					</tank-600-gals>
-
-					<AN-ALQ-131>
-						<description type="string">AN-ALQ-131</description>
-						<weight-lb type="float">535</weight-lb>
-						<ammo-weight-lb type="float">0</ammo-weight-lb>
-						<available type="int">1</available>
-						<ready-number>0</ready-number>
-					</AN-ALQ-131>
-
-					<dual-AIM-9>
-						<description type="string">dual-AIM-9</description>
-						<weight-lb type="float">612</weight-lb>
-						<ammo-weight-lb type="float">191</ammo-weight-lb>
-						<aim9-knob type="int">0</aim9-knob>
-						<available type="int">2</available>
-						<ready-number>2</ready-number>
-						<search-sound type="bool">false</search-sound>
-						<reticle-diam type="int">20</reticle-diam>
-					</dual-AIM-9>
-
-					<LAU-68>
-						<description type="string">LAU-68</description>
-						<weight-lb type="float">202.5</weight-lb>
-						<ammo-weight-lb type="float">23.9</ammo-weight-lb>
-						<available type="int">7</available>
-						<ready-number>1</ready-number>
-					</LAU-68>
-
-					<triple-MK-82-LD>
-						<description type="string">triple-MK-82-LD</description>
-						<weight-lb type="float">1800</weight-lb>
-						<ammo-weight-lb type="float">500</ammo-weight-lb>
-						<available type="int">3</available>
-						<ready-number>3</ready-number>
-					</triple-MK-82-LD>
-
-					<single-MK-82-LD>
-						<description type="string">single-MK-82-LD</description>
-						<weight-lb type="float">500</weight-lb>
-						<ammo-weight-lb type="float">500</ammo-weight-lb>
-						<available type="int">1</available>
-						<ready-number>1</ready-number>
-					</single-MK-82-LD>
-
-					<gun>
-						<running type="bool">false</running>
-						<unsafe type="bool">false</unsafe>
-						<ready type="bool">false</ready>
-						<hydr-drive>
-						    <serviceable n="0" type="bool">true</serviceable><!-- Left hydraulic drive motor -->
-						    <serviceable n="1" type="bool">true</serviceable>
-						</hydr-drive>
-					</gun>
-
-					<stations>
-						<station n="0">
-							<ammo-weight-lb type="float">0</ammo-weight-lb>
-							<available type="int">0</available>
-							<description type="string">none</description>
-							<error type="bool">true</error>
-							<ready-0 type="bool">false</ready-0>
-							<ready-1 type="bool">false</ready-1>
-							<ready-2 type="bool">false</ready-2>
-							<selected type="bool">false</selected>
-						</station>
-						<station n="1">
-							<ammo-weight-lb type="float">0</ammo-weight-lb>
-							<available type="int">0</available>
-							<description type="string">none</description>
-							<error type="bool">true</error>
-							<ready-0 type="bool">false</ready-0>
-							<ready-1 type="bool">false</ready-1>
-							<ready-2 type="bool">false</ready-2>
-							<selected type="bool">false</selected>
-						</station>
-						<station n="2">
-							<ammo-weight-lb type="float">0</ammo-weight-lb>
-							<available type="int">0</available>
-							<description type="string">none</description>
-							<error type="bool">true</error>
-							<ready-0 type="bool">false</ready-0>
-							<ready-1 type="bool">false</ready-1>
-							<ready-2 type="bool">false</ready-2>
-							<selected type="bool">false</selected>
-						</station>
-						<station n="3">
-							<ammo-weight-lb type="float">0</ammo-weight-lb>
-							<available type="int">0</available>
-							<description type="string">none</description>
-							<error type="bool">true</error>
-							<ready-0 type="bool">false</ready-0>
-							<ready-1 type="bool">false</ready-1>
-							<ready-2 type="bool">false</ready-2>
-							<selected type="bool">false</selected>
-						</station>
-						<station n="4">
-							<ammo-weight-lb type="float">0</ammo-weight-lb>
-							<available type="int">0</available>
-							<description type="string">none</description>
-							<error type="bool">true</error>
-							<ready-0 type="bool">false</ready-0>
-							<ready-1 type="bool">false</ready-1>
-							<ready-2 type="bool">false</ready-2>
-							<selected type="bool">false</selected>
-						</station>
-						<station n="5">
-							<ammo-weight-lb type="float">0</ammo-weight-lb>
-							<available type="int">0</available>
-							<description type="string">none</description>
-							<error type="bool">true</error>
-							<ready-0 type="bool">false</ready-0>
-							<ready-1 type="bool">false</ready-1>
-							<ready-2 type="bool">false</ready-2>
-							<selected type="bool">false</selected>
-						</station>
-						<station n="6">
-							<ammo-weight-lb type="float">0</ammo-weight-lb>
-							<available type="int">0</available>
-							<description type="string">none</description>
-							<error type="bool">true</error>
-							<ready-0 type="bool">false</ready-0>
-							<ready-1 type="bool">false</ready-1>
-							<ready-2 type="bool">false</ready-2>
-							<selected type="bool">false</selected>
-						</station>
-						<station n="7">
-							<ammo-weight-lb type="float">0</ammo-weight-lb>
-							<available type="int">0</available>
-							<description type="string">none</description>
-							<error type="bool">true</error>
-							<ready-0 type="bool">false</ready-0>
-							<ready-1 type="bool">false</ready-1>
-							<ready-2 type="bool">false</ready-2>
-							<selected type="bool">false</selected>
-						</station>
-						<station n="8">
-							<ammo-weight-lb type="float">0</ammo-weight-lb>
-							<available type="int">0</available>
-							<description type="string">none</description>
-							<error type="bool">true</error>
-							<ready-0 type="bool">false</ready-0>
-							<ready-1 type="bool">false</ready-1>
-							<ready-2 type="bool">false</ready-2>
-							<selected type="bool">false</selected>
-						</station>
-						<station n="9">
-							<ammo-weight-lb type="float">0</ammo-weight-lb>
-							<available type="int">0</available>
-							<description type="string">none</description>
-							<error type="bool">true</error>
-							<ready-0 type="bool">false</ready-0>
-							<ready-1 type="bool">false</ready-1>
-							<ready-2 type="bool">false</ready-2>
-							<selected type="bool">false</selected>
-						</station>
-						<station n="10">
-							<ammo-weight-lb type="float">0</ammo-weight-lb>
-							<available type="int">0</available>
-							<description type="string">none</description>
-							<error type="bool">true</error>
-							<ready-0 type="bool">false</ready-0>
-							<ready-1 type="bool">false</ready-1>
-							<ready-2 type="bool">false</ready-2>
-							<selected type="bool">false</selected>
-						</station>
-					</stations>
+					<wingtankL type="bool">false</wingtankL>
+					<wingtankC type="bool">false</wingtankC>
+					<wingtankR type="bool">false</wingtankR>
 				</weapons>
 				<canopy-safe type="bool">true</canopy-safe>
 				<consumables>
@@ -802,7 +602,7 @@ Fairchild A-10 simulation config.
 									<value>0</value>
 								</not-equals>
 								<less-than>
-									<property>/valocities/groundspeed-kt</property>
+									<property>/velocities/groundspeed-kt</property>
 									<value>1</value>
 								</less-than>
 							</and>
@@ -813,8 +613,8 @@ Fairchild A-10 simulation config.
 								<![CDATA[
 
 								if(getprop("/gear/gear[0]/wow") and getprop("/velocities/groundspeed-kt") <= 1.0){
-									setprop("/ai/submodels/submodel[78]/count", 480);
-                                    setprop("/ai/submodels/submodel[79]/count", 480);
+									setprop("/ai/submodels/submodel[3]/count", 480);
+                                    setprop("/ai/submodels/submodel[4]/count", 480);
 									screen.log.write("480 flares loaded", 1, 1, 1);
 								} else {
 									screen.log.write("Can't load flares while airborne or moveing", 1, 1, 1);
@@ -886,10 +686,62 @@ Fairchild A-10 simulation config.
 
 	</sim>
 
+	<A-10>
+		<stores>
+			<ecm-mounted-left type="bool">false</ecm-mounted-left>
+			<ecm-mounted-right type="bool">false</ecm-mounted-right>
+		</stores>
+		<stations>
+			<station n="0">
+				<selected type="bool">false</selected>
+			</station>
+			
+			<station n="1">
+				<selected type="bool">false</selected>
+			</station>
+
+			<station n="2">
+				<selected type="bool">false</selected>
+			</station>
+
+			<station n="3">
+				<selected type="bool">false</selected>
+			</station>
+
+			<station n="4">
+				<selected type="bool">false</selected>
+			</station>
+
+			<station n="5">
+				<selected type="bool">false</selected>
+			</station>
+
+			<station n="6">
+				<selected type="bool">false</selected>
+			</station>
+
+			<station n="7">
+				<selected type="bool">false</selected>
+			</station>
+
+			<station n="8">
+				<selected type="bool">false</selected>
+			</station>
+
+			<station n="9">
+				<selected type="bool">false</selected>
+			</station>
+
+			<station n="10">
+				<selected type="bool">false</selected>
+			</station>
+		</stations>
+	</A-10>
+
 	<ai>
 		<submodels>
 			<trajectory-markers type="bool">0</trajectory-markers>
-			<submodel n="78">
+			<submodel n="3">
 				<flare-release-cmd type="bool">false</flare-release-cmd>
 			</submodel>
 		</submodels>
@@ -910,14 +762,6 @@ Fairchild A-10 simulation config.
 					<script>A10weapons.config_dialog.toggle()</script>
 				</binding>
 			</key>
-			<key n="69">
-				<name>E</name>
-				<desc>Weapon Release</desc>
-				<binding>
-					<command>nasal</command>
-					<script>A10weapons.release()</script>
-				</binding>
-			</key>
 			<key n="67">
 				<name>C</name>
 				<desc>Toggle canopy on or off</desc>
@@ -927,16 +771,18 @@ Fairchild A-10 simulation config.
 				</binding>
 			</key>
 			<key n="101">
-				<name>e</name>
-				<desc>Fire GAU-8/A cannon</desc>
+				<name>e</name> <!-- XXXXXXXXX Will need to be changed to E when GAU-8 is re-implemented -->
+				<desc>Trigger</desc>
 				<binding>
-					<command>nasal</command>
-					<script>A10weapons.fire_gau8a()</script>
+					<command>property-assign</command>
+					<property>controls/armament/trigger</property>
+					<value>1</value>
 				</binding>
 				<mod-up>
 					<binding>
-						<command>nasal</command>
-						<script>A10weapons.cfire_gau8a()</script>
+						<command>property-assign</command>
+						<property>controls/armament/trigger</property>
+						<value>0</value>
 					</binding>
 				</mod-up>
 			</key>
@@ -973,17 +819,18 @@ Fairchild A-10 simulation config.
 				<desc>Trigger flare release</desc>
 				<binding>
 					<command>property-assign</command>
-					<property>/ai/submodels/submodel[78]/flare-release-cmd</property>
+					<property>/ai/submodels/submodel[3]/flare-release-cmd</property>
 					<value type="bool">true</value>
 				</binding>
 				<mod-up>
 					<binding>
 						<command>property-assign</command>
-						<property>/ai/submodels/submodel[78]/flare-release-cmd</property>
+						<property>/ai/submodels/submodel[3]/flare-release-cmd</property>
 						<value type="bool">false</value>
 					</binding>
 				</mod-up>
 			</key>
+
 			<key n="108">
         			<name>l</name>
         			<desc>Landing Light</desc>
@@ -992,6 +839,40 @@ Fairchild A-10 simulation config.
             				<property>fdm/jsbsim/electric/switches/landinglight</property>
         			</binding>
     			</key>
+
+			<key n="109">
+				<name>m</name>
+				<desc>Masterarm</desc>
+				<binding>
+					<command>nasal</command>
+					<script><![CDATA[
+							setprop("controls/armament/master-arm",!getprop("controls/armament/master-arm"));
+							screen.log.write("Master-arm "~(getprop("controls/armament/master-arm")==0?"OFF":"ON"), 0.5, 0.5, 1);
+						
+					]]></script>
+				</binding>
+			</key>
+
+			<key n="119">
+                <name>w</name>
+                <desc>Cycle Weapon Type</desc>
+                <binding n="2">
+                    <command>nasal</command>
+                    <condition>
+                            <and>
+                            <not-equals>
+                                <property>sim/current-view/name</property>
+                                <value>Walk View</value>
+                            </not-equals>
+                            <not-equals>
+                                <property>sim/current-view/name</property>
+                                <value>Walker Orbit View</value>
+                            </not-equals>
+                            </and>
+                     </condition>
+                    <script>pylons.fcs.cycleLoadedWeapon();</script>
+                </binding>
+            </key>
 		</keyboard>
 	</input>
 
@@ -1101,6 +982,43 @@ Fairchild A-10 simulation config.
 		</APU>
 		<armament>
 			<trigger type="bool">false</trigger>
+			<trigger-gun type="bool">false</trigger-gun>
+			<ripple type="int">1</ripple>
+			<ripple-dist type="int">150</ripple-dist>
+			<dual type="int">1</dual>
+			<station n="0">
+				<release type="bool">false</release>
+			</station>
+			<station n="1">
+				<release type="bool">false</release>
+			</station>
+			<station n="2">
+				<release type="bool">false</release>
+			</station>
+			<station n="3">
+				<release type="bool">false</release>
+			</station>
+			<station n="4">
+				<release type="bool">false</release>
+			</station>
+			<station n="5">
+				<release type="bool">false</release>
+			</station>
+			<station n="6">
+				<release type="bool">false</release>
+			</station>
+			<station n="7">
+				<release type="bool">false</release>
+			</station>
+			<station n="8">
+				<release type="bool">false</release>
+			</station>
+			<station n="9">
+				<release type="bool">false</release>
+			</station>
+			<station n="10">
+				<release type="bool">false</release>
+			</station>
 		</armament>
 
 		<engines>
@@ -1295,34 +1213,7 @@ Fairchild A-10 simulation config.
 		</refuel>
 	</systems>
 
-    <payload>
-         <armament>
-             <models>Aircraft/A-10/Models/MParmaments/</models>
-             <enable-craters type="bool">true</enable-craters>
-             <MLW-bearing type="double">0</MLW-bearing>
-             <MLW-count type="int">0</MLW-count>
-             <MLW-launcher type="string"></MLW-launcher>
-             <MAW-bearing type="double">0</MAW-bearing>
-             <MAW-active type="bool">false</MAW-active>
-             <msg type="bool">false</msg>
-             <spike type="bool">false</spike>
-         </armament>
-         <d-config>
-             <full_damage_dist_m type="double">0</full_damage_dist_m>
-             <use_hitpoints_instead_of_failure_modes_bool type="bool">false</use_hitpoints_instead_of_failure_modes_bool>
-             <hp_max type="double">80</hp_max>
-             <hitable_by_air_munitions type="bool">true</hitable_by_air_munitions>
-             <hitable_by_cannon type="bool">true</hitable_by_cannon>
-             <is_fleet type="bool">false</is_fleet>
-             <rwr_to_screen type="bool">false</rwr_to_screen>
-             <rwr_audio_extended type="bool">false</rwr_audio_extended>
-             <tacview_supported type="bool">false</tacview_supported>
-             <m28_auto type="bool">false</m28_auto>
-             <mlw_max type="double">0</mlw_max>
-             <auto_flare_caller type="bool">false</auto_flare_caller>
-         </d-config>
-     </payload>
-
+    <payload n="0" include= "A-10-payload.xml"/>
 
 	<!-- Fuel Tank indexes -->
 	<consumables>
@@ -1406,6 +1297,12 @@ Fairchild A-10 simulation config.
         <armament>
             <file>Aircraft/A-10/Nasal/missile-code.nas</file>
         </armament>
+		<stations>
+			<file>Aircraft/A-10/Nasal/WEAPONS/station-manager.nas</file>
+		</stations>
+		<fc>
+			<file>Aircraft/A-10/Nasal/WEAPONS/fire-control.nas</file>
+		</fc>
 		<A10fuel>
 			<file>Aircraft/A-10/Nasal/A-10-fuel.nas</file>
 		</A10fuel>
@@ -1433,9 +1330,9 @@ Fairchild A-10 simulation config.
 		<pilot_g>
 			<file>Aircraft/A-10/Nasal/pilot-g.nas</file>
 		</pilot_g>
-		<A10weapons>
-			<file>Aircraft/A-10/Nasal/A-10-weapons.nas</file>
-		</A10weapons>
+		<pylons>
+			<file>Aircraft/A-10/Nasal/WEAPONS/pylons.nas</file>
+		</pylons>
 		<A10hud>
 			<file>Aircraft/A-10/Nasal/hud.nas</file>
 		</A10hud>

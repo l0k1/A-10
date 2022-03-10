@@ -198,7 +198,7 @@
 	</animation>
 
 	<model>
-		<path>Aircraft/A-10/Models/ext-stores.xml</path>
+		<path>Aircraft/A-10/Models/Stores/loads.xml</path>
 	</model>
 	<model>
         	<name>landing light1</name>

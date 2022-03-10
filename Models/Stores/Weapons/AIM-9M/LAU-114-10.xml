@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+
+    <path>Aircraft/A-10/Models/Stores/Racks/LAU-114/LAU-114.xml</path>
+
+    <model>
+        <name>AIM-9-10-0</name>
+        <path>Aircraft/A-10/Models/Stores/Weapons/AIM-9M/AIM-9M_LW.xml</path>
+        <offsets>
+            <x-m>-0</x-m>
+            <y-m>-0.332</y-m>
+            <z-m>-0.08</z-m>
+            <pitch-deg>-4</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>AIM-9-10-1</name>
+        <path>Aircraft/A-10/Models/Stores/Weapons/AIM-9M/AIM-9M_RW.xml</path>
+        <offsets>
+            <x-m>-0</x-m>
+            <y-m>0.332</y-m>
+            <z-m>-0.08</z-m>
+            <pitch-deg>-4</pitch-deg>
+        </offsets>
+    </model>
+
+    <animation>
+        <type>select</type>
+        <object-name>AIM-9-10-0</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-10-set</property>
+                <value>2 x AIM-9M</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-10-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>AIM-9-10-1</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-10-set</property>
+                <value>2 x AIM-9M</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-10-count</property>
+                <value>1</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+</PropertyList>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<!-- this is the static non fired model on the aircraft -->
+
+<PropertyList>
+
+	<name>AIM-9M</name>
+	<path>AIM-9M.ac</path>
+
+	<effect>  
+    	<inherits-from>Aircraft/A-10/Models/Effects/glass/glassIR</inherits-from>  
+    	<object-name>AIM9_IRsphere</object-name> 
+  	</effect>
+
+
+</PropertyList>
