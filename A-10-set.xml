@@ -681,6 +681,8 @@ Fairchild A-10 simulation config.
 			<audible>true</audible>
 			<path>Aircraft/A-10/Sounds/A-10-sound.xml</path>
 		</sound>
+		
+		<expected-aircraft-dir-name>A-10</expected-aircraft-dir-name>
 
 	</sim>
 
@@ -829,6 +831,15 @@ Fairchild A-10 simulation config.
 				</mod-up>
 			</key>
 
+			<key n="108">
+        			<name>l</name>
+        			<desc>Landing Light</desc>
+        			<binding>
+            				<command>property-toggle</command>
+            				<property>fdm/jsbsim/electric/switches/landinglight</property>
+        			</binding>
+    			</key>
+
 			<key n="109">
 				<name>m</name>
 				<desc>Masterarm</desc>
@@ -862,7 +873,6 @@ Fairchild A-10 simulation config.
                     <script>pylons.fcs.cycleLoadedWeapon();</script>
                 </binding>
             </key>
-
 		</keyboard>
 	</input>
 
