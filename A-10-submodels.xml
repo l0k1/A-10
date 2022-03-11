@@ -43,7 +43,13 @@
 		<buoyancy>0</buoyancy>
 		<wind>false</wind>
 		<cd>0.193</cd>
-		<random>false</random>
+		<random>true</random>
+		<randomness>
+			<azimuth>0.13</azimuth>
+			<elevation>0.13</elevation>
+			<cd>0.1</cd>
+			<life>0.8</life>
+		</randomness>
 		<eda>0.007609</eda>
 		<weight>0.9369635</weight>
 		<no-roll>false</no-roll>
@@ -116,4 +122,28 @@
 	    <buoyancy>8</buoyancy>
 	    <eda>1.0</eda>
 	</submodel>
+
+	<submodel>
+		<name>Hydra-70</name>
+		<model>Aircraft/A-10/Models/Stores/Weapons/LAU-68/Hydra70.xml</model>
+		<trigger>controls/armament/trigger-hydra-1</trigger>
+		<speed>2000.0</speed><!-- ft/sec, due to no drag this should probably be around 65% of topspeed -->
+		<repeat>false</repeat>
+		<delay>0.0</delay>
+		<count>-1</count>
+		<offsets>
+			<x-m> -0.269</x-m><!-- in FEET and x is opposite normal FG model coordinates -->
+			<y-m> -9.46</y-m>
+			<z-m>  0.81</z-m>
+		</offsets>
+		<life>7.0</life><!-- since it has no drag, its lifetime should be as short as possible needed to hit stuff -->
+		<wind>true</wind>
+		<weight>23.6</weight> <!-- 13.6lbs Mk66 Rocket Motor, 10lbs M151 HE warhead -->
+		<cd>0.0</cd><!-- since it has engine and submodels dont support that, its drag is set to zero -->
+		<eda>0.00136354</eda>
+		<collision>true</collision>
+		<impact>true</impact>
+		<impact-reports>/ai/models/model-impact</impact-reports>
+		<submodel-path>Aircraft/A-10/Models/Stores/Weapons/LAU-68/rocket-submodel.xml</submodel-path>
+	  </submodel>
 </PropertyList>
