@@ -40,7 +40,7 @@
         <spot-cutoff>20</spot-cutoff>
         <range-m>300</range-m>
         <dim-factor>
-            <property>fdm/jsbsim/electric/output/landinglight</property>
+            <property>systems/electrical/outputs/landing-light</property>
         </dim-factor>
     </light>
 </PropertyList>
