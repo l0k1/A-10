@@ -116,7 +116,7 @@ var reloadCannon = func {
         setprop (gau8_ammo_count, 1174);
         var bweight=1174*0.9369635;
         setprop(a10_ammo_weight, bweight);
-        gui.popupTip ("GAU-8 reloaded -- 1174 rounds", 5);    
+        gui.popupTip ("GAU-8/A reloaded with 1174 rounds", 5);    
     } else {
         gui.popupTip(msgB, 5);
     }
