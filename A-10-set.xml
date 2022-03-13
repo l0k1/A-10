@@ -983,9 +983,16 @@ Fairchild A-10 simulation config.
 		<armament>
 			<trigger type="bool">false</trigger>
 			<trigger-gun type="bool">false</trigger-gun>
+			<trigger-hydra-1 type="bool">false</trigger-hydra-1>
+			<trigger-hydra-2 type="bool">false</trigger-hydra-2>
+			<trigger-hydra-3 type="bool">false</trigger-hydra-3>
+			<trigger-hydra-7 type="bool">false</trigger-hydra-7>
+			<trigger-hydra-8 type="bool">false</trigger-hydra-8>
+			<trigger-hydra-9 type="bool">false</trigger-hydra-9>
 			<ripple type="int">1</ripple>
 			<ripple-dist type="int">150</ripple-dist>
 			<dual type="int">1</dual>
+			<aim9-knob type="int">0</aim9-knob>
 			<station n="0">
 				<release type="bool">false</release>
 			</station>

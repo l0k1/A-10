@@ -12,7 +12,7 @@
     <object-name>Hydra70_1</object-name>
     <condition>
       <greater-than>
-        <property>ai/submodels/submodel[7]/count</property>
+        <property>ai/submodels/submodel[10]/count</property>
         <value>6</value>
       </greater-than>
     </condition>
@@ -23,7 +23,7 @@
     <object-name>Hydra70_2</object-name>
     <condition>
       <greater-than>
-        <property>ai/submodels/submodel[7]/count</property>
+        <property>ai/submodels/submodel[10]/count</property>
         <value>5</value>
       </greater-than>
     </condition>
@@ -34,7 +34,7 @@
     <object-name>Hydra70_3</object-name>
     <condition>
       <greater-than>
-        <property>ai/submodels/submodel[7]/count</property>
+        <property>ai/submodels/submodel[10]/count</property>
         <value>4</value>
       </greater-than>
     </condition>
@@ -45,7 +45,7 @@
     <object-name>Hydra70_4</object-name>
     <condition>
       <greater-than>
-        <property>ai/submodels/submodel[7]/count</property>
+        <property>ai/submodels/submodel[10]/count</property>
         <value>3</value>
       </greater-than>
     </condition>
@@ -56,7 +56,7 @@
     <object-name>Hydra70_5</object-name>
     <condition>
       <greater-than>
-        <property>ai/submodels/submodel[7]/count</property>
+        <property>ai/submodels/submodel[10]/count</property>
         <value>2</value>
       </greater-than>
     </condition>
@@ -67,7 +67,7 @@
     <object-name>Hydra70_6</object-name>
     <condition>
       <greater-than>
-        <property>ai/submodels/submodel[7]/count</property>
+        <property>ai/submodels/submodel[10]/count</property>
         <value>1</value>
       </greater-than>
     </condition>
@@ -78,7 +78,7 @@
     <object-name>Hydra70_7</object-name>
     <condition>
       <greater-than>
-        <property>ai/submodels/submodel[7]/count</property>
+        <property>ai/submodels/submodel[10]/count</property>
         <value>0</value>
       </greater-than>
     </condition>

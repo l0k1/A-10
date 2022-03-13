@@ -142,7 +142,7 @@
         <condition>
             <equals>
                 <property>payload/armament/station/id-1-type</property>
-                <value>1 x LAU-68</value>
+                <value>LAU-68</value>
             </equals>
             <greater-than>
                 <property>payload/armament/station/id-1-count</property>
@@ -219,7 +219,7 @@
         <condition>
             <equals>
                 <property>payload/armament/station/id-2-type</property>
-                <value>1 x LAU-68</value>
+                <value>LAU-68</value>
             </equals>
             <greater-than>
                 <property>payload/armament/station/id-2-count</property>
@@ -328,7 +328,7 @@
         <condition>
             <equals>
                 <property>payload/armament/station/id-3-type</property>
-                <value>1 x LAU-68</value>
+                <value>LAU-68</value>
             </equals>
             <greater-than>
                 <property>payload/armament/station/id-3-count</property>
@@ -579,7 +579,7 @@
         <condition>
             <equals>
                 <property>payload/armament/station/id-7-type</property>
-                <value>1 x LAU-68</value>
+                <value>LAU-68</value>
             </equals>
             <greater-than>
                 <property>payload/armament/station/id-7-count</property>
@@ -691,7 +691,7 @@
         <condition>
             <equals>
                 <property>payload/armament/station/id-8-type</property>
-                <value>1 x LAU-68</value>
+                <value>LAU-68</value>
             </equals>
             <greater-than>
                 <property>payload/armament/station/id-8-count</property>
@@ -785,7 +785,7 @@
         <condition>
             <equals>
                 <property>payload/armament/station/id-9-type</property>
-                <value>1 x LAU-68</value>
+                <value>LAU-68</value>
             </equals>
             <greater-than>
                 <property>payload/armament/station/id-9-count</property>
