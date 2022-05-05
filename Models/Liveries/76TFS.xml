@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<PropertyList>
+
+<sim>
+  <model>
+    <livery>
+      <name type="string">USAF EL76 23TFW, 76TFS England AFB LA</name>
+      <texture-main>Liveries/76TFS.png</texture-main>
+	  <texture-detail>Liveries/default-detail.png</texture-detail>
+    </livery>
+  </model>
+</sim>
+
+</PropertyList>
