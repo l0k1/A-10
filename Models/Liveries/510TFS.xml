@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<PropertyList>
+
+<sim>
+  <model>
+    <livery>
+      <name type="string">USAF WR962, 510 TFS, RAF Bentwaters</name>
+      <texture-main>Liveries/510TFS.png</texture-main>
+	  <texture-detail>Liveries/default-detail.png</texture-detail>
+    </livery>
+  </model>
+</sim>
+
+</PropertyList>
