@@ -39,7 +39,7 @@
 		<z-offset>-0.9</z-offset>
 		<yaw-offset>0.0</yaw-offset>
 		<pitch-offset>-3.0</pitch-offset>
-		<life>8.0</life>
+		<life>9.0</life>
 		<buoyancy>0</buoyancy>
 		<wind>false</wind>
 		<cd>0.193</cd>
@@ -56,14 +56,14 @@
 		<collision>true</collision>
 		<impact>true</impact>
 		<impact-reports>/ai/models/model-impact</impact-reports>
-		<submodel-path>Aircraft/A-10/Models/Stores/Weapons/GAU-8A/gau-8a-submodels.xml</submodel-path>
+		<submodel-path>Aircraft/A-10/Models/Stores/Weapons/GAU-8A/tracer-submodels.xml</submodel-path>
 		<animation>
 			<enable-hot type="bool">false</enable-hot>
 		</animation>
 	</submodel>
 
 	<submodel>
-		<name>GAU-8/A nuzzle smoke</name>
+		<name>GAU-8/A muzzle smoke</name>
 		<model>Aircraft/A-10/Models/Stores/Weapons/GAU-8A/smoke-nuzzle.xml</model>
 		<trigger alias="../../GAU-8/trigger"/>
 		<speed>20</speed>
