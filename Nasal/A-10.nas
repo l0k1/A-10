@@ -215,6 +215,56 @@ var flareCount = -1;
 var flareStart = -1;
 loop_flare();
 
+#  Disable During Replay ####################
+
+var timedMotions = func {
+
+	# disable if we are in replay mode
+	if ( getprop("sim/replay/time") > 0 ) { return }
+
+	if (deltaT == nil) deltaT = 0.0;
+
+# ejection seat
+    if (getprop("payload/armament/es/flags/deploy-id-11") != nil) {
+        setprop("f14/force", 7-5*getprop("payload/armament/es/flags/deploy-id-11"));
+    } else {
+        setprop("f14/force", 7);
+    }
+}
+
+
+#  Ejection ###################
+
+var eject = func{
+  if (getprop("f14/done")==1) {# or !getprop("controls/seat/ejection-safety-lever")
+      return;
+  }
+  setprop("f14/done",1);
+  var es = armament.AIM.new(11, "es","Pilot", nil ,nil);
+  esRIO = armament.AIM.new(12, "es","Rio", nil ,nil);
+  #setprop("fdm/jsbsim/fcs/canopy/hinges/serviceable",0);
+  es.releaseAtNothing();
+  var n = props.globals.getNode("ai/models", 1);
+  for (i = 0; 1==1; i += 1) {
+    if (n.getChild("es", i, 0) == nil) {
+      break;
+    }
+  }
+    
+  # set the view to follow pilot:
+  setprop("sim/view[115]/config/eye-lat-deg-path","/ai/models/es["~(i-2)~"]/position/latitude-deg");
+  setprop("sim/view[115]/config/eye-lon-deg-path","/ai/models/es["~(i-2)~"]/position/longitude-deg");
+  setprop("sim/view[115]/config/eye-alt-ft-path","/ai/models/es["~(i-2)~"]/position/altitude-ft");
+  setprop("sim/view[115]/config/target-lat-deg-path","/ai/models/es["~(i-2)~"]/position/latitude-deg");
+  setprop("sim/view[115]/config/target-lon-deg-path","/ai/models/es["~(i-2)~"]/position/longitude-deg");
+  setprop("sim/view[115]/config/target-alt-ft-path","/ai/models/es["~(i-2)~"]/position/altitude-ft");
+  setprop("sim/current-view/view-number", 13);# add 2 since walker uses 2
+
+  settimer(eject2, 0.20)
+}
+
+
+
 # Lighting ################
 # strobes
 var strobe_switch = props.globals.getNode("controls/lighting/strobe", 1);
