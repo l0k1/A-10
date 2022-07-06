@@ -226,9 +226,9 @@ var timedMotions = func {
 
 # ejection seat
     if (getprop("payload/armament/es/flags/deploy-id-11") != nil) {
-        setprop("f14/force", 7-5*getprop("payload/armament/es/flags/deploy-id-11"));
+        setprop("A-10/force", 7-5*getprop("payload/armament/es/flags/deploy-id-11"));
     } else {
-        setprop("f14/force", 7);
+        setprop("A-10/force", 7);
     }
 }
 
@@ -236,12 +236,11 @@ var timedMotions = func {
 #  Ejection ###################
 
 var eject = func{
-  if (getprop("f14/done")==1) {# or !getprop("controls/seat/ejection-safety-lever")
+  if (getprop("A-10/done")==1) {# or !getprop("controls/seat/ejection-safety-lever")
       return;
   }
-  setprop("f14/done",1);
+  setprop("A-10/done",1);
   var es = armament.AIM.new(11, "es","Pilot", nil ,nil);
-  esRIO = armament.AIM.new(12, "es","Rio", nil ,nil);
   #setprop("fdm/jsbsim/fcs/canopy/hinges/serviceable",0);
   es.releaseAtNothing();
   var n = props.globals.getNode("ai/models", 1);
