@@ -18,17 +18,5 @@
 			</not>
 		</condition>
 	</animation>
-	<animation>
-		<type>pick</type>
-		<visible>true</visible>
-		<object-name>ejection-handles</object-name>
-		<action>
-			<button>0</button>
-		    	<binding>
-				<command>nasal</command>
-				<script>A10.eject()</script>
-		    	</binding>
-		</action>
-	</animation>
 
 </PropertyList>
