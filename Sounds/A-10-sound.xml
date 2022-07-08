@@ -822,17 +822,27 @@
 		</alt-warning>
 
 		<!-- GAU-8/A Avenger cannon -->
-		<gun>
-			<name>gun</name>
-			<mode>looped</mode>
-			<path>Aircraft/A-10/Sounds/gau-8.wav</path>
-			<condition>
-				<property>sim/model/A-10/weapons/gun/running</property>
-			</condition>
-			<volume>
-				<value>1</value>
-			</volume>
-		</gun>
+       <cannon>
+            <name>cannon</name>
+            <path>Aircraft/A-10/Sounds/gau-8.wav</path>
+            <condition>
+                <property>controls/armament/trigger-gun</property>
+                <greater-than>
+                    <property>ai/submodels/submodel[1]/count</property>
+                    <value>0</value>
+                </greater-than>
+                <property>payload/armament/fire-control/serviceable</property>
+            </condition>
+            <mode>looped</mode>
+            <position>
+                <x>0</x>
+                <y>0</y>
+                <z>0</z>
+            </position>
+            <volume>
+                <factor>0.5</factor>
+            </volume>
+        </cannon>
 
 		<!-- throttle panel -->
 		<apu-switch-start>
