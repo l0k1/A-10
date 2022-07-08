@@ -96,7 +96,7 @@ var pylon10set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.
 var pylon11set = [pylonSets.empty, pylonSets.Daim9, pylonSets.mk82, pylonSets.mk82air, pylonSets.cbu87, pylonSets.alq131R, pylonSets.alq184R];
 
 # pylons
-pylonI = stations.InternalStation.new("Internal gun mount", 11, [pylonSets.mm20], props.globals.getNode("sim/weight[11]/weight-lb",1));
+pylonI = stations.InternalStation.new("Internal gun mount", 11, [pylonSets.mm20], props.globals.getNode("sim/weight[11]/weight-lb",1),func{return getprop("payload/armament/fire-control/serviceable") and getprop("systems/electrical/outputs/gau-8")>20;},func{return getprop("A-10/stations/station[11]/selected");});
 pylon1 = stations.Pylon.new("Pylon 1", 0, [7.38, -5.93, -0.22], pylon1set,  0, props.globals.getNode("sim/weight[0]/weight-lb",1),props.globals.getNode("sim/drag[0]/dragarea-sqft",1),func{return getprop("payload/armament/fire-control/serviceable") and getprop("systems/electrical/outputs/gau-8")>20;},func{return getprop("A-10/stations/station[0]/selected");});
 pylon2 = stations.Pylon.new("Pylon 2", 1, [7.70, -4.86, -0.38], pylon2set,  1, props.globals.getNode("sim/weight[1]/weight-lb",1),props.globals.getNode("sim/drag[1]/dragarea-sqft",1),func{return getprop("payload/armament/fire-control/serviceable") and getprop("systems/electrical/outputs/gau-8")>20;},func{return getprop("A-10/stations/station[1]/selected");});
 pylon3 = stations.Pylon.new("Pylon 3", 2, [7.65, -3.61, -0.52], pylon3set,  2, props.globals.getNode("sim/weight[2]/weight-lb",1),props.globals.getNode("sim/drag[2]/dragarea-sqft",1),func{return getprop("payload/armament/fire-control/serviceable") and getprop("systems/electrical/outputs/gau-8")>20;},func{return getprop("A-10/stations/station[2]/selected");});
@@ -201,7 +201,7 @@ var enable_react = func (node) {
             }
         }
     } else {
-        for(var j = 0; j <= 10; j+= 1) {
+        for(var j = 0; j <= 11; j+= 1) {
             if (j != node.getParent().getIndex()) {
                 var weapons_here = pylons[j].getWeapons();
                 var has_same_type = 0;
@@ -223,7 +223,7 @@ var enable_react = func (node) {
 
 # The station enable properties
 var station_enable = [];
-for(var i = 0; i <=10 ; i+=1) {
+for(var i = 0; i <=11 ; i+=1) {
     var p = props.globals.getNode("A-10/stations/station["~i~"]/selected", 0 );
     if (p == nil) {print("Properties do not exist!"); break;}
     append(station_enable, p);
