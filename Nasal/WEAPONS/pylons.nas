@@ -1,6 +1,8 @@
 var ARM_SIM = -1;
 var ARM_OFF = 0;# these 3 are needed by fire-control.
 var ARM_ARM = 1;
+var pause_listener = 0;
+var debug_a10 = 0;
 props.globals.getNode("sim/model/A-10/weapons/master-arm-switch",1).setIntValue(0);
 
 var fcs = nil;
@@ -143,7 +145,6 @@ var reloadCannon = func {
     }
 }
 
-
 var bore_loop = func {
     #enables firing of aim9 without radar. The aim-9 seeker will be fixed 3.5 degs below bore and any aircraft the gets near that will result in lock.
     bore = 0;
@@ -177,3 +178,55 @@ var ripple = func {
 
 setlistener("controls/armament/ripple-dist", ripple());
 setlistener("controls/armament/ripple", ripple());
+
+#StationSelectionListener
+print("StationEnablePropStart");
+var enable_react = func (node) {
+    pause_listener = 1;
+    var weapon_type_enabled = "";
+    var weapons = pylons[node.getParent().getIndex()].getWeapons();
+    foreach(var w ; weapons) {
+        if (w != nil) {
+            weapon_type_enabled = w.type;
+            break;
+        }
+    }
+    if (debug_a10) print("Weapon enabled on station ",node.getParent().getIndex()," is: ",weapon_type_enabled);
+    if (weapon_type_enabled == "" and node.getValue()) {
+        # Something was enabled that does not have any weapons. Delesect everything else.
+        foreach(var station ; station_enable) {
+            if (station.getParent().getIndex() != node.getParent().getIndex()) {
+                station.setBoolValue(0);
+                if (debug_a10) print("Deselect station ",station.getParent().getIndex());
+            }
+        }
+    } else {
+        for(var j = 0; j <= 10; j+= 1) {
+            if (j != node.getParent().getIndex()) {
+                var weapons_here = pylons[j].getWeapons();
+                var has_same_type = 0;
+                foreach(var w ; weapons_here) {
+                    if (w != nil and weapon_type_enabled == w.type) {
+                        has_same_type = 1;
+                    }
+                }
+                station_enable[j].setBoolValue(station_enable[j].getValue() and has_same_type);
+                if (debug_a10) print("Selecting station ",j,": ", station_enable[j].getValue() and has_same_type);
+            }
+        }
+    }
+    if (node.getValue()) {
+        fcs.selectPylon(node.getParent().getIndex());# This selects it in the fire-control, so dont have to use 'w' key.
+    }
+    pause_listener = 0;
+};
+
+# The station enable properties
+var station_enable = [];
+for(var i = 0; i <=10 ; i+=1) {
+    var p = props.globals.getNode("A-10/stations/station["~i~"]/selected", 0 );
+    if (p == nil) {print("Properties do not exist!"); break;}
+    append(station_enable, p);
+    setlistener(p, func (node) {if (!pause_listener) enable_react(node);});
+}
+print("StationEnablePropEnd");
