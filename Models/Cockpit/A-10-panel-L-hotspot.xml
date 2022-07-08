@@ -167,44 +167,6 @@
             <script>electrical.land_lights_switcher(-1)</script>
           </binding>
         </action>
-		
-        <!-- gun rate switch -->
-        <!--<action> 
-          <name>gun-rate-up</name>
-          <button>0</button>
-          <x>420</x>
-          <y>-42</y>
-          <w>55</w>
-          <h>50</h>
-          <binding> 
-            <command>nasal</command>
-            <script>A10weapons.gun_rate_switch(1)</script>
-          </binding>
-        </action>
-        <action> 
-          <name>gun-rate-down</name>
-          <button>0</button>
-          <x>420</x>
-          <y>-95</y>
-          <w>55</w>
-          <h>50</h>
-          <binding> 
-            <command>nasal</command>
-            <script>A10weapons.gun_rate_switch(-1)</script>
-          </binding>
-        </action>-->
-	<action>
-		<name>gun-rate-toggle</name>
-		<button>0</button>
-		<x>420</x>
-		<y>-70</y>
-		<w>55</w>
-		<h>100</h>
-		<binding>
-			<command>nasal</command>
-			<script>A10weapons.gun_rate_switch()</script>
-		</binding>
-        </action>
 
         <!-- ripples counter -->
         <action> 

@@ -31,15 +31,26 @@
 
 	<animation>
 		<object-name>gun-rate-switch</object-name>
-		<type>rotate</type>
-		<property>sim/model/A-10/weapons/gun-rate-switch</property>
+		<type>knob</type>
+		<property>A-10/stations/station[11]/selected</property>
 		<factor>30</factor>
+		<drag-direction>vertical</drag-direction>
 		<center>
 			<x-m>0.0031</x-m>
 			<y-m>-0.0929</y-m>
 			<z-m>0.0575</z-m>
 		</center>
 		<axis><y>-1</y></axis>
+		<action>
+            <binding>
+                <command>property-adjust</command>
+                <property>A-10/stations/station[11]/selected</property>
+                <factor>1</factor>
+                <min>0</min>
+                <max>1</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
 	</animation>
 
 	<animation>
