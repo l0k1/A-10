@@ -52,9 +52,12 @@ var ecm184L = stations.Smoker.new("AN/ALQ-184", "AL184", "A-10/stores/ecm-mounte
 var ecm131R = stations.Smoker.new("AN/ALQ-131", "AL131", "A-10/stores/ecm-mounted-right");
 var ecm184R = stations.Smoker.new("AN/ALQ-184", "AL184", "A-10/stores/ecm-mounted-right");
 
-fuelTankLeft600.del();
-fuelTankCenter600.del();
-fuelTankRight600.del();
+var clearExternalTanks = func {
+    fuelTankLeft600.del();
+    fuelTankCenter600.del();
+    fuelTankRight600.del();
+}
+
 
 var pylonSets = {
     empty: {name: "Empty", content: [], fireOrder: [], launcherDragArea: 0.0, launcherMass: 0, launcherJettisonable: 0, showLongTypeInsteadOfCount: 0, category: 1},
@@ -144,6 +147,10 @@ var reloadCannon = func {
         gui.popupTip(msgB, 5);
     }
 }
+
+setlistener("/sim/signals/fdm-initialized", func() {
+    clearExternalTanks();
+}); 
 
 var bore_loop = func {
     #enables firing of aim9 without radar. The aim-9 seeker will be fixed 3.5 degs below bore and any aircraft the gets near that will result in lock.
