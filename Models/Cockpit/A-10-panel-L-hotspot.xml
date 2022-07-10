@@ -194,7 +194,7 @@
           <h>40</h>
           <binding> 
             <command>property-adjust</command>
-            <property>sim/model/A-10/weapons/rip</property>
+            <property>controls/armament/ripple</property>
             <step>1</step>
             <min>0</min>
             <max>99</max>
@@ -236,7 +236,7 @@
           </binding>
         </action>
 
-        <!-- Aim-9 knob -->
+        <!-- Aim-9 knob 
         <action> 
           <name>aim-9-knob-cw</name>
           <button>0</button>
@@ -260,7 +260,7 @@
             <command>nasal</command>
             <script>A10weapons.aim9_knob_switch(-1)</script>
           </binding>
-        </action>
+        </action>-->
 
         <!-- station #4 -->
         <action> 
