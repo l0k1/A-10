@@ -1,102 +1,90 @@
-A-10 Armament - 11/10/2007
+A-10 Armament - 11/10/2007 —— updated by Zorka 07/05/2022
 
 
-Loading Weapons:
-----------------
+External stores (Pylons in parentheses):
+----------------------------------------
 
-The GAU-8A gun barrel is automatically loaded at startup. All you can do is
-empty the barrel while shooting like a fool on each cow you gonna have on sight!
+  - AN-ALQ-131: ECM Pod. Doesn't do anything yet. (1, 11)
+  
+  - AN-ALQ-184: ECM Pod. Doesn't do anything yet. (1, 11)
+                     
+  - Dual AIM-9: Air to Air infrared guided missiles. (1, 11)
+                     
+  - LAU-68: 7 WP rocket dispenser. (2, 3, 4, 8, 9, 10)
+  
+  - Single CBU-87: Cluster munition. (All but 6)
 
+  - Single Mk-82-LD: 500lb Low Drag Bomb. (All but 6)
+  
+  - Single Mk-82 AIR: 500lb High Drag Bomb. (All but 6)
 
-To load external stores:
-------------------------
-Available ordnances and special loads:
+  - Triple Mk-82-LD: 500lb Low Drag Bomb. 3 bombs per pylon. (3, 4, 8, 9)
 
-- AN-ALQ-131:     It's an ECM pod.
-                     (Pylon #0 only.)
-- Dual AIM-9:     Air to Air infrared guided missiles.
-                     (Pylons #0, 10.)
-- LAU-68:         7 WiliPete rockets dispenser.
-                     (Pylons #1, 2, 3, 7, 8, 9.)
-- Single MK82-LD: 500lbs common Low Drag Bomb.
-                     (All pylons.)        
-- Triple MK82-LD: 500lbs common Low Drag Bomb. 3 bombs per pylon.
-                     (Pylons #2, 3, 7, 8.)
+  - Triple Mk-82 AIR: 500lb High Drag Bomb. 3 bombs per pylon. (3, 4, 8, 9)
+  
+  - Single Mk-84: 2000lb Low Drag Bomb. (3, 4, 5, 7, 8, 9)
 
-To choose a set of weapons: Menu Equipement > Fuel and Payload dialog.
-
-You can load a set of weapons, apply the dialog, then call the dialog again
-and change the choice you made.
-But once you have selected a pylon on the armament panel, trying to change the
-set, or just re-apply the load via the dialog can produce unexpected results as
-submodels reloading is not handled yet.
+  - Triple AGM-65: Temporarily disabled for development. (3, 9)
 
 The Fuel and Payload dialog and the loading of ordnances is independant of the
 aircraft state, that is you don't need to start the engines or any electrical
 stuff to load a weapon on a pylon.
 
-Note: selecting external tanks on pylons #3 and 8 can interfer with LAU-68 loads
-on the same pylons, expect unexpected behaviour when using an external tank and
-LAU-68 on the same panel :) (FIXME).
-
 
 Enabling weapons use:
 ---------------------
-After having loaded a set of weapons via the Fuel and Payload dialog:
-- You first need electrical power on the armament system, that means having at
-least the APU running and the APU generator set to on. Note that the gun
-remaining rounds (blue lighted) will show up when the armament panel is powered.
-- Then switch the armament systen on: Master ARM switch - up position.
+- Have Electrical Power (At least APU)
+- To enable external stores switch Master Arm to ON
 
 
 Using the gun:
 --------------
-That should be impossible when being still on ground, that is with Weight on
-Wheels (WoW). But as we are still working on it, it is exceptionally permitted
-until further DoD decision.
-- Switch the gun switch on, (up position). A green 'Gun Ready' light should go
-on. (Located above the RWR).
-- press 'e' key to trigger the gun.
+– To enable the gun switch Gun Rate to HI
+- Ensure that the green 'Gun Ready' light is on (Above the RWR)
+- RDS Remaining (Blue Numbers, Armament Panel) show the number of remaining bullets
+- Aim with the '+' on the HUD
+- Press 'e' key to trigger the gun
+- Reload via the menu option (Note: This only works on the ground when damage is on)
 
 
 Using the external weapons:
 ---------------------------
-As for the gun that should be impossible when being still on ground but it is
-also exceptionally permitted until further DoD decision.
 
 To select (arm) a weapon you first need to activate the armament panel, then:
-- Select one or several stations, (provided they are loaded with the
-same type of ordnance) by clicking on the pylons buttons.
+- Select one or more stations, (provided they are loaded with the
+same type of ordnance) by clicking on the pylon buttons (squares, numbered 1-11).
 - Selecting a new station loaded with a different type deselects the former
-ones. Selecting  an already selected station deselect it.
-- The stations will be reased in the order you selected them. This handy to keep
+ones. Selecting an already selected station deselect it.
+- The stations will be released in the order you selected them. This handy to keep
 your roll balance.
 
 The lights on each station button have a different behaviour depending on the
 type of ordnance attached to it.
-- AN-ALQ-131: ECM pod, the error light will go on if selected.
+- ECM pods/droptanks, the error light (orange) will go on if selected (i.e. you can't drop them).
 - Dual AIM-9: 2 missiles, 2 green lights go on. They indicate that 2 missiles
 are available. AIM-9s needs also the AIM-9 knob to be set to 'set' in order
-to be selected (armed). that activates also the search sound.
+to be selected (armed). This also activates the search sound.
 - LAU-68: 7 rockets, 1 green light. It indicates that there is one or more
 available rocket in the dispenser.
+- Bombs (Mk-82/84, CBU-87): The three green lights will show the number of bombs left (works on both TER and single racks). 
+When all bombs have been dropped on a station, its error light will turn on.
 
-Excepted the case of an AN-ALQ-131 load, the error light means that there isn't
+Except in the case of non-droppable load, the orange error light means that there isn't
 any ordnance loaded on the selected station or that all ordnances on this
 station ave been already released.
 
-LAU-68 and MK82-LD ordnances are released in ripple. The quantity
+
+Ripple:
+-------
+
+Rockets and Bombs can be released in ripple. The quantity
 is settable on the armament panel left side counter (when set to 0, one ordnance
 is released as when set to 1). The time interval between releases is set on the
 right counter wich is msec x10.
 
-To release a selected weapon, press 'E' key.
+
+
+To release a selected weapon, switch to it (from guns) using 'w' and press 'e'. (Note: This will be changed to two separate keys in upcoming releases)
+
 
 That's all folks, enjoy !
-
-
-
-
-
-
-
