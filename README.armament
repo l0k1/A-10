@@ -55,8 +55,9 @@ To select (arm) a weapon you first need to activate the armament panel, then:
 same type of ordnance) by clicking on the pylon buttons (squares, numbered 1-11).
 - Selecting a new station loaded with a different type deselects the former
 ones. Selecting an already selected station deselect it.
-- The stations will be released in the order you selected them. This handy to keep
-your roll balance.
+- The stations will be released in the following order: 8, 4, 11, 1, 10, 2, 9, 3, 7, 5
+  (image: https://media.discordapp.net/attachments/840864653538230333/1006969004130316298/unknown-36.png)
+
 
 The lights on each station button have a different behaviour depending on the
 type of ordnance attached to it.
