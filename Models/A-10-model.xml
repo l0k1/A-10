@@ -2093,6 +2093,11 @@
 		<object-name>REFan</object-name>
 	</animation>
 
+	<effect> 
+    	<inherits-from>Aircraft/A-10/Models/Effects/glass/glassIR</inherits-from> 
+    	<object-name>pave-peny-dome</object-name>
+  	</effect>
+
 	<!-- exhausts -->
 	<!--<animation>
 		<type>shader</type>
