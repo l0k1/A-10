@@ -141,11 +141,22 @@
 		<type>select</type>
 		<object-name>gun-ready</object-name>
 		<condition>
-			<property>sim/model/A-10/weapons/gun/ready</property>
 			<greater-than>
 				<property>systems/electrical/outputs/gau-8</property>
 				<value>24</value>
 			</greater-than>
+			<and>
+				<property>controls/armament/master-arm</property>
+			</and>
+			<and>
+				<property>A-10/stations/station[11]/selected</property>
+			</and>
+			<and>
+				<equals>
+					<property>sim/model/A-10/controls/gear/ld-gear-handle-anim</property>
+					<value>0</value>
+				</equals>
+			</and>
 		</condition>
 	</animation>
 
