@@ -261,6 +261,21 @@
         </condition>
     </animation>
 
+        <animation>
+        <type>select</type>
+        <object-name>MXU-648-2</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-2-type</property>
+                <value>MXU-648 Cargo Pod</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-2-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
     <!--Pylon3[4]-->
     <animation>
         <type>select</type>
@@ -465,6 +480,21 @@
             </greater-than>
         </condition>
     </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>MXU-648-5</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-5-type</property>
+                <value>MXU-648 Cargo Pod</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-5-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
     
     <!--Pylon6[7]-->
     <animation>
@@ -642,6 +672,21 @@
 
     <animation>
         <type>select</type>
+        <object-name>MXU-648-7</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-7-type</property>
+                <value>MXU-648 Cargo Pod</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-7-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
         <object-name>600lbR</object-name>
         <condition>
             <equals>
@@ -760,6 +805,21 @@
                 <property>payload/armament/station/id-8-set</property>
                 <value>3 x AGM-65B</value>
             </equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>MXU-648-8</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-8-type</property>
+                <value>MXU-648 Cargo Pod</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-8-count</property>
+                <value>0</value>
+            </greater-than>
         </condition>
     </animation>
 
