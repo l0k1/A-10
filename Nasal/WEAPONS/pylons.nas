@@ -51,6 +51,7 @@ var ecm131L = stations.Smoker.new("AN/ALQ-131", "AL131", "A-10/stores/ecm-mounte
 var ecm184L = stations.Smoker.new("AN/ALQ-184", "AL184", "A-10/stores/ecm-mounted-left");
 var ecm131R = stations.Smoker.new("AN/ALQ-131", "AL131", "A-10/stores/ecm-mounted-right");
 var ecm184R = stations.Smoker.new("AN/ALQ-184", "AL184", "A-10/stores/ecm-mounted-right");
+var crgpd = stations.Dummy.new("MXU-648 Cargo Pod", "TRVL");
 
 var clearExternalTanks = func {
     fuelTankLeft600.del();
@@ -83,17 +84,18 @@ var pylonSets = {
     alq184L: {name: "AN/ALQ-184(V) ECM Pod", content: [ecm184L], fireOrder: [0], launcherDragArea: 0, launcherMass: 480, launcherJettisonable: 0, showLongTypeInsteadOfCount: 1, category: 2},
     alq131R: {name: "AN/ALQ-131(V) ECM Pod", content: [ecm131R], fireOrder: [0], launcherDragArea: 0, launcherMass: 480, launcherJettisonable: 0, showLongTypeInsteadOfCount: 1, category: 2},
     alq184R: {name: "AN/ALQ-184(V) ECM Pod", content: [ecm184R], fireOrder: [0], launcherDragArea: 0, launcherMass: 480, launcherJettisonable: 0, showLongTypeInsteadOfCount: 1, category: 2},
+    cargo: {name: "MXU-648 Cargo Pod", content: [crgpd], fireOrder: [0], launcherDragArea: 0, launcherMass: 480, launcherJettisonable: 0, showLongTypeInsteadOfCount: 1, category: 2},
 };
 
 #sets
 var pylon1set = [pylonSets.empty, pylonSets.Daim9, pylonSets.mk82, pylonSets.mk82air, pylonSets.cbu87, pylonSets.alq131L, pylonSets.alq184L];
 var pylon2set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.cbu87, pylonSets.lau681];
 var pylon3set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk84, pylonSets.cbu87, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.lau682];
-var pylon4set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk84, pylonSets.cbu87, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.lau683];
+var pylon4set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk84, pylonSets.cbu87, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.lau683, pylonSets.cargo];
 var pylon5set = [pylonSets.empty, pylonSets.mk82air, pylonSets.mk82, pylonSets.mk84, pylonSets.cbu87];
 var pylon6set = [pylonSets.empty];
 var pylon7set = [pylonSets.empty, pylonSets.mk82air, pylonSets.mk82, pylonSets.mk84, pylonSets.cbu87];
-var pylon8set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk84, pylonSets.cbu87, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.lau687];
+var pylon8set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk84, pylonSets.cbu87, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.lau687, pylonSets.cargo];
 var pylon9set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk84, pylonSets.cbu87, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.lau688];
 var pylon10set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.cbu87, pylonSets.lau689];
 var pylon11set = [pylonSets.empty, pylonSets.Daim9, pylonSets.mk82, pylonSets.mk82air, pylonSets.cbu87, pylonSets.alq131R, pylonSets.alq184R];

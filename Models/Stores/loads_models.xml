@@ -291,6 +291,17 @@
         </offsets>
     </model>
 
+    <model>
+        <name>MXU-648-3</name>
+        <path>Aircraft/A-10/Models/Stores/Ext-Stores/MXU-648/MXU-648.xml</path>
+        <offsets>
+         <x-m>7.64603</x-m>
+         <y-m>-1.67292</y-m>
+         <z-m>-0.74</z-m>
+         <pitch-deg>-3.5</pitch-deg>
+        </offsets>
+    </model>
+
 
     <!-- =============================================================================================================  --> 
     <!-- =========================================== Station 4 =======================================================  -->
@@ -470,6 +481,17 @@
          <x-m>7.64603</x-m>
          <y-m>1.68148</y-m>
          <z-m>-0.661878</z-m>
+         <pitch-deg>-3.5</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>MXU-648-7</name>
+        <path>Aircraft/A-10/Models/Stores/Ext-Stores/MXU-648/MXU-648.xml</path>
+        <offsets>
+         <x-m>7.64603</x-m>
+         <y-m>1.68148</y-m>
+         <z-m>-0.74</z-m>
          <pitch-deg>-3.5</pitch-deg>
         </offsets>
     </model>

@@ -357,7 +357,22 @@
               <value>3 x MK-82AIR</value>
             </equals>
         </condition>
-       </animation>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>MXU-648-3</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-3-type</property>
+                <value>MXU-648 Cargo Pod</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-3-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
 
     <animation>
         <type>select</type>
@@ -608,7 +623,22 @@
               <value>3 x MK-82AIR</value>
             </equals>
         </condition>
-       </animation>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>MXU-648-7</object-name>
+        <condition>
+            <equals>
+                <property>payload/armament/station/id-7-type</property>
+                <value>MXU-648 Cargo Pod</value>
+            </equals>
+            <greater-than>
+                <property>payload/armament/station/id-7-count</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
 
     <animation>
         <type>select</type>
