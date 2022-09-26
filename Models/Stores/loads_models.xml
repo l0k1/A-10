@@ -286,7 +286,7 @@
         <offsets>
          <x-m>7.64603</x-m>
          <y-m>-1.67292</y-m>
-         <z-m>-0.651047</z-m>
+         <z-m>-0.67</z-m>
          <pitch-deg>-3.5</pitch-deg>
         </offsets>
     </model>
@@ -297,7 +297,7 @@
         <offsets>
          <x-m>7.64603</x-m>
          <y-m>-1.67292</y-m>
-         <z-m>-0.651047</z-m>
+         <z-m>-0.67</z-m>
          <pitch-deg>-3.5</pitch-deg>
         </offsets>
     </model>
@@ -335,8 +335,8 @@
         <offsets>
          <x-m>7.61031</x-m>
          <y-m>-0.564421</y-m>
-         <z-m>-0.638674</z-m>
-         <pitch-deg>-4.5</pitch-deg>
+         <z-m>-0.73</z-m>
+         <pitch-deg>-2.3</pitch-deg>
         </offsets>
     </model>
 
@@ -346,8 +346,8 @@
         <offsets>
          <x-m>7.61031</x-m>
          <y-m>-0.564421</y-m>
-         <z-m>-0.638674</z-m>
-         <pitch-deg>-4.5</pitch-deg>
+         <z-m>-0.7</z-m>
+         <pitch-deg>-3.5</pitch-deg>
         </offsets>
     </model>
 
@@ -409,8 +409,8 @@
         <offsets>
          <x-m>7.61031</x-m>
          <y-m>0.564421</y-m>
-         <z-m>-0.638674</z-m>
-         <pitch-deg>-4.5</pitch-deg>
+         <z-m>-0.7</z-m>
+         <pitch-deg>-3.5</pitch-deg>
         </offsets>
     </model>
 
@@ -420,8 +420,8 @@
         <offsets>
          <x-m>7.61031</x-m>
          <y-m>0.564421</y-m>
-         <z-m>-0.638674</z-m>
-         <pitch-deg>-4.5</pitch-deg>
+         <z-m>-0.73</z-m>
+         <pitch-deg>-2.3</pitch-deg>
         </offsets>
     </model>
 
@@ -490,7 +490,7 @@
         <offsets>
          <x-m>7.64603</x-m>
          <y-m>1.68148</y-m>
-         <z-m>-0.661878</z-m>
+         <z-m>-0.67</z-m>
          <pitch-deg>-3.5</pitch-deg>
         </offsets>
     </model>
@@ -501,7 +501,7 @@
         <offsets>
          <x-m>7.64603</x-m>
          <y-m>1.68148</y-m>
-         <z-m>-0.661878</z-m>
+         <z-m>-0.67</z-m>
          <pitch-deg>-3.5</pitch-deg>
         </offsets>
     </model>
