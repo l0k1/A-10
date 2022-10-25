@@ -180,7 +180,7 @@ var FireControl = {
 	},
 
 	setRippleDelay: func (rippleDelay) {
-		if (rippleDelay >= 0) {
+			if (rippleDelay >= 0) {
 			me.rippleDelay = rippleDelay;
 		}
 	},

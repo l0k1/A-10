@@ -1007,7 +1007,7 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>rip-intvl-x1</object-name>
-		<property>sim/model/A-10/weapons/interval</property>
+		<property>controls/armament/ripple-delay</property>
 		<factor>10</factor>
 		<axis><y>-1</y></axis>
 	</animation>
@@ -1015,7 +1015,7 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>rip-intvl-x10</object-name>
-		<property>sim/model/A-10/weapons/interval</property>
+		<property>controls/armament/ripple-delay</property>
 		<factor>1</factor>
 		<step>0.0999</step>
 		<axis><y>-1</y></axis>

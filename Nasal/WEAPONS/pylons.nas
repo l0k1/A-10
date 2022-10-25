@@ -181,12 +181,12 @@ if (fcs!=nil) {
 
 
 var ripple = func {
-    fcs.setRippleDist(getprop("controls/armament/ripple-dist"));
     fcs.setRippleMode(getprop("controls/armament/ripple"));
+    fcs.setRippleDelay(getprop("controls/armament/ripple-delay"));
 };
 
-setlistener("controls/armament/ripple-dist", ripple());
-setlistener("controls/armament/ripple", ripple());
+setlistener("controls/armament/ripple-delay", ripple);
+setlistener("controls/armament/ripple", ripple);
 
 #StationSelectionListener
 print("StationEnablePropStart");

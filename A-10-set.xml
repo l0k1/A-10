@@ -993,7 +993,7 @@ Fairchild A-10 simulation config.
 			<trigger-hydra-8 type="bool">false</trigger-hydra-8>
 			<trigger-hydra-9 type="bool">false</trigger-hydra-9>
 			<ripple type="int">1</ripple>
-			<ripple-dist type="int">150</ripple-dist>
+			<ripple-delay type="float">0.05</ripple-delay>
 			<dual type="int">1</dual>
 			<aim9-knob type="int">0</aim9-knob>
 			<station n="0">

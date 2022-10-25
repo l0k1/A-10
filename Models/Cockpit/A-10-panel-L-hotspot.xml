@@ -212,7 +212,7 @@
           <h>40</h>
           <binding> 
             <command>property-adjust</command>
-            <property>sim/model/A-10/weapons/interval</property>
+            <property>controls/armament/ripple-delay</property>
             <step>-0.01</step>
             <min>0.0</min>
             <max>1</max>
@@ -228,7 +228,7 @@
           <h>40</h>
           <binding> 
             <command>property-adjust</command>
-            <property>sim/model/A-10/weapons/interval</property>
+            <property>controls/armament/ripple-delay</property>
             <step>0.01</step>
             <min>0.0</min>
             <max>1</max>
