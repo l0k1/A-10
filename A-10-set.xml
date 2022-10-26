@@ -673,6 +673,13 @@ Fairchild A-10 simulation config.
                             <dialog-name>flightlog</dialog-name>
                         </binding>
                     </item>
+					<item>
+						<label>Tacview Recording</label>
+						<binding>
+							<command>dialog-show</command>
+							<dialog-name>tacview</dialog-name>
+						</binding>
+					</item>
 				</menu>
 			</default>
 		</menubar>
@@ -683,6 +690,7 @@ Fairchild A-10 simulation config.
 		</sound>
 		
 		<expected-aircraft-dir-name>A-10</expected-aircraft-dir-name>
+		<tacview-recording type="bool">0</tacview-recording>
 
 	</sim>
 
@@ -1374,6 +1382,9 @@ Fairchild A-10 simulation config.
 		<iff>
 	        <file>Aircraft/A-10/Nasal/iff.nas</file>
 	    </iff>
+        <tacview>
+            <file>Aircraft/A-10/Nasal/tacview.nas</file>
+        </tacview>
 	</nasal>
 
 </PropertyList>
