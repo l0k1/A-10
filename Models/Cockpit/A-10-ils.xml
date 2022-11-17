@@ -9,7 +9,9 @@
 		<property>sim/model/A-10/instrumentation/nav[0]/frequencies/freq-whole</property>
 		<factor>0.1</factor>
 		<offset>-1</offset>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -20,7 +22,9 @@
 		<offset>-10</offset>
 		<step>10</step>
 		<scroll>0.5</scroll>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -31,7 +35,9 @@
 		<offset>-100</offset>
 		<step>100</step>
 		<scroll>0.5</scroll>
-		<axis><y>-1</y> </axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -42,7 +48,9 @@
 		<offset>-1000</offset>
 		<step>1000</step>
 		<scroll>0.5</scroll>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -53,7 +61,9 @@
 		<offset>-10000</offset>
 		<step>10000</step>
 		<scroll>0.5</scroll>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 
@@ -61,7 +71,11 @@
 	<animation>
 		<object-name>panel</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.385</red>
@@ -73,8 +87,12 @@
 	<animation>
 		<object-name>digits</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
-		<emission> 
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
+		<emission>
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
 			<red>0.55</red>
 			<green>0.24</green>
@@ -83,9 +101,9 @@
 	</animation>
 
 	<animation>
-	<type>range</type>
-	<min-m>0</min-m>
-	<max-m>5</max-m>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
 	</animation>
 
 </PropertyList>

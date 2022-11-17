@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+<!--<!DOCTYPE PropertyList SYSTEM "panel.dtd"> No panel.dtd file present-->
 
 
 <PropertyList>
@@ -10,8 +10,8 @@
 	<h>768</h>
 	<y-offset>0</y-offset>
 
-	<instruments> 
-		<instrument> 
+	<instruments>
+		<instrument>
 			<name>r2 panel</name>
 			<y>384</y>
 			<w>1024</w>
@@ -20,16 +20,16 @@
 			<h-base>1024</h-base>
 			<x>512</x>
 
-			<layers> 
+			<layers>
 
-				<layer> 
+				<layer>
 					<name>background</name>
-					<texture> 
-					<path>Aircraft/A-10/Models/Cockpit/transparent-bg.rgb</path>
-					<x1>0.0</x1>
-					<y1>0.0</y1>
-					<x2>1.0</x2>
-					<y2>1.0</y2>
+					<texture>
+						<path>Aircraft/A-10/Models/Cockpit/transparent-bg.rgb</path>
+						<x1>0.0</x1>
+						<y1>0.0</y1>
+						<x2>1.0</x2>
+						<y2>1.0</y2>
 					</texture>
 				</layer>
 
@@ -47,7 +47,7 @@
 			</layers>
 
 			<!-- define hotspot actions below -->
-			<actions> 
+			<actions>
 
 				<!-- channel left knob-->
 				<action>
@@ -162,7 +162,7 @@
 					</binding>
 				</action>
 
-			</actions> 
+			</actions>
 
 		</instrument>
 	</instruments>

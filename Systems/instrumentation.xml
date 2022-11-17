@@ -74,10 +74,10 @@ file, these values will be used (they are hardcoded).
     <name>marker-beacon</name>
     <number>0</number>
   </marker-beacon>
-  
+
   <heading-indicator-fg>
-	  <name>heading-indicator-fg</name>
-	  <number>0</number>
+    <name>heading-indicator-fg</name>
+    <number>0</number>
   </heading-indicator-fg>
 
   <KT-70>
@@ -143,8 +143,8 @@ file, these values will be used (they are hardcoded).
   </tacan>
 
   <mk-viii>
-   <name>mk-viii</name>
-   <number>0</number>
+    <name>mk-viii</name>
+    <number>0</number>
   </mk-viii>
 
 </PropertyList>

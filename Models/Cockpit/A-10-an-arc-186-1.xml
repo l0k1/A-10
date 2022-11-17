@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 
 
-
 <PropertyList>
 	<path>A-10-an-arc-186.ac</path>
 
@@ -149,15 +148,30 @@
 
 	<!-- selector knob -->
 	<animation>
-	<type>rotate</type>
+		<type>rotate</type>
 		<object-name>freq-select-knob</object-name>
 		<property>sim/model/A-10/instrumentation/vhf/selector</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>0</dep></entry>
-			<entry><ind>1</ind><dep>53</dep></entry>
-			<entry><ind>2</ind><dep>107</dep></entry>
-			<entry><ind>3</ind><dep>143</dep></entry>
-			<entry><ind>4</ind><dep>181</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>53</dep>
+			</entry>
+			<entry>
+				<ind>2</ind>
+				<dep>107</dep>
+			</entry>
+			<entry>
+				<ind>3</ind>
+				<dep>143</dep>
+			</entry>
+			<entry>
+				<ind>4</ind>
+				<dep>181</dep>
+			</entry>
 		</interpolation>
 		<center>
 			<x-m>0.0173</x-m>
@@ -178,9 +192,18 @@
 		<object-name>mode-knob</object-name>
 		<property>sim/model/A-10/instrumentation/vhf/mode</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>0</dep></entry>
-			<entry><ind>1</ind><dep>36</dep></entry>
-			<entry><ind>2</ind><dep>75</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>36</dep>
+			</entry>
+			<entry>
+				<ind>2</ind>
+				<dep>75</dep>
+			</entry>
 		</interpolation>
 		<center>
 			<x-m>0.0173</x-m>
@@ -200,8 +223,14 @@
 		<object-name>load-button</object-name>
 		<property>sim/model/A-10/instrumentation/vhf/load-state</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>0.0020</dep></entry>
-			<entry><ind>1</ind><dep>-0.0030</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0.0020</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-0.0030</dep>
+			</entry>
 		</interpolation>
 		<axis>
 			<x>0</x>
@@ -211,12 +240,16 @@
 	</animation>
 
 
-<!-- lighting-->
+	<!-- lighting-->
 
 	<animation>
-		<object-name>mount</object-name> 
+		<object-name>mount</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.385</red>
@@ -226,9 +259,13 @@
 	</animation>
 
 	<animation>
-		<object-name>numbers</object-name> 
+		<object-name>numbers</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
 			<red>0.55</red>

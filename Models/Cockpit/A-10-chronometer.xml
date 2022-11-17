@@ -13,7 +13,7 @@
 				<property>systems/electrical/outputs/ldg-warning-system</property>
 				<value>24</value>
 			</less-than>
-		</condition>  
+		</condition>
 	</animation>
 
 	<animation>
@@ -134,12 +134,16 @@
 
 	<!-- lighting -->
 
-	<animation> 
+	<animation>
 		<object-name>mount</object-name>
 		<object-name>buttons</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
-		<emission> 
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
+		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.385</red>
 			<green>0.168</green>
@@ -150,8 +154,8 @@
 	<animation>
 		<object-name>background</object-name>
 		<type>material</type>
-		<emission> 
-		<factor-prop>controls/lighting/instruments-norm</factor-prop>
+		<emission>
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
 			<red>0.50</red>
 			<green>0.60</green>
 			<blue>0.40</blue>
@@ -161,7 +165,7 @@
 	<animation>
 		<object-name>leds</object-name>
 		<type>material</type>
-		<emission> 
+		<emission>
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
 			<red>0.50</red>
 			<green>0.60</green>

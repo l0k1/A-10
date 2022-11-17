@@ -6,22 +6,30 @@
 	<path>A-10-fuel-control.ac</path>
 
 
-<!-- AAR receiver lever -->
+	<!-- AAR receiver lever -->
 	<animation>
 		<object-name>rcvr-handle</object-name>
 		<type>rotate</type>
 		<!--<property>sim/model/A-10/controls/fuel/receiver-lever</property>-->
 		<property>systems/refuel/receiver-lever</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>30</dep></entry>
-			<entry><ind>1</ind><dep>-30</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>30</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-30</dep>
+			</entry>
 		</interpolation>
 		<center>
 			<x-m>0.0283</x-m>
 			<y-m>0.0735</y-m>
 			<z-m>-0.0505</z-m>
 		</center>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 	<!-- close refueling receiver door -->
 	<animation>
@@ -54,7 +62,7 @@
 
 
 	<!-- toggle EXT tanks switches -->
-	<animation> 
+	<animation>
 		<object-name>ext-tks-wing-switch</object-name>
 		<type>rotate</type>
 		<property>controls/fuel/tank[4]/boost-pump[0]</property>
@@ -64,7 +72,9 @@
 			<y-m>-0.0520</y-m>
 			<z-m>0.0040</z-m>
 		</center>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -81,7 +91,7 @@
 	</animation>
 
 
-	<animation> 
+	<animation>
 		<object-name>ext-tks-fus-switch</object-name>
 		<type>rotate</type>
 		<property>controls/fuel/tank[5]/boost-pump[0]</property>
@@ -91,7 +101,9 @@
 			<y-m>-0.0157</y-m>
 			<z-m>0.0040</z-m>
 		</center>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -109,7 +121,7 @@
 
 
 	<!-- Tank Gate switch -->
-	<animation> 
+	<animation>
 		<object-name>tk-gate-switch</object-name>
 		<type>rotate</type>
 		<property>sim/model/A-10/controls/fuel/tk-gate-switch</property>
@@ -119,7 +131,9 @@
 			<y-m>-0.0520</y-m>
 			<z-m>0.0040</z-m>
 		</center>
-		<axis><y>-1</y><z>0</z>
+		<axis>
+			<y>-1</y>
+			<z>0</z>
 		</axis>
 	</animation>
 	<animation>
@@ -138,7 +152,7 @@
 
 
 	<!-- Cross Feed Switch -->
-	<animation> 
+	<animation>
 		<object-name>cross-feed-switch</object-name>
 		<type>rotate</type>
 		<property>sim/model/A-10/controls/fuel/cross-feed-sw</property>
@@ -148,7 +162,9 @@
 			<y-m>-0.0157</y-m>
 			<z-m>0.0040</z-m>
 		</center>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -166,7 +182,7 @@
 
 
 	<!-- Wing Boost Pumps switches -->
-	<animation> 
+	<animation>
 		<object-name>boost-pump-wing-l-switch</object-name>
 		<type>rotate</type>
 		<property>controls/fuel/tank[0]/boost-pump[0]</property>
@@ -176,7 +192,9 @@
 			<y-m>-0.0520</y-m>
 			<z-m>0.0040</z-m>
 		</center>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -192,7 +210,7 @@
 		</action>
 	</animation>
 
-	<animation> 
+	<animation>
 		<object-name>boost-pump-wing-r-switch</object-name>
 		<type>rotate</type>
 		<property>controls/fuel/tank[3]/boost-pump[0]</property>
@@ -202,7 +220,9 @@
 			<y-m>-0.0157</y-m>
 			<z-m>0.0040</z-m>
 		</center>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -220,7 +240,7 @@
 
 
 	<!-- toggle Main Boost Pumps switches -->
-	<animation> 
+	<animation>
 		<object-name>boost-pump-main-l-switch</object-name>
 		<type>rotate</type>
 		<property>controls/fuel/tank[1]/boost-pump[0]</property>
@@ -230,7 +250,9 @@
 			<y-m>-0.0520</y-m>
 			<z-m>0.0040</z-m>
 		</center>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -246,7 +268,7 @@
 		</action>
 	</animation>
 
-	<animation> 
+	<animation>
 		<object-name>boost-pump-main-r-switch</object-name>
 		<type>rotate</type>
 		<property>controls/fuel/tank[2]/boost-pump[0]</property>
@@ -256,7 +278,9 @@
 			<y-m>-0.0157</y-m>
 			<z-m>0.0040</z-m>
 		</center>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -272,14 +296,16 @@
 		</action>
 	</animation>
 
-	
+
 	<!-- Fill Disable -->
 	<animation>
 		<object-name>fill-disable-wing-l-button</object-name>
 		<type>translate</type>
 		<property>controls/fuel/tank[0]/fill-dis</property>
 		<factor>0.008</factor>
-		<axis><z>1</z></axis>
+		<axis>
+			<z>1</z>
+		</axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -294,13 +320,15 @@
 			</binding>
 		</action>
 	</animation>
-	
+
 	<animation>
 		<object-name>fill-disable-wing-r-button</object-name>
 		<type>translate</type>
 		<property>controls/fuel/tank[3]/fill-dis</property>
 		<factor>0.008</factor>
-		<axis><z>1</z></axis>
+		<axis>
+			<z>1</z>
+		</axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -321,7 +349,9 @@
 		<type>translate</type>
 		<property>controls/fuel/tank[1]/fill-dis</property>
 		<factor>0.008</factor>
-		<axis><z>1</z></axis>
+		<axis>
+			<z>1</z>
+		</axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -336,13 +366,15 @@
 			</binding>
 		</action>
 	</animation>
-	
+
 	<animation>
 		<object-name>fill-disable-main-r-button</object-name>
 		<type>translate</type>
 		<property>controls/fuel/tank[2]/fill-dis</property>
 		<factor>0.008</factor>
-		<axis><z>1</z></axis>
+		<axis>
+			<z>1</z>
+		</axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -359,18 +391,21 @@
 	</animation>
 
 
-
-<!-- lighting -->
-	<animation> 
+	<!-- lighting -->
+	<animation>
 		<object-name>fuel-control</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
-		<emission> 
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
+		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.385</red>
 			<green>0.168</green>
 			<blue>0.07</blue>
-			</emission>
+		</emission>
 	</animation>
 
 	<animation>

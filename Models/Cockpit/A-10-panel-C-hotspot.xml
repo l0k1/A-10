@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE PropertyList SYSTEM "panel.dtd">
-
+<!--<!DOCTYPE PropertyList SYSTEM "panel.dtd"> No panel.dtd file present-->
 
 <PropertyList>
 	<name>A-10 C Panel Hotspots</name>
@@ -23,16 +22,16 @@
 				<layer>
 					<name>background</name>
 					<texture>
-					<path>Aircraft/A-10/Models/Cockpit/transparent-bg.rgb</path>
-					<x1>0.0</x1>
-					<y1>0.0</y1>
-					<x2>1.0</x2>
-					<y2>1.0</y2>
+						<path>Aircraft/A-10/Models/Cockpit/transparent-bg.rgb</path>
+						<x1>0.0</x1>
+						<y1>0.0</y1>
+						<x2>1.0</x2>
+						<y2>1.0</y2>
 					</texture>
 				</layer>
 			</layers>
 
-<!-- define hotspot actions below -->
+			<!-- define hotspot actions below -->
 			<actions>
 				<!-- Audio Altitude warning volume knob -->
 				<action>

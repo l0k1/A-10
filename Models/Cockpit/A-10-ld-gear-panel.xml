@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<PropertyList> 
+<PropertyList>
 	<path>A-10-ld-gear-panel.ac</path>
 
 	<!-- flaps guauge -->
@@ -9,17 +9,31 @@
 		<type>rotate</type>
 		<object-name>needle</object-name>
 		<property>surface-positions/left-flap-pos-norm</property>
-		<interpolation> 
-			<entry><ind>0</ind><dep>0</dep></entry>
-			<entry><ind>0.333</ind><dep>30</dep></entry>
-			<entry><ind>0.666</ind><dep>60</dep></entry>
-			<entry><ind>1</ind><dep>90</dep></entry>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.333</ind>
+				<dep>30</dep>
+			</entry>
+			<entry>
+				<ind>0.666</ind>
+				<dep>60</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>90</dep>
+			</entry>
 		</interpolation>
 		<center>
 			<y-m>-0.0167</y-m>
 			<z-m>-0.0314</z-m>
 		</center>
-		<axis><x>-1</x></axis>
+		<axis>
+			<x>-1</x>
+		</axis>
 	</animation>
 
 	<!-- gear warning lights -->
@@ -143,7 +157,9 @@
 			<x-m>-0.0121</x-m>
 			<z-m>-0.0177</z-m>
 		</center>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 
@@ -153,15 +169,26 @@
 		<type>rotate</type>
 		<property>sim/model/A-10/controls/lighting/land-lights-switch</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>-30</dep></entry>
-			<entry><ind>1</ind><dep>0</dep></entry>
-			<entry><ind>2</ind><dep>30</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>-30</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>2</ind>
+				<dep>30</dep>
+			</entry>
 		</interpolation>
 		<center>
 			<x-m>-0.0027</x-m>
 			<z-m>0.0636</z-m>
 		</center>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 
@@ -169,8 +196,12 @@
 	<animation>
 		<object-name>panel</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
-		<emission> 
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
+		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.385</red>
 			<green>0.168</green>
@@ -181,8 +212,12 @@
 	<animation>
 		<object-name>instrument</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
-		<emission> 
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
+		<emission>
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
 			<red>0.55</red>
 			<green>0.24</green>

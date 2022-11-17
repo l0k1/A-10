@@ -15,7 +15,9 @@
 			<y-m>-0.5059</y-m>
 			<z-m>0.8366</z-m>
 		</center>
-		<axis><x>1</x></axis>
+		<axis>
+			<x>1</x>
+		</axis>
 	</animation>
 
 
@@ -24,9 +26,13 @@
 	<animation>
 		<object-name>emer-brake</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
-		<emission> 
-		<factor-prop>controls/lighting/panel-norm</factor-prop>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
+		<emission>
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.20</red>
 			<green>0.10</green>
 			<blue>0.05</blue>

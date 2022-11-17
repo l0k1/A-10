@@ -11,14 +11,22 @@
 		<type>rotate</type>
 		<property>controls/APU/off-start-switch</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>-30</dep></entry>
-			<entry><ind>1</ind><dep>30</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>-30</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>30</dep>
+			</entry>
 		</interpolation>
 		<center>
 			<x-m>0.0245</x-m>
 			<z-m>0.0031</z-m>
 		</center>
-		<axis> <y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 	<!-- L engine operation switch -->
 	<animation>
@@ -26,15 +34,26 @@
 		<type>rotate</type>
 		<property>sim/model/A-10/controls/engines/engine[0]/starter-switch-position</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>-30</dep></entry>
-			<entry><ind>1</ind><dep>0</dep></entry>
-			<entry><ind>2</ind><dep>30</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>-30</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>2</ind>
+				<dep>30</dep>
+			</entry>
 		</interpolation>
 		<center>
 			<x-m>-0.0190</x-m>
 			<z-m>0.0031</z-m>
 		</center>
-		<axis><y>-1</y> </axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 	<!-- R engine operation switch -->
 	<animation>
@@ -42,20 +61,31 @@
 		<type>rotate</type>
 		<property>sim/model/A-10/controls/engines/engine[1]/starter-switch-position</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>-30</dep></entry>
-			<entry><ind>1</ind><dep>0</dep></entry>
-			<entry><ind>2</ind><dep>30</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>-30</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>2</ind>
+				<dep>30</dep>
+			</entry>
 		</interpolation>
 		<center>
 			<x-m>-0.0190</x-m>
 			<z-m>-0.0031</z-m>
 		</center>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 
 	<!-- Throttles -->
-	<animation> 
+	<animation>
 		<object-name>r-throttle</object-name>
 		<type>rotate</type>
 		<property>sim/model/A-10/controls/engines/engine[1]/throttle</property>
@@ -64,10 +94,12 @@
 			<x-m>0.0000</x-m>
 			<z-m>-0.0852</z-m>
 		</center>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
-	<animation> 
+	<animation>
 		<object-name>l-throttle</object-name>
 		<type>rotate</type>
 		<property>sim/model/A-10/controls/engines/engine[0]/throttle</property>
@@ -76,9 +108,10 @@
 			<x-m>0.0000</x-m>
 			<z-m>-0.0852</z-m>
 		</center>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
-
 
 
 	<!-- Flaps lever -->
@@ -87,23 +120,38 @@
 		<type>rotate</type>
 		<property>sim/flaps/current-setting</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>30</dep></entry>
-			<entry><ind>1</ind><dep>0</dep></entry>
-			<entry><ind>2</ind><dep>-30</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>30</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>2</ind>
+				<dep>-30</dep>
+			</entry>
 		</interpolation>
 		<center>
 			<x-m>0.067</x-m>
 			<z-m>-0.008</z-m>
 		</center>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
-<!-- lighting -->
+	<!-- lighting -->
 
 	<animation>
 		<object-name>panel</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.385</red>
@@ -115,7 +163,11 @@
 	<animation>
 		<object-name>throttles</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.275</red>

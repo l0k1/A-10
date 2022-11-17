@@ -33,8 +33,14 @@
         <object-name>lever</object-name>
         <property>fdm/jsbsim/electric/switches/landinglight</property>
         <interpolation>
-            <entry><ind>0.0</ind><dep>-25</dep></entry>
-            <entry><ind>1.0</ind><dep>25</dep></entry>
+            <entry>
+                <ind>0.0</ind>
+                <dep>-25</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind>
+                <dep>25</dep>
+            </entry>
         </interpolation>
         <axis>
             <x>0.0</x>

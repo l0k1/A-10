@@ -3,7 +3,7 @@
 	<description>This tutorial teaches the A-10 engines start procedure</description>
 	<interval>0</interval>
 
-	<init>					
+	<init>
 		<set>
 			<property>sim/current-view/view-number</property>
 			<value>0</value>
@@ -136,7 +136,7 @@
 			</condition>
 		</exit>
 	</step>
-	
+
 	<step>
 		<message>
 			Switch on the cross bleed valve, to prevent
@@ -241,7 +241,7 @@
 			</condition>
 		</exit>
 	</step>
-	
+
 	<step>
 		<message>
 			Near 100% rpm, the APU will provide enough power and low pressure output
@@ -265,7 +265,7 @@
 			</condition>
 		</exit>
 	</step>
-	
+
 	<step>
 		<message>
 			Now we can launch the start cycle of the left engine.
@@ -296,7 +296,7 @@
 			</condition>
 		</exit>
 	</step>
-	
+
 	<step>
 		<message>
 			Wait the end of the left engine start cycle.
@@ -426,7 +426,7 @@
 			</condition>
 		</exit>
 	</step>
-	
+
 	<!--<step>
 		<message>
 			Wait the end of the left engine start cycle.
@@ -448,7 +448,7 @@
 			</condition>
 		</exit>
 	</step>-->
-	
+
 	<step>
 		<message>
 			and the left engine generator.
@@ -474,7 +474,7 @@
 			</condition>
 		</exit>
 	</step>
-	
+
 	<!--<step>
 		<message>
 			Switch the battery off.
@@ -502,7 +502,7 @@
 			</condition>
 		</exit>
 	</step>-->
-	
+
 	<step>
 		<message>Shut off the APU generator</message>
 		<view>
@@ -528,7 +528,7 @@
 			</condition>
 		</exit>
 	</step>
-	
+
 	<step>
 		<message>and the APU.</message>
 		<view>
@@ -554,7 +554,7 @@
 			</condition>
 		</exit>
 	</step>
-	
+
 	<step>
 		<message>
 			Switch the battery off.
@@ -582,7 +582,7 @@
 			</condition>
 		</exit>
 	</step>
-	
+
 	<step>
 		<message>Finally switch off the cross bleed valve.</message>
 		<view>
@@ -608,7 +608,7 @@
 			</condition>
 		</exit>
 	</step>
-	
+
 	<end>
 		<message>Congratulations! You have reached the end of this tutorial without
 		starting the ejection seat sequence.</message>

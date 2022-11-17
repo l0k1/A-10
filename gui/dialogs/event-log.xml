@@ -8,13 +8,17 @@
 
 	<group>
 		<layout>hbox</layout>
-		<empty><stretch>1</stretch></empty>
+		<empty>
+			<stretch>1</stretch>
+		</empty>
 
 		<text>
 			<label>Combat event log</label>
 		</text>
 
-		<empty><stretch>1</stretch></empty>
+		<empty>
+			<stretch>1</stretch>
+		</empty>
 
 		<button>
 			<pref-width>16</pref-width>
@@ -32,7 +36,7 @@
 		</button>
 	</group>
 
-	<hrule/>
+	<hrule />
 
 	<nasal>
 		<open>
@@ -54,7 +58,8 @@
 		<legend>Refresh</legend>
 		<binding>
 			<command>nasal</command>
-			<script><![CDATA[
+			<script>
+				<![CDATA[
 				var str = "";
 				if (getprop("velocities/groundspeed-kt") < 10 or getprop("sim/crashed") == 1) {
 					var buffer = damage.damageLog.get_buffer();
@@ -66,7 +71,8 @@
 					str = "The aircraft must be still to read the combat event log.";
 				}
 				setprop("sim/gui/dialogs/flightlog/buffer", str);
-				]]></script>
+				]]>
+			</script>
 		</binding>
 	</button>
 
@@ -81,7 +87,7 @@
 		<valign>fill</valign>
 		<stretch>true</stretch>
 
-			<!-- dimensions -->
+		<!-- dimensions -->
 		<pref-width>500</pref-width>
 		<pref-height>500</pref-height>
 

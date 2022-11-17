@@ -14,7 +14,7 @@
 			</greater-than>
 			<greater-than>
 				<property>orientation/alpha-deg</property>
-			<property>sim/aoa-indexer/too-slow-deg</property>
+				<property>sim/aoa-indexer/too-slow-deg</property>
 			</greater-than>
 			<equals>
 				<property>gear/gear[0]/position-norm</property>

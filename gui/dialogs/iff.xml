@@ -10,8 +10,12 @@
 
   <group>
     <layout>hbox</layout>
-    <text><label>IFF/Datalink Settings</label></text>
-    <empty><stretch>1</stretch></empty>
+    <text>
+      <label>IFF/Datalink Settings</label>
+    </text>
+    <empty>
+      <stretch>1</stretch>
+    </empty>
 
     <button>
       <pref-width>16</pref-width>
@@ -21,17 +25,17 @@
       <keynum>27</keynum>
       <border>2</border>
       <binding>
-	   <command>dialog-close</command>
+        <command>dialog-close</command>
       </binding>
       <binding>
-	   <command>dialog-apply</command>
+        <command>dialog-apply</command>
       </binding>
     </button>
   </group>
 
-  <hrule/>
+  <hrule />
 
-<group>
+  <group>
     <layout>hbox</layout>
     <input>
       <width>250</width>
@@ -45,20 +49,24 @@
     </input>
 
     <button>
-        <legend>Clear</legend>
-        <halign>right</halign>
-        <binding>
-          <command>nasal</command>
-          <script><![CDATA[
+      <legend>Clear</legend>
+      <halign>right</halign>
+      <binding>
+        <command>nasal</command>
+        <script>
+          <![CDATA[
             setprop("instrumentation/iff/channel", 0);
-          ]]></script>
-        </binding>
+          ]]>
+        </script>
+      </binding>
     </button>
- </group>
+  </group>
 
- <empty><stretch>1</stretch></empty>
+  <empty>
+    <stretch>1</stretch>
+  </empty>
 
- <group>
+  <group>
     <layout>hbox</layout>
     <input>
       <width>250</width>
@@ -73,17 +81,21 @@
     </input>
 
     <button>
-        <legend>Clear</legend>
-        <halign>right</halign>
-        <binding>
-          <command>nasal</command>
-          <script><![CDATA[
+      <legend>Clear</legend>
+      <halign>right</halign>
+      <binding>
+        <command>nasal</command>
+        <script>
+          <![CDATA[
             setprop("instrumentation/datalink/channel", 0);
-          ]]></script>
-        </binding>
+          ]]>
+        </script>
+      </binding>
     </button>
   </group>
 
-  <empty><stretch>1</stretch></empty>
+  <empty>
+    <stretch>1</stretch>
+  </empty>
 
 </PropertyList>

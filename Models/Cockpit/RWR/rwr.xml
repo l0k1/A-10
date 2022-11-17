@@ -2,7 +2,7 @@
 
 <PropertyList>
 
-	<path>rwr.ac</path>
+    <path>rwr.ac</path>
 
     <animation>
         <object-name>bkg</object-name>
@@ -60,26 +60,34 @@
         </decrease>
     </animation>
     <animation>
-		<object-name>mount</object-name> 
-		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.45</red>
-			<green>0.34</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
+        <object-name>mount</object-name>
+        <type>material</type>
+        <condition>
+            <not>
+                <property>sim/rendering/rembrandt/enabled</property>
+            </not>
+        </condition>
+        <emission>
+            <factor-prop>controls/lighting/panel-norm</factor-prop>
+            <red>0.45</red>
+            <green>0.34</green>
+            <blue>0.18</blue>
+        </emission>
+    </animation>
     <animation>
-		<object-name>button</object-name> 
-		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.25</red>
-			<green>0.34</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
+        <object-name>button</object-name>
+        <type>material</type>
+        <condition>
+            <not>
+                <property>sim/rendering/rembrandt/enabled</property>
+            </not>
+        </condition>
+        <emission>
+            <factor-prop>controls/lighting/panel-norm</factor-prop>
+            <red>0.25</red>
+            <green>0.34</green>
+            <blue>0.18</blue>
+        </emission>
+    </animation>
 
 </PropertyList>

@@ -10,20 +10,49 @@
 		<object-name>needle</object-name>
 		<property>orientation/alpha-deg</property>
 		<interpolation>
-		<!--        AoA deg           gauge deg -->
-		<entry><ind>  -2.5</ind><dep>  270</dep></entry>
-		<entry><ind>  -2</ind><dep>  245</dep></entry>
-		<entry><ind>  0</ind><dep>   182,5</dep></entry>
-		<entry><ind> 1</ind><dep>   162,5</dep></entry>
-		<entry><ind> 5</ind><dep>   107,5</dep></entry>
-		<entry><ind> 11</ind><dep>   57,5</dep></entry>
-		<entry><ind> 13</ind><dep>   49</dep></entry>
-		<entry><ind> 16</ind><dep>   41,5</dep></entry>
-		<entry><ind> 30</ind><dep>   27,5</dep></entry> 
+			<!--        AoA deg           gauge deg -->
+			<entry>
+				<ind>  -2.5</ind>
+				<dep>  270</dep>
+			</entry>
+			<entry>
+				<ind>  -2</ind>
+				<dep>  245</dep>
+			</entry>
+			<entry>
+				<ind>  0</ind>
+				<dep>   182,5</dep>
+			</entry>
+			<entry>
+				<ind> 1</ind>
+				<dep>   162,5</dep>
+			</entry>
+			<entry>
+				<ind> 5</ind>
+				<dep>   107,5</dep>
+			</entry>
+			<entry>
+				<ind> 11</ind>
+				<dep>   57,5</dep>
+			</entry>
+			<entry>
+				<ind> 13</ind>
+				<dep>   49</dep>
+			</entry>
+			<entry>
+				<ind> 16</ind>
+				<dep>   41,5</dep>
+			</entry>
+			<entry>
+				<ind> 30</ind>
+				<dep>   27,5</dep>
+			</entry>
 
 		</interpolation>
-	<axis><x>-1</x></axis>
- </animation>
+		<axis>
+			<x>-1</x>
+		</axis>
+	</animation>
 
 	<animation>
 		<type>select</type>
@@ -36,14 +65,18 @@
 		</condition>
 	</animation>
 
-<!-- lighting -->
+	<!-- lighting -->
 
-	<animation> 
+	<animation>
 		<object-name>mount</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
-		<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.385</red>
 			<green>0.168</green>
 			<blue>0.07</blue>
@@ -53,7 +86,11 @@
 	<animation>
 		<object-name>instrument</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
 			<red>0.55</red>
@@ -61,7 +98,6 @@
 			<blue>0.10</blue>
 		</emission>
 	</animation>
-
 
 
 	<animation>

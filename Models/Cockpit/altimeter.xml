@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 
 
-
 <PropertyList>
 	<path>/Aircraft/Instruments-3d/altimeter/altimeter.ac</path>
 
@@ -20,7 +19,7 @@
 		<type>rotate</type>
 		<object-name>needle</object-name>
 		<property>instrumentation/altimeter/indicated-altitude-ft</property>
-		<factor>0.36</factor>  
+		<factor>0.36</factor>
 		<axis>
 			<x>-1</x>
 			<y>0</y>
@@ -247,7 +246,11 @@
 	<animation>
 		<object-name>mount</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.55</red>
@@ -256,10 +259,14 @@
 		</emission>
 	</animation>
 
-	<animation> 
+	<animation>
 		<object-name>knobs</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.55</red>
@@ -271,7 +278,11 @@
 	<animation>
 		<object-name>face</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
 			<red>0.55</red>
@@ -283,7 +294,11 @@
 	<animation>
 		<object-name>drums</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
 			<red>0.55</red>
@@ -295,7 +310,11 @@
 	<animation>
 		<object-name>needle-w</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
 			<red>0.55</red>

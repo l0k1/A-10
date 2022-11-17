@@ -12,13 +12,19 @@
 			<x-m>-0.025</x-m>
 			<z-m>-0.02</z-m>
 		</center>
-		<axis><z>1.0</z></axis>
+		<axis>
+			<z>1.0</z>
+		</axis>
 	</animation>
 
-	<animation> 
+	<animation>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
-		<emission> 
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
+		<emission>
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
 			<red>0.65</red>
 			<green>0.45</green>

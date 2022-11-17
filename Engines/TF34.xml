@@ -35,10 +35,10 @@
   <injected>          0 </injected>
 
   <function name="IdleThrust">
-   <table>
-    <independentVar lookup="row">velocities/mach</independentVar>
-    <independentVar lookup="column">atmosphere/density-altitude</independentVar>
-    <tableData>
+    <table>
+      <independentVar lookup="row">velocities/mach</independentVar>
+      <independentVar lookup="column">atmosphere/density-altitude</independentVar>
+      <tableData>
          -10000     0     10000   20000   30000   40000   50000   60000
      0.0  0.0430  0.0488  0.0528  0.0694  0.0899  0.1183  0.1467  0
      0.2  0.0500  0.0501  0.0335  0.0544  0.0797  0.1049  0.1342  0
@@ -47,14 +47,14 @@
      0.8 -0.2129 -0.2129 -0.1498 -0.1025  0.0474  0.0868  0.0900  0
      1.0 -0.2839 -0.2839 -0.1104 -0.0469 -0.0270  0.0552  0.0800  0
     </tableData>
-   </table>
+    </table>
   </function>
 
   <function name="MilThrust">
-   <table>
-    <independentVar lookup="row">velocities/mach</independentVar>
-    <independentVar lookup="column">atmosphere/density-altitude</independentVar>
-    <tableData>
+    <table>
+      <independentVar lookup="row">velocities/mach</independentVar>
+      <independentVar lookup="column">atmosphere/density-altitude</independentVar>
+      <tableData>
           -10000       0   10000   20000   30000   40000   50000   60000
       0.0  1.2600  1.0000  0.7400  0.5340  0.3720  0.2410  0.1490  0.0000
       0.2  1.0113  0.8066  0.6019  0.4370  0.3066  0.1995  0.1235  0.0000
@@ -65,7 +65,7 @@
       1.2  0.2697  0.2234  0.1771  0.1351  0.0990  0.0661  0.0409  0.0000
       1.4  0.0721  0.0606  0.0491  0.0382  0.0284  0.0192  0.0119  0.0000
     </tableData>
-   </table>
+    </table>
   </function>
 
 </turbine_engine>

@@ -32,283 +32,283 @@ override those by providing <w>..</w> and <h>..</h> properties with the
 Hacked by Lee Elliott for the A-10 mock panel
 -->
 
-<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+<!--<!DOCTYPE PropertyList SYSTEM "panel.dtd"> No panel.dtd file present-->
 
 <PropertyList>
 
- <name>A-10 mock Mini Panel</name>
- <background>Aircraft/A-10/Panels/Textures/panel-trans-mini-bg.rgb</background>
- <w>1024</w>
- <h>145</h>
- <y-offset>0</y-offset>
- <view-height>768</view-height>
+  <name>A-10 mock Mini Panel</name>
+  <background>Aircraft/A-10/Panels/Textures/panel-trans-mini-bg.rgb</background>
+  <w>1024</w>
+  <h>145</h>
+  <y-offset>0</y-offset>
+  <view-height>768</view-height>
 
- <instruments>
+  <instruments>
 
-<!-- controls cluster -->
-<!-- Throttles -->
+    <!-- controls cluster -->
+    <!-- Throttles -->
 
-  <instrument include="Instruments/single-throttle-quadrant.xml">
-   <name>Throttle quadrant</name>
-   <params>
-    <engine-throttle-select>/controls/engines/engine[0]/throttle</engine-throttle-select>
-   </params>
-   <x>474</x>
-   <y>33</y>
-   <w>12</w>
-   <h>60</h>
-  </instrument>
+    <instrument include="Instruments/single-throttle-quadrant.xml">
+      <name>Throttle quadrant</name>
+      <params>
+        <engine-throttle-select>/controls/engines/engine[0]/throttle</engine-throttle-select>
+      </params>
+      <x>474</x>
+      <y>33</y>
+      <w>12</w>
+      <h>60</h>
+    </instrument>
 
-  <instrument include="Instruments/single-throttle-quadrant.xml">
-   <name>Throttle quadrant</name>
-   <params>
-    <engine-throttle-select>/controls/engines/engine[1]/throttle</engine-throttle-select>
-   </params>
-   <x>488</x>
-   <y>33</y>
-   <w>12</w>
-   <h>60</h>
-  </instrument>
+    <instrument include="Instruments/single-throttle-quadrant.xml">
+      <name>Throttle quadrant</name>
+      <params>
+        <engine-throttle-select>/controls/engines/engine[1]/throttle</engine-throttle-select>
+      </params>
+      <x>488</x>
+      <y>33</y>
+      <w>12</w>
+      <h>60</h>
+    </instrument>
 
-<!-- Flap control -->
-  <instrument include="Instruments/flap-quadrant.xml">
-   <name>Single Step Flap quadrant</name>
-   <params>
-    <flaps-select>/controls/flight/flaps</flaps-select>
-   </params>
-   <x>512</x>
-   <y>33</y>
-   <w>24</w>
-   <h>60</h>
-  </instrument>
+    <!-- Flap control -->
+    <instrument include="Instruments/flap-quadrant.xml">
+      <name>Single Step Flap quadrant</name>
+      <params>
+        <flaps-select>/controls/flight/flaps</flaps-select>
+      </params>
+      <x>512</x>
+      <y>33</y>
+      <w>24</w>
+      <h>60</h>
+    </instrument>
 
-<!--  end  controls cluster -->
+    <!--  end  controls cluster -->
 
-<!-- controls visual feedback cluster -->
+    <!-- controls visual feedback cluster -->
 
 
-  <instrument include="Aircraft/Instruments/brakes.xml">
-   <name>Brake Indicator Light</name>
-   <x>230</x>
-   <y>115</y>
-   <w>32</w>
-   <h>15</h>
-  </instrument>
+    <instrument include="Aircraft/Instruments/brakes.xml">
+      <name>Brake Indicator Light</name>
+      <x>230</x>
+      <y>115</y>
+      <w>32</w>
+      <h>15</h>
+    </instrument>
 
-  <instrument include="Aircraft/Instruments/gear-indicator.xml">
-   <name>Gear Indicator Light</name>
-   <x>265</x>
-   <y>115</y>
-   <w>32</w>
-   <h>14</h>
-  </instrument>
+    <instrument include="Aircraft/Instruments/gear-indicator.xml">
+      <name>Gear Indicator Light</name>
+      <x>265</x>
+      <y>115</y>
+      <w>32</w>
+      <h>14</h>
+    </instrument>
 
-  <instrument include="Aircraft/Instruments/controls.xml">
-   <name>Control Position Indicators</name>
-   <x>250</x>
-   <y>60</y>
-   <w>90</w>
-   <h>90</h>
-  </instrument>
+    <instrument include="Aircraft/Instruments/controls.xml">
+      <name>Control Position Indicators</name>
+      <x>250</x>
+      <y>60</y>
+      <w>90</w>
+      <h>90</h>
+    </instrument>
 
-<!-- end controls visual feedback cluster -->
+    <!-- end controls visual feedback cluster -->
 
-  <instrument include="Instruments/attitude-indicator.xml">
-   <name>Attitude Gyro</name>
-   <x>105</x>
-   <y>100</y>
-   <w>65</w>
-   <h>65</h>
-  </instrument>
+    <instrument include="Instruments/attitude-indicator.xml">
+      <name>Attitude Gyro</name>
+      <x>105</x>
+      <y>100</y>
+      <w>65</w>
+      <h>65</h>
+    </instrument>
 
-  <instrument include="Aircraft/Instruments/turn.xml">
-   <name>Turn Coordinator</name>
-   <x>170</x>
-   <y>100</y>
-   <w>65</w>
-   <h>65</h>
-  </instrument>
+    <instrument include="Aircraft/Instruments/turn.xml">
+      <name>Turn Coordinator</name>
+      <x>170</x>
+      <y>100</y>
+      <w>65</w>
+      <h>65</h>
+    </instrument>
 
-  <instrument include="Aircraft/Instruments/hsi.xml">
-   <name>Horizontal Situation Indicator</name>
-   <x>40</x>
-   <y>100</y>
-   <w>65</w>
-   <h>65</h>
-  </instrument>
+    <instrument include="Aircraft/Instruments/hsi.xml">
+      <name>Horizontal Situation Indicator</name>
+      <x>40</x>
+      <y>100</y>
+      <w>65</w>
+      <h>65</h>
+    </instrument>
 
-  <instrument include="Aircraft/Instruments/aoa-indexer.xml">
-   <name>AoAI</name>
-   <x>225</x>
-   <y>60</y>
-   <w>15</w>
-   <h>65</h>
-  </instrument>
+    <instrument include="Aircraft/Instruments/aoa-indexer.xml">
+      <name>AoAI</name>
+      <x>225</x>
+      <y>60</y>
+      <w>15</w>
+      <h>65</h>
+    </instrument>
 
-<!-- Digital instruments -->
+    <!-- Digital instruments -->
 
-  <instrument include="Instruments/digital-alt.xml">
-   <name>Altitude display</name>
-   <x>640</x>
-   <y>115</y>
-   <w>40</w>
-   <h>10</h>
-  </instrument>
+    <instrument include="Instruments/digital-alt.xml">
+      <name>Altitude display</name>
+      <x>640</x>
+      <y>115</y>
+      <w>40</w>
+      <h>10</h>
+    </instrument>
 
-  <instrument include="Instruments/digital-vsi.xml">
-   <name>Vsi display</name>
-   <x>768</x>
-   <y>115</y>
-   <w>40</w>
-   <h>10</h>
-  </instrument>
+    <instrument include="Instruments/digital-vsi.xml">
+      <name>Vsi display</name>
+      <x>768</x>
+      <y>115</y>
+      <w>40</w>
+      <h>10</h>
+    </instrument>
 
-  <instrument include="Instruments/digital-agl.xml">
-   <name>Elevation AGL display</name>
-   <x>896</x>
-   <y>115</y>
-   <w>40</w>
-   <h>10</h>
-  </instrument>
+    <instrument include="Instruments/digital-agl.xml">
+      <name>Elevation AGL display</name>
+      <x>896</x>
+      <y>115</y>
+      <w>40</w>
+      <h>10</h>
+    </instrument>
 
-  <instrument include="Instruments/digital-kias.xml">
-   <name>KIAS display</name>
-   <x>640</x>
-   <y>92</y>
-   <w>40</w>
-   <h>10</h>
-  </instrument>
+    <instrument include="Instruments/digital-kias.xml">
+      <name>KIAS display</name>
+      <x>640</x>
+      <y>92</y>
+      <w>40</w>
+      <h>10</h>
+    </instrument>
 
-  <instrument include="Instruments/digital-mach.xml">
-   <name>Mach display</name>
-   <x>768</x>
-   <y>92</y>
-   <w>40</w>
-   <h>10</h>
-  </instrument>
+    <instrument include="Instruments/digital-mach.xml">
+      <name>Mach display</name>
+      <x>768</x>
+      <y>92</y>
+      <w>40</w>
+      <h>10</h>
+    </instrument>
 
-  <instrument include="Instruments/digital-accl.xml">
-   <name>Accel display</name>
-   <x>896</x>
-   <y>92</y>
-   <w>40</w>
-   <h>10</h>
-  </instrument>
+    <instrument include="Instruments/digital-accl.xml">
+      <name>Accel display</name>
+      <x>896</x>
+      <y>92</y>
+      <w>40</w>
+      <h>10</h>
+    </instrument>
 
-  <instrument include="Instruments/digital-wgt.xml">
-   <name>Weight display</name>
-   <x>300</x>
-   <y>115</y>
-   <w>40</w>
-   <h>10</h>
-  </instrument>
+    <instrument include="Instruments/digital-wgt.xml">
+      <name>Weight display</name>
+      <x>300</x>
+      <y>115</y>
+      <w>40</w>
+      <h>10</h>
+    </instrument>
 
-  <instrument include="Instruments/digital-fuel-tot.xml">
-   <name>Fuel tot display</name>
-   <x>300</x>
-   <y>92</y>
-   <w>40</w>
-   <h>10</h>
-  </instrument>
+    <instrument include="Instruments/digital-fuel-tot.xml">
+      <name>Fuel tot display</name>
+      <x>300</x>
+      <y>92</y>
+      <w>40</w>
+      <h>10</h>
+    </instrument>
 
-  <instrument include="Instruments/digital-aoa.xml">
-   <name>AoA display</name>
-   <x>300</x>
-   <y>69</y>
-   <w>40</w>
-   <h>10</h>
-  </instrument>
+    <instrument include="Instruments/digital-aoa.xml">
+      <name>AoA display</name>
+      <x>300</x>
+      <y>69</y>
+      <w>40</w>
+      <h>10</h>
+    </instrument>
 
-  <instrument include="Instruments/digital-ap-speed-kt.xml">
-   <name>AP Speed-Kt Instruiment</name>
-   <params>
-    <kias-disp>/autopilot/settings/target-speed-kt</kias-disp>
-    <kias-ctrl>/autopilot/settings/target-speed-kt</kias-ctrl>
-    <mach-disp>/autopilot/settings/target-mach</mach-disp>
-    <mach-ctrl>/autopilot/settings/target-mach</mach-ctrl>
-   </params>
-   <x>362</x>
-   <y>46</y>
-   <w>124</w>
-   <h>40</h>
-  </instrument>
+    <instrument include="Instruments/digital-ap-speed-kt.xml">
+      <name>AP Speed-Kt Instruiment</name>
+      <params>
+        <kias-disp>/autopilot/settings/target-speed-kt</kias-disp>
+        <kias-ctrl>/autopilot/settings/target-speed-kt</kias-ctrl>
+        <mach-disp>/autopilot/settings/target-mach</mach-disp>
+        <mach-ctrl>/autopilot/settings/target-mach</mach-ctrl>
+      </params>
+      <x>362</x>
+      <y>46</y>
+      <w>124</w>
+      <h>40</h>
+    </instrument>
 
-  <instrument include="Instruments/digital-flap.xml">
-   <name>Flap setting display</name>
-   <x>300</x>
-   <y>3</y>
-   <w>40</w>
-   <h>10</h>
-  </instrument>
+    <instrument include="Instruments/digital-flap.xml">
+      <name>Flap setting display</name>
+      <x>300</x>
+      <y>3</y>
+      <w>40</w>
+      <h>10</h>
+    </instrument>
 
-  <instrument include="Instruments/digital-brake.xml">
-   <name>Brake display</name>
-   <x>428</x>
-   <y>100</y>
-   <w>40</w>
-   <h>10</h>
-  </instrument>
+    <instrument include="Instruments/digital-brake.xml">
+      <name>Brake display</name>
+      <x>428</x>
+      <y>100</y>
+      <w>40</w>
+      <h>10</h>
+    </instrument>
 
-<!-- Engine monitors -->
-  <instrument include="Instruments/digital-engine.xml">
-   <name>Engine 0 display</name>
-   <params>
-    <eng-num>/engines/engine[0]/engine-num</eng-num>
-    <pt-select>/engines/engine[0]/prop-thrust</pt-select>
-    <pt-select>/engines/engine[0]/prop-thrust</pt-select>
-    <n1-select>/engines/engine[0]/n1</n1-select>
-    <n2-select>/engines/engine[0]/n2</n2-select>
-    <ff-select>/engines/engine[0]/fuel-flow-gph</ff-select>
-    <th-select>/controls/engines/engine[0]/throttle</th-select>
-    <egt-select>/engines/engine[0]/egt-degf</egt-select>
-   </params>
-   <x>640</x>
-   <y>69</y>
-   <w>40</w>
-   <h>10</h>
-  </instrument>
+    <!-- Engine monitors -->
+    <instrument include="Instruments/digital-engine.xml">
+      <name>Engine 0 display</name>
+      <params>
+        <eng-num>/engines/engine[0]/engine-num</eng-num>
+        <pt-select>/engines/engine[0]/prop-thrust</pt-select>
+        <pt-select>/engines/engine[0]/prop-thrust</pt-select>
+        <n1-select>/engines/engine[0]/n1</n1-select>
+        <n2-select>/engines/engine[0]/n2</n2-select>
+        <ff-select>/engines/engine[0]/fuel-flow-gph</ff-select>
+        <th-select>/controls/engines/engine[0]/throttle</th-select>
+        <egt-select>/engines/engine[0]/egt-degf</egt-select>
+      </params>
+      <x>640</x>
+      <y>69</y>
+      <w>40</w>
+      <h>10</h>
+    </instrument>
 
-  <instrument include="Instruments/digital-engine.xml">
-   <name>Engine 1 display</name>
-   <params>
-    <eng-num>/engines/engine[1]/engine-num</eng-num>
-    <pt-select>/engines/engine[1]/prop-thrust</pt-select>
-    <pt-select>/engines/engine[1]/prop-thrust</pt-select>
-    <n1-select>/engines/engine[1]/n1</n1-select>
-    <n2-select>/engines/engine[1]/n2</n2-select>
-    <ff-select>/engines/engine[1]/fuel-flow-gph</ff-select>
-    <th-select>/controls/engines/engine[1]/throttle</th-select>
-    <egt-select>/engines/engine[1]/egt-degf</egt-select>
-   </params>
-   <x>640</x>
-   <y>26</y>
-   <w>40</w>
-   <h>10</h>
-  </instrument>
+    <instrument include="Instruments/digital-engine.xml">
+      <name>Engine 1 display</name>
+      <params>
+        <eng-num>/engines/engine[1]/engine-num</eng-num>
+        <pt-select>/engines/engine[1]/prop-thrust</pt-select>
+        <pt-select>/engines/engine[1]/prop-thrust</pt-select>
+        <n1-select>/engines/engine[1]/n1</n1-select>
+        <n2-select>/engines/engine[1]/n2</n2-select>
+        <ff-select>/engines/engine[1]/fuel-flow-gph</ff-select>
+        <th-select>/controls/engines/engine[1]/throttle</th-select>
+        <egt-select>/engines/engine[1]/egt-degf</egt-select>
+      </params>
+      <x>640</x>
+      <y>26</y>
+      <w>40</w>
+      <h>10</h>
+    </instrument>
 
-<!-- Text AP Block -->
-  <instrument include="Instruments/text-autopilot.xml">
-   <name>AP display</name>
-   <params>
-    <ah-select>autopilot/locks/altitude</ah-select>
-    <tf-select>autopilot/locks/altitude</tf-select>
-    <mc-select>autopilot/locks/altitude</mc-select>
-   </params>
-   <x>533</x>
-   <y>125</y>
-   <w>210</w>
-   <h>16</h>
-  </instrument>
+    <!-- Text AP Block -->
+    <instrument include="Instruments/text-autopilot.xml">
+      <name>AP display</name>
+      <params>
+        <ah-select>autopilot/locks/altitude</ah-select>
+        <tf-select>autopilot/locks/altitude</tf-select>
+        <mc-select>autopilot/locks/altitude</mc-select>
+      </params>
+      <x>533</x>
+      <y>125</y>
+      <w>210</w>
+      <h>16</h>
+    </instrument>
 
-<!-- Wind Speed & Direction -->
-  <instrument include="Instruments/digital-wind-speed-direction.xml">
-   <name>Wind Speed and Direction display</name>
-   <x>583</x>
-   <y>99</y>
-   <w>110</w>
-   <h>34</h>
-  </instrument>
-  
+    <!-- Wind Speed & Direction -->
+    <instrument include="Instruments/digital-wind-speed-direction.xml">
+      <name>Wind Speed and Direction display</name>
+      <x>583</x>
+      <y>99</y>
+      <w>110</w>
+      <h>34</h>
+    </instrument>
+
     <instrument include="Instruments/digital-roll.xml">
       <name>Roll display</name>
       <x>6</x>

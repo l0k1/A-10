@@ -238,7 +238,7 @@
 	</group>
 
 
- <!-- Button Box -->
+	<!-- Button Box -->
 
 	<group>
 		<x>40</x>
@@ -293,9 +293,7 @@
 				<command>dialog-close</command>
 			</binding>
 		</button>
-	 </group>
+	</group>
 
 
 </PropertyList>
-
-

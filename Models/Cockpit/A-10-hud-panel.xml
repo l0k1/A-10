@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<PropertyList> 
+<PropertyList>
 	<path>A-10-hud-panel.ac</path>
 
 	<animation>
@@ -12,15 +12,21 @@
 			<y-m>0.0238</y-m>
 			<z-m>0.0180</z-m>
 		</center>
-		<axis><x>-1</x></axis>
+		<axis>
+			<x>-1</x>
+		</axis>
 	</animation>
 
-<!-- lighting -->
+	<!-- lighting -->
 	<animation>
 		<object-name>hud-panel</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
-		<emission> 
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
+		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.385</red>
 			<green>0.168</green>
@@ -28,9 +34,9 @@
 		</emission>
 	</animation>
 
-		<animation>
-			<type>range</type>
-			<min-m>0</min-m>
-			<max-m>5</max-m>
-		</animation>
-	</PropertyList>
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+</PropertyList>

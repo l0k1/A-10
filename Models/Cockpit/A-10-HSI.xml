@@ -15,7 +15,9 @@
 			</greater-than>
 		</condition>
 		<property>instrumentation/heading-indicator-fg/indicated-heading-deg</property>
-		<axis><x>1</x></axis>
+		<axis>
+			<x>1</x>
+		</axis>
 	</animation>
 	<animation>
 		<type>rotate</type>
@@ -27,7 +29,9 @@
 			</greater-than>
 		</condition>
 		<property>instrumentation/heading-indicator-fg/indicated-heading-deg</property>
-		<axis><x>1</x></axis>
+		<axis>
+			<x>1</x>
+		</axis>
 	</animation>
 
 	<animation>
@@ -40,7 +44,9 @@
 			</greater-than>
 		</condition>
 		<property>sim/model/A-10/instrumentation/tacan/indicated-bearing-mag-deg</property>
-		<axis><x>-1</x></axis>
+		<axis>
+			<x>-1</x>
+		</axis>
 	</animation>
 
 	<animation>
@@ -78,7 +84,9 @@
 		<property>instrumentation/tacan/indicated-distance-nm</property>
 		<factor>0.1</factor>
 		<offset>-1</offset>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 	<animation>
 		<type>textranslate</type>
@@ -88,7 +96,9 @@
 		<offset>-10</offset>
 		<step>10</step>
 		<scroll>0.5</scroll>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 	<animation>
 		<type>textranslate</type>
@@ -98,17 +108,21 @@
 		<offset>-100</offset>
 		<step>100</step>
 		<scroll>0.5</scroll>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
-<!-- course digital display -->
+	<!-- course digital display -->
 	<animation>
 		<type>textranslate</type>
 		<object-name>course-drum-1</object-name>
 		<property>instrumentation/nav[1]/radials/selected-deg</property>
 		<factor>0.1</factor>
 		<offset>-1</offset>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 	<animation>
 		<type>textranslate</type>
@@ -118,7 +132,9 @@
 		<offset>-10</offset>
 		<step>10</step>
 		<scroll>0.5</scroll>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 	<animation>
 		<type>textranslate</type>
@@ -128,40 +144,48 @@
 		<offset>-100</offset>
 		<step>100</step>
 		<scroll>0.5</scroll>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 	<animation>
-	<type>rotate</type>
-	<object-name>course-knob</object-name>
-	<property>instrumentation/nav[1]/radials/selected-deg</property>
-	<center>
-		<y-m>0.0491</y-m>
-		<z-m>-0.0413</z-m>
-	</center>
-	<axis><x>-1</x></axis>
+		<type>rotate</type>
+		<object-name>course-knob</object-name>
+		<property>instrumentation/nav[1]/radials/selected-deg</property>
+		<center>
+			<y-m>0.0491</y-m>
+			<z-m>-0.0413</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+		</axis>
 	</animation>
 
 	<animation>
-	<type>rotate</type>
-	<object-name>heading-set-knob</object-name>
-	<property>instrumentation/heading-indicator-fg/offset-deg</property>
-	<center>
-		<y-m>-0.0491</y-m>
-		<z-m>-0.0413</z-m>
-	</center>
-	<axis><x>-1</x></axis>
+		<type>rotate</type>
+		<object-name>heading-set-knob</object-name>
+		<property>instrumentation/heading-indicator-fg/offset-deg</property>
+		<center>
+			<y-m>-0.0491</y-m>
+			<z-m>-0.0413</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+		</axis>
 	</animation>
 
 
-<!-- ============ CDI =========== -->
+	<!-- ============ CDI =========== -->
 
 	<!-- HSI-course-card -->
 	<animation>
 		<type>rotate</type>
 		<object-name>HSI-course-card</object-name>
 		<property>instrumentation/nav[1]/radials/selected-deg</property>
-		<axis><x>-1</x></axis>
+		<axis>
+			<x>-1</x>
+		</axis>
 	</animation>
 
 	<!--bearing-validity-flag-->
@@ -208,7 +232,9 @@
 		<type>rotate</type>
 		<object-name>bearing-validity-flag</object-name>
 		<property>instrumentation/nav[1]/radials/selected-deg</property>
-		<axis><x>-1</x></axis>
+		<axis>
+			<x>-1</x>
+		</axis>
 	</animation>
 
 	<!--course-deviation-indicator off (CDI)-->
@@ -248,7 +274,9 @@
 		<type>rotate</type>
 		<object-name>course-deviation-indicator-off</object-name>
 		<property>instrumentation/nav[1]/radials/selected-deg</property>
-		<axis><x>-1</x></axis>
+		<axis>
+			<x>-1</x>
+		</axis>
 	</animation>
 
 	<!--  ILS on CDI  -->
@@ -267,18 +295,31 @@
 		<type>rotate</type>
 		<object-name>course-deviation-indicator-on</object-name>
 		<property>instrumentation/nav[1]/radials/selected-deg</property>
-		<axis><x>-1</x></axis>
+		<axis>
+			<x>-1</x>
+		</axis>
 	</animation>
 	<animation>
 		<type>translate</type>
 		<object-name>course-deviation-indicator-on</object-name>
 		<property>instrumentation/nav[0]/heading-needle-deflection</property>
 		<interpolation>
-			<entry><ind>-10</ind><dep>-0.024</dep></entry>
-			<entry><ind>0</ind><dep>0</dep></entry>
-			<entry><ind>10</ind><dep>0.024</dep></entry>
+			<entry>
+				<ind>-10</ind>
+				<dep>-0.024</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>10</ind>
+				<dep>0.024</dep>
+			</entry>
 		</interpolation>
-		<axis><y>1</y></axis>
+		<axis>
+			<y>1</y>
+		</axis>
 	</animation>
 	<!-- ils to-from (to)-->
 	<animation>
@@ -303,7 +344,9 @@
 		<type>rotate</type>
 		<object-name>to-from-to</object-name>
 		<property>instrumentation/nav[1]/radials/selected-deg</property>
-		<axis><x>-1</x></axis>
+		<axis>
+			<x>-1</x>
+		</axis>
 	</animation>
 	<!-- ils to-from (from)-->
 	<animation>
@@ -328,7 +371,9 @@
 		<type>rotate</type>
 		<object-name>to-from-from</object-name>
 		<property>instrumentation/nav[1]/radials/selected-deg</property>
-		<axis><x>-1</x></axis>
+		<axis>
+			<x>-1</x>
+		</axis>
 	</animation>
 
 	<!--  TACAN on CDI  -->
@@ -355,18 +400,31 @@
 		<type>rotate</type>
 		<object-name>tcn-course-deviation-indicator-on</object-name>
 		<property>instrumentation/nav[1]/radials/selected-deg</property>
-		<axis><x>-1</x></axis>
+		<axis>
+			<x>-1</x>
+		</axis>
 	</animation>
 	<animation>
 		<type>translate</type>
 		<object-name>tcn-course-deviation-indicator-on</object-name>
 		<property>sim/model/A-10/instrumentation/cdi/needle-deflection</property>
 		<interpolation>
-			<entry><ind>-10</ind><dep>-0.024</dep></entry>
-			<entry><ind>0</ind><dep>0</dep></entry>
-			<entry><ind>10</ind><dep>0.024</dep></entry>
+			<entry>
+				<ind>-10</ind>
+				<dep>-0.024</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>10</ind>
+				<dep>0.024</dep>
+			</entry>
 		</interpolation>
-		<axis><y>1</y></axis>
+		<axis>
+			<y>1</y>
+		</axis>
 	</animation>
 	<!-- tacan to-from (to)-->
 	<animation>
@@ -391,7 +449,9 @@
 		<type>rotate</type>
 		<object-name>tcn-to-from-to</object-name>
 		<property>instrumentation/nav[1]/radials/selected-deg</property>
-		<axis><x>-1</x></axis>
+		<axis>
+			<x>-1</x>
+		</axis>
 	</animation>
 	<!-- tacan to-from (from)-->
 	<animation>
@@ -416,7 +476,9 @@
 		<type>rotate</type>
 		<object-name>tcn-to-from-from</object-name>
 		<property>instrumentation/nav[1]/radials/selected-deg</property>
-		<axis><x>-1</x></axis>
+		<axis>
+			<x>-1</x>
+		</axis>
 	</animation>
 
 
@@ -425,8 +487,12 @@
 	<animation>
 		<object-name>panel</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
-		<emission> 
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
+		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.385</red>
 			<green>0.168</green>
@@ -436,8 +502,12 @@
 	<animation>
 		<object-name>instrument</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
-		<emission> 
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
+		<emission>
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
 			<red>0.55</red>
 			<green>0.24</green>

@@ -11,7 +11,9 @@
 		<property>instrumentation/comm[0]/frequencies/selected-mhz</property>
 		<factor>1</factor>
 		<offset>-0.1</offset>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -22,7 +24,9 @@
 		<offset>-1</offset>
 		<step>1</step>
 		<scroll>0.5</scroll>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 
@@ -34,7 +38,9 @@
 		<offset>-10</offset>
 		<step>10</step>
 		<scroll>0.5</scroll>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -45,7 +51,9 @@
 		<offset>-100</offset>
 		<step>100</step>
 		<scroll>0.5</scroll>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 
@@ -54,7 +62,11 @@
 	<animation>
 		<object-name>uhf-indicator</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.385</red>
@@ -66,7 +78,11 @@
 	<animation>
 		<object-name>drums</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
 			<red>0.55</red>
@@ -74,7 +90,6 @@
 			<blue>0.10</blue>
 		</emission>
 	</animation>
-
 
 
 	<animation>

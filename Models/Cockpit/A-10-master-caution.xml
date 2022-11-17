@@ -12,12 +12,12 @@
 				<property>sim/model/A-10/instrumentation/warnings/master-caution</property>
 				<value>true</value>
 			</equals>
-		</condition>  
+		</condition>
 	</animation>
-	
+
 	<!-- lighting -->
-	
-	<animation> 
+
+	<animation>
 		<object-name>master-caution-on</object-name>
 		<type>material</type>
 		<emission>
@@ -26,11 +26,15 @@
 			<blue>1</blue>
 		</emission>
 	</animation>
-	
-	<animation> 
+
+	<animation>
 		<object-name>master-caution-off</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.45</red>
