@@ -27,10 +27,22 @@
 		<object-name>disk</object-name>
 		<use-personality>true</use-personality>
 		<interpolation>
-			<entry><ind>0</ind><dep>1</dep></entry>
-			<entry><ind>500</ind><dep>2</dep></entry>
-			<entry><ind>1000</ind><dep>4</dep></entry>
-			<entry><ind>3000</ind><dep>10</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>1</dep>
+			</entry>
+			<entry>
+				<ind>500</ind>
+				<dep>2</dep>
+			</entry>
+			<entry>
+				<ind>1000</ind>
+				<dep>4</dep>
+			</entry>
+			<entry>
+				<ind>3000</ind>
+				<dep>10</dep>
+			</entry>
 		</interpolation>
 	</animation>
 

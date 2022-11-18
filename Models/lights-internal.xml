@@ -4,7 +4,7 @@
 <PropertyList>
 
 	<path>lights-internal.ac</path>
-	<nopreview/>
+	<nopreview />
 
 
 	<animation>
@@ -27,7 +27,9 @@
 	<animation>
 		<type>select</type>
 		<object-name>lgt-hud</object-name>
-		<condition><property>sim/rendering/rembrandt/enabled</property></condition>
+		<condition>
+			<property>sim/rendering/rembrandt/enabled</property>
+		</condition>
 	</animation>
 
 	<!-- Pilot's controle panel -->
@@ -36,15 +38,38 @@
 		<light-type>point</light-type>
 		<name>lgt-pilot-front-L</name>
 		<object-name>lgt-pilot-front-L</object-name>
-		<nopreview/>
-		<position><x>2.6009</x><y>-0.4436</y><z>1.0619</z></position>
-		<ambient><r>0.3</r><g>0.07</g><b>0.05</b><a>1.0</a></ambient>
-		<diffuse><r>0.3</r><g>0.07</g><b>0.05</b><a>1.0</a></diffuse>
-		<specular><r>0.3</r><g>0.07</g><b>0.05</b><a>1.0</a></specular>
+		<nopreview />
+		<position>
+			<x>2.6009</x>
+			<y>-0.4436</y>
+			<z>1.0619</z>
+		</position>
+		<ambient>
+			<r>0.3</r>
+			<g>0.07</g>
+			<b>0.05</b>
+			<a>1.0</a>
+		</ambient>
+		<diffuse>
+			<r>0.3</r>
+			<g>0.07</g>
+			<b>0.05</b>
+			<a>1.0</a>
+		</diffuse>
+		<specular>
+			<r>0.3</r>
+			<g>0.07</g>
+			<b>0.05</b>
+			<a>1.0</a>
+		</specular>
 		<dim-factor>
 			<property>controls/lighting/instruments-norm</property>
 		</dim-factor>
-		<attenuation><c>0.8</c><l>2</l><q>1</q></attenuation>
+		<attenuation>
+			<c>0.8</c>
+			<l>2</l>
+			<q>1</q>
+		</attenuation>
 		<near-m>0.01</near-m>
 		<far-m>0.59</far-m>
 	</animation>
@@ -53,15 +78,38 @@
 		<light-type>point</light-type>
 		<name>lgt-pilot-front-R</name>
 		<object-name>lgt-pilot-front-R</object-name>
-		<nopreview/>
-		<position><x>2.6009</x><y>0.4436</y><z>1.0619</z></position>
-		<ambient><r>0.3</r><g>0.07</g><b>0.05</b><a>1.0</a></ambient>
-		<diffuse><r>0.3</r><g>0.07</g><b>0.05</b><a>1.0</a></diffuse>
-		<specular><r>0.3</r><g>0.07</g><b>0.05</b><a>1.0</a></specular>
+		<nopreview />
+		<position>
+			<x>2.6009</x>
+			<y>0.4436</y>
+			<z>1.0619</z>
+		</position>
+		<ambient>
+			<r>0.3</r>
+			<g>0.07</g>
+			<b>0.05</b>
+			<a>1.0</a>
+		</ambient>
+		<diffuse>
+			<r>0.3</r>
+			<g>0.07</g>
+			<b>0.05</b>
+			<a>1.0</a>
+		</diffuse>
+		<specular>
+			<r>0.3</r>
+			<g>0.07</g>
+			<b>0.05</b>
+			<a>1.0</a>
+		</specular>
 		<dim-factor>
 			<property>controls/lighting/instruments-norm</property>
 		</dim-factor>
-		<attenuation><c>0.8</c><l>2</l><q>1</q></attenuation>
+		<attenuation>
+			<c>0.8</c>
+			<l>2</l>
+			<q>1</q>
+		</attenuation>
 		<near-m>0.01</near-m>
 		<far-m>0.59</far-m>
 	</animation>
@@ -92,15 +140,38 @@
 		<light-type>point</light-type>
 		<name>lgt-pilot-console-L-front</name>
 		<object-name>lgt-pilot-console-L-front</object-name>
-		<nopreview/>
-		<position><x>2.8138</x><y>-0.5231</y><z>1.0678</z></position>
-		<ambient><r>0.3</r><g>0.07</g><b>0.05</b><a>1.0</a></ambient>
-		<diffuse><r>0.3</r><g>0.07</g><b>0.05</b><a>1.0</a></diffuse>
-		<specular><r>0.3</r><g>0.07</g><b>0.05</b><a>1.0</a></specular>
+		<nopreview />
+		<position>
+			<x>2.8138</x>
+			<y>-0.5231</y>
+			<z>1.0678</z>
+		</position>
+		<ambient>
+			<r>0.3</r>
+			<g>0.07</g>
+			<b>0.05</b>
+			<a>1.0</a>
+		</ambient>
+		<diffuse>
+			<r>0.3</r>
+			<g>0.07</g>
+			<b>0.05</b>
+			<a>1.0</a>
+		</diffuse>
+		<specular>
+			<r>0.3</r>
+			<g>0.07</g>
+			<b>0.05</b>
+			<a>1.0</a>
+		</specular>
 		<dim-factor>
 			<property>controls/lighting/panel-norm</property>
 		</dim-factor>
-		<attenuation><c>2</c><l>0</l><q>8</q></attenuation>
+		<attenuation>
+			<c>2</c>
+			<l>0</l>
+			<q>8</q>
+		</attenuation>
 		<near-m>0.01</near-m>
 		<far-m>1.2</far-m>
 	</animation>
@@ -109,15 +180,38 @@
 		<light-type>point</light-type>
 		<name>lgt-pilot-console-L-aft</name>
 		<object-name>lgt-pilot-console-L-aft</object-name>
-		<nopreview/>
-		<position><x>3.0632</x><y>-0.5231</y><z>1.0678</z></position>
-		<ambient><r>0.3</r><g>0.07</g><b>0.05</b><a>1.0</a></ambient>
-		<diffuse><r>0.3</r><g>0.07</g><b>0.05</b><a>1.0</a></diffuse>
-		<specular><r>0.3</r><g>0.07</g><b>0.05</b><a>1.0</a></specular>
+		<nopreview />
+		<position>
+			<x>3.0632</x>
+			<y>-0.5231</y>
+			<z>1.0678</z>
+		</position>
+		<ambient>
+			<r>0.3</r>
+			<g>0.07</g>
+			<b>0.05</b>
+			<a>1.0</a>
+		</ambient>
+		<diffuse>
+			<r>0.3</r>
+			<g>0.07</g>
+			<b>0.05</b>
+			<a>1.0</a>
+		</diffuse>
+		<specular>
+			<r>0.3</r>
+			<g>0.07</g>
+			<b>0.05</b>
+			<a>1.0</a>
+		</specular>
 		<dim-factor>
 			<property>controls/lighting/panel-norm</property>
 		</dim-factor>
-		<attenuation><c>0.75</c><l>0.01</l><q>8</q></attenuation>
+		<attenuation>
+			<c>0.75</c>
+			<l>0.01</l>
+			<q>8</q>
+		</attenuation>
 		<near-m>0.01</near-m>
 		<far-m>1.2</far-m>
 	</animation>
@@ -126,15 +220,38 @@
 		<light-type>point</light-type>
 		<name>lgt-pilot-console-R-front</name>
 		<object-name>lgt-pilot-console-R-front</object-name>
-		<nopreview/>
-		<position><x>2.8138</x><y>0.5231</y><z>1.0678</z></position>
-		<ambient><r>0.3</r><g>0.07</g><b>0.05</b><a>1.0</a></ambient>
-		<diffuse><r>0.3</r><g>0.07</g><b>0.05</b><a>1.0</a></diffuse>
-		<specular><r>0.3</r><g>0.07</g><b>0.05</b><a>1.0</a></specular>
+		<nopreview />
+		<position>
+			<x>2.8138</x>
+			<y>0.5231</y>
+			<z>1.0678</z>
+		</position>
+		<ambient>
+			<r>0.3</r>
+			<g>0.07</g>
+			<b>0.05</b>
+			<a>1.0</a>
+		</ambient>
+		<diffuse>
+			<r>0.3</r>
+			<g>0.07</g>
+			<b>0.05</b>
+			<a>1.0</a>
+		</diffuse>
+		<specular>
+			<r>0.3</r>
+			<g>0.07</g>
+			<b>0.05</b>
+			<a>1.0</a>
+		</specular>
 		<dim-factor>
 			<property>controls/lighting/panel-norm</property>
 		</dim-factor>
-		<attenuation><c>0.75</c><l>0.01</l><q>8</q></attenuation>
+		<attenuation>
+			<c>0.75</c>
+			<l>0.01</l>
+			<q>8</q>
+		</attenuation>
 		<near-m>0.01</near-m>
 		<far-m>1.2</far-m>
 	</animation>
@@ -143,15 +260,38 @@
 		<light-type>point</light-type>
 		<name>lgt-pilot-console-R-aft</name>
 		<object-name>lgt-pilot-console-R-aft</object-name>
-		<nopreview/>
-		<position><x>3.0632</x><y>0.5231</y><z>1.0678</z></position>
-		<ambient><r>0.3</r><g>0.07</g><b>0.05</b><a>1.0</a></ambient>
-		<diffuse><r>0.3</r><g>0.07</g><b>0.05</b><a>1.0</a></diffuse>
-		<specular><r>0.3</r><g>0.07</g><b>0.05</b><a>1.0</a></specular>
+		<nopreview />
+		<position>
+			<x>3.0632</x>
+			<y>0.5231</y>
+			<z>1.0678</z>
+		</position>
+		<ambient>
+			<r>0.3</r>
+			<g>0.07</g>
+			<b>0.05</b>
+			<a>1.0</a>
+		</ambient>
+		<diffuse>
+			<r>0.3</r>
+			<g>0.07</g>
+			<b>0.05</b>
+			<a>1.0</a>
+		</diffuse>
+		<specular>
+			<r>0.3</r>
+			<g>0.07</g>
+			<b>0.05</b>
+			<a>1.0</a>
+		</specular>
 		<dim-factor>
 			<property>controls/lighting/panel-norm</property>
 		</dim-factor>
-		<attenuation><c>0.75</c><l>0.01</l><q>8</q></attenuation>
+		<attenuation>
+			<c>0.75</c>
+			<l>0.01</l>
+			<q>8</q>
+		</attenuation>
 		<near-m>0.01</near-m>
 		<far-m>1.2</far-m>
 	</animation>
@@ -161,16 +301,43 @@
 		<light-type>spot</light-type>
 		<name>lgt-pilot-front-C</name>
 		<object-name>lgt-pilot-front-C</object-name>
-		<nopreview/>
-		<direction><x>-1</x><y>0</y><z>-0.4487</z></direction>
-		<position><x>3.5862</x><y>0</y><z>1.7502</z></position>
-		<ambient><r>0.6</r><g>0.15</g><b>0.1</b><a>1.0</a></ambient>
-		<diffuse><r>0.6</r><g>0.15</g><b>0.1</b><a>1.0</a></diffuse>
-		<specular><r>0.6</r><g>0.15</g><b>0.1</b><a>1.0</a></specular>
+		<nopreview />
+		<direction>
+			<x>-1</x>
+			<y>0</y>
+			<z>-0.4487</z>
+		</direction>
+		<position>
+			<x>3.5862</x>
+			<y>0</y>
+			<z>1.7502</z>
+		</position>
+		<ambient>
+			<r>0.6</r>
+			<g>0.15</g>
+			<b>0.1</b>
+			<a>1.0</a>
+		</ambient>
+		<diffuse>
+			<r>0.6</r>
+			<g>0.15</g>
+			<b>0.1</b>
+			<a>1.0</a>
+		</diffuse>
+		<specular>
+			<r>0.6</r>
+			<g>0.15</g>
+			<b>0.1</b>
+			<a>1.0</a>
+		</specular>
 		<dim-factor>
 			<property>controls/lighting/instruments-norm</property>
 		</dim-factor>
-		<attenuation><c>1.1</c><l>5</l><q>0.01</q></attenuation>
+		<attenuation>
+			<c>1.1</c>
+			<l>5</l>
+			<q>0.01</q>
+		</attenuation>
 		<cutoff>60</cutoff>
 		<near-m>0.01</near-m>
 		<far-m>2.00</far-m>
@@ -182,12 +349,35 @@
 		<light-type>point</light-type>
 		<name>lgt-hud</name>
 		<object-name>lgt-hud</object-name>
-		<nopreview/>
-		<position><x>2.12</x><y>0</y><z>1.3921</z></position>
-		<ambient><r>0</r><g>0.8</g><b>0.4</b><a>1.0</a></ambient>
-		<diffuse><r>0</r><g>0.8</g><b>0.4</b><a>1.0</a></diffuse>
-		<specular><r>0</r><g>0.8</g><b>0.4</b><a>1.0</a></specular>
-		<attenuation><c>0.8</c><l>5</l><q>100</q></attenuation>
+		<nopreview />
+		<position>
+			<x>2.12</x>
+			<y>0</y>
+			<z>1.3921</z>
+		</position>
+		<ambient>
+			<r>0</r>
+			<g>0.8</g>
+			<b>0.4</b>
+			<a>1.0</a>
+		</ambient>
+		<diffuse>
+			<r>0</r>
+			<g>0.8</g>
+			<b>0.4</b>
+			<a>1.0</a>
+		</diffuse>
+		<specular>
+			<r>0</r>
+			<g>0.8</g>
+			<b>0.4</b>
+			<a>1.0</a>
+		</specular>
+		<attenuation>
+			<c>0.8</c>
+			<l>5</l>
+			<q>100</q>
+		</attenuation>
 		<!--<attenuation><c>1.3</c><l>15</l><q>100</q></attenuation>-->
 		<near-m>0.0</near-m>
 		<far-m>0.23</far-m>

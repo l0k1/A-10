@@ -51,7 +51,9 @@
 		<object-name>turn-indicator</object-name>
 		<property>orientation/roll-deg</property>
 		<factor>0.0114</factor>
-		<axis><y>1</y></axis>
+		<axis>
+			<y>1</y>
+		</axis>
 		<min-m>-0.0185</min-m>
 		<max-m>0.0185</max-m>
 	</animation>
@@ -206,7 +208,7 @@
 		</axis>
 	</animation>
 
-<!-- ADI's bars in homing mode -->
+	<!-- ADI's bars in homing mode -->
 
 	<animation>
 		<type>select</type>
@@ -320,7 +322,7 @@
 		<center>
 			<x-m>0</x-m>
 			<y-m>0</y-m>
-			<z-m>0.0279031</z-m> 
+			<z-m>0.0279031</z-m>
 		</center>
 		<axis>
 			<x>-1</x>
@@ -334,7 +336,11 @@
 	<animation>
 		<object-name>ext</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.385</red>
@@ -346,7 +352,11 @@
 	<animation>
 		<object-name>instr</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
 			<red>0.55</red>

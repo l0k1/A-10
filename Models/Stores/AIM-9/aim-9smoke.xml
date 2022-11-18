@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 
 
-
 <PropertyList>
 
 	<path>aim-9smoke.ac</path>
@@ -9,11 +8,20 @@
 		<type>dist-scale</type>
 		<object-name>aim-9</object-name>
 		<interpolation>
-			<entry><ind>0</ind><dep>0.3</dep></entry>
-			<entry><ind>40</ind><dep>1</dep></entry>
-			<entry><ind>16000</ind><dep>4</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0.3</dep>
+			</entry>
+			<entry>
+				<ind>40</ind>
+				<dep>1</dep>
+			</entry>
+			<entry>
+				<ind>16000</ind>
+				<dep>4</dep>
+			</entry>
 		</interpolation>
-	</animation>	
+	</animation>
 
-	
+
 </PropertyList>

@@ -8,22 +8,24 @@
 	<path>A10-004-015l3.ac</path>
 
 	<nasal>
-	  <load>
-		<!--
+		<load>
+			<!--
 		  ##############################################################################
 		  # The on-load Nasal is not executed when this file is loaded as the user
 		  # aircraft. The code is only executed if the file is loaded for a remote
 		  # aircraft in Multi-Player mode (MP)
 		  ##############################################################################
 		-->
-		<![CDATA[
+			<![CDATA[
 		  var livery_update = aircraft.livery_update.new("Aircraft/A-10/Models/Liveries");
 		]]>
 		</load>
 
-	  <unload><![CDATA[
+		<unload>
+			<![CDATA[
 		livery_update.stop();
-	  ]]></unload>
+	  ]]>
+		</unload>
 	</nasal>
 
 	<animation>
@@ -201,25 +203,25 @@
 		<path>Aircraft/A-10/Models/ext-stores.xml</path>
 	</model>
 	<model>
-        	<name>landing light1</name>
-        	<path>Aircraft/A-10/Models/Effects/landing-light.xml</path>
-        	<offsets>
-            		<x-m>-3.35</x-m>
-            		<y-m>-0.73</y-m>
-            		<z-m>-0.72</z-m>
-            		<heading-deg>5</heading-deg>
-        	</offsets>
-    	</model>
-    	<model>
-        	<name>landing light2</name>
-        	<path>Aircraft/A-10/Models/Effects/landing-light.xml</path>
-        	<offsets>
-            		<x-m>-3.35</x-m>
-            		<y-m> 0.73</y-m>
-            		<z-m>-0.72</z-m>
-            		<heading-deg>-5</heading-deg>
-        	</offsets>
-    	</model>
+		<name>landing light1</name>
+		<path>Aircraft/A-10/Models/Effects/landing-light.xml</path>
+		<offsets>
+			<x-m>-3.35</x-m>
+			<y-m>-0.73</y-m>
+			<z-m>-0.72</z-m>
+			<heading-deg>5</heading-deg>
+		</offsets>
+	</model>
+	<model>
+		<name>landing light2</name>
+		<path>Aircraft/A-10/Models/Effects/landing-light.xml</path>
+		<offsets>
+			<x-m>-3.35</x-m>
+			<y-m> 0.73</y-m>
+			<z-m>-0.72</z-m>
+			<heading-deg>-5</heading-deg>
+		</offsets>
+	</model>
 
 	<multiplay>
 		<refuel>
@@ -234,7 +236,7 @@
 	<!-- Select external tanks -->
 	<animation>
 		<type>select</type>
-		<nopreview/>
+		<nopreview />
 		<object-name>FTank3</object-name>
 		<condition>
 			<equals>
@@ -246,7 +248,7 @@
 
 	<animation>
 		<type>select</type>
-		<nopreview/>
+		<nopreview />
 		<object-name>FTank1</object-name>
 		<condition>
 			<equals>
@@ -258,7 +260,7 @@
 
 	<animation>
 		<type>select</type>
-		<nopreview/>
+		<nopreview />
 		<object-name>FTank2</object-name>
 		<condition>
 			<equals>
@@ -267,7 +269,6 @@
 			</equals>
 		</condition>
 	</animation>
-
 
 
 	<!-- tutorial marker -->
@@ -517,7 +518,7 @@
 	</panel>
 
 
-<!-- instruments-->
+	<!-- instruments-->
 	<model>
 		<path>Aircraft/A-10/Models/Cockpit/A-10-hud.xml</path>
 		<offsets>
@@ -578,7 +579,7 @@
 			<x-m>2.4015</x-m>
 			<y-m>0.1145</y-m>
 			<z-m>1.1275</z-m>
-		<pitch-deg>-5</pitch-deg>
+			<pitch-deg>-5</pitch-deg>
 		</offsets>
 	</model>
 
@@ -763,7 +764,7 @@
 		</offsets>
 	</model>
 
-<!-- right console -->
+	<!-- right console -->
 	<model>
 		<path>Aircraft/A-10/Models/Cockpit/A-10-canopy-switch.xml</path>
 		<offsets>
@@ -825,7 +826,7 @@
 		</offsets>
 	</model>
 
-<!-- left panel -->
+	<!-- left panel -->
 	<model>
 		<path>Aircraft/A-10/Models/Cockpit/stdby-adi.xml</path>
 		<offsets>
@@ -878,11 +879,11 @@
 
 	<model>
 		<path>Aircraft/A-10/Models/Cockpit/A-10-an-arc-186-1.xml</path>
-			<offsets>
-				<x-m>2.8427</x-m>
-				<y-m>-0.3551</y-m>
-				<z-m>0.7098</z-m>
-			</offsets>
+		<offsets>
+			<x-m>2.8427</x-m>
+			<y-m>-0.3551</y-m>
+			<z-m>0.7098</z-m>
+		</offsets>
 	</model>
 
 	<model>
@@ -922,7 +923,7 @@
 	</model>
 
 
-<!-- De-select when in view 0 -->
+	<!-- De-select when in view 0 -->
 	<animation>
 		<type>select</type>
 		<object-name>FCanopyGlass</object-name>
@@ -938,7 +939,7 @@
 		</condition>
 	</animation>
 
-<!-- Canopy -->
+	<!-- Canopy -->
 	<!--<animation>
 		<type>select</type>
 		<object-name>BCanopyFrame</object-name>
@@ -983,7 +984,7 @@
 		</axis>
 	</animation>
 
-<!-- Rudder bits -->
+	<!-- Rudder bits -->
 	<animation>
 		<type>rotate</type>
 		<object-name>LRudder-L</object-name>
@@ -1022,7 +1023,7 @@
 		</axis>
 	</animation>
 
-<!-- Elevator bits -->
+	<!-- Elevator bits -->
 	<animation>
 		<type>rotate</type>
 		<object-name>LElevator</object-name>
@@ -1059,7 +1060,7 @@
 		</axis>
 	</animation>
 
-<!-- Aileron bits -->
+	<!-- Aileron bits -->
 	<animation>
 		<type>rotate</type>
 		<object-name>LUAileron</object-name>
@@ -1098,7 +1099,7 @@
 		</axis>
 	</animation>
 
-<!-- Flap bits -->
+	<!-- Flap bits -->
 	<animation>
 		<type>translate</type>
 		<object-name>LIFlap-F</object-name>
@@ -1223,17 +1224,29 @@
 		</axis>
 	</animation>
 
-<!-- Slats bits -->
+	<!-- Slats bits -->
 	<animation>
 		<type>translate</type>
 		<object-name>L-Wing-Slat</object-name>
 		<object-name>R-Wing-Slat</object-name>
 		<property>orientation/alpha-deg</property>
 		<interpolation>
-			<entry><ind>-8</ind><dep>0</dep></entry>
-			<entry><ind>6</ind><dep>0</dep></entry>
-			<entry><ind>7</ind><dep>0.15</dep></entry>
-			<entry><ind>20</ind><dep>0.15</dep></entry>
+			<entry>
+				<ind>-8</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>6</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>7</ind>
+				<dep>0.15</dep>
+			</entry>
+			<entry>
+				<ind>20</ind>
+				<dep>0.15</dep>
+			</entry>
 		</interpolation>
 		<axis>
 			<x>-1.00</x>
@@ -1242,8 +1255,8 @@
 		</axis>
 	</animation>
 
-<!-- Spoiler/Airbrake bits -->
-<!-- Left Upper-->
+	<!-- Spoiler/Airbrake bits -->
+	<!-- Left Upper-->
 	<animation>
 		<type>rotate</type>
 		<object-name>LUAileron</object-name>
@@ -1262,7 +1275,7 @@
 		</axis>
 	</animation>
 
-<!-- Left Lower-->
+	<!-- Left Lower-->
 	<animation>
 		<type>rotate</type>
 		<object-name>LLAileron</object-name>
@@ -1280,7 +1293,7 @@
 		</axis>
 	</animation>
 
-<!-- Right Upper -->
+	<!-- Right Upper -->
 	<animation>
 		<type>rotate</type>
 		<object-name>RUAileron</object-name>
@@ -1299,7 +1312,7 @@
 		</axis>
 	</animation>
 
-<!-- Right Lower -->
+	<!-- Right Lower -->
 	<animation>
 		<type>rotate</type>
 		<object-name>RLAileron</object-name>
@@ -1317,9 +1330,9 @@
 		</axis>
 	</animation>
 
-<!-- Landing Gear -->
-<!-- Nose -->
-<!-- Select/Deslect u/c and doors
+	<!-- Landing Gear -->
+	<!-- Nose -->
+	<!-- Select/Deslect u/c and doors
 	<animation>
 		<type>select</type>
 		<object-name>UC-NoseStrutTop</object-name>
@@ -1346,26 +1359,51 @@
 		</condition>
 	</animation>-->
 
-<!-- Extend/Retract -->
-<!-- Nose Gear -->
+	<!-- Extend/Retract -->
+	<!-- Nose Gear -->
 
-<!-- Front Door and Up Lock Assembly -->
+	<!-- Front Door and Up Lock Assembly -->
 	<animation>
 		<type>rotate</type>
 		<object-name>UC-NoseFrontDoor</object-name>
 		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
-			<entry><ind>0.0</ind><dep>0.0</dep></entry>
-			<entry><ind>0.034</ind><dep>18</dep></entry>
-			<entry><ind>0.068</ind><dep>36</dep></entry>
-			<entry><ind>0.102</ind><dep>56</dep></entry>
-			<entry><ind>0.136</ind><dep>77.5</dep></entry>
-			<entry><ind>0.17</ind><dep>102</dep></entry>
-			<entry><ind>1.0</ind><dep>102</dep></entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>0.034</ind>
+				<dep>18</dep>
+			</entry>
+			<entry>
+				<ind>0.068</ind>
+				<dep>36</dep>
+			</entry>
+			<entry>
+				<ind>0.102</ind>
+				<dep>56</dep>
+			</entry>
+			<entry>
+				<ind>0.136</ind>
+				<dep>77.5</dep>
+			</entry>
+			<entry>
+				<ind>0.17</ind>
+				<dep>102</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>102</dep>
+			</entry>
 		</interpolation>
 		<axis>
-			<x1-m>0.9048</x1-m><y1-m>0.5494</y1-m><z1-m>-0.2814</z1-m>
-			<x2-m>2.3675</x2-m><y2-m>0.6004</y2-m><z2-m>-0.2814</z2-m>
+			<x1-m>0.9048</x1-m>
+			<y1-m>0.5494</y1-m>
+			<z1-m>-0.2814</z1-m>
+			<x2-m>2.3675</x2-m>
+			<y2-m>0.6004</y2-m>
+			<z2-m>-0.2814</z2-m>
 		</axis>
 	</animation>
 	<animation>
@@ -1373,32 +1411,84 @@
 		<object-name>UC-NFD-Arm</object-name>
 		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
-			<entry><ind>0.0</ind><dep>-1.5</dep></entry>
-			<entry><ind>0.034</ind><dep>-20</dep></entry>
-			<entry><ind>0.068</ind><dep>-37.5</dep></entry>
-			<entry><ind>0.102</ind><dep>-54.5</dep></entry>
-			<entry><ind>0.136</ind><dep>-73</dep></entry>
-			<entry><ind>0.17</ind><dep>-92.5</dep></entry>
-			<entry><ind>1.0</ind><dep>-92.5</dep></entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>-1.5</dep>
+			</entry>
+			<entry>
+				<ind>0.034</ind>
+				<dep>-20</dep>
+			</entry>
+			<entry>
+				<ind>0.068</ind>
+				<dep>-37.5</dep>
+			</entry>
+			<entry>
+				<ind>0.102</ind>
+				<dep>-54.5</dep>
+			</entry>
+			<entry>
+				<ind>0.136</ind>
+				<dep>-73</dep>
+			</entry>
+			<entry>
+				<ind>0.17</ind>
+				<dep>-92.5</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-92.5</dep>
+			</entry>
 		</interpolation>
-		<center><z-m>-0.2639</z-m><y-m>0.5317</y-m></center>
-		<axis><x>1</x></axis>
+		<center>
+			<z-m>-0.2639</z-m>
+			<y-m>0.5317</y-m>
+		</center>
+		<axis>
+			<x>1</x>
+		</axis>
 	</animation>
 	<animation>
 		<type>rotate</type>
 		<object-name>UC-NFD-Arm</object-name>
 		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
-			<entry><ind>0.0</ind><dep>0.0</dep></entry>
-			<entry><ind>0.034</ind><dep>-2.5</dep></entry>
-			<entry><ind>0.068</ind><dep>-3</dep></entry>
-			<entry><ind>0.102</ind><dep>-2</dep></entry>
-			<entry><ind>0.136</ind><dep>2</dep></entry>
-			<entry><ind>0.17</ind><dep>10</dep></entry>
-			<entry><ind>1.0</ind><dep>10</dep></entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>0.034</ind>
+				<dep>-2.5</dep>
+			</entry>
+			<entry>
+				<ind>0.068</ind>
+				<dep>-3</dep>
+			</entry>
+			<entry>
+				<ind>0.102</ind>
+				<dep>-2</dep>
+			</entry>
+			<entry>
+				<ind>0.136</ind>
+				<dep>2</dep>
+			</entry>
+			<entry>
+				<ind>0.17</ind>
+				<dep>10</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>10</dep>
+			</entry>
 		</interpolation>
-		<center><x-m>1.8553</x-m><z-m>-0.2639</z-m></center>
-		<axis><y>1</y></axis>
+		<center>
+			<x-m>1.8553</x-m>
+			<z-m>-0.2639</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
 	</animation>
 	<animation>
 		<type>rotate</type>
@@ -1406,16 +1496,42 @@
 		<object-name>UC-NFD-rod</object-name>
 		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
-			<entry><ind>0.0</ind><dep>0.0</dep></entry>
-			<entry><ind>0.034</ind><dep>23.5</dep></entry>
-			<entry><ind>0.068</ind><dep>42</dep></entry>
-			<entry><ind>0.102</ind><dep>59.5</dep></entry>
-			<entry><ind>0.136</ind><dep>82</dep></entry>
-			<entry><ind>0.17</ind><dep>114</dep></entry>
-			<entry><ind>1.0</ind><dep>114</dep></entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>0.034</ind>
+				<dep>23.5</dep>
+			</entry>
+			<entry>
+				<ind>0.068</ind>
+				<dep>42</dep>
+			</entry>
+			<entry>
+				<ind>0.102</ind>
+				<dep>59.5</dep>
+			</entry>
+			<entry>
+				<ind>0.136</ind>
+				<dep>82</dep>
+			</entry>
+			<entry>
+				<ind>0.17</ind>
+				<dep>114</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>114</dep>
+			</entry>
 		</interpolation>
-		<center><x-m>1.8535</x-m><z-m>-0.0309</z-m></center>
-		<axis><y>-1</y></axis>
+		<center>
+			<x-m>1.8535</x-m>
+			<z-m>-0.0309</z-m>
+		</center>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -1423,33 +1539,88 @@
 		<object-name>UC-NFD-rod</object-name>
 		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
-			<entry><ind>0.0</ind><dep>0.0</dep></entry>
-			<entry><ind>0.017</ind><dep>11</dep></entry>
-			<entry><ind>0.034</ind><dep>22.5</dep></entry>
-			<entry><ind>0.068</ind><dep>40</dep></entry>
-			<entry><ind>0.102</ind><dep>56</dep></entry>
-			<entry><ind>0.136</ind><dep>77</dep></entry>
-			<entry><ind>0.17</ind><dep>104</dep></entry>
-			<entry><ind>1.0</ind><dep>104</dep></entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>0.017</ind>
+				<dep>11</dep>
+			</entry>
+			<entry>
+				<ind>0.034</ind>
+				<dep>22.5</dep>
+			</entry>
+			<entry>
+				<ind>0.068</ind>
+				<dep>40</dep>
+			</entry>
+			<entry>
+				<ind>0.102</ind>
+				<dep>56</dep>
+			</entry>
+			<entry>
+				<ind>0.136</ind>
+				<dep>77</dep>
+			</entry>
+			<entry>
+				<ind>0.17</ind>
+				<dep>104</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>104</dep>
+			</entry>
 		</interpolation>
-		<center><x-m>1.8296</x-m><z-m>-0.0206</z-m></center>
-		<axis><y>1</y></axis>
+		<center>
+			<x-m>1.8296</x-m>
+			<z-m>-0.0206</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
 	</animation>
 	<animation>
 		<type>rotate</type>
 		<object-name>UC-NFD-main-axis</object-name>
 		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
-			<entry><ind>0.0</ind><dep>0.0</dep></entry>
-			<entry><ind>0.034</ind><dep>7.5</dep></entry>
-			<entry><ind>0.068</ind><dep>15</dep></entry>
-			<entry><ind>0.102</ind><dep>22.5</dep></entry>
-			<entry><ind>0.136</ind><dep>30</dep></entry>
-			<entry><ind>0.17</ind><dep>37.5</dep></entry>
-			<entry><ind>1.0</ind><dep>37.5</dep></entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>0.034</ind>
+				<dep>7.5</dep>
+			</entry>
+			<entry>
+				<ind>0.068</ind>
+				<dep>15</dep>
+			</entry>
+			<entry>
+				<ind>0.102</ind>
+				<dep>22.5</dep>
+			</entry>
+			<entry>
+				<ind>0.136</ind>
+				<dep>30</dep>
+			</entry>
+			<entry>
+				<ind>0.17</ind>
+				<dep>37.5</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>37.5</dep>
+			</entry>
 		</interpolation>
-		<center><x-m>1.8531</x-m><z-m>0.1185</z-m></center>
-		<axis><y>-1</y></axis>
+		<center>
+			<x-m>1.8531</x-m>
+			<z-m>0.1185</z-m>
+		</center>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -1469,29 +1640,67 @@
 		</condition>
 	</animation>
 
-<!-- Rear Door -->
+	<!-- Rear Door -->
 	<animation>
 		<type>rotate</type>
 		<object-name>UC-NoseWheelDoorRear</object-name>
 		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>0</dep></entry>
-			<entry><ind>0.1</ind><dep>1.5</dep></entry>
-			<entry><ind>0.2</ind><dep>4.5</dep></entry>
-			<entry><ind>0.3</ind><dep>8.5</dep></entry>
-			<entry><ind>0.4</ind><dep>13.5</dep></entry>
-			<entry><ind>0.5</ind><dep>20</dep></entry>
-			<entry><ind>0.6</ind><dep>28</dep></entry>
-			<entry><ind>0.7</ind><dep>38</dep></entry>
-			<entry><ind>0.8</ind><dep>50</dep></entry>
-			<entry><ind>0.9</ind><dep>65</dep></entry>
-			<entry><ind>1</ind><dep>88</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.1</ind>
+				<dep>1.5</dep>
+			</entry>
+			<entry>
+				<ind>0.2</ind>
+				<dep>4.5</dep>
+			</entry>
+			<entry>
+				<ind>0.3</ind>
+				<dep>8.5</dep>
+			</entry>
+			<entry>
+				<ind>0.4</ind>
+				<dep>13.5</dep>
+			</entry>
+			<entry>
+				<ind>0.5</ind>
+				<dep>20</dep>
+			</entry>
+			<entry>
+				<ind>0.6</ind>
+				<dep>28</dep>
+			</entry>
+			<entry>
+				<ind>0.7</ind>
+				<dep>38</dep>
+			</entry>
+			<entry>
+				<ind>0.8</ind>
+				<dep>50</dep>
+			</entry>
+			<entry>
+				<ind>0.9</ind>
+				<dep>65</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>88</dep>
+			</entry>
 		</interpolation>
-		<center><x-m>3.5262</x-m><z-m>-0.3663</z-m></center>
-		<axis><y>-1</y></axis>
+		<center>
+			<x-m>3.5262</x-m>
+			<z-m>-0.3663</z-m>
+		</center>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
-<!-- Main -->
+	<!-- Main -->
 	<animation>
 		<type>rotate</type>
 		<object-name>UC-NoseMain</object-name>
@@ -1499,64 +1708,179 @@
 		<object-name>UC-NoseLow</object-name>
 		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>0</dep></entry>
-			<entry><ind>0.1</ind><dep>1.4</dep></entry>
-			<entry><ind>0.2</ind><dep>3.85</dep></entry>
-			<entry><ind>0.3</ind><dep>7.57</dep></entry>
-			<entry><ind>0.4</ind><dep>12.42</dep></entry>
-			<entry><ind>0.5</ind><dep>18.6</dep></entry>
-			<entry><ind>0.6</ind><dep>26.44</dep></entry>
-			<entry><ind>0.7</ind><dep>36.18</dep></entry>
-			<entry><ind>0.8</ind><dep>48.24</dep></entry>
-			<entry><ind>0.9</ind><dep>64.08</dep></entry>
-			<entry><ind>1</ind><dep>88</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.1</ind>
+				<dep>1.4</dep>
+			</entry>
+			<entry>
+				<ind>0.2</ind>
+				<dep>3.85</dep>
+			</entry>
+			<entry>
+				<ind>0.3</ind>
+				<dep>7.57</dep>
+			</entry>
+			<entry>
+				<ind>0.4</ind>
+				<dep>12.42</dep>
+			</entry>
+			<entry>
+				<ind>0.5</ind>
+				<dep>18.6</dep>
+			</entry>
+			<entry>
+				<ind>0.6</ind>
+				<dep>26.44</dep>
+			</entry>
+			<entry>
+				<ind>0.7</ind>
+				<dep>36.18</dep>
+			</entry>
+			<entry>
+				<ind>0.8</ind>
+				<dep>48.24</dep>
+			</entry>
+			<entry>
+				<ind>0.9</ind>
+				<dep>64.08</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>88</dep>
+			</entry>
 		</interpolation>
-		<center><x-m>3.1170</x-m><z-m>-0.1343</z-m></center>
-		<axis><y>-1</y><z>0</z></axis>
+		<center>
+			<x-m>3.1170</x-m>
+			<z-m>-0.1343</z-m>
+		</center>
+		<axis>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
 	</animation>
 
-<!-- Rear door jonction -->
+	<!-- Rear door jonction -->
 	<animation>
 		<type>rotate</type>
 		<object-name>UC-NoseDoorJonction</object-name>
 		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>0</dep></entry>
-			<entry><ind>0.1</ind><dep>2</dep></entry>
-			<entry><ind>0.2</ind><dep>5.5</dep></entry>
-			<entry><ind>0.3</ind><dep>10.5</dep></entry>
-			<entry><ind>0.4</ind><dep>16</dep></entry>
-			<entry><ind>0.5</ind><dep>23.5</dep></entry>
-			<entry><ind>0.6</ind><dep>32.5</dep></entry>
-			<entry><ind>0.7</ind><dep>43.5</dep></entry>
-			<entry><ind>0.8</ind><dep>57</dep></entry>
-			<entry><ind>0.9</ind><dep>75</dep></entry>
-			<entry><ind>1</ind><dep>102</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.1</ind>
+				<dep>2</dep>
+			</entry>
+			<entry>
+				<ind>0.2</ind>
+				<dep>5.5</dep>
+			</entry>
+			<entry>
+				<ind>0.3</ind>
+				<dep>10.5</dep>
+			</entry>
+			<entry>
+				<ind>0.4</ind>
+				<dep>16</dep>
+			</entry>
+			<entry>
+				<ind>0.5</ind>
+				<dep>23.5</dep>
+			</entry>
+			<entry>
+				<ind>0.6</ind>
+				<dep>32.5</dep>
+			</entry>
+			<entry>
+				<ind>0.7</ind>
+				<dep>43.5</dep>
+			</entry>
+			<entry>
+				<ind>0.8</ind>
+				<dep>57</dep>
+			</entry>
+			<entry>
+				<ind>0.9</ind>
+				<dep>75</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>102</dep>
+			</entry>
 		</interpolation>
-		<center><x-m>2.3272</x-m><z-m>-0.1603</z-m></center>
-		<axis><y>1</y></axis>
+		<center>
+			<x-m>2.3272</x-m>
+			<z-m>-0.1603</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
 	</animation>
 
-<!-- Hydraulic -->
+	<!-- Hydraulic -->
 	<animation>
 		<type>rotate</type>
 		<object-name>UC-NoseStrutUpperBrace</object-name>
 		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>0</dep></entry>
-			<entry><ind>0.1</ind><dep>1</dep></entry>
-			<entry><ind>0.2</ind><dep>2.7</dep></entry>
-			<entry><ind>0.3</ind><dep>5.5</dep></entry>
-			<entry><ind>0.4</ind><dep>9</dep></entry>
-			<entry><ind>0.5</ind><dep>13.5</dep></entry>
-			<entry><ind>0.6</ind><dep>19.5</dep></entry>
-			<entry><ind>0.7</ind><dep>27</dep></entry>
-			<entry><ind>0.8</ind><dep>36.7</dep></entry>
-			<entry><ind>0.9</ind><dep>50.5</dep></entry>
-			<entry><ind>1</ind><dep>75</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.1</ind>
+				<dep>1</dep>
+			</entry>
+			<entry>
+				<ind>0.2</ind>
+				<dep>2.7</dep>
+			</entry>
+			<entry>
+				<ind>0.3</ind>
+				<dep>5.5</dep>
+			</entry>
+			<entry>
+				<ind>0.4</ind>
+				<dep>9</dep>
+			</entry>
+			<entry>
+				<ind>0.5</ind>
+				<dep>13.5</dep>
+			</entry>
+			<entry>
+				<ind>0.6</ind>
+				<dep>19.5</dep>
+			</entry>
+			<entry>
+				<ind>0.7</ind>
+				<dep>27</dep>
+			</entry>
+			<entry>
+				<ind>0.8</ind>
+				<dep>36.7</dep>
+			</entry>
+			<entry>
+				<ind>0.9</ind>
+				<dep>50.5</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>75</dep>
+			</entry>
 		</interpolation>
-		<center><x-m>3.3838</x-m><z-m>-0.3357</z-m></center>
-		<axis><y>-1</y></axis>
+		<center>
+			<x-m>3.3838</x-m>
+			<z-m>-0.3357</z-m>
+		</center>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -1564,40 +1888,88 @@
 		<object-name>UC-NoseStrutUpperBraceShaft</object-name>
 		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>0</dep></entry>
-			<entry><ind>0.1</ind><dep>0.5</dep></entry>
-			<entry><ind>0.2</ind><dep>1</dep></entry>
-			<entry><ind>0.3</ind><dep>2</dep></entry>
-			<entry><ind>0.4</ind><dep>3.5</dep></entry>
-			<entry><ind>0.5</ind><dep>5.5</dep></entry>
-			<entry><ind>0.6</ind><dep>7</dep></entry>
-			<entry><ind>0.7</ind><dep>9</dep></entry>
-			<entry><ind>0.8</ind><dep>11.5</dep></entry>
-			<entry><ind>0.9</ind><dep>13.5</dep></entry>
-			<entry><ind>1</ind><dep>13</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.1</ind>
+				<dep>0.5</dep>
+			</entry>
+			<entry>
+				<ind>0.2</ind>
+				<dep>1</dep>
+			</entry>
+			<entry>
+				<ind>0.3</ind>
+				<dep>2</dep>
+			</entry>
+			<entry>
+				<ind>0.4</ind>
+				<dep>3.5</dep>
+			</entry>
+			<entry>
+				<ind>0.5</ind>
+				<dep>5.5</dep>
+			</entry>
+			<entry>
+				<ind>0.6</ind>
+				<dep>7</dep>
+			</entry>
+			<entry>
+				<ind>0.7</ind>
+				<dep>9</dep>
+			</entry>
+			<entry>
+				<ind>0.8</ind>
+				<dep>11.5</dep>
+			</entry>
+			<entry>
+				<ind>0.9</ind>
+				<dep>13.5</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>13</dep>
+			</entry>
 		</interpolation>
-		<center><x-m>2.3739</x-m><z-m>-0.1982</z-m></center>
-		<axis><y>1</y></axis>
+		<center>
+			<x-m>2.3739</x-m>
+			<z-m>-0.1982</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
 	</animation>
 
-<!-- Steering -->
+	<!-- Steering -->
 	<animation>
 		<type>rotate</type>
 		<object-name>UC-NoseLow</object-name>
 		<object-name>UC-NoseSteer</object-name>
 		<property>surface-positions/rudder-pos-norm</property>
 		<factor>20</factor>
-		<center><x-m>3.3137</x-m><y-m>0.3073</y-m><z-m>-0.1534</z-m></center>
-		<axis><x>2.0882</x><z>-0.2016</z></axis>
+		<center>
+			<x-m>3.3137</x-m>
+			<y-m>0.3073</y-m>
+			<z-m>-0.1534</z-m>
+		</center>
+		<axis>
+			<x>2.0882</x>
+			<z>-0.2016</z>
+		</axis>
 	</animation>
 
-<!-- Compression -->
+	<!-- Compression -->
 	<animation>
 		<type>translate</type>
 		<object-name>UC-NoseLow</object-name>
 		<property>gear/gear[0]/compression-norm</property>
 		<factor>0.312</factor>
-		<axis><x>2.0882</x><y>0</y><z>-0.2016</z>
+		<axis>
+			<x>2.0882</x>
+			<y>0</y>
+			<z>-0.2016</z>
 		</axis>
 	</animation>
 
@@ -1606,15 +1978,38 @@
 		<object-name>UC-NoseStrutLowerDamper</object-name>
 		<property>gear/gear[0]/compression-norm</property>
 		<interpolation>
-			<entry><ind>1</ind><dep>62.5</dep></entry>
-			<entry><ind>0.8</ind><dep>49.5</dep></entry>
-			<entry><ind>0.6</ind><dep>38.5</dep></entry>
-			<entry><ind>0.4</ind><dep>27.5</dep></entry>
-			<entry><ind>0.2</ind><dep>15</dep></entry>
-			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry>
+				<ind>1</ind>
+				<dep>62.5</dep>
+			</entry>
+			<entry>
+				<ind>0.8</ind>
+				<dep>49.5</dep>
+			</entry>
+			<entry>
+				<ind>0.6</ind>
+				<dep>38.5</dep>
+			</entry>
+			<entry>
+				<ind>0.4</ind>
+				<dep>27.5</dep>
+			</entry>
+			<entry>
+				<ind>0.2</ind>
+				<dep>15</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
 		</interpolation>
-		<center><x-m>1.6753</x-m><z-m>-0.0836</z-m></center>
-		<axis><y>1</y></axis>
+		<center>
+			<x-m>1.6753</x-m>
+			<z-m>-0.0836</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -1622,28 +2017,56 @@
 		<object-name>UC-NoseStrutUpperDamper</object-name>
 		<property>gear/gear[0]/compression-norm</property>
 		<interpolation>
-			<entry><ind>1</ind><dep>42</dep></entry>
-			<entry><ind>0.8</ind><dep>38.5</dep></entry>
-			<entry><ind>0.6</ind><dep>32.5</dep></entry>
-			<entry><ind>0.4</ind><dep>24.5</dep></entry>
-			<entry><ind>0.2</ind><dep>14</dep></entry>
-			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry>
+				<ind>1</ind>
+				<dep>42</dep>
+			</entry>
+			<entry>
+				<ind>0.8</ind>
+				<dep>38.5</dep>
+			</entry>
+			<entry>
+				<ind>0.6</ind>
+				<dep>32.5</dep>
+			</entry>
+			<entry>
+				<ind>0.4</ind>
+				<dep>24.5</dep>
+			</entry>
+			<entry>
+				<ind>0.2</ind>
+				<dep>14</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
 		</interpolation>
-		<center><x-m>2.0960</x-m><z-m>-0.1492</z-m></center>
-		<axis><y>-1</y></axis>
+		<center>
+			<x-m>2.0960</x-m>
+			<z-m>-0.1492</z-m>
+		</center>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
-<!-- Tyre spin -->
+	<!-- Tyre spin -->
 	<animation>
 		<type>spin</type>
 		<object-name>UC-NoseTyre</object-name>
 		<property>gear/gear/rollspeed-ms</property>
 		<factor>30</factor>
-		<center><x-m>1.2261</x-m><z-m>0.0484</z-m></center>
-		<axis><y>-1.0</y></axis>
+		<center>
+			<x-m>1.2261</x-m>
+			<z-m>0.0484</z-m>
+		</center>
+		<axis>
+			<y>-1.0</y>
+		</axis>
 	</animation>
 
-<!-- UC Nose additional lights: white emmisive disk tied to the UC -->
+	<!-- UC Nose additional lights: white emmisive disk tied to the UC -->
 	<animation>
 		<type>select</type>
 		<object-name>UC-NoseStrutSteerRing-light-on</object-name>
@@ -1701,9 +2124,8 @@
 	</animation>
 
 
-
-<!-- Extend/Retract -->
-<!-- Left Main Gear -->
+	<!-- Extend/Retract -->
+	<!-- Left Main Gear -->
 
 	<animation>
 		<type>rotate</type>
@@ -1711,8 +2133,13 @@
 		<object-name>UC-LeftLower</object-name>
 		<property>gear/gear[1]/position-norm</property>
 		<factor>-90</factor>
-		<center><x-m>8.006</x-m><z-m>-0.3429</z-m></center>
-		<axis><y>1</y></axis>
+		<center>
+			<x-m>8.006</x-m>
+			<z-m>-0.3429</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -1720,16 +2147,38 @@
 		<object-name>UC-LeftMainJack-Bottom</object-name>
 		<property>gear/gear[1]/position-norm</property>
 		<interpolation>
-			<entry><ind>0.0</ind><dep>0</dep></entry>
-			<entry><ind>0.2222</ind><dep>7</dep></entry>
-			<entry><ind>0.4444</ind><dep>13.5</dep></entry>
-			<entry><ind>0.6666</ind><dep>19</dep></entry>
-			<entry><ind>0.8888</ind><dep>22.5</dep></entry>
-			<entry><ind>1.0</ind><dep>23.5</dep></entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.2222</ind>
+				<dep>7</dep>
+			</entry>
+			<entry>
+				<ind>0.4444</ind>
+				<dep>13.5</dep>
+			</entry>
+			<entry>
+				<ind>0.6666</ind>
+				<dep>19</dep>
+			</entry>
+			<entry>
+				<ind>0.8888</ind>
+				<dep>22.5</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>23.5</dep>
+			</entry>
 		</interpolation>
-		<center><x-m>7.4109</x-m><z-m>-0.5306</z-m>
+		<center>
+			<x-m>7.4109</x-m>
+			<z-m>-0.5306</z-m>
 		</center>
-		<axis><y>1</y></axis>
+		<axis>
+			<y>1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -1737,60 +2186,131 @@
 		<object-name>UC-LeftMainJack-Top</object-name>
 		<property>gear/gear[1]/position-norm</property>
 		<interpolation>
-			<entry><ind>0.0</ind><dep>0</dep></entry>
-			<entry><ind>0.2222</ind><dep>13</dep></entry>
-			<entry><ind>0.4444</ind><dep>26.5</dep></entry>
-			<entry><ind>0.6666</ind><dep>41</dep></entry>
-			<entry><ind>0.8888</ind><dep>57</dep></entry>
-			<entry><ind>1.0</ind><dep>66</dep></entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.2222</ind>
+				<dep>13</dep>
+			</entry>
+			<entry>
+				<ind>0.4444</ind>
+				<dep>26.5</dep>
+			</entry>
+			<entry>
+				<ind>0.6666</ind>
+				<dep>41</dep>
+			</entry>
+			<entry>
+				<ind>0.8888</ind>
+				<dep>57</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>66</dep>
+			</entry>
 		</interpolation>
-		<center><x-m>8.3602</x-m><z-m>-0.4524</z-m>
+		<center>
+			<x-m>8.3602</x-m>
+			<z-m>-0.4524</z-m>
 		</center>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
-<!-- Rear Door -->
+	<!-- Rear Door -->
 	<animation>
 		<type>rotate</type>
 		<object-name>UC-LeftWHousingDoor</object-name>
 		<property>gear/gear[1]/position-norm</property>
 		<interpolation>
-			<entry><ind>0.0</ind><dep>0</dep></entry>
-			<entry><ind>0.2</ind><dep>23</dep></entry>
-			<entry><ind>0.4</ind><dep>43.5</dep></entry>
-			<entry><ind>0.6</ind><dep>64.5</dep></entry>
-			<entry><ind>0.8</ind><dep>86.5</dep></entry>
-			<entry><ind>1.0</ind><dep>110</dep></entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.2</ind>
+				<dep>23</dep>
+			</entry>
+			<entry>
+				<ind>0.4</ind>
+				<dep>43.5</dep>
+			</entry>
+			<entry>
+				<ind>0.6</ind>
+				<dep>64.5</dep>
+			</entry>
+			<entry>
+				<ind>0.8</ind>
+				<dep>86.5</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>110</dep>
+			</entry>
 		</interpolation>
-		<center><x-m>8.3808</x-m><z-m>-0.5019</z-m>
+		<center>
+			<x-m>8.3808</x-m>
+			<z-m>-0.5019</z-m>
 		</center>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 	<animation>
 		<type>rotate</type>
 		<object-name>UC-LeftWHousingDoorJonction</object-name>
 		<property>gear/gear[1]/position-norm</property>
 		<interpolation>
-			<entry><ind>0.0</ind><dep>0</dep></entry>
-			<entry><ind>0.2</ind><dep>17.5</dep></entry>
-			<entry><ind>0.4</ind><dep>32.5</dep></entry>
-			<entry><ind>0.6</ind><dep>47.5</dep></entry>
-			<entry><ind>0.8</ind><dep>61</dep></entry>-
-			<entry><ind>1.0</ind><dep>72.5</dep></entry>-
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.2</ind>
+				<dep>17.5</dep>
+			</entry>
+			<entry>
+				<ind>0.4</ind>
+				<dep>32.5</dep>
+			</entry>
+			<entry>
+				<ind>0.6</ind>
+				<dep>47.5</dep>
+			</entry>
+			<entry>
+				<ind>0.8</ind>
+				<dep>61</dep>
+			</entry>
+			-
+			<entry>
+				<ind>1.0</ind>
+				<dep>72.5</dep>
+			</entry>
+			-
 		</interpolation>
-		<center><x-m>7.4469</x-m><z-m>-0.3212</z-m>
+		<center>
+			<x-m>7.4469</x-m>
+			<z-m>-0.3212</z-m>
 		</center>
-		<axis><y>1</y></axis>
+		<axis>
+			<y>1</y>
+		</axis>
 	</animation>
 
 
-<!-- Compression -->
+	<!-- Compression -->
 	<animation>
 		<type>translate</type>
 		<object-name>UC-LeftLower</object-name>
 		<property>gear/gear[1]/compression-norm</property>
 		<factor>0.40</factor>
-		<axis><x>2</x><z>0.1756</z></axis>
+		<axis>
+			<x>2</x>
+			<z>0.1756</z>
+		</axis>
 	</animation>
 
 	<animation>
@@ -1799,15 +2319,38 @@
 		<property>gear/gear[1]/compression-norm</property>
 		<!--<factor>-117</factor>-->
 		<interpolation>
-			<entry><ind>0.0</ind><dep>0</dep></entry>
-			<entry><ind>0.2</ind><dep>18</dep></entry>
-			<entry><ind>0.4</ind><dep>28.5</dep></entry>
-			<entry><ind>0.6</ind><dep>37</dep></entry>
-			<entry><ind>0.8</ind><dep>43</dep></entry>
-			<entry><ind>1.0</ind><dep>46</dep></entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.2</ind>
+				<dep>18</dep>
+			</entry>
+			<entry>
+				<ind>0.4</ind>
+				<dep>28.5</dep>
+			</entry>
+			<entry>
+				<ind>0.6</ind>
+				<dep>37</dep>
+			</entry>
+			<entry>
+				<ind>0.8</ind>
+				<dep>43</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>46</dep>
+			</entry>
 		</interpolation>
-		<center><x-m>6.4101</x-m><z-m>-0.3743</z-m></center>
-		<axis><y>-1</y></axis>
+		<center>
+			<x-m>6.4101</x-m>
+			<z-m>-0.3743</z-m>
+		</center>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -1816,15 +2359,38 @@
 		<property>gear/gear[1]/compression-norm</property>
 		<!--<factor>143</factor>-->
 		<interpolation>
-			<entry><ind>0.0</ind><dep>0</dep></entry>
-			<entry><ind>0.2</ind><dep>21</dep></entry>
-			<entry><ind>0.4</ind><dep>34</dep></entry>
-			<entry><ind>0.6</ind><dep>46.5</dep></entry>
-			<entry><ind>0.8</ind><dep>59</dep></entry>
-			<entry><ind>1.0</ind><dep>73.5</dep></entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.2</ind>
+				<dep>21</dep>
+			</entry>
+			<entry>
+				<ind>0.4</ind>
+				<dep>34</dep>
+			</entry>
+			<entry>
+				<ind>0.6</ind>
+				<dep>46.5</dep>
+			</entry>
+			<entry>
+				<ind>0.8</ind>
+				<dep>59</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>73.5</dep>
+			</entry>
 		</interpolation>
-		<center><x-m>6.9588</x-m><z-m>-0.3196</z-m></center>
-		<axis><y>1</y></axis>
+		<center>
+			<x-m>6.9588</x-m>
+			<z-m>-0.3196</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -1834,15 +2400,38 @@
 		<property>gear/gear[1]/compression-norm</property>
 		<!--<factor>117</factor>-->
 		<interpolation>
-			<entry><ind>0.0</ind><dep>0</dep></entry>
-			<entry><ind>0.2</ind><dep>18</dep></entry>
-			<entry><ind>0.4</ind><dep>28.5</dep></entry>
-			<entry><ind>0.6</ind><dep>37</dep></entry>
-			<entry><ind>0.8</ind><dep>43</dep></entry>
-			<entry><ind>1.0</ind><dep>46</dep></entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.2</ind>
+				<dep>18</dep>
+			</entry>
+			<entry>
+				<ind>0.4</ind>
+				<dep>28.5</dep>
+			</entry>
+			<entry>
+				<ind>0.6</ind>
+				<dep>37</dep>
+			</entry>
+			<entry>
+				<ind>0.8</ind>
+				<dep>43</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>46</dep>
+			</entry>
 		</interpolation>
-		<center><x-m>6.4305</x-m><z-m>-0.6071</z-m></center>
-		<axis><y>1</y></axis>
+		<center>
+			<x-m>6.4305</x-m>
+			<z-m>-0.6071</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -1851,15 +2440,38 @@
 		<property>gear/gear[1]/compression-norm</property>
 		<!--<factor>-143</factor>-->
 		<interpolation>
-			<entry><ind>0.0</ind><dep>0</dep></entry>
-			<entry><ind>0.2</ind><dep>21</dep></entry>
-			<entry><ind>0.4</ind><dep>34</dep></entry>
-			<entry><ind>0.6</ind><dep>46.5</dep></entry>
-			<entry><ind>0.8</ind><dep>59</dep></entry>
-			<entry><ind>1.0</ind><dep>73.5</dep></entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.2</ind>
+				<dep>21</dep>
+			</entry>
+			<entry>
+				<ind>0.4</ind>
+				<dep>34</dep>
+			</entry>
+			<entry>
+				<ind>0.6</ind>
+				<dep>46.5</dep>
+			</entry>
+			<entry>
+				<ind>0.8</ind>
+				<dep>59</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>73.5</dep>
+			</entry>
 		</interpolation>
-		<center><x-m>6.9801</x-m><z-m>-0.5633</z-m></center>
-		<axis><y>-1</y></axis>
+		<center>
+			<x-m>6.9801</x-m>
+			<z-m>-0.5633</z-m>
+		</center>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -1867,18 +2479,19 @@
 		<object-name>UC-LeftTyre</object-name>
 		<property>gear/gear[1]/rollspeed-ms</property>
 		<factor>17</factor>
-		<center><x-m>6.4328</x-m><z-m>-0.49</z-m></center>
-		<axis><y>-1.0</y></axis>
+		<center>
+			<x-m>6.4328</x-m>
+			<z-m>-0.49</z-m>
+		</center>
+		<axis>
+			<y>-1.0</y>
+		</axis>
 	</animation>
 
 
-<!-- Right Main -->
-<!-- Extend/Retract -->
-<!-- Gear -->
-
-
-
-
+	<!-- Right Main -->
+	<!-- Extend/Retract -->
+	<!-- Gear -->
 
 
 	<animation>
@@ -1887,8 +2500,13 @@
 		<object-name>UC-RightLower</object-name>
 		<property>gear/gear[2]/position-norm</property>
 		<factor>-90</factor>
-		<center><x-m>8.006</x-m><z-m>-0.3429</z-m></center>
-		<axis><y>1</y></axis>
+		<center>
+			<x-m>8.006</x-m>
+			<z-m>-0.3429</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -1896,16 +2514,38 @@
 		<object-name>UC-RightMainJack-Bottom</object-name>
 		<property>gear/gear[2]/position-norm</property>
 		<interpolation>
-			<entry><ind>0.0</ind><dep>0</dep></entry>
-			<entry><ind>0.2222</ind><dep>7</dep></entry>
-			<entry><ind>0.4444</ind><dep>13.5</dep></entry>
-			<entry><ind>0.6666</ind><dep>19</dep></entry>
-			<entry><ind>0.8888</ind><dep>22.5</dep></entry>
-			<entry><ind>1.0</ind><dep>23.5</dep></entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.2222</ind>
+				<dep>7</dep>
+			</entry>
+			<entry>
+				<ind>0.4444</ind>
+				<dep>13.5</dep>
+			</entry>
+			<entry>
+				<ind>0.6666</ind>
+				<dep>19</dep>
+			</entry>
+			<entry>
+				<ind>0.8888</ind>
+				<dep>22.5</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>23.5</dep>
+			</entry>
 		</interpolation>
-		<center><x-m>7.4109</x-m><z-m>-0.5306</z-m>
+		<center>
+			<x-m>7.4109</x-m>
+			<z-m>-0.5306</z-m>
 		</center>
-		<axis><y>1</y></axis>
+		<axis>
+			<y>1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -1913,60 +2553,131 @@
 		<object-name>UC-RightMainJack-Top</object-name>
 		<property>gear/gear[2]/position-norm</property>
 		<interpolation>
-			<entry><ind>0.0</ind><dep>0</dep></entry>
-			<entry><ind>0.2222</ind><dep>13</dep></entry>
-			<entry><ind>0.4444</ind><dep>26.5</dep></entry>
-			<entry><ind>0.6666</ind><dep>41</dep></entry>
-			<entry><ind>0.8888</ind><dep>57</dep></entry>
-			<entry><ind>1.0</ind><dep>66</dep></entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.2222</ind>
+				<dep>13</dep>
+			</entry>
+			<entry>
+				<ind>0.4444</ind>
+				<dep>26.5</dep>
+			</entry>
+			<entry>
+				<ind>0.6666</ind>
+				<dep>41</dep>
+			</entry>
+			<entry>
+				<ind>0.8888</ind>
+				<dep>57</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>66</dep>
+			</entry>
 		</interpolation>
-		<center><x-m>8.3602</x-m><z-m>-0.4524</z-m>
+		<center>
+			<x-m>8.3602</x-m>
+			<z-m>-0.4524</z-m>
 		</center>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
-<!-- Rear Door -->
+	<!-- Rear Door -->
 	<animation>
 		<type>rotate</type>
 		<object-name>UC-RightWHousingDoor</object-name>
 		<property>gear/gear[2]/position-norm</property>
 		<interpolation>
-			<entry><ind>0.0</ind><dep>0</dep></entry>
-			<entry><ind>0.2</ind><dep>23</dep></entry>
-			<entry><ind>0.4</ind><dep>43.5</dep></entry>
-			<entry><ind>0.6</ind><dep>64.5</dep></entry>
-			<entry><ind>0.8</ind><dep>86.5</dep></entry>
-			<entry><ind>1.0</ind><dep>110</dep></entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.2</ind>
+				<dep>23</dep>
+			</entry>
+			<entry>
+				<ind>0.4</ind>
+				<dep>43.5</dep>
+			</entry>
+			<entry>
+				<ind>0.6</ind>
+				<dep>64.5</dep>
+			</entry>
+			<entry>
+				<ind>0.8</ind>
+				<dep>86.5</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>110</dep>
+			</entry>
 		</interpolation>
-		<center><x-m>8.3808</x-m><z-m>-0.5019</z-m>
+		<center>
+			<x-m>8.3808</x-m>
+			<z-m>-0.5019</z-m>
 		</center>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 	<animation>
 		<type>rotate</type>
 		<object-name>UC-RightWHousingDoorJonction</object-name>
 		<property>gear/gear[2]/position-norm</property>
 		<interpolation>
-			<entry><ind>0.0</ind><dep>0</dep></entry>
-			<entry><ind>0.2</ind><dep>17.5</dep></entry>
-			<entry><ind>0.4</ind><dep>32.5</dep></entry>
-			<entry><ind>0.6</ind><dep>47.5</dep></entry>
-			<entry><ind>0.8</ind><dep>61</dep></entry>-
-			<entry><ind>1.0</ind><dep>72.5</dep></entry>-
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.2</ind>
+				<dep>17.5</dep>
+			</entry>
+			<entry>
+				<ind>0.4</ind>
+				<dep>32.5</dep>
+			</entry>
+			<entry>
+				<ind>0.6</ind>
+				<dep>47.5</dep>
+			</entry>
+			<entry>
+				<ind>0.8</ind>
+				<dep>61</dep>
+			</entry>
+			-
+			<entry>
+				<ind>1.0</ind>
+				<dep>72.5</dep>
+			</entry>
+			-
 		</interpolation>
-		<center><x-m>7.4469</x-m><z-m>-0.3212</z-m>
+		<center>
+			<x-m>7.4469</x-m>
+			<z-m>-0.3212</z-m>
 		</center>
-		<axis><y>1</y></axis>
+		<axis>
+			<y>1</y>
+		</axis>
 	</animation>
 
 
-<!-- Compression -->
+	<!-- Compression -->
 	<animation>
 		<type>translate</type>
 		<object-name>UC-RightLower</object-name>
 		<property>gear/gear[2]/compression-norm</property>
 		<factor>0.40</factor>
-		<axis><x>2</x><z>0.1756</z></axis>
+		<axis>
+			<x>2</x>
+			<z>0.1756</z>
+		</axis>
 	</animation>
 
 	<animation>
@@ -1975,15 +2686,38 @@
 		<property>gear/gear[2]/compression-norm</property>
 		<!--<factor>-117</factor>-->
 		<interpolation>
-			<entry><ind>0.0</ind><dep>0</dep></entry>
-			<entry><ind>0.2</ind><dep>18</dep></entry>
-			<entry><ind>0.4</ind><dep>28.5</dep></entry>
-			<entry><ind>0.6</ind><dep>37</dep></entry>
-			<entry><ind>0.8</ind><dep>43</dep></entry>
-			<entry><ind>1.0</ind><dep>46</dep></entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.2</ind>
+				<dep>18</dep>
+			</entry>
+			<entry>
+				<ind>0.4</ind>
+				<dep>28.5</dep>
+			</entry>
+			<entry>
+				<ind>0.6</ind>
+				<dep>37</dep>
+			</entry>
+			<entry>
+				<ind>0.8</ind>
+				<dep>43</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>46</dep>
+			</entry>
 		</interpolation>
-		<center><x-m>6.4101</x-m><z-m>-0.3743</z-m></center>
-		<axis><y>-1</y></axis>
+		<center>
+			<x-m>6.4101</x-m>
+			<z-m>-0.3743</z-m>
+		</center>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -1992,15 +2726,38 @@
 		<property>gear/gear[2]/compression-norm</property>
 		<!--<factor>143</factor>-->
 		<interpolation>
-			<entry><ind>0.0</ind><dep>0</dep></entry>
-			<entry><ind>0.2</ind><dep>21</dep></entry>
-			<entry><ind>0.4</ind><dep>34</dep></entry>
-			<entry><ind>0.6</ind><dep>46.5</dep></entry>
-			<entry><ind>0.8</ind><dep>59</dep></entry>
-			<entry><ind>1.0</ind><dep>73.5</dep></entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.2</ind>
+				<dep>21</dep>
+			</entry>
+			<entry>
+				<ind>0.4</ind>
+				<dep>34</dep>
+			</entry>
+			<entry>
+				<ind>0.6</ind>
+				<dep>46.5</dep>
+			</entry>
+			<entry>
+				<ind>0.8</ind>
+				<dep>59</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>73.5</dep>
+			</entry>
 		</interpolation>
-		<center><x-m>6.9588</x-m><z-m>-0.3196</z-m></center>
-		<axis><y>1</y></axis>
+		<center>
+			<x-m>6.9588</x-m>
+			<z-m>-0.3196</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -2010,15 +2767,38 @@
 		<property>gear/gear[2]/compression-norm</property>
 		<!--<factor>117</factor>-->
 		<interpolation>
-			<entry><ind>0.0</ind><dep>0</dep></entry>
-			<entry><ind>0.2</ind><dep>18</dep></entry>
-			<entry><ind>0.4</ind><dep>28.5</dep></entry>
-			<entry><ind>0.6</ind><dep>37</dep></entry>
-			<entry><ind>0.8</ind><dep>43</dep></entry>
-			<entry><ind>1.0</ind><dep>46</dep></entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.2</ind>
+				<dep>18</dep>
+			</entry>
+			<entry>
+				<ind>0.4</ind>
+				<dep>28.5</dep>
+			</entry>
+			<entry>
+				<ind>0.6</ind>
+				<dep>37</dep>
+			</entry>
+			<entry>
+				<ind>0.8</ind>
+				<dep>43</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>46</dep>
+			</entry>
 		</interpolation>
-		<center><x-m>6.4305</x-m><z-m>-0.6071</z-m></center>
-		<axis><y>1</y></axis>
+		<center>
+			<x-m>6.4305</x-m>
+			<z-m>-0.6071</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -2027,15 +2807,38 @@
 		<property>gear/gear[2]/compression-norm</property>
 		<!--<factor>-143</factor>-->
 		<interpolation>
-			<entry><ind>0.0</ind><dep>0</dep></entry>
-			<entry><ind>0.2</ind><dep>21</dep></entry>
-			<entry><ind>0.4</ind><dep>34</dep></entry>
-			<entry><ind>0.6</ind><dep>46.5</dep></entry>
-			<entry><ind>0.8</ind><dep>59</dep></entry>
-			<entry><ind>1.0</ind><dep>73.5</dep></entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.2</ind>
+				<dep>21</dep>
+			</entry>
+			<entry>
+				<ind>0.4</ind>
+				<dep>34</dep>
+			</entry>
+			<entry>
+				<ind>0.6</ind>
+				<dep>46.5</dep>
+			</entry>
+			<entry>
+				<ind>0.8</ind>
+				<dep>59</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>73.5</dep>
+			</entry>
 		</interpolation>
-		<center><x-m>6.9801</x-m><z-m>-0.5633</z-m></center>
-		<axis><y>-1</y></axis>
+		<center>
+			<x-m>6.9801</x-m>
+			<z-m>-0.5633</z-m>
+		</center>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -2043,11 +2846,16 @@
 		<object-name>UC-RightTyre</object-name>
 		<property>gear/gear[2]/rollspeed-ms</property>
 		<factor>17</factor>
-		<center><x-m>6.4328</x-m><z-m>-0.49</z-m></center>
-		<axis><y>-1.0</y></axis>
+		<center>
+			<x-m>6.4328</x-m>
+			<z-m>-0.49</z-m>
+		</center>
+		<axis>
+			<y>-1.0</y>
+		</axis>
 	</animation>
 
-<!-- Egine fans spin -->
+	<!-- Egine fans spin -->
 	<animation>
 		<type>spin</type>
 		<object-name>LEFan</object-name>
@@ -2221,7 +3029,6 @@
 	</animation> -->
 
 
-
 	<!-- external lights -->
 	<model>
 		<path>Aircraft/A-10/Models/lights-external.xml</path>
@@ -2230,7 +3037,6 @@
 	<model>
 		<path>Aircraft/A-10/Models/lights-internal.xml</path>
 	</model>
-
 
 
 	<!-- formation lights -->
@@ -2247,10 +3053,10 @@
 		<type>material</type>
 		<emission>
 			<factor-prop>sim/model/A-10/controls/lighting/formation</factor-prop>
-				<red>0.91</red>
-				<green>0.98</green>
-				<blue>0.78</blue>
-			</emission>
+			<red>0.91</red>
+			<green>0.98</green>
+			<blue>0.78</blue>
+		</emission>
 	</animation>
 
 </PropertyList>

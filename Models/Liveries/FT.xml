@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
- 
+
 <PropertyList>
 
-<sim>
-  <model>
-    <livery>
-      <name type="string">USAF 23TFW, 74FS FT</name>
-      <texture-main>Liveries/FT.png</texture-main>
-	  <texture-detail>Liveries/FT-detail.png</texture-detail>
-    </livery>
-  </model>
-</sim>
+  <sim>
+    <model>
+      <livery>
+        <name type="string">USAF 23TFW, 74FS FT</name>
+        <texture-main>Liveries/FT.png</texture-main>
+        <texture-detail>Liveries/FT-detail.png</texture-detail>
+      </livery>
+    </model>
+  </sim>
 
 </PropertyList>

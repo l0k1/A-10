@@ -4,7 +4,7 @@
 
 	<name>armament-panel</name>
 	<path>A-10-armament-panel.ac</path>
-	
+
 	<animation>
 		<object-name>master-arm-switch</object-name>
 		<type>rotate</type>
@@ -15,7 +15,9 @@
 			<y-m>0.0948</y-m>
 			<z-m>0.0575</z-m>
 		</center>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -28,7 +30,9 @@
 			<y-m>-0.0929</y-m>
 			<z-m>0.0575</z-m>
 		</center>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -41,7 +45,9 @@
 			<y-m>-0.0535</y-m>
 			<z-m>-0.0628</z-m>
 		</center>
-		<axis><x>-1</x></axis>
+		<axis>
+			<x>-1</x>
+		</axis>
 	</animation>
 
 	<animation>
@@ -622,7 +628,7 @@
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
 			</greater-than>
-			</condition>
+		</condition>
 	</animation>
 	<animation>
 		<type>select</type>
@@ -676,7 +682,7 @@
 			</greater-than>
 		</condition>
 	</animation>
-	
+
 	<animation>
 		<type>select</type>
 		<object-name>rds-rem-x10</object-name>
@@ -687,7 +693,7 @@
 			</greater-than>
 		</condition>
 	</animation>
-	
+
 	<animation>
 		<type>select</type>
 		<object-name>rds-rem-x100</object-name>
@@ -698,7 +704,7 @@
 			</greater-than>
 		</condition>
 	</animation>
-	
+
 	<animation>
 		<type>select</type>
 		<object-name>rds-rem-x1000</object-name>
@@ -709,13 +715,15 @@
 			</greater-than>
 		</condition>
 	</animation>
-	
+
 	<animation>
 		<type>textranslate</type>
 		<object-name>rds-rem-x1</object-name>
 		<property>ai/submodels/submodel[1]/count</property>
 		<factor>0.1</factor>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -725,7 +733,9 @@
 		<factor>0.01</factor>
 		<step>10</step>
 		<scroll>0.5</scroll>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -735,7 +745,9 @@
 		<factor>0.001</factor>
 		<step>100</step>
 		<scroll>0.5</scroll>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 
@@ -746,7 +758,9 @@
 		<factor>0.0001</factor>
 		<step>1000</step>
 		<scroll>0.5</scroll>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 	<!--rip counter-->
@@ -755,7 +769,9 @@
 		<object-name>rip-qty-x1</object-name>
 		<property>sim/model/A-10/weapons/rip</property>
 		<factor>0.1</factor>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -765,7 +781,9 @@
 		<factor>0.01</factor>
 		<step>10</step>
 		<scroll>0.5</scroll>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 	<!--interval counter-->
@@ -774,7 +792,9 @@
 		<object-name>rip-intvl-x1</object-name>
 		<property>sim/model/A-10/weapons/interval</property>
 		<factor>10</factor>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 	<animation>
@@ -783,7 +803,9 @@
 		<property>sim/model/A-10/weapons/interval</property>
 		<factor>1</factor>
 		<step>0.0999</step>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 
@@ -793,7 +815,11 @@
 	<animation>
 		<object-name>panel</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.385</red>
@@ -820,7 +846,11 @@
 	<animation>
 		<object-name>rip-qty</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
 			<red>0.55</red>
@@ -828,7 +858,6 @@
 			<blue>0.10</blue>
 		</emission>
 	</animation>
-
 
 
 	<!--LOD-->

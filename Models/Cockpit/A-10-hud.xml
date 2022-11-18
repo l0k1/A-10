@@ -21,7 +21,9 @@
 		<object-name>gun-cross</object-name>
 		<property>sim/model/A-10/controls/hud/depr</property>
 		<factor>0.03</factor>
-		<axis><z>1</z></axis>
+		<axis>
+			<z>1</z>
+		</axis>
 	</animation>
 
 	<animation>
@@ -40,23 +42,29 @@
 		<object-name>ccip</object-name>
 		<property>sim/model/A-10/controls/hud/depr</property>
 		<factor>0.03</factor>
-		<axis><z>1</z></axis>
+		<axis>
+			<z>1</z>
+		</axis>
 	</animation>
-	
+
 	<animation>
 		<type>translate</type>
 		<object-name>ccip</object-name>
 		<property>sim/model/A-10/instrumentation/hud/ccip_dev_v_m</property>
-		<axis><z>-1</z></axis>
+		<axis>
+			<z>-1</z>
+		</axis>
 	</animation>
 	<animation>
 		<type>translate</type>
 		<object-name>ccip</object-name>
 		<property>sim/model/A-10/instrumentation/hud/ccip_dev_h_m</property>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
-<!-- lighting -->
+	<!-- lighting -->
 
 	<effect>
 		<inherits-from>Effects/model-transparent</inherits-from>
@@ -92,7 +100,6 @@
 			<alpha-prop>sim[0]/hud/color/alpha</alpha-prop>
 		</transparency>
 	</animation>
-
 
 
 </PropertyList>

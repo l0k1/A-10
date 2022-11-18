@@ -1,4 +1,4 @@
-A-10 (YASim) readme.
+# A-10 (YASim) readme
 
 This is not an authentic representation of an A-10 but it's based on
 the right numbers, where I could find them.  There is a lot of
@@ -6,14 +6,14 @@ guesswork in the fdm.  It should also be noted that this a/c is still
 very much under development, in nearly every respect and there are
 several aspects which need fixing/improving.
 
-History
--------
+## History
+
 The Fairchild A-10 CAS (Close Air Support) aircraft is the production
 version of the YA-10A, which was the winner in the U.S.A.A.F. A-X
 fly-off, where it beat the Northrop YA-9A.
 
-Model
------
+## Model
+
 The model was originally constructed in Realsoft3D (linux beta V4.5),
 exported as a .OBJ format file and imported into AC3D where it was
 converted into .ac format and textured.
@@ -24,9 +24,8 @@ views in a typical 3-view drawing rarely align correctly or measure
 consistently.  For example, when the model is scaled to the correct
 length, the wing-span is likely to be a little out.
 
+## Flight Data Model
 
-Flight Data Model
------------------
 The Flight Data Model uses the FlightGear YASim fdm solver, which
 uses a combination of aircraft geometry and performance data to
 generate the flight model.
@@ -52,11 +51,11 @@ testing of the single engine loiter/cruise modes.
 
 The approach parameters have required even more guesswork.  They
 are based upon a few photographs I was able to find showing the
-aircraft in what appeared to be the final approach stages, and 
+aircraft in what appeared to be the final approach stages, and
 whatever info I was able to find.
 
-Keyboard mapping
-----------------
+## Keyboard mapping
+
 The following additional/non-standard keyboard mappings are set up
 for this aircraft
 
@@ -66,8 +65,7 @@ Key               Action
 'f'               Extend slats
 'K' (Shift-k)     Toggle trajactory markers on & off
 
-3D Panel
---------
+## 3D Panel
 
 Altimeter:
 Mouse clicking inGH adjustable.
@@ -76,7 +74,7 @@ Lighting of the panel and instruments:
 Look for the extrem bottom of the right console, there is one
 of the several lighting sub-panel of the A-10. Curently Ctrl-C
 key doesn't show correctly the hot spots, but, 'FLY INST' works
-and adjusts the instruments lighting. 'CONSOLE' works too and 
+and adjusts the instruments lighting. 'CONSOLE' works too and
 adjusts the instruments mount's lighting.
 
 Radio and navigation system:
@@ -90,15 +88,8 @@ internal wing tank, same for the right side. the digital counter
 displays the total of both side's internal tanks plus (if needed)
 the total of the three external tanks.  - FIXME -
 
+## 2D Panels (outdated)
 
-
-
-
-
-
-
-2D Panels (outdated)
---------------------
 Currently, there are two simple 2D panels for the model, neither
 of which are in any way accurate - they are simply holders for
 the instruments.  The 'vfr' panel includes the basic instruments
@@ -112,15 +103,15 @@ incorporate a number of custom instruments.  These are mostly
 informational but two of them can be used to control some of the
 Autopilot functions - see below.
 
-Custom Controller Instruments
------------------------------
+## Custom Controller Instruments
+
 There are two custom instruments on both the 'vfr' and 'mini'
 panels that can be used to control some of the autopilot
 functions.  These are the speed controller and the altitude mode
 controller.
 
-AP Speed Controller
--------------------
+## AP Speed Controller
+
 The speed controller can be used to hold the aircraft speed by
 throttle, either to a set KIAS, or to a set mach value.
 Clicking with the mouse on the yellow 'K' will set the AP speed
@@ -132,29 +123,29 @@ the left of the instrument and these can be used to increment or
 decrement the speed setting, in either 10kt or 1kt steps for
 kias or 0.1 and 0.01 steps for mach.
 
-AP Altitude Mode Controller
----------------------------
+## AP Altitude Mode Controller
+
 The altitude mode controller appears as a strip reading
 
     AP Mode: AH TF TO IL MC
 
 The meaning of the different modes are:
 
-	AH = Altitude Hold
-	TF = Terrain Following
-	TO = Automatic Take-Off
-	IL = Automatic Instrument Landing
-	MC = Mach Climb
+ AH = Altitude Hold
+ TF = Terrain Following
+ TO = Automatic Take-Off
+ IL = Automatic Instrument Landing
+ MC = Mach Climb
 
-AH Mode
--------
+## AH Mode
+
 The AH (Altitude Hold) function is intended to hold the aircraft
 at the altitude set in /autopilot/settings/target-altitude-ft.
 When engaged, the set altitude can be changed by using the
 standard FG keystrokes.
 
-TF Mode
--------
+## TF Mode
+
 The TF (Terrain Following) function is intended to hold the
 aircraft at a constant distance above ground level (agl).  The
 separation distance is set in /autopilot/settings/target-agl-ft.
@@ -169,8 +160,8 @@ that the TF function can only react after the separation has
 increased or decreased and will not stop you from flying into
 steep sided ground elevations i.e. cliffs.
 
-TO Mode
--------
+# TO Mode
+
 The TO (automatic take-off mode) function is intended to be used
 to automate the take-off process.  It should be noted that the
 a/c has the parking-brake engaged when FG starts and this should
@@ -218,8 +209,8 @@ the a/c will turn to the appropriate heading and follow the way
 points.  If no way points have been set the take-off heading
 will be followed.
 
-IL Mode
--------
+## IL Mode
+
 The IL (automatic instrument landing) function is designed to
 land the aircraft automatically, provided that the runway you
 wish to land on has an instrument landing system.  It is assumed
@@ -244,11 +235,11 @@ Once the a/c drops below 50ft agl the AP controller switches
 to touch-down mode and will try to set the a/c down at around
 0.1 vfps (currently it's between 2-3 vfps).
 
-Note: When the aircraft drops below 200ft agl the heading hold 
+Note: When the aircraft drops below 200ft agl the heading hold
 lock is disabled so any final corrections are up to you.
 
-MC Mode
--------
+## MC Mode
+
 The MC (Mach Climb Mode) function is designed to command the
 highest climb rate that can be sustained for a given mach
 setting and is only enabled when mach-hold-by-throttle is
@@ -260,6 +251,5 @@ climb rate is likely to be very low and it may be necessary to
 temporarily reduce speed, and then increase it again (using the
 AP Speed Controller) or force a climb by pulling back on the
 stick.
-
 
 Lee Elliott.     2004/11/14

@@ -1,9 +1,8 @@
 <?xml version="1.0"?>
 
 
-
 <PropertyList>
-<name>aim-9-inside</name>
+	<name>aim-9-inside</name>
 	<path>aim-9.ac</path>
 	<animation>
 		<type>select</type>
@@ -19,6 +18,6 @@
 				<property>sim/model/A-10/weapons/stations/station[10]/trigger[0]</property>
 			</not>
 		</condition>
-	</animation>	
-	
+	</animation>
+
 </PropertyList>

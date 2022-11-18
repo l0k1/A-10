@@ -2,715 +2,709 @@
 
 <PropertyList>
 
-    <fx>
-<!-- engine shound outside -->
+	<fx>
+		<!-- engine shound outside -->
 
-         <engine>
-            <name>fan-outside-0</name>
-            <path>Aircraft/A-10/Sounds/fan.wav</path>
-            <mode>looped</mode>
-            <condition>
-                <and>
-                    <not>
-                        <property>sim/current-view/internal</property>
-                    </not>
-                    <greater-than>
-                        <property>controls/electric/engine/generator</property>
-                        <value>0</value>
-                    </greater-than>
-                </and>
-            </condition>
-            <volume>
-              <property>/engines/engine/n1</property>
-              <factor>0.010</factor>
-              <max>0.50</max>
-           </volume>
-           <pitch>
-             <property>/engines/engine/n1</property>
-             <factor>0.03</factor>
-             <offset>0.1</offset>
-           </pitch>
-           <orientation>
-                <x>0</x>
-                <y>0</y>
-                <z>0</z>
-                <inner-angle>75</inner-angle>
-                <outer-angle>360</outer-angle>
-                <outer-gain>0.1</outer-gain>
-          </orientation>
-            </engine>
+		<engine>
+			<name>fan-outside-0</name>
+			<path>Aircraft/A-10/Sounds/fan.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>controls/electric/engine/generator</property>
+						<value>0</value>
+					</greater-than>
+				</and>
+			</condition>
+			<volume>
+				<property>/engines/engine/n1</property>
+				<factor>0.010</factor>
+				<max>0.50</max>
+			</volume>
+			<pitch>
+				<property>/engines/engine/n1</property>
+				<factor>0.03</factor>
+				<offset>0.1</offset>
+			</pitch>
+			<orientation>
+				<x>0</x>
+				<y>0</y>
+				<z>0</z>
+				<inner-angle>75</inner-angle>
+				<outer-angle>360</outer-angle>
+				<outer-gain>0.1</outer-gain>
+			</orientation>
+		</engine>
 
-	<engine>
-	      <name>fan-outside-1</name>
-	      <path>Aircraft/A-10/Sounds/fan2.wav</path>
-	      <mode>looped</mode>
-	             <condition>
-	                <and>
-	                    <not>
-	                        <property>sim/current-view/internal</property>
-	                    </not>
-	                    <greater-than>
-	                        <property>controls/electric/engine/generator</property>
-	                        <value>0</value>
-	                    </greater-than>
-	                </and>
-	            </condition>
-	            <volume>
-	              <property>/engines/engine[0]/n1</property>
-	              <factor>0.010</factor>
-	              <max>0.50</max>
-	           </volume>
-	           <pitch>
-	             <property>/engines/engine[0]/n1</property>
-	             <factor>0.03</factor>
-	             <offset>0.1</offset>
-	           </pitch>
-	           <orientation>
-	                <x>0</x>
-	                <y>0</y>
-	                <z>0</z>
-	                <inner-angle>75</inner-angle>
-	                <outer-angle>360</outer-angle>
-	                <outer-gain>0.1</outer-gain>
-	          </orientation>
-	</engine>
+		<engine>
+			<name>fan-outside-1</name>
+			<path>Aircraft/A-10/Sounds/fan2.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>controls/electric/engine/generator</property>
+						<value>0</value>
+					</greater-than>
+				</and>
+			</condition>
+			<volume>
+				<property>/engines/engine[0]/n1</property>
+				<factor>0.010</factor>
+				<max>0.50</max>
+			</volume>
+			<pitch>
+				<property>/engines/engine[0]/n1</property>
+				<factor>0.03</factor>
+				<offset>0.1</offset>
+			</pitch>
+			<orientation>
+				<x>0</x>
+				<y>0</y>
+				<z>0</z>
+				<inner-angle>75</inner-angle>
+				<outer-angle>360</outer-angle>
+				<outer-gain>0.1</outer-gain>
+			</orientation>
+		</engine>
 
-	<engine>
-	      <name>whine-outside-0</name>
-	      <path>Aircraft/A-10/Sounds/whine.wav</path>
-	      <mode>looped</mode>
-	               <condition>
-	                <and>
-	                    <not>
-	                        <property>sim/current-view/internal</property>
-	                    </not>
-	                    <greater-than>
-	                        <property>controls/electric/engine/generator</property>
-	                        <value>0</value>
-	                    </greater-than>
-	                </and>
-	            </condition>
-	      <volume>
-	        <property>/engines/engine/thrust-lbs</property>
-	        <factor>0.00006062</factor>
-	      </volume>
-	           <pitch>
-	             <property>/engines/engine/n1</property>
-	             <factor>1.0</factor>
-	             <offset>1.0</offset>
-	           </pitch>
-	           <orientation>
-	                <x>1</x>
-	                <y>0</y>
-	                <z>0</z>
-	                <inner-angle>75</inner-angle>
-	                <outer-angle>180</outer-angle>
-	                <outer-gain>0.04</outer-gain>
-	          </orientation>
-	</engine>
+		<engine>
+			<name>whine-outside-0</name>
+			<path>Aircraft/A-10/Sounds/whine.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>controls/electric/engine/generator</property>
+						<value>0</value>
+					</greater-than>
+				</and>
+			</condition>
+			<volume>
+				<property>/engines/engine/thrust-lbs</property>
+				<factor>0.00006062</factor>
+			</volume>
+			<pitch>
+				<property>/engines/engine/n1</property>
+				<factor>1.0</factor>
+				<offset>1.0</offset>
+			</pitch>
+			<orientation>
+				<x>1</x>
+				<y>0</y>
+				<z>0</z>
+				<inner-angle>75</inner-angle>
+				<outer-angle>180</outer-angle>
+				<outer-gain>0.04</outer-gain>
+			</orientation>
+		</engine>
 
-	<engine>
-	     <name>whine-outside-2</name>
-	     <path>Aircraft/A-10/Sounds/whine.wav</path>
- 	     <mode>looped</mode>
- 	      	       <condition>
-  	              <and>
-  	                  <not>
-  	                      <property>sim/current-view/internal</property>
-  	                  </not>
-  	                  <greater-than>
-  	                      <property>controls/electric/engine/generator</property>
-  	                      <value>0</value>
-  	                  </greater-than>
-  	              </and>
-  	          </condition>
-  	    <volume>
-  	      <property>/engines/engine[1]/thrust_lb</property>
-  	      <factor>0.00006062</factor>
-  	    </volume>
-  	         <pitch>
-  	           <property>/engines/engine[1]/n1</property>
-  	           <factor>1.0</factor>
-  	           <offset>1.0</offset>
-  	         </pitch>
+		<engine>
+			<name>whine-outside-2</name>
+			<path>Aircraft/A-10/Sounds/whine.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>controls/electric/engine/generator</property>
+						<value>0</value>
+					</greater-than>
+				</and>
+			</condition>
+			<volume>
+				<property>/engines/engine[1]/thrust_lb</property>
+				<factor>0.00006062</factor>
+			</volume>
+			<pitch>
+				<property>/engines/engine[1]/n1</property>
+				<factor>1.0</factor>
+				<offset>1.0</offset>
+			</pitch>
 
-  	         <orientation>
-  	              <x>1</x>
-  	              <y>0</y>
-  	              <z>0</z>
-  	              <inner-angle>75</inner-angle>
-  	              <outer-angle>180</outer-angle>
-  	              <outer-gain>0.04</outer-gain>
-  	        </orientation>
-	</engine>
-
-
-	<engine>
-	      <name>whine-outside-3</name>
-	      <path>Aircraft/A-10/Sounds/whine2.wav</path>
-	      <mode>looped</mode>
-	               <condition>
-	                <and>
-	                    <not>
-	                        <property>sim/current-view/internal</property>
-	                    </not>
-	                    <greater-than>
-	                        <property>controls/electric/engine/generator</property>
-	                        <value>0</value>
-	                    </greater-than>
-	                </and>
-	            </condition>
-	      <volume>
-	        <property>/engines/engine/thrust_lb</property>
-	        <factor>0.00005062</factor>
-	      </volume>
-	           <pitch>
-	             <property>/engines/engine/n1</property>
-	             <factor>1.0</factor>
-	             <offset>1.0</offset>
-	           </pitch>
-	           <orientation>
-	                <x>1</x>
-	                <y>0</y>
-	                <z>0</z>
-	                <inner-angle>75</inner-angle>
-	                <outer-angle>180</outer-angle>
-	                <outer-gain>0.04</outer-gain>
-	          </orientation>
-	</engine>
+			<orientation>
+				<x>1</x>
+				<y>0</y>
+				<z>0</z>
+				<inner-angle>75</inner-angle>
+				<outer-angle>180</outer-angle>
+				<outer-gain>0.04</outer-gain>
+			</orientation>
+		</engine>
 
 
-
-	<engine>
-	      <name>whine-outside-4</name>
-	      <path>Aircraft/A-10/Sounds/whine2.wav</path>
-	      <mode>looped</mode>
-	               <condition>
-	                <and>
-	                    <not>
-	                        <property>sim/current-view/internal</property>
-	                    </not>
-	                    <greater-than>
-	                        <property>controls/electric/engine/generator</property>
-	                        <value>0</value>
-	                    </greater-than>
-	                </and>
-	            </condition>
-	      <volume>
-	        <property>/engines/engine[1]/thrust_lb</property>
-	        <factor>0.00005062</factor>
-	      </volume>
-	           <pitch>
-	             <property>/engines/engine[1]/n1</property>
-	             <factor>1.0</factor>
-	             <offset>1.0</offset>
-	           </pitch>
-
-	           <orientation>
-	                <x>1</x>
-	                <y>0</y>
-	                <z>0</z>
-	                <inner-angle>75</inner-angle>
-	                <outer-angle>180</outer-angle>
-	                <outer-gain>0.04</outer-gain>
-	          </orientation>
-	</engine>
-
-        <engine>
-		<name>whistle-outside-0</name>
-		<path>Aircraft/A-10/Sounds/whistle.wav</path>
-		      <mode>looped</mode>
-		               <condition>
-		                <and>
-		                    <not>
-		                        <property>sim/current-view/internal</property>
-		                    </not>
-		                    <greater-than>
-		                        <property>controls/electric/engine/generator</property>
-		                        <value>0</value>
-		                    </greater-than>
-		                </and>
-		            </condition>
-		      <volume>
-		        <property>/engines/engine/thrust_lb</property>
-		        <factor>0.00005062</factor>
-		      </volume>
-		           <pitch>
-		             <property>/engines/engine/n1</property>
-		             <factor>0.1</factor>
-		             <offset>1.0</offset>
-		           </pitch>
-		           <orientation>
-		                <x>1</x>
-		                <y>0</y>
-		                <z>0</z>
-		                <inner-angle>75</inner-angle>
-		 	       <outer-angle>180</outer-angle>
-		 	       <outer-gain>0.05</outer-gain>
-		 	</orientation>
-	</engine>
-
-	<engine>
-	      <name>whistle-outside-1</name>
-	      <path>Aircraft/A-10/Sounds/whistle.wav</path>
-	      <mode>looped</mode>
-	               <condition>
-	                <and>
-	                    <not>
-	                        <property>sim/current-view/internal</property>
-	                    </not>
-	                    <greater-than>
-	                        <property>controls/electric/engine/generator</property>
-	                        <value>0</value>
-	                    </greater-than>
-	                </and>
-	            </condition>
-	      <volume>
-	        <property>/engines/engine[1]/thrust_lb</property>
-	        <factor>0.00005062</factor>
-	      </volume>
-	           <pitch>
-	             <property>/engines/engine[1]/n1</property>
-	             <factor>0.1</factor>
-	             <offset>1.0</offset>
-	           </pitch>
-	           <orientation>
-	                <x>1</x>
-        	        <y>0</y>
-        	        <z>0</z>
-        	        <inner-angle>75</inner-angle>
-        	        <outer-angle>180</outer-angle>
-        	        <outer-gain>0.05</outer-gain>
-	       	  </orientation>
-	</engine>
-
-	<engine>
-	      <name>jet-outside-0</name>
-	      <path>Aircraft/A-10/Sounds/jet.wav</path>
-	      <mode>looped</mode>
-	               <condition>
-	                <and>
-	                    <not>
-	                        <property>sim/current-view/internal</property>
-	                    </not>
-	                    <greater-than>
-	                        <property>controls/electric/engine/generator</property>
-	                        <value>0</value>
-	                    </greater-than>
-	                </and>
-	            </condition>
-	      <volume>
-	        <property>/engines/engine/thrust_lb</property>
-	        <factor>0.00009062</factor>
-	      </volume>
-	           <pitch>
-	             <property>/engines/engine/n1</property>
-	             <factor>0.1</factor>
-	             <offset>0.6</offset>
-	           </pitch>
-	           <orientation>
-	                <x>1</x>
-	                <y>0</y>
-	                <z>1</z>
-	                <inner-angle>75</inner-angle>
-	                <outer-angle>160</outer-angle>
-	                <outer-gain>0.3</outer-gain>
-	           </orientation>
-	</engine>
-
-	<engine>
-	      <name>jet-outside-1</name>
- 	     <path>Aircraft/A-10/Sounds/jet.wav</path>
- 	     <mode>looped</mode>
-        	       <condition>
-        	        <and>
-        	            <not>
-        	                <property>sim/current-view/internal</property>
-        	            </not>
-        	            <greater-than>
-        	                <property>controls/electric/engine/generator</property>
-        	                <value>0</value>
-        	            </greater-than>
-        	        </and>
-        	    </condition>
-	      <volume>
-        	<property>/engines/engine[1]/thrust_lb</property>
-        	<factor>0.00009062</factor>
-	      </volume>
-        	   <pitch>
-        	     <property>/engines/engine[1]/n1</property>
-        	     <factor>0.1</factor>
-        	     <offset>0.6</offset>
-        	   </pitch>
-        	   <orientation>
-	                <x>1</x>
-        	        <y>0</y>
-        	        <z>1</z>
-        	        <inner-angle>75</inner-angle>
-        	        <outer-angle>160</outer-angle>
-        	        <outer-gain>0.3</outer-gain>
-        	   </orientation>
-	</engine>
+		<engine>
+			<name>whine-outside-3</name>
+			<path>Aircraft/A-10/Sounds/whine2.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>controls/electric/engine/generator</property>
+						<value>0</value>
+					</greater-than>
+				</and>
+			</condition>
+			<volume>
+				<property>/engines/engine/thrust_lb</property>
+				<factor>0.00005062</factor>
+			</volume>
+			<pitch>
+				<property>/engines/engine/n1</property>
+				<factor>1.0</factor>
+				<offset>1.0</offset>
+			</pitch>
+			<orientation>
+				<x>1</x>
+				<y>0</y>
+				<z>0</z>
+				<inner-angle>75</inner-angle>
+				<outer-angle>180</outer-angle>
+				<outer-gain>0.04</outer-gain>
+			</orientation>
+		</engine>
 
 
+		<engine>
+			<name>whine-outside-4</name>
+			<path>Aircraft/A-10/Sounds/whine2.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>controls/electric/engine/generator</property>
+						<value>0</value>
+					</greater-than>
+				</and>
+			</condition>
+			<volume>
+				<property>/engines/engine[1]/thrust_lb</property>
+				<factor>0.00005062</factor>
+			</volume>
+			<pitch>
+				<property>/engines/engine[1]/n1</property>
+				<factor>1.0</factor>
+				<offset>1.0</offset>
+			</pitch>
+
+			<orientation>
+				<x>1</x>
+				<y>0</y>
+				<z>0</z>
+				<inner-angle>75</inner-angle>
+				<outer-angle>180</outer-angle>
+				<outer-gain>0.04</outer-gain>
+			</orientation>
+		</engine>
+
+		<engine>
+			<name>whistle-outside-0</name>
+			<path>Aircraft/A-10/Sounds/whistle.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>controls/electric/engine/generator</property>
+						<value>0</value>
+					</greater-than>
+				</and>
+			</condition>
+			<volume>
+				<property>/engines/engine/thrust_lb</property>
+				<factor>0.00005062</factor>
+			</volume>
+			<pitch>
+				<property>/engines/engine/n1</property>
+				<factor>0.1</factor>
+				<offset>1.0</offset>
+			</pitch>
+			<orientation>
+				<x>1</x>
+				<y>0</y>
+				<z>0</z>
+				<inner-angle>75</inner-angle>
+				<outer-angle>180</outer-angle>
+				<outer-gain>0.05</outer-gain>
+			</orientation>
+		</engine>
+
+		<engine>
+			<name>whistle-outside-1</name>
+			<path>Aircraft/A-10/Sounds/whistle.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>controls/electric/engine/generator</property>
+						<value>0</value>
+					</greater-than>
+				</and>
+			</condition>
+			<volume>
+				<property>/engines/engine[1]/thrust_lb</property>
+				<factor>0.00005062</factor>
+			</volume>
+			<pitch>
+				<property>/engines/engine[1]/n1</property>
+				<factor>0.1</factor>
+				<offset>1.0</offset>
+			</pitch>
+			<orientation>
+				<x>1</x>
+				<y>0</y>
+				<z>0</z>
+				<inner-angle>75</inner-angle>
+				<outer-angle>180</outer-angle>
+				<outer-gain>0.05</outer-gain>
+			</orientation>
+		</engine>
+
+		<engine>
+			<name>jet-outside-0</name>
+			<path>Aircraft/A-10/Sounds/jet.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>controls/electric/engine/generator</property>
+						<value>0</value>
+					</greater-than>
+				</and>
+			</condition>
+			<volume>
+				<property>/engines/engine/thrust_lb</property>
+				<factor>0.00009062</factor>
+			</volume>
+			<pitch>
+				<property>/engines/engine/n1</property>
+				<factor>0.1</factor>
+				<offset>0.6</offset>
+			</pitch>
+			<orientation>
+				<x>1</x>
+				<y>0</y>
+				<z>1</z>
+				<inner-angle>75</inner-angle>
+				<outer-angle>160</outer-angle>
+				<outer-gain>0.3</outer-gain>
+			</orientation>
+		</engine>
+
+		<engine>
+			<name>jet-outside-1</name>
+			<path>Aircraft/A-10/Sounds/jet.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>controls/electric/engine/generator</property>
+						<value>0</value>
+					</greater-than>
+				</and>
+			</condition>
+			<volume>
+				<property>/engines/engine[1]/thrust_lb</property>
+				<factor>0.00009062</factor>
+			</volume>
+			<pitch>
+				<property>/engines/engine[1]/n1</property>
+				<factor>0.1</factor>
+				<offset>0.6</offset>
+			</pitch>
+			<orientation>
+				<x>1</x>
+				<y>0</y>
+				<z>1</z>
+				<inner-angle>75</inner-angle>
+				<outer-angle>160</outer-angle>
+				<outer-gain>0.3</outer-gain>
+			</orientation>
+		</engine>
 
 
+		<!-- engines inside -->
+
+		<engine>
+			<name>Engine 1 sound 1 internal</name>
+			<path>Aircraft/A-10/Sounds/fan3.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+					<property>sim/current-view/internal</property>
+					<greater-than>
+						<property>controls/electric/engine/generator</property>
+						<value>0</value>
+					</greater-than>
+				</and>
+			</condition>
+			<volume>
+				<property>engines/engine/n1</property>
+				<offset>0</offset>
+				<factor>0.02</factor>
+			</volume>
+			<pitch>
+				<property>engines/engine/n1</property>
+				<offset>0.5</offset>
+				<factor>0.005</factor>
+			</pitch>
+		</engine>
 
 
-
-    <!-- engines inside -->
-
-	<engine>
-		<name>Engine 1 sound 1 internal</name>
-		<path>Aircraft/A-10/Sounds/fan3.wav</path>
-		<mode>looped</mode>
-		<condition>
-			<and>
-			<property>sim/current-view/internal</property>
-			<greater-than>
-				<property>controls/electric/engine/generator</property>
-				<value>0</value>
-			</greater-than>
-			</and>
-		</condition>
-		<volume>
-			<property>engines/engine/n1</property>
-			<offset>0</offset>
-			<factor>0.02</factor>
-		</volume>
-		<pitch>
-			<property>engines/engine/n1</property>
-			<offset>0.5</offset>
-			<factor>0.005</factor>
-		</pitch>
-	</engine>
+		<engine>
+			<name>Engine 2 sound 1 internal</name>
+			<path>Aircraft/A-10/Sounds/fan3.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+					<property>sim/current-view/internal</property>
+					<greater-than>
+						<property>controls/electric/engine/generator</property>
+						<value>0</value>
+					</greater-than>
+				</and>
+			</condition>
+			<volume>
+				<property>engines/engine[1]/n1</property>
+				<offset>0</offset>
+				<factor>0.02</factor>
+			</volume>
+			<pitch>
+				<property>engines/engine[1]/n1</property>
+				<offset>0.5</offset>
+				<factor>0.005</factor>
+			</pitch>
+		</engine>
 
 
-	<engine>
-		<name>Engine 2 sound 1 internal</name>
-		<path>Aircraft/A-10/Sounds/fan3.wav</path>
-		<mode>looped</mode>
-		<condition>
-			<and>
-				<property>sim/current-view/internal</property>
+		<!-- apu -->
+
+		<apu-rpm>
+			<name>apu-rpm</name>
+			<path>Aircraft/A-10/Sounds/fan3.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<equals>
+					<property>sim/current-view/view-number</property>
+					<value>0</value>
+				</equals>
 				<greater-than>
-					<property>controls/electric/engine/generator</property>
+					<property>sim/model/A-10/systems/apu/rpm-norm</property>
 					<value>0</value>
 				</greater-than>
-			</and>
-		</condition>
-		<volume>
-			<property>engines/engine[1]/n1</property>
-			<offset>0</offset>
-			<factor>0.02</factor>
-		</volume>
-		<pitch>
-			<property>engines/engine[1]/n1</property>
-			<offset>0.5</offset>
-			<factor>0.005</factor>
-		</pitch>
-	</engine>
-
-
-	<!-- apu -->
-
-	<apu-rpm>
-		<name>apu-rpm</name>
-		<path>Aircraft/A-10/Sounds/fan3.wav</path>
-		<mode>looped</mode>
-		<condition>
-			<equals>
-				<property>sim/current-view/view-number</property>
-				<value>0</value>
-			</equals>
-			<greater-than>
+			</condition>
+			<volume>
 				<property>sim/model/A-10/systems/apu/rpm-norm</property>
-				<value>0</value>
-			</greater-than>
-		</condition>
-		<volume>
-			<property>sim/model/A-10/systems/apu/rpm-norm</property>
-			<factor>0.5</factor>
-			<offset>0.015</offset>
-		</volume>
-		<pitch>
-			<property>sim/model/A-10/systems/apu/rpm-norm</property>
-			<factor>0.5</factor>
-			<offset>0.005</offset>
-		</pitch>
-	</apu-rpm>
+				<factor>0.5</factor>
+				<offset>0.015</offset>
+			</volume>
+			<pitch>
+				<property>sim/model/A-10/systems/apu/rpm-norm</property>
+				<factor>0.5</factor>
+				<offset>0.005</offset>
+			</pitch>
+		</apu-rpm>
 
 
-    <!-- rumble -->
-    <rumble>
-      <name>rumble</name>
-      <mode>looped</mode>
-      <path>Sounds/rumble.wav</path>
-      <condition>
-        <property>gear/gear[0]/wow</property>
-      </condition>
-      <volume>
-        <property>velocities/groundspeed-kt</property>
-        <type>log</type>
-        <factor>0.07</factor>
-      </volume>
-    </rumble>
+		<!-- rumble -->
+		<rumble>
+			<name>rumble</name>
+			<mode>looped</mode>
+			<path>Sounds/rumble.wav</path>
+			<condition>
+				<property>gear/gear[0]/wow</property>
+			</condition>
+			<volume>
+				<property>velocities/groundspeed-kt</property>
+				<type>log</type>
+				<factor>0.07</factor>
+			</volume>
+		</rumble>
 
-    <rumble>
-      <name>rumble</name>
-      <mode>looped</mode>
-      <path>Sounds/rumble.wav</path>
-      <condition>
-        <property>gear/gear[1]/wow</property>
-      </condition>
-      <volume>
-        <property>velocities/groundspeed-kt</property>
-        <type>log</type>
-        <factor>0.07</factor>
-      </volume>
-    </rumble>
+		<rumble>
+			<name>rumble</name>
+			<mode>looped</mode>
+			<path>Sounds/rumble.wav</path>
+			<condition>
+				<property>gear/gear[1]/wow</property>
+			</condition>
+			<volume>
+				<property>velocities/groundspeed-kt</property>
+				<type>log</type>
+				<factor>0.07</factor>
+			</volume>
+		</rumble>
 
-    <rumble>
-      <name>rumble</name>
-      <mode>looped</mode>
-      <path>Sounds/rumble.wav</path>
-      <condition>
-        <property>gear/gear[2]/wow</property>
-      </condition>
-      <volume>
-        <property>velocities/groundspeed-kt</property>
-        <type>log</type>
-        <factor>0.07</factor>
-      </volume>
-    </rumble>
+		<rumble>
+			<name>rumble</name>
+			<mode>looped</mode>
+			<path>Sounds/rumble.wav</path>
+			<condition>
+				<property>gear/gear[2]/wow</property>
+			</condition>
+			<volume>
+				<property>velocities/groundspeed-kt</property>
+				<type>log</type>
+				<factor>0.07</factor>
+			</volume>
+		</rumble>
 
-    <!-- gears -->
-    <gear>
-      <name>gear</name>
-      <mode>in-transit</mode>
-      <path>Sounds/gear.wav</path>
-      <property>gear/gear[0]/position-norm</property>
-      <pitch>
-        <internal>dt_play</internal>
-        <offset>1.0</offset>
-        <factor>-0.001</factor>
-      </pitch>
-    </gear>
+		<!-- gears -->
+		<gear>
+			<name>gear</name>
+			<mode>in-transit</mode>
+			<path>Sounds/gear.wav</path>
+			<property>gear/gear[0]/position-norm</property>
+			<pitch>
+				<internal>dt_play</internal>
+				<offset>1.0</offset>
+				<factor>-0.001</factor>
+			</pitch>
+		</gear>
 
-    <gear>
-      <name>gear-lock</name>
-      <path>Sounds/gear-lck.wav</path>
-      <condition>
-        <equals>
-          <property>gear/gear[0]/position-norm</property>
-          <value>0</value>
-        </equals>
-      </condition>
-    </gear>
+		<gear>
+			<name>gear-lock</name>
+			<path>Sounds/gear-lck.wav</path>
+			<condition>
+				<equals>
+					<property>gear/gear[0]/position-norm</property>
+					<value>0</value>
+				</equals>
+			</condition>
+		</gear>
 
-    <gear>
-      <name>gear-lock</name>
-      <path>Sounds/gear-lck.wav</path>
-      <condition>
-        <equals>
-          <property>gear/gear[0]/position-norm</property>
-          <value>1</value>
-        </equals>
-      </condition>
-    </gear>
+		<gear>
+			<name>gear-lock</name>
+			<path>Sounds/gear-lck.wav</path>
+			<condition>
+				<equals>
+					<property>gear/gear[0]/position-norm</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</gear>
 
-    <gear>
-      <name>gear</name>
-      <mode>in-transit</mode>
-      <path>Sounds/gear.wav</path>
-      <property>gear/gear[1]/position-norm</property>
-      <pitch>
-        <internal>dt_play</internal>
-        <offset>1.0</offset>
-        <factor>-0.001</factor>
-      </pitch>
-    </gear>
+		<gear>
+			<name>gear</name>
+			<mode>in-transit</mode>
+			<path>Sounds/gear.wav</path>
+			<property>gear/gear[1]/position-norm</property>
+			<pitch>
+				<internal>dt_play</internal>
+				<offset>1.0</offset>
+				<factor>-0.001</factor>
+			</pitch>
+		</gear>
 
-    <gear>
-      <name>gear-lock</name>
-      <path>Sounds/gear-lck.wav</path>
-      <condition>
-        <equals>
-          <property>gear/gear[1]/position-norm</property>
-          <value>0</value>
-        </equals>
-      </condition>
-    </gear>
+		<gear>
+			<name>gear-lock</name>
+			<path>Sounds/gear-lck.wav</path>
+			<condition>
+				<equals>
+					<property>gear/gear[1]/position-norm</property>
+					<value>0</value>
+				</equals>
+			</condition>
+		</gear>
 
-    <gear>
-      <name>gear-lock</name>
-      <path>Sounds/gear-lck.wav</path>
-      <condition>
-        <equals>
-          <property>gear/gear[1]/position-norm</property>
-          <value>1</value>
-        </equals>
-      </condition>
-    </gear>
+		<gear>
+			<name>gear-lock</name>
+			<path>Sounds/gear-lck.wav</path>
+			<condition>
+				<equals>
+					<property>gear/gear[1]/position-norm</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</gear>
 
-    <gear>
-      <name>gear</name>
-      <mode>in-transit</mode>
-      <path>Sounds/gear.wav</path>
-      <property>gear/gear[2]/position-norm</property>
-      <pitch>
-        <internal>dt_play</internal>
-        <offset>1.0</offset>
-        <factor>-0.001</factor>
-      </pitch>
-    </gear>
+		<gear>
+			<name>gear</name>
+			<mode>in-transit</mode>
+			<path>Sounds/gear.wav</path>
+			<property>gear/gear[2]/position-norm</property>
+			<pitch>
+				<internal>dt_play</internal>
+				<offset>1.0</offset>
+				<factor>-0.001</factor>
+			</pitch>
+		</gear>
 
-    <gear>
-      <name>gear-lock</name>
-      <path>Sounds/gear-lck.wav</path>
-      <condition>
-        <equals>
-          <property>gear/gear[2]/position-norm</property>
-          <value>0</value>
-        </equals>
-      </condition>
-    </gear>
+		<gear>
+			<name>gear-lock</name>
+			<path>Sounds/gear-lck.wav</path>
+			<condition>
+				<equals>
+					<property>gear/gear[2]/position-norm</property>
+					<value>0</value>
+				</equals>
+			</condition>
+		</gear>
 
-    <gear>
-      <name>gear-lock</name>
-      <path>Sounds/gear-lck.wav</path>
-      <condition>
-        <equals>
-          <property>gear/gear[2]/position-norm</property>
-          <value>1</value>
-        </equals>
-      </condition>
-    </gear>
+		<gear>
+			<name>gear-lock</name>
+			<path>Sounds/gear-lck.wav</path>
+			<condition>
+				<equals>
+					<property>gear/gear[2]/position-norm</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</gear>
 
-    <!-- squeal -->
-    <squeal>
-      <name>squeal</name>
-      <path>Sounds/squeal.wav</path>
-      <condition>
-        <property>gear/gear[0]/wow</property>
-      </condition>
-      <volume>
-        <property>velocities/speed-down-fps</property>
-        <factor>0.05</factor>
-      </volume>
-      <volume>
-        <property>velocities/groundspeed-kt</property>
-        <factor>0.01</factor>
-      </volume>
-      <volume>
-        <internal>dt_stop</internal>
-        <factor>0.05</factor>
-        <max>1.0</max>
-      </volume>
-      <pitch>
-        <property>velocities/groundspeed-kt</property>
-        <factor>0.0025</factor>
-        <offset>1.2</offset>
-      </pitch>
-    </squeal>
+		<!-- squeal -->
+		<squeal>
+			<name>squeal</name>
+			<path>Sounds/squeal.wav</path>
+			<condition>
+				<property>gear/gear[0]/wow</property>
+			</condition>
+			<volume>
+				<property>velocities/speed-down-fps</property>
+				<factor>0.05</factor>
+			</volume>
+			<volume>
+				<property>velocities/groundspeed-kt</property>
+				<factor>0.01</factor>
+			</volume>
+			<volume>
+				<internal>dt_stop</internal>
+				<factor>0.05</factor>
+				<max>1.0</max>
+			</volume>
+			<pitch>
+				<property>velocities/groundspeed-kt</property>
+				<factor>0.0025</factor>
+				<offset>1.2</offset>
+			</pitch>
+		</squeal>
 
-    <squeal>
-      <name>squeal</name>
-      <path>Sounds/squeal.wav</path>
-      <condition>
-        <property>gear/gear[1]/wow</property>
-      </condition>
-      <volume>
-        <property>velocities/speed-down-fps</property>
-        <factor>0.05</factor>
-      </volume>
-      <volume>
-        <property>velocities/groundspeed-kt</property>
-        <factor>0.01</factor>
-      </volume>
-      <volume>
-        <internal>dt_stop</internal>
-        <factor>0.05</factor>
-        <max>1.0</max>
-      </volume>
-      <pitch>
-        <property>velocities/airspeed-kt</property>
-        <factor>0.0025</factor>
-        <offset>1.2</offset>
-      </pitch>
-    </squeal>
+		<squeal>
+			<name>squeal</name>
+			<path>Sounds/squeal.wav</path>
+			<condition>
+				<property>gear/gear[1]/wow</property>
+			</condition>
+			<volume>
+				<property>velocities/speed-down-fps</property>
+				<factor>0.05</factor>
+			</volume>
+			<volume>
+				<property>velocities/groundspeed-kt</property>
+				<factor>0.01</factor>
+			</volume>
+			<volume>
+				<internal>dt_stop</internal>
+				<factor>0.05</factor>
+				<max>1.0</max>
+			</volume>
+			<pitch>
+				<property>velocities/airspeed-kt</property>
+				<factor>0.0025</factor>
+				<offset>1.2</offset>
+			</pitch>
+		</squeal>
 
-    <squeal>
-      <name>squeal</name>
-      <path>Sounds/squeal.wav</path>
-      <condition>
-        <property>gear/gear[2]/wow</property>
-      </condition>
-      <volume>
-        <property>velocities/speed-down-fps</property>
-        <factor>0.05</factor>
-      </volume>
-      <volume>
-        <property>velocities/groundspeed-kt</property>
-        <factor>0.01</factor>
-      </volume>
-      <volume>
-        <internal>dt_stop</internal>
-        <factor>0.05</factor>
-        <max>1.0</max>
-      </volume>
-      <pitch>
-        <property>velocities/groundspeed-kt</property>
-        <factor>0.0025</factor>
-        <offset>1.2</offset>
-      </pitch>
-    </squeal>
+		<squeal>
+			<name>squeal</name>
+			<path>Sounds/squeal.wav</path>
+			<condition>
+				<property>gear/gear[2]/wow</property>
+			</condition>
+			<volume>
+				<property>velocities/speed-down-fps</property>
+				<factor>0.05</factor>
+			</volume>
+			<volume>
+				<property>velocities/groundspeed-kt</property>
+				<factor>0.01</factor>
+			</volume>
+			<volume>
+				<internal>dt_stop</internal>
+				<factor>0.05</factor>
+				<max>1.0</max>
+			</volume>
+			<pitch>
+				<property>velocities/groundspeed-kt</property>
+				<factor>0.0025</factor>
+				<offset>1.2</offset>
+			</pitch>
+		</squeal>
 
-    <!-- flaps & spoilers -->
-    <flap>
-      <name>flaps</name>
-      <mode>in-transit</mode>
-      <path>Sounds/flaps.wav</path>
-      <property>surface-positions/left-flap-pos-norm</property>
-      <volume>
-        <factor>0.15</factor>
-      </volume>
-    </flap>
+		<!-- flaps & spoilers -->
+		<flap>
+			<name>flaps</name>
+			<mode>in-transit</mode>
+			<path>Sounds/flaps.wav</path>
+			<property>surface-positions/left-flap-pos-norm</property>
+			<volume>
+				<factor>0.15</factor>
+			</volume>
+		</flap>
 
-    <flap>
-      <name>flaps</name>
-      <mode>in-transit</mode>
-      <path>Sounds/flaps.wav</path>
-      <property>surface-positions/right-flap-pos-norm</property>
-      <volume>
-        <factor>0.25</factor>
-      </volume>
-    </flap>
+		<flap>
+			<name>flaps</name>
+			<mode>in-transit</mode>
+			<path>Sounds/flaps.wav</path>
+			<property>surface-positions/right-flap-pos-norm</property>
+			<volume>
+				<factor>0.25</factor>
+			</volume>
+		</flap>
 
-    <spoiler>
-      <name>spoilers</name>
-      <mode>in-transit</mode>
-      <path>Sounds/flaps.wav</path>
-      <property>surface-positions/left-spoiler-pos-norm</property>
-      <volume>
-        <factor>0.15</factor>
-      </volume>
-    </spoiler>
+		<spoiler>
+			<name>spoilers</name>
+			<mode>in-transit</mode>
+			<path>Sounds/flaps.wav</path>
+			<property>surface-positions/left-spoiler-pos-norm</property>
+			<volume>
+				<factor>0.15</factor>
+			</volume>
+		</spoiler>
 
-    <spoiler>
-      <name>spoilers</name>
-      <mode>in-transit</mode>
-      <path>Sounds/flaps.wav</path>
-      <property>surface-positions/right-spoiler-pos-norm</property>
-      <volume>
-        <factor>0.25</factor>
-      </volume>
-    </spoiler>
+		<spoiler>
+			<name>spoilers</name>
+			<mode>in-transit</mode>
+			<path>Sounds/flaps.wav</path>
+			<property>surface-positions/right-spoiler-pos-norm</property>
+			<volume>
+				<factor>0.25</factor>
+			</volume>
+		</spoiler>
 
-    <wind>
-      <name>wind</name>
-      <mode>looped</mode>
-      <path>Aircraft/A-10/Sounds/wind.wav</path>
+		<wind>
+			<name>wind</name>
+			<mode>looped</mode>
+			<path>Aircraft/A-10/Sounds/wind.wav</path>
 			<condition>
 				<equals>
 					<property>sim/current-view/view-number</property>
@@ -720,12 +714,12 @@
 					<property>canopy/position-norm</property>
 					<value>0</value>
 				</greater-than>
-      </condition>
-      <volume>
-        <property>velocities/airspeed-kt</property>
+			</condition>
+			<volume>
+				<property>velocities/airspeed-kt</property>
 				<factor>0.001</factor>
-      </volume>
-    </wind>
+			</volume>
+		</wind>
 
 		<canopy>
 			<name>canopy</name>
@@ -859,90 +853,90 @@
 				<factor>0.3</factor>
 			</volume>
 		</apu-switch-stop>
-    <L-engine-operation-switch-start>
-      <name>L-engine-operation-switch-start</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/click.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/controls/engines/engine[0]/starter-switch-position</property>
-		  <value>2</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.3</factor>
-      </volume>
-    </L-engine-operation-switch-start>
-    <L-engine-operation-switch-off>
-      <name>L-engine-operation-switch-off</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/click.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/controls/engines/engine[0]/starter-switch-position</property>
-		  <value>1</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.3</factor>
-      </volume>
-    </L-engine-operation-switch-off>
-    <L-engine-operation-switch-motor>
-      <name>L-engine-operation-switch-motor</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/click.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/controls/engines/engine[0]/starter-switch-position</property>
-		  <value>0</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.3</factor>
-      </volume>
-    </L-engine-operation-switch-motor>
-    <R-engine-operation-switch-start>
-      <name>R-engine-operation-switch-start</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/click.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/controls/engines/engine[1]/starter-switch-position</property>
-		  <value>2</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.3</factor>
-      </volume>
-    </R-engine-operation-switch-start>
-    <R-engine-operation-switch-off>
-      <name>R-engine-operation-switch-off</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/click.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/controls/engines/engine[1]/starter-switch-position</property>
-		  <value>1</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.3</factor>
-      </volume>
-    </R-engine-operation-switch-off>
-    <R-engine-operation-switch-motor>
-      <name>R-engine-operation-switch-motor</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/click.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/controls/engines/engine[1]/starter-switch-position</property>
-		  <value>0</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.3</factor>
-      </volume>
-    </R-engine-operation-switch-motor>
+		<L-engine-operation-switch-start>
+			<name>L-engine-operation-switch-start</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/controls/engines/engine[0]/starter-switch-position</property>
+					<value>2</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.3</factor>
+			</volume>
+		</L-engine-operation-switch-start>
+		<L-engine-operation-switch-off>
+			<name>L-engine-operation-switch-off</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/controls/engines/engine[0]/starter-switch-position</property>
+					<value>1</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.3</factor>
+			</volume>
+		</L-engine-operation-switch-off>
+		<L-engine-operation-switch-motor>
+			<name>L-engine-operation-switch-motor</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/controls/engines/engine[0]/starter-switch-position</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.3</factor>
+			</volume>
+		</L-engine-operation-switch-motor>
+		<R-engine-operation-switch-start>
+			<name>R-engine-operation-switch-start</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/controls/engines/engine[1]/starter-switch-position</property>
+					<value>2</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.3</factor>
+			</volume>
+		</R-engine-operation-switch-start>
+		<R-engine-operation-switch-off>
+			<name>R-engine-operation-switch-off</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/controls/engines/engine[1]/starter-switch-position</property>
+					<value>1</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.3</factor>
+			</volume>
+		</R-engine-operation-switch-off>
+		<R-engine-operation-switch-motor>
+			<name>R-engine-operation-switch-motor</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/controls/engines/engine[1]/starter-switch-position</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.3</factor>
+			</volume>
+		</R-engine-operation-switch-motor>
 
 		<!-- fuel control panel -->
 		<ext-tanks-wing-on>
@@ -1269,661 +1263,660 @@
 			</volume>
 		</nav-selector-tacan-off>
 
-    <selector-hars>
-      <name>selector-hars</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/shlock.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/A-10-nav/selector-hars</property>
-          <value>1</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </selector-hars>
-    <selector-vlocs>
-      <name>selector-vlocs</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/shlock.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/A-10-nav/selector-vlocs</property>
-          <value>2</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </selector-vlocs>
-    <selector-tils>
-      <name>selector-tils</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/shlock.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/A-10-nav/selector-tils</property>
-          <value>3</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </selector-tils>
-	<selector-crs>
-      <name>selector-crs</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/shlock.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/A-10-nav/selector-crs</property>
-          <value>4</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </selector-crs>
-    <selector-man>
-      <name>selector-man</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/shlock.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/A-10-nav/selector-man</property>
-          <value>0</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </selector-man>
-    <selector-ils>
-      <name>selector-ils-on</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/shlock.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/A-10-nav/selector-ils</property>
-          <value>1</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </selector-ils>
-    <selector-ils>
-      <name>selector-ils-off</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/shlock.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/A-10-nav/selector-ils</property>
-          <value>0</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.3</factor>
-      </volume>
-    </selector-ils>
+		<selector-hars>
+			<name>selector-hars</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/shlock.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/A-10-nav/selector-hars</property>
+					<value>1</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</selector-hars>
+		<selector-vlocs>
+			<name>selector-vlocs</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/shlock.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/A-10-nav/selector-vlocs</property>
+					<value>2</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</selector-vlocs>
+		<selector-tils>
+			<name>selector-tils</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/shlock.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/A-10-nav/selector-tils</property>
+					<value>3</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</selector-tils>
+		<selector-crs>
+			<name>selector-crs</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/shlock.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/A-10-nav/selector-crs</property>
+					<value>4</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</selector-crs>
+		<selector-man>
+			<name>selector-man</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/shlock.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/A-10-nav/selector-man</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</selector-man>
+		<selector-ils>
+			<name>selector-ils-on</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/shlock.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/A-10-nav/selector-ils</property>
+					<value>1</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</selector-ils>
+		<selector-ils>
+			<name>selector-ils-off</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/shlock.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/A-10-nav/selector-ils</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.3</factor>
+			</volume>
+		</selector-ils>
 
-	<selector-ptr-left>
-		<name>selector-ptr-left</name>
-		<mode>once</mode>
-		<path>Aircraft/A-10/Sounds/shlock.wav</path>
-		<condition>
-			<not>
+		<selector-ptr-left>
+			<name>selector-ptr-left</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/shlock.wav</path>
+			<condition>
+				<not>
+					<property>sim/model/A-10/A-10-nav/selector-ptr</property>
+				</not>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</selector-ptr-left>
+		<selector-ptr-right>
+			<name>selector-ptr</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/shlock.wav</path>
+			<condition>
 				<property>sim/model/A-10/A-10-nav/selector-ptr</property>
-			</not>
-		</condition>
-		<volume>
-			<factor>0.4</factor>
-		</volume>
-	</selector-ptr-left>
-	<selector-ptr-right>
-		<name>selector-ptr</name>
-		<mode>once</mode>
-		<path>Aircraft/A-10/Sounds/shlock.wav</path>
-		<condition>
-			<property>sim/model/A-10/A-10-nav/selector-ptr</property>
-		</condition>
-		<volume>
-			<factor>0.4</factor>
-		</volume>
-	</selector-ptr-right>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</selector-ptr-right>
 
-    <!-- A-10-nav-preset -->
-    <A-10-nav-preset-1>
-      <name>A-10-nav-preset-1</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/slide.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
-          <value>1</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </A-10-nav-preset-1>
-    <A-10-nav-preset-2>
-      <name>A-10-nav-preset-2</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/slide.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
-          <value>2</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </A-10-nav-preset-2>
-    <A-10-nav-preset-3>
-      <name>A-10-nav-preset-3</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/slide.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
-          <value>3</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </A-10-nav-preset-3>
-    <A-10-nav-preset-4>
-      <name>A-10-nav-preset-4</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/slide.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
-          <value>4</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </A-10-nav-preset-4>
-    <A-10-nav-preset-5>
-      <name>A-10-nav-preset-5</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/slide.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
-          <value>5</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </A-10-nav-preset-5>
-    <A-10-nav-preset-6>
-      <name>A-10-nav-preset-6</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/slide.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
-          <value>6</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </A-10-nav-preset-6>
-    <A-10-nav-preset-7>
-      <name>A-10-nav-preset-7</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/slide.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
-          <value>7</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </A-10-nav-preset-7>
-    <A-10-nav-preset-8>
-      <name>A-10-nav-preset-8</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/slide.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
-          <value>8</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </A-10-nav-preset-8>
-    <A-10-nav-preset-9>
-      <name>A-10-nav-preset-9</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/slide.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
-          <value>9</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </A-10-nav-preset-9>
-    <A-10-nav-preset-10>
-      <name>A-10-nav-preset-10</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/slide.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
-          <value>10</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </A-10-nav-preset-10>
-    <A-10-nav-preset-11>
-      <name>A-10-nav-preset-11</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/slide.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
-          <value>11</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </A-10-nav-preset-11>
-    <A-10-nav-preset-12>
-      <name>A-10-nav-preset-12</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/slide.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
-          <value>12</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </A-10-nav-preset-12>
-    <A-10-nav-preset-13>
-      <name>A-10-nav-preset-13</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/slide.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
-          <value>13</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </A-10-nav-preset-13>
-    <A-10-nav-preset-14>
-      <name>A-10-nav-preset-14</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/slide.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
-          <value>14</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </A-10-nav-preset-14>
-    <A-10-nav-preset-15>
-      <name>A-10-nav-preset-15</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/slide.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
-          <value>15</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </A-10-nav-preset-15>
-    <A-10-nav-preset-16>
-      <name>A-10-nav-preset-16</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/slide.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
-          <value>16</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </A-10-nav-preset-16>
-    <A-10-nav-preset-17>
-      <name>A-10-nav-preset-17</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/slide.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
-          <value>17</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </A-10-nav-preset-17>
-    <A-10-nav-preset-18>
-      <name>A-10-nav-preset-18</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/slide.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
-          <value>18</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </A-10-nav-preset-18>
-    <A-10-nav-preset-19>
-      <name>A-10-nav-preset-19</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/slide.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
-          <value>19</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </A-10-nav-preset-19>
-    <A-10-nav-preset-20>
-      <name>A-10-nav-preset-20</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/slide.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
-          <value>20</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.4</factor>
-      </volume>
-    </A-10-nav-preset-20>
+		<!-- A-10-nav-preset -->
+		<A-10-nav-preset-1>
+			<name>A-10-nav-preset-1</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/slide.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
+					<value>1</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</A-10-nav-preset-1>
+		<A-10-nav-preset-2>
+			<name>A-10-nav-preset-2</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/slide.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
+					<value>2</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</A-10-nav-preset-2>
+		<A-10-nav-preset-3>
+			<name>A-10-nav-preset-3</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/slide.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
+					<value>3</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</A-10-nav-preset-3>
+		<A-10-nav-preset-4>
+			<name>A-10-nav-preset-4</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/slide.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
+					<value>4</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</A-10-nav-preset-4>
+		<A-10-nav-preset-5>
+			<name>A-10-nav-preset-5</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/slide.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
+					<value>5</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</A-10-nav-preset-5>
+		<A-10-nav-preset-6>
+			<name>A-10-nav-preset-6</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/slide.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
+					<value>6</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</A-10-nav-preset-6>
+		<A-10-nav-preset-7>
+			<name>A-10-nav-preset-7</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/slide.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
+					<value>7</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</A-10-nav-preset-7>
+		<A-10-nav-preset-8>
+			<name>A-10-nav-preset-8</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/slide.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
+					<value>8</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</A-10-nav-preset-8>
+		<A-10-nav-preset-9>
+			<name>A-10-nav-preset-9</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/slide.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
+					<value>9</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</A-10-nav-preset-9>
+		<A-10-nav-preset-10>
+			<name>A-10-nav-preset-10</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/slide.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
+					<value>10</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</A-10-nav-preset-10>
+		<A-10-nav-preset-11>
+			<name>A-10-nav-preset-11</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/slide.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
+					<value>11</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</A-10-nav-preset-11>
+		<A-10-nav-preset-12>
+			<name>A-10-nav-preset-12</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/slide.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
+					<value>12</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</A-10-nav-preset-12>
+		<A-10-nav-preset-13>
+			<name>A-10-nav-preset-13</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/slide.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
+					<value>13</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</A-10-nav-preset-13>
+		<A-10-nav-preset-14>
+			<name>A-10-nav-preset-14</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/slide.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
+					<value>14</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</A-10-nav-preset-14>
+		<A-10-nav-preset-15>
+			<name>A-10-nav-preset-15</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/slide.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
+					<value>15</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</A-10-nav-preset-15>
+		<A-10-nav-preset-16>
+			<name>A-10-nav-preset-16</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/slide.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
+					<value>16</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</A-10-nav-preset-16>
+		<A-10-nav-preset-17>
+			<name>A-10-nav-preset-17</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/slide.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
+					<value>17</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</A-10-nav-preset-17>
+		<A-10-nav-preset-18>
+			<name>A-10-nav-preset-18</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/slide.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
+					<value>18</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</A-10-nav-preset-18>
+		<A-10-nav-preset-19>
+			<name>A-10-nav-preset-19</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/slide.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
+					<value>19</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</A-10-nav-preset-19>
+		<A-10-nav-preset-20>
+			<name>A-10-nav-preset-20</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/slide.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/instrumentation/vhf/selected-preset</property>
+					<value>20</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+		</A-10-nav-preset-20>
 
-    <A-10-nav-load-preset>
-      <name>A-10-nav-load-preset</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/record-signal.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/instrumentation/vhf/load-state</property>
-          <value>1</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.6</factor>
-      </volume>
-    </A-10-nav-load-preset>
+		<A-10-nav-load-preset>
+			<name>A-10-nav-load-preset</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/record-signal.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/instrumentation/vhf/load-state</property>
+					<value>1</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.6</factor>
+			</volume>
+		</A-10-nav-load-preset>
 
 
-
-<!-- elec-pwr-ctrl panel -->
-	<apu-gen-power-up>
-		<name>apu-gen-power-up</name>
-		<mode>once</mode>
-		<path>Aircraft/A-10/Sounds/click.wav</path>
-		<condition>
-			<property>controls/APU/generator</property>
-		</condition>
-		<volume>
-			<factor>0.45</factor>
-		</volume>
-	</apu-gen-power-up>
-	<apu-gen-power-down>
-		<name>apu-gen-power-down</name>
-		<mode>once</mode>
-		<path>Aircraft/A-10/Sounds/click.wav</path>
-		<condition>
-			<not>
+		<!-- elec-pwr-ctrl panel -->
+		<apu-gen-power-up>
+			<name>apu-gen-power-up</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click.wav</path>
+			<condition>
 				<property>controls/APU/generator</property>
-			</not>
-		</condition>
-		<volume>
-			<factor>0.45</factor>
-		</volume>
-	</apu-gen-power-down>
+			</condition>
+			<volume>
+				<factor>0.45</factor>
+			</volume>
+		</apu-gen-power-up>
+		<apu-gen-power-down>
+			<name>apu-gen-power-down</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click.wav</path>
+			<condition>
+				<not>
+					<property>controls/APU/generator</property>
+				</not>
+			</condition>
+			<volume>
+				<factor>0.45</factor>
+			</volume>
+		</apu-gen-power-down>
 
-    <battery-cockpit-switch-up>
-      <name>battery-cockpit-switch-up</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/click.wav</path>
-      <condition>
-        <property>controls/electric/battery-switch</property>
-      </condition>
-      <volume>
-        <factor>0.3</factor>
-      </volume>
-    </battery-cockpit-switch-up>
-    <battery-cockpit-switch-down>
-      <name>battery-cockpit-switch-down</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/click.wav</path>
-      <condition>
-        <not>
-          <property>controls/electric/battery-switch</property>
-        </not>
-      </condition>
-      <volume>
-        <factor>0.3</factor>
-      </volume>
-    </battery-cockpit-switch-down>
+		<battery-cockpit-switch-up>
+			<name>battery-cockpit-switch-up</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click.wav</path>
+			<condition>
+				<property>controls/electric/battery-switch</property>
+			</condition>
+			<volume>
+				<factor>0.3</factor>
+			</volume>
+		</battery-cockpit-switch-up>
+		<battery-cockpit-switch-down>
+			<name>battery-cockpit-switch-down</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click.wav</path>
+			<condition>
+				<not>
+					<property>controls/electric/battery-switch</property>
+				</not>
+			</condition>
+			<volume>
+				<factor>0.3</factor>
+			</volume>
+		</battery-cockpit-switch-down>
 
-    <l-ac-gen-switch-up>
-      <name>l-ac-gen-switch-up</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/click.wav</path>
-      <condition>
-        <property>controls/electric/engine/generator</property>
-      </condition>
-      <volume>
-        <factor>0.3</factor>
-      </volume>
-    </l-ac-gen-switch-up>
-    <l-ac-gen-switch-down>
-      <name>l-ac-gen-switch-down</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/click.wav</path>
-      <condition>
-        <not>
-          <property>controls/electric/engine/generator</property>
-        </not>
-      </condition>
-      <volume>
-        <factor>0.3</factor>
-      </volume>
-    </l-ac-gen-switch-down>
+		<l-ac-gen-switch-up>
+			<name>l-ac-gen-switch-up</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click.wav</path>
+			<condition>
+				<property>controls/electric/engine/generator</property>
+			</condition>
+			<volume>
+				<factor>0.3</factor>
+			</volume>
+		</l-ac-gen-switch-up>
+		<l-ac-gen-switch-down>
+			<name>l-ac-gen-switch-down</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click.wav</path>
+			<condition>
+				<not>
+					<property>controls/electric/engine/generator</property>
+				</not>
+			</condition>
+			<volume>
+				<factor>0.3</factor>
+			</volume>
+		</l-ac-gen-switch-down>
 
-    <r-ac-gen-switch-up>
-      <name>r-ac-gen-switch-up</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/click.wav</path>
-      <condition>
-        <property>controls/electric/engine[1]/generator</property>
-      </condition>
-      <volume>
-        <factor>0.3</factor>
-      </volume>
-    </r-ac-gen-switch-up>
-    <r-ac-gen-switch-down>
-      <name>r-ac-gen-switch-down</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/click.wav</path>
-      <condition>
-        <not>
-          <property>controls/electric/engine[1]/generator</property>
-        </not>
-      </condition>
-      <volume>
-        <factor>0.3</factor>
-      </volume>
-    </r-ac-gen-switch-down>
+		<r-ac-gen-switch-up>
+			<name>r-ac-gen-switch-up</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click.wav</path>
+			<condition>
+				<property>controls/electric/engine[1]/generator</property>
+			</condition>
+			<volume>
+				<factor>0.3</factor>
+			</volume>
+		</r-ac-gen-switch-up>
+		<r-ac-gen-switch-down>
+			<name>r-ac-gen-switch-down</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click.wav</path>
+			<condition>
+				<not>
+					<property>controls/electric/engine[1]/generator</property>
+				</not>
+			</condition>
+			<volume>
+				<factor>0.3</factor>
+			</volume>
+		</r-ac-gen-switch-down>
 
-    <inverter-switch-stby>
-      <name>inverter-switch-stby</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/click.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/controls/switches/inverter</property>
-          <value>2</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.3</factor>
-      </volume>
-    </inverter-switch-stby>
-    <inverter-switch-off>
-      <name>inverter-switch-off</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/click.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/controls/switches/inverter</property>
-          <value>1</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.3</factor>
-      </volume>
-    </inverter-switch-off>
-    <inverter-switch-test>
-      <name>inverter-switch-test</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/click.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/controls/switches/inverter</property>
-          <value>00</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.3</factor>
-      </volume>
-    </inverter-switch-test>
+		<inverter-switch-stby>
+			<name>inverter-switch-stby</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/controls/switches/inverter</property>
+					<value>2</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.3</factor>
+			</volume>
+		</inverter-switch-stby>
+		<inverter-switch-off>
+			<name>inverter-switch-off</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/controls/switches/inverter</property>
+					<value>1</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.3</factor>
+			</volume>
+		</inverter-switch-off>
+		<inverter-switch-test>
+			<name>inverter-switch-test</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/controls/switches/inverter</property>
+					<value>00</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.3</factor>
+			</volume>
+		</inverter-switch-test>
 
-    <!-- RWR Sounds -->
+		<!-- RWR Sounds -->
 
-    <RWR>
-        <name>incoming</name>
-        <mode>once</mode>
-        <path>Aircraft/A-10/Sounds/1000hz-Triangle.wav</path>
-        <condition>
-            <property>payload/armament/MAW-active</property>
-            <equals>
-                <property>sim/current-view/view-number</property>
-                <value>0</value>
-            </equals>
-        </condition>
-        <volume>
-            <property>sim/model/A-10/instrumentation/warnings/audio-alt-volume</property>
-        </volume>
-    </RWR>
+		<RWR>
+			<name>incoming</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/1000hz-Triangle.wav</path>
+			<condition>
+				<property>payload/armament/MAW-active</property>
+				<equals>
+					<property>sim/current-view/view-number</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<volume>
+				<property>sim/model/A-10/instrumentation/warnings/audio-alt-volume</property>
+			</volume>
+		</RWR>
 
-<!-- lighting switches -->
-    <strobe-switch-up>
-      <name>strobe-switch-up</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/click.wav</path>
-      <condition>
-        <property>controls/lighting/strobe</property>
-      </condition>
-      <volume>
-        <factor>0.3</factor>
-      </volume>
-    </strobe-switch-up>
-    <strobe-switch-down>
-      <name>strobe-switch-down</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/click.wav</path>
-      <condition>
-        <not>
-          <property>controls/lighting/strobe</property>
-        </not>
-      </condition>
-      <volume>
-        <factor>0.3</factor>
-      </volume>
-    </strobe-switch-down>
+		<!-- lighting switches -->
+		<strobe-switch-up>
+			<name>strobe-switch-up</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click.wav</path>
+			<condition>
+				<property>controls/lighting/strobe</property>
+			</condition>
+			<volume>
+				<factor>0.3</factor>
+			</volume>
+		</strobe-switch-up>
+		<strobe-switch-down>
+			<name>strobe-switch-down</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click.wav</path>
+			<condition>
+				<not>
+					<property>controls/lighting/strobe</property>
+				</not>
+			</condition>
+			<volume>
+				<factor>0.3</factor>
+			</volume>
+		</strobe-switch-down>
 
-    <nav-flash-switch-flash>
-      <name>nav-flash-switch-flash</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/click.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/controls/lighting/nav-lights-switch</property>
-          <value>2</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.3</factor>
-      </volume>
-    </nav-flash-switch-flash>
-    <nav-flash-switch-off>
-      <name>nav-flash-switch-off</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/click.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/controls/lighting/nav-lights-switch</property>
-          <value>1</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.3</factor>
-      </volume>
-    </nav-flash-switch-off>
-    <nav-flash-switch-steady>
-      <name>nav-flash-switch-steady</name>
-      <mode>once</mode>
-      <path>Aircraft/A-10/Sounds/click.wav</path>
-      <condition>
-        <equals>
-          <property>sim/model/A-10/controls/lighting/nav-lights-switch</property>
-          <value>0</value>
-        </equals>
-      </condition>
-      <volume>
-        <factor>0.3</factor>
-      </volume>
-    </nav-flash-switch-steady>
+		<nav-flash-switch-flash>
+			<name>nav-flash-switch-flash</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/controls/lighting/nav-lights-switch</property>
+					<value>2</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.3</factor>
+			</volume>
+		</nav-flash-switch-flash>
+		<nav-flash-switch-off>
+			<name>nav-flash-switch-off</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/controls/lighting/nav-lights-switch</property>
+					<value>1</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.3</factor>
+			</volume>
+		</nav-flash-switch-off>
+		<nav-flash-switch-steady>
+			<name>nav-flash-switch-steady</name>
+			<mode>once</mode>
+			<path>Aircraft/A-10/Sounds/click.wav</path>
+			<condition>
+				<equals>
+					<property>sim/model/A-10/controls/lighting/nav-lights-switch</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>0.3</factor>
+			</volume>
+		</nav-flash-switch-steady>
 
-<!-- armament switches -->
+		<!-- armament switches -->
 		<master-arm-switch-up>
 			<name>master-arm-switch-up</name>
 			<mode>once</mode>
@@ -1935,7 +1928,7 @@
 				</equals>
 			</condition>
 			<volume>
-			<factor>0.5</factor>
+				<factor>0.5</factor>
 			</volume>
 		</master-arm-switch-up>
 		<master-arm-switch-middle>
@@ -1949,7 +1942,7 @@
 				</equals>
 			</condition>
 			<volume>
-			<factor>0.4</factor>
+				<factor>0.4</factor>
 			</volume>
 		</master-arm-switch-middle>
 		<master-arm-switch-down>
@@ -1963,7 +1956,7 @@
 				</equals>
 			</condition>
 			<volume>
-			<factor>0.5</factor>
+				<factor>0.5</factor>
 			</volume>
 		</master-arm-switch-down>
 
@@ -1978,7 +1971,7 @@
 				</equals>
 			</condition>
 			<volume>
-			<factor>0.5</factor>
+				<factor>0.5</factor>
 			</volume>
 		</gun-rate-switch-hi>
 		<gun-rate-switch-safe>
@@ -1992,7 +1985,7 @@
 				</equals>
 			</condition>
 			<volume>
-			<factor>0.4</factor>
+				<factor>0.4</factor>
 			</volume>
 		</gun-rate-switch-safe>
 
@@ -2008,7 +2001,7 @@
 				</equals>
 			</condition>
 			<volume>
-			<factor>0.4</factor>
+				<factor>0.4</factor>
 			</volume>
 		</aim9-knob-off>
 
@@ -2023,7 +2016,7 @@
 				</equals>
 			</condition>
 			<volume>
-			<factor>0.4</factor>
+				<factor>0.4</factor>
 			</volume>
 		</aim9-knob-cool>
 
@@ -2038,7 +2031,7 @@
 				</equals>
 			</condition>
 			<volume>
-			<factor>0.4</factor>
+				<factor>0.4</factor>
 			</volume>
 		</aim9-knob-selected>
 
@@ -2058,11 +2051,11 @@
 				<property>sim/model/A-10/weapons/master-arm-switch</property>
 				<greater-than>
 					<property>systems/electrical/R-AC-volts</property>
-				<value>24</value>
-			</greater-than>
+					<value>24</value>
+				</greater-than>
 			</condition>
 			<volume>
-			<factor>0.06</factor>
+				<factor>0.06</factor>
 			</volume>
 		</aim9-signal>
 
@@ -2078,7 +2071,7 @@
 				<property>sim/model/A-10/weapons/stations/station[0]/dual-AIM-9/trigger[0]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</aim9-shoot-0-0>
 		<aim9-shoot-0-1>
@@ -2093,7 +2086,7 @@
 				<property>sim/model/A-10/weapons/stations/station[0]/dual-AIM-9/trigger[1]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</aim9-shoot-0-1>
 
@@ -2109,7 +2102,7 @@
 				<property>sim/model/A-10/weapons/stations/station[10]/dual-AIM-9/trigger[0]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</aim9-shoot-10-0>
 		<aim9-shoot-10-1>
@@ -2124,7 +2117,7 @@
 				<property>sim/model/A-10/weapons/stations/station[10]/dual-AIM-9/trigger[1]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</aim9-shoot-10-1>
 
@@ -2140,7 +2133,7 @@
 				<property>sim/model/A-10/weapons/stations/station[1]/LAU-68/trigger[0]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-1-0>
 		<lau-68-shoot-1-1>
@@ -2155,7 +2148,7 @@
 				<property>sim/model/A-10/weapons/stations/station[1]/LAU-68/trigger[1]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-1-1>
 		<lau-68-shoot-1-2>
@@ -2170,7 +2163,7 @@
 				<property>sim/model/A-10/weapons/stations/station[1]/LAU-68/trigger[2]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-1-2>
 		<lau-68-shoot-1-3>
@@ -2185,7 +2178,7 @@
 				<property>sim/model/A-10/weapons/stations/station[1]/LAU-68/trigger[3]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-1-3>
 		<lau-68-shoot-1-4>
@@ -2200,7 +2193,7 @@
 				<property>sim/model/A-10/weapons/stations/station[1]/LAU-68/trigger[4]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-1-4>
 		<lau-68-shoot-1-5>
@@ -2215,7 +2208,7 @@
 				<property>sim/model/A-10/weapons/stations/station[1]/LAU-68/trigger[5]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-1-5>
 		<lau-68-shoot-1-6>
@@ -2230,7 +2223,7 @@
 				<property>sim/model/A-10/weapons/stations/station[1]/LAU-68/trigger[6]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-1-6>
 
@@ -2246,7 +2239,7 @@
 				<property>sim/model/A-10/weapons/stations/station[2]/LAU-68/trigger[0]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-2-0>
 		<lau-68-shoot-2-1>
@@ -2261,7 +2254,7 @@
 				<property>sim/model/A-10/weapons/stations/station[2]/LAU-68/trigger[1]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-2-1>
 		<lau-68-shoot-2-2>
@@ -2276,7 +2269,7 @@
 				<property>sim/model/A-10/weapons/stations/station[2]/LAU-68/trigger[2]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-2-2>
 		<lau-68-shoot-2-3>
@@ -2291,7 +2284,7 @@
 				<property>sim/model/A-10/weapons/stations/station[2]/LAU-68/trigger[3]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-2-3>
 		<lau-68-shoot-2-4>
@@ -2306,7 +2299,7 @@
 				<property>sim/model/A-10/weapons/stations/station[2]/LAU-68/trigger[4]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-2-4>
 		<lau-68-shoot-2-5>
@@ -2321,7 +2314,7 @@
 				<property>sim/model/A-10/weapons/stations/station[2]/LAU-68/trigger[5]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-2-5>
 		<lau-68-shoot-2-6>
@@ -2336,7 +2329,7 @@
 				<property>sim/model/A-10/weapons/stations/station[2]/LAU-68/trigger[6]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-2-6>
 
@@ -2352,7 +2345,7 @@
 				<property>sim/model/A-10/weapons/stations/station[3]/LAU-68/trigger[0]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-3-0>
 		<lau-68-shoot-3-1>
@@ -2367,7 +2360,7 @@
 				<property>sim/model/A-10/weapons/stations/station[3]/LAU-68/trigger[1]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-3-1>
 		<lau-68-shoot-3-2>
@@ -2382,7 +2375,7 @@
 				<property>sim/model/A-10/weapons/stations/station[3]/LAU-68/trigger[2]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-3-2>
 		<lau-68-shoot-3-3>
@@ -2397,7 +2390,7 @@
 				<property>sim/model/A-10/weapons/stations/station[3]/LAU-68/trigger[3]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-3-3>
 		<lau-68-shoot-3-4>
@@ -2412,7 +2405,7 @@
 				<property>sim/model/A-10/weapons/stations/station[3]/LAU-68/trigger[4]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-3-4>
 		<lau-68-shoot-3-5>
@@ -2427,7 +2420,7 @@
 				<property>sim/model/A-10/weapons/stations/station[3]/LAU-68/trigger[5]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-3-5>
 		<lau-68-shoot-3-6>
@@ -2442,7 +2435,7 @@
 				<property>sim/model/A-10/weapons/stations/station[3]/LAU-68/trigger[6]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-3-6>
 
@@ -2458,7 +2451,7 @@
 				<property>sim/model/A-10/weapons/stations/station[7]/LAU-68/trigger[0]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-7-0>
 		<lau-68-shoot-7-1>
@@ -2473,7 +2466,7 @@
 				<property>sim/model/A-10/weapons/stations/station[7]/LAU-68/trigger[1]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-7-1>
 		<lau-68-shoot-7-2>
@@ -2488,7 +2481,7 @@
 				<property>sim/model/A-10/weapons/stations/station[7]/LAU-68/trigger[2]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-7-2>
 		<lau-68-shoot-7-3>
@@ -2503,7 +2496,7 @@
 				<property>sim/model/A-10/weapons/stations/station[7]/LAU-68/trigger[3]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-7-3>
 		<lau-68-shoot-7-4>
@@ -2518,7 +2511,7 @@
 				<property>sim/model/A-10/weapons/stations/station[7]/LAU-68/trigger[4]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-7-4>
 		<lau-68-shoot-7-5>
@@ -2533,7 +2526,7 @@
 				<property>sim/model/A-10/weapons/stations/station[7]/LAU-68/trigger[5]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-7-5>
 		<lau-68-shoot-7-6>
@@ -2548,7 +2541,7 @@
 				<property>sim/model/A-10/weapons/stations/station[7]/LAU-68/trigger[6]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-7-6>
 
@@ -2564,7 +2557,7 @@
 				<property>sim/model/A-10/weapons/stations/station[8]/LAU-68/trigger[0]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-8-0>
 		<lau-68-shoot-8-1>
@@ -2579,7 +2572,7 @@
 				<property>sim/model/A-10/weapons/stations/station[8]/LAU-68/trigger[1]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-8-1>
 		<lau-68-shoot-8-2>
@@ -2594,7 +2587,7 @@
 				<property>sim/model/A-10/weapons/stations/station[8]/LAU-68/trigger[2]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-8-2>
 		<lau-68-shoot-8-3>
@@ -2609,7 +2602,7 @@
 				<property>sim/model/A-10/weapons/stations/station[8]/LAU-68/trigger[3]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-8-3>
 		<lau-68-shoot-8-4>
@@ -2624,7 +2617,7 @@
 				<property>sim/model/A-10/weapons/stations/station[8]/LAU-68/trigger[4]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-8-4>
 		<lau-68-shoot-8-5>
@@ -2639,7 +2632,7 @@
 				<property>sim/model/A-10/weapons/stations/station[8]/LAU-68/trigger[5]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-8-5>
 		<lau-68-shoot-8-6>
@@ -2654,7 +2647,7 @@
 				<property>sim/model/A-10/weapons/stations/station[8]/LAU-68/trigger[6]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-8-6>
 
@@ -2670,7 +2663,7 @@
 				<property>sim/model/A-10/weapons/stations/station[9]/LAU-68/trigger[0]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-9-0>
 		<lau-68-shoot-9-1>
@@ -2685,7 +2678,7 @@
 				<property>sim/model/A-10/weapons/stations/station[9]/LAU-68/trigger[1]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-9-1>
 		<lau-68-shoot-9-2>
@@ -2700,7 +2693,7 @@
 				<property>sim/model/A-10/weapons/stations/station[9]/LAU-68/trigger[2]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-9-2>
 		<lau-68-shoot-9-3>
@@ -2715,7 +2708,7 @@
 				<property>sim/model/A-10/weapons/stations/station[9]/LAU-68/trigger[3]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-9-3>
 		<lau-68-shoot-9-4>
@@ -2730,7 +2723,7 @@
 				<property>sim/model/A-10/weapons/stations/station[9]/LAU-68/trigger[4]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-9-4>
 		<lau-68-shoot-9-5>
@@ -2745,7 +2738,7 @@
 				<property>sim/model/A-10/weapons/stations/station[9]/LAU-68/trigger[5]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-9-5>
 		<lau-68-shoot-9-6>
@@ -2760,7 +2753,7 @@
 				<property>sim/model/A-10/weapons/stations/station[9]/LAU-68/trigger[6]</property>
 			</condition>
 			<volume>
-			<factor>0.8</factor>
+				<factor>0.8</factor>
 			</volume>
 		</lau-68-shoot-9-6>
 
@@ -2815,7 +2808,7 @@
 			</volume>
 		</rain>
 
-    	<rain-windshield>
+		<rain-windshield>
 			<name>RainWindshieldInside</name>
 			<mode>looped</mode>
 			<path>Aircraft/A-10/Sounds/rain-windshield.wav</path>

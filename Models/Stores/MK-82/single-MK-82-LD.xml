@@ -1,11 +1,10 @@
 <?xml version="1.0"?>
 
 
-
 <PropertyList>
 
 	<path>MK-82-LD-single.ac</path>
-	<nopreview/>
+	<nopreview />
 
 	<animation>
 		<type>select</type>
@@ -271,5 +270,5 @@
 		</condition>
 	</animation>
 
-	
+
 </PropertyList>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
- 
+
 <PropertyList>
 
-<sim>
-  <model>
-    <livery>
-      <name type="string">Warthog (Low Vis)</name>
-      <texture-main>Liveries/warthog2.png</texture-main>
-	  <texture-detail>Liveries/default-detail.png</texture-detail>
-    </livery>
-  </model>
-</sim>
+  <sim>
+    <model>
+      <livery>
+        <name type="string">Warthog (Low Vis)</name>
+        <texture-main>Liveries/warthog2.png</texture-main>
+        <texture-detail>Liveries/default-detail.png</texture-detail>
+      </livery>
+    </model>
+  </sim>
 
 </PropertyList>

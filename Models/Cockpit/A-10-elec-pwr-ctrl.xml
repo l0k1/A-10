@@ -10,14 +10,22 @@
 		<type>rotate</type>
 		<property>controls/APU/generator</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>-30</dep></entry>
-			<entry><ind>1</ind><dep>30</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>-30</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>30</dep>
+			</entry>
 		</interpolation>
 		<center>
 			<x-m>-0.0275</x-m>
 			<z-m>0.0031</z-m>
 		</center>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -40,15 +48,26 @@
 		<type>rotate</type>
 		<property>sim/model/A-10/controls/switches/inverter</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>-30</dep></entry>
-			<entry><ind>1</ind><dep>0</dep></entry>
-			<entry><ind>2</ind><dep>30</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>-30</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>2</ind>
+				<dep>30</dep>
+			</entry>
 		</interpolation>
 		<center>
 			<x-m>-0.0275</x-m>
 			<z-m>0.0031</z-m>
 		</center>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -84,14 +103,22 @@
 		<type>rotate</type>
 		<property>controls/electric/engine[0]/generator</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>-30</dep></entry>
-			<entry><ind>1</ind><dep>30</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>-30</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>30</dep>
+			</entry>
 		</interpolation>
 		<center>
 			<x-m>0.0191</x-m>
 			<z-m>0.0031</z-m>
 		</center>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -113,14 +140,22 @@
 		<type>rotate</type>
 		<property>controls/electric/engine[1]/generator</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>-30</dep></entry>
-			<entry><ind>1</ind><dep>30</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>-30</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>30</dep>
+			</entry>
 		</interpolation>
 		<center>
 			<x-m>0.0191</x-m>
 			<z-m>0.0031</z-m>
 		</center>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -142,14 +177,22 @@
 		<type>rotate</type>
 		<property>controls/electric/battery-switch</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>-30</dep></entry>
-			<entry><ind>1</ind><dep>30</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>-30</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>30</dep>
+			</entry>
 		</interpolation>
 		<center>
 			<x-m>0.0191</x-m>
 			<z-m>0.0031</z-m>
 		</center>
-		<axis><y>-1</y></axis>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -169,7 +212,11 @@
 	<animation>
 		<object-name>mount</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.385</red>
@@ -178,10 +225,14 @@
 		</emission>
 	</animation>
 
-	<animation> 
+	<animation>
 		<object-name>switches</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.385</red>

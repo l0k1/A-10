@@ -6,12 +6,12 @@
 
 <PropertyList>
 
-<!--=============================================================
+	<!--=============================================================
 	Common Aileron controllers.
 	All controllers use the same final stage.
 	============================================================= -->
 
-<!--Common final stage aileron driver controller.
+	<!--Common final stage aileron driver controller.
 	Drives the aileron-trim to achieve the desired deflection. -->
 
 	<!-- Common Aileron Controller - stage 2 -->
@@ -44,7 +44,7 @@
 		</config>
 	</pid-controller>
 
-<!--Roll hold (common aileron) controller - stage1.
+	<!--Roll hold (common aileron) controller - stage1.
 	Sets the target aileron deflection for the common aileron controller. -->
 
 	<!--Roll Hold (common aileron) filter -->
@@ -87,7 +87,7 @@
 		</config>
 	</pid-controller>
 
-<!--True Heading hold (common aileron) controller - stage1.
+	<!--True Heading hold (common aileron) controller - stage1.
 	Sets the target roll deg for the Roll Hold controller. -->
 
 	<!--True Heading Hold filter -->
@@ -130,7 +130,7 @@
 		</config>
 	</pid-controller>
 
-<!--Nav1 Heading hold (common aileron) controller - stage 1.
+	<!--Nav1 Heading hold (common aileron) controller - stage 1.
 
 	The moving average filter is used to smooth the nav1 heading error deg at
 	extreme ranges but two filters are needed to overcome a bug that seems to
@@ -193,12 +193,12 @@
 	</pid-controller>
 
 
-<!-- =============================================================
+	<!-- =============================================================
      Common Elevator controllers.
      All controllers use the same final stage.
      ============================================================= -->
 
-<!-- Common final stage elevator driver controller.
+	<!-- Common final stage elevator driver controller.
      Drives the elevator-trim to achieve the desired deflection.-->
 
 	<!--Common Elevator Controller - Stage 2-->
@@ -231,11 +231,12 @@
 		</config>
 	</pid-controller>
 
-<!--VFPS hold (common elevator) controller - stage1.
+	<!--VFPS hold (common elevator) controller - stage1.
 	Sets the target elevator deflection for the common elevator controller. -->
 
 	<!--VFPS Hold (common elevator) filter -->
-	<filter>Mach Lock Climb (common elevator) Stage 1
+	<filter>
+		Mach Lock Climb (common elevator) Stage 1
 		<name>VFPS Hold (common elevator) filter</name>
 		<debug>false</debug>
 		<type>noise-spike</type>
@@ -274,7 +275,7 @@
 		</config>
 	</pid-controller>
 
-<!-- Pitch hold (common elevator) controller.
+	<!-- Pitch hold (common elevator) controller.
 	Sets the target elevator deflection for the common elevator controller. -->
 
 	<!--Pitch Hold (common elevator) filter -->
@@ -317,7 +318,7 @@
 		</config>
 	</pid-controller>
 
-<!--Altitude hold (common elevator) controller.
+	<!--Altitude hold (common elevator) controller.
 	Sets a target climb rate for the VFPS controller. -->
 
 	<!--Atitude Hold (common elevator) filter -->
@@ -360,7 +361,7 @@
 		</config>
 	</pid-controller>
 
-<!--AGL hold (common elevator) controller.
+	<!--AGL hold (common elevator) controller.
 	Sets a target climb rate for the A-10-autopilot.xmlVFPS controller -->
 
 	<!--AGL Hold filter -->
@@ -435,7 +436,6 @@
 	</pid-controller>
 
 
-
 	<!--Mach Lock Climb (common elevator) Stage 1 -->
 	<pid-controller>
 		<name>Mach Lock Climb (common elevator) Stage 1</name>
@@ -452,8 +452,8 @@
 		</reference>
 		<output>
 			<prop>autopilot/settings/target-climb-rate-fps</prop>
-			</output>
-			<config>
+		</output>
+		<config>
 			<Ts>0.02</Ts>
 			<Kp>400.0</Kp>
 			<beta>10.0</beta>
@@ -467,7 +467,7 @@
 	</pid-controller>
 
 
-<!--==============
+	<!--==============
 	Velocity Modes
 	============== -->
 
@@ -490,19 +490,19 @@
 			<prop>controls/engines/engine[1]/throttle</prop>
 		</output>
 		<config>
-			<Kp>0.05</Kp>       <!-- proportional gain -->
-			<beta>1.0</beta>    <!-- input value weighing factor -->
-			<alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
-			<gamma>0.0</gamma>  <!-- input value weighing factor for -->
-								<!-- unfiltered derivative error -->
-			<Ti>10.0</Ti>       <!-- integrator time -->
-			<Td>0.00001</Td>    <!-- derivator time -->
-			<u_min>0.0</u_min>  <!-- minimum output clamp -->
-			<u_max>1.0</u_max>  <!-- maximum output clamp -->
+			<Kp>0.05</Kp> <!-- proportional gain -->
+			<beta>1.0</beta> <!-- input value weighing factor -->
+			<alpha>0.1</alpha> <!-- low pass filter weighing factor -->
+			<gamma>0.0</gamma> <!-- input value weighing factor for -->
+			<!-- unfiltered derivative error -->
+			<Ti>10.0</Ti> <!-- integrator time -->
+			<Td>0.00001</Td> <!-- derivator time -->
+			<u_min>0.0</u_min> <!-- minimum output clamp -->
+			<u_max>1.0</u_max> <!-- maximum output clamp -->
 		</config>
 	</pid-controller>
 
-<!-- Hold speed by varying pitch (Two stage cascading controller) -->
+	<!-- Hold speed by varying pitch (Two stage cascading controller) -->
 	<!--Speed hold (vary pitch) Stage #1 -->
 	<pid-controller>
 		<name>Speed hold (vary pitch) Stage #1</name>
@@ -519,16 +519,16 @@
 		</reference>
 		<output>
 			<prop>autopilot/settings/target-pitch-deg</prop>
-			</output>
-			<config>
-			<Kp>-1.0</Kp>       <!-- proportional gain -->
-			<beta>1.0</beta>    <!-- input value weighing factor -->
-			<alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
-			<gamma>0.0</gamma>  <!-- input value weighing factor for -->
-								<!-- unfiltered derivative error -->
-			<Ti>1.0</Ti>        <!-- integrator time -->
-			<Td>0.00001</Td>    <!-- derivator time -->
-			<u_min>-15.0</u_min><!-- minimum output clamp -->
+		</output>
+		<config>
+			<Kp>-1.0</Kp> <!-- proportional gain -->
+			<beta>1.0</beta> <!-- input value weighing factor -->
+			<alpha>0.1</alpha> <!-- low pass filter weighing factor -->
+			<gamma>0.0</gamma> <!-- input value weighing factor for -->
+			<!-- unfiltered derivative error -->
+			<Ti>1.0</Ti> <!-- integrator time -->
+			<Td>0.00001</Td> <!-- derivator time -->
+			<u_min>-15.0</u_min> <!-- minimum output clamp -->
 			<u_max>15.0</u_max> <!-- maximum output clamp -->
 		</config>
 	</pid-controller>
@@ -551,21 +551,20 @@
 			<prop>controls/flight/elevator-trim</prop>
 		</output>
 		<config>
-			<Kp>-0.05</Kp>      <!-- proportional gain -->
-			<beta>1.0</beta>    <!-- input value weighing factor -->
-			<alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
-			<gamma>0.0</gamma>  <!-- input value weighing factor for -->
-							    <!-- unfiltered derivative error -->
-			<Ti>1.0</Ti>        <!-- integrator time -->
-			<Td>0.00001</Td>    <!-- derivator time -->
+			<Kp>-0.05</Kp> <!-- proportional gain -->
+			<beta>1.0</beta> <!-- input value weighing factor -->
+			<alpha>0.1</alpha> <!-- low pass filter weighing factor -->
+			<gamma>0.0</gamma> <!-- input value weighing factor for -->
+			<!-- unfiltered derivative error -->
+			<Ti>1.0</Ti> <!-- integrator time -->
+			<Td>0.00001</Td> <!-- derivator time -->
 			<u_min>-1.0</u_min> <!-- minimum output clamp -->
-			<u_max>1.0</u_max>  <!-- maximum output clamp -->
+			<u_max>1.0</u_max> <!-- maximum output clamp -->
 		</config>
 	</pid-controller>
 
 
-
-<!--==================
+	<!--==================
 	Custom Controllers
 	================== -->
 
@@ -588,15 +587,15 @@
 			<prop>controls/engines/engine[1]/throttle</prop>
 		</output>
 		<config>
-			<Kp>8.0</Kp>        <!-- proportional gain -->
-			<beta>1.0</beta>    <!-- input value weighing factor -->
-			<alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
-			<gamma>0.0</gamma>  <!-- input value weighing factor for -->
-								<!-- unfiltered derivative error -->
-			<Ti>8.0</Ti>		<!-- integrator time -->
-			<Td>0.00001</Td>    <!-- derivator time -->
-			<u_min>0.0</u_min>  <!-- minimum output clamp -->
-			<u_max>1.0</u_max>  <!-- maximum output clamp -->
+			<Kp>8.0</Kp> <!-- proportional gain -->
+			<beta>1.0</beta> <!-- input value weighing factor -->
+			<alpha>0.1</alpha> <!-- low pass filter weighing factor -->
+			<gamma>0.0</gamma> <!-- input value weighing factor for -->
+			<!-- unfiltered derivative error -->
+			<Ti>8.0</Ti> <!-- integrator time -->
+			<Td>0.00001</Td> <!-- derivator time -->
+			<u_min>0.0</u_min> <!-- minimum output clamp -->
+			<u_max>1.0</u_max> <!-- maximum output clamp -->
 		</config>
 	</pid-controller>
 
@@ -619,21 +618,21 @@
 			<prop>controls/flight/rudder</prop>
 		</output>
 		<config>
-			<Kp>0.4</Kp>        <!-- proportional gain -->
-			<beta>1.0</beta>    <!-- input value weighing factor -->
-			<alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
-			<gamma>0.0</gamma>  <!-- input value weighing factor for -->
-							    <!-- unfiltered derivative error -->
-			<Ti>5.0</Ti>        <!-- integrator time -->
-			<Td>0.1</Td>        <!-- derivator time -->
+			<Kp>0.4</Kp> <!-- proportional gain -->
+			<beta>1.0</beta> <!-- input value weighing factor -->
+			<alpha>0.1</alpha> <!-- low pass filter weighing factor -->
+			<gamma>0.0</gamma> <!-- input value weighing factor for -->
+			<!-- unfiltered derivative error -->
+			<Ti>5.0</Ti> <!-- integrator time -->
+			<Td>0.1</Td> <!-- derivator time -->
 			<u_min>-1.0</u_min> <!-- minimum output clamp -->
-			<u_max>1.0</u_max>  <!-- maximum output clamp -->
+			<u_max>1.0</u_max> <!-- maximum output clamp -->
 		</config>
-		</pid-controller>
+	</pid-controller>
 
 	<!-- Simple AoA-by-speed Hold -->
 	<pid-controller>
-	<name>AoA-by-speed Hold</name>
+		<name>AoA-by-speed Hold</name>
 		<debug>false</debug>
 		<enable>
 			<prop>autopilot/locks/aoa</prop>
@@ -649,14 +648,14 @@
 			<prop>autopilot/settings/target-speed-kt</prop>
 		</output>
 		<config>
-			<Kp>-2.0</Kp>        <!-- proportional gain -->
-			<beta>1.0</beta>     <!-- input value weighing factor -->
-			<alpha>0.1</alpha>   <!-- low pass filter weighing factor -->
-			<gamma>0.0</gamma>   <!-- input value weighing factor for -->
-								 <!-- unfiltered derivative error -->
-			<Ti>16.0</Ti>        <!-- integrator time -->
-			<Td>0.00001</Td>     <!-- derivator time -->
-			<u_min>90.0</u_min>  <!-- minimum output clamp -->
+			<Kp>-2.0</Kp> <!-- proportional gain -->
+			<beta>1.0</beta> <!-- input value weighing factor -->
+			<alpha>0.1</alpha> <!-- low pass filter weighing factor -->
+			<gamma>0.0</gamma> <!-- input value weighing factor for -->
+			<!-- unfiltered derivative error -->
+			<Ti>16.0</Ti> <!-- integrator time -->
+			<Td>0.00001</Td> <!-- derivator time -->
+			<u_min>90.0</u_min> <!-- minimum output clamp -->
 			<u_max>160.0</u_max> <!-- maximum output clamp -->
 		</config>
 	</pid-controller>

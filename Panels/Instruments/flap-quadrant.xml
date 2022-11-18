@@ -30,97 +30,97 @@ extended/retracted in three steps.
 
 <PropertyList>
 
- <name>flap quadrant</name>
- <w-base>22</w-base>
- <h-base>80</h-base>
+  <name>flap quadrant</name>
+  <w-base>22</w-base>
+  <h-base>80</h-base>
 
- <params>
-  <flaps-select>/controls/flight/flaps</flaps-select>
- </params>
+  <params>
+    <flaps-select>/controls/flight/flaps</flaps-select>
+  </params>
 
- <layers>
+  <layers>
 
-  <layer>
-   <name>backplate</name>
-   <texture>
-    <path>Aircraft/A-10/Panels/Instruments/Textures/faces-LE-misc1.rgb</path>
-    <x1>0.0</x1>
-    <x2>0.125</x2>
-    <y1>0.75</y1>
-    <y2>1.0</y2>
-   </texture>
-   <w>22</w>
-   <h>80</h>
-  </layer>
+    <layer>
+      <name>backplate</name>
+      <texture>
+        <path>Aircraft/A-10/Panels/Instruments/Textures/faces-LE-misc1.rgb</path>
+        <x1>0.0</x1>
+        <x2>0.125</x2>
+        <y1>0.75</y1>
+        <y2>1.0</y2>
+      </texture>
+      <w>22</w>
+      <h>80</h>
+    </layer>
 
-<!-- flap -->
+    <!-- flap -->
 
-  <layer>
-   <name>flap handle </name>
-   <texture>
-    <path>Aircraft/Instruments/Textures/handles.rgb</path>
-    <x1>0.0</x1>
-    <x2>0.37890625</x2>
-    <y1>0.6015625</y1>
-    <y2>0.72265625</y2>
-   </texture>
-   <w>20</w>
-   <h>30</h>
-   <transformations>
-    <transformation>
-     <type>x-shift</type>
-     <offset>0</offset>
-    </transformation>
-    <transformation>
-     <type>y-shift</type>
-     <property alias="../../../../../params/flaps-select"/>
-     <min>0.0</min>
-     <max>1.0</max>
-     <scale>40</scale>
-     <offset>-20</offset>
-    </transformation>
-   </transformations>
-  </layer>
+    <layer>
+      <name>flap handle </name>
+      <texture>
+        <path>Aircraft/Instruments/Textures/handles.rgb</path>
+        <x1>0.0</x1>
+        <x2>0.37890625</x2>
+        <y1>0.6015625</y1>
+        <y2>0.72265625</y2>
+      </texture>
+      <w>20</w>
+      <h>30</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>0</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <property alias="../../../../../params/flaps-select" />
+          <min>0.0</min>
+          <max>1.0</max>
+          <scale>40</scale>
+          <offset>-20</offset>
+        </transformation>
+      </transformations>
+    </layer>
 
- </layers>
+  </layers>
 
- <actions>
+  <actions>
 
-<!-- flap extend/retract -->
-  <action>
-   <name>Flap Retract</name>
-   <button>0</button>
-   <x>-9</x>
-   <y>-35</y>
-   <w>18</w>
-   <h>18</h>
-   <binding>
-    <command>property-adjust</command>
-    <property alias="../../../../params/flaps-select"/>
-    <step>-0.20</step>
-    <min>0</min>
-    <max>1.0</max>
-    <wrap>false</wrap>
-   </binding>
-  </action>
+    <!-- flap extend/retract -->
+    <action>
+      <name>Flap Retract</name>
+      <button>0</button>
+      <x>-9</x>
+      <y>-35</y>
+      <w>18</w>
+      <h>18</h>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="../../../../params/flaps-select" />
+        <step>-0.20</step>
+        <min>0</min>
+        <max>1.0</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
 
-  <action>
-   <name>Flap Extend</name>
-   <button>0</button>
-   <x>-9</x>
-   <y>10</y>
-   <w>18</w>
-   <h>18</h>
-   <binding>
-    <command>property-adjust</command>
-    <property alias="../../../../params/flaps-select"/>
-    <step>0.20</step>
-    <min>0</min>
-    <max>1.0</max>
-    <wrap>false</wrap>
-   </binding>
-  </action>
+    <action>
+      <name>Flap Extend</name>
+      <button>0</button>
+      <x>-9</x>
+      <y>10</y>
+      <w>18</w>
+      <h>18</h>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="../../../../params/flaps-select" />
+        <step>0.20</step>
+        <min>0</min>
+        <max>1.0</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
 
- </actions>
+  </actions>
 
 </PropertyList>

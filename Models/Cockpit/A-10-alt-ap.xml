@@ -5,7 +5,7 @@
 	<name>altitude autopilot</name>
 	<path>A-10-alt-ap.ac</path>
 
-	
+
 	<animation>
 		<type>range</type>
 		<min-m>0</min-m>

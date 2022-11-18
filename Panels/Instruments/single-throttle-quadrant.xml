@@ -29,131 +29,131 @@ Hacked to create a single throttle quadrant.
 
 <PropertyList>
 
- <name>throttle quadrant</name>
- <w-base>22</w-base>
- <h-base>80</h-base>
+  <name>throttle quadrant</name>
+  <w-base>22</w-base>
+  <h-base>80</h-base>
 
- <params>
-  <engine-throttle-select>/controls/engines/engine[0]/throttle</engine-throttle-select>
- </params>
+  <params>
+    <engine-throttle-select>/controls/engines/engine[0]/throttle</engine-throttle-select>
+  </params>
 
- <layers>
+  <layers>
 
-  <layer>
-   <name>backplate</name>
-   <texture>
-    <path>Aircraft/A-10/Panels/Instruments/Textures/faces-LE-misc1.rgb</path>
-    <x1>0.0</x1>
-    <x2>0.125</x2>
-    <y1>0.75</y1>
-    <y2>1.0</y2>
-   </texture>
-   <w>22</w>
-   <h>80</h>
-  </layer>
+    <layer>
+      <name>backplate</name>
+      <texture>
+        <path>Aircraft/A-10/Panels/Instruments/Textures/faces-LE-misc1.rgb</path>
+        <x1>0.0</x1>
+        <x2>0.125</x2>
+        <y1>0.75</y1>
+        <y2>1.0</y2>
+      </texture>
+      <w>22</w>
+      <h>80</h>
+    </layer>
 
-<!-- throttle -->
+    <!-- throttle -->
 
-  <layer>
-   <name>throttle handle </name>
-   <texture>
-    <path>Aircraft/Instruments/Textures/handles.rgb</path>
-    <x1>0.0</x1>
-    <x2>0.37890625</x2>
-    <y1>0.875</y1>
-    <y2>1.0</y2>
-   </texture>
-   <w>20</w>
-   <h>30</h>
-   <transformations>
-    <transformation>
-     <type>x-shift</type>
-     <offset>0</offset>
-    </transformation>
-    <transformation>
-     <type>y-shift</type>
-     <property alias="../../../../../params/engine-throttle-select"/>
-     <min>0.0</min>
-     <max>1.0</max>
-     <scale>40</scale>
-     <offset>-20</offset>
-    </transformation>
-   </transformations>
-  </layer>
+    <layer>
+      <name>throttle handle </name>
+      <texture>
+        <path>Aircraft/Instruments/Textures/handles.rgb</path>
+        <x1>0.0</x1>
+        <x2>0.37890625</x2>
+        <y1>0.875</y1>
+        <y2>1.0</y2>
+      </texture>
+      <w>20</w>
+      <h>30</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>0</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <property alias="../../../../../params/engine-throttle-select" />
+          <min>0.0</min>
+          <max>1.0</max>
+          <scale>40</scale>
+          <offset>-20</offset>
+        </transformation>
+      </transformations>
+    </layer>
 
- </layers>
+  </layers>
 
- <actions>
+  <actions>
 
-<!-- throttle -->
-  <action>
-   <name>small decrease</name>
-   <button>0</button>
-   <x>-9</x>
-   <y>-18</y>
-   <w>18</w>
-   <h>16</h>
-   <binding>
-    <command>property-adjust</command>
-    <property alias="../../../../params/engine-throttle-select"/>
-    <step>-0.01</step>
-    <min>0</min>
-    <max>1.0</max>
-    <wrap>false</wrap>
-   </binding>
-  </action>
+    <!-- throttle -->
+    <action>
+      <name>small decrease</name>
+      <button>0</button>
+      <x>-9</x>
+      <y>-18</y>
+      <w>18</w>
+      <h>16</h>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="../../../../params/engine-throttle-select" />
+        <step>-0.01</step>
+        <min>0</min>
+        <max>1.0</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
 
-  <action>
-   <name>small increase</name>
-   <button>0</button>
-   <x>-9</x>
-   <y>2</y>
-   <w>18</w>
-   <h>16</h>
-   <binding>
-    <command>property-adjust</command>
-    <property alias="../../../../params/engine-throttle-select"/>
-    <step>0.01</step>
-    <min>0</min>
-    <max>1.0</max>
-    <wrap>false</wrap>
-   </binding>
-  </action>
+    <action>
+      <name>small increase</name>
+      <button>0</button>
+      <x>-9</x>
+      <y>2</y>
+      <w>18</w>
+      <h>16</h>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="../../../../params/engine-throttle-select" />
+        <step>0.01</step>
+        <min>0</min>
+        <max>1.0</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
 
-  <action>
-   <name>big decrease</name>
-   <button>0</button>
-   <x>-9</x>
-   <y>-38</y>
-   <w>18</w>
-   <h>16</h>
-   <binding>
-    <command>property-adjust</command>
-    <property alias="../../../../params/engine-throttle-select"/>
-    <step>-0.1</step>
-    <min>0</min>
-    <max>1.0</max>
-    <wrap>false</wrap>
-   </binding>
-  </action>
+    <action>
+      <name>big decrease</name>
+      <button>0</button>
+      <x>-9</x>
+      <y>-38</y>
+      <w>18</w>
+      <h>16</h>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="../../../../params/engine-throttle-select" />
+        <step>-0.1</step>
+        <min>0</min>
+        <max>1.0</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
 
-  <action>
-   <name>big increase</name>
-   <button>0</button>
-   <x>-9</x>
-   <y>22</y>
-   <w>18</w>
-   <h>16</h>
-   <binding>
-    <command>property-adjust</command>
-    <property alias="../../../../params/engine-throttle-select"/>
-    <step>0.1</step>
-    <min>0</min>
-    <max>1.0</max>
-    <wrap>false</wrap>
-   </binding>
-  </action>
+    <action>
+      <name>big increase</name>
+      <button>0</button>
+      <x>-9</x>
+      <y>22</y>
+      <w>18</w>
+      <h>16</h>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="../../../../params/engine-throttle-select" />
+        <step>0.1</step>
+        <min>0</min>
+        <max>1.0</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
 
- </actions>
+  </actions>
 
 </PropertyList>

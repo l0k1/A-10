@@ -22,8 +22,8 @@ Fairchild A-10 simulation config.
 			<model type="int">4</model>
 		</rating>
 		<dimensions>
-		    <radius-m type="double">18.0</radius-m>
-		    <parkpos-offset-m type="double">-7.0</parkpos-offset-m>
+			<radius-m type="double">18.0</radius-m>
+			<parkpos-offset-m type="double">-7.0</parkpos-offset-m>
 		</dimensions>
 		<tags>
 			<tag>bomber</tag>
@@ -45,21 +45,21 @@ Fairchild A-10 simulation config.
 		</tags>
 
 		<previews>
-		    <preview>
-			<type>panel</type>
-			<splash type="bool">true</splash>
-			<path>Pics/A-10_1.png</path>
-		    </preview>
-		    <preview>
-			<type>exterior</type>
-			<splash type="bool">true</splash>
-			<path>Pics/A-10_2.png</path>
-		    </preview>
-		    <preview>
-			<type>exterior</type>
-			<splash type="bool">true</splash>
-			<path>Pics/A-10_3.png</path>
-		    </preview>
+			<preview>
+				<type>panel</type>
+				<splash type="bool">true</splash>
+				<path>Pics/A-10_1.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Pics/A-10_2.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Pics/A-10_3.png</path>
+			</preview>
 		</previews>
 
 		<flight-model>yasim</flight-model>
@@ -72,22 +72,22 @@ Fairchild A-10 simulation config.
 		<startup>
 			<splash-texture>Aircraft/A-10/A-10-splash.png</splash-texture>
 		</startup>
- 		<gui>
- 			<style>
- 				<colors>
- 					<splash-screen>
- 						<red>0.4431</red>
- 						<green>0.4353</green>
- 						<blue>0.4117</blue>
- 					</splash-screen>
- 				</colors>
- 			</style>
- 		</gui>
+		<gui>
+			<style>
+				<colors>
+					<splash-screen>
+						<red>0.4431</red>
+						<green>0.4353</green>
+						<blue>0.4117</blue>
+					</splash-screen>
+				</colors>
+			</style>
+		</gui>
 
 		<aircraft-class type="string">mil-fighter</aircraft-class>
 
 		<tutorials>
-			<tutorial include="Tutorials/startup_tutorial.xml"/>
+			<tutorial include="Tutorials/startup_tutorial.xml" />
 		</tutorials>
 
 		<view n="0">
@@ -168,20 +168,20 @@ Fairchild A-10 simulation config.
 			<path>Aircraft/A-10/Systems/instrumentation.xml</path>
 		</instrumentation>
 
-		<gui n="0" include="gui/a10-gui.xml"/>
+		<gui n="0" include="gui/a10-gui.xml" />
 
-        <multiplay>
-            <generic>
-                <int type="int" n="2"> 1 </int>
-            </generic>
-        </multiplay>
+		<multiplay>
+			<generic>
+				<int type="int" n="2"> 1 </int>
+			</generic>
+		</multiplay>
 
 		<systems>
 			<autopilot>
 				<path>Aircraft/A-10/Systems/A-10-autopilot.xml</path>
 			</autopilot>
 			<electrical>
-				<path></path><!-- intentionally left empty -->
+				<path></path> <!-- intentionally left empty -->
 			</electrical>
 		</systems>
 
@@ -203,97 +203,214 @@ Fairchild A-10 simulation config.
 			<name>Pylon 0</name>
 			<weight-lb type="float">0</weight-lb>
 			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>AN-ALQ-131</name><lbs>535</lbs></opt>
-			<opt><name>dual-AIM-9</name><lbs>612</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+			<opt>
+				<name>AN-ALQ-131</name>
+				<lbs>535</lbs>
+			</opt>
+			<opt>
+				<name>dual-AIM-9</name>
+				<lbs>612</lbs>
+			</opt>
+			<opt>
+				<name>single-MK-82-LD</name>
+				<lbs>500</lbs>
+			</opt>
 		</weight>
 		<weight n="1">
 			<name>Pylon 1</name>
 			<weight-lb type="float">0</weight-lb>
 			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>LAU-68</name><lbs>202.5</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+			<opt>
+				<name>LAU-68</name>
+				<lbs>202.5</lbs>
+			</opt>
+			<opt>
+				<name>single-MK-82-LD</name>
+				<lbs>500</lbs>
+			</opt>
 		</weight>
 		<weight n="2">
 			<name>Pylon 2</name>
 			<weight-lb type="float">0</weight-lb>
 			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>LAU-68</name><lbs>202.5</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
-			<opt><name>triple-MK-82-LD</name><lbs>1800</lbs></opt>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+			<opt>
+				<name>LAU-68</name>
+				<lbs>202.5</lbs>
+			</opt>
+			<opt>
+				<name>single-MK-82-LD</name>
+				<lbs>500</lbs>
+			</opt>
+			<opt>
+				<name>triple-MK-82-LD</name>
+				<lbs>1800</lbs>
+			</opt>
 		</weight>
 		<weight n="3">
 			<name>Pylon 3</name>
 			<tank>4</tank> <!-- FDM tank index on this pylon -->
 			<weight-lb type="float">0</weight-lb>
 			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>LAU-68</name><lbs>202.5</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
-			<opt><name>triple-MK-82-LD</name><lbs>1800</lbs></opt>
-			<opt><name>600 Gallons Fuel Tank</name><lbs>280</lbs><gals>600</gals></opt>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+			<opt>
+				<name>LAU-68</name>
+				<lbs>202.5</lbs>
+			</opt>
+			<opt>
+				<name>single-MK-82-LD</name>
+				<lbs>500</lbs>
+			</opt>
+			<opt>
+				<name>triple-MK-82-LD</name>
+				<lbs>1800</lbs>
+			</opt>
+			<opt>
+				<name>600 Gallons Fuel Tank</name>
+				<lbs>280</lbs>
+				<gals>600</gals>
+			</opt>
 		</weight>
 		<weight n="4">
 			<name>Pylon 4</name>
 			<weight-lb type="float">0</weight-lb>
 			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+			<opt>
+				<name>single-MK-82-LD</name>
+				<lbs>500</lbs>
+			</opt>
 		</weight>
 		<weight n="5">
 			<name>Pylon 5</name>
 			<tank>5</tank> <!-- FDM tank index on this pylon -->
 			<weight-lb type="float">0</weight-lb>
 			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
-			<opt><name>600 Gallons Fuel Tank</name><lbs>280</lbs><gals>600</gals></opt>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+			<opt>
+				<name>single-MK-82-LD</name>
+				<lbs>500</lbs>
+			</opt>
+			<opt>
+				<name>600 Gallons Fuel Tank</name>
+				<lbs>280</lbs>
+				<gals>600</gals>
+			</opt>
 		</weight>
 		<weight n="6">
 			<name>Pylon 6</name>
 			<weight-lb type="float">0</weight-lb>
 			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+			<opt>
+				<name>single-MK-82-LD</name>
+				<lbs>500</lbs>
+			</opt>
 		</weight>
 		<weight n="7">
 			<name>Pylon 7</name>
 			<tank>6</tank> <!-- FDM tank index on this pylon -->
 			<weight-lb type="float">0</weight-lb>
 			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>LAU-68</name><lbs>202.5</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
-			<opt><name>triple-MK-82-LD</name><lbs>1800</lbs></opt>
-			<opt><name>600 Gallons Fuel Tank</name><lbs>280</lbs><gals>600</gals></opt>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+			<opt>
+				<name>LAU-68</name>
+				<lbs>202.5</lbs>
+			</opt>
+			<opt>
+				<name>single-MK-82-LD</name>
+				<lbs>500</lbs>
+			</opt>
+			<opt>
+				<name>triple-MK-82-LD</name>
+				<lbs>1800</lbs>
+			</opt>
+			<opt>
+				<name>600 Gallons Fuel Tank</name>
+				<lbs>280</lbs>
+				<gals>600</gals>
+			</opt>
 		</weight>
 		<weight n="8">
 			<name>Pylon 8</name>
 			<weight-lb type="float">0</weight-lb>
 			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>LAU-68</name><lbs>202.5</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
-			<opt><name>triple-MK-82-LD</name><lbs>1800</lbs></opt>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+			<opt>
+				<name>LAU-68</name>
+				<lbs>202.5</lbs>
+			</opt>
+			<opt>
+				<name>single-MK-82-LD</name>
+				<lbs>500</lbs>
+			</opt>
+			<opt>
+				<name>triple-MK-82-LD</name>
+				<lbs>1800</lbs>
+			</opt>
 		</weight>
 		<weight n="9">
 			<name>Pylon 9</name>
 			<weight-lb type="float">0</weight-lb>
 			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>LAU-68</name><lbs>202.5</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+			<opt>
+				<name>LAU-68</name>
+				<lbs>202.5</lbs>
+			</opt>
+			<opt>
+				<name>single-MK-82-LD</name>
+				<lbs>500</lbs>
+			</opt>
 		</weight>
 		<weight n="10">
 			<name>Pylon 10</name>
 			<weight-lb type="float">0</weight-lb>
 			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>dual-AIM-9</name><lbs>612</lbs></opt>
-			<opt><name>single-MK-82-LD</name><lbs>500</lbs></opt>
+			<opt>
+				<name>none</name>
+				<lbs>0</lbs>
+			</opt>
+			<opt>
+				<name>dual-AIM-9</name>
+				<lbs>612</lbs>
+			</opt>
+			<opt>
+				<name>single-MK-82-LD</name>
+				<lbs>500</lbs>
+			</opt>
 		</weight>
 
 		<canopy>
@@ -303,11 +420,11 @@ Fairchild A-10 simulation config.
 		<model>
 			<path>Aircraft/A-10/Models/A-10-model.xml</path>
 			<livery>
-				<file type="string"/>
+				<file type="string" />
 			</livery>
 			<A-10>
 				<weapons>
-					<master-arm-switch type="int">0</master-arm-switch><!-- -1: CAMERA 0:SAFE, 1:ARM -->
+					<master-arm-switch type="int">0</master-arm-switch> <!-- -1: CAMERA 0:SAFE, 1:ARM -->
 					<gun-rate-switch type="bool">false</gun-rate-switch> <!-- false is SAFE, true is HI -->
 					<release_lock type="bool">0</release_lock>
 					<station-light-test type="bool">false</station-light-test>
@@ -371,8 +488,8 @@ Fairchild A-10 simulation config.
 						<unsafe type="bool">false</unsafe>
 						<ready type="bool">false</ready>
 						<hydr-drive>
-						    <serviceable n="0" type="bool">true</serviceable><!-- Left hydraulic drive motor -->
-						    <serviceable n="1" type="bool">true</serviceable>
+							<serviceable n="0" type="bool">true</serviceable> <!-- Left hydraulic drive motor -->
+							<serviceable n="1" type="bool">true</serviceable>
 						</hydr-drive>
 					</gun>
 
@@ -507,7 +624,7 @@ Fairchild A-10 simulation config.
 					</canopy>
 					<engines>
 						<engine n="0">
-							<starter-switch-position type="int">1</starter-switch-position><!-- 0(Motor),1(Norm) or 2(Ignit) -->
+							<starter-switch-position type="int">1</starter-switch-position> <!-- 0(Motor),1(Norm) or 2(Ignit) -->
 							<throttle type="double">0</throttle>
 						</engine>
 						<engine n="1">
@@ -523,7 +640,7 @@ Fairchild A-10 simulation config.
 					</fuel>
 					<gear>
 						<ld-gear-handle-anim type="double">-1.0</ld-gear-handle-anim>
-						<aux-lg-ext type="bool">false</aux-lg-ext><!-- Auxiliary landing gear extend -->
+						<aux-lg-ext type="bool">false</aux-lg-ext> <!-- Auxiliary landing gear extend -->
 					</gear>
 					<hud>
 						<intens type="double">1</intens>
@@ -544,7 +661,8 @@ Fairchild A-10 simulation config.
 					</sas>
 				</controls>
 				<engines>
-					<!--<eng-start-cycle  type="bool">false</eng-start-cycle>--> <!-- warn-panel model value -->
+					<!--<eng-start-cycle  type="bool">false</eng-start-cycle>-->
+					<!-- warn-panel model value -->
 					<engine n="0">
 						<running type="bool">false</running>
 						<n1 type="float">0.0</n1>
@@ -670,10 +788,10 @@ Fairchild A-10 simulation config.
 		</spoilers>
 
 		<aoa-indexer>
-			<too-slow-deg>9.5</too-slow-deg>  <!-- target +1.5 deg -->
-			<slow-deg>8.5</slow-deg>          <!-- target +0.5 deg -->
-			<fast-deg>7.5</fast-deg>          <!-- target -0.5 deg -->
-			<too-fast-deg>6.5</too-fast-deg>  <!-- target -1.5 deg -->
+			<too-slow-deg>9.5</too-slow-deg> <!-- target +1.5 deg -->
+			<slow-deg>8.5</slow-deg> <!-- target +0.5 deg -->
+			<fast-deg>7.5</fast-deg> <!-- target -0.5 deg -->
+			<too-fast-deg>6.5</too-fast-deg> <!-- target -1.5 deg -->
 		</aoa-indexer>
 
 		<help>
@@ -711,7 +829,7 @@ Fairchild A-10 simulation config.
 			<line>How to start it ?</line>
 			<line>  Menu > Help > Start Tutorial > Engines Start</line>
 			<line>	Or use Autostart in menu</line>
-			<line></line>			
+			<line></line>
 			<line>External fuel tanks ?</line>
 			<line>  Menu > Equipment > Fuel and Payload</line>
 			<line></line>
@@ -780,11 +898,11 @@ Fairchild A-10 simulation config.
 						</binding>
 					</item>
 					<item>
-					  <label>Select Livery</label>
-					  <binding>
-						<command>nasal</command>
-						<script>aircraft.livery.dialog.open();</script>
-					  </binding>
+						<label>Select Livery</label>
+						<binding>
+							<command>nasal</command>
+							<script>aircraft.livery.dialog.open();</script>
+						</binding>
 					</item>
 					<item>
 						<label>Reload GAU-8/A gatling gun</label>
@@ -825,11 +943,11 @@ Fairchild A-10 simulation config.
 						</binding>
 					</item>
 					<item>
-					    <label>Toggle Damage</label>
-					    <binding>
-						<command>nasal</command>
-						<script>
-						    <![CDATA[
+						<label>Toggle Damage</label>
+						<binding>
+							<command>nasal</command>
+							<script>
+								<![CDATA[
 						    if (getprop("/gear/gear[0]/wow") and getprop("/velocities/groundspeed-kt") <= 1.0){
 						        setprop("/payload/armament/msg/", 1 - getprop("/payload/armament/msg/"));
 						        if (getprop("/payload/armament/msg/")) {
@@ -841,8 +959,8 @@ Fairchild A-10 simulation config.
 						        screen.log.write("Can't do that while airborne or moveing", 1, 1, 1);
 						    }
 						    ]]>
-						</script>
-					    </binding>
+							</script>
+						</binding>
 					</item>
 					<item>
 						<label>System failures</label>
@@ -861,19 +979,19 @@ Fairchild A-10 simulation config.
 						</binding>
 					</item>
 					<item>
-					    <label>IFF/DLINK Settings</label>
-					    <binding>
+						<label>IFF/DLINK Settings</label>
+						<binding>
 							<command>dialog-show</command>
 							<dialog-name>iff</dialog-name>
-					    </binding>
-			    	</item>
-			    	<item>
-                        <label>Combat event log</label>
-                        <binding>
-                            <command>dialog-show</command>
-                            <dialog-name>flightlog</dialog-name>
-                        </binding>
-                    </item>
+						</binding>
+					</item>
+					<item>
+						<label>Combat event log</label>
+						<binding>
+							<command>dialog-show</command>
+							<dialog-name>flightlog</dialog-name>
+						</binding>
+					</item>
 				</menu>
 			</default>
 		</menubar>
@@ -882,7 +1000,7 @@ Fairchild A-10 simulation config.
 			<audible>true</audible>
 			<path>Aircraft/A-10/Sounds/A-10-sound.xml</path>
 		</sound>
-		
+
 		<expected-aircraft-dir-name>A-10</expected-aircraft-dir-name>
 
 	</sim>
@@ -897,7 +1015,7 @@ Fairchild A-10 simulation config.
 	</ai>
 
 	<iff>
-	    <channel type="int">0000</channel>
+		<channel type="int">0000</channel>
 	</iff>
 
 	<input>
@@ -923,8 +1041,8 @@ Fairchild A-10 simulation config.
 				<name>C</name>
 				<desc>Toggle canopy on or off</desc>
 				<binding>
-				   <command>nasal</command>
-				   <script>canopy.canopy_switch(2)</script>
+					<command>nasal</command>
+					<script>canopy.canopy_switch(2)</script>
 				</binding>
 			</key>
 			<key n="101">
@@ -947,7 +1065,7 @@ Fairchild A-10 simulation config.
 				<binding>
 					<command>property-adjust</command>
 					<property>controls/flight/slats</property>
-				<step type="double">0.25</step>
+					<step type="double">0.25</step>
 				</binding>
 			</key>
 			<key n="75">
@@ -986,13 +1104,13 @@ Fairchild A-10 simulation config.
 				</mod-up>
 			</key>
 			<key n="108">
-        			<name>l</name>
-        			<desc>Landing Light</desc>
-        			<binding>
-            				<command>property-toggle</command>
-            				<property>fdm/jsbsim/electric/switches/landinglight</property>
-        			</binding>
-    			</key>
+				<name>l</name>
+				<desc>Landing Light</desc>
+				<binding>
+					<command>property-toggle</command>
+					<property>fdm/jsbsim/electric/switches/landinglight</property>
+				</binding>
+			</key>
 		</keyboard>
 	</input>
 
@@ -1040,12 +1158,12 @@ Fairchild A-10 simulation config.
 
 	<instrumentation>
 		<datalink>
-	        <channel type="int">42</channel>
-	        <power_prop type="string">controls/electric/engine[0]/generator</power_prop>
-	        <channel_prop type="string">instrumentation/datalink/channel</channel_prop>
-	        <receive_period type="double">1</receive_period>
-	        <!--identifier_prop type="string">instrumentation/datalink/ident</identifier_prop-->
-    	</datalink>
+			<channel type="int">42</channel>
+			<power_prop type="string">controls/electric/engine[0]/generator</power_prop>
+			<channel_prop type="string">instrumentation/datalink/channel</channel_prop>
+			<receive_period type="double">1</receive_period>
+			<!--identifier_prop type="string">instrumentation/datalink/ident</identifier_prop-->
+		</datalink>
 		<ecm>
 			<enabled type="bool">true</enabled>
 			<on-off type="bool">true</on-off>
@@ -1055,11 +1173,11 @@ Fairchild A-10 simulation config.
 			<g-min type="float">1</g-min>
 		</g-meter>
 		<iff>
-		    <power_prop type="string">instrumentation/iff/power</power_prop>
-		    <channel_prop
-			type="string">instrumentation/iff/channel</channel_prop>
-		    <channel type="int">0000</channel>
-		    <power type="bool">true</power>
+			<power_prop type="string">instrumentation/iff/power</power_prop>
+			<channel_prop
+				type="string">instrumentation/iff/channel</channel_prop>
+			<channel type="int">0000</channel>
+			<power type="bool">true</power>
 		</iff>
 		<tacan>
 			<switch-position>0</switch-position>
@@ -1071,7 +1189,7 @@ Fairchild A-10 simulation config.
 		<rwr>
 			<display-lighting-intens type="double">0.4</display-lighting-intens>
 			<symbology-lighting-intens type="double">1</symbology-lighting-intens>
-            <serviceable type="bool">1</serviceable>
+			<serviceable type="bool">1</serviceable>
 		</rwr>
 		<nav n="2">
 			<radials>
@@ -1097,7 +1215,7 @@ Fairchild A-10 simulation config.
 			<off-start-switch type="bool">false</off-start-switch>
 			<serviceable type="bool">true</serviceable>
 			<generator>
-			    <serviceable type="bool">true</serviceable>
+				<serviceable type="bool">true</serviceable>
 			</generator>
 		</APU>
 		<armament>
@@ -1107,20 +1225,20 @@ Fairchild A-10 simulation config.
 		<engines>
 			<engine n="0">
 				<faults>
-				    <hydraulic-pump>
+					<hydraulic-pump>
+						<serviceable type="bool">true</serviceable>
+					</hydraulic-pump>
 					<serviceable type="bool">true</serviceable>
-				    </hydraulic-pump>
-				    <serviceable type="bool">true</serviceable>
 				</faults>
 				<engines-ignitors n="0" type="bool">false</engines-ignitors>
 				<engines-ignitors n="1" type="bool">false</engines-ignitors>
 			</engine>
 			<engine n="1">
 				<faults>
-				    <hydraulic-pump>
+					<hydraulic-pump>
+						<serviceable type="bool">true</serviceable>
+					</hydraulic-pump>
 					<serviceable type="bool">true</serviceable>
-				    </hydraulic-pump>
-				    <serviceable type="bool">true</serviceable>
 				</faults>
 				<engines-ignitors n="0" type="bool">false</engines-ignitors>
 				<engines-ignitors n="1" type="bool">false</engines-ignitors>
@@ -1130,52 +1248,52 @@ Fairchild A-10 simulation config.
 			<tank n="0">
 				<boost-pump n="0" type="bool">true</boost-pump>
 				<boost-pump>
-				    <serviceable type="bool">true</serviceable>
+					<serviceable type="bool">true</serviceable>
 				</boost-pump>
 				<fill-dis type="bool">false</fill-dis>
 			</tank>
 			<tank n="1">
 				<boost-pump n="0" type="bool">true</boost-pump>
 				<boost-pump>
-				    <serviceable type="bool">true</serviceable>
+					<serviceable type="bool">true</serviceable>
 				</boost-pump>
 				<DC-boost-pump>
-				    <serviceable type="bool">true</serviceable>
+					<serviceable type="bool">true</serviceable>
 				</DC-boost-pump>
 				<fill-dis type="bool">false</fill-dis>
 			</tank>
 			<tank n="2">
 				<boost-pump n="0" type="bool">true</boost-pump>
 				<boost-pump>
-				    <serviceable type="bool">true</serviceable>
+					<serviceable type="bool">true</serviceable>
 				</boost-pump>
 				<fill-dis type="bool">false</fill-dis>
 			</tank>
 			<tank n="3">
 				<boost-pump n="0" type="bool">true</boost-pump>
 				<boost-pump>
-				    <serviceable type="bool">true</serviceable>
+					<serviceable type="bool">true</serviceable>
 				</boost-pump>
 				<fill-dis type="bool">false</fill-dis>
 			</tank>
 			<tank n="4">
 				<boost-pump n="0" type="bool">false</boost-pump>
 				<boost-pump>
-				    <serviceable type="bool">true</serviceable>
+					<serviceable type="bool">true</serviceable>
 				</boost-pump>
 				<fill-dis type="bool">false</fill-dis>
 			</tank>
 			<tank n="5">
 				<boost-pump n="0" type="bool">false</boost-pump>
 				<boost-pump>
-				    <serviceable type="bool">true</serviceable>
+					<serviceable type="bool">true</serviceable>
 				</boost-pump>
 				<fill-dis type="bool">false</fill-dis>
 			</tank>
 			<tank n="6">
 				<boost-pump n="0" type="bool">false</boost-pump>
 				<boost-pump>
-				    <serviceable type="bool">true</serviceable>
+					<serviceable type="bool">true</serviceable>
 				</boost-pump>
 				<fill-dis type="bool">false</fill-dis>
 			</tank>
@@ -1208,9 +1326,9 @@ Fairchild A-10 simulation config.
 		<A-10-hydraulics>
 			<hyd-res n="0" type="float">100</hyd-res>
 			<hyd-res n="1" type="float">100</hyd-res>
-			<hyd-psi n="0" type="float">0</hyd-psi><!-- Left hydraulic circuit pressure -->
-			<hyd-psi n="1" type="float">0</hyd-psi><!-- Right hydraulic circuit pressure -->
-			<aux-lg-ext-accumulator type="float">0</aux-lg-ext-accumulator><!-- Auxiliary landing gear extend -->
+			<hyd-psi n="0" type="float">0</hyd-psi> <!-- Left hydraulic circuit pressure -->
+			<hyd-psi n="1" type="float">0</hyd-psi> <!-- Right hydraulic circuit pressure -->
+			<aux-lg-ext-accumulator type="float">0</aux-lg-ext-accumulator> <!-- Auxiliary landing gear extend -->
 		</A-10-hydraulics>
 		<!-- electrical system (logical three remains under /systems/electrical) -->
 		<A-10-electrical>
@@ -1276,7 +1394,7 @@ Fairchild A-10 simulation config.
 				<apu-start-system type="double">0</apu-start-system>
 				<fuel-gauge-sel type="double">0</fuel-gauge-sel>
 				<hud type="double">0</hud>
-                <rwr type="double">0</rwr>
+				<rwr type="double">0</rwr>
 				<engine n="0">
 					<engines-ignitors n="0" type="double">0</engines-ignitors>
 					<engines-ignitors n="1" type="double">0</engines-ignitors>
@@ -1296,33 +1414,33 @@ Fairchild A-10 simulation config.
 		</refuel>
 	</systems>
 
-    <payload>
-         <armament>
-             <models>Aircraft/A-10/Models/MParmaments/</models>
-             <enable-craters type="bool">true</enable-craters>
-             <MLW-bearing type="double">0</MLW-bearing>
-             <MLW-count type="int">0</MLW-count>
-             <MLW-launcher type="string"></MLW-launcher>
-             <MAW-bearing type="double">0</MAW-bearing>
-             <MAW-active type="bool">false</MAW-active>
-             <msg type="bool">false</msg>
-             <spike type="bool">false</spike>
-         </armament>
-         <d-config>
-             <full_damage_dist_m type="double">0</full_damage_dist_m>
-             <use_hitpoints_instead_of_failure_modes_bool type="bool">false</use_hitpoints_instead_of_failure_modes_bool>
-             <hp_max type="double">80</hp_max>
-             <hitable_by_air_munitions type="bool">true</hitable_by_air_munitions>
-             <hitable_by_cannon type="bool">true</hitable_by_cannon>
-             <is_fleet type="bool">false</is_fleet>
-             <rwr_to_screen type="bool">false</rwr_to_screen>
-             <rwr_audio_extended type="bool">false</rwr_audio_extended>
-             <tacview_supported type="bool">false</tacview_supported>
-             <m28_auto type="bool">false</m28_auto>
-             <mlw_max type="double">0</mlw_max>
-             <auto_flare_caller type="bool">false</auto_flare_caller>
-         </d-config>
-     </payload>
+	<payload>
+		<armament>
+			<models>Aircraft/A-10/Models/MParmaments/</models>
+			<enable-craters type="bool">true</enable-craters>
+			<MLW-bearing type="double">0</MLW-bearing>
+			<MLW-count type="int">0</MLW-count>
+			<MLW-launcher type="string"></MLW-launcher>
+			<MAW-bearing type="double">0</MAW-bearing>
+			<MAW-active type="bool">false</MAW-active>
+			<msg type="bool">false</msg>
+			<spike type="bool">false</spike>
+		</armament>
+		<d-config>
+			<full_damage_dist_m type="double">0</full_damage_dist_m>
+			<use_hitpoints_instead_of_failure_modes_bool type="bool">false</use_hitpoints_instead_of_failure_modes_bool>
+			<hp_max type="double">80</hp_max>
+			<hitable_by_air_munitions type="bool">true</hitable_by_air_munitions>
+			<hitable_by_cannon type="bool">true</hitable_by_cannon>
+			<is_fleet type="bool">false</is_fleet>
+			<rwr_to_screen type="bool">false</rwr_to_screen>
+			<rwr_audio_extended type="bool">false</rwr_audio_extended>
+			<tacview_supported type="bool">false</tacview_supported>
+			<m28_auto type="bool">false</m28_auto>
+			<mlw_max type="double">0</mlw_max>
+			<auto_flare_caller type="bool">false</auto_flare_caller>
+		</d-config>
+	</payload>
 
 
 	<!-- Fuel Tank indexes -->
@@ -1390,23 +1508,22 @@ Fairchild A-10 simulation config.
 	</yasim>
 
 
-
 	<!-- Nasal files & scripts -->
 	<nasal>
 		<!--<A10test_impact>
 			<file>Aircraft/A-10/Nasal/test_impact.nas</file>
 			</A10test_impact>-->
 		<notifications>
-		    <file>Aircraft/A-10/Nasal/ArmamentNotification.nas</file>
-		    <!-- <file>Aircraft/f16/Nasal/M_frame_notification.nas</file> -->
-		    <file>Aircraft/A-10/Nasal/GeoBridgedTransmitter.nas</file>
+			<file>Aircraft/A-10/Nasal/ArmamentNotification.nas</file>
+			<!-- <file>Aircraft/f16/Nasal/M_frame_notification.nas</file> -->
+			<file>Aircraft/A-10/Nasal/GeoBridgedTransmitter.nas</file>
 		</notifications>
-        <vector>
-            <file>Aircraft/A-10/Nasal/vector.nas</file>
-        </vector>
-        <armament>
-            <file>Aircraft/A-10/Nasal/missile-code.nas</file>
-        </armament>
+		<vector>
+			<file>Aircraft/A-10/Nasal/vector.nas</file>
+		</vector>
+		<armament>
+			<file>Aircraft/A-10/Nasal/missile-code.nas</file>
+		</armament>
 		<A10fuel>
 			<file>Aircraft/A-10/Nasal/A-10-fuel.nas</file>
 		</A10fuel>
@@ -1443,31 +1560,31 @@ Fairchild A-10 simulation config.
 		<A10autopilot>
 			<file>Aircraft/A-10/Nasal/autopilot.nas</file>
 		</A10autopilot>
-        <radar_system>
-            <file>Aircraft/A-10/Nasal/RADAR/radar-system.nas</file>
-            <file>Aircraft/A-10/Nasal/RADAR/rwr-only.nas</file>
-        </radar_system>
-        <rwr>
+		<radar_system>
+			<file>Aircraft/A-10/Nasal/RADAR/radar-system.nas</file>
+			<file>Aircraft/A-10/Nasal/RADAR/rwr-only.nas</file>
+		</radar_system>
+		<rwr>
 			<file>Aircraft/A-10/Nasal/RADAR/rwr.nas</file>
 		</rwr>
 		<liveries>
 			<file>Aircraft/A-10/Nasal/liveries.nas</file>
 		</liveries>
 		<aar>
-		    <file>Aircraft/Generic/aar.nas</file>
+			<file>Aircraft/Generic/aar.nas</file>
 		</aar>
 		<damage>
 			<file>Aircraft/A-10/Nasal/damage.nas</file>
 		</damage>
 		<failures>
-		    <file>Aircraft/A-10/Nasal/A-10-failures.nas</file>
+			<file>Aircraft/A-10/Nasal/A-10-failures.nas</file>
 		</failures>
 		<datalink>
-            <file>Aircraft/A-10/Nasal/datalink.nas</file>
-        </datalink>
+			<file>Aircraft/A-10/Nasal/datalink.nas</file>
+		</datalink>
 		<iff>
-	        <file>Aircraft/A-10/Nasal/iff.nas</file>
-	    </iff>
+			<file>Aircraft/A-10/Nasal/iff.nas</file>
+		</iff>
 	</nasal>
 
 </PropertyList>

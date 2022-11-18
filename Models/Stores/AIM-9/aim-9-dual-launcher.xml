@@ -1,15 +1,14 @@
 <?xml version="1.0"?>
 
 
-
 <PropertyList>
 
 	<name>aim-9-dual-launcher</name>
-  	<path>aim-9-dual-launcher.ac</path>
+	<path>aim-9-dual-launcher.ac</path>
 
 	<animation>
 		<type>select</type>
-		<nopreview/>
+		<nopreview />
 		<object-name>LAU-114-0</object-name>
 		<condition>
 			<equals>
@@ -20,7 +19,7 @@
 	</animation>
 	<animation>
 		<type>select</type>
-		<nopreview/>
+		<nopreview />
 		<object-name>AIM-9-0-0</object-name>
 		<condition>
 			<equals>
@@ -31,10 +30,10 @@
 				<property>sim/model/A-10/weapons/stations/station[0]/dual-AIM-9/trigger[0]</property>
 			</not>
 		</condition>
-	</animation>	
+	</animation>
 	<animation>
 		<type>select</type>
-		<nopreview/>
+		<nopreview />
 		<object-name>AIM-9-0-1</object-name>
 		<condition>
 			<equals>
@@ -45,7 +44,7 @@
 				<property>sim/model/A-10/weapons/stations/station[0]/dual-AIM-9/trigger[1]</property>
 			</not>
 		</condition>
-	</animation>	
+	</animation>
 
 
 	<animation>
@@ -70,7 +69,7 @@
 				<property>sim/model/A-10/weapons/stations/station[10]/dual-AIM-9/trigger[0]</property>
 			</not>
 		</condition>
-	</animation>	
+	</animation>
 	<animation>
 		<type>select</type>
 		<object-name>AIM-9-10-1</object-name>
@@ -83,6 +82,6 @@
 				<property>sim/model/A-10/weapons/stations/station[10]/dual-AIM-9/trigger[1]</property>
 			</not>
 		</condition>
-	</animation>	
+	</animation>
 
 </PropertyList>

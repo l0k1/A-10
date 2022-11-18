@@ -39,7 +39,7 @@
       <transformations>
         <transformation>
           <type>rotation</type>
-          <property alias="../../../../../params/pt0-select"/>
+          <property alias="../../../../../params/pt0-select" />
           <min>-1</min>
           <max>1</max>
           <scale>60</scale>
@@ -70,7 +70,7 @@
       <transformations>
         <transformation>
           <type>rotation</type>
-          <property alias="../../../../../params/pt0-select"/>
+          <property alias="../../../../../params/pt0-select" />
           <min>-1</min>
           <max>1</max>
           <scale>60</scale>
@@ -101,7 +101,7 @@
       <transformations>
         <transformation>
           <type>rotation</type>
-          <property alias="../../../../../params/pt1-select"/>
+          <property alias="../../../../../params/pt1-select" />
           <min>-1</min>
           <max>1</max>
           <scale>60</scale>
@@ -132,7 +132,7 @@
       <transformations>
         <transformation>
           <type>rotation</type>
-          <property alias="../../../../../params/pt1-select"/>
+          <property alias="../../../../../params/pt1-select" />
           <min>-1</min>
           <max>1</max>
           <scale>60</scale>

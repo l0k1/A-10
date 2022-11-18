@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-	<PropertyList>
+<PropertyList>
 
 	<path>pedals.ac</path>
 
@@ -27,7 +27,6 @@
 			<z>0</z>
 		</axis>
 	</animation>
-
 
 
 	<animation>

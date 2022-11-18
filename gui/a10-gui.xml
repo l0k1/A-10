@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <!-- A-10 Warthog GUI -->
 <!-- Based on IT-GUI -->
@@ -6,7 +6,7 @@
 <!-- Copyright (c) 2020 Josh Davidson (Octal450) -->
 
 <PropertyList>
-	
+
 	<style n="0">
 		<colors n="0">
 			<background n="0">
@@ -107,7 +107,7 @@
 			</vrule>
 		</colors>
 	</style>
-	
+
 	<style n="1">
 		<colors n="0">
 			<background n="0">

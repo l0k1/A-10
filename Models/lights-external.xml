@@ -18,7 +18,9 @@
 
 	<animation>
 		<type>select</type>
-		<condition><property>sim/rendering/rembrandt/enabled</property></condition>
+		<condition>
+			<property>sim/rendering/rembrandt/enabled</property>
+		</condition>
 		<object-name>taxi-light-cone</object-name>
 		<object-name>taxi-halo-sphere</object-name>
 	</animation>
@@ -76,9 +78,18 @@
 		<type>dist-scale</type>
 		<object-name>strobe_halo_T</object-name>
 		<interpolation>
-			<entry><ind>0</ind><dep>1</dep></entry>
-			<entry><ind>500</ind><dep>2.5</dep></entry>
-			<entry><ind>16000</ind><dep>7</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>1</dep>
+			</entry>
+			<entry>
+				<ind>500</ind>
+				<dep>2.5</dep>
+			</entry>
+			<entry>
+				<ind>16000</ind>
+				<dep>7</dep>
+			</entry>
 		</interpolation>
 	</animation>
 
@@ -135,9 +146,18 @@
 		<type>dist-scale</type>
 		<object-name>strobe_halo_R</object-name>
 		<interpolation>
-			<entry><ind>0</ind><dep>1</dep></entry>
-			<entry><ind>500</ind><dep>2.5</dep></entry>
-			<entry><ind>16000</ind><dep>7</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>1</dep>
+			</entry>
+			<entry>
+				<ind>500</ind>
+				<dep>2.5</dep>
+			</entry>
+			<entry>
+				<ind>16000</ind>
+				<dep>7</dep>
+			</entry>
 		</interpolation>
 	</animation>
 
@@ -194,9 +214,18 @@
 		<type>dist-scale</type>
 		<object-name>strobe_halo_L</object-name>
 		<interpolation>
-			<entry><ind>0</ind><dep>1</dep></entry>
-			<entry><ind>500</ind><dep>2.5</dep></entry>
-			<entry><ind>16000</ind><dep>7</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>1</dep>
+			</entry>
+			<entry>
+				<ind>500</ind>
+				<dep>2.5</dep>
+			</entry>
+			<entry>
+				<ind>16000</ind>
+				<dep>7</dep>
+			</entry>
 		</interpolation>
 	</animation>
 
@@ -253,9 +282,18 @@
 		<type>dist-scale</type>
 		<object-name>nav_halo_L</object-name>
 		<interpolation>
-			<entry><ind>0</ind><dep>1</dep></entry>
-			<entry><ind>500</ind><dep>2.5</dep></entry>
-			<entry><ind>16000</ind><dep>7</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>1</dep>
+			</entry>
+			<entry>
+				<ind>500</ind>
+				<dep>2.5</dep>
+			</entry>
+			<entry>
+				<ind>16000</ind>
+				<dep>7</dep>
+			</entry>
 		</interpolation>
 	</animation>
 
@@ -313,9 +351,18 @@
 		<type>dist-scale</type>
 		<object-name>nav_halo_R</object-name>
 		<interpolation>
-			<entry><ind>0</ind><dep>1</dep></entry>
-			<entry><ind>500</ind><dep>2.5</dep></entry>
-			<entry><ind>16000</ind><dep>7</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>1</dep>
+			</entry>
+			<entry>
+				<ind>500</ind>
+				<dep>2.5</dep>
+			</entry>
+			<entry>
+				<ind>16000</ind>
+				<dep>7</dep>
+			</entry>
 		</interpolation>
 	</animation>
 
@@ -372,14 +419,23 @@
 		<type>dist-scale</type>
 		<object-name>nav_halo_T</object-name>
 		<interpolation>
-			<entry><ind>0</ind><dep>1</dep></entry>
-			<entry><ind>500</ind><dep>2.5</dep></entry>
-			<entry><ind>16000</ind><dep>7</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>1</dep>
+			</entry>
+			<entry>
+				<ind>500</ind>
+				<dep>2.5</dep>
+			</entry>
+			<entry>
+				<ind>16000</ind>
+				<dep>7</dep>
+			</entry>
 		</interpolation>
 	</animation>
 
 
- <!-- UC-Nose taxi and landing lights -->
+	<!-- UC-Nose taxi and landing lights -->
 
 	<!-- taxi light -->
 	<animation>
@@ -432,9 +488,18 @@
 		<type>dist-scale</type>
 		<object-name>Taxi-halo</object-name>
 		<interpolation>
-			<entry><ind>0</ind><dep>1</dep></entry>
-			<entry><ind>500</ind><dep>2.5</dep></entry>
-			<entry><ind>16000</ind><dep>7</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>1</dep>
+			</entry>
+			<entry>
+				<ind>500</ind>
+				<dep>2.5</dep>
+			</entry>
+			<entry>
+				<ind>16000</ind>
+				<dep>7</dep>
+			</entry>
 		</interpolation>
 	</animation>
 
@@ -458,13 +523,40 @@
 		<light-type>spot</light-type>
 		<name>taxi-light</name>
 		<object-name>taxi-light-cone</object-name>
-		<nopreview/>
-		<direction><x>-1</x><y>0</y><z>-0.024</z></direction>
-		<position><x>-0.6859</x><y>0</y><z>-0.7586</z></position>
-		<ambient><r>0.95</r><g>0.9</g><b>0.9</b><a>1</a></ambient>
-		<diffuse><r>0.95</r><g>0.9</g><b>0.9</b><a>1</a></diffuse>
-		<specular><r>0.95</r><g>0.9</g><b>0.9</b><a>1</a></specular>
-		<attenuation><c>0.5</c><l>0.07</l><q>0</q></attenuation>
+		<nopreview />
+		<direction>
+			<x>-1</x>
+			<y>0</y>
+			<z>-0.024</z>
+		</direction>
+		<position>
+			<x>-0.6859</x>
+			<y>0</y>
+			<z>-0.7586</z>
+		</position>
+		<ambient>
+			<r>0.95</r>
+			<g>0.9</g>
+			<b>0.9</b>
+			<a>1</a>
+		</ambient>
+		<diffuse>
+			<r>0.95</r>
+			<g>0.9</g>
+			<b>0.9</b>
+			<a>1</a>
+		</diffuse>
+		<specular>
+			<r>0.95</r>
+			<g>0.9</g>
+			<b>0.9</b>
+			<a>1</a>
+		</specular>
+		<attenuation>
+			<c>0.5</c>
+			<l>0.07</l>
+			<q>0</q>
+		</attenuation>
 		<exponent>30.0</exponent>
 		<cutoff>200</cutoff>
 		<near-m>0.01</near-m>
@@ -496,17 +588,39 @@
 		<light-type>point</light-type>
 		<name>taxi-halo</name>
 		<object-name>taxi-halo-sphere</object-name>
-		<nopreview/>
-		<position><x>3.1463</x><y>-0.33</y><z>-0.6753</z></position>
-		<ambient><r>0.95</r><g>0.9</g><b>0.9</b><a>1</a></ambient>
-		<diffuse><r>0.95</r><g>0.9</g><b>0.9</b><a>1</a></diffuse>
-		<specular><r>0.95</r><g>0.9</g><b>0.9</b><a>1</a></specular>
-		<attenuation><c>1</c><l>1.7</l><q>4</q></attenuation>
+		<nopreview />
+		<position>
+			<x>3.1463</x>
+			<y>-0.33</y>
+			<z>-0.6753</z>
+		</position>
+		<ambient>
+			<r>0.95</r>
+			<g>0.9</g>
+			<b>0.9</b>
+			<a>1</a>
+		</ambient>
+		<diffuse>
+			<r>0.95</r>
+			<g>0.9</g>
+			<b>0.9</b>
+			<a>1</a>
+		</diffuse>
+		<specular>
+			<r>0.95</r>
+			<g>0.9</g>
+			<b>0.9</b>
+			<a>1</a>
+		</specular>
+		<attenuation>
+			<c>1</c>
+			<l>1.7</l>
+			<q>4</q>
+		</attenuation>
 		<cutoff>4</cutoff>
 		<near-m>0.01</near-m>
 		<far-m>4</far-m>
 	</animation>
-
 
 
 	<!-- landing light (upper light on the nose strut). For this one, no rembrandt effect yet. -->
@@ -558,9 +672,18 @@
 		<type>dist-scale</type>
 		<object-name>Landing-halo</object-name>
 		<interpolation>
-			<entry><ind>0</ind><dep>1</dep></entry>
-			<entry><ind>500</ind><dep>4</dep></entry>
-			<entry><ind>16000</ind><dep>10</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>1</dep>
+			</entry>
+			<entry>
+				<ind>500</ind>
+				<dep>4</dep>
+			</entry>
+			<entry>
+				<ind>16000</ind>
+				<dep>10</dep>
+			</entry>
 		</interpolation>
 	</animation>
 

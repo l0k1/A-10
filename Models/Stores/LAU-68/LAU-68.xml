@@ -1,12 +1,11 @@
 <?xml version="1.0"?>
 
 
-
 <PropertyList>
 
 	<name>lau-68</name>
-	<path>lau-68.ac</path>	
-	<nopreview/>
+	<path>lau-68.ac</path>
+	<nopreview />
 
 	<animation>
 		<type>select</type>
@@ -109,9 +108,6 @@
 			</not>
 		</condition>
 	</animation>
-
-
-
 
 
 	<animation>
@@ -320,7 +316,6 @@
 	</animation>
 
 
-
 	<animation>
 		<type>select</type>
 		<object-name>lau68-7</object-name>
@@ -422,7 +417,6 @@
 			</not>
 		</condition>
 	</animation>
-
 
 
 	<animation>
@@ -528,7 +522,6 @@
 	</animation>
 
 
-
 	<animation>
 		<type>select</type>
 		<object-name>lau68-9</object-name>
@@ -631,5 +624,5 @@
 		</condition>
 	</animation>
 
-	
+
 </PropertyList>

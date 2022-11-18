@@ -39,10 +39,18 @@
       <particle>
          <start>
             <color>
-               <red><value>0.0</value></red>
-               <green><value>0.0</value></green>
-               <blue><value>0.0</value></blue>
-               <alpha><value>0.2</value></alpha>
+               <red>
+                  <value>0.0</value>
+               </red>
+               <green>
+                  <value>0.0</value>
+               </green>
+               <blue>
+                  <value>0.0</value>
+               </blue>
+               <alpha>
+                  <value>0.2</value>
+               </alpha>
             </color>
             <size>
                <value>12.0</value>
@@ -50,10 +58,18 @@
          </start>
          <end>
             <color>
-               <red><value>0.0</value></red>
-               <green><value>0.0</value></green>
-               <blue><value>0.0</value></blue>
-               <alpha><value>0.05</value></alpha>
+               <red>
+                  <value>0.0</value>
+               </red>
+               <green>
+                  <value>0.0</value>
+               </green>
+               <blue>
+                  <value>0.0</value>
+               </blue>
+               <alpha>
+                  <value>0.05</value>
+               </alpha>
             </color>
             <size>
                <value>80.0</value>

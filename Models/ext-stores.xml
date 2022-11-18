@@ -4,13 +4,13 @@
 
 	<model>
 		<path>Aircraft/A-10/Models/an-alq-131.xml</path>
-		<offsets> 
+		<offsets>
 			<x-m>7.3844</x-m>
 			<y-m>-5.9169</y-m>
 			<z-m>-0.65</z-m>
 			<pitch-deg>-3</pitch-deg>
 		</offsets>
-	</model>	
+	</model>
 
 	<model>
 		<name>AIM-9-dual-launcher</name>
@@ -18,12 +18,12 @@
 	</model>
 	<model>
 		<path>Aircraft/A-10/Models/Stores/LAU-68/LAU-68.xml</path>
-	</model>	
+	</model>
 	<model>
 		<path>Aircraft/A-10/Models/Stores/MK-82/triple-MK-82-LD.xml</path>
-	</model>	
+	</model>
 	<model>
 		<path>Aircraft/A-10/Models/Stores/MK-82/single-MK-82-LD.xml</path>
-	</model>	
+	</model>
 
 </PropertyList>

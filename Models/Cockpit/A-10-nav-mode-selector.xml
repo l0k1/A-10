@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 
 
-
 <PropertyList>
 	<path>A-10-nav-mode-selector.ac</path>
 
@@ -133,23 +132,35 @@
 		<type>rotate</type>
 		<property>sim/model/A-10/A-10-nav/selector-ptr</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>-30</dep></entry>
-			<entry><ind>1</ind><dep>30</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>-30</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>30</dep>
+			</entry>
 		</interpolation>
 		<center>
 			<x-m>0.005</x-m>
 			<y-m>-0.0163</y-m>
 		</center>
-		<axis><z>1</z></axis>
+		<axis>
+			<z>1</z>
+		</axis>
 	</animation>
 
 
 	<!-- lighting -->
 
 	<animation>
-		<object-name>panel</object-name> 
+		<object-name>panel</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.385</red>
@@ -159,9 +170,13 @@
 	</animation>
 
 	<animation>
-		<object-name>indices</object-name> 
+		<object-name>indices</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.55</red>

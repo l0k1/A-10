@@ -11,8 +11,12 @@
 		<type>rotate</type>
 		<property>sim/model/A-10/controls/sas/pitch-sas-switch</property>
 		<factor>60</factor>
-		<center><x-m>-0.0213</x-m></center>
-		<axis><y>-1</y></axis>
+		<center>
+			<x-m>-0.0213</x-m>
+		</center>
+		<axis>
+			<y>-1</y>
+		</axis>
 	</animation>
 
 
@@ -36,7 +40,11 @@
 	<animation>
 		<object-name>sas</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.385</red>

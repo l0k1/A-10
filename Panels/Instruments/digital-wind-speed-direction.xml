@@ -84,7 +84,7 @@
       </transformations>
     </layer>
 
-<!-- Wind Speed Display -->
+    <!-- Wind Speed Display -->
     <layer>
       <name>Wind Speed Display</name>
       <type>text</type>
@@ -114,7 +114,7 @@
       </transformations>
     </layer>
 
-<!-- Wind Direction Display -->
+    <!-- Wind Direction Display -->
     <layer>
       <name>Wind Direction Display</name>
       <type>text</type>
@@ -144,6 +144,6 @@
       </transformations>
     </layer>
 
- </layers>
+  </layers>
 
 </PropertyList>

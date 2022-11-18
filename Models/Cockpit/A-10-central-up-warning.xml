@@ -25,16 +25,16 @@
 		</condition>
 	</animation>
 
-    <animation>
+	<animation>
 		<type>select</type>
 		<object-name>launch-warning</object-name>
 		<condition>
-            <not>
-                <equals>
-                    <property>sound/rwr-launch</property>
-                    <value type="string"></value>
-                </equals>
-            </not>
+			<not>
+				<equals>
+					<property>sound/rwr-launch</property>
+					<value type="string"></value>
+				</equals>
+			</not>
 			<property>sim/model/A-10/lighting/warn-medium-lights/state</property>
 		</condition>
 	</animation>
@@ -72,24 +72,31 @@
 		</condition>
 	</animation>
 
-    <animation><!--Not Currently used - prop assigned to diable light-->
-        <type>select</type>
-        <object-name>activity</object-name>
-        <condition>
-            <greater-than>
-                <property>systems/electrical/output/rwr</property>
-                <value>90</value>
-            </greater-than>
-        </condition>
-    </animation>
+	<animation>
+		<!--Not Currently used - prop assigned to diable light-->
+		<type>select</type>
+		<object-name>activity</object-name>
+		<condition>
+			<greater-than>
+				<property>systems/electrical/output/rwr</property>
+				<value>90</value>
+			</greater-than>
+		</condition>
+	</animation>
 
 	<animation>
 		<type>rotate</type>
 		<object-name>button-audio</object-name>
 		<property>sim/model/A-10/instrumentation/warnings/audio-alt-volume</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>0</dep></entry>
-			<entry><ind>1</ind><dep>270</dep></entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>270</dep>
+			</entry>
 		</interpolation>
 		<center>
 			<x-m>0.0000</x-m>
@@ -149,12 +156,16 @@
 		</condition>
 	</animation>
 
-<!-- lighting -->
+	<!-- lighting -->
 
 	<animation>
 		<object-name>mount</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.45</red>
@@ -166,7 +177,11 @@
 	<animation>
 		<object-name>gun-steering-marker-canopy</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.45</red>
@@ -178,7 +193,11 @@
 	<animation>
 		<object-name>buttons</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.30</red>
