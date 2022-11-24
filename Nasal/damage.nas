@@ -164,6 +164,7 @@ var warheads = {
     "pilot":             [93,    0.00,1,0],# ejected pilot
     "BETAB-500ShP":      [94, 1160.00,1,0],
     "Flare":             [95,    0.00,0,0],
+    "3M9":               [96,  125.00,0,0],# 3M9 Missile used with 2K12/SA-6
 };
 
 var AIR_RADAR = "air";
@@ -187,6 +188,7 @@ var radar_signatures = {
                 "E-8R":                     AIR_RADAR,
                 "EC-137D":                  AIR_RADAR,
                 "Mig-28":                   AIR_RADAR,
+                "SA-6":                     AIR_RADAR,#Air radar tone chosen so that there is at least some lock tone until asset-specific is created
                 "ZSU-23-4M":                "gnd-23",
                 "S-75":                     "gnd-02",
                 "buk-m2":                   "gnd-11",
@@ -200,7 +202,7 @@ var radar_signatures = {
 var id2warhead = [];
 var launched = {};# callsign: elapsed-sec
 var approached = {};# callsign: uniqueID
-var heavy_smoke = [61,62,63,65,92];
+var heavy_smoke = [61,62,63,65,92,96];
 
 var k = keys(warheads);
 
@@ -381,8 +383,7 @@ var DamageRecipient =
                 }
                 
                 # Missile approach warning:
-                var callsign = getprop("sim/multiplay/callsign");
-                callsign = size(callsign) < 8 ? callsign : left(callsign,7);
+                var callsign = processCallsign(getprop("sim/multiplay/callsign"));
                 if (notification.RemoteCallsign != callsign) return emesary.Transmitter.ReceiptStatus_OK;
                 if (!radarOn) return emesary.Transmitter.ReceiptStatus_OK;# this should be little more complex later
                 var heading = getprop("orientation/heading-deg");
@@ -434,8 +435,7 @@ var DamageRecipient =
                         thread.unlock(tacview.mutexWrite);                      
                       }
                     }
-                    var callsign = getprop("sim/multiplay/callsign");
-                    callsign = size(callsign) < 8 ? callsign : left(callsign,7);
+                    var callsign = processCallsign(getprop("sim/multiplay/callsign"));
                     if (notification.RemoteCallsign == callsign and getprop("payload/armament/msg") == 1) {
                         #damage enabled and were getting hit
                         if (m28_auto) mig28.engagedBy(notification.Callsign);
@@ -1364,6 +1364,20 @@ var printDamageLog = func {
   print();
   print(str);
   print();
+}
+
+var processCallsign = func (callsign) {
+    # Convert the callsign to one that emesary can work with.
+    var l = size(callsign);
+    callsign = l < 8?callsign:left(callsign, 7);
+    var newCallsign = "";
+    for(var ii = 0; ii < l; ii += 1) {
+        var ev = emesary.TransferString.getalphanumericchar(substr(callsign,ii,1));
+        if (ev != nil) {
+          newCallsign ~= ev;
+        }
+    }
+    return newCallsign;
 }
 
 #TODO testing:
