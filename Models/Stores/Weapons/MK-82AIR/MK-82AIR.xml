@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+<!--
+Used for non fired MK-82AIR
+-->
+
+  <path>MK-82AIR.ac</path>
+
+  <animation>
+    <type>select</type>
+    <object-name>MK-82AIR_Chute</object-name>
+    <condition>
+      <equals>
+        <value>0</value>
+        <value>1</value>
+      </equals>
+    </condition>
+  </animation>
+
+</PropertyList>

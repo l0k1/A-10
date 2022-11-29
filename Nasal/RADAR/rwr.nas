@@ -177,13 +177,15 @@ RWRCanvas = {
 #        }
 # Threat list ID:
 
-        #REVISION: 2022/02/12
+# Threat list ID:
+        #REVISION: 2022/11/28
         #OPRF Fleet
         rwr.AIRCRAFT_WARTHOG  = "10";
         rwr.AIRCRAFT_TOMCAT   = "14";
         rwr.AIRCRAFT_EAGLE    = "15";
         rwr.AIRCRAFT_FALCON   = "16";
         rwr.AIRCRAFT_FISHBED  = "21";
+        rwr.AIRCRAFT_FLOGGER  = "23";
         rwr.AIRCRAFT_FLANKER  = "27";
         rwr.AIRCRAFT_FULCRUM  = "29";
         rwr.AIRCRAFT_VIGGEN   = "37";
@@ -193,6 +195,8 @@ RWRCanvas = {
         rwr.AIRCRAFT_SEARCH   = "S";
         rwr.ASSET_AAA         = "A";
         rwr.ASSET_VOLGA       = "2";
+        rwr.ASSET_DUBNA       = "5";
+        rwr.ASSET_2K12        = "6";
         rwr.ASSET_BUK         = "11";
         rwr.ASSET_GARGOYLE    = "20"; # Other namings for tracking and radar: BB, CS.
         rwr.ASSET_PAC2        = "P";
@@ -201,7 +205,6 @@ RWRCanvas = {
         #MISC
         rwr.AIRCRAFT_FAGOT    = "MG";
         rwr.AIRCRAFT_FOXBAT   = "FB";
-        rwr.AIRCRAFT_FLOGGER  = "23";
         rwr.AIRCRAFT_FULLBACK = "34";
         rwr.AIRCRAFT_PAKFA    = "57";
         rwr.AIRCRAFT_TYPHOON  = "EF";
@@ -246,6 +249,8 @@ RWRCanvas = {
                 "m2000-5B":                 rwr.AIRCRAFT_MIRAGE,
                 "MiG-21bis":                rwr.AIRCRAFT_FISHBED,
                 "MiG-21MF-75":              rwr.AIRCRAFT_FISHBED,
+                "MiG-23ML":                 rwr.AIRCRAFT_FLOGGER,
+                "MiG-23MLD":                rwr.AIRCRAFT_FLOGGER,
                 "MiG-29":                   rwr.AIRCRAFT_FULCRUM,
                 "SU-27":                    rwr.AIRCRAFT_FLANKER,
                 "EC-137R":                  rwr.AIRCRAFT_SEARCH,
@@ -262,6 +267,8 @@ RWRCanvas = {
                 "ZSU-23-4M":                rwr.ASSET_AAA,
                 "S-75":                     rwr.ASSET_VOLGA,
                 "buk-m2":                   rwr.ASSET_BUK,
+                "SA-6":                     rwr.ASSET_2K12,
+                "s-200":                    rwr.ASSET_DUBNA,
                 "s-300":                    rwr.ASSET_GARGOYLE,
                 "MIM104D":                  rwr.ASSET_PAC2,
                 "missile_frigate":          rwr.ASSET_FRIGATE,
@@ -286,8 +293,11 @@ RWRCanvas = {
                 "F-16CJ":                   rwr.AIRCRAFT_FALCON,
                 "FA-18C_Hornet":            rwr.AIRCRAFT_HORNET,
                 "FA-18D_Hornet":            rwr.AIRCRAFT_HORNET,
+                "FA-18E_CVW5":              rwr.AIRCRAFT_HORNET,
+                "FA-18":                    rwr.AIRCRAFT_HORNET,
                 "f18":                      rwr.AIRCRAFT_HORNET,
                 "F-111C":                   rwr.AIRCRAFT_AARDVARK,
+                "daVinci_F-111G":           rwr.AIRCRAFT_AARDVARK,
                 "A-10-modelB":              rwr.AIRCRAFT_WARTHOG,
                 "Su-15":                    rwr.AIRCRAFT_FLAGON,
                 "jaguar":                   rwr.AIRCRAFT_JAGUAR,
@@ -330,9 +340,7 @@ RWRCanvas = {
                 "mb339":                    rwr.AIRCRAFT_MB339,
                 "mb339pan":                 rwr.AIRCRAFT_MB339,
                 "alphajet":                 rwr.AIRCRAFT_ALPHAJET,
-                "MiG-15bis":                rwr.AIRCRAFT_FAGOT,
-                "MiG-23ML":                 rwr.AIRCRAFT_FLOGGER,
-                "MiG-23MLD":                rwr.AIRCRAFT_FLOGGER,
+                #"MiG-15bis":               rwr.AIRCRAFT_FAGOT,
                 "Su-25":                    rwr.AIRCRAFT_FROGFOOT,
                 "MiG-25":                   rwr.AIRCRAFT_FOXBAT,
                 "A-6E-model":               rwr.AIRCRAFT_INTRUDER,
@@ -446,7 +454,7 @@ RWRCanvas = {
                 me.symbol_priority.show();
                 me.prio = 1;
             }
-            if (!(me.typ == me.ASSET_GARGOYLE or me.typ == me.ASSET_AAA or me.typ == me.ASSET_VOLGA or me.typ == me.ASSET_BUK or me.typ == me.ASSET_PAC2 or me.typ == me.ASSET_FRIGATE) and me.contact[0].get_Speed()>60) {
+            if (!(me.typ == me.ASSET_GARGOYLE or me.typ == me.ASSET_AAA or me.typ == me.ASSET_DUBNA or me.typ == me.ASSET_VOLGA or me.typ == me.ASSET_2K12 or me.typ == me.ASSET_BUK or me.typ == me.ASSET_PAC2 or me.typ == me.ASSET_FRIGATE) and me.contact[0].get_Speed()>60) {
                 #air-borne
                 me.symbol_hat[me.i].setTranslation(me.x,me.y);
                 me.symbol_hat[me.i].show();

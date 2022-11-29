@@ -145,7 +145,7 @@ var RWR = {
 
 
 var datalink_power = props.globals.getNode("instrumentation/datalink/power",0);
-enable_tacobject = 0;
+enable_tacobject = 1;
 props.globals.getNode("sim/multiplay/generic/int[2]",1).setIntValue(1);# A-10 has no radar, so put it on standby
 props.globals.getNode("instrumentation/rwr/serviceable",1).setBoolValue(1);
 

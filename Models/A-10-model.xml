@@ -198,8 +198,9 @@
 	</animation>
 
 	<model>
-		<path>Aircraft/A-10/Models/ext-stores.xml</path>
+		<path>Aircraft/A-10/Models/Stores/loads.xml</path>
 	</model>
+
 	<model>
         	<name>landing light1</name>
         	<path>Aircraft/A-10/Models/Effects/landing-light.xml</path>
@@ -961,6 +962,18 @@
 			</and>
 		</condition>
 	</animation>-->
+
+	<animation>
+		<type>select</type>
+		<object-name>BCanopyGlass</object-name>
+		<object-name>BCanopyGlass-int</object-name>
+		<object-name>BCanopyFrame</object-name>
+		<condition>
+			<not>
+				<property>A-10/done</property>
+			</not>
+		</condition>
+	</animation>
 
 	<animation>
 		<type>rotate</type>
@@ -2092,6 +2105,11 @@
 		<type>noshadow</type>
 		<object-name>REFan</object-name>
 	</animation>
+
+	<effect> 
+    	<inherits-from>Aircraft/A-10/Models/Effects/glass/glassIR</inherits-from> 
+    	<object-name>pave-peny-dome</object-name>
+  	</effect>
 
 	<!-- exhausts -->
 	<!--<animation>

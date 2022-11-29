@@ -521,6 +521,7 @@ var R_AC_bus = func() {
 	setprop("systems/electrical/outputs/cadc", R_AC_bus_volts);
 	setprop("systems/electrical/outputs/nav-mode", R_AC_bus_volts);
 	setprop("systems/electrical/outputs/aoa-indexer", R_AC_bus_volts);
+    setprop("systems/electrical/outputs/landing-light", R_AC_bus_volts);
 	var hud_mode = getprop("sim/model/A-10/controls/hud/mode-selector");
 	if (hud_mode > 0) {
 		setprop("systems/electrical/outputs/hud", R_AC_bus_volts);
