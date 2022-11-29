@@ -132,6 +132,10 @@
 				<property>systems/A-10-ejectable-seat/armed</property>
 				<value>0</value>
 			</equals>
+			<greater-than>
+				<property>systems/electrical/outputs/caution-panel</property>
+				<value>24</value>
+			</greater-than>
 		</condition>
 	</animation>
 
@@ -143,6 +147,10 @@
 				<property>systems/A-10-bleed-air/warn-light</property>
 				<value>1</value>
 			</equals>
+			<greater-than>
+				<property>systems/electrical/outputs/caution-panel</property>
+				<value>24</value>
+			</greater-than>
 		</condition>
 	</animation>
 
