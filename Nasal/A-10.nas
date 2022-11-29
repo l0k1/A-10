@@ -343,10 +343,21 @@ warn_slow_lights_switch.setBoolValue(1);
 
 aircraft.data.add("controls/lighting/panel-norm", "controls/lighting/instruments-norm", "sim/model/A-10/controls/lighting/formation");
 
+###### Switches ######
+
+var ejectSafety = props.globals.getNode("/systems/A-10-ejectable-seat/armed");
+var ejectSafetyToggle = func {
+    if (ejectSafety.getBoolValue()) {
+        ejectSafety.setBoolValue(0);
+    } else {
+        ejectSafety.setBoolValue(1);
+    }
+}
+
 ###### EJECTION SEQUENCE #####
 
 var eject = func{
-  if (getprop("A-10/done")==1) {
+  if (getprop("A-10/done")==1 or !getprop("/systems/A-10-ejectable-seat/armed")) {
       return;
   }
   setprop("A-10/done",1);
