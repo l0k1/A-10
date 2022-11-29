@@ -965,9 +965,11 @@
 
 	<animation>
 		<type>select</type>
+		<object-name>BCanopyFrame</object-name>
+		<object-name>BCanopyFrameInner</object-name>
 		<object-name>BCanopyGlass</object-name>
 		<object-name>BCanopyGlass-int</object-name>
-		<object-name>BCanopyFrame</object-name>
+		<object-name>CanopyLock</object-name>
 		<condition>
 			<not>
 				<property>A-10/done</property>
