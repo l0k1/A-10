@@ -343,4 +343,29 @@ warn_slow_lights_switch.setBoolValue(1);
 
 aircraft.data.add("controls/lighting/panel-norm", "controls/lighting/instruments-norm", "sim/model/A-10/controls/lighting/formation");
 
+###### EJECTION SEQUENCE #####
+
+var eject = func{
+  if (getprop("A-10/done")==1) {
+      return;
+  }
+  setprop("A-10/done",1);
+  var es = armament.AIM.new(12, "es","Pilot", nil ,[2.69,1.01,0]);
+  es.releaseAtNothing();
+  damage.damageLog.push("Pilot ejected");   
+    
+  # set the view to follow pilot:
+  setprop("sim/view[115]/config/eye-lat-deg-path","/ai/models/es/position/latitude-deg");
+  setprop("sim/view[115]/config/eye-lon-deg-path","/ai/models/es/position/longitude-deg");
+  setprop("sim/view[115]/config/eye-alt-ft-path","/ai/models/es/position/altitude-ft");
+  setprop("sim/view[115]/config/target-lat-deg-path","/ai/models/es/position/latitude-deg");
+  setprop("sim/view[115]/config/target-lon-deg-path","/ai/models/es/position/longitude-deg");
+  setprop("sim/view[115]/config/target-alt-ft-path","/ai/models/es/position/altitude-ft");
+  setprop("sim/view[115]/enabled", 1);
+  view.setViewByIndex(115);
+  #Set all systems inop
+  damage.fail_systems(1);
+
+}
+
 # EOF #####################

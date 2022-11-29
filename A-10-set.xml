@@ -163,6 +163,32 @@ Fairchild A-10 simulation config.
 				<default-field-of-view-deg>61.5</default-field-of-view-deg>
 			</config>
 		</view>
+        <view n="115">
+            <name>Ejection View</name>
+            <type>lookat</type>
+            <enabled type="bool">false</enabled>
+            <internal>false</internal>
+            <config>
+                <from-model type="bool">false</from-model>
+                <!--<eye-lat-deg-path>/ai/models/es/position/latitude-deg</eye-lat-deg-path>
+                <eye-lon-deg-path>/ai/models/es/position/longitude-deg</eye-lon-deg-path>
+                <eye-alt-ft-path>/ai/models/es/position/altitude-ft</eye-alt-ft-path>-->
+                <at-model type="bool">false</at-model>
+                <!--<target-x-offset-m type="double">0</target-x-offset-m>
+                <target-y-offset-m type="double">0</target-y-offset-m>
+                <target-z-offset-m type="double">0</target-z-offset-m>-->
+                <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+                <pitch-offset-deg type="double">0</pitch-offset-deg>
+                <heading-offset-deg type="double">0</heading-offset-deg>
+                <roll-offset-deg type="double">0</roll-offset-deg>
+                <x-offset-m type="double">0</x-offset-m>
+                <!-- left(+)/right(-) -->
+                <y-offset-m type="double">0</y-offset-m>
+                <!-- up(+)/down(-) -->
+                <z-offset-m type="double">-25</z-offset-m>
+                <!-- fore(+)/aft(-) -->
+            </config>
+        </view>
 
 		<instrumentation>
 			<path>Aircraft/A-10/Systems/instrumentation.xml</path>
@@ -479,10 +505,6 @@ Fairchild A-10 simulation config.
 		<help>
 			<title>Fairchild A-10</title>
 			<key>
-				<name>=</name>
-				<desc>Open/close A-10 weapons dialog</desc>
-			</key>
-			<key>
 				<name>C</name>
 				<desc>Open/close canopy</desc>
 			</key>
@@ -499,13 +521,14 @@ Fairchild A-10 simulation config.
 				<desc>Decrease/increase spoilers</desc>
 			</key>
 			<key>
-				<name>K</name>
-				<desc>Toggle trajectory markers</desc>
-			</key>
-			<key>
 				<name>q</name>
 				<desc>Release chaff/flare</desc>
 			</key>
+			<key>
+				<name>F6</name>
+				<desc>Eject</desc>
+			</key>
+			
 			<line></line>
 
 			<line>How to start it ?</line>
@@ -747,6 +770,8 @@ Fairchild A-10 simulation config.
 				<selected type="bool">false</selected>
 			</station>
 		</stations>
+		<done type="bool">false</done>
+		<force type="double">0</force>
 	</A-10>
 
 	<ai>
@@ -850,6 +875,16 @@ Fairchild A-10 simulation config.
             				<property>fdm/jsbsim/electric/switches/landinglight</property>
         			</binding>
     			</key>
+			
+			<key n="262">
+				<name>F6</name>
+				<binding>
+					<command>nasal</command>
+					<script>
+						A10.eject()
+					</script>
+				</binding>
+			</key>
 
 			<!--<key n="109">
 				<name>m</name>

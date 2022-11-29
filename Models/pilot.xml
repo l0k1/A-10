@@ -18,5 +18,16 @@
 			</not>
 		</condition>
 	</animation>
+	<!--Ejection-->
+	<animation>
+		<type>select</type>
+		<object-name>Pilot</object-name>
+		<object-name>seat</object-name>
+		<condition>
+			<not>
+				<property>A-10/done</property>
+			</not>
+		</condition>
+	</animation>
 
 </PropertyList>
