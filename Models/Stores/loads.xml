@@ -389,20 +389,6 @@
         </condition>
     </animation>
 
-    <animation>
-        <type>select</type>
-        <object-name>600lbL</object-name>
-        <condition>
-            <equals>
-                <property>payload/armament/station/id-3-type</property>
-                <value>600 Gal Fuel Tank</value>
-            </equals>
-            <greater-than>
-                <property>payload/armament/station/id-3-count</property>
-                <value>0</value>
-            </greater-than>
-        </condition>
-    </animation>
     <!--Pylon4[5]-->
 
     <animation>
@@ -466,20 +452,6 @@
     </animation>
 
     <!--Pylon5[6]-->
-    <animation>
-        <type>select</type>
-        <object-name>600lbC</object-name>
-        <condition>
-            <equals>
-                <property>payload/armament/station/id-5-type</property>
-                <value>600 Gal Fuel Tank</value>
-            </equals>
-            <greater-than>
-                <property>payload/armament/station/id-5-count</property>
-                <value>0</value>
-            </greater-than>
-        </condition>
-    </animation>
 
     <animation>
         <type>select</type>
@@ -685,20 +657,6 @@
         </condition>
     </animation>
 
-    <animation>
-        <type>select</type>
-        <object-name>600lbR</object-name>
-        <condition>
-            <equals>
-                <property>payload/armament/station/id-7-type</property>
-                <value>600 Gal Fuel Tank</value>
-            </equals>
-            <greater-than>
-                <property>payload/armament/station/id-7-count</property>
-                <value>0</value>
-            </greater-than>
-        </condition>
-    </animation>
     <!--Pylon8[9]-->
     <animation>
         <type>select</type>
