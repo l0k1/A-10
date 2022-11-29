@@ -1,7 +1,8 @@
 A-10A Armament - 11/10/2007 —— updated by Zorka 07/05/2022
 
 
-External stores (Pylons in parentheses):
+
+External stores (Pylons in brackets):
 ----------------------------------------
 
   - AN-ALQ-131: ECM Pod. Doesn't do anything yet. (1, 11)
@@ -14,17 +15,17 @@ External stores (Pylons in parentheses):
   
   - Single CBU-87: Cluster munition. (All but 6)
 
-  - Single Mk-82-LD: 500lb Low Drag Bomb. (All but 6)
+  - Single Mk-82: 500lb Bomb. (All but 6)
   
-  - Single Mk-82 AIR: 500lb High Drag Bomb. (All but 6)
+  - Single Mk-82 AIR: 500lb Air-Retarded Bomb. (All but 6)
 
-  - Triple Mk-82-LD: 500lb Low Drag Bomb. 3 bombs per pylon. (3, 4, 8, 9)
+  - Triple Mk-82: 500lb Bomb. 3 bombs per pylon. (3, 4, 8, 9)
 
-  - Triple Mk-82 AIR: 500lb High Drag Bomb. 3 bombs per pylon. (3, 4, 8, 9)
+  - Triple Mk-82 AIR: 500lb Air-Retarded Bomb. 3 bombs per pylon. (3, 4, 8, 9)
   
-  - Single Mk-84: 2000lb Low Drag Bomb. (3, 4, 5, 7, 8, 9)
+  - Single Mk-84: 2000lb Bomb. (3, 4, 5, 7, 8, 9)
 
-  - Triple AGM-65: Temporarily disabled for development. (3, 9)
+  - Triple AGM-65: Temporarily disabled. (3, 9)
 
 The Fuel and Payload dialog and the loading of ordnances is independant of the
 aircraft state, that is you don't need to start the engines or any electrical

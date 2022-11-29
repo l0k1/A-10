@@ -25,7 +25,7 @@ VHF AM/FM Transceiver: Collins AN/ARC-186(V)
 	The aft one should be tuned to operate in VHF/FM mode for homing capability
 	at 30 to 76 MHz FM but is currently disabled in the model.
 
-	For conveniance purposes, I decided to let the forward one work in the both
+	For convenience purposes, I decided to let the forward one work in the both
     ranges for homing mode (which in RL should be reserved to FM).
 	The homing is displayed on the ADI (Attitude Indicator). There is no Course
 	setting and no Radials caculation when using AM/FM homing on the ADI.
@@ -39,18 +39,18 @@ VHF AM/FM Transceiver: Collins AN/ARC-186(V)
 
 		Squelch disable/tone switch - not used yet
 
-		Frequency control/emrgency select knob:
+		Frequency control/emergency select knob:
 		- EMER FM       - not used yet (cyphered coms)
 		- EMER AM       - not used yet (cyphered coms)
 		- MAN           - Enables manual frequency selection.
 		- PRE           - Enables preset chanel selection.
 
 		Load pushbutton - Inserts manualy selected frequency into selected
-		preseted channel. 
+		preset channel. 
 
 	Center:
 		Frequency indicator - displays the frequency selected by the frequency
-		selector   knobs. (in some case it doesn't reflect the frequency in use)
+		selector knobs. (in some case it doesn't reflect the frequency in use)
 
 		Frequency selector buttons - select frequency.
 		(Left mouse button rotates CW, center mouse button (linux) rotates CCW)

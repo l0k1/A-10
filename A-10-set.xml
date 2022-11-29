@@ -533,7 +533,8 @@ Fairchild A-10 simulation config.
 
 			<line>How to start it ?</line>
 			<line>  Menu > Help > Start Tutorial > Engines Start</line>
-			<line></line>
+			<line>	Or use Autostart in menu</line>
+			<line></line>			
 			<line>External fuel tanks ?</line>
 			<line>  Menu > Equipment > Fuel and Payload</line>
 			<line></line>
@@ -548,8 +549,8 @@ Fairchild A-10 simulation config.
 			<line> "Gun Rate" switch to "Hi" to activate the GAU-8/A gun.</line>
 			<line>  Mouse click some of the 11 squares under "Weapon Stations" to activate bombs</line>
 			<line>  RIP QTY and RIP INTVL (mouse click) allow you to release several bombs at one go.</line>
-			<line>  Aim GAU-8/A gun with the cross on the HUD. You can lower/upper the cross in the </line>
-			<line>  HUD with the "DEPR" knob in the HUD panel</line>
+			<line>  Aim GAU-8/A gun with the cross on the HUD. You can lower/lift the reticle (cross) in the </line>
+			<line>  HUD with the "DEPR" knob in the HUD panel (top left of main panel)</line>
 			<line>  Shoot gun with 'e'; release bombs with ','.</line>
 			<line>  Swith HUD knob to CCIP and aim bombs via the circle.</line>
 			<line></line>
