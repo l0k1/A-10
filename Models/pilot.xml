@@ -5,6 +5,23 @@
 	<name>pilot</name>
 	<path>pilot.ac</path>
 
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>handle</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>
+					A10.eject()
+				</script>
+			</binding>
+		</action>
+	</animation>	
+
+
 	<!-- De-select when in view 0 -->
 	<animation>
 		<type>select</type>
