@@ -77,7 +77,7 @@
 		<width>20</width>
 		<height>20</height>
 		<label>Left wing fuel tank pump</label>
-		<property>/controls/fuel/tank[0]/boost-pump/serviceable</property>
+		<property>/controls/fuel/tank[0]/boost-pump-0/serviceable</property>
 	</checkbox>
 	
 	<checkbox>
@@ -86,7 +86,7 @@
 		<width>20</width>
 		<height>20</height>
 		<label>Left main fuel tank pump</label>
-		<property>/controls/fuel/tank[1]/boost-pump/serviceable</property>
+		<property>/controls/fuel/tank[1]/boost-pump-1/serviceable</property>
 	</checkbox>
 	
 	<checkbox>
@@ -95,7 +95,7 @@
 		<width>20</width>
 		<height>20</height>
 		<label>Right main fuel tank pump</label>
-		<property>/controls/fuel/tank[2]/boost-pump/serviceable</property>
+		<property>/controls/fuel/tank[2]/boost-pump-2/serviceable</property>
 	</checkbox>
 	
 	<checkbox>
@@ -104,7 +104,7 @@
 		<width>20</width>
 		<height>20</height>
 		<label>Right wing fuel tank pump</label>
-		<property>/controls/fuel/tank[3]/boost-pump/serviceable</property>
+		<property>/controls/fuel/tank[3]/boost-pump-3/serviceable</property>
 	</checkbox>
 	
 	<checkbox>

@@ -1100,16 +1100,16 @@ Fairchild A-10 simulation config.
 		<fuel>
 			<tank n="0">
 				<boost-pump n="0" type="bool">true</boost-pump>
-				<boost-pump>
+				<boost-pump-0>
 				    <serviceable type="bool">true</serviceable>
-				</boost-pump>
+				</boost-pump-0>
 				<fill-dis type="bool">false</fill-dis>
 			</tank>
 			<tank n="1">
 				<boost-pump n="0" type="bool">true</boost-pump>
-				<boost-pump>
+				<boost-pump-1>
 				    <serviceable type="bool">true</serviceable>
-				</boost-pump>
+				</boost-pump-1>
 				<DC-boost-pump>
 				    <serviceable type="bool">true</serviceable>
 				</DC-boost-pump>
@@ -1117,37 +1117,37 @@ Fairchild A-10 simulation config.
 			</tank>
 			<tank n="2">
 				<boost-pump n="0" type="bool">true</boost-pump>
-				<boost-pump>
+				<boost-pump-2>
 				    <serviceable type="bool">true</serviceable>
-				</boost-pump>
+				</boost-pump-2>
 				<fill-dis type="bool">false</fill-dis>
 			</tank>
 			<tank n="3">
 				<boost-pump n="0" type="bool">true</boost-pump>
-				<boost-pump>
+				<boost-pump-3>
 				    <serviceable type="bool">true</serviceable>
-				</boost-pump>
+				</boost-pump-3>
 				<fill-dis type="bool">false</fill-dis>
 			</tank>
 			<tank n="4">
 				<boost-pump n="0" type="bool">false</boost-pump>
-				<boost-pump>
+				<boost-pump-4>
 				    <serviceable type="bool">true</serviceable>
-				</boost-pump>
+				</boost-pump-4>
 				<fill-dis type="bool">false</fill-dis>
 			</tank>
 			<tank n="5">
 				<boost-pump n="0" type="bool">false</boost-pump>
-				<boost-pump>
+				<boost-pump-5>
 				    <serviceable type="bool">true</serviceable>
-				</boost-pump>
+				</boost-pump-5>
 				<fill-dis type="bool">false</fill-dis>
 			</tank>
 			<tank n="6">
 				<boost-pump n="0" type="bool">false</boost-pump>
-				<boost-pump>
+				<boost-pump-6>
 				    <serviceable type="bool">true</serviceable>
-				</boost-pump>
+				</boost-pump-6>
 				<fill-dis type="bool">false</fill-dis>
 			</tank>
 		</fuel>

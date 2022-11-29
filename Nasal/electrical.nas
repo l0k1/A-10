@@ -385,7 +385,7 @@ var DC_ESSEN_bus = func() {
 		int_tanks_filled > 0
 		and getprop("controls/fuel/tank[4]/boost-pump[0]")
 		and !getprop("systems/refuel/receiver-lever")
-		and getprop("controls/fuel/tank[4]/boost-pump/serviceable")
+		and getprop("controls/fuel/tank[4]/boost-pump-4/serviceable")
 		and getprop("consumables/fuel/tank[4]/level-gal_us") > 1.56
 		and getprop("systems/bleed-air/psi") > 7
 		and DC_ESSEN_ok
@@ -401,7 +401,7 @@ var DC_ESSEN_bus = func() {
 		int_tanks_filled > 0
 		and getprop("controls/fuel/tank[4]/boost-pump[0]")
 		and !getprop("systems/refuel/receiver-lever")
-		and getprop("controls/fuel/tank[6]/boost-pump/serviceable")
+		and getprop("controls/fuel/tank[6]/boost-pump-6/serviceable")
 		and getprop("consumables/fuel/tank[6]/level-gal_us") > 1.56
 		and getprop("systems/bleed-air/psi") > 7
 		and DC_ESSEN_ok
@@ -417,7 +417,7 @@ var DC_ESSEN_bus = func() {
 		int_tanks_filled > 0
 		and getprop("controls/fuel/tank[5]/boost-pump[0]")
 		and !getprop("systems/refuel/receiver-lever")
-		and getprop("controls/fuel/tank[5]/boost-pump/serviceable")
+		and getprop("controls/fuel/tank[5]/boost-pump-5/serviceable")
 		and getprop("consumables/fuel/tank[5]/level-gal_us") > 1.56
 		and ! A10fuel.Left_External.get_boost_pump()
 		and ! A10fuel.Right_External.get_boost_pump()
@@ -488,7 +488,7 @@ var L_AC_bus = func() {
 	# Left wing and main fuel pumps power
 	if (
 		getprop("controls/fuel/tank[0]/boost-pump[0]")
-		and getprop("controls/fuel/tank[0]/boost-pump/serviceable")
+		and getprop("controls/fuel/tank[0]/boost-pump-0/serviceable")
 		and getprop("consumables/fuel/tank[0]/level-gal_us") > 1.56
 		and L_AC_bus_volts >= 20
 	) {
@@ -500,7 +500,7 @@ var L_AC_bus = func() {
 
 	if (
 		getprop("controls/fuel/tank[1]/boost-pump[0]")
-		and getprop("controls/fuel/tank[1]/boost-pump/serviceable")
+		and getprop("controls/fuel/tank[1]/boost-pump-1/serviceable")
 		and getprop("consumables/fuel/tank[1]/level-gal_us") > 1.56
 		and L_AC_bus_volts >= 20
 		and ! A10fuel.Left_Wing.get_boost_pump()
@@ -535,7 +535,7 @@ var R_AC_bus = func() {
 	# Right wing and main fuel pumps power
 	if (
 		getprop("controls/fuel/tank[3]/boost-pump[0]")
-		and getprop("controls/fuel/tank[3]/boost-pump/serviceable")
+		and getprop("controls/fuel/tank[3]/boost-pump-3/serviceable")
 		and getprop("consumables/fuel/tank[3]/level-gal_us") > 1.56
 		and R_AC_bus_volts >= 20
 	) {
@@ -547,7 +547,7 @@ var R_AC_bus = func() {
 
 	if (
 		getprop("controls/fuel/tank[2]/boost-pump[0]")
-		and getprop("controls/fuel/tank[2]/boost-pump/serviceable")
+		and getprop("controls/fuel/tank[2]/boost-pump-2/serviceable")
 		and getprop("consumables/fuel/tank[2]/level-gal_us") > 1.56
 		and R_AC_bus_volts >= 20
 		and ! A10fuel.Right_Wing.get_boost_pump()
