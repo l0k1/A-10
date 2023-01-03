@@ -312,6 +312,7 @@ var hitmessage = func(typeOrd) {
         msg.RemoteCallsign = hit_callsign;
         notifications.hitBridgedTransmitter.NotifyAll(msg);
         damage.damageLog.push("You hit "~hit_callsign~" with "~typeOrd~", "~hits_count~" times.");
+        print_screen_msg(""~hit_callsign~" with "~typeOrd~", "~hits_count~" times.", [0,1,0])
     } else {
         setprop("/sim/messages/atc", phrase);
     }
@@ -380,3 +381,15 @@ var eject = func{
 }
 
 # EOF #####################
+
+var print_screen_msg = func (msg, indexColor) {
+    var window = screen.window.new(10, 10, 3, 10); # create new window object. 750, 10 : Lower Right
+    window.bg = [0,0,0,.5]; # black alpha .5 background 
+	window.write(msg, indexColor[0], indexColor[1], indexColor[2]); # print message with color arg.
+	print(" " ~ msg); # print message in case user need it later
+	send_mp_msg(msg); # send mp message
+}
+
+var send_mp_msg = func (msg) {
+	setprop("sim/multiplay/chat", " " ~ msg);
+}
