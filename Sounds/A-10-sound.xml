@@ -1850,10 +1850,13 @@
 
     <RWR>
         <name>incoming</name>
-        <mode>once</mode>
+        <mode>single</mode>
         <path>Aircraft/A-10/Sounds/1000hz-Triangle.wav</path>
         <condition>
-            <property>payload/armament/MAW-active</property>
+            <or>
+              <property>payload/armament/MAW-active</property>
+              <property>payload/armament/MAW-semiactive</property>
+            </or>
             <equals>
                 <property>sim/current-view/view-number</property>
                 <value>0</value>
