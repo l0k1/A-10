@@ -1877,6 +1877,22 @@
         <property>sim/model/A-10/instrumentation/warnings/audio-alt-volume</property>
       </volume>
     </air-spike>
+
+    <new-emitter>
+      <name>rwr-new1</name>
+      <path>Aircraft/A-10/Sounds/rwr/rwr-new.wav</path>
+      <mode>once</mode>
+      <condition>
+        <equals>
+          <property>sound/rwr-new</property>
+          <value>1</value>
+        </equals>
+      </condition>
+      <volume>
+        <property>sim/model/A-10/instrumentation/warnings/audio-alt-volume</property>
+      </volume>
+    </new-emitter>
+
 <!-- lighting switches -->
     <strobe-switch-up>
       <name>strobe-switch-up</name>
