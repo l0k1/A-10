@@ -1867,6 +1867,16 @@
         </volume>
     </RWR>
 
+    <air-spike>
+      <name>spike</name>
+      <path>Aircraft/Sounds/rwr/spike.wav</path>
+      <condition>
+        <property>payload/armament/spike</property>
+      </condition>
+      <volume>
+        <property>sim/model/A-10/instrumentation/warnings/audio-alt-volume</property>
+      </volume>
+    </air-spike>
 <!-- lighting switches -->
     <strobe-switch-up>
       <name>strobe-switch-up</name>
