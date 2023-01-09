@@ -1869,6 +1869,7 @@
 
     <air-spike>
       <name>spike</name>
+      <mode>looped</mode>
       <path>Aircraft/A-10/Sounds/rwr/spike.wav</path>
       <condition>
         <property>payload/armament/spike</property>
