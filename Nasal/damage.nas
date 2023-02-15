@@ -1351,6 +1351,8 @@ var re_init = func (node) {
 
   var failure_modes = FailureMgr._failmgr.failure_modes;
   var mode_list = keys(failure_modes);
+  setprop("A-10/done",0);
+  view.setViewByIndex(0);
 
   foreach(var failure_mode_id; mode_list) {
     FailureMgr.set_failure_level(failure_mode_id, 0);
