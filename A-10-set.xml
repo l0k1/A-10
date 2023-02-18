@@ -509,6 +509,14 @@ Fairchild A-10 simulation config.
 				<desc>Open/close canopy</desc>
 			</key>
 			<key>
+				<name>Ctrl w</name>
+				<desc>Toggle Master Arm</desc>
+			</key>
+			<key>
+				<name>m</name>
+				<desc>Toggle Gun Rate Switch</desc>
+			</key>
+			<key>
 				<name>e</name>
 				<desc>Fire the GAU-8/A cannon</desc>
 			</key>
@@ -887,6 +895,24 @@ Fairchild A-10 simulation config.
 				</binding>
 			</key>
 
+			<key n="23">
+				<name>Ctrl w</name>
+				<desc>Toggle Master Arm</desc>
+				<binding>
+					<command>property-toggle</command>
+					<property>controls/armament/master-arm</property>
+				</binding>
+			</key>
+
+			<key n="109">
+				<name>m</name>
+				<desc>Toggle Gun Rate Switch</desc>
+				<binding>
+					<command>property-togge</command>
+					<property>A-10/stations/station[11]/selected</property>
+				</binding>
+			</key>
+				
 			<!--<key n="109">
 				<name>m</name>
 				<desc>Masterarm</desc>
