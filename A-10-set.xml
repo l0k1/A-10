@@ -908,7 +908,7 @@ Fairchild A-10 simulation config.
 				<name>m</name>
 				<desc>Toggle Gun Rate Switch</desc>
 				<binding>
-					<command>property-togge</command>
+					<command>property-toggle</command>
 					<property>A-10/stations/station[11]/selected</property>
 				</binding>
 			</key>
