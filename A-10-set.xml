@@ -719,6 +719,14 @@ Fairchild A-10 simulation config.
 	</sim>
 
 	<A-10>
+		<avionics>
+			<ew-mws-switch type="bool">0</ew-mws-switch>
+			<ew-jmr-switch type="bool">0</ew-jmr-switch>
+			<ew-rwr-switch type="bool">0</ew-rwr-switch>
+			<ew-disp-switch type="bool">0</ew-disp-switch>
+			<ew-mode-knob type="double">0</ew-mode-knob>
+			<ew-cms-jett-switch type="bool">0</ew-cms-jett-switch>
+		</avionics>
 		<stores>
 			<ecm-mounted-left type="bool">false</ecm-mounted-left>
 			<ecm-mounted-right type="bool">false</ecm-mounted-right>
@@ -1157,6 +1165,8 @@ Fairchild A-10 simulation config.
 		</gear>
 		<lighting>
 			<strobe type="bool">false</strobe>
+			<panel-int type="double">0</panel-int>
+			<panel-int-knob type="double">0</panel-int-knob>
 		</lighting>
 	</controls>
 
@@ -1248,6 +1258,7 @@ Fairchild A-10 simulation config.
 				<fuel-gauge-sel type="double">0</fuel-gauge-sel>
 				<hud type="double">0</hud>
                 <rwr type="double">0</rwr>
+				<lx-power type="double">0</lx-power>
 				<engine n="0">
 					<engines-ignitors n="0" type="double">0</engines-ignitors>
 					<engines-ignitors n="1" type="double">0</engines-ignitors>
