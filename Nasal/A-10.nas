@@ -179,7 +179,7 @@ var loop_flare = func {
         setprop("ai/submodels/submodel[3]/flare-release-snd", FALSE);
         setprop("ai/submodels/submodel[3]/flare-release-out-snd", FALSE);
 		}		
-    var flareOn = getprop("ai/submodels/submodel[3]/flare-release-cmd");
+    var flareOn = getprop("ai/submodels/submodel[3]/flare-release-cmd") and getprop("A-10/avionics/ew-mode-knob") == 1;
     if (flareOn == TRUE and getprop("ai/submodels/submodel[3]/flare-release") == FALSE
             and getprop("ai/submodels/submodel[3]/flare-release-out-snd") == FALSE
             and getprop("ai/submodels/submodel[3]/flare-release-snd") == FALSE) {

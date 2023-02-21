@@ -12,6 +12,7 @@
                 <property>systems/electrical/outputs/rwr</property>
                 <value>20</value>
             </greater-than-equals>
+            <property>A-10/avionics/ew-rwr-switch</property>
         </condition>
         <emission>
             <red>  1</red>
