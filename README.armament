@@ -1,5 +1,11 @@
-A-10A Armament - 11/10/2007 —— updated by Zorka 07/05/2022
+A-10A Armament - 11/10/2007 —— updated by SammySkycrafts 21/02/23 (yes im british get over it)
 
+Countermeasures:
+----------------------------------------
+
+- RWR needs to be powered on, even when using Autostart. This can be done by turning on the RWR switch on the Countermeasures Signal Processor, located above the warning panel.
+- Countermeasures will be inhibited from dispensing if the following is true:
+    - CMSP mode knob set to OFF, or STBY (STBY implemented in future update)
 
 
 External stores (Pylons in brackets):
@@ -86,7 +92,7 @@ right counter wich is msec x10.
 
 
 
-To release a selected weapon, switch to it (from guns) using 'w' and press 'e'. (Note: This will be changed to two separate keys in upcoming releases)
+To release, select the station, and then press the trigger when appropriate. Multiple stations can be selected if they contain the same weapon, however only a single weapon will release unless ripple quantity is set.
 
 
 That's all folks, enjoy !
