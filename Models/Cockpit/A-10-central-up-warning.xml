@@ -10,97 +10,30 @@
 
 
 	<animation>
-		<type>select</type>
-		<object-name>alt-warning</object-name>
-		<condition>
-			<less-than>
-				<property>position/altitude-agl-ft</property>
-				<value>200</value>
-			</less-than>
-			<equals>
-				<property>gear/gear[0]/position-norm</property>
-				<value>0</value>
-			</equals>
-			<property>sim/model/A-10/lighting/warn-medium-lights/state</property>
-		</condition>
-	</animation>
-
-    <animation>
-		<type>select</type>
-		<object-name>launch-warning</object-name>
-		<condition>
-            <not>
-                <equals>
-                    <property>sound/rwr-launch</property>
-                    <value type="string"></value>
-                </equals>
-            </not>
-			<property>sim/model/A-10/lighting/warn-medium-lights/state</property>
-		</condition>
-	</animation>
-
-	<animation>
-		<type>select</type>
-		<object-name>search-warning1</object-name>
-		<condition>
-			<and>
-				<property>sim/model/A-10/lighting/warn-slow-lights/state</property>
-				<property>instrumentation/ecm/on-off</property>
-				<property>instrumentation/ecm/alert-type1</property>
-				<not>
-					<property>instrumentation/ecm/alert-type2</property>
-				</not>
-				<greater-than>
-					<property>systems/electrical/outputs/rwr</property>
-					<value>20</value>
-				</greater-than>
-			</and>
-		</condition>
-	</animation>
-	<animation>
-		<type>select</type>
-		<object-name>search-warning2</object-name>
-		<condition>
-			<and>
-				<property>instrumentation/ecm/on-off</property>
-				<property>instrumentation/ecm/alert-type2</property>
-				<greater-than>
-					<property>systems/electrical/outputs/rwr</property>
-					<value>20</value>
-				</greater-than>
-			</and>
-		</condition>
-	</animation>
-
-    <animation><!--Not Currently used - prop assigned to diable light-->
-        <type>select</type>
-        <object-name>activity</object-name>
-        <condition>
-            <greater-than>
-                <property>systems/electrical/output/rwr</property>
-                <value>90</value>
-            </greater-than>
-        </condition>
-    </animation>
-
-	<animation>
-		<type>rotate</type>
-		<object-name>button-audio</object-name>
+		<type>knob</type>
+		<object-name>aud_knob</object-name>
 		<property>sim/model/A-10/instrumentation/warnings/audio-alt-volume</property>
-		<interpolation>
-			<entry><ind>0</ind><dep>0</dep></entry>
-			<entry><ind>1</ind><dep>270</dep></entry>
-		</interpolation>
+		<factor>270</factor>
 		<center>
-			<x-m>0.0000</x-m>
-			<y-m>0.0472</y-m>
-			<z-m>0.0106</z-m>
+			<x-m>0.004203</x-m>
+			<y-m>-0.020229</y-m>
+			<z-m>-0.014592</z-m>
 		</center>
 		<axis>
 			<x>-1</x>
 			<y>0</y>
 			<z>0</z>
 		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>sim/model/A-10/instrumentation/warnings/audio-alt-volume</property>
+				<factor>0.1</factor>
+				<min>0</min>
+				<max>1</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>		
 	</animation>
 
 	<animation>
@@ -162,6 +95,17 @@
 
 <!-- lighting -->
 
+	<effect>
+		<inherits-from>Aircraft/A-10/Models/Effects/interior/panel-nvis</inherits-from>
+		<parameters>
+			<implicit-lightmap-threshold-low type="float">0.2</implicit-lightmap-threshold-low>
+			<implicit-lightmap-threshold-high type="float">0.4</implicit-lightmap-threshold-high>
+			<lightmap-factor n="0"><use>controls/lighting/panel-int</use></lightmap-factor>
+		</parameters>
+		<object-name>buttons</object-name>
+		<object-name>mount</object-name>
+	</effect>
+
 	<animation>
 		<object-name>mount</object-name>
 		<type>material</type>
@@ -188,6 +132,8 @@
 
 	<animation>
 		<object-name>buttons</object-name>
+		<object-name>knobs</object-name>
+		<object-name>mount</object-name>
 		<type>material</type>
 		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
 		<emission>
