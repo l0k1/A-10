@@ -71,19 +71,40 @@
 
 	<animation>
 		<object-name>console-adjustable</object-name>
+		<type>knob</type>
+		<property>controls/lighting/panel-int</property>
+		<factor>274</factor>
+		<center>
+			<x-m>0.0326</x-m>
+			<y-m>0.0370</y-m>
+		</center>
+		<axis><z>-1</z></axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/lighting/panel-int</property>
+				<factor>0.1</factor>
+				<min>0</min>
+				<max>1</max>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<object-name>flood-adjustable</object-name>
 		<type>rotate</type>
 		<property>controls/lighting/panel-norm</property>
 		<factor>274</factor>
 		<center>
 			<x-m>0.0326</x-m>
-			<y-m>0.0372</y-m>
+			<y-m>-0.034</y-m>
 		</center>
 		<axis><z>-1</z></axis>
 	</animation>
 	<animation>
 		<type>pick</type>
 		<visible>true</visible>
-		<object-name>console-adjustable</object-name>
+		<object-name>flood-adjustable</object-name>
 		<action>
 			<button>0</button>
 			<repeatable>true</repeatable>
@@ -193,6 +214,16 @@
 			<blue>0.07</blue>
 		</emission>
 	</animation>
+
+	<effect>
+		<inherits-from>Aircraft/A-10/Models/Effects/interior/panel</inherits-from>
+		<parameters>
+			<implicit-lightmap-threshold-low type="float">0.2</implicit-lightmap-threshold-low>
+			<implicit-lightmap-threshold-high type="float">1.2</implicit-lightmap-threshold-high>
+			<lightmap-factor n="0"><use>controls/lighting/panel-int</use></lightmap-factor>
+		</parameters>
+		<object-name>mount</object-name>
+	</effect>
 
 	<animation>
 		<type>range</type>

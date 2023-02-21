@@ -484,6 +484,7 @@ var R_DC_bus = func() {
 
 var L_AC_bus = func() {
 	load = 0.0;
+    setprop("systems/electrical/outputs/lx-power", L_AC_bus_volts);
 
 	# Left wing and main fuel pumps power
 	if (
