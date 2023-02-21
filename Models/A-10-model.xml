@@ -799,11 +799,21 @@
 	</model>
 
 	<model>
+		<path>Aircraft/A-10/Models/Cockpit/A-10-CMSP.xml</path>
+		<offsets>
+			<x-m>2.479</x-m>
+			<y-m>0.348</y-m>
+			<z-m>0.825</z-m>
+			<pitch-deg>30.00</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
 		<path>Aircraft/A-10/Models/Cockpit/A-10-warn-panel.xml</path>
 		<offsets>
-			<x-m>2.5100</x-m>
+			<x-m>2.6</x-m>
 			<y-m>0.3542</y-m>
-			<z-m>0.8150</z-m>
+			<z-m>0.76</z-m>
 			<pitch-deg>30.00</pitch-deg>
 		</offsets>
 	</model>
@@ -811,10 +821,9 @@
 	<model>
 		<path>Aircraft/A-10/Models/Cockpit/A-10-ils.xml</path>
 		<offsets>
-			<x-m>2.6670</x-m>
+			<x-m>2.707</x-m>
 			<y-m>0.3512</y-m>
-			<z-m>0.7250</z-m>
-			<pitch-deg>30.00</pitch-deg>
+			<z-m>0.7110</z-m>
 		</offsets>
 	</model>
 
