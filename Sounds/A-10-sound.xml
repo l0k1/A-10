@@ -1857,6 +1857,7 @@
               <property>payload/armament/MAW-active</property>
               <property>payload/armament/MAW-semiactive</property>
             </or>
+            <property>A-10/avionics/ew-mws-switch</property>
             <equals>
                 <property>sim/current-view/view-number</property>
                 <value>0</value>
@@ -1873,6 +1874,7 @@
       <path>Aircraft/A-10/Sounds/rwr/spike.wav</path>
       <condition>
         <property>payload/armament/spike</property>
+        <property>A-10/avionics/ew-rwr-switch</property>
       </condition>
       <volume>
         <property>sim/model/A-10/instrumentation/warnings/audio-alt-volume</property>
@@ -1888,6 +1890,7 @@
           <property>sound/rwr-new</property>
           <value>1</value>
         </equals>
+        <property>A-10/avionics/ew-rwr-switch</property>
       </condition>
       <volume>
         <property>sim/model/A-10/instrumentation/warnings/audio-alt-volume</property>
