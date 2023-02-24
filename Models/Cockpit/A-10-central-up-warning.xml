@@ -93,6 +93,16 @@
 		</condition>
 	</animation>
 
+	<animation>
+		<type>select</type>
+		<object-name>canvas_obj</object-name>
+		<condition>
+			<not>
+				<property>A-10/displays/hide-cmsc-canvas</property>
+			</not>
+		</condition>
+	</animation>
+
 <!-- lighting -->
 
 	<effect>

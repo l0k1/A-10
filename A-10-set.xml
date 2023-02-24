@@ -789,6 +789,9 @@ Fairchild A-10 simulation config.
 		</stations>
 		<done type="bool">false</done>
 		<force type="double">0</force>
+		<displays>
+			<hide-cmsc-canvas type="bool">1</hide-cmsc-canvas>
+		</displays>
 	</A-10>
 
 	<ai>
