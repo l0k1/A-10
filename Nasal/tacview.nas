@@ -164,7 +164,7 @@ var writeMyPlaneAttributes = func() {
     var tgt = "";
     var fuel = ",FuelWeight="~rounder(0.4535*getprop("/consumables/fuel/total-fuel-lbs"),1);
     var gear = ",LandingGear="~rounder(getprop("gear/gear[0]/position-norm"),0.01);
-    var str = myplaneID ~ fuel~gear~",IAS="~getIas()~",MACH="~getMach()~",AOA="~getAoA()~",HDG="~getHeading()~tgt~"\n";#",Throttle="~getThrottle()~",Afterburner="~getAfterburner()~ ,TAS="~getTas()~",CAS="~getCas()~"
+    var str = myplaneID ~ fuel~gear~",IAS="~getIas()~",Mach="~getMach()~",AOA="~getAoA()~",HDG="~getHeading()~tgt~",VerticalGForce="~getG()~"\n";#",Throttle="~getThrottle()~",Afterburner="~getAfterburner()~ ,TAS="~getTas()~",CAS="~getCas()~"
     thread.lock(mutexWrite);
     write(str);
     thread.unlock(mutexWrite);
@@ -258,6 +258,10 @@ var getMach = func() {
 
 var getAoA = func() {
     return rounder(getprop("/orientation/alpha-deg"),0.01);
+}
+
+var getG = func() {
+    getprop("accelerations/pilot-g");
 }
 
 #var getThrottle = func() {
