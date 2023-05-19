@@ -645,9 +645,9 @@ Fairchild A-10 simulation config.
 								<![CDATA[
 
 								if(getprop("/gear/gear[0]/wow") and getprop("/velocities/groundspeed-kt") <= 1.0){
-									setprop("/ai/submodels/submodel[3]/count", 480);
-                                    setprop("/ai/submodels/submodel[4]/count", 480);
-									screen.log.write("480 flares loaded", 1, 1, 1);
+									setprop("/ai/submodels/submodel[3]/count", 240);
+                                    setprop("/ai/submodels/submodel[4]/count", 240);
+									screen.log.write("240 flares loaded", 1, 1, 1);
 								} else {
 									screen.log.write("Can't load flares while airborne or moveing", 1, 1, 1);
 								}
@@ -790,7 +790,9 @@ Fairchild A-10 simulation config.
 		<done type="bool">false</done>
 		<force type="double">0</force>
 		<displays>
-			<hide-cmsc-canvas type="bool">1</hide-cmsc-canvas>
+			<cmsc>
+				<cmsc-disp-int type="float">0.35</cmsc-disp-int>
+			</cmsc>
 		</displays>
 	</A-10>
 
@@ -1385,6 +1387,9 @@ Fairchild A-10 simulation config.
 		    <!-- <file>Aircraft/f16/Nasal/M_frame_notification.nas</file> -->
 		    <file>Aircraft/A-10/Nasal/GeoBridgedTransmitter.nas</file>
 		</notifications>
+		<hack>
+			<file>Aircraft/A-10/Nasal/hackCanvas.nas</file>
+		</hack>
         <vector>
             <file>Aircraft/A-10/Nasal/vector.nas</file>
         </vector>
@@ -1437,6 +1442,9 @@ Fairchild A-10 simulation config.
             <file>Aircraft/A-10/Nasal/RADAR/radar-system.nas</file>
             <file>Aircraft/A-10/Nasal/RADAR/rwr-only.nas</file>
         </radar_system>
+		<cmsc>
+			<file>Aircraft/A-10/Nasal/CMSC_disp.nas</file>
+		</cmsc>
         <rwr>
 			<file>Aircraft/A-10/Nasal/RADAR/rwr.nas</file>
 		</rwr>
