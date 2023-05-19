@@ -120,6 +120,17 @@
 		</condition>
 	</animation>
 
+	<animation>
+		<type>select</type>
+		<object-name>cmsc_canvas</object-name>
+        <condition>
+            <greater-than-equals>
+                <property>systems/electrical/outputs/rwr</property>
+                <value>24</value>
+            </greater-than-equals>
+        </condition>
+	</animation>
+
 <!-- lighting -->
 
 	<effect>
