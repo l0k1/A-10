@@ -812,14 +812,6 @@ Fairchild A-10 simulation config.
 	<input>
 
 		<keyboard>
-			<key n="61">
-				<name>=</name>
-				<desc>Show configuration dialog</desc>
-				<binding>
-					<command>nasal</command>
-					<script>A10weapons.config_dialog.toggle()</script>
-				</binding>
-			</key>
 			<key n="67">
 				<name>C</name>
 				<desc>Toggle canopy on or off</desc>
@@ -1076,7 +1068,7 @@ Fairchild A-10 simulation config.
 			<trigger-hydra-8 type="bool">false</trigger-hydra-8>
 			<trigger-hydra-9 type="bool">false</trigger-hydra-9>
 			<ripple type="int">1</ripple>
-			<ripple-delay type="float">0.05</ripple-delay>
+			<ripple-delay type="float">0.5</ripple-delay>
 			<dual type="int">1</dual>
 			<aim9-knob type="int">0</aim9-knob>
 			<station n="0">

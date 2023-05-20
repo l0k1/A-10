@@ -1008,7 +1008,7 @@
 		<type>textranslate</type>
 		<object-name>rip-intvl-x1</object-name>
 		<property>controls/armament/ripple-delay</property>
-		<factor>10</factor>
+		<factor>1</factor>
 		<axis><y>-1</y></axis>
 	</animation>
 
@@ -1016,8 +1016,8 @@
 		<type>textranslate</type>
 		<object-name>rip-intvl-x10</object-name>
 		<property>controls/armament/ripple-delay</property>
-		<factor>1</factor>
-		<step>0.0999</step>
+		<factor>0.1</factor>
+		<step>1</step>
 		<axis><y>-1</y></axis>
 	</animation>
 
