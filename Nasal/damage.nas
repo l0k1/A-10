@@ -27,8 +27,6 @@ var mlw_max=getprop("payload/d-config/mlw_max"); #
 var auto_flare_caller = getprop("payload/d-config/auto_flare_caller"); # If damage.nas should detect flare releases, or if function is called from somewhere in aircraft
 ############################################################################################################################
 
-var TRUE  = 1;
-var FALSE = 0;
 
 var hp = hp_max;
 setprop("sam/damage", math.max(0,100*hp/hp_max));#used in HUD
@@ -166,7 +164,7 @@ var warheads = {
     "Flare":             [95,    0.00,0,0],
     "3M9":               [96,  125.00,0,0],# 3M9M3 Missile used with 2K12/SA-6
     "5V28V":             [97,  478.00,0,0],# Missile used with S-200D/SA-5
-    "AIM-9X":            [98,   20.80,0,0],# block I
+    "AIM-9X":            [98,   20.80,0,0],
 };
 
 var AIR_RADAR = "air";
@@ -243,6 +241,10 @@ for(var myid = 0;myid<size(k);myid+=1) {
     return;
   }
 }
+
+var crater_model0 = getprop("payload/armament/models") ~ "crater_small.xml";
+var crater_model1 = getprop("payload/armament/models") ~ "crater_big.xml";
+var crater_model2 = getprop("payload/armament/models") ~ "bomb_hit_smoke.xml";
 
 #==================================================================
 #                       Notification processing
@@ -566,21 +568,18 @@ var DamageRecipient =
                 }
                 if (notification.Kind == CREATE and getprop("payload/armament/enable-craters") == 1 and statics["obj_"~notification.UniqueIdentity] == nil) {
                     if (notification.SecondaryKind == 0) {# TODO: make a hash with all the models
-                        var crater_model = getprop("payload/armament/models") ~ "crater_small.xml";
-                        var static = geo.put_model(crater_model, notification.Position.lat(), notification.Position.lon(), notification.Position.alt(), notification.Heading);
+                        var static = geo.put_model(crater_model0, notification.Position.lat(), notification.Position.lon(), notification.Position.alt(), notification.Heading);
                         if (static != nil) {
                             statics["obj_"~notification.UniqueIdentity] = [static, notification.Position.lat(), notification.Position.lon(), notification.Position.alt(), notification.Heading, notification.SecondaryKind];
                             #static is a PropertyNode inside /models
                         }
                     } elsif (notification.SecondaryKind == 1) {
-                        var crater_model = getprop("payload/armament/models") ~ "crater_big.xml";
-                        var static = geo.put_model(crater_model, notification.Position.lat(), notification.Position.lon(), notification.Position.alt(), notification.Heading);
+                        var static = geo.put_model(crater_model1, notification.Position.lat(), notification.Position.lon(), notification.Position.alt(), notification.Heading);
                         if (static != nil) {
                             statics["obj_"~notification.UniqueIdentity] = [static, notification.Position.lat(), notification.Position.lon(), notification.Position.alt(), notification.Heading, notification.SecondaryKind];
                         }
                     } elsif (notification.SecondaryKind == 2) {
-                        var crater_model = getprop("payload/armament/models") ~ "bomb_hit_smoke.xml";
-                        var static = geo.put_model(crater_model, notification.Position.lat(), notification.Position.lon(), notification.Position.alt(), notification.Heading);
+                        var static = geo.put_model(crater_model2, notification.Position.lat(), notification.Position.lon(), notification.Position.alt(), notification.Heading);
                         if (static != nil) {
                             statics["obj_"~notification.UniqueIdentity] = [static, notification.Position.lat(), notification.Position.lon(), notification.Position.alt(), notification.Heading, notification.SecondaryKind];
                         }
@@ -1253,7 +1252,7 @@ var processCallsigns = func () {
   var painted = 0;
   var paint_list = [];
   foreach (var player; players) {
-    if(player.getChild("valid") != nil and player.getChild("valid").getValue() == TRUE and player.getChild("callsign") != nil and player.getChild("callsign").getValue() != "" and player.getChild("callsign").getValue() != nil) {
+    if(player.getChild("valid") != nil and player.getChild("valid").getValue() == 1 and player.getChild("callsign") != nil and player.getChild("callsign").getValue() != "" and player.getChild("callsign").getValue() != nil) {
       var callsign = player.getChild("callsign").getValue();
       callsign_struct[callsign] = player;
       var str6 = player.getNode("sim/multiplay/generic/string[6]");
@@ -1314,7 +1313,7 @@ processCallsignsTimer.start();
 var code_ct = func () {
   #ANTIC
   if (getprop("payload/armament/msg")) {
-      setprop("sim/rendering/redout/enabled", TRUE);
+      setprop("sim/rendering/redout/enabled", 1);
       #call(func{fgcommand('dialog-close', multiplayer.dialog.dialog.prop())},nil,var err= []);# props.Node.new({"dialog-name": "location-in-air"}));
       if (!m28_auto) call(func{multiplayer.dialog.del();},nil,var err= []);
       if (!getprop("gear/gear[0]/wow")) {
@@ -1338,7 +1337,7 @@ code_ctTimer.simulatedTime = 1;
 
 
 
-setprop("/sim/failure-manager/display-on-screen", FALSE);
+setprop("/sim/failure-manager/display-on-screen", 0);
 
 code_ctTimer.start();
 
@@ -1352,14 +1351,28 @@ var re_init = func (node) {
 
   var failure_modes = FailureMgr._failmgr.failure_modes;
   var mode_list = keys(failure_modes);
-  setprop("A-10/done",0);
-  view.setViewByIndex(0);
 
   foreach(var failure_mode_id; mode_list) {
     FailureMgr.set_failure_level(failure_mode_id, 0);
   }
   stopLaunch();
   damageLog.push("Aircraft was repaired due to re-init.");
+
+  # Remove all 3D craters and re-place them. Due to re-init can remove some of them.
+
+  foreach (var thekey ; keys(statics)) {
+    var sta = statics[thekey];
+    if (sta[0] != nil) {
+        sta[0].remove();
+        if (sta[5] == 0) {# TODO: make a hash with all the models
+            sta[0] = geo.put_model(crater_model0, sta[1], sta[2], sta[3], sta[4]);
+        } elsif (sta[5] == 1) {
+            sta[0] = geo.put_model(crater_model1, sta[1], sta[2], sta[3], sta[4]);
+        } elsif (sta[5] == 2) {
+            sta[0] = geo.put_model(crater_model2, sta[1], sta[2], sta[3], sta[4]);
+        }
+    }
+  }
 }
 
 #==================================================================
