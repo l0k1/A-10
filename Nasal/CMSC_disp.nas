@@ -104,6 +104,8 @@ var mwsLoop = func {
   if (getprop("A-10/avionics/ew-mws-switch") == 1) {
     if (getprop("payload/armament/MAW-active") == 1) {
       mws.setText("INBOUND");
+    } elsif (getprop("payload/armament/MAW-semiactive") == 1) {
+      mws.setText("LAUNCH");
     } else {
       mws.setText("ACTIVE");
     }
