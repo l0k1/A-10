@@ -2501,7 +2501,8 @@ var HUD = {
             
             me.eegsMe.vel = me.input.uBody_fps.getValue() +3250.0 ; #3250.0 = speed
             
-            me.eegsMe.geodPos = aircraftToCart({x:0.148887, y:-0.050417, z: 0.297955});#position (meters) of gun in aircraft (x and z inverted)
+            #me.eegsMe.geodPos = aircraftToCart({x:0.148887, y:-0.050417, z: 0.297955});#position (meters) of gun in aircraft (x and z inverted)
+            me.eegsMe.geodPos = aircraftToCart({x:0.1622, y:-0.004295, z: 0.27001});#position (meters) of gun in aircraft (x and z inverted)
             #me.eegsMe.geodPos = aircraftToCart({x:7, y:6, z: 0});#position (meters) of gun in aircraft (x and z inverted) - Testing value do not use in live environment
             me.eegsMe.eegsPos.set_xyz(me.eegsMe.geodPos.x, me.eegsMe.geodPos.y, me.eegsMe.geodPos.z);
             me.eegsMe.altC = me.eegsMe.eegsPos.alt();
