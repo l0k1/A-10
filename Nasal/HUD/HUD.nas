@@ -701,7 +701,14 @@ var HUD = {
         .vert(-50)
         .setStrokeLineWidth(m.myLineWidth*4);         
       m.accBoxGroup.setTranslation(0,m.headScaleVerticalPlace*2/5);
-      
+
+      m.fpa = m.root.createChild("text")
+        .setColor(m.myGreen)
+        .setTranslation(m.maxladderspan+265 ,m.headScaleVerticalPlace+340)
+        .setDouble("character-size",m.myFontSize* 30)
+        .setAlignment("right-bottom")
+        .setText("FPA");
+          
       #Waypoint Group
       m.waypointGroup = m.root.createChild("group");
 
@@ -1359,6 +1366,9 @@ var HUD = {
     
     # flight path vector (FPV)
     me.display_Fpv();
+
+    # display Flight Path Angle
+    me.display_fpa();
     
     # displaying the little house
     me.display_house();
@@ -1648,6 +1658,11 @@ var HUD = {
     #   me.headingStuff.setTranslation(0,math.min(300,math.max(-356,me.fpvCalc[1]))+612);
     #   me.speedAltGroup.setTranslation(0, math.min(375,math.max(-356,me.fpvCalc[1]))+356);
     # }
+  },
+
+  display_fpa:func(){
+    me.fpa.setText(sprintf("%01d", me.input.pitch.getValue()));
+    me.fpa.show();
   },
   
   display_house:func(){
