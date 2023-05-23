@@ -8,6 +8,7 @@
 	<effect>
 		<inherits-from>Effects/model-transparent</inherits-from>
 		<object-name>CPT-hud-screen</object-name>
+		<object-name>hud-screen</object-name>
 	</effect>
 
 
@@ -48,6 +49,23 @@
 			<blue>0.18</blue>
 		</emission>
 	</animation>
+
+	<animation>
+        <object-name>hud-screen</object-name>
+        <type>material</type>
+        <condition>
+            <greater-than-equals>
+                <property>systems/electrical/outputs/rwr</property>
+                <value>24</value>
+            </greater-than-equals>
+        </condition>
+        <emission>
+            <factor-prop>A-10/displays/cmsc/cmsc-disp-int</factor-prop>
+            <red>  1</red>
+            <green>1</green>
+            <blue> 1</blue>
+        </emission>
+    </animation>
 
 
 	<!-- aux-lg-ext-handle -->

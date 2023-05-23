@@ -105,7 +105,7 @@ var cnt = 0;	# elecrical is done each 0.3 sec.
 var main_loop = func {
 	cnt += 1;
 	sas();
-	A10hud.update_loop();
+	#A10hud.update_loop();
 	apu.update_loop();
 	A10fuel.update_loop();
 	A10engines.update_loop(0);

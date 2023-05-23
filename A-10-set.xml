@@ -570,7 +570,7 @@ Fairchild A-10 simulation config.
 
 
 		<!-- Hud -->
-		<hud>
+		<!--<hud>
 			<path n="1">Aircraft/A-10/Huds/A-10.xml</path>
 			<visibility n="1">true</visibility>
 			<color>
@@ -597,7 +597,7 @@ Fairchild A-10 simulation config.
 				<top type="double">21</top>
 				<bottom type="double">-118</bottom>
 			</clipping>
-		</hud>
+		</hud> -->
 		<menubar>
 			<default>
 				<menu n="10">
@@ -794,6 +794,9 @@ Fairchild A-10 simulation config.
 				<cmsc-disp-int type="float">0.35</cmsc-disp-int>
 			</cmsc>
 		</displays>
+		<hud>
+			<a2a type="bool">false</a2a>
+		</hud>
 	</A-10>
 
 	<ai>
@@ -1424,9 +1427,9 @@ Fairchild A-10 simulation config.
 		<pylons>
 			<file>Aircraft/A-10/Nasal/WEAPONS/pylons.nas</file>
 		</pylons>
-		<A10hud>
+		<!--<A10hud>
 			<file>Aircraft/A-10/Nasal/hud.nas</file>
-		</A10hud>
+		</A10hud> -->
 		<A10autopilot>
 			<file>Aircraft/A-10/Nasal/autopilot.nas</file>
 		</A10autopilot>
@@ -1434,6 +1437,10 @@ Fairchild A-10 simulation config.
             <file>Aircraft/A-10/Nasal/RADAR/radar-system.nas</file>
             <file>Aircraft/A-10/Nasal/RADAR/rwr-only.nas</file>
         </radar_system>
+		<hud>
+			<file>Aircraft/A-10/Nasal/HUD/hud_math.nas</file>
+			<file>Aircraft/A-10/Nasal/HUD/HUD.nas</file>
+		</hud>
 		<cmsc>
 			<file>Aircraft/A-10/Nasal/CMSC_disp.nas</file>
 		</cmsc>
