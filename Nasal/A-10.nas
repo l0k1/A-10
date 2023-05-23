@@ -156,6 +156,7 @@ var init = func {
 	aircraft.data.save();
 	if (! launched ) settimer(main_loop, 0.5);
 	launched = 1;
+    setprop("/sim/multiplay/visibility-range-nm", 200);
 }
 
 if (! launched) {
