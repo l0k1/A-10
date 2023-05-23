@@ -122,7 +122,7 @@ var HUD = {
     m.root =
         m.canvas.createGroup()
                 .setTranslation(HudMath.getCenterOrigin())
-                .set("font", "B612/B612Mono-Regular.ttf")
+                .set("font", "A10-HUD.ttf")
                 .setDouble("character-size",m.myFontSize* 16)
                 .setDouble("character-aspect-ration", 0.9);
 #     m.root.setColor(m.red,m.green,m.blue,1);
@@ -532,7 +532,7 @@ var HUD = {
     me.Speed = m.speedAltGroup.createChild("text")
       .setColor(m.myGreen)
       .setTranslation(- m.maxladderspan-150,m.headScaleVerticalPlace)
-      .setDouble("character-size",m.myFontSize* 50)
+      .setDouble("character-size",m.myFontSize* 35)
       .setAlignment("right-bottom")
       .setText("0"); 
           
@@ -547,7 +547,7 @@ var HUD = {
      # Heading right right number on horizon line
      me.hundred_feet_Alt = m.speedAltGroup.createChild("text")
           .setTranslation(m.maxladderspan+275 ,m.headScaleVerticalPlace)
-          .setDouble("character-size",m.myFontSize* 50)
+          .setDouble("character-size",m.myFontSize* 35)
           .setAlignment("right-bottom")
           .setText("0");   
       
@@ -628,7 +628,7 @@ var HUD = {
       .setColor(m.myGreen)
       .setTranslation(m.maxladderspan,100)
       .setDouble("character-size",m.myFontSize* 35)
-      .setFont("LiberationFonts/LiberationMono-Bold.ttf")
+      .setFont("A10-HUD.ttf")
       .setAlignment("center-center")
       .setText("0.0");  
     m.bullet_CountGroup.hide();
@@ -895,98 +895,98 @@ var HUD = {
 #         ;    
 #       
     
-    #VSI indicator
-    var dotRadius = 5;
-    m.root.createChild("path")
-      .setColor(m.myGreen)
-      .moveTo(300, -300)
-      .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
-      .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
-      .moveTo(300, -250)
-      .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
-      .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
-      .moveTo(300, -200)
-      .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
-      .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
-      .moveTo(300, -150)
-      .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
-      .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
-      .moveTo(300, -100)
-      .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
-      .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
-      .moveTo(300, -50)
-      .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
-      .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
-      .moveTo(300,  0)
-      .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
-      .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
-      .setColorFill(m.myGreen)
-      .setStrokeLineWidth(1);
+  #   #VSI indicator
+  #   var dotRadius = 5;
+  #   m.root.createChild("path")
+  #     .setColor(m.myGreen)
+  #     .moveTo(300, -300)
+  #     .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
+  #     .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
+  #     .moveTo(300, -250)
+  #     .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
+  #     .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
+  #     .moveTo(300, -200)
+  #     .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
+  #     .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
+  #     .moveTo(300, -150)
+  #     .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
+  #     .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
+  #     .moveTo(300, -100)
+  #     .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
+  #     .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
+  #     .moveTo(300, -50)
+  #     .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
+  #     .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
+  #     .moveTo(300,  0)
+  #     .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
+  #     .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
+  #     .setColorFill(m.myGreen)
+  #     .setStrokeLineWidth(1);
       
-    m.root.createChild("path")
-      .setColor(m.myGreen)
-      .moveTo(300,-200)
-      .horiz(30)
-      .setStrokeLineWidth(m.myLineWidth*4);
+  #   m.root.createChild("path")
+  #     .setColor(m.myGreen)
+  #     .moveTo(300,-200)
+  #     .horiz(30)
+  #     .setStrokeLineWidth(m.myLineWidth*4);
       
-    m.vsiScale = m.root.createChild("path")
-      .setColor(m.myGreen)
-      .setTranslation(330,-200)
-      .vert(200)
-      .setStrokeLineWidth(m.myLineWidth*4);
+  #   m.vsiScale = m.root.createChild("path")
+  #     .setColor(m.myGreen)
+  #     .setTranslation(330,-200)
+  #     .vert(200)
+  #     .setStrokeLineWidth(m.myLineWidth*4);
       
-    m.vsiArrow = m.root.createChild("path")
-      .setColor(m.myGreen)
-      .moveTo(300,-200)
-      .lineTo(300+35,-215)
-      .moveTo(300,-200)
-      .lineTo(300+35,-185)
-      .setStrokeLineWidth(m.myLineWidth*4);
+  #   m.vsiArrow = m.root.createChild("path")
+  #     .setColor(m.myGreen)
+  #     .moveTo(300,-200)
+  #     .lineTo(300+35,-215)
+  #     .moveTo(300,-200)
+  #     .lineTo(300+35,-185)
+  #     .setStrokeLineWidth(m.myLineWidth*4);
       
-  # AoA indicator
+  # # AoA indicator
   
-    m.root.createChild("path")
-      .setColor(m.myGreen)
-      .moveTo(-300, -300)
-      .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
-      .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
-      .moveTo(-300, -250)
-      .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
-      .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
-      .moveTo(-300, -200)
-      .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
-      .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
-      .moveTo(-300, -150)
-      .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
-      .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
-      .moveTo(-300, -100)
-      .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
-      .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
-      .moveTo(-300, -50)
-      .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
-      .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
-      .setColorFill(m.myGreen)
-      .setStrokeLineWidth(1);
+  #   m.root.createChild("path")
+  #     .setColor(m.myGreen)
+  #     .moveTo(-300, -300)
+  #     .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
+  #     .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
+  #     .moveTo(-300, -250)
+  #     .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
+  #     .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
+  #     .moveTo(-300, -200)
+  #     .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
+  #     .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
+  #     .moveTo(-300, -150)
+  #     .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
+  #     .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
+  #     .moveTo(-300, -100)
+  #     .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
+  #     .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
+  #     .moveTo(-300, -50)
+  #     .arcSmallCW(dotRadius,dotRadius, 0, -dotRadius*2, 0)
+  #     .arcSmallCW(dotRadius,dotRadius, 0, dotRadius*2, 0)
+  #     .setColorFill(m.myGreen)
+  #     .setStrokeLineWidth(1);
       
-    m.root.createChild("path")
-      .setColor(m.myGreen)
-      .moveTo(-300,-50)
-      .horiz(30)
-      .setStrokeLineWidth(m.myLineWidth*4);
+  #   m.root.createChild("path")
+  #     .setColor(m.myGreen)
+  #     .moveTo(-300,-50)
+  #     .horiz(30)
+  #     .setStrokeLineWidth(m.myLineWidth*4);
       
-    m.AoAScale = m.root.createChild("path")
-      .setColor(m.myGreen)
-      .vert(-150)
-      .setTranslation(-270,-50)
-      .setStrokeLineWidth(m.myLineWidth*4);
+  #   m.AoAScale = m.root.createChild("path")
+  #     .setColor(m.myGreen)
+  #     .vert(-150)
+  #     .setTranslation(-270,-50)
+  #     .setStrokeLineWidth(m.myLineWidth*4);
       
-    m.AoAArrow = m.root.createChild("path")
-      .setColor(m.myGreen)
-      .moveTo(-300,-50)
-      .lineTo(-300+35,-65)
-      .moveTo(-300,-50)
-      .lineTo(-300+35,-35)
-      .setStrokeLineWidth(m.myLineWidth*4);
+  #   m.AoAArrow = m.root.createChild("path")
+  #     .setColor(m.myGreen)
+  #     .moveTo(-300,-50)
+  #     .lineTo(-300+35,-65)
+  #     .moveTo(-300,-50)
+  #     .lineTo(-300+35,-35)
+  #     .setStrokeLineWidth(m.myLineWidth*4);
   
    ##################################### Target Circle ####################################
     m.targetArray = [];
@@ -1014,7 +1014,7 @@ var HUD = {
           .setColor(m.myGreen)
           .setTranslation(15, -10)
           .setAlignment("left-center")
-          .setFont("LiberationFonts/LiberationSansNarrow-Bold.ttf")
+          .setFont("A10-HUD.ttf")
           .setFontSize(m.myFontSize*26)
           .setColor(0,180,0,0.9)
           .hide()
@@ -1386,7 +1386,7 @@ var HUD = {
     #Display diplay_inverted_T
     me.display_inverted_T();
     
-    #Display aoa
+    #Display aoa 
     me.display_alpha();
     
     #Display gload
@@ -1404,8 +1404,8 @@ var HUD = {
     #Display Route dist and waypoint number
     me.display_Waypoint();
     
-    me.display_vsi();
-    me.display_aoa();
+    #me.display_vsi();#right hud scale
+    #me.display_aoa();
     
     #me.hdg.hide();
     #me.groundspeed.hide();  
