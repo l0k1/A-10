@@ -290,6 +290,7 @@ var HUD = {
                   
     m.ladderScale = 7.5;#7.5
     m.maxladderspan =  200;
+    m.minladderspan = -200;
                    
    for (var myladder = 5;myladder <= 90;myladder+=5)
    {
@@ -626,10 +627,10 @@ var HUD = {
     m.bullet_CountGroup = m.root.createChild("group");  
     m.Bullet_Count = m.bullet_CountGroup.createChild("text")
       .setColor(m.myGreen)
-      .setTranslation(m.maxladderspan,100)
+      .setTranslation(m.minladderspan-90,45)
       .setDouble("character-size",m.myFontSize* 35)
       .setFont("A10-HUD.ttf")
-      .setAlignment("center-center")
+      .setAlignment("right-center")
       .setText("0.0");  
     m.bullet_CountGroup.hide();
     
