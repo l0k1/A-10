@@ -32,9 +32,10 @@ var target_closureRate = 0;
 var target_heading_deg = 0;
 var target_Distance = 0;
 var raw_list = [];
+var MIL2HUD = R2D/10; #experimental
 
 
-#verre2
+
 
 # ==============================================================================
 # Head up display
@@ -709,6 +710,13 @@ var HUD = {
         .setDouble("character-size",m.myFontSize* 30)
         .setAlignment("right-bottom")
         .setText("FPA");
+      
+      m.hudRAlt = m.root.createChild("text")
+        .setColor(m.myGreen)
+        .setTranslation(m.maxladderspan+200 ,25)
+        .setDouble("character-size",m.myFontSize* 25)
+        .setAlignment("right-bottom")
+        .setText("0RALT");
           
       #Waypoint Group
       m.waypointGroup = m.root.createChild("group");
@@ -1346,7 +1354,7 @@ var HUD = {
     me.display_ILS_STUFF();
     
     #ILS not dependent of the Scale (but only show after GS capture)
-    me.display_ILS_Square();
+    #me.display_ILS_Square();
     #me.RunwayOnTheHorizonLine.hide();
     
     
@@ -1389,7 +1397,7 @@ var HUD = {
     me.display_Acceleration_Box();
 
     #display_radarAltimeter
- #   me.display_radarAltimeter();
+    me.display_radAlt();
             
     #Display speedAltGroup
     me.display_speedAltGroup();
@@ -1748,41 +1756,20 @@ var HUD = {
       }else{
         me.Speed_Mach.hide();
       } 
-      
-    #print("Alt:",me.input.alt.getValue()," Calcul:" ,int(((me.input.alt.getValue()/100) - int(me.input.alt.getValue()/100))*100));
-    #me.feet_Alt.setText(sprintf("%02d",abs(int(((me.input.alt_instru.getValue()/100) - int(me.input.alt_instru.getValue()/100))*100))));
-#    if(me.input.alt_instru.getValue()>0){
-      
-#    }else{
-#      me.hundred_feet_Alt.setText(sprintf("%5d",abs(int((me.input.alt_instru.getValue()/100)))));
-#    }
-    if( me.input.rad_alt.getValue() < 1000) { #Or be selected be a special swith not yet done # Only show below 1000AGL (Will change when RALT window implmented)
-      if(abs(me.input.pitch.getValue())<20 and abs(me.input.roll.getValue())<20){ #if the angle is above 20° the radar do not work
-        me.hundred_feet_Alt.setText(sprintf("R%03d", me.input.rad_alt.getValue()));#The radar should show 0 when on Ground      
-      }else{
-        me.hundred_feet_Alt.setText(sprintf("%5d",me.input.alt_instru.getValue()));
-      }
-    }else{
-      me.hundred_feet_Alt.setText(sprintf("%5d",me.input.alt_instru.getValue()));
-    }
-    me.speedAltGroup.update();    
+
+    me.hundred_feet_Alt.setText(sprintf("%5d",math.round(me.input.alt_instru.getValue(),10)));
+    me.speedAltGroup.update();       
   },
   
-  display_radarAltimeter:func(){
-    if( me.input.rad_alt.getValue() < 5000) { #Or be selected be a special swith not yet done # Only show below 5000AGL
-      if(abs(me.input.pitch.getValue())<20 and abs(me.input.roll.getValue())<20){ #if the angle is above 20° the radar do not work
-        me.groundAlt.setText(sprintf("%4d", me.input.rad_alt.getValue()-8));#The radar should show 0 when on Ground      
-      }else{
-        me.groundAlt.setText("*****");
-      }
-      me.groundAlt.show();
-      me.theH.show();
+  display_radAlt:func(){
+    if(abs(me.input.pitch.getValue())<20 and abs(me.input.roll.getValue())<20 and me.input.rad_alt.getValue() <9999){ #if the angle is above 20° or 10000AGL the radar do not work
+      me.hudRAlt.setText(sprintf("%04dR",math.round(me.input.rad_alt.getValue(),10)));
     }else{
-      me.groundAlt.hide();
-      me.theH.hide();
+      me.hudRAlt.setText("XXXXR");
     }
+    me.hudRAlt.show();
   },
-  
+
   display_inverted_T:func(){
     if(me.input.gearPos.getValue()){
       me.InvertedT.setTranslation(0, HudMath.getCenterPosFromDegs(0,-13)[1]);
@@ -2610,4 +2597,3 @@ var deviation_normdeg = func(our_heading, target_bearing) {
 };
 
 
-#ITS THE EEGS CODE BREAKING ME ALRIGHT
