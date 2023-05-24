@@ -617,8 +617,8 @@ var HUD = {
       
     m.loads_Type_text = m.root.createChild("text")
       .setColor(m.myGreen)
-      .setTranslation(- m.maxladderspan-90,0)
-      .setDouble("character-size",m.myFontSize* 35)
+      .setTranslation(- m.maxladderspan-125,-10)
+      .setDouble("character-size",m.myFontSize* 25)
       .setAlignment("right-center")
       .setText("0.0");  
     m.loads_Type_text.hide();
@@ -628,8 +628,8 @@ var HUD = {
     m.bullet_CountGroup = m.root.createChild("group");  
     m.Bullet_Count = m.bullet_CountGroup.createChild("text")
       .setColor(m.myGreen)
-      .setTranslation(m.minladderspan-90,45)
-      .setDouble("character-size",m.myFontSize* 35)
+      .setTranslation(m.minladderspan-125,25)
+      .setDouble("character-size",m.myFontSize* 25)
       .setFont("A10-HUD.ttf")
       .setAlignment("right-center")
       .setText("0.0");  
@@ -1172,8 +1172,9 @@ var HUD = {
      "MK-82AIR": "MK82AIR",
      "MK-84": "MK84LD",
      "CBU-87": "CBU87",
+     "AGM-65B": "AGM65",
      "LAU-68": "RKT",
-     "AIM-9": "AIM9",
+     "AIM-9M": "AIM9",
     };
     
     #m.pylonsSide_hash = {
