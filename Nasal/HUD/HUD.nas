@@ -242,50 +242,50 @@ var HUD = {
       .horiz(2000)
       .setStrokeLineWidth(m.myLineWidth*4);
                    
-    #ILS stuff
-    m.ILS_Scale_dependant = m.horizon_sub_group.createChild("group");
+    # #ILS stuff
+    # m.ILS_Scale_dependant = m.horizon_sub_group.createChild("group");
                     
-    #Runway on the HorizonLine
-    m.RunwayOnTheHorizonLine = m.ILS_Scale_dependant.createChild("path")
-      .setColor(m.myGreen)
-      .move(0,0)
-      .vert(-30)
-      .setStrokeLineWidth(m.myLineWidth*6);   
+    # #Runway on the HorizonLine
+    # m.RunwayOnTheHorizonLine = m.ILS_Scale_dependant.createChild("path")
+    #   .setColor(m.myGreen)
+    #   .move(0,0)
+    #   .vert(-30)
+    #   .setStrokeLineWidth(m.myLineWidth*6);   
                     
-    m.ILS_localizer_deviation = m.ILS_Scale_dependant.createChild("path")
-      .setColor(m.myGreen)
-      .move(0,0)
-      .vert(1500)
-      .setStrokeDashArray([30, 30, 30, 30, 30]) 
-      #.setCenter(0.0)
-      .setStrokeLineWidth(m.myLineWidth*5);                  
-    m.ILS_localizer_deviation.setCenter(0,0);
+    # m.ILS_localizer_deviation = m.ILS_Scale_dependant.createChild("path")
+    #   .setColor(m.myGreen)
+    #   .move(0,0)
+    #   .vert(1500)
+    #   .setStrokeDashArray([30, 30, 30, 30, 30]) 
+    #   #.setCenter(0.0)
+    #   .setStrokeLineWidth(m.myLineWidth*5);                  
+    # m.ILS_localizer_deviation.setCenter(0,0);
     
-    #Part of the ILS not dependant of the SCALE
-    m.ILS_Scale_Independant = m.root.createChild("group");
-    m.ILS_Square  = m.ILS_Scale_Independant.createChild("path")
-      .setColor(m.myGreen)
-      .move(-25,-25)
-      .vert(50)
-      .horiz(50)
-      .vert(-50)
-      .horiz(-50)
-      .setStrokeLineWidth(m.myLineWidth*6);
-    #Landing Brackets
-    m.brackets = m.ILS_Scale_Independant.createChild("group");
-    m.LeftBracket = m.brackets.createChild("text")
-      .setColor(m.myGreen)
-      .setTranslation(-140,0)
-      .setDouble("character-size",m.myFontSize* 60)
-      .setAlignment("center-center")
-      .setText("]");    
+    # #Part of the ILS not dependant of the SCALE
+    # m.ILS_Scale_Independant = m.root.createChild("group");
+    # m.ILS_Square  = m.ILS_Scale_Independant.createChild("path")
+    #   .setColor(m.myGreen)
+    #   .move(-25,-25)
+    #   .vert(50)
+    #   .horiz(50)
+    #   .vert(-50)
+    #   .horiz(-50)
+    #   .setStrokeLineWidth(m.myLineWidth*6);
+    # #Landing Brackets
+    # m.brackets = m.ILS_Scale_Independant.createChild("group");
+    # m.LeftBracket = m.brackets.createChild("text")
+    #   .setColor(m.myGreen)
+    #   .setTranslation(-140,0)
+    #   .setDouble("character-size",m.myFontSize* 60)
+    #   .setAlignment("center-center")
+    #   .setText("]");    
   
-    m.RightBracket = m.brackets.createChild("text")
-      .setColor(m.myGreen)
-      .setTranslation(140,0)
-      .setDouble("character-size",m.myFontSize* 60)
-      .setAlignment("center-center")
-      .setText("["); 
+    # m.RightBracket = m.brackets.createChild("text")
+    #   .setColor(m.myGreen)
+    #   .setTranslation(140,0)
+    #   .setDouble("character-size",m.myFontSize* 60)
+    #   .setAlignment("center-center")
+    #   .setText("["); 
     
     
                   
@@ -1351,7 +1351,7 @@ var HUD = {
     #me.Textrot.setRotation(rot);
 
     #Displaying ILS STUFF (but only show after LOCALIZER capture)
-    me.display_ILS_STUFF();
+    #me.display_ILS_STUFF();
     
     #ILS not dependent of the Scale (but only show after GS capture)
     #me.display_ILS_Square();
@@ -1554,34 +1554,34 @@ var HUD = {
 
     settimer(func me.update(), 0.05);
   },
-  display_ILS_STUFF:func(){
-    if(me.input.ILS_valid.getValue() and !me.input.MasterArm.getValue()){
-      me.runwayPosHrizonOnHUD = HudMath.getPixelPerDegreeXAvg(7.5)*-(geo.normdeg180(me.heading - me.input.NavHeadingRunwayILS.getValue() ));
+  # display_ILS_STUFF:func(){
+  #   if(me.input.ILS_valid.getValue() and !me.input.MasterArm.getValue()){
+  #     me.runwayPosHrizonOnHUD = HudMath.getPixelPerDegreeXAvg(7.5)*-(geo.normdeg180(me.heading - me.input.NavHeadingRunwayILS.getValue() ));
 
-      me.ILS_Scale_dependant.setTranslation(me.runwayPosHrizonOnHUD,0);
-      #me.ILS_localizer_deviation.setCenter(me.runwayPosHrizonOnHUD,0);
-      me.ILS_localizer_deviation.setRotation(-45*me.input.NavHeadingNeedleDeflectionILS.getValue()*D2R);
+  #     #me.ILS_Scale_dependant.setTranslation(me.runwayPosHrizonOnHUD,0);
+  #     #me.ILS_localizer_deviation.setCenter(me.runwayPosHrizonOnHUD,0);
+  #     #me.ILS_localizer_deviation.setRotation(-45*me.input.NavHeadingNeedleDeflectionILS.getValue()*D2R);
       
-      me.ILS_Scale_dependant.update();
-      me.ILS_Scale_dependant.show();
+  #     #me.ILS_Scale_dependant.update();
+  #     #me.ILS_Scale_dependant.show();
       
-    }else{
-      me.ILS_Scale_dependant.hide();
+  #   }else{
+  #     #me.ILS_Scale_dependant.hide();
       
-    }
+  #   }
 
-  },
-  display_ILS_Square:func(){
-    if(me.input.ILS_gs_in_range.getValue()and !me.input.MasterArm.getValue()){
-      me.ILS_Square.setTranslation(0,HudMath.getCenterPosFromDegs(0,-me.input.ILS_gs_deg.getValue()-me.input.pitch.getValue())[1]);
-      #me.ILS_Square.update();
-      me.brackets.setTranslation(0,HudMath.getCenterPosFromDegs(0,me.input.pitch.getValue()-14)[1]);
-      me.ILS_Scale_Independant.update();
-      me.ILS_Scale_Independant.show();
-    }else{
-      me.ILS_Scale_Independant.hide();
-    }
-  },
+  # },
+  # display_ILS_Square:func(){
+  #   if(me.input.ILS_gs_in_range.getValue()and !me.input.MasterArm.getValue()){
+  #     me.ILS_Square.setTranslation(0,HudMath.getCenterPosFromDegs(0,-me.input.ILS_gs_deg.getValue()-me.input.pitch.getValue())[1]);
+  #     #me.ILS_Square.update();
+  #     me.brackets.setTranslation(0,HudMath.getCenterPosFromDegs(0,me.input.pitch.getValue()-14)[1]);
+  #     me.ILS_Scale_Independant.update();
+  #     me.ILS_Scale_Independant.show();
+  #   }else{
+  #     me.ILS_Scale_Independant.hide();
+  #   }
+  # },
   
   display_vsi: func () {
     var fps = me.input.vs.getValue();
@@ -1855,143 +1855,143 @@ var HUD = {
       
   },
   
-  displayTarget:func(){
-#     if(mirage2000.myRadar3.tgts_list != nil and size(mirage2000.myRadar3.tgts_list)>mirage2000.myRadar3.Target_Index){
-#       me.radarStuffGroup.show();
-    #To put a triangle on the selected target
-    #This should be changed by calling directly the radar object (in case of multi targeting)
+#   displayTarget:func(){
+# #     if(mirage2000.myRadar3.tgts_list != nil and size(mirage2000.myRadar3.tgts_list)>mirage2000.myRadar3.Target_Index){
+# #       me.radarStuffGroup.show();
+#     #To put a triangle on the selected target
+#     #This should be changed by calling directly the radar object (in case of multi targeting)
     
-#     var closestCallsign = getprop("ai/closest/callsign");
-#     var closestRange = getprop("ai/closest/range");
-    closestCallsign = "";
-    closestRange = -1;
-    #Getting the radar target from radar tgts_list
-    #if(mirage2000.myRadar3.tgts_list != nil and size(mirage2000.myRadar3.tgts_list)>mirage2000.myRadar3.Target_Index){
-    #   var MytargetIndex = mirage2000.myRadar3.Target_Index;
-    #   var closestCallsign = MytargetIndex != -1 ? mirage2000.myRadar3.tgts_list[MytargetIndex].get_Callsign():"";
-    #   var is_Painted = MytargetIndex != -1 ? mirage2000.myRadar3.tgts_list[MytargetIndex].isPainted():0;
-    #   var closestRange = MytargetIndex != -1 and is_Painted == 1 ? mirage2000.myRadar3.targetRange(mirage2000.myRadar3.tgts_list[MytargetIndex]):0;
-    # }
-    var Token = 0;
+# #     var closestCallsign = getprop("ai/closest/callsign");
+# #     var closestRange = getprop("ai/closest/range");
+#     closestCallsign = "";
+#     closestRange = -1;
+#     #Getting the radar target from radar tgts_list
+#     #if(mirage2000.myRadar3.tgts_list != nil and size(mirage2000.myRadar3.tgts_list)>mirage2000.myRadar3.Target_Index){
+#     #   var MytargetIndex = mirage2000.myRadar3.Target_Index;
+#     #   var closestCallsign = MytargetIndex != -1 ? mirage2000.myRadar3.tgts_list[MytargetIndex].get_Callsign():"";
+#     #   var is_Painted = MytargetIndex != -1 ? mirage2000.myRadar3.tgts_list[MytargetIndex].isPainted():0;
+#     #   var closestRange = MytargetIndex != -1 and is_Painted == 1 ? mirage2000.myRadar3.targetRange(mirage2000.myRadar3.tgts_list[MytargetIndex]):0;
+#     # }
+#     var Token = 0;
     
 
-    raw_list = mirage2000.myRadar3.ContactsList;
-#     print("Size:" ~ size(raw_list));
+#     raw_list = mirage2000.myRadar3.ContactsList;
+# #     print("Size:" ~ size(raw_list));
     
-    i = 0;
+#     i = 0;
     
-    me.designatedDistanceFT = nil;
+#     me.designatedDistanceFT = nil;
     
-    foreach(var c; raw_list){
+#     foreach(var c; raw_list){
       
-      if(i<size(me.targetArray) and size(raw_list)>0){
+#       if(i<size(me.targetArray) and size(raw_list)>0){
 
 
-        displayIt = c.objectDisplay;
-        #var myTest = c.isPainted();
+#         displayIt = c.objectDisplay;
+#         #var myTest = c.isPainted();
         
-        #print("Display it : %d",displayIt);
+#         #print("Display it : %d",displayIt);
         
-        if(displayIt==1 ){
+#         if(displayIt==1 ){
 
 
-          target_callsign = c.get_Callsign();
-          #print("Paint : " ~ target_callsign ~ " : "~ myTest);
+#           target_callsign = c.get_Callsign();
+#           #print("Paint : " ~ target_callsign ~ " : "~ myTest);
           
-          target_altitude = c.get_altitude();
-          target_heading_deg = c.get_heading();
-          target_Distance = c.get_range();
+#           target_altitude = c.get_altitude();
+#           target_heading_deg = c.get_heading();
+#           target_Distance = c.get_range();
           
-          var triPos = HudMath.getPosFromCoord(c.get_Coord());
+#           var triPos = HudMath.getPosFromCoord(c.get_Coord());
           
-          #If we have a selected target we display a triangle
-          if(target_callsign == closestCallsign and closestRange > 0){
-            Token = 1;
-            #me.TriangleGroupe.show();
-            #me.triangle.setTranslation(triPos);
-            #me.triangle2.setTranslation(triPos);
-            me.Square_Group.show();
-            me.Locked_Square.setTranslation(triPos);
-            me.Locked_Square_Dash.setTranslation(clamp(triPos[0],-me.MaxX*0.8,me.MaxX*0.8), clamp(triPos[1],-me.MaxY*0.8,me.MaxY*0.8));
-            me.distanceToTargetLineGroup.show(); 
-            me.displayDistanceToTargetLine(c);
+#           #If we have a selected target we display a triangle
+#           if(target_callsign == closestCallsign and closestRange > 0){
+#             Token = 1;
+#             #me.TriangleGroupe.show();
+#             #me.triangle.setTranslation(triPos);
+#             #me.triangle2.setTranslation(triPos);
+#             me.Square_Group.show();
+#             me.Locked_Square.setTranslation(triPos);
+#             me.Locked_Square_Dash.setTranslation(clamp(triPos[0],-me.MaxX*0.8,me.MaxX*0.8), clamp(triPos[1],-me.MaxY*0.8,me.MaxY*0.8));
+#             me.distanceToTargetLineGroup.show(); 
+#             me.displayDistanceToTargetLine(c);
             
-            #And we hide the circle
-            me.targetArray[i].hide();
-            if (math.abs(triPos[0])<2000 and math.abs(triPos[1])<2000) {#only show it when target is in front
-              me.designatedDistanceFT = c.get_Coord().direct_distance_to(geo.aircraft_position())*M2FT;
-            }
-          }else{
-            #Else  the circle
-            me.targetArray[i].show();
-            me.targetArray[i].setTranslation(subvec(triPos,0,2));
-          }
-          #here is the text display
-          me.TextInfoArray[i].show();
-          me.TextInfoArray[i].setTranslation(triPos[0]+19,triPos[1]);
+#             #And we hide the circle
+#             me.targetArray[i].hide();
+#             if (math.abs(triPos[0])<2000 and math.abs(triPos[1])<2000) {#only show it when target is in front
+#               me.designatedDistanceFT = c.get_Coord().direct_distance_to(geo.aircraft_position())*M2FT;
+#             }
+#           }else{
+#             #Else  the circle
+#             me.targetArray[i].show();
+#             me.targetArray[i].setTranslation(subvec(triPos,0,2));
+#           }
+#           #here is the text display
+#           me.TextInfoArray[i].show();
+#           me.TextInfoArray[i].setTranslation(triPos[0]+19,triPos[1]);
           
-          me.TextInfoArray[i].setText(sprintf("  %s \n   %.0f nm \n   %d ft / %d", target_callsign, target_Distance, target_altitude, target_heading_deg));
+#           me.TextInfoArray[i].setText(sprintf("  %s \n   %.0f nm \n   %d ft / %d", target_callsign, target_Distance, target_altitude, target_heading_deg));
 
-        }else{
-          me.targetArray[i].hide();
-          me.TextInfoArray[i].hide();
-        }
-        #The token has 1 when we have a selected target
-        if(Token == 0){
-          #me.TriangleGroupe.hide();
-          me.Square_Group.hide();
-          me.distanceToTargetLineGroup.hide(); 
-          me.missileFireRange.hide();
-        }
-      }
-      i+=1;
-    }
-#     print("Size2:" ~ size(raw_list));
-#     print("MyToken:" ~Token);
-    #The token has 1 when we have a selected target
-    if(Token == 0){
-      #me.TriangleGroupe.hide();
-      me.Square_Group.hide();
-    }
-    
-    
-    
-    for(var y=i;y<size(me.targetArray);y+=1){
-      me.targetArray[y].hide();
-      me.TextInfoArray[y].hide();
-    } 
-#     }else{
-#       
-#       me.radarStuffGroup.hide();
-#       me.distanceToTargetLineGroup.hide(); 
-#       me.missileFireRange.hide();    
+#         }else{
+#           me.targetArray[i].hide();
+#           me.TextInfoArray[i].hide();
+#         }
+#         #The token has 1 when we have a selected target
+#         if(Token == 0){
+#           #me.TriangleGroupe.hide();
+#           me.Square_Group.hide();
+#           me.distanceToTargetLineGroup.hide(); 
+#           me.missileFireRange.hide();
+#         }
+#       }
+#       i+=1;
 #     }
-  },
+# #     print("Size2:" ~ size(raw_list));
+# #     print("MyToken:" ~Token);
+#     #The token has 1 when we have a selected target
+#     if(Token == 0){
+#       #me.TriangleGroupe.hide();
+#       me.Square_Group.hide();
+#     }
+    
+    
+    
+#     for(var y=i;y<size(me.targetArray);y+=1){
+#       me.targetArray[y].hide();
+#       me.TextInfoArray[y].hide();
+#     } 
+# #     }else{
+# #       
+# #       me.radarStuffGroup.hide();
+# #       me.distanceToTargetLineGroup.hide(); 
+# #       me.missileFireRange.hide();    
+# #     }
+#   },
   
-  displayDistanceToTargetLine : func(contact){
-    me.MaxRadarRange = mirage2000.myRadar3.rangeTab[mirage2000.myRadar3.rangeIndex];
-    var myString ="";
-    #< 10 nm should be a float
-    #< 1000 m should be in meters 
-    if(contact.get_range()<= me.MaxRadarRange){
-      #Text for distance to target
-      if(contact.get_range()*NM2M<1200){
-        myString = sprintf("%dm",contact.get_range()*NM2M);
-      }elsif(contact.get_range()<10){
-        myString = sprintf("%.1fnm",contact.get_range());
-      }else{
-        myString = sprintf("%dnm",contact.get_range());
-      }
+#   displayDistanceToTargetLine : func(contact){
+#     me.MaxRadarRange = mirage2000.myRadar3.rangeTab[mirage2000.myRadar3.rangeIndex];
+#     var myString ="";
+#     #< 10 nm should be a float
+#     #< 1000 m should be in meters 
+#     if(contact.get_range()<= me.MaxRadarRange){
+#       #Text for distance to target
+#       if(contact.get_range()*NM2M<1200){
+#         myString = sprintf("%dm",contact.get_range()*NM2M);
+#       }elsif(contact.get_range()<10){
+#         myString = sprintf("%.1fnm",contact.get_range());
+#       }else{
+#         myString = sprintf("%dnm",contact.get_range());
+#       }
 
-      if (me.displayDLZ(me.MaxRadarRange)){
-        me.missileFireRange.show();
-      }else{
-        me.missileFireRange.hide();
-      }   
-      me.distanceToTargetLineChevronText.setText(myString);
-      me.distanceToTargetLineTextGroup.setTranslation(0,(me.distanceToTargetLineMax-me.distanceToTargetLineMin)-(contact.get_range()*(me.distanceToTargetLineMax-me.distanceToTargetLineMin)/ me.MaxRadarRange)-100); 
-    }
-  },
+#       if (me.displayDLZ(me.MaxRadarRange)){
+#         me.missileFireRange.show();
+#       }else{
+#         me.missileFireRange.hide();
+#       }   
+#       me.distanceToTargetLineChevronText.setText(myString);
+#       me.distanceToTargetLineTextGroup.setTranslation(0,(me.distanceToTargetLineMax-me.distanceToTargetLineMin)-(contact.get_range()*(me.distanceToTargetLineMax-me.distanceToTargetLineMin)/ me.MaxRadarRange)-100); 
+#     }
+#   },
   
 
   
