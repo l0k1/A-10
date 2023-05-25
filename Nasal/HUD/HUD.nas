@@ -1306,6 +1306,16 @@ var HUD = {
           me.targetArray[0].hide();
         }        
         me.rootLine.hide();
+      } elsif (me.selectedWeap.type == "AGM-65B") {
+        var seeker = me.selectedWeap.getSeekerInfo();
+        if (seeker != nil) {
+          me.targetArray[0].show();
+          var c = HudMath.getCenterPosFromDegs(seeker[0],seeker[1]);
+          me.targetArray[0].setTranslation(c);
+        } else {
+          me.targetArray[0].hide();
+          me.rootLine.hide();
+        }        
       } elsif(me.selectedWeap.type != "30mm Cannon" and me.selectedWeap.type != "LAU-68"){
         #Doing the math only for bombs
         if(me.selectedWeap.stage_1_duration+me.selectedWeap.stage_2_duration == 0){
