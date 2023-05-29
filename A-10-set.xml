@@ -793,6 +793,10 @@ Fairchild A-10 simulation config.
 			<cmsc>
 				<cmsc-disp-int type="float">0.35</cmsc-disp-int>
 			</cmsc>
+			<hud>
+				<cursor-slew-x type="double">0</cursor-slew-x>
+				<cursor-slew-y type="double">-2</cursor-slew-y>
+			</hud>
 		</displays>
 		<hud>
 			<a2a type="bool">false</a2a>
@@ -920,40 +924,128 @@ Fairchild A-10 simulation config.
 					<property>A-10/stations/station[11]/selected</property>
 				</binding>
 			</key>
-				
-			<!--<key n="109">
-				<name>m</name>
-				<desc>Masterarm</desc>
+			
+			<!-- <key n="357">
+				<name>Up</name>
+				<repeatable type="bool">true</repeatable>
+				<binding>
+					<command>property-adjust</command>
+					<property>/A-10/displays/hud/cursor-slew-y</property>
+					<step type="double">0.1</step>
+					<min>-9</min>
+					<max>1.4</max>
+					<interval-sec>0.00001</interval-sec>
+					<wrap>false</wrap>
+				</binding>
+			</key> -->
+
+			<key n="359">
+				<name>Down</name>
+				<repeatable type="bool">true</repeatable>
 				<binding>
 					<command>nasal</command>
-					<script><![CDATA[
-							setprop("controls/armament/master-arm",!getprop("controls/armament/master-arm"));
-							screen.log.write("Master-arm "~(getprop("controls/armament/master-arm")==0?"OFF":"ON"), 0.5, 0.5, 1);
-						
-					]]></script>
+					<script>weapons.cursorDown.start()</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>weapons.cursorDown.stop()</script>
+					</binding>
+				</mod-up>
+			</key>
+			
+			<key n="356">
+				<name>Left</name>
+				<repeatable type="bool">true</repeatable>
+				<binding>
+					<command>nasal</command>
+					<script>weapons.cursorLeft.start()</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>weapons.cursorLeft.stop()</script>
+					</binding>
+				</mod-up>
+			</key>
+
+			<key n="358">
+				<name>Right</name>
+				<repeatable type="bool">true</repeatable>
+				<binding>
+					<command>nasal</command>
+					<script>weapons.cursorRight.start()</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>weapons.cursorRight.stop()</script>
+					</binding>
+				</mod-up>
+			</key>
+			<key n="357">
+				<name>Up</name>
+				<repeatable type="bool">true</repeatable>
+				<binding>
+					<command>nasal</command>
+					<script>weapons.cursorUp.start()</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>weapons.cursorUp.stop()</script>
+					</binding>
+				</mod-up>
+			</key>
+			<key n="108">
+			<name>l</name>
+			<binding>
+				<command>nasal</command>
+				<script>weapons.lock()</script>
+			</binding>
+			</key>
+
+			<!-- <key n="359">
+				<name>Down</name>
+				<repeatable type="bool">true</repeatable>
+				<binding>
+					<command>property-adjust</command>
+					<property>/A-10/displays/hud/cursor-slew-y</property>
+					<step type="double">-0.1</step>
+					<min>-9</min>
+					<max>1.4</max>
+					<interval-sec>0.00001</interval-sec>
+					<wrap>false</wrap>
+				</binding>
+			</key>
+			
+			<key n="356">
+				<name>Left</name>
+				<repeatable type="bool">true</repeatable>
+				<binding>
+					<command>property-interpolate</command>
+					<property>/A-10/displays/hud/cursor-slew-x</property>
+					<value>-6</value>
+					<time>2.5</time>
+					<min>-6</min>
+					<max>6</max>
+					<wrap>false</wrap>
 				</binding>
 			</key>
 
-			<key n="119">
-                <name>w</name>
-                <desc>Cycle Weapon Type</desc>
-                <binding n="2">
-                    <command>nasal</command>
-                    <condition>
-                            <and>
-                            <not-equals>
-                                <property>sim/current-view/name</property>
-                                <value>Walk View</value>
-                            </not-equals>
-                            <not-equals>
-                                <property>sim/current-view/name</property>
-                                <value>Walker Orbit View</value>
-                            </not-equals>
-                            </and>
-                     </condition>
-                    <script>pylons.fcs.cycleLoadedWeapon();</script>
-                </binding>
-            </key>-->
+			<key n="358">
+				<name>Right</name>
+				<repeatable type="bool">true</repeatable>
+				<binding>
+					<command>property-interpolate</command>
+					<property>/A-10/displays/hud/cursor-slew-x</property>
+					<value>6</value>
+					<time>2.5</time>
+					<min>-6</min>
+					<max>6</max>
+					<wrap>false</wrap>
+				</binding>
+			</key> -->
 		</keyboard>
 	</input>
 
@@ -1437,6 +1529,9 @@ Fairchild A-10 simulation config.
             <file>Aircraft/A-10/Nasal/RADAR/radar-system.nas</file>
             <file>Aircraft/A-10/Nasal/RADAR/rwr-only.nas</file>
         </radar_system>
+		<weapons>
+			<file>Aircraft/A-10/Nasal/WEAPONS/weapons.nas</file>
+		</weapons>
 		<hud>
 			<file>Aircraft/A-10/Nasal/HUD/hud_math.nas</file>
 			<file>Aircraft/A-10/Nasal/HUD/HUD.nas</file>

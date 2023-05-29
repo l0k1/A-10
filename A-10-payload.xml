@@ -341,7 +341,7 @@
             <rail-length-m type="double">2.373</rail-length-m> <!-- LAU-88 Launcher -->
             <rail-point-forward type="bool">true</rail-point-forward>
             <max-report-distance type="double">65</max-report-distance>
-            <class type="string">MGP</class>
+            <class type="string">GM</class>
             <fire-msg type="string">Rifle</fire-msg>
             <hit-everything-nearby type="bool">true</hit-everything-nearby>
             <ready-time type="double">0.25</ready-time>
