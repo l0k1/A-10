@@ -1875,6 +1875,10 @@
       <condition>
         <property>payload/armament/spike</property>
         <property>A-10/avionics/ew-rwr-switch</property>
+        <equals>
+            <property>sim/current-view/view-number</property>
+            <value>0</value>
+        </equals>
       </condition>
       <volume>
         <property>sim/model/A-10/instrumentation/warnings/audio-alt-volume</property>
@@ -1889,6 +1893,10 @@
         <equals>
           <property>sound/rwr-new</property>
           <value>1</value>
+        </equals>
+        <equals>
+            <property>sim/current-view/view-number</property>
+            <value>0</value>
         </equals>
         <property>A-10/avionics/ew-rwr-switch</property>
       </condition>
