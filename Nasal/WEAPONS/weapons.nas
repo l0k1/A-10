@@ -98,3 +98,44 @@ cursorRight = maketimer(rate,xRight);
 setlistener("A-10/stations/station[2]/selected",mavUpdate);
 setlistener("A-10/stations/station[8]/selected",mavUpdate);
 setlistener("controls/armament/trigger",mavUpdate);
+
+#A/A Master Mode
+
+# AIM-9 Cooling
+
+var heatCooling = func {
+    if (pylons.fcs != nil and getprop("controls/armament/master-arm")) {
+        foreach(var w;pylons.fcs.getAllOfType("AIM-9M")) {
+            w.setCooling(1);
+            setprop("A-10/stores/aim9-light", 1);
+        }
+    }
+
+};
+
+var heatCoolOff = func {
+    if (pylons.fcs != nil and getprop("controls/armament/master-arm")) {
+        foreach(var w;pylons.fcs.getAllOfType("AIM-9M")) {
+            w.setCooling(0);
+            setprop("A-10/stores/aim9-light", 0);
+        }
+    }
+
+};
+
+var aaModeKnob = func {
+    k = getprop("controls/armament/aim9-knob");
+    if (k > 0) {
+        heatCooling();
+    } else {
+        heatCoolOff();
+    }
+    if (k == 2) {
+        setprop("/A-10/hud/air-to-air-mode",1);
+    } else {
+        setprop("/A-10/hud/air-to-air-mode",0);
+    }
+
+};
+
+setlistener("controls/armament/aim9-knob",aaModeKnob);

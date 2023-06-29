@@ -738,6 +738,7 @@ Fairchild A-10 simulation config.
 		<stores>
 			<ecm-mounted-left type="bool">false</ecm-mounted-left>
 			<ecm-mounted-right type="bool">false</ecm-mounted-right>
+			<aim9-light type="bool">false</aim9-light>
 		</stores>
 		<stations>
 			<station n="0">
@@ -799,7 +800,7 @@ Fairchild A-10 simulation config.
 			</hud>
 		</displays>
 		<hud>
-			<a2a type="bool">false</a2a>
+			<air-to-air-mode type="bool">false</air-to-air-mode>
 		</hud>
 	</A-10>
 

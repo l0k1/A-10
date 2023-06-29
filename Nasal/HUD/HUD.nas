@@ -1236,7 +1236,7 @@ var HUD = {
       
       MasterArm      :"/controls/armament/master-arm",
       TimeToTarget   :"/sim/dialog/groundtTargeting/time-to-target",
-      AirToAir       :"/A-10/hud/a2a",
+      AirToAir       :"/A-10/hud/air-to-air-mode",
     };
     
     foreach(var name; keys(m.input))
