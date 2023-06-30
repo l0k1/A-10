@@ -125,7 +125,6 @@ var heatCoolOff = func {
 
 var aaModeKnob = func {
     k = getprop("controls/armament/aim9-knob");
-    print("AIM-9 selector position", k);
     if (k > 0) {
         heatCooling();
     } else {
