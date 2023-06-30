@@ -6,7 +6,7 @@
   <modal type="bool">false</modal>
   <layout>vbox</layout>
   <draggable>true</draggable>
-  <width>300</width>
+  <width>400</width>
 
   <group>
     <layout>hbox</layout>
