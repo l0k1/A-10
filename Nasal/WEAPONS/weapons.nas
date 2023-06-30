@@ -30,12 +30,12 @@ var mavInit = func {
 var mavUpdate = func {
     selectedWeap = pylons.fcs.getSelectedWeapon();
     var masterArm = getprop("controls/armament/master-arm");
-    if (selectedWeap.type != "AGM-65B" or selectedWeap.type == nil) {
-        print ("Weapon is not of type AGM-65B - Skipping sequence");
+    if (selectedWeap == nil or selectedWeap.type != "AGM-65B" or selectedWeap.type == nil) {
+        #print ("Weapon is not of type AGM-65B - Skipping sequence");
         seekerTimer.stop();
     }else{
         if (!masterArm) {
-            print("Master Arm safe - Skipping");
+            #print("Master Arm safe - Skipping");
         }else{
             setprop("A-10/displays/hud/cursor-slew-x",defaultX);
             setprop("A-10/displays/hud/cursor-slew-y",defaultY);
@@ -75,16 +75,16 @@ var yDown = func {
 
 var lock = func {
     var masterArm = getprop("controls/armament/master-arm");
-    if ((masterArm) and (selectedWeap.type == "AGM-65B")) {
+    if ((selectedWeap != nil) and (masterArm) and (selectedWeap.type == "AGM-65B")) {
         if ((armament.MISSILE_LOCK) == (selectedWeap.status)) {
             selectedWeap.setCaged(0);
-            print("Valid tgt - Uncaging");
+            #print("Valid tgt - Uncaging");
         } else {
             selectedWeap.setCaged(1);
-            print("Not uncaging - no valid tgt to lock");
+            #print("Not uncaging - no valid tgt to lock");
         }
     } else {
-        print("Selected Weapon is not an AGM-65 or Master Arm safe. Not locking target");
+        #print("Selected Weapon is not an AGM-65 or Master Arm safe. Not locking target");
     }
 
 };
