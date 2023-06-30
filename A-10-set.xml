@@ -568,36 +568,6 @@ Fairchild A-10 simulation config.
 			<line>     More A-10 information on wiki.flightgear.org</line>
 		</help>
 
-
-		<!-- Hud -->
-		<!--<hud>
-			<path n="1">Aircraft/A-10/Huds/A-10.xml</path>
-			<visibility n="1">true</visibility>
-			<color>
-				<transparent type="bool">true</transparent>
-				<antialiased type="bool">true</antialiased>
-				<brightness type="float">0.85</brightness>
-				<alpha type="float">0.85</alpha>
-			</color>
-			<palette>
-				<color n="0">
-					<red type="float">0.38</red>
-					<green type="float">1.0</green>
-					<blue type="float">0.22</blue>
-				</color>
-				<color n="1">
-					<red type="float">1.0</red>
-					<green type="float">0.0</green>
-					<blue type="float">0.0</blue>
-				</color>
-			</palette>
-			<clipping>
-				<left type="double">-70</left>
-				<right type="double">70</right>
-				<top type="double">21</top>
-				<bottom type="double">-118</bottom>
-			</clipping>
-		</hud> -->
 		<menubar>
 			<default>
 				<menu n="10">
@@ -925,20 +895,6 @@ Fairchild A-10 simulation config.
 					<property>A-10/stations/station[11]/selected</property>
 				</binding>
 			</key>
-			
-			<!-- <key n="357">
-				<name>Up</name>
-				<repeatable type="bool">true</repeatable>
-				<binding>
-					<command>property-adjust</command>
-					<property>/A-10/displays/hud/cursor-slew-y</property>
-					<step type="double">0.1</step>
-					<min>-9</min>
-					<max>1.4</max>
-					<interval-sec>0.00001</interval-sec>
-					<wrap>false</wrap>
-				</binding>
-			</key> -->
 
 			<key n="359">
 				<name>Down</name>
@@ -1005,48 +961,6 @@ Fairchild A-10 simulation config.
 				<script>weapons.lock()</script>
 			</binding>
 			</key>
-
-			<!-- <key n="359">
-				<name>Down</name>
-				<repeatable type="bool">true</repeatable>
-				<binding>
-					<command>property-adjust</command>
-					<property>/A-10/displays/hud/cursor-slew-y</property>
-					<step type="double">-0.1</step>
-					<min>-9</min>
-					<max>1.4</max>
-					<interval-sec>0.00001</interval-sec>
-					<wrap>false</wrap>
-				</binding>
-			</key>
-			
-			<key n="356">
-				<name>Left</name>
-				<repeatable type="bool">true</repeatable>
-				<binding>
-					<command>property-interpolate</command>
-					<property>/A-10/displays/hud/cursor-slew-x</property>
-					<value>-6</value>
-					<time>2.5</time>
-					<min>-6</min>
-					<max>6</max>
-					<wrap>false</wrap>
-				</binding>
-			</key>
-
-			<key n="358">
-				<name>Right</name>
-				<repeatable type="bool">true</repeatable>
-				<binding>
-					<command>property-interpolate</command>
-					<property>/A-10/displays/hud/cursor-slew-x</property>
-					<value>6</value>
-					<time>2.5</time>
-					<min>-6</min>
-					<max>6</max>
-					<wrap>false</wrap>
-				</binding>
-			</key> -->
 		</keyboard>
 	</input>
 
@@ -1520,9 +1434,6 @@ Fairchild A-10 simulation config.
 		<pylons>
 			<file>Aircraft/A-10/Nasal/WEAPONS/pylons.nas</file>
 		</pylons>
-		<!--<A10hud>
-			<file>Aircraft/A-10/Nasal/hud.nas</file>
-		</A10hud> -->
 		<A10autopilot>
 			<file>Aircraft/A-10/Nasal/autopilot.nas</file>
 		</A10autopilot>
