@@ -30,7 +30,7 @@ var mavInit = func {
 var mavUpdate = func {
     selectedWeap = pylons.fcs.getSelectedWeapon();
     var masterArm = getprop("controls/armament/master-arm");
-    if (selectedWeap == nil or selectedWeap.type != "AGM-65B" or selectedWeap.type == nil) {
+    if (selectedWeap == nil or selectedWeap.type != "AGM-65B") {
         #print ("Weapon is not of type AGM-65B - Skipping sequence");
         seekerTimer.stop();
     }else{
