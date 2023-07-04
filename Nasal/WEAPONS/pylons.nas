@@ -47,10 +47,10 @@ hyd709.brevity = "Rockets away";
 var fuelTankLeft600 = stations.FuelTank.new("600 Gal Fuel Tank", "TK600", 4, 600, "sim/model/A-10/weapons/wingtankL");
 var fuelTankCenter600 = stations.FuelTank.new("600 Gal Fuel Tank", "TK600", 5, 600, "sim/model/A-10/weapons/wingtankC");
 var fuelTankRight600 = stations.FuelTank.new("600 Gal Fuel Tank", "TK600", 6, 600, "sim/model/A-10/weapons/wingtankR");
-var ecm131L = stations.Smoker.new("AN/ALQ-131", "AL131", "A-10/stores/ecm-mounted-left");
-var ecm184L = stations.Smoker.new("AN/ALQ-184", "AL184", "A-10/stores/ecm-mounted-left");
-var ecm131R = stations.Smoker.new("AN/ALQ-131", "AL131", "A-10/stores/ecm-mounted-right");
-var ecm184R = stations.Smoker.new("AN/ALQ-184", "AL184", "A-10/stores/ecm-mounted-right");
+var ecm131L = stations.Submodel.new("AN/ALQ-131", "AL131", "A-10/stores/ecm-mounted-left");
+var ecm184L = stations.Submodel.new("AN/ALQ-184", "AL184", "A-10/stores/ecm-mounted-left");
+var ecm131R = stations.Submodel.new("AN/ALQ-131", "AL131", "A-10/stores/ecm-mounted-right");
+var ecm184R = stations.Submodel.new("AN/ALQ-184", "AL184", "A-10/stores/ecm-mounted-right");
 var crgpd = stations.Dummy.new("MXU-648 Cargo Pod", "TRVL");
 
 var clearExternalTanks = func {
