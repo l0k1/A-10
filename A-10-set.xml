@@ -1069,6 +1069,8 @@ Fairchild A-10 simulation config.
 			</generator>
 		</APU>
 		<armament>
+			<master-arm-switch type="int">0</master-arm-switch>
+			<master-arm type="int">0</master-arm>
 			<trigger type="bool">false</trigger>
 			<trigger-gun type="bool">false</trigger-gun>
 			<trigger-hydra-1 type="bool">false</trigger-hydra-1>

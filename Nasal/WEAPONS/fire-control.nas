@@ -1245,3 +1245,5 @@ var getCompleteRadarTargetsList = func {
 
 	return radar_system.getCompleteList();
 }
+
+var masterArmSwitch = "controls/armament/master-arm-switch";
