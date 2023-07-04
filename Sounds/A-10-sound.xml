@@ -377,6 +377,7 @@
 			<property>engines/engine/n1</property>
 			<offset>0</offset>
 			<factor>0.02</factor>
+			<max>0.50</max>
 		</volume>
 		<pitch>
 			<property>engines/engine/n1</property>
@@ -403,6 +404,7 @@
 			<property>engines/engine[1]/n1</property>
 			<offset>0</offset>
 			<factor>1</factor>
+			<max>0.50</max>
 		</volume>
 		<pitch>
 			<property>engines/engine[1]/n1</property>
@@ -432,6 +434,7 @@
 			<property>sim/model/A-10/systems/apu/rpm-norm</property>
 			<factor>0.5</factor>
 			<offset>0.015</offset>
+			<max>0.50</max>
 		</volume>
 		<pitch>
 			<property>sim/model/A-10/systems/apu/rpm-norm</property>
