@@ -8,7 +8,7 @@
 	<animation>
 		<object-name>master-arm-switch</object-name>
 		<type>knob</type>
-		<property>controls/armament/master-arm</property>
+		<property>controls/armament/master-arm-switch</property>
 		<factor>30</factor>
 		<drag-direction>vertical</drag-direction>
 		<center>
@@ -20,7 +20,7 @@
 		<action>
             <binding>
                 <command>property-adjust</command>
-                <property>controls/armament/master-arm</property>
+                <property>controls/armament/master-arm-switch</property>
                 <factor>1</factor>
                 <min>-1</min>
                 <max>1</max>
