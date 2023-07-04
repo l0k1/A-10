@@ -123,15 +123,26 @@ var heatCoolOff = func {
 
 };
 
+var weapPowerToggle = func {
+    if (pylons.fcs != nil and getprop("controls/armament/master-arm")) {
+        foreach(var w;pylons.fcs.getAllOfType("AIM-9M")) {
+            w.togglePowerOn();
+        }
+    }
+
+};
+
 var aaModeKnob = func {
     k = getprop("controls/armament/aim9-knob");
     if (k > 0) {
         heatCooling();
     } else {
         heatCoolOff();
+        weapPowerToggle();
     }
     if (k == 2) {
         setprop("/A-10/hud/air-to-air-mode",1);
+        weapPowerToggle();
     } else {
         setprop("/A-10/hud/air-to-air-mode",0);
     }
