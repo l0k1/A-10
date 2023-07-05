@@ -172,11 +172,16 @@ var HUD = {
   m.HeadingHouse = m.root.createChild("path")
     .setColor(m.myGreen)
     .setStrokeLineWidth(m.myLineWidth*5)
-    .moveTo(-20,0)
-    .vert(-30)
-    .lineTo(0,-50)
-    .lineTo(20,-30)
-    .vert(30);
+    #.moveTo(-20,0)
+    #.vert(-30)
+    #.lineTo(0,-50)
+    #.lineTo(20,-30)
+    #.vert(30);
+    .moveTo(-12.5,0)
+    .arcSmallCW(12.5,12.5, 0, 12.5*2, 0)
+    .arcSmallCW(12.5,12.5, 0, -12.5*2, 0)
+    .moveTo(0,-12.5)
+    .vert(-35);
  
         
    #Chevrons Acceleration Vector (AV)
@@ -1113,54 +1118,6 @@ var HUD = {
     #Displaying the circles, the squares or even the triangles (triangles will be for a IR lock without radar)
     #me.displayTarget();
     
-   
-    
-    #--------------------- Selecting the Airport and the runway -------------
-    #------------------------------------------------------------------------
-    #Need to select the runways and write the conditions
-    #2. SYNTHETIC RUNWAY. The synthetic runway symbol is an aid for locating the real runway, especially during low visibility conditions. 
-    #It is only visible when: 
-    #a. The INS is on.
-    #b. The airport is the current fly-to waypoint. 
-    #c. The runway data (heading and glideslope) were entered.
-    #d. Both localizer and glideslope have been captured 
-    #e. The runway is less than 10 nautical miles away. 
-    #f. Lateral deviation is less than 7º.
-    # The synthetic runway is removed from the HUD as soon as there is weight on the landing gear’s wheels. 
-       
-    
-    #First trying with ILS
-    #var NavFrequency = getprop("/instrumentation/nav/frequencies/selected-mhz");
-#    me.selectedRunway  = "0";
-#    #print("-- Lengths of the runways at ", info.name, " (", info.id, ") --");
-#    me.info = airportinfo();
-#    foreach(var rwy; keys(me.info.runways)){
-#        if(sprintf("%.2f",me.info.runways[rwy].ils_frequency_mhz) == sprintf("%.2f",me.input.NavFreq.getValue())){
-#          me.selectedRunway = rwy;
-#        }  
-#    }
-#    #Then, trying with route manager
-#    if(me.selectedRunway == "0" and !me.input.MasterArm.getValue()){
-#      if(me.input.destRunway.getValue() != ""){
-#         
-#        if(me.fp.getPlanSize() == me.fp.indexOfWP(me.fp.currentWP())+1){
-#          
-#          me.info = airportinfo(me.input.destAirport.getValue());
-#          me.selectedRunway = me.input.destRunway.getValue() ;
-#        }
-#      }
-#    }
-#    #print("Test : ",me.selectedRunway != "0");
-#    if(me.selectedRunway != "0" and !me.input.MasterArm.getValue()){
-#      var (courseToAiport, distToAirport) = courseAndDistance(me.info);
-#      if(  distToAirport < 10 and me.input.wow_nlg.getValue() == 0){
-#        me.displayRunway();
-#      }else{
-#        me.myRunwayGroup.removeAllChildren();
-#      }
-#    }else{
-#      me.myRunwayGroup.removeAllChildren();
-#    }
     
     # -------------------- displayHeadingHorizonScale ---------------
     me.displayHeadingHorizonScale();
