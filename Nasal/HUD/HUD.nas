@@ -167,7 +167,7 @@ var HUD = {
         
         
          
-  #Little House pointing  Waypoint
+  #tadpole - destination index
   m.HouseSize = 4;
   m.HeadingHouse = m.root.createChild("path")
     .setColor(m.myGreen)
@@ -574,69 +574,36 @@ var HUD = {
 
       
       m.waypointSimpleGroup = m.root.createChild("group");
-      #Distance to next Waypoint
+
+      #Distance to active Waypoint
       m.waypointDistSimple = m.waypointSimpleGroup.createChild("text")
         .setColor(m.myGreen)
-        .setTranslation( m.maxladderspan + 45 ,m.headScaleVerticalPlace*2/5)
-        .setDouble("character-size",m.myFontSize* 30)
-        .setAlignment("right-center")
+        .setTranslation(m.maxladderspan+145 ,85)
+        .setDouble("character-size",m.myFontSize* 25)
+        .setAlignment("left-bottom")
         .setText("0");    
-      # N
-#       m.waypointNSimple = m.waypointSimpleGroup.createChild("text")
-#         .setTranslation( m.maxladderspan + 65 ,m.headScaleVerticalPlace*2/5)
-#         .setDouble("character-size",m.myFontSize* 30)
-#         .setAlignment("center-center")
-#         .setText("N");     
-      #next Waypoint NUMBER
+
+      #active Waypoint NUMBER
       m.waypointNumberSimple = m.waypointSimpleGroup.createChild("text")
         .setColor(m.myGreen)
-        .setTranslation( m.maxladderspan + 85 ,m.headScaleVerticalPlace*2/5)
-        .setDouble("character-size",m.myFontSize* 30)
-        .setAlignment("left-center")
+        .setTranslation( m.maxladderspan +93 ,85)
+        .setDouble("character-size",m.myFontSize* 25)
+        .setAlignment("left-bottom")
         .setText("00"); 
-      
-      #Distance to next Waypoint
-      m.waypointDist = m.waypointGroup.createChild("text")
+
+      m.stptID = m.waypointSimpleGroup.createChild("text")
         .setColor(m.myGreen)
-        .setTranslation( m.maxladderspan + 80 ,m.headScaleVerticalPlace*2/5)
-        .setDouble("character-size",m.myFontSize* 30)
-        .setAlignment("left-center")
-        .setText("0");    
-      # N
-#       m.waypointN = m.waypointGroup.createChild("text")
-#         .setTranslation( m.maxladderspan + 120 ,m.headScaleVerticalPlace*2/5)
-#         .setDouble("character-size",m.myFontSize* 30)
-#         .setAlignment("left-center")
-#         .setText("N");   
-        
-      #next Waypoint NUMBER
-      m.waypointNumber = m.waypointGroup.createChild("text")
+        .setTranslation(m.maxladderspan+93 ,55) #+25 for font size + 5 for gap
+        .setDouble("character-size",m.myFontSize* 25)
+        .setAlignment("left-bottom")
+        .setText("stptID");
+
+      m.utcTime = m.waypointSimpleGroup.createChild("text")
         .setColor(m.myGreen)
-        .setTranslation( m.maxladderspan + 80 ,m.headScaleVerticalPlace*2/5-25)
-        .setDouble("character-size",m.myFontSize* 30)
-        .setAlignment("left-center")
-        .setText("00");     
-      #bull eye
-#       m.BE = m.waypointGroup.createChild("text")
-#         .setTranslation( m.maxladderspan + 55 ,m.headScaleVerticalPlace*2/5-25)
-#         .setDouble("character-size",m.myFontSize* 30)
-#         .setAlignment("right-center")
-#         .setText("BE");
-        
-      m.DEST = m.waypointGroup.createChild("text")
-        .setColor(m.myGreen)
-        .setTranslation( m.maxladderspan + 55 ,m.headScaleVerticalPlace*2/5-25)
-        .setDouble("character-size",m.myFontSize* 30)
-        .setAlignment("right-center")
-        .setText("DEST");
-        
-      #heading to the next Waypoint
-      m.waypointHeading = m.waypointGroup.createChild("text")
-        .setColor(m.myGreen)
-        .setTranslation( m.maxladderspan + 65 ,m.headScaleVerticalPlace*2/5)
-        .setDouble("character-size",m.myFontSize* 30)
-        .setAlignment("right-center")
-        .setText("000/"); 
+        .setTranslation(m.maxladderspan+93 ,110)
+        .setDouble("character-size",m.myFontSize* 25)
+        .setAlignment("left-bottom")
+        .setText("00:00:00");
 
       
       
@@ -893,7 +860,6 @@ var HUD = {
       NextWayTrueBearing:"/autopilot/route-manager/wp/true-bearing-deg",
       NextWayBearing:"/autopilot/route-manager/wp/bearing-deg",
       AutopilotStatus:"/autopilot/locks/AP-status",
-      currentWp     : "/autopilot/route-manager/current-wp",
       ILS_valid     :"/instrumentation/nav/data-is-valid",
       NavHeadingRunwayILS:"/instrumentation/nav/heading-deg",
       ILS_gs_in_range :"/instrumentation/nav/gs-in-range",
@@ -907,6 +873,11 @@ var HUD = {
       MasterArm      :"/controls/armament/master-arm",
       TimeToTarget   :"/sim/dialog/groundtTargeting/time-to-target",
       AirToAir       :"/A-10/hud/air-to-air-mode",
+
+      currentWp     : "/autopilot/route-manager/current-wp",
+      currentWpID   : "/autopilot/route-manager/wp/id",
+      wpTimeToGo    : "/autopilot/route-manager/wp/eta",
+      utcTime        :"/sim/time/gmt-string"
     };
     
     foreach(var name; keys(m.input))
@@ -1427,24 +1398,16 @@ var HUD = {
   },
 
   
-  display_Waypoint:func(){
+  display_Waypoint:func(){ #waypointSimpleGroup is what we use. WaypointGroup is old code references
     
     if(me.input.distNextWay.getValue() != nil and me.input.gearPos.getValue() == 0){
       if(me.input.distNextWay.getValue()>10){
-        me.waypointDist.setText(sprintf("%d N",int(me.input.distNextWay.getValue())));
-        me.waypointDistSimple.setText(sprintf("%d N",int(me.input.distNextWay.getValue())));
+        me.waypointDistSimple.setText(sprintf("%dN",int(me.input.distNextWay.getValue())));
       }else{
-        me.waypointDist.setText(sprintf("%0.1f N",me.input.distNextWay.getValue()));
-        me.waypointDistSimple.setText(sprintf("%0.1f N",me.input.distNextWay.getValue()));
+        me.waypointDistSimple.setText(sprintf("%0.1fN",me.input.distNextWay.getValue()));
       }
-      me.waypointNumber.setText(sprintf("%02d",me.input.NextWayNum.getValue()));
-      me.waypointNumberSimple.setText(sprintf("%02d",me.input.NextWayNum.getValue()));
-      
-      if(me.input.hdgDisplay.getValue()){
-        me.waypointHeading.setText(sprintf("%03d/",me.input.NextWayTrueBearing.getValue()));
-      }else{
-        me.waypointHeading.setText(sprintf("%03d/",me.input.NextWayBearing.getValue()));
-      }
+      me.waypointNumberSimple.setText(sprintf("%02d",me.input.NextWayNum.getValue(),"/"));
+      me.stptID.setText(me.input.currentWpID.getValue());
       
       if(me.input.AutopilotStatus.getValue()=="AP1"){
         me.waypointGroup.show();
