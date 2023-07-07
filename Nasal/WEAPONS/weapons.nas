@@ -78,13 +78,13 @@ var lock = func {
     if ((selectedWeap != nil) and (masterArm) and (selectedWeap.type == "AGM-65B")) {
         if ((armament.MISSILE_LOCK) == (selectedWeap.status)) {
             selectedWeap.setCaged(0);
-            #print("Valid tgt - Uncaging");
+            print("Valid tgt - Uncaging");
         } else {
             selectedWeap.setCaged(1);
-            #print("Not uncaging - no valid tgt to lock");
+            print("Not uncaging - no valid tgt to lock");
         }
     } else {
-        #print("Selected Weapon is not an AGM-65 or Master Arm safe. Not locking target");
+        print("Selected Weapon is not an AGM-65 or Master Arm safe. Not locking target");
     }
 
 };
