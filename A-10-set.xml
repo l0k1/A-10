@@ -704,6 +704,9 @@ Fairchild A-10 simulation config.
 			<ew-disp-switch type="bool">0</ew-disp-switch>
 			<ew-mode-knob type="double">0</ew-mode-knob>
 			<ew-cms-jett-switch type="bool">0</ew-cms-jett-switch>
+			<cmsc>
+				<threat-separate type="bool">0</threat-separate>
+			</cmsc>
 		</avionics>
 		<stores>
 			<ecm-mounted-left type="bool">false</ecm-mounted-left>

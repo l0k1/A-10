@@ -165,6 +165,8 @@ var warheads = {
     "3M9":               [96,  125.00,0,0],# 3M9M3 Missile used with 2K12/SA-6
     "5V28V":             [97,  478.00,0,0],# Missile used with S-200D/SA-5
     "AIM-9X":            [98,   20.80,0,0],
+    "5V27":              [99,  150.00,0,0],
+    "AGM-65G":           [100, 150.00,1,0],
 };
 
 var AIR_RADAR = "air";
@@ -204,7 +206,7 @@ var radar_signatures = {
 var id2warhead = [];
 var launched = {};# callsign: elapsed-sec
 var approached = {};# callsign: uniqueID
-var heavy_smoke = [61,62,63,65,92,96,97];
+var heavy_smoke = [61,62,63,65,92,96,97,99];
 
 var k = keys(warheads);
 
@@ -286,6 +288,7 @@ var DamageRecipient =
 #                      " Flags=",notification.Flags,
 #                      " Radar=",bits.test(notification.Flags, 0),
 #                      " Thrust=",bits.test(notification.Flags, 1));
+#                      " CWI=",bits.test(notification.Flags, 2));
                 #
                 # todo:
                 #   animate missiles
