@@ -575,28 +575,28 @@ var HUD = {
       
       m.waypointSimpleGroup = m.root.createChild("group");
 
-      #Distance to active Waypoint
-      m.waypointDistSimple = m.waypointSimpleGroup.createChild("text")
-        .setColor(m.myGreen)
-        .setTranslation(m.maxladderspan+145 ,85)
-        .setDouble("character-size",m.myFontSize* 25)
-        .setAlignment("left-bottom")
-        .setText("0");    
+      # #Distance to active Waypoint
+      # m.waypointDistAlt = m.waypointSimpleGroup.createChild("text")
+      #   .setColor(m.myGreen)
+      #   .setTranslation(m.maxladderspan+145 ,85)
+      #   .setDouble("character-size",m.myFontSize* 25)
+      #   .setAlignment("left-bottom")
+      #   .setText("0");    
 
       #active Waypoint NUMBER
-      m.waypointNumberSimple = m.waypointSimpleGroup.createChild("text")
+      m.waypointDistAlt = m.waypointSimpleGroup.createChild("text")
         .setColor(m.myGreen)
         .setTranslation( m.maxladderspan +93 ,85)
         .setDouble("character-size",m.myFontSize* 25)
         .setAlignment("left-bottom")
         .setText("00"); 
 
-      m.stptID = m.waypointSimpleGroup.createChild("text")
+      m.stptInfo = m.waypointSimpleGroup.createChild("text")
         .setColor(m.myGreen)
         .setTranslation(m.maxladderspan+93 ,55) #+25 for font size + 5 for gap
         .setDouble("character-size",m.myFontSize* 25)
         .setAlignment("left-bottom")
-        .setText("stptID");
+        .setText("stptInfo");
 
       m.utcTime = m.waypointSimpleGroup.createChild("text")
         .setColor(m.myGreen)
@@ -1399,15 +1399,16 @@ var HUD = {
 
   
   display_Waypoint:func(){ #waypointSimpleGroup is what we use. WaypointGroup is old code references
-    
+
+    # me.stptElevation = getprop("/autopilot/route-manager/route/wp[" ~ me.input.currentWp.getValue() ~ "]/altitude-ft");
     if(me.input.distNextWay.getValue() != nil and me.input.gearPos.getValue() == 0){
       if(me.input.distNextWay.getValue()>10){
-        me.waypointDistSimple.setText(sprintf("%dN",int(me.input.distNextWay.getValue())));
+        me.waypointDistAlt.setText(sprintf("%dN",int(me.input.distNextWay.getValue())));
       }else{
-        me.waypointDistSimple.setText(sprintf("%0.1fN",me.input.distNextWay.getValue()));
+        me.waypointDistAlt.setText(sprintf("%01.1fN/%04d",me.input.distNextWay.getValue(),me.input.NextWayNum.getValue()));
       }
-      me.waypointNumberSimple.setText(sprintf("%02d",me.input.NextWayNum.getValue(),"/"));
-      me.stptID.setText(me.input.currentWpID.getValue());
+      # me.waypointNumberSimple.setText(sprintf("%02d",me.input.NextWayNum.getValue()));
+      me.stptInfo.setText(sprintf("%02d/%s",me.input.NextWayNum.getValue(),me.input.currentWpID.getValue()));
       
       if(me.input.AutopilotStatus.getValue()=="AP1"){
         me.waypointGroup.show();
