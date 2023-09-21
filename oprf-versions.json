@@ -27,10 +27,6 @@
     "version": null,
     "path": "Nasal/WEAPONS/station-manager.nas"
   },
-  "hud-math": {
-    "version": null,
-    "path": "Nasal/HUD/hud_math.nas"
-  },
   "armament-notification": {
     "version": null,
     "path": "Nasal/ArmamentNotification.nas"
