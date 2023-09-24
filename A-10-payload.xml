@@ -84,6 +84,8 @@
             <cool-time type="double">30</cool-time>                        <!-- source: OP 3353 for AIM-9D is 60s but nitrogen, so for this argon cooled; half -->
             <cool-duration type="int">5400</cool-duration>                  <!-- source: OP 3353 for AIM-9D is ~2 hours.  GR1F-16CJ-34-1-1 page 1-402 say 1.5h average for aim9m and 9l -->
             <warm-detect-range-nm type="double">5.0</warm-detect-range-nm>
+            <requires-power-on type="bool">true</requires-power-on>
+            <power-on-battery-time type="double">0</power-on-battery-time> <!-- 0 = infinite -->
             <detect-range-nm type="double">12.5</detect-range-nm><!-- source: navair.navy.gov - Is really 18nm, but thats probably for big fat hot targets like bombers -->
             <ready-time type="double">0.5</ready-time>
             <proportionality-constant type="double">3</proportionality-constant> <!-- source for 4: AD-A272 984 -->
@@ -341,7 +343,7 @@
             <rail-length-m type="double">2.373</rail-length-m> <!-- LAU-88 Launcher -->
             <rail-point-forward type="bool">true</rail-point-forward>
             <max-report-distance type="double">65</max-report-distance>
-            <class type="string">MGP</class>
+            <class type="string">GM</class>
             <fire-msg type="string">Rifle</fire-msg>
             <hit-everything-nearby type="bool">true</hit-everything-nearby>
             <ready-time type="double">0.25</ready-time>

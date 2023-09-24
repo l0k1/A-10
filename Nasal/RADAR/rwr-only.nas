@@ -151,7 +151,7 @@ props.globals.getNode("instrumentation/rwr/serviceable",1).setBoolValue(1);
 
 # start generic radar system
 var baser = AIToNasal.new();
-var omni = OmniRadar.new(1.0, 150, 55);
+var omni = OmniRadar.new(1.0, 150, -1);
 var terrain = TerrainChecker.new(0.1, 1, 30);# 0.05 or 0.10 is fine here
 #var dlnkRadar = DatalinkRadar.new(0.03, 90);# 3 seconds because cannot be too slow for DLINK targets
 

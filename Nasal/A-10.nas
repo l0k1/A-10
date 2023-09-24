@@ -105,7 +105,7 @@ var cnt = 0;	# elecrical is done each 0.3 sec.
 var main_loop = func {
 	cnt += 1;
 	sas();
-	A10hud.update_loop();
+	#A10hud.update_loop();
 	apu.update_loop();
 	A10fuel.update_loop();
 	A10engines.update_loop(0);
@@ -157,10 +157,27 @@ var init = func {
 	if (! launched ) settimer(main_loop, 0.5);
 	launched = 1;
     setprop("/sim/multiplay/visibility-range-nm", 200);
+    rand_dlink();
+    rand_iff();
 }
 
 if (! launched) {
 	setlistener("/sim/signals/fdm-initialized", init);
+}
+
+# IFF / Datalink Randomisation
+
+var rand_dlink = func() {
+    raw_dlink = int(rand() * 9999);
+    dlink_code = math.clamp(raw_dlink, 0, 9999);
+    setprop("instrumentation/datalink/channel", dlink_code);
+}
+
+var rand_iff = func() {
+    raw_m4 = int(rand() * 99);
+    m4_code = math.clamp(raw_m4, 0, 99);
+    setprop("instrumentation/iff/channel", m4_code);
+    
 }
 
 # Flares ##################
@@ -371,5 +388,3 @@ var eject = func{
   damage.fail_systems(1);
 
 }
-
-# EOF #####################

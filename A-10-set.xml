@@ -568,36 +568,6 @@ Fairchild A-10 simulation config.
 			<line>     More A-10 information on wiki.flightgear.org</line>
 		</help>
 
-
-		<!-- Hud -->
-		<hud>
-			<path n="1">Aircraft/A-10/Huds/A-10.xml</path>
-			<visibility n="1">true</visibility>
-			<color>
-				<transparent type="bool">true</transparent>
-				<antialiased type="bool">true</antialiased>
-				<brightness type="float">0.85</brightness>
-				<alpha type="float">0.85</alpha>
-			</color>
-			<palette>
-				<color n="0">
-					<red type="float">0.38</red>
-					<green type="float">1.0</green>
-					<blue type="float">0.22</blue>
-				</color>
-				<color n="1">
-					<red type="float">1.0</red>
-					<green type="float">0.0</green>
-					<blue type="float">0.0</blue>
-				</color>
-			</palette>
-			<clipping>
-				<left type="double">-70</left>
-				<right type="double">70</right>
-				<top type="double">21</top>
-				<bottom type="double">-118</bottom>
-			</clipping>
-		</hud>
 		<menubar>
 			<default>
 				<menu n="10">
@@ -734,10 +704,14 @@ Fairchild A-10 simulation config.
 			<ew-disp-switch type="bool">0</ew-disp-switch>
 			<ew-mode-knob type="double">0</ew-mode-knob>
 			<ew-cms-jett-switch type="bool">0</ew-cms-jett-switch>
+			<cmsc>
+				<threat-separate type="bool">0</threat-separate>
+			</cmsc>
 		</avionics>
 		<stores>
 			<ecm-mounted-left type="bool">false</ecm-mounted-left>
 			<ecm-mounted-right type="bool">false</ecm-mounted-right>
+			<aim9-light type="bool">false</aim9-light>
 		</stores>
 		<stations>
 			<station n="0">
@@ -793,7 +767,14 @@ Fairchild A-10 simulation config.
 			<cmsc>
 				<cmsc-disp-int type="float">0.35</cmsc-disp-int>
 			</cmsc>
+			<hud>
+				<cursor-slew-x type="double">0</cursor-slew-x>
+				<cursor-slew-y type="double">-2</cursor-slew-y>
+			</hud>
 		</displays>
+		<hud>
+			<air-to-air-mode type="bool">false</air-to-air-mode>
+		</hud>
 	</A-10>
 
 	<ai>
@@ -917,40 +898,72 @@ Fairchild A-10 simulation config.
 					<property>A-10/stations/station[11]/selected</property>
 				</binding>
 			</key>
-				
-			<!--<key n="109">
-				<name>m</name>
-				<desc>Masterarm</desc>
+
+			<key n="359">
+				<name>Down</name>
+				<repeatable type="bool">true</repeatable>
 				<binding>
 					<command>nasal</command>
-					<script><![CDATA[
-							setprop("controls/armament/master-arm",!getprop("controls/armament/master-arm"));
-							screen.log.write("Master-arm "~(getprop("controls/armament/master-arm")==0?"OFF":"ON"), 0.5, 0.5, 1);
-						
-					]]></script>
+					<script>weapons.cursorDown.start()</script>
 				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>weapons.cursorDown.stop()</script>
+					</binding>
+				</mod-up>
+			</key>
+			
+			<key n="356">
+				<name>Left</name>
+				<repeatable type="bool">true</repeatable>
+				<binding>
+					<command>nasal</command>
+					<script>weapons.cursorLeft.start()</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>weapons.cursorLeft.stop()</script>
+					</binding>
+				</mod-up>
 			</key>
 
-			<key n="119">
-                <name>w</name>
-                <desc>Cycle Weapon Type</desc>
-                <binding n="2">
-                    <command>nasal</command>
-                    <condition>
-                            <and>
-                            <not-equals>
-                                <property>sim/current-view/name</property>
-                                <value>Walk View</value>
-                            </not-equals>
-                            <not-equals>
-                                <property>sim/current-view/name</property>
-                                <value>Walker Orbit View</value>
-                            </not-equals>
-                            </and>
-                     </condition>
-                    <script>pylons.fcs.cycleLoadedWeapon();</script>
-                </binding>
-            </key>-->
+			<key n="358">
+				<name>Right</name>
+				<repeatable type="bool">true</repeatable>
+				<binding>
+					<command>nasal</command>
+					<script>weapons.cursorRight.start()</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>weapons.cursorRight.stop()</script>
+					</binding>
+				</mod-up>
+			</key>
+			<key n="357">
+				<name>Up</name>
+				<repeatable type="bool">true</repeatable>
+				<binding>
+					<command>nasal</command>
+					<script>weapons.cursorUp.start()</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>weapons.cursorUp.stop()</script>
+					</binding>
+				</mod-up>
+			</key>
+			<key n="108">
+			<name>l</name>
+			<binding>
+				<command>nasal</command>
+				<script>weapons.lock()</script>
+			</binding>
+			</key>
 		</keyboard>
 	</input>
 
@@ -1426,9 +1439,6 @@ Fairchild A-10 simulation config.
 		<pylons>
 			<file>Aircraft/A-10/Nasal/WEAPONS/pylons.nas</file>
 		</pylons>
-		<A10hud>
-			<file>Aircraft/A-10/Nasal/hud.nas</file>
-		</A10hud>
 		<A10autopilot>
 			<file>Aircraft/A-10/Nasal/autopilot.nas</file>
 		</A10autopilot>
@@ -1437,6 +1447,13 @@ Fairchild A-10 simulation config.
             <file>Aircraft/A-10/Nasal/RADAR/radar-system.nas</file>
             <file>Aircraft/A-10/Nasal/RADAR/rwr-only.nas</file>
         </radar_system>
+		<weapons>
+			<file>Aircraft/A-10/Nasal/WEAPONS/weapons.nas</file>
+		</weapons>
+		<hud>
+			<file>Aircraft/A-10/Nasal/HUD/hud_math.nas</file>
+			<file>Aircraft/A-10/Nasal/HUD/HUD.nas</file>
+		</hud>
 		<cmsc>
 			<file>Aircraft/A-10/Nasal/CMSC_disp.nas</file>
 		</cmsc>

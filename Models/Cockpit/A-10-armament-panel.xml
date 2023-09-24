@@ -55,8 +55,8 @@
 
 	<animation>
 		<object-name>aim-9-knob</object-name>
-		<type>rotate</type>
-		<property>sim/model/A-10/weapons/dual-AIM-9/aim9-knob</property>
+		<type>knob</type>
+		<property>controls/armament/aim9-knob</property>
 		<factor>45</factor>
 		<center>
 			<x-m>0.0031</x-m>
@@ -64,16 +64,23 @@
 			<z-m>-0.0628</z-m>
 		</center>
 		<axis><x>-1</x></axis>
+		<action>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/armament/aim9-knob</property>
+                <factor>1</factor>
+                <min>0</min>
+                <max>2</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
 	</animation>
 
 	<animation>
 		<type>select</type>
 		<object-name>aim-9-light-on</object-name>
 		<condition>
-			<equals>
-				<property>sim/model/A-10/weapons/aim-9/cooled</property>
-				<value>2</value>
-			</equals>
+			<property>A-10/stores/aim9-light</property>
 		</condition>
 	</animation>
 

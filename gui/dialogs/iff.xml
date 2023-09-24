@@ -6,7 +6,7 @@
   <modal type="bool">false</modal>
   <layout>vbox</layout>
   <draggable>true</draggable>
-  <width>300</width>
+  <width>400</width>
 
   <group>
     <layout>hbox</layout>
@@ -45,12 +45,12 @@
     </input>
 
     <button>
-        <legend>Clear</legend>
+        <legend>Randomise</legend>
         <halign>right</halign>
         <binding>
           <command>nasal</command>
           <script><![CDATA[
-            setprop("instrumentation/iff/channel", 0);
+            A10.rand_iff();
           ]]></script>
         </binding>
     </button>
@@ -73,12 +73,12 @@
     </input>
 
     <button>
-        <legend>Clear</legend>
+        <legend>Randomise</legend>
         <halign>right</halign>
         <binding>
           <command>nasal</command>
           <script><![CDATA[
-            setprop("instrumentation/datalink/channel", 0);
+            A10.rand_dlink();
           ]]></script>
         </binding>
     </button>

@@ -111,8 +111,6 @@ var Station = {
 					} elsif (me.weaponName == "AGM-158") {
 						mf = func (struct) {
 							if (struct.dist_m != -1 and struct.speed_fps != 0) {
-<<<<<<< HEAD
-=======
 								if (M2NM*struct.dist_m < 1.75 and struct.guidanceLaw == "direct-alt") {
 									# start terminal diving
 									return {"altitude":0,"guidanceLaw":"direct"};
@@ -121,30 +119,14 @@ var Station = {
 									# 8s before impact switch to IR, authentic value
 									return {"guidance":"heat","guidanceLaw":"APN","altitude":0,"class":"GM","target":"closest","abort_midflight_function":1};
 								}
->>>>>>> 217dfc9... Sim: Update fc + sm
 								if (struct.dist_m*M2NM > 10) {
 									# 22000 ft above sealevel, authentic value
 									return {"altitude": 22000};
-								}
-<<<<<<< HEAD
-								if (struct.dist_horz_m != nil and M2NM*struct.dist_horz_m > 1.75 and struct.hasTarget) {
-									# Lower altitude to 5000 ft above target
-									return {"altitude_at": 5000};
-								}
-								if (struct.dist_horz_m != nil and M2NM*struct.dist_horz_m < 1.75 and struct.guidanceLaw == "direct-alt") {
-									# start terminal diving
-									return {"altitude":0,"guidanceLaw":"direct"};
-								}
-								if (M2FT*struct.dist_m/struct.speed_fps < 8 and struct.guidance == "gps") {
-									# 8s before impact switch to IR, authentic value
-									return {"guidance":"heat","guidanceLaw":"PN","altitude":0,"class":"GM","target":"closest","abort_midflight_function":1};
-								}
-=======
+                  
 								if (M2NM*struct.dist_m > 1.75 and struct.hasTarget) {
 									# Lower altitude to 5000 ft above target
 									return {"altitude_at": 5000};
 								}
->>>>>>> 217dfc9... Sim: Update fc + sm
 							}
 							return {};
 						};
