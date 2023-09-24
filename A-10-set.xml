@@ -1442,6 +1442,9 @@ Fairchild A-10 simulation config.
 		<A10autopilot>
 			<file>Aircraft/A-10/Nasal/autopilot.nas</file>
 		</A10autopilot>
+		<rcs>
+			<file>Aircraft/A-10/Nasal/RADAR/rcs_mand.nas</file>
+		</rcs>
         <radar_system>
         	<file>Aircraft/A-10/Nasal/RADAR/radar-system-database.nas</file>
             <file>Aircraft/A-10/Nasal/RADAR/radar-system.nas</file>
