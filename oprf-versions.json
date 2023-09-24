@@ -12,7 +12,7 @@
     "path": "Nasal/RADAR/radar-system.nas"
   },
   "rcs-mand": {
-    "version": null,
+    "version": "1.0.2",
     "path": "Nasal/RADAR/rcs_mand.nas"
   },
   "damage": {
@@ -40,15 +40,15 @@
     "path": "Nasal/RADAR/radar-system-database.nas"
   },
   "hud-math": {
-    "version": null,
+    "version": "1.0.0",
     "path": "Nasal/HUD/hud_math.nas"
   },
   "geo-bridged-transmitter": {
-    "version": null,
+    "version": "1.0.0",
     "path": "Nasal/GeoBridgedTransmitter.nas"
   },
   "hack-canvas": {
-    "version": null,
+    "version": "1.0.0",
     "path": "Nasal/hackCanvas.nas"
   }
 }
