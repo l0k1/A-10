@@ -32,6 +32,7 @@ var Database = {
 
 	"default": BaseEntry,
 # Small aircraft (emesary enabled)
+	"AI":                     {rwrCode:"AI"},
     "A-10":                   {killZone: 15, baseThreat:defaultFighterThreat},
     "A-10-model":             {killZone: 15, baseThreat:defaultFighterThreat},
     "A-10-modelB":            {killZone: 15, baseThreat:defaultFighterThreat},
@@ -242,6 +243,8 @@ var Database = {
 	"F-23C_BlackWidow-II":    {},
 };
 
+var debugDatabaseLevel = 1;
+
 if (rcs["rcs_database"] != nil) {
 	foreach(entry ; keys(rcs.rcs_database)) {
 		if (Database[entry] == nil) {
@@ -265,4 +268,11 @@ foreach (entry ; keys(Database)) {
 	Database[entry]["parents"] = [BaseEntry];
 }
 
-var debugDatabaseLevel = 1;
+var getDBEntry = func (model) {
+	var entry = Database[model];
+	if (entry == nil) {
+		entry = Database.default;
+	}
+	return entry;
+}
+
