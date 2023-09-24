@@ -32,7 +32,7 @@
     "path": "Nasal/ArmamentNotification.nas"
   },
   "radar-system-database": {
-    "version": null,
+    "version": "1.0.3",
     "path": "Nasal/RADAR/radar-system-database.nas"
   }
 }
