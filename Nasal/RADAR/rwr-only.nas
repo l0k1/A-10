@@ -62,6 +62,7 @@ var RWR = {
         me.elapsed = elapsedProp.getValue();
         foreach(me.u ; me.vector_aicontacts) {
         	# [me.ber,me.head,contact.getCoord(),me.tp,me.radar,contact.getDeviationHeading(),contact.getRangeDirect()*M2NM, contact.getCallsign()]
+            me.dbEntry = radar_system.getDBEntry(me.u.getModel());
         	me.threatDB = me.u.getThreatStored();
             me.cs = me.threatDB[7];
             me.rn = me.threatDB[6];
@@ -84,29 +85,12 @@ var RWR = {
                         me.heatDefense = me.heatDefenseNow;
                     }
                 }
-                me.threat = 0;
-                if (me.u.getModel() != "missile_frigate" and me.u.getModel() != "S-75" and me.u.getModel() != "buk-m2" and me.u.getModel() != "MIM104D" and me.u.getModel() != "s-300" and me.u.getModel() != "fleet" and me.u.getModel() != "ZSU-23-4M") {
-                    me.threat += ((180-me.dev)/180)*0.30;# most threat if I am in front of his nose
-                    me.spd = (60-me.threatDB[8])/60;
-                    #me.threat -= me.spd>0?me.spd:0;# if his speed is lower than 60kt then give him minus threat else positive
-                } elsif (me.u.getModel == "missile_frigate" or me.u.getModel() == "fleet") {
-                    me.threat += 0.30;
-                } else {
-                    me.threat += 0.30;
-                }
-                me.danger = 50;# within this range he is most dangerous
-                if (me.u.getModel() == "missile_frigate" or me.u.getModel() == "fleet" or me.u.getModel() == "s-300") {
-                    me.danger = 80;
-                } elsif (me.u.getModel() == "buk-m2" or me.u.getModel() == "S-75") {
-                    me.danger = 35;
-                } elsif (me.u.getModel() == "MIM104D") {
-                    me.danger = 45;
-                } elsif (me.u.getModel() == "ZSU-23-4M") {
-                    me.danger = 7.5;
-                }
+                me.threat = me.dbEntry.baseThreat(me.dev);
+                me.danger = me.dbEntry.killZone;# within this range he is most dangerous
                 if (me.threatDB[10]) me.threat += 0.30;# has me locked
                 me.threat += ((me.danger-me.rn)/me.danger)>0?((me.danger-me.rn)/me.danger)*0.60:0;# if inside danger zone then add threat, the closer the more.
                 me.threat += me.threatDB[9]>0?(me.threatDB[9]/500)*0.10:0;# more closing speed means more threat.
+                if (!me.dbEntry.hasAirRadar) me.threat = - 1;
                 if (me.threat > me.closestThreat) me.closestThreat = me.threat;
                 #printf("A %s threat:%.2f range:%d dev:%d", me.u.get_Callsign(),me.threat,me.u.get_range(),me.deviation);
                 if (me.threat > 1) me.threat = 1;
