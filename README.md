@@ -34,5 +34,5 @@ Thanks to everyone who has contributed to the project over the years. Unfortunat
 - Pinto (OPRF Compatibility, Multiplayer damage support, Bugfixes)
 - Rudolf (Conversion to Emesary based damage system)
 - JMaverick16 (Tactical Systems, Updates, Liveries)
-- Zorka (Main developer 2021+)
+- Zorka (god knows what...)
 - SammySkycrafts (Main developer 2021+ - Weapon system overhaul, tactical system overhaul, minor 3D work)

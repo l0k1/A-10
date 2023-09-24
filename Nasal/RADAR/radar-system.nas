@@ -420,7 +420,6 @@ var CallsignToContact = {
 		var ctc = {parents: [CallsignToContact, Radar]};
 				
 		ctc.struct_csContact = {};
-
 		ctc.CallsignToContactRecipient = emesary.Recipient.new("CallsignToContactRecipient");
 		ctc.CallsignToContactRecipient.radar = ctc;
 		ctc.CallsignToContactRecipient.Receive = func(notification) {
@@ -1539,13 +1538,13 @@ var Radar = {
 	enabled: 1,
 };
 
-
 #  ██████   █████  ██████  ████████ ██ ████████ ██  ██████  ███    ██ 
 #  ██   ██ ██   ██ ██   ██    ██    ██    ██    ██ ██    ██ ████   ██ 
 #  ██████  ███████ ██████     ██    ██    ██    ██ ██    ██ ██ ██  ██ 
 #  ██      ██   ██ ██   ██    ██    ██    ██    ██ ██    ██ ██  ██ ██ 
 #  ██      ██   ██ ██   ██    ██    ██    ██    ██  ██████  ██   ████ 
 #                                                                     
+
 #                                                                     
 var NoseRadar = {
 	# I partition the sky into the field of regard and preserve the contacts in that field for it to be scanned by ActiveDiscRadar or similar
@@ -2106,13 +2105,13 @@ var OmniRadar = {
 
 
 
-
 #  ████████ ███████ ██████  ██████   █████  ██ ███    ██ 
 #     ██    ██      ██   ██ ██   ██ ██   ██ ██ ████   ██ 
 #     ██    █████   ██████  ██████  ███████ ██ ██ ██  ██ 
 #     ██    ██      ██   ██ ██   ██ ██   ██ ██ ██  ██ ██ 
 #     ██    ███████ ██   ██ ██   ██ ██   ██ ██ ██   ████ 
 #                                                        
+
 #                                                        
 var TerrainChecker = {
 	#
@@ -2358,6 +2357,7 @@ var ECMChecker = {
 #  ██      ██  ██ ██  ██      ██   ██     ██   ██ ██      ██   ██ ██  ██  ██ 
 #  ██      ██ ██   ██ ███████ ██████      ██████  ███████ ██   ██ ██      ██ 
 #                                                                            
+
 #                                                                            
 var FixedBeamRadar = {
 
@@ -2398,6 +2398,7 @@ var FixedBeamRadar = {
 	  	return nil;
 	},
 };
+
 
 
 

@@ -388,5 +388,3 @@ var eject = func{
   damage.fail_systems(1);
 
 }
-
-# EOF #####################

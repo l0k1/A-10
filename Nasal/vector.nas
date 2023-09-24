@@ -2,7 +2,7 @@ var Math = {
     #
     # Authors: Nikolai V. Chr, Axel Paccalin.
     #
-    # Version 2.00
+    # Version 2.02
     #
     # When doing euler coords. to cartesian: +x = forw, +y = left,  +z = up.
     # FG struct. coords:                     +x = back, +y = right, +z = up.
@@ -287,13 +287,13 @@ var Math = {
       }
       if (coord1.alt() != coord2.alt()) {
         me.d12 = coord1.direct_distance_to(coord2);
-        me.coord3 = geo.Coord.new(coord1);
-        me.coord3.set_alt(coord1.alt()-me.d12*0.5);# this will increase the area of the triangle so that rounding errors dont get in the way.
-        me.d13 = coord1.alt()-me.coord3.alt();        
         if (me.d12 == 0) {
             # on top of each other, maybe rounding error..
             return 0;
         }
+        me.coord3 = geo.Coord.new(coord1);
+        me.coord3.set_alt(coord1.alt()-me.d12*5);# this will increase the area of the triangle so that rounding errors dont get in the way. Changed to 5 May 2023, which gives more presision than 0.5 when c1 and c2 are very close.
+        me.d13 = coord1.alt()-me.coord3.alt();        
         me.d32 = me.coord3.direct_distance_to(coord2);
         if (math.abs(me.d13)+me.d32 < me.d12) {
             # rounding errors somewhere..one triangle side is longer than other 2 sides combined.
@@ -329,12 +329,21 @@ var Math = {
 
     # supply a normal to the plane, and a vector. The vector will be projected onto the plane, and that projection is returned as a vector.
     projVectorOnPlane: func (planeNormal, vector) {
+      if (me.magnitudeVector(planeNormal) == 0) return [0,0,0];#safety
       return me.minus(vector, me.product(me.dotProduct(vector,planeNormal)/math.pow(me.magnitudeVector(planeNormal),2), planeNormal));
     },
 
     # Project a onto ontoMe.
     projVectorOnVector: func (a, ontoMe) {
+      if (me.magnitudeVector(ontoMe) == 0) return [0,0,0];#safety
       return me.product(me.dotProduct(a,ontoMe)/me.dotProduct(ontoMe,ontoMe), ontoMe);
+    },
+
+    # Project a onto ontoMe and measure how long along ontoMe it goes, opposite will give negative number.
+    scalarProjVectorOnVector: func (a, ontoMe) {
+      me.ontoMeMag = me.magnitudeVector(ontoMe);
+      if (me.ontoMeMag == 0) return 0;
+      return me.dotProduct(a,ontoMe)/me.ontoMeMag;
     },
     
     # unary - vector
