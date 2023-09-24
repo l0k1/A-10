@@ -1,38 +1,38 @@
 {
   "vector": {
-    "version": "2.0.3",
+    "version": null,
     "path": "Nasal/vector.nas"
   },
   "missile-code": {
-    "version": "1.1.1",
+    "version": null,
     "path": "Nasal/missile-code.nas"
   },
   "radar-system": {
-    "version": "2.0.1",
+    "version": null,
     "path": "Nasal/RADAR/radar-system.nas"
   },
   "damage": {
-    "version": "1.1.0",
+    "version": null,
     "path": "Nasal/damage.nas"
   },
   "iff": {
-    "version": "1.1.0",
+    "version": null,
     "path": "Nasal/iff.nas"
   },
   "datalink": {
-    "version": "1.1.0",
+    "version": null,
     "path": "Nasal/datalink.nas"
   },
   "station-manager": {
-    "version": "1.1.0",
+    "version": null,
     "path": "Nasal/WEAPONS/station-manager.nas"
   },
   "armament-notification": {
-    "version": "1.1.0",
+    "version": null,
     "path": "Nasal/ArmamentNotification.nas"
   },
   "radar-system-database": {
-    "version": "1.0.4",
+    "version": null,
     "path": "Nasal/RADAR/radar-system-database.nas"
   }
 }
