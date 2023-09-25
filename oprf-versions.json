@@ -12,7 +12,7 @@
     "path": "Nasal/RADAR/radar-system.nas"
   },
   "rcs-mand": {
-    "version": "1.0.2",
+    "version": "1.0.3",
     "path": "Nasal/RADAR/rcs_mand.nas"
   },
   "damage": {
