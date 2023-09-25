@@ -600,7 +600,7 @@ var HUD = {
 
       m.utcTime = m.waypointSimpleGroup.createChild("text")
         .setColor(m.myGreen)
-        .setTranslation(m.maxladderspan+93 ,110)
+        .setTranslation(m.maxladderspan+93 ,115)
         .setDouble("character-size",m.myFontSize* 25)
         .setAlignment("left-bottom")
         .setText("00:00:00");
@@ -1405,10 +1405,11 @@ var HUD = {
       if(me.input.distNextWay.getValue()>10){
         me.waypointDistAlt.setText(sprintf("%dN",int(me.input.distNextWay.getValue())));
       }else{
-        me.waypointDistAlt.setText(sprintf("%01.1fN/%04d",me.input.distNextWay.getValue(),me.input.NextWayNum.getValue()));
+        me.waypointDistAlt.setText(sprintf("%01.1fN/%s",me.input.distNextWay.getValue(),getprop("autopilot/route-manager/wp/eta")));
       }
       # me.waypointNumberSimple.setText(sprintf("%02d",me.input.NextWayNum.getValue()));
       me.stptInfo.setText(sprintf("%02d/%s",me.input.NextWayNum.getValue(),me.input.currentWpID.getValue()));
+      me.utcTime.setText(sprintf("%s",getprop("sim/time/gmt-string")));
       
       if(me.input.AutopilotStatus.getValue()=="AP1"){
         me.waypointGroup.show();
