@@ -36,7 +36,7 @@
     "path": "Nasal/ArmamentNotification.nas"
   },
   "radar-system-database": {
-    "version": "1.0.7",
+    "version": "1.0.9",
     "path": "Nasal/RADAR/radar-system-database.nas"
   },
   "hud-math": {
@@ -44,7 +44,7 @@
     "path": "Nasal/HUD/hud_math.nas"
   },
   "geo-bridged-transmitter": {
-    "version": "1.0.0",
+    "version": "1.0.1",
     "path": "Nasal/GeoBridgedTransmitter.nas"
   },
   "hack-canvas": {
