@@ -523,12 +523,7 @@ var R_AC_bus = func() {
 	setprop("systems/electrical/outputs/nav-mode", R_AC_bus_volts);
 	setprop("systems/electrical/outputs/aoa-indexer", R_AC_bus_volts);
     setprop("systems/electrical/outputs/landing-light", R_AC_bus_volts);
-	var hud_mode = getprop("sim/model/A-10/controls/hud/mode-selector");
-	if (hud_mode > 0) {
-		setprop("systems/electrical/outputs/hud", R_AC_bus_volts);
-	} else {
-		setprop("systems/electrical/outputs/hud", 0);
-	}
+    setprop("systems/electrical/outputs/hud", R_AC_bus_volts);
 	setprop("instrumentation/attitude-indicator/spin", R_AC_bus_volts/30);
 	setprop("instrumentation/turn-indicator/spin", R_AC_bus_volts/30);
 	setprop("systems/electrical/outputs/DG", R_AC_bus_volts);

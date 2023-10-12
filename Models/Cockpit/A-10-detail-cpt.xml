@@ -55,7 +55,7 @@
         <type>material</type>
         <condition>
             <greater-than-equals>
-                <property>systems/electrical/outputs/rwr</property>
+                <property>systems/electrical/outputs/hud</property>
                 <value>24</value>
             </greater-than-equals>
         </condition>

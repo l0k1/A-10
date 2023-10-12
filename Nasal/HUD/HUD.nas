@@ -877,7 +877,9 @@ var HUD = {
       currentWp     : "/autopilot/route-manager/current-wp",
       currentWpID   : "/autopilot/route-manager/wp/id",
       wpTimeToGo    : "/autopilot/route-manager/wp/eta",
-      utcTime        :"/sim/time/gmt-string"
+      utcTime       : "/sim/time/gmt-string",
+
+      HUDPower      : "systems/electrical/outputs/hud" 
     };
     
     foreach(var name; keys(m.input))
@@ -888,6 +890,13 @@ var HUD = {
   },
   update: func()
   {
+
+    if(me.input.HUDPower.getValue()<23){
+      me.root.setVisible(0);
+    }else{
+      me.root.setVisible(1);
+    }
+
     me.hydra = 0;
     me.strf = me.input.AirToAir.getValue()==1?0:1; #A/G Gun symbology based on HUD mode
     me.designatedDistanceFT = nil;
