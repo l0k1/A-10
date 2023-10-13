@@ -67,6 +67,16 @@ centerHUDz = (-0.15438 + -0.02038)/2;
 var heightMeters = 0.067-(-0.067);
 var wideMeters = math.abs(-0.02038 - (-0.15438));
 
+
+#           888b     d888        d8888 8888888 888b    888 
+#           8888b   d8888       d88888   888   8888b   888 
+#           88888b.d88888      d88P888   888   88888b  888 
+#           888Y88888P888     d88P 888   888   888Y88b 888 
+#           888 Y888P 888    d88P  888   888   888 Y88b888 
+#           888  Y8P  888   d88P   888   888   888  Y88888 
+#           888   "   888  d8888888888   888   888   Y8888 
+#           888       888 d88P     888 8888888 888    Y888
+
 var HUD = {
   canvas_settings: {
     "name": "HUD",
@@ -120,8 +130,6 @@ var HUD = {
                 .set("font", "A10-HUD.ttf")
                 .setDouble("character-size",m.myFontSize* 16)
                 .setDouble("character-aspect-ration", 0.9);
-#     m.root.setColor(m.red,m.green,m.blue,1);
-#.set("font", "LiberationFonts/LiberationMono-Regular.ttf")
 
     m.text =
       m.root.createChild("group");
@@ -524,7 +532,7 @@ var HUD = {
     m.loads_Type_text.hide();
     
     
-    # Bullet count when CAN is selected
+    # Bullet count when 30mm is selected
     m.bullet_CountGroup = m.root.createChild("group");  
     m.Bullet_Count = m.bullet_CountGroup.createChild("text")
       .setColor(m.myGreen)
@@ -662,7 +670,6 @@ var HUD = {
     m.TextInfoGroup = m.radarStuffGroup.createChild("group");
     
     for(var i = 1; i <= m.MaxTarget; i += 1){
-        # on affiche des infos de la cible a cote du cercle
         text_info = m.TextInfoGroup.createChild("text", "infos")
           .setColor(m.myGreen)
           .setTranslation(15, -10)
@@ -802,6 +809,23 @@ var HUD = {
     
     
     m.root.setColor(m.red,m.green,m.blue,1);
+
+
+#           888    888 888     888 8888888b.       888b     d888 8888888888 888b    888 888     888 
+#           888    888 888     888 888  "Y88b      8888b   d8888 888        8888b   888 888     888 
+#           888    888 888     888 888    888      88888b.d88888 888        88888b  888 888     888 
+#           8888888888 888     888 888    888      888Y88888P888 8888888    888Y88b 888 888     888 
+#           888    888 888     888 888    888      888 Y888P 888 888        888 Y88b888 888     888 
+#           888    888 888     888 888    888      888  Y8P  888 888        888  Y88888 888     888 
+#           888    888 Y88b. .d88P 888  .d88P      888   "   888 888        888   Y8888 Y88b. .d88P 
+#           888    888  "Y88888P"  8888888P"       888       888 8888888888 888    Y888  "Y88888P"
+
+    m.menu =
+      m.canvas.createGroup()
+            .setTranslation(HudMath.getCenterOrigin())
+            .set("font", "A10-HUD.ttf")
+            .setDouble("character-size",m.myFontSize* 16)
+            .setDouble("character-aspect-ration", 0.9);
     
     m.loads_hash =  {
      "30mm Cannon":"30MM",
