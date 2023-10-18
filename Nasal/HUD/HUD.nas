@@ -33,6 +33,7 @@ var target_heading_deg = 0;
 var target_Distance = 0;
 var raw_list = [];
 var MIL2HUD = R2D/10; #experimental
+var hudMenuSpacing = 30;
 
 
 var pow2 = func(x) { return x * x; };
@@ -822,10 +823,84 @@ var HUD = {
 
     m.menu =
       m.canvas.createGroup()
-            .setTranslation(HudMath.getCenterOrigin())
+            .setTranslation(100,75)
             .set("font", "A10-HUD.ttf")
-            .setDouble("character-size",m.myFontSize* 16)
-            .setDouble("character-aspect-ration", 0.9);
+            .setDouble("character-size",m.myFontSize* 25)
+            .setDouble("character-aspect-ratio", 1);
+
+
+    m.menuLine1 = m.menu.createChild("text")
+      .setColor(m.myGreen)
+      .setTranslation(0,0+hudMenuSpacing*1)
+      #.setDouble("character-size",m.myFontSize* 14)
+      .setAlignment("left-center")
+      .setText("8888888888888888");
+
+    m.menuLine2 = m.menu.createChild("text")
+      .setColor(m.myGreen)
+      .setTranslation(0,0+hudMenuSpacing*2)
+      #.setDouble("character-size",m.myFontSize* 14)
+      .setAlignment("left-center")
+      .setText("8888888888888888");
+      
+    m.menuLine3 = m.menu.createChild("text")
+      .setColor(m.myGreen)
+      .setTranslation(0,0+hudMenuSpacing*3)
+      #.setDouble("character-size",m.myFontSize* 14)
+      .setAlignment("left-center")
+      .setText("8888888888888888");
+
+    m.menuLine4 = m.menu.createChild("text")
+      .setColor(m.myGreen)
+      .setTranslation(0,0+hudMenuSpacing*4)
+      #.setDouble("character-size",m.myFontSize* 14)
+      .setAlignment("left-center")
+      .setText("8888888888888888");
+
+    m.menuLine5 = m.menu.createChild("text")
+      .setColor(m.myGreen)
+      .setTranslation(0,0+hudMenuSpacing*5)
+      #.setDouble("character-size",m.myFontSize* 14)
+      .setAlignment("left-center")
+      .setText("8888888888888888");
+
+    m.menuLine6 = m.menu.createChild("text")
+      .setColor(m.myGreen)
+      .setTranslation(0,0+hudMenuSpacing*6)
+      #.setDouble("character-size",m.myFontSize* 14)
+      .setAlignment("left-center")
+      .setText("8888888888888888");
+
+    m.menuLine7 = m.menu.createChild("text")
+      .setColor(m.myGreen)
+      .setTranslation(0,0+hudMenuSpacing*7)
+      #.setDouble("character-size",m.myFontSize* 14)
+      .setAlignment("left-center")
+      .setText("8888888888888888");
+
+    m.menuLine8 = m.menu.createChild("text")
+      .setColor(m.myGreen)
+      .setTranslation(0,0+hudMenuSpacing*8)
+      #.setDouble("character-size",m.myFontSize* 14)
+      .setAlignment("left-center")
+      .setText("8888888888888888");
+
+    m.menuLine9 = m.menu.createChild("text")
+      .setColor(m.myGreen)
+      .setTranslation(0,0+hudMenuSpacing*9)
+      #.setDouble("character-size",m.myFontSize* 14)
+      .setAlignment("left-center")
+      .setText("8888888888888888");
+
+    m.menuLine10 = m.menu.createChild("text")
+      .setColor(m.myGreen)
+      .setTranslation(0,0+hudMenuSpacing*10)
+      #.setDouble("character-size",m.myFontSize* 14)
+      .setAlignment("left-center")
+      .setText("8888888888888888");
+
+    m.menu.hide();
+
     
     m.loads_hash =  {
      "30mm Cannon":"30MM",
