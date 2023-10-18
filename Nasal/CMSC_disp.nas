@@ -122,13 +122,4 @@ cmsCountLoop();
 mwsLoop();
 jmrLoop();
 
-
-#vars for dynamic content
-#jmrStatus = "";
-#mwsStatus = "";
-#chaff = "";
-#flare = "";
-#cmspMode = ""; #X: STBY, M: MAN, S: Semi, A: Auto
-
-
 print("***** End CMSC_disp.nas *****");
