@@ -13,6 +13,31 @@
 			<z-m>0.0180</z-m>
 		</center>
 		<axis><x>-1</x></axis>
+
+		<animation>
+		<type>knob</type>
+		<object-name>mode-selector</object-name>
+		<property>controls/hud/m-sel</property>
+		<factor>45</factor>
+		<center>
+			<y-m>0.0238</y-m>
+			<z-m>0.0180</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/hud/m-sel</property>
+				<factor>1</factor>
+				<min>0</min>
+				<max>3</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>		
 	</animation>
 
 <!-- lighting -->

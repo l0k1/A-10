@@ -978,7 +978,8 @@ var HUD = {
       wpTimeToGo    : "/autopilot/route-manager/wp/eta",
       utcTime       : "/sim/time/gmt-string",
 
-      HUDPower      : "systems/electrical/outputs/hud" 
+      HUDPower      : "systems/electrical/outputs/hud", 
+      HUDMode       : "controls/hud/m-sel",
     };
     
     foreach(var name; keys(m.input))
@@ -993,7 +994,16 @@ var HUD = {
     if(me.input.HUDPower.getValue()<23){
       me.root.setVisible(0);
     }else{
-      me.root.setVisible(1);
+      if (me.input.HUDMode.getValue()==1){
+        me.menu.setVisible(1);
+      } else {
+        me.menu.setVisible(0);
+      }
+      if (me.input.HUDMode.getValue()>=2){
+            me.root.setVisible(1);
+      } else {
+        me.root.setVisible(0);
+      }
     }
 
     me.hydra = 0;
@@ -1023,7 +1033,7 @@ var HUD = {
     me.showFire_GBU = 0;
     
     me.low = 0;
-    if(me.selectedWeap != nil and me.input.MasterArm.getValue()){
+    if((me.selectedWeap != nil and me.input.MasterArm.getValue()) and (me.input.HUDMode.getValue()==3)){
       if ((me.selectedWeap.type == "MK-82" or me.selectedWeap.type == "MK-82AIR" or me.selectedWeap.type == "MK-84" or me.selectedWeap.type == "CBU-87") and (!me.input.AirToAir.getValue())) {
         var ccip = me.selectedWeap.getCCIPadv(16,0.1);
         if (ccip != nil) {
@@ -1170,10 +1180,10 @@ var HUD = {
     
     #Display gload
     me.display_gload();
-    
+
     #Diplay Load type
     me.display_loadsType();
-    
+
     #Display bullet Count
     me.display_BulletCount();
     
@@ -1478,31 +1488,40 @@ var HUD = {
   },
   
   display_loadsType:func{
-    if(me.input.MasterArm.getValue() and me.selectedWeap != nil){
-#       print(me.loads_hash[me.selectedWeap.type]);
-      me.loads_Type_text.setText(me.loads_hash[me.selectedWeap.type]);
-      me.loads_Type_text.show();
-    }else{
-      me.loads_Type_text.hide();
+    if (me.input.HUDMode.getValue() == 3){
+      if(me.input.MasterArm.getValue() and me.selectedWeap != nil){
+  #       print(me.loads_hash[me.selectedWeap.type]);
+        me.loads_Type_text.setText(me.loads_hash[me.selectedWeap.type]);
+        me.loads_Type_text.show();
+      }else{
+        me.loads_Type_text.hide();
+      }
+    } else {
+      me.loads_Type_text.hide()
     }
   },
   
   display_BulletCount:func{
-    if(me.input.MasterArm.getValue() and me.selectedWeap != nil){
-#       print("Test");
-#       print("Test:" ~ me.loads_hash[me.selectedWeap.type] ~ " : " ~ pylons.fcs.getAmmo());
-#       print("Test:" ~ me.selectedWeap.type ~ " : " ~ pylons.fcs.getAmmo());
-      if(me.selectedWeap.type == "30mm Cannon"){
-#         print(me.loads_hash[me.selectedWeap.type] ~ " : " ~ pylons.fcs.getAmmo());
-        me.Bullet_Count.setText(sprintf("%3d", pylons.fcs.getAmmo()));
-        me.bullet_CountGroup.show();
+    if (me.input.HUDMode.getValue() == 3){
+      if(me.input.MasterArm.getValue() and me.selectedWeap != nil){
+  #       print("Test");
+  #       print("Test:" ~ me.loads_hash[me.selectedWeap.type] ~ " : " ~ pylons.fcs.getAmmo());
+  #       print("Test:" ~ me.selectedWeap.type ~ " : " ~ pylons.fcs.getAmmo());
+        if(me.selectedWeap.type == "30mm Cannon"){
+  #         print(me.loads_hash[me.selectedWeap.type] ~ " : " ~ pylons.fcs.getAmmo());
+          me.Bullet_Count.setText(sprintf("%3d", pylons.fcs.getAmmo()));
+          me.bullet_CountGroup.show();
+        }else{
+          me.bullet_CountGroup.hide();
+        }
       }else{
         me.bullet_CountGroup.hide();
       }
+
     }else{
-      me.bullet_CountGroup.hide();
+        me.bullet_CountGroup.hide()
     }
-    
+      
   },
 
   

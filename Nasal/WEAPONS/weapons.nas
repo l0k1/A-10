@@ -142,6 +142,7 @@ var aaModeKnob = func {
     }
     if (k == 2) {
         setprop("/A-10/hud/air-to-air-mode",1);
+        setprop('controls/hud/m-sel',3);
         weapPowerToggle();
     } else {
         setprop("/A-10/hud/air-to-air-mode",0);
