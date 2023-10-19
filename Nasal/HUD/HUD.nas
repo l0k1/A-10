@@ -544,17 +544,17 @@ var HUD = {
       .setText("0.0");  
     m.bullet_CountGroup.hide();
     
-      #Take off Acceleration
-      m.accBoxGroup = m.root.createChild("group");  
+      #Betty Altitude to call - GCAS
+      m.GCASGroup = m.root.createChild("group");  
         
-      m.acceleration_Box = m.accBoxGroup.createChild("text")
+      m.warnAlt = m.GCASGroup.createChild("text")
       .setColor(m.myGreen)
       .setTranslation(0,0)
       .setDouble("character-size",m.myFontSize* 35)
       .setAlignment("center-center")
-      .setText("0.00"); 
+      .setText("0000"); 
       
-      m.accBoxLine = m.accBoxGroup.createChild("path")
+      m.altBoxLine = m.GCASGroup.createChild("path")
         .setColor(m.myGreen)
         .moveTo(-70, -25)
         .horiz(140)
@@ -562,7 +562,7 @@ var HUD = {
         .horiz(-140)
         .vert(-50)
         .setStrokeLineWidth(m.myLineWidth*4);         
-      m.accBoxGroup.setTranslation(0,m.headScaleVerticalPlace*2/5);
+      m.GCASGroup.setTranslation(0,m.headScaleVerticalPlace*2/5);
 
       m.fpa = m.root.createChild("text")
         .setColor(m.myGreen)
@@ -1164,7 +1164,7 @@ var HUD = {
 #       );
       
     #Acc accBoxGroup in G(so I guess /9,8)
-    me.display_Acceleration_Box();
+    me.display_GCAS_Box();
 
     #display_radarAltimeter
     me.display_radAlt();
@@ -1430,16 +1430,15 @@ var HUD = {
       me.headingScaleGroup.update();
   },
   
-  display_Acceleration_Box:func(){
-    #Acc accBoxGroup in G(so I guess /9,8)
+  display_GCAS_Box:func(){ # This is for the GCAS box, linked to OSP ALT ALERT switch. Add to A-10.nas, only RALT for now so max 5k. 34-1-1 1-69
     if(0 and me.input.wow_nlg.getValue()){
-      me.acceleration_Box.setText(sprintf("%.2f", int(me.input.acc.getValue()/9.8*1000+1)/1000));
-      me.accBoxGroup.show();
+      me.warnAlt.setText(sprintf("%.2f", int(me.input.acc.getValue()/9.8*1000+1)/1000));
+      me.GCASGroup.show();
     }else{
-      me.accBoxGroup.hide();
+      me.GCASGroup.hide();
     } 
     
-    me.accBoxGroup.update();
+    me.GCASGroup.update();
     
   },
   display_speedAltGroup:func(){
