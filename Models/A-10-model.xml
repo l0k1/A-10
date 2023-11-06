@@ -531,6 +531,11 @@
 
 
 <!-- instruments-->
+
+	<model>
+		<path>Aircraft/A-10/Models/Cockpit/AVTR-controller.xml</path>
+	</model>
+
 	<model>
 		<path>Aircraft/A-10/Models/Cockpit/A-10-hud.xml</path>
 		<offsets>

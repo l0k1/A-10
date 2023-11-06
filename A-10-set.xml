@@ -691,6 +691,8 @@ Fairchild A-10 simulation config.
 	</sim>
 
 	<A-10>
+		<true type="bool">1</true>
+		<false type="bool">0</false>
 		<avionics>
 			<ew-mws-switch type="bool">0</ew-mws-switch>
 			<ew-jmr-switch type="bool">0</ew-jmr-switch>

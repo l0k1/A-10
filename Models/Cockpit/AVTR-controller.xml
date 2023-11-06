@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<name>avtr-controller</name>
+	<path>AVTR_Controller.ac</path>
+
+	<animation>
+		<type>select</type>
+		<object-name>rec_led_on</object-name>
+		<condition>
+			<property>sim/tacview-recording</property>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>eot_led_on</object-name>
+		<condition>
+			<property>A-10/false</property>
+		</condition>
+	</animation>
+
+	<!--Intended to not be included in panel backlighting. No evidence to show this panel is backlit-->
+	<animation> 
+		<object-name>base</object-name>
+        <object-name>Bases</object-name>
+        <!--<object-name>LEDs</object-name>-->
+        <object-name>switches</object-name>
+		<type>material</type>
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.385</red>
+			<green>0.168</green>
+			<blue>0.07</blue>
+		</emission>
+	</animation>
+
+
+</PropertyList>
