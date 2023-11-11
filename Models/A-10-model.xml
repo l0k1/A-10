@@ -537,6 +537,10 @@
 	</model>
 
 	<model>
+		<path>Aircraft/A-10/Models/Cockpit/oxygenRegulator.xml</path>
+	</model>
+
+	<model>
 		<path>Aircraft/A-10/Models/Cockpit/A-10-hud.xml</path>
 		<offsets>
 			<x-m>2.2800</x-m>

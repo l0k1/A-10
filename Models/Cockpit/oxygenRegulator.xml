@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<name>oxygen-regulator</name>
+	<path>oxygenRegulator.ac</path>
+
+	<animation> 
+		<object-name>Base</object-name>
+        <object-name>Pressure_Gauge</object-name>
+        <object-name>Needle</object-name>
+        <object-name>Flow_Switch</object-name>
+        <object-name>Oxygen_Switch</object-name>
+        <object-name>Supply_Switch</object-name>
+        <!--<object-name>LEDs</object-name>-->
+		<type>material</type>
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.385</red>
+			<green>0.168</green>
+			<blue>0.07</blue>
+		</emission>
+	</animation>
+
+	<effect>
+		<inherits-from>Aircraft/A-10/Models/Effects/interior/panel</inherits-from>
+		<parameters>
+			<implicit-lightmap-threshold-low type="float">0.2</implicit-lightmap-threshold-low>
+			<implicit-lightmap-threshold-high type="float">1.2</implicit-lightmap-threshold-high>
+			<lightmap-factor n="0"><use>controls/lighting/panel-int</use></lightmap-factor>
+		</parameters>
+		<object-name>Pressure_Gauge</object-name>
+	</effect>
+
+	<effect>
+		<inherits-from>Aircraft/A-10/Models/Effects/interior/panel-nvis</inherits-from>
+		<parameters>
+			<implicit-lightmap-threshold-low type="float">0.2</implicit-lightmap-threshold-low>
+			<implicit-lightmap-threshold-high type="float">0.5</implicit-lightmap-threshold-high>
+			<lightmap-factor n="0"><use>controls/lighting/panel-int</use></lightmap-factor>
+		</parameters>
+		<object-name>Base</object-name>
+	</effect>
+
+
+</PropertyList>
