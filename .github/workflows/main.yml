@@ -33,12 +33,12 @@ jobs:
       contents: write
     steps:
       - name: "Manual Update"
-        uses: BobDotCom/OPRFAssetUpdater@v0.4
+        uses: BobDotCom/OPRFAssetUpdater@v0.8
         if: "${{ github.event_name == 'workflow_dispatch' }}"
         with:
           include: ${{ inputs.include }}
           exclude: ${{ inputs.exclude }}
           major: ${{ inputs.major }}
       - name: "Scheduled Update"
-        uses: BobDotCom/OPRFAssetUpdater@v0.4
+        uses: BobDotCom/OPRFAssetUpdater@v0.8
         if: "${{ github.event_name != 'workflow_dispatch' }}"
