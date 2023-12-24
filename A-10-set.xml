@@ -527,6 +527,10 @@ Fairchild A-10 simulation config.
 				<desc>Release chaff/flare</desc>
 			</key>
 			<key>
+				<name>Q (Shift + Q)</name>
+				<desc>Reset cockpit view position</desc>
+			</key>
+			<key>
 				<name>F6</name>
 				<desc>Eject</desc>
 			</key>
@@ -831,14 +835,14 @@ Fairchild A-10 simulation config.
 				</binding>
 			</key>
 			<!-- Update Drop View position -->
-			<key n="85">
-				<name>U</name>
-				<desc>Update Drop View position</desc>
-				<binding n="0">
-					<command>nasal</command>
-					<script>A10.update_drop_view_pos()</script>
-				</binding>
-			</key>
+	        <key n="81">
+	            <name>Q</name>
+	            <desc>Reset cockpit view position</desc>
+	            <binding>
+	                <command>nasal</command>
+	                <script>A10.resetView();</script>
+	            </binding>
+	        </key>
 
 			<!-- Flare release -->
 			<key n="113">
