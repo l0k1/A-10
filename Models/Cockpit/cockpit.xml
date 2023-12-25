@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<name>cockpit</name>
+	<path>cockpit.ac</path>
+
+	<!--LASTE PANEL-->	
+
+	<animation>
+		<!--LASTE PANEL-->	
+		<object-name>LASTE_Base</object-name>
+		<object-name>LASTE_Button_Base</object-name>
+		<object-name>LASTE_Screw1</object-name>
+		<object-name>LASTE_Screw2</object-name>
+		<object-name>LASTE_Screw3</object-name>
+		<object-name>LASTE_Screw4</object-name>
+		<object-name>LASTE_SW_Bases</object-name>
+		<object-name>LASTE_EAC_Guard</object-name>
+		<object-name>LASTE_EAC_Switch</object-name>
+		<object-name>LASTE_RALT_Switch</object-name>
+		<object-name>LASTE_AP_Engage</object-name>
+		<object-name>LASTE_AP_Switch</object-name>
+        <!--TV Panel-->
+        <object-name>TV_Base</object-name>
+        <object-name>TV_CDU_Brt</object-name>
+        <object-name>TV_Screw1</object-name>
+        <object-name>TV_Screw2</object-name>
+        <object-name>TV_Test_Base</object-name>
+        <object-name>TV_Test_Switch</object-name>
+        <object-name>TV_Wpn_Brt</object-name>
+        <object-name>TV_Wpn_Cont</object-name>
+        <!--VHF1-->
+        <object-name>vhf1</object-name>
+        <!--UHF1-->
+        <object-name>UHF_1s</object-name>
+        <object-name>UHF_001s</object-name>
+        <object-name>UHF_10s</object-name>
+        <object-name>UHF_25s</object-name>
+        <object-name>UHF_100s</object-name>
+        <object-name>UHF_Base</object-name>
+        <object-name>UHF_Chan</object-name>
+        <object-name>UHF_FreqCover</object-name>
+        <object-name>UHF_Mode</object-name>
+        <object-name>UHF_Power</object-name>
+        <object-name>UHF_Screw1</object-name>
+        <object-name>UHF_Screw2</object-name>
+        <object-name>UHF_Screw3</object-name>
+        <object-name>UHF_Screw4</object-name>
+        <object-name>UHF_Screw5</object-name>
+        <object-name>UHF_Screw6</object-name>
+        <object-name>UHF_Screw7</object-name>
+        <object-name>UHF_Screw8</object-name>
+        <object-name>UHF_Squelch</object-name>
+        <object-name>UHF_Tone</object-name>
+        <object-name>UHF_Vol</object-name>
+        <!--VHF2-->
+        <object-name>vhf2</object-name>
+        <!--KY-58-->
+        <object-name>KY58_Base</object-name>
+        <object-name>KY58_Delay</object-name>
+        <object-name>KY58_DelayBase</object-name>
+        <object-name>KY58_Fill</object-name>
+        <object-name>KY58_ModeSelect</object-name>
+        <object-name>KY58_Power</object-name>
+        <object-name>KY58_PowerBase</object-name>
+        <object-name>KY58_RadSelect</object-name>
+        <object-name>KY58_Screw1</object-name>
+        <object-name>KY58_Screw2</object-name>
+        <object-name>KY58_Screw3</object-name>
+        <object-name>KY58_Screw4</object-name>
+        <object-name>KY58_zero</object-name>
+        <!--BlankingBase-->
+        <object-name>Blank_Base</object-name>
+        <object-name>Blank_Screw1</object-name>
+        <object-name>Blank_Screw2</object-name>
+        <object-name>Blank_Screw3</object-name>
+        <object-name>Blank_Screw4</object-name>
+        <!--OxygenConnector-->
+        <object-name>Oxy_Base</object-name>
+        <object-name>Oxy_Connector</object-name>
+        <object-name>Oxy_Screw1</object-name>
+        <object-name>Oxy_Screw2</object-name>
+        <object-name>Oxy_Window</object-name>
+		<type>material</type>
+		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.385</red>
+			<green>0.168</green>
+			<blue>0.07</blue>
+		</emission>
+	</animation>
+
+	<effect>
+		<inherits-from>Aircraft/A-10/Models/Effects/interior/panel</inherits-from>
+		<parameters>
+			<implicit-lightmap-threshold-low type="float">0.2</implicit-lightmap-threshold-low>
+			<implicit-lightmap-threshold-high type="float">1.2</implicit-lightmap-threshold-high>
+			<lightmap-factor n="0"><use>controls/lighting/panel-int</use></lightmap-factor>
+		</parameters>
+		<object-name>LASTE_Base</object-name>
+		<object-name>TV_Base</object-name>
+		<object-name>VHF1_Base</object-name>
+		<object-name>UHF_Base</object-name>
+		<object-name>VHF2_Base</object-name>
+		<object-name>KY58_Base</object-name>
+	</effect>
+
+
+</PropertyList>

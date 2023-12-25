@@ -227,6 +227,7 @@
 			<offset-x-m type="double">0.9612</offset-x-m>
 			<offset-y-m type="double">0.0</offset-y-m>
 			<offset-z-m type="double">0.6841</offset-z-m>
+			<type type="string">boom</type>
 		</refuel>
 	</multiplay>
 
@@ -426,7 +427,7 @@
 		</top-left>
 	</panel>
 
-	<panel>
+<!-- 	<panel>
 		<name>Panel-l2</name>
 		<path>Aircraft/A-10/Models/Cockpit/A-10-panel-l2-hotspot.xml</path>
 		<bottom-left>
@@ -444,7 +445,7 @@
 			<y-m>-0.4353</y-m>
 			<z-m>0.7178</z-m>
 		</top-left>
-	</panel>
+	</panel> -->
 
 	<panel>
 		<name>Panel-l4</name>
@@ -533,7 +534,7 @@
 <!-- instruments-->
 
 	<model>
-		<path>Aircraft/A-10/Models/Cockpit/AVTR-controller.xml</path>
+		<path>Aircraft/A-10/Models/Cockpit/cockpit.xml</path>
 	</model>
 
 	<model>
@@ -904,24 +905,6 @@
 			<y-m>-0.2840</y-m>
 			<z-m>0.8810</z-m>
 			<pitch-deg>-5</pitch-deg>
-		</offsets>
-	</model>
-
-	<model>
-		<path>Aircraft/A-10/Models/Cockpit/A-10-an-arc-186-1.xml</path>
-			<offsets>
-				<x-m>2.8427</x-m>
-				<y-m>-0.3551</y-m>
-				<z-m>0.7098</z-m>
-			</offsets>
-	</model>
-
-	<model>
-		<path>Aircraft/A-10/Models/Cockpit/A-10-an-arc-186-2.xml</path>
-		<offsets>
-			<x-m>3.0753</x-m>
-			<y-m>-0.3551</y-m>
-			<z-m>0.7098</z-m>
 		</offsets>
 	</model>
 
