@@ -251,7 +251,7 @@ RWRCanvas = {
         var list = radar_system.getRWRList();
 	    var s = size(list);
         me.elapsed = getprop("sim/time/elapsed-sec");
-        me.sep = getprop("A-10/avionics/cmac/threat-separate");
+        me.sep = getprop("A-10/avionics/cmsc/threat-separate");
         var sorter = func(a, b) {
             if(a[1] > b[1]){
                 return -1; # A should before b in the returned vector
