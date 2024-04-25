@@ -16,7 +16,7 @@
     "path": "Nasal/RADAR/rcs_mand.nas"
   },
   "damage": {
-    "version": "1.4.5",
+    "version": "1.4.7",
     "path": "Nasal/damage.nas"
   },
   "iff": {
