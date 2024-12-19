@@ -7,13 +7,29 @@
 
 	<effect>
 		<inherits-from>Effects/model-transparent</inherits-from>
-		<object-name>CPT-hud-screen</object-name>
+		<parameters>
+			<render-bin>
+				<bin-number>0</bin-number>
+				<bin-name>RenderBin</bin-name>
+			</render-bin>
+		</parameters>
 		<object-name>hud-screen</object-name>
+	</effect>
+
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<parameters>
+			<render-bin>
+				<bin-number>1</bin-number>
+				<bin-name>RenderBin</bin-name>
+			</render-bin>
+		</parameters>
+		<object-name>CPT-hud-screen</object-name>
 	</effect>
 
 
 <!-- panels-light -->
-	<animation> 
+<!-- 	<animation> 
 		<object-name>CPT-video-frame-l</object-name>
 		<object-name>CPT-video-frame-r</object-name>
 		<object-name>CPT-video-screen</object-name>
