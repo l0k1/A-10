@@ -27,6 +27,20 @@
 		<object-name>CPT-hud-screen</object-name>
 	</effect>
 
+	<animation>
+		<type>select</type>
+		<object-name>CPT-video-frame-l</object-name>
+		<object-name>CPT-video-frame-r</object-name>
+		<object-name>CPT-video-screen</object-name>
+		<condition>
+			<equals>
+				<property>/sim/variant-id</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+
+
 
 <!-- panels-light -->
  	<animation> 
