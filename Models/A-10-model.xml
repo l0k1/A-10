@@ -528,6 +528,22 @@
 	</model>
 
 	<model>
+		<name>MPCD</name>
+		<path>Aircraft/A-10/Models/Cockpit/mpcd.xml</path>
+	</model>
+
+	<animation>
+		<type>select</type>
+		<object-name>MPCD</object-name>
+		<condition>
+			<equals>
+				<property>/sim/variant-id</property>
+				<value>2</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<model>
 		<path>Aircraft/A-10/Models/Cockpit/oxygenRegulator.xml</path>
 	</model>
 
