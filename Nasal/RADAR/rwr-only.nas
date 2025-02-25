@@ -124,20 +124,173 @@ var RWR = {
     },
 };
 
+DatalinkRadar = {
+	# I check the sky 360 deg for anything on datalink
+	#
+	# I will set 'blue' and 'blueIndex' on contacts.
+	# blue==1: On our datalink
+	# blue==2: Targeted by someone on our datalink
+	#
+	# Direct line of sight required for ~1000MHz signal.
+	#
+	# This class is only semi generic!
+	new: func (rate, max_dist_fighter_nm, max_dist_station_nm) {
+		var dlnk = {parents: [DatalinkRadar, Radar]};
+
+		dlnk.max_dist_fighter_nm = max_dist_fighter_nm;
+		dlnk.max_dist_station_nm = max_dist_station_nm;
+
+		datalink.can_transmit = func(callsign, mp_prop, mp_index) {
+		    dlnk.contactSender = callsignToContact.get(callsign);
+		    if (dlnk.contactSender == nil) return 0;
+		    if (!dlnk.contactSender.isValid()) return 0;
+		    if (!dlnk.contactSender.isVisible()) return 0;
+
+		    dlnk.isContactStation = isKnownSurface(dlnk.contactSender.getModel()) or isKnownShip(dlnk.contactSender.getModel()) or isKnownAwacs(dlnk.contactSender.getModel());
+		    dlnk.max_dist_nm = dlnk.isContactStation?dlnk.max_dist_station_nm:dlnk.max_dist_fighter_nm;
+		    
+		    return dlnk.contactSender.get_range() < dlnk.max_dist_nm;
+		}
+
+		
+		dlnk.index = 0;
+		dlnk.vector_aicontacts = [];
+		dlnk.vector_aicontacts_for = [];
+		dlnk.timer          = maketimer(rate, dlnk, func dlnk.scan());
+
+		dlnk.DatalinkRadarRecipient = emesary.Recipient.new("DatalinkRadarRecipient");
+		dlnk.DatalinkRadarRecipient.radar = dlnk;
+		dlnk.DatalinkRadarRecipient.Receive = func(notification) {
+	        if (notification.NotificationType == "AINotification") {
+	        	#printf("DLNKRadar recv: %s", notification.NotificationType);
+	        	#printf("DLNKRadar notified of %d contacts", size(notification.vector));
+    		    me.radar.vector_aicontacts = notification.vector;
+    		    me.radar.index = 0;
+	            return emesary.Transmitter.ReceiptStatus_OK;
+	        }
+	        return emesary.Transmitter.ReceiptStatus_NotProcessed;
+	    };
+		emesary.GlobalTransmitter.Register(dlnk.DatalinkRadarRecipient);
+		dlnk.DatalinkNotification = VectorNotification.new("DatalinkNotification");
+		dlnk.DatalinkNotification.updateV(dlnk.vector_aicontacts_for);
+		dlnk.timer.start();
+		return dlnk;
+	},
+	containsVectorContact: func (vec, item) {
+	        foreach(test; vec) {
+	            if (test.equals(item)) {
+	                return 1;
+	            }
+	        }
+	        return 0;
+	    },
+	scan: func () {
+		if (!me.enabled) return;
+
+		#this loop is really fast. But we only check 1 contact per call
+		if (me.index >= size(me.vector_aicontacts)) {
+			# will happen if there is no contacts or if contact(s) went away
+			me.index = 0;
+			return;
+		}
+		me.contact = me.vector_aicontacts[me.index];
+		me.wasBlue = me.contact["blue"];
+		me.cs = me.contact.get_Callsign();
+		if (me.wasBlue == nil) me.wasBlue = 0;
+
+		if (!me.contact.isValid()) {
+			me.contact.blue = 0;
+			if (me.wasBlue > 0) {
+				#print(me.cs," is invalid and purged from Datalink");
+				me.new_vector_aicontacts_for = [];
+				foreach (me.c ; me.vector_aicontacts_for) {
+					if (!me.c.equals(me.contact) and !me.c.equalsFast(me.contact)) {
+						append(me.new_vector_aicontacts_for, me.c);
+					}
+				}
+				me.vector_aicontacts_for = me.new_vector_aicontacts_for;
+			}
+		} else {
+
+	        
+	        if (!me.contact.isValid()) {
+	        	me.lnk = nil;
+	        } else {
+	        	me.lnk = datalink.get_data(damage.processCallsign(me.cs));
+	        }
+	        
+	        if (me.lnk != nil and me.lnk.on_link() == 1) {
+	            me.blue = 1;
+	            me.blueIndex = me.lnk.index()+1;
+	        } elsif (me.cs == getprop("link16/wingman-4")) { # Hack that the F16 need. Just ignore it, as nil wont cause expection.
+	            me.blue = 1;
+	            me.blueIndex = 0;
+	        } else {
+	        	me.blue = 0;
+	            me.blueIndex = -1;
+	        }
+	        if (!me.blue and me.lnk != nil and me.lnk.tracked() == 1) {
+	        	me.dl_idx = me.lnk.tracked_by_index();
+	        	if (me.dl_idx != nil and me.dl_idx > -1) {
+		            me.blue = 2;
+		            me.blueIndex = me.dl_idx+1;
+			    }
+	        }
+
+	        me.contact.blue = me.blue;
+	        if (me.blue > 0) {
+	        	me.contact.blueIndex = me.blueIndex;
+				if (!me.containsVectorContact(me.vector_aicontacts_for, me.contact)) {
+					append(me.vector_aicontacts_for, me.contact);
+					emesary.GlobalTransmitter.NotifyAll(me.DatalinkNotification.updateV(me.vector_aicontacts_for));
+				}
+			} elsif (me.wasBlue > 0) {
+				me.new_vector_aicontacts_for = [];
+				foreach (me.c ; me.vector_aicontacts_for) {
+					if (!me.c.equals(me.contact) and !me.c.equalsFast(me.contact)) {
+						append(me.new_vector_aicontacts_for, me.c);
+					}
+				}
+				me.vector_aicontacts_for = me.new_vector_aicontacts_for;
+			}
+		}
+		me.index += 1;
+        if (me.index > size(me.vector_aicontacts)-1) {
+        	me.index = 0;
+
+        	# Lets not keep contacts no longer in our scene
+        	me.new_vector_aicontacts_for = [];
+			foreach (me.c ; me.vector_aicontacts_for) {
+				if (me.containsVectorContact(me.vector_aicontacts, me.c)) {
+					append(me.new_vector_aicontacts_for, me.c);
+				}
+			}
+			me.vector_aicontacts_for = me.new_vector_aicontacts_for;
+
+        	emesary.GlobalTransmitter.NotifyAll(me.DatalinkNotification.updateV(me.vector_aicontacts_for));
+        }
+	},
+	del: func {
+        emesary.GlobalTransmitter.DeRegister(me.DatalinkRadarRecipient);
+    },
+};
 
 
 
-
-var datalink_power = props.globals.getNode("instrumentation/datalink/power",0);
+var datalink_power = props.globals.getNode("controls/electric/engine[0]/generator",0); #fix me later to proper property
 enable_tacobject = 1;
-props.globals.getNode("sim/multiplay/generic/int[2]",1).setIntValue(1);# A-10 has no radar, so put it on standby
+props.globals.getNode("sim/multiplay/generic/int[2]",1).setIntValue(1);# A-10 has no radar, so force it to standby
 props.globals.getNode("instrumentation/rwr/serviceable",1).setBoolValue(1);
+
+
 
 # start generic radar system
 var baser = AIToNasal.new();
 var omni = OmniRadar.new(1.0, 150, -1);
 var terrain = TerrainChecker.new(0.1, 1, 30);# 0.05 or 0.10 is fine here
-#var dlnkRadar = DatalinkRadar.new(0.03, 90);# 3 seconds because cannot be too slow for DLINK targets
+var callsignToContact = CallsignToContact.new();
+var dlnkRadar = DatalinkRadar.new(0.03, 90, 200);# 3 seconds because cannot be too slow for DLINK targets
+
 
 # start specific radar system
 var A10_rwr = RWR.new();

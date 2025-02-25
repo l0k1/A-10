@@ -1459,6 +1459,9 @@ Fairchild A-10 simulation config.
 		<rcs>
 			<file>Aircraft/A-10/Nasal/RADAR/rcs_mand.nas</file>
 		</rcs>
+		<datalink>
+            <file>Aircraft/A-10/Nasal/datalink.nas</file>
+        </datalink>
         <radar_system>
         	<file>Aircraft/A-10/Nasal/RADAR/radar-system-database.nas</file>
             <file>Aircraft/A-10/Nasal/RADAR/radar-system.nas</file>
@@ -1489,9 +1492,6 @@ Fairchild A-10 simulation config.
 		<failures>
 		    <file>Aircraft/A-10/Nasal/A-10-failures.nas</file>
 		</failures>
-		<datalink>
-            <file>Aircraft/A-10/Nasal/datalink.nas</file>
-        </datalink>
 		<iff>
 	        <file>Aircraft/A-10/Nasal/iff.nas</file>
 	    </iff>

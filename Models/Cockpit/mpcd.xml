@@ -6,7 +6,7 @@
 	<path>mpcd.ac</path>
 
 	<effect>
-		<inherits-from>Aircraft/Tornado/Models/Effects/displays/tvtab2</inherits-from>
+		<inherits-from>Aircraft/A-10/Models/Effects/displays/mpcd</inherits-from>
 		<object-name>canvas_disp</object-name>
 	</effect>
 

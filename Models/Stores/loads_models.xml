@@ -117,6 +117,17 @@
         </offsets>
     </model>
 
+    <model>
+        <name>AN-AAQ-28-1</name>
+        <path>Aircraft/A-10/Models/Stores/Ext-Stores/AN_AAQ-28/AN-AAQ-28.xml</path>
+        <offsets>
+         <x-m>7.8</x-m>
+         <y-m>-4.84</y-m>
+         <z-m>-0.43</z-m>
+         <pitch-deg>-3</pitch-deg>
+        </offsets>
+    </model>
+
 
     <!-- =============================================================================================================  --> 
     <!-- =========================================== Station 2 =======================================================  -->
@@ -665,6 +676,17 @@
          <y-m>4.86602</y-m>
          <z-m>-0.385557</z-m>
          <pitch-deg>-4.5</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>AN-AAQ-28-9</name>
+        <path>Aircraft/A-10/Models/Stores/Ext-Stores/AN_AAQ-28/AN-AAQ-28.xml</path>
+        <offsets>
+         <x-m>7.8</x-m>
+         <y-m>4.84</y-m>
+         <z-m>-0.43</z-m>
+         <pitch-deg>-3</pitch-deg>
         </offsets>
     </model>
     
