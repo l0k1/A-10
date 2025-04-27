@@ -522,7 +522,7 @@ var R_AC_bus = func() {
 	setprop("systems/electrical/outputs/cadc", R_AC_bus_volts);
 	setprop("systems/electrical/outputs/nav-mode", R_AC_bus_volts);
 	setprop("systems/electrical/outputs/aoa-indexer", R_AC_bus_volts);
-    setprop("systems/electrical/outputs/landing-light", R_AC_bus_volts);
+    setprop("systems/electrical/outputs/landing-light", R_AC_bus_volts/30);
     setprop("systems/electrical/outputs/hud", R_AC_bus_volts);
 	setprop("instrumentation/attitude-indicator/spin", R_AC_bus_volts/30);
 	setprop("instrumentation/turn-indicator/spin", R_AC_bus_volts/30);

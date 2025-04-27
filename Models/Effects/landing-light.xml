@@ -1,46 +1,47 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
+
 <PropertyList>
-    <light>
-        <name>my-spotlight</name>
-        <type>spot</type>
-        <position>
-            <x-m>0</x-m>
-            <y-m>0</y-m>
-            <z-m>0</z-m>
-        </position>
-        <direction>
-            <pitch-deg>80</pitch-deg>
+      <light>
+          <name>LandingLight</name>
+          <type>spot</type>
+          <position>
+            <x>2.68</x>
+            <y>0.351</y>
+            <z>-0.710</z>
+          </position>
+          <direction>
+            <pitch-deg type="string">82.1739</pitch-deg>
             <roll-deg>0</roll-deg>
             <heading-deg>0</heading-deg>
-        </direction>
-        <ambient>
-            <r>10.0</r>
-            <g>10.0</g>
-            <b>8.0</b>
+          </direction>
+          <ambient>
+            <r type="string">1</r>
+            <g type="string">1</g>
+            <b type="string">0.924528</b>
             <a>1</a>
-        </ambient>
-        <diffuse>
-            <r>30.0</r>
-            <g>30.0</g>
-            <b>28.0</b>
+          </ambient>
+          <diffuse>
+            <r type="string">0.735849</r>
+            <g type="string">0.283019</g>
+            <b type="string">0</b>
             <a>1</a>
-        </diffuse>
-        <specular>
-            <r>0.0</r>
-            <g>0.0</g>
-            <b>0.0</b>
+          </diffuse>
+          <specular>
+            <r type="string">0</r>
+            <g type="string">0</g>
+            <b type="string">0</b>
             <a>1</a>
-        </specular>
-        <attenuation>
-            <c>1.0</c>
-            <l>0.022</l>
-            <q>0.0019</q>
-        </attenuation>
-        <spot-exponent>100</spot-exponent>
-        <spot-cutoff>20</spot-cutoff>
-        <range-m>300</range-m>
-        <dim-factor>
+          </specular>
+          <attenuation>
+            <c type="double">1</c>
+            <l type="double">0.0014</l>
+            <q type="double">7e-06</q>
+          </attenuation>
+          <spot-exponent type="string">125</spot-exponent>
+          <spot-cutoff type="string">29.17</spot-cutoff>
+          <range-m type="double">150</range-m>
+          <dim-factor>
             <property>systems/electrical/outputs/landing-light</property>
-        </dim-factor>
+          </dim-factor>
     </light>
 </PropertyList>

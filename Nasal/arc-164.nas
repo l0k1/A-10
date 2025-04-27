@@ -14,7 +14,7 @@ displays.setColorBackground(0.018, 0.020, 0.05, 1.00);
 displayGroup = displays.createGroup();
 displayGroup.show();
 #cmspDispGroup.set("color", 0,1,0,1)
-displayGroup.set("font", "DSEG/DSEG14/Classic/DSEG14ClassicRegular.ttf");
+displayGroup.set("font", "DSEG/DSEG14/Classic/DSEG14Classic-Regular.ttf");
 
 freq = displayGroup.createChild("text")
 	.setFontSize(27,1)

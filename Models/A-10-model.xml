@@ -252,23 +252,13 @@
 	</model>
 
 	<model>
-        	<name>landing light1</name>
+        	<name>landingLight</name>
         	<path>Aircraft/A-10/Models/Effects/landing-light.xml</path>
         	<offsets>
-            		<x-m>-3.35</x-m>
-            		<y-m>-0.73</y-m>
-            		<z-m>-0.72</z-m>
-            		<heading-deg>5</heading-deg>
-        	</offsets>
-    	</model>
-    	<model>
-        	<name>landing light2</name>
-        	<path>Aircraft/A-10/Models/Effects/landing-light.xml</path>
-        	<offsets>
-            		<x-m>-3.35</x-m>
-            		<y-m> 0.73</y-m>
-            		<z-m>-0.72</z-m>
-            		<heading-deg>-5</heading-deg>
+            		<x-m>2.68</x-m>
+            		<y-m>0.351</y-m>
+            		<z-m>-0.710</z-m>
+            		<heading-deg>0</heading-deg>
         	</offsets>
     	</model>
 
@@ -586,6 +576,22 @@
 	<model>
 		<path>Aircraft/A-10/Models/Cockpit/cockpit.xml</path>
 	</model>
+
+	<model>
+		<name>MPCD</name>
+		<path>Aircraft/A-10/Models/Cockpit/mpcd.xml</path>
+	</model>
+
+	<animation>
+		<type>select</type>
+		<object-name>MPCD</object-name>
+		<condition>
+			<equals>
+				<property>/sim/variant-id</property>
+				<value>2</value>
+			</equals>
+		</condition>
+	</animation>
 
 	<model>
 		<path>Aircraft/A-10/Models/Cockpit/oxygenRegulator.xml</path>

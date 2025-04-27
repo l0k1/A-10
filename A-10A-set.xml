@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<PropertyList include="A-10-base.xml">
+    <sim>
+        <variant-id>1</variant-id>
+        <primary-set type="bool">true</primary-set>
+        <description>Fairchild A-10A Thunderbolt II (YASim FDM)</description>
+    </sim>
+</PropertyList>

@@ -30,11 +30,11 @@
 
 
 <!-- panels-light -->
-	<animation> 
+ 	<animation> 
 		<object-name>CPT-video-frame-l</object-name>
 		<object-name>CPT-video-frame-r</object-name>
 		<object-name>CPT-video-screen</object-name>
-		<object-name>CPT-main-panel</object-name>
+		<object-name>CPT-main-panel.001</object-name>
 		<type>material</type>
 		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
 		<emission>
@@ -100,7 +100,7 @@
 
 	<animation>
 		<type>range</type>
-		<object-name>CPT-main-panel</object-name>
+		<object-name>CPT-main-panel.001</object-name>
 		<min-m>0</min-m>
 		<max-m>5</max-m>
 	</animation>

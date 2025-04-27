@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- From Tornado TVTab 2-->
+<PropertyList>
+	<name>mpcd</name>
+	<inherits-from>Effects/model-default</inherits-from>
+	<parameters>
+		<!-- Dirt -->
+		<texture n="4">
+			<image>Aircraft/Generic/Effects/dust-effect-overlay.png</image>
+			<type>2d</type>
+			<filter>linear-mipmap-linear</filter>
+			<wrap-s>clamp</wrap-s>
+			<wrap-t>clamp</wrap-t>
+			<internal-format>normalized</internal-format>
+		</texture>
+		<texture n="6">
+			<image>Aircraft/Tornado/Models/Effects/displays/scanlines.png</image>
+			<type>2d</type>
+			<filter>linear-mipmap-linear</filter>
+			<wrap-s>repeat</wrap-s>
+			<wrap-t>repeat</wrap-t>
+			<internal-format>normalized</internal-format>
+		</texture>
+		<display-enabled type="int">
+			<use>fdm/jsbsim/electric/output/tvtab2</use>
+		</display-enabled>
+	</parameters>
+
+	<technique n="5">
+		<predicate>
+			<and>
+				<property>/sim/rendering/shaders/quality-level</property>
+				<property>/sim/rendering/shaders/model</property>
+				<or>
+					<less-equal>
+						<value type="float">2.0</value>
+						<glversion />
+					</less-equal>
+					<and>
+						<extension-supported>GL_ARB_shader_objects</extension-supported>
+						<extension-supported>GL_ARB_shading_language_100</extension-supported>
+						<extension-supported>GL_ARB_vertex_shader</extension-supported>
+						<extension-supported>GL_ARB_fragment_shader</extension-supported>
+					</and>
+				</or>
+			</and>
+		</predicate>
+		<pass>
+			<!-- Base texture unit-->
+			<texture-unit>
+				<unit>0</unit>
+				<type><use>texture[0]/type</use></type>
+				<image><use>texture[0]/image</use></image>
+				<filter><use>texture[0]/filter</use></filter>
+				<wrap-s><use>texture[0]/wrap-s</use></wrap-s>
+				<wrap-t><use>texture[0]/wrap-t</use></wrap-t>
+				<internal-format><use>texture[0]/internal-format</use></internal-format>
+			</texture-unit>
+			<!-- Dirt texture unit-->
+			<texture-unit>
+				<unit>1</unit>
+				<image><use>texture[4]/image</use></image>
+				<type><use>texture[4]/type</use></type>
+				<filter><use>texture[4]/filter</use></filter>
+				<wrap-s><use>texture[4]/wrap-s</use></wrap-s>
+				<wrap-t><use>texture[4]/wrap-t</use></wrap-t>
+				<internal-format><use>texture[4]/internal-format</use></internal-format>
+			</texture-unit>
+			<!-- scanline texture unit-->
+			<texture-unit>
+				<unit>3</unit>
+				<image><use>texture[6]/image</use></image>
+				<type><use>texture[6]/type</use></type>
+				<filter><use>texture[6]/filter</use></filter>
+				<wrap-s><use>texture[6]/wrap-s</use></wrap-s>
+				<wrap-t><use>texture[6]/wrap-t</use></wrap-t>
+				<internal-format><use>texture[6]/internal-format</use></internal-format>
+			</texture-unit>
+
+			<program>
+				<fragment-shader>Aircraft/A-10/Models/Effects/displays/raster.frag</fragment-shader>
+			</program>
+
+			<uniform>
+				<name>BaseTex</name>
+				<type>sampler-2d</type>
+				<value type="int">0</value>
+			</uniform>
+			<uniform>
+				<name>DirtTex</name>
+				<type>sampler-2d</type>
+				<value type="int">1</value>
+			</uniform>
+			<uniform>
+				<name>Scanlines</name>
+				<type>sampler-2d</type>
+				<value type="int">3</value>
+			</uniform>
+			<uniform>
+				<name>display_enabled</name>
+				<type>int</type>
+				<value><use>display-enabled</use></value>
+			</uniform>
+		</pass>
+	</technique>
+</PropertyList>
+

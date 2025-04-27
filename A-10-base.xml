@@ -11,9 +11,7 @@ Fairchild A-10 simulation config.
 <PropertyList include="Aircraft/Generic/Human/Include/walker-include.xml">
 
 	<sim>
-
-		<description>Fairchild A-10 Thunderbolt II (YASim FDM)</description>
-		<author>Lee Elliott, Alexis Bory, David Bastien, Pinto, Steve Brown, J Maverick 16, Zorka</author>
+		<author>Lee Elliott, Alexis Bory, David Bastien, Pinto, Steve Brown, J Maverick 16, Zorka, SammySkycrafts</author>
 		<status>production</status>
 		<rating>
 			<FDM type="int">4</FDM>
@@ -799,6 +797,16 @@ Fairchild A-10 simulation config.
 	<input>
 
 		<keyboard>
+			<key n="53">
+                <name>CTRL-5</name>
+                <mod-ctrl>
+                    <desc>Reload MFD display system</desc>
+                    <binding>
+                        <command>nasal-module-reload</command>
+                        <module>displays</module>
+                    </binding>
+                </mod-ctrl>
+            </key>
 			<key n="67">
 				<name>C</name>
 				<desc>Toggle canopy on or off</desc>
@@ -1401,7 +1409,7 @@ Fairchild A-10 simulation config.
 			</A10test_impact>-->
 		<notifications>
 		    <file>Aircraft/A-10/Nasal/ArmamentNotification.nas</file>
-		    <!-- <file>Aircraft/f16/Nasal/M_frame_notification.nas</file> -->
+		    <file>Aircraft/A-10/Nasal/frameNotification.nas</file>
 		    <file>Aircraft/A-10/Nasal/GeoBridgedTransmitter.nas</file>
 		</notifications>
 		<hack>
@@ -1423,6 +1431,7 @@ Fairchild A-10 simulation config.
 			<file>Aircraft/A-10/Nasal/A-10-fuel.nas</file>
 		</A10fuel>
 		<A10>
+			<file>Aircraft/A-10/Nasal/exec.nas</file>
 			<file>Aircraft/A-10/Nasal/A-10.nas</file>
 			<file>Aircraft/A-10/Nasal/arc-164.nas</file>
 		</A10>
@@ -1459,6 +1468,9 @@ Fairchild A-10 simulation config.
 		<rcs>
 			<file>Aircraft/A-10/Nasal/RADAR/rcs_mand.nas</file>
 		</rcs>
+		<datalink>
+            <file>Aircraft/A-10/Nasal/datalink.nas</file>
+        </datalink>
         <radar_system>
         	<file>Aircraft/A-10/Nasal/RADAR/radar-system-database.nas</file>
             <file>Aircraft/A-10/Nasal/RADAR/radar-system.nas</file>
@@ -1489,9 +1501,6 @@ Fairchild A-10 simulation config.
 		<failures>
 		    <file>Aircraft/A-10/Nasal/A-10-failures.nas</file>
 		</failures>
-		<datalink>
-            <file>Aircraft/A-10/Nasal/datalink.nas</file>
-        </datalink>
 		<iff>
 	        <file>Aircraft/A-10/Nasal/iff.nas</file>
 	    </iff>

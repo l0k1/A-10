@@ -82,6 +82,8 @@
         <object-name>Oxy_Screw1</object-name>
         <object-name>Oxy_Screw2</object-name>
         <object-name>Oxy_Window</object-name>
+        <!-- MPCD A-10A+-->
+        <object-name>MPCD_base</object-name>
 		<type>material</type>
 		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
 		<emission> 
@@ -106,6 +108,18 @@
 		<object-name>VHF2_Base</object-name>
 		<object-name>KY58_Base</object-name>
 	</effect>
+
+    <effect>
+        <inherits-from>Aircraft/A-10/Models/Effects/interior/panel-nvis</inherits-from>
+        <parameters>
+            <implicit-lightmap-threshold-low type="float">0.2</implicit-lightmap-threshold-low>
+            <implicit-lightmap-threshold-high type="float">0.8</implicit-lightmap-threshold-high>
+            <lightmap-factor n="0"><use>controls/lighting/panel-int</use></lightmap-factor>
+        </parameters>
+        <object-name>MPCD_base</object-name>
+        <object-name>MPCF_buttons</object-name>
+    </effect>
+
 
 
 </PropertyList>

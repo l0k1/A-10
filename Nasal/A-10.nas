@@ -1,3 +1,64 @@
+_setlistener("/sim/signals/fdm-initialized", func {
+    rtExec_loop();
+    # This loads displays/displays.nas as a module. This can sometimes be buggy, please disable when not needed for development and add to -set
+var hmd = modules.Module.new("displays");
+hmd.setDebug(0); # From previous testing this causes FG to crash, So if you use this and FG crashes, check this is at 0
+hmd.setFilePath(getprop("/sim/aircraft-dir")~"/Nasal");
+hmd.setMainFile("displays.nas");
+hmd.load();
+});
+
+var ownship_pos = geo.Coord.new();
+var SubSystem_Main = {
+    new : func (_ident){
+
+        var obj = { parents: [SubSystem_Main]};
+        input = {
+            FrameRate                 : "sim/frame-rate",
+            frame_rate_worst          : "sim/frame-rate-worst",
+            utcTime                   : "sim/time/gmt-string",
+            utcDay                    : "sim/time/utc/day",
+            utcMonth                  : "sim/time/utc/month",
+            utcYear                   : "sim/time/utc/year",
+            sadlCode                  : "instrumentation/datalink/channel",
+            scratchpadHolding         : "A-10/displays/mpcd/holding",
+            servAtt                   : "instrumentation/attitude-indicator/serviceable",
+            servHead                  : "instrumentation/heading-indicator/serviceable",
+            servTurn                  : "instrumentation/turn-indicator/serviceable",
+        };
+
+        foreach (var name; keys(input)) {
+            emesary.GlobalTransmitter.NotifyAll(notifications.FrameNotificationAddProperty.new(_ident,name, input[name]));
+        }
+
+        #
+        # recipient that will be registered on the global transmitter and connect this
+        # subsystem to allow subsystem notifications to be received
+        obj.recipient = emesary.Recipient.new(_ident~".Subsystem");
+        obj.recipient.Main = obj;
+
+        obj.recipient.Receive = func(notification)
+        {
+            if (notification.NotificationType == "FrameNotification")
+            {
+                me.Main.update(notification);
+                ownship_pos.set_latlon(getprop("position/latitude-deg"), getprop("position/longitude-deg"), getprop("position/altitude-ft")*FT2M);
+                notification.ownship_pos = ownship_pos;
+                return emesary.Transmitter.ReceiptStatus_OK;
+            }
+            return emesary.Transmitter.ReceiptStatus_NotProcessed;
+        };
+        #emesary.GlobalTransmitter.Register(obj.recipient);
+
+        return obj;
+    },
+    update : func(notification) {
+    },
+};
+
+subsystem = SubSystem_Main.new("SubSystem_Main");
+
+
 var UPDATE_PERIOD = 0.1;
 var ikts        = props.globals.getNode("velocities/airspeed-kt");
 var audio_alt_warn_signal = props.globals.getNode("sim/model/A-10/instrumentation/warnings/audio-alt");
@@ -165,11 +226,11 @@ var launched = 0; # Used to avoid to setlisteners and span loops more than once.
 var init = func {
 	var msg = ( launched ) ? " - warm reboot" : " - cold start";
 	print ("Initializing A-10", msg);
-	if (! launched) {
-		settimer(A10autopilot.ap_common_aileron_monitor, 0.5);
-		settimer(A10autopilot.ap_common_elevator_monitor, 0.5);
-		settimer(A10autopilot.altimeter_monitor, 0.5);
-	}
+	# if (! launched) {
+	# 	settimer(A10autopilot.ap_common_aileron_monitor, 0.5);
+	# 	settimer(A10autopilot.ap_common_elevator_monitor, 0.5);
+	# 	settimer(A10autopilot.altimeter_monitor, 0.5);
+	# }
 	print("Initializing Electrical System");
 	electrical.init_electrical();
 	print("Initializing Engines");
