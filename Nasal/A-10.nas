@@ -184,6 +184,7 @@ var init = func {
     setprop("/sim/multiplay/visibility-range-nm", 200);
     rand_dlink();
     rand_iff();
+    mpstores.loop();
 }
 
 if (! launched) {
@@ -413,3 +414,4 @@ var eject = func{
   damage.fail_systems(1);
 
 }
+
