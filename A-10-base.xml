@@ -197,6 +197,13 @@ Fairchild A-10 simulation config.
         <multiplay>
             <generic>
                 <int type="int" n="2"> 1 </int>
+                <float n="5" type="double" alias="/surface-positions/left-flap-pos-norm"/>
+				<float n="6" type="double" alias="/surface-positions/right-flap-pos-norm"/>
+				<float n="7" type="double" alias="/surface-positions/left-aileron-pos-norm"/>
+				<float n="8" type="double" alias="/surface-positions/right-aileron-pos-norm"/>
+				<float n="9" type="double" alias="/surface-positions/left-spoiler-pos-norm"/>
+				<float n="10" type="double" alias="/surface-positions/right-spoiler-pos-norm"/>
+				<string n="5" type="string">00--++00--Empty</string><!-- mp stores -->
             </generic>
         </multiplay>
 
@@ -681,7 +688,6 @@ Fairchild A-10 simulation config.
 				</menu>
 			</default>
 		</menubar>
-
 		<sound>
 			<audible>true</audible>
 			<path>Aircraft/A-10/Sounds/A-10-sound.xml</path>
@@ -1453,6 +1459,9 @@ Fairchild A-10 simulation config.
 		<pylons>
 			<file>Aircraft/A-10/Nasal/WEAPONS/pylons.nas</file>
 		</pylons>
+		<mpstores>
+			<file>Aircraft/A-10/Nasal/WEAPONS/mpstores.nas</file>
+		</mpstores>
 		<A10autopilot>
 			<file>Aircraft/A-10/Nasal/autopilot.nas</file>
 		</A10autopilot>

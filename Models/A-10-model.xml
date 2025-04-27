@@ -18,11 +18,61 @@
 		-->
 		<![CDATA[
 		  var livery_update = aircraft.livery_update.new("Aircraft/A-10/Models/Liveries");
+		  var rplayer = cmdarg();
+
+   		  rplayer.getNode("surface-positions/left-flap-pos-norm", 1).
+            alias(rplayer.getNode("sim/multiplay/generic/float[5]"));
+          rplayer.getNode("surface-positions/right-flap-pos-norm", 1).
+            alias(rplayer.getNode("sim/multiplay/generic/float[6]"));
+          rplayer.getNode("surface-positions/left-aileron-pos-norm", 1).
+            alias(rplayer.getNode("sim/multiplay/generic/float[7]"));
+          rplayer.getNode("surface-positions/right-aileron-pos-norm", 1).
+            alias(rplayer.getNode("sim/multiplay/generic/float[8]"));
+          rplayer.getNode("surface-positions/left-spoiler-pos-norm", 1).
+            alias(rplayer.getNode("sim/multiplay/generic/float[9]"));
+          rplayer.getNode("surface-positions/right-spoiler-pos-norm", 1).
+            alias(rplayer.getNode("sim/multiplay/generic/float[10]"));
+
+			# Stores visible over MP:
+			var looping = 1;
+			var str5 = "";
+			var split1 = nil;
+			var split2 = nil;
+			var split3 = nil;
+			var pylon = nil;
+			var type = nil;
+			var count = nil;
+			var set = nil;
+
+			var loop = func {
+			  #print("loop");
+			  str5 = rplayer.getNode("sim/multiplay/generic/string[5]");
+			  if (str5 != nil and str5.getValue() != nil and size(str5.getValue()) > 10) {#print("pass1 "~str5.getValue());
+			    split1 = split("++", str5.getValue());
+			    if (size(split1) > 1) {#print("pass2");
+			      split2 = split("--", split1[0]);
+			      split3 = split("--", split1[1]);
+			      if (split2 != nil and size(split2)> 1 and split3 != nil and size(split3)> 1) {#print("pass3");
+			        pylon = num(split2[0]);
+			        type = split2[1];
+			        count = num(split3[0]);
+			        set = split3[1];
+			        rplayer.getNode("payload/armament/station/id-"~pylon~"-type",1).setValue(type);
+			        rplayer.getNode("payload/armament/station/id-"~pylon~"-count",1).setIntValue(count);
+			        rplayer.getNode("payload/armament/station/id-"~pylon~"-set",1).setValue(set);
+			      }
+			    }
+			  }
+			  if (looping) settimer(loop, 0.10);
+			}
+
+			loop();
 		]]>
 		</load>
 
 	  <unload><![CDATA[
 		livery_update.stop();
+		looping = 0;
 	  ]]></unload>
 	</nasal>
 

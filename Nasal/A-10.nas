@@ -245,6 +245,7 @@ var init = func {
     setprop("/sim/multiplay/visibility-range-nm", 200);
     rand_dlink();
     rand_iff();
+    mpstores.loop();
 }
 
 if (! launched) {
@@ -256,7 +257,6 @@ if (! launched) {
 var rand_dlink = func() {
     raw_dlink = int(rand() * 9999);
     dlink_code = math.clamp(raw_dlink, 0, 9999);
-    print(dlink_code);
     setprop("instrumentation/datalink/channel", dlink_code);
 }
 
@@ -475,3 +475,4 @@ var eject = func{
   damage.fail_systems(1);
 
 }
+

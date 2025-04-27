@@ -9,7 +9,7 @@
 		<inherits-from>Effects/model-transparent</inherits-from>
 		<parameters>
 			<render-bin>
-				<bin-number>0</bin-number>
+				<bin-number>10</bin-number>
 				<bin-name>RenderBin</bin-name>
 			</render-bin>
 		</parameters>
@@ -20,7 +20,7 @@
 		<inherits-from>Effects/model-transparent</inherits-from>
 		<parameters>
 			<render-bin>
-				<bin-number>1</bin-number>
+				<bin-number>11</bin-number>
 				<bin-name>RenderBin</bin-name>
 			</render-bin>
 		</parameters>
