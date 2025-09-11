@@ -593,6 +593,19 @@
 		</condition>
 	</animation>
 
+	<animation>
+		<type>select</type>
+		<object-name>CPT-video</object-name>
+		<condition>
+			<not>
+				<equals>
+					<property>/sim/variant-id</property>
+					<value>2</value>
+				</equals>
+			</not>
+		</condition>
+	</animation>
+
 	<model>
 		<path>Aircraft/A-10/Models/Cockpit/oxygenRegulator.xml</path>
 	</model>
