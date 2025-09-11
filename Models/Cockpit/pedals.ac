@@ -5,7 +5,7 @@ kids 2
 OBJECT poly
 name "CPT-R-pedal"
 loc -4.76837e-07 0 1.01466
-texture "pedals.rgb"
+texture "pedals.png"
 crease 67.000000
 numvert 54
 0.046946 -0.0102289 -1.16517
@@ -501,7 +501,7 @@ kids 0
 OBJECT poly
 name "CPT-L-pedal"
 loc -4.76837e-07 0 0.224256
-texture "pedals.rgb"
+texture "pedals.png"
 crease 82.000000
 numvert 54
 0.046946 -0.0102289 -0.0737489

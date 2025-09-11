@@ -5,7 +5,7 @@ kids 2
 OBJECT poly
 name "INS-ring"
 loc -0.0222955 -0.00164756 -0.00142546
-texture "mag-compass.rgb"
+texture "mag-compass.png"
 crease 45.000000
 numvert 24
 0.0310666 0.0219069 0.00372301

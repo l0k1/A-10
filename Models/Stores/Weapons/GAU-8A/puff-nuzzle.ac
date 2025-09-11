@@ -5,7 +5,7 @@ kids 1
 OBJECT poly
 name "puff"
 loc 1.49012e-08 -7.45058e-09 0
-texture "puff-nuzzle.rgb"
+texture "puff-nuzzle.png"
 crease 61.000000
 numvert 4
 -0.25 -0.25 0

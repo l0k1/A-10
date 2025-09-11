@@ -58,7 +58,7 @@ name "aux-lg-ext-handle"
 data 26
 aux-lg-ext-handle.mesh.002
 crease 70.0
-texture "aux-lg-ext.rgb"
+texture "aux-lg-ext.png"
 numvert 95
 2.45564 0.87439 0.09169
 2.47372 0.87758 0.09169
@@ -787,7 +787,7 @@ name "block"
 data 14
 block.mesh.002
 crease 45.0
-texture "panel-bkg.rgb"
+texture "panel-bkg.png"
 numvert 24
 2.73102 0.50645 0.07597
 2.50403 0.50645 0.07597
@@ -994,7 +994,7 @@ name "box"
 data 12
 box.mesh.002
 crease 45.0
-texture "cpt-floor-rivets.rgb"
+texture "cpt-floor-rivets.png"
 numvert 8
 2.11016 0.50276 -0.078
 2.69906 0.50276 -0.078
@@ -1025,7 +1025,7 @@ name "consoles"
 data 17
 consoles.mesh.001
 crease 45.0
-texture "panel-bkg.rgb"
+texture "panel-bkg.png"
 numvert 94
 2.51827 0.83694 0.50634
 2.51903 0.83241 0.51272
@@ -1721,7 +1721,7 @@ name "CPT-aoa-left-front"
 data 27
 CPT-aoa-left-front.mesh.002
 crease 45.0
-texture "panel-up.rgb"
+texture "panel-up.png"
 numvert 4
 2.25578 1.40286 0.14047
 2.25578 1.40286 0.1925
@@ -1942,7 +1942,7 @@ name "CPT-aoa-off"
 data 20
 CPT-aoa-off.mesh.002
 crease 45.0
-texture "panel-up.rgb"
+texture "panel-up.png"
 numvert 4
 2.26228 1.40277 0.15806
 2.26228 1.40277 0.17652
@@ -2183,7 +2183,7 @@ name "CPT-C3"
 data 15
 CPT-C3.mesh.002
 crease 55.0
-texture "grey-blue-flood.rgb"
+texture "grey-blue-flood.png"
 numvert 49
 2.40727 0.89823 -0.1123
 2.42751 0.89823 -0.11301
@@ -2655,7 +2655,7 @@ name "CPT-canopy-switch-box"
 data 30
 CPT-canopy-switch-box.mesh.002
 crease 55.0
-texture "A-10-warning-stripes.rgb"
+texture "A-10-warning-stripes.png"
 numvert 3
 2.53992 0.82812 -0.57823
 2.50332 0.82722 -0.48824
@@ -4228,7 +4228,7 @@ name "CPT-emergency-panel-left-side-bkg"
 data 42
 CPT-emergency-panel-left-side-bkg.mesh.002
 crease 45.0
-texture "panel-up.rgb"
+texture "panel-up.png"
 numvert 7
 2.43428 1.28995 0.24801
 2.44123 1.27275 0.24074
@@ -4968,7 +4968,7 @@ name "CPT-emergency-panel-right-side-bkg"
 data 43
 CPT-emergency-panel-right-side-bkg.mesh.002
 crease 45.0
-texture "panel-up.rgb"
+texture "panel-up.png"
 numvert 7
 2.43428 1.28995 -0.24934
 2.44123 1.27275 -0.24207
@@ -6793,7 +6793,7 @@ name "CPT-inst-panel-cover-central"
 data 37
 CPT-inst-panel-cover-central.mesh.002
 crease 45.0
-texture "black-cinetic.rgb"
+texture "black-cinetic.png"
 numvert 8
 2.39151 1.29789 0.00079
 1.33705 0.89481 0.00038
@@ -6824,7 +6824,7 @@ name "CPT-main-panel.001"
 data 23
 CPT-main-panel.mesh.002
 crease 45.0
-texture "panel-bkg.rgb"
+texture "panel-bkg.png"
 numvert 79
 2.41438 1.22446 0.00045
 2.41486 1.21625 -0.03294
@@ -7342,7 +7342,7 @@ name "CPT-ribbon-mag-compass-bevel"
 data 37
 CPT-ribbon-mag-compass-bevel.mesh.002
 crease 61.0
-texture "A-10-large-bezel.rgb"
+texture "A-10-large-bezel.png"
 numvert 48
 2.28223 1.50871 -0.13376
 2.28223 1.50381 -0.13091
@@ -8060,7 +8060,7 @@ name "CPT-ribbon-mag-compass-bevel-1"
 data 39
 CPT-ribbon-mag-compass-bevel-1.mesh.002
 crease 45.0
-texture "mag-compass.rgb"
+texture "mag-compass.png"
 numvert 8
 2.30444 1.49477 -0.18101
 2.30325 1.49252 -0.18101
@@ -8119,7 +8119,7 @@ name "CPT-ribbon-mag-compass-bevel-2"
 data 39
 CPT-ribbon-mag-compass-bevel-2.mesh.002
 crease 45.0
-texture "mag-compass.rgb"
+texture "mag-compass.png"
 numvert 9
 2.29904 1.46691 -0.18219
 2.29904 1.4645 -0.18689
@@ -8276,7 +8276,7 @@ name "CPT-video-frame-l"
 data 26
 CPT-video-frame-l.mesh.002
 crease 45.0
-texture "A-10-video-screen.rgb"
+texture "A-10-video-screen.png"
 numvert 14
 2.39896 1.08449 -0.17634
 2.39896 1.08449 -0.16553
@@ -8341,7 +8341,7 @@ name "CPT-video-frame-r"
 data 26
 CPT-video-frame-r.mesh.002
 crease 45.0
-texture "A-10-video-screen.rgb"
+texture "A-10-video-screen.png"
 numvert 14
 2.39567 1.13545 -0.2923
 2.39567 1.13545 -0.30311
@@ -8406,7 +8406,7 @@ name "CPT-video-screen"
 data 25
 CPT-video-screen.mesh.002
 crease 45.0
-texture "A-10-video-screen.rgb"
+texture "A-10-video-screen.png"
 numvert 4
 2.38781 1.22293 -0.30325
 2.38781 1.22293 -0.16554
@@ -8426,7 +8426,7 @@ name "CPWell"
 data 15
 CPWell.mesh.002
 crease 45.0
-texture "cpt-floor.rgb"
+texture "cpt-floor.png"
 numvert 30
 1.34574 0.48791 0.00148
 2.68089 0.483 0.00378
@@ -8631,7 +8631,7 @@ name "pedal-adj-handle"
 data 25
 pedal-adj-handle.mesh.002
 crease 70.0
-texture "aux-lg-ext.rgb"
+texture "aux-lg-ext.png"
 numvert 60
 2.45196 0.75541 -0.08495
 2.45133 0.7586 -0.08763

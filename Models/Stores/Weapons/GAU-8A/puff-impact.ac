@@ -6,7 +6,7 @@ kids 2
 OBJECT poly
 name "puff"
 loc -0.318627 0.638029 0
-texture "puff-new.rgb"
+texture "puff-new.png"
 crease 61.000000
 numvert 13
 -7.39271 -0.0860167 0
@@ -99,7 +99,7 @@ kids 0
 OBJECT poly
 name "disk"
 loc -0.266397 0.568313 0.383
-texture "puff-new.rgb"
+texture "puff-new.png"
 crease 45.000000
 numvert 21
 3.16204 0 0

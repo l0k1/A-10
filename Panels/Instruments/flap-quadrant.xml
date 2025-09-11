@@ -43,7 +43,7 @@ extended/retracted in three steps.
   <layer>
    <name>backplate</name>
    <texture>
-    <path>Aircraft/A-10/Panels/Instruments/Textures/faces-LE-misc1.rgb</path>
+    <path>Aircraft/A-10/Panels/Instruments/Textures/faces-LE-misc1.png</path>
     <x1>0.0</x1>
     <x2>0.125</x2>
     <y1>0.75</y1>
@@ -58,7 +58,7 @@ extended/retracted in three steps.
   <layer>
    <name>flap handle </name>
    <texture>
-    <path>Aircraft/Instruments/Textures/handles.rgb</path>
+    <path>Aircraft/Instruments/Textures/handles.png</path>
     <x1>0.0</x1>
     <x2>0.37890625</x2>
     <y1>0.6015625</y1>

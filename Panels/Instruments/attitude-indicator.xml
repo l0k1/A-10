@@ -44,7 +44,7 @@ properties' values.
   <layer>
    <name>background</name>
    <texture>
-    <path>Aircraft/Instruments/Textures/attitude-indicator.rgb</path>
+    <path>Aircraft/Instruments/Textures/attitude-indicator.png</path>
     <x1>0.0</x1>
     <y1>0.0</y1>
     <x2>0.5</x2>
@@ -63,7 +63,7 @@ properties' values.
   <layer>
    <name>pitch</name>
    <texture>
-    <path>Aircraft/Instruments/Textures/attitude-indicator.rgb</path>
+    <path>Aircraft/Instruments/Textures/attitude-indicator.png</path>
     <x1>0.5</x1>
     <y1>0.0</y1>
     <x2>0.875</x2>
@@ -92,7 +92,7 @@ properties' values.
   <layer>
    <name>roll</name>
    <texture>
-    <path>Aircraft/Instruments/Textures/attitude-indicator.rgb</path>
+    <path>Aircraft/Instruments/Textures/attitude-indicator.png</path>
     <x1>0.5</x1>
     <y1>0.5</y1>
     <x2>1.0</x2>
@@ -111,7 +111,7 @@ properties' values.
   <layer>
    <name>plane</name>
    <texture>
-    <path>Aircraft/Instruments/Textures/attitude-indicator.rgb</path>
+    <path>Aircraft/Instruments/Textures/attitude-indicator.png</path>
     <x1>0.5</x1>
     <y1>0.25</y1>
     <x2>0.75</x2>
@@ -130,7 +130,7 @@ properties' values.
   <layer>
    <name>foreground</name>
    <texture>
-    <path>Aircraft/Instruments/Textures/attitude-indicator.rgb</path>
+    <path>Aircraft/Instruments/Textures/attitude-indicator.png</path>
     <x1>0.0</x1>
     <y1>0.5</y1>
     <x2>0.5</x2>

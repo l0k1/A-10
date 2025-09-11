@@ -21,7 +21,7 @@
   <layer>
    <name>background</name>
    <texture>
-    <path>Aircraft/A-10/Panels/Instruments/Textures/trans-yellow-bg.rgb</path>
+    <path>Aircraft/A-10/Panels/Instruments/Textures/trans-yellow-bg.png</path>
    </texture>
     <w>124</w>
     <h>40</h>

@@ -14,7 +14,7 @@
   <layer>
    <name>background</name>
    <texture>
-    <path>Aircraft/A-10/Panels/Instruments/Textures/trans-orange-bg.rgb</path>
+    <path>Aircraft/A-10/Panels/Instruments/Textures/trans-orange-bg.png</path>
    </texture>
     <w>100</w>
     <h>16</h>

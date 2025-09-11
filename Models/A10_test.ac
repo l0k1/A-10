@@ -6146,7 +6146,7 @@ name "CanopyLock"
 data 15
 CanopyLock.mesh
 crease 45.0
-texture "A-10-canopy-lock.rgb"
+texture "A-10-canopy-lock.png"
 numvert 136
 2.67296 1.13294 0.48264
 2.6752 1.12651 0.48042
@@ -14404,7 +14404,7 @@ name "Fuselage-int-sides"
 data 23
 Fuselage-int-sides.mesh
 crease 45.0
-texture "A-10-isolant.rgb"
+texture "A-10-isolant.png"
 numvert 50
 2.03805 0.50265 -0.61259
 2.58802 0.57022 0.63023
@@ -14811,7 +14811,7 @@ name "CPT-inst-panel-cover-sides"
 data 31
 CPT-inst-panel-cover-sides.mesh
 crease 45.0
-texture "black-cinetic.rgb"
+texture "black-cinetic.png"
 numvert 58
 2.44845 1.29908 0.25123
 2.44937 1.2982 0.2515
@@ -15238,7 +15238,7 @@ name "CPTHeaterTube"
 data 18
 CPTHeaterTube.mesh
 crease 45.0
-texture "white-black-gradient-stripes.rgb"
+texture "white-black-gradient-stripes.png"
 numvert 54
 2.95926 1.03819 0.50808
 3.00799 1.04282 0.51313

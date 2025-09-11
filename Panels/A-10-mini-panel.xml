@@ -37,7 +37,7 @@ Hacked by Lee Elliott for the A-10 mock panel
 <PropertyList>
 
  <name>A-10 mock Mini Panel</name>
- <background>Aircraft/A-10/Panels/Textures/panel-trans-mini-bg.rgb</background>
+ <background>Aircraft/A-10/Panels/Textures/panel-trans-mini-bg.png</background>
  <w>1024</w>
  <h>145</h>
  <y-offset>0</y-offset>

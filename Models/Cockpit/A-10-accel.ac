@@ -106,7 +106,7 @@ kids 0
 OBJECT poly
 name "button"
 loc 0.00723785 -0.0157496 0.0147585
-texture "A-10-accel.rgb"
+texture "A-10-accel.png"
 crease 45.000000
 numvert 36
 -0.02 0.0039119 -0.00225003
@@ -333,7 +333,7 @@ kids 0
 OBJECT poly
 name "mount"
 loc -0.0013817 0.00304341 -0.0109718
-texture "A-10-accel.rgb"
+texture "A-10-accel.png"
 crease 180.000000
 numvert 48
 0.00257575 -0.0069781 0.0249432
@@ -689,7 +689,7 @@ kids 0
 OBJECT poly
 name "face"
 loc -0.00272614 0.00304341 -0.0109718
-texture "A-10-accel.rgb"
+texture "A-10-accel.png"
 crease 45.000000
 numvert 4
 0 0.0262752 -0.0262752

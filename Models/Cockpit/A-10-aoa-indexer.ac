@@ -5,7 +5,7 @@ kids 5
 OBJECT poly
 name "aoa-too-slow"
 loc 3.48662e-05 0.000420377 -0.000211392
-texture "panel-up.rgb"
+texture "panel-up.png"
 crease 45.000000
 numvert 4
 3.19778e-09 -0.0213979 -0.00921317
@@ -24,7 +24,7 @@ kids 0
 OBJECT poly
 name "aoa-slow"
 loc 3.48662e-05 0.000420377 -0.000211392
-texture "panel-up.rgb"
+texture "panel-up.png"
 crease 45.000000
 numvert 4
 -3.17959e-09 0.0213979 -0.00921317
@@ -43,7 +43,7 @@ kids 0
 OBJECT poly
 name "aoa-on-speed"
 loc 3.48662e-05 0.000420379 -0.000211392
-texture "panel-up.rgb"
+texture "panel-up.png"
 crease 45.000000
 numvert 4
 3.19778e-09 -0.0213542 -0.00921317
@@ -62,7 +62,7 @@ kids 0
 OBJECT poly
 name "aoa-fast"
 loc 3.48662e-05 0.000420377 -0.000211392
-texture "panel-up.rgb"
+texture "panel-up.png"
 crease 45.000000
 numvert 4
 -3.17959e-09 0.0213979 -0.00921317
@@ -81,7 +81,7 @@ kids 0
 OBJECT poly
 name "aoa-too-fast"
 loc 3.48661e-05 0.000398506 -0.00018952
-texture "panel-up.rgb"
+texture "panel-up.png"
 crease 45.000000
 numvert 4
 2.86309e-09 -0.0214037 -0.00922698

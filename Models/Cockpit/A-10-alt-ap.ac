@@ -6,7 +6,7 @@ kids 3
 OBJECT group
 name "CPT-auto-alt"
 loc 0.0195272 0.00336928 0.0120572
-texture "A-10-auto-alt.rgb"
+texture "A-10-auto-alt.png"
 kids 4
 OBJECT poly
 name "sel-switch"

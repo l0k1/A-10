@@ -4,7 +4,7 @@
 
 <PropertyList>
 	<name>A-10 C Panel Hotspots</name>
-	<background>Aircraft/A-10/Models/Cockpit/transparent-bg.rgb</background>
+	<background>Aircraft/A-10/Models/Cockpit/transparent-bg.png</background>
 	<w>1024</w>
 	<h>768</h>
 	<y-offset>0</y-offset>
@@ -23,7 +23,7 @@
 				<layer>
 					<name>background</name>
 					<texture>
-					<path>Aircraft/A-10/Models/Cockpit/transparent-bg.rgb</path>
+					<path>Aircraft/A-10/Models/Cockpit/transparent-bg.png</path>
 					<x1>0.0</x1>
 					<y1>0.0</y1>
 					<x2>1.0</x2>

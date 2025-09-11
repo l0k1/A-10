@@ -14,7 +14,7 @@
     <layer>
       <name>background</name>
       <texture>
-        <path>Aircraft/A-10/Panels/Instruments/Textures/trans-green-bg.rgb</path>
+        <path>Aircraft/A-10/Panels/Instruments/Textures/trans-green-bg.png</path>
       </texture>
       <w>110</w>
       <h>34</h>

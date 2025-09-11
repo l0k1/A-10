@@ -12677,7 +12677,7 @@ kids 0
 OBJECT poly
 name "object"
 loc 0.601272 -0.0956883 0.20842
-texture "Cockpit/grey-blue-flood.rgb"
+texture "Cockpit/grey-blue-flood.png"
 crease 45.000000
 numvert 280
 -0.000862598 0.225921 -0.0056574
@@ -16320,7 +16320,7 @@ kids 0
 OBJECT poly
 name "disk"
 loc 0.628012 -0.109999 0.221129
-texture "Cockpit/grey-blue-flood.rgb"
+texture "Cockpit/grey-blue-flood.png"
 crease 45.000000
 numvert 100
 0.0187092 0.0655186 0.0103966
@@ -21835,7 +21835,7 @@ kids 0
 OBJECT poly
 name "seat-cushion"
 loc 0.551732 0.0806917 -0.00492297
-texture "Cockpit/grey-blue-flood.rgb"
+texture "Cockpit/grey-blue-flood.png"
 crease 92.000000
 numvert 207
 -0.398395 -0.395344 0
@@ -25860,7 +25860,7 @@ kids 0
 OBJECT poly
 name "disk"
 loc 0.550642 0.0155118 0.0948513
-texture "Cockpit/grey-blue-flood.rgb"
+texture "Cockpit/grey-blue-flood.png"
 crease 70.000000
 numvert 796
 0.0501134 0.300823 0.0120614
@@ -32332,7 +32332,7 @@ kids 0
 OBJECT poly
 name "block"
 loc 0.742842 0.626952 -0.00446657
-texture "Cockpit/grey-blue-flood.rgb"
+texture "Cockpit/grey-blue-flood.png"
 crease 45.000000
 numvert 192
 0.0557823 0.0311888 -0.0752876
@@ -42761,7 +42761,7 @@ kids 0
 OBJECT poly
 name "block"
 loc 0.745432 0.630972 -0.00446657
-texture "Cockpit/grey-blue-flood.rgb"
+texture "Cockpit/grey-blue-flood.png"
 crease 45.000000
 numvert 31
 0.0729382 0.0100554 0.0492786

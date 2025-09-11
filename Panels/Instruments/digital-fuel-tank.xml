@@ -20,7 +20,7 @@
   <layer>
    <name>background</name>
    <texture>
-    <path>Aircraft/A-10/Panels/Instruments/Textures/trans-purple-bg.rgb</path>
+    <path>Aircraft/A-10/Panels/Instruments/Textures/trans-purple-bg.png</path>
    </texture>
     <w>196</w>
     <h>40</h>

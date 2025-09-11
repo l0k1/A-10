@@ -55733,7 +55733,7 @@ kids 0
 OBJECT poly
 name "CPT-inst-panel-cover-sides"
 loc 1.89769 1.02321 -1.01305e-06
-texture "Cockpit/black-cinetic.rgb"
+texture "Cockpit/black-cinetic.png"
 crease 45.000000
 numvert 58
 0.550763 0.275871 0.251233
@@ -56159,7 +56159,7 @@ kids 0
 OBJECT poly
 name "CPTHeaterTube"
 loc 3.3019 1.07172 0.477798
-texture "white-black-gradient-stripes.rgb"
+texture "white-black-gradient-stripes.png"
 crease 45.000000
 numvert 54
 -0.342641 -0.0335302 0.030284
@@ -67045,7 +67045,7 @@ kids 0
 OBJECT poly
 name "Fuselage-int-sides"
 loc -2.51662 -0.926028 -0.0281912
-texture "Cockpit/A-10-isolant.rgb"
+texture "Cockpit/A-10-isolant.png"
 crease 45.000000
 numvert 50
 2.03805 0.486663 -0.612594
@@ -75380,7 +75380,7 @@ kids 0
 OBJECT poly
 name "CanopyLock"
 loc 0.155166 0.209578 0.443842
-texture "Cockpit/A-10-canopy-lock.rgb"
+texture "Cockpit/A-10-canopy-lock.png"
 crease 45.000000
 numvert 136
 0.00117373 -0.0186468 0.0106037
