@@ -40,6 +40,12 @@ var pow2 = func(x) { return x * x; };
 var vec_length = func(x, y) { return math.sqrt(pow2(x) + pow2(y)); };
 var round0 = func(x) { return math.abs(x) > 0.01 ? x : 0; };
 var clamp = func(x, min, max) { return x < min ? min : (x > max ? max : x); }
+var font_mapper = func(family, weight, style=nil, options=nil) {
+  if (family == "OCR-B") {
+    return "A10-HUD.ttf";
+  }
+  return "A10-HUD.ttf";
+};
 
 #canvas.
 #the canvas is wider than the actual hud : so display start at 16,7% of the hud and end at 84,3% (100%-16.7%)
@@ -132,11 +138,28 @@ var HUD = {
                 .setDouble("character-size",m.myFontSize* 16)
                 .setDouble("character-aspect-ration", 0.9);
 
+    m.svgRoot =
+      m.root.createChild("group")
+            .setTranslation(-m.sx, -m.sy);
+
     m.text =
       m.root.createChild("group");
       
-      m.rootLine =
+    m.rootLine =
       m.root.createChild("group");
+
+    canvas.parsesvg(m.svgRoot, "Aircraft/A-10/Nasal/HUD/HUD.svg", {"font-mapper": font_mapper});
+    var style_path = func(el, width) {
+      el.setColor(m.myGreen);
+      el.setStrokeLineWidth(width);
+      return el;
+    };
+    var style_text = func(el, align, size) {
+      el.setColor(m.myGreen);
+      el.setDouble("character-size", m.myFontSize * size);
+      el.setAlignment(align);
+      return el;
+    };
             
             
     m.Fire_GBU =
@@ -148,92 +171,33 @@ var HUD = {
             
             
     #fpv
-    m.fpv = m.root.createChild("path")
-        .setColor(m.myGreen)
-        .moveTo(15, 0)
-        .horiz(40)
-        .moveTo(15, 0)
-        .arcSmallCW(15,15, 0, -30, 0)
-        .arcSmallCW(15,15, 0, 30, 0)
-        .moveTo(-15, 0)
-        .horiz(-40)
-        .moveTo(0, -15)
-        .vert(-15)
-        .setStrokeLineWidth(m.myLineWidth*4);
-  m.fpvL = m.root.createChild("text")
-            .setAlignment("left-bottom")
-            .setTranslation(0, 0)
-            .setColor(m.myGreen)
-            .setText("L")
-            .setDouble("character-size",m.myFontSize* 42);
+    m.fpv = style_path(m.svgRoot.getElementById("fpv"), m.myLineWidth*4);
+  m.fpvL = style_text(m.svgRoot.getElementById("fpv-label"), "left-bottom", 42);
         
-  m.AutopilotStar = m.root.createChild("text")
-    .setColor(m.myGreen)
-    .setTranslation(150,0)
-    .setDouble("character-size",m.myFontSize* 50)
-    .setAlignment("center-center")
-    .setText("*"); 
+  m.AutopilotStar = style_text(m.svgRoot.getElementById("autopilot-star"), "center-center", 50);
         
         
          
   #tadpole - destination index
   m.HouseSize = 4;
-  m.HeadingHouse = m.root.createChild("path")
-    .setColor(m.myGreen)
-    .setStrokeLineWidth(m.myLineWidth*5)
-    #.moveTo(-20,0)
-    #.vert(-30)
-    #.lineTo(0,-50)
-    #.lineTo(20,-30)
-    #.vert(30);
-    .moveTo(-12.5,0)
-    .arcSmallCW(12.5,12.5, 0, 12.5*2, 0)
-    .arcSmallCW(12.5,12.5, 0, -12.5*2, 0)
-    .moveTo(0,-12.5)
-    .vert(-35);
+  m.HeadingHouse = style_path(m.svgRoot.getElementById("heading-house"), m.myLineWidth*5);
  
         
    #Chevrons Acceleration Vector (AV)
    m.chevronFactor = 40;
-   m.chevronGroup = m.root.createChild("group");
+   m.chevronGroup = m.svgRoot.getElementById("chevron-group");
    
-  m.LeftChevron = m.chevronGroup.createChild("text")
-  .setColor(m.myGreen)
-  .setTranslation(-150,0)
-  .setDouble("character-size",m.myFontSize* 60)
-  .setAlignment("center-center")
-  .setText(">");    
+  m.LeftChevron = style_text(m.svgRoot.getElementById("left-chevron"), "center-center", 60);   
   
-  m.RightChevron = m.chevronGroup.createChild("text")
-    .setColor(m.myGreen)
-    .setTranslation(150,0)
-    .setDouble("character-size",m.myFontSize* 60)
-    .setAlignment("center-center")
-    .setText("<");   
+  m.RightChevron = style_text(m.svgRoot.getElementById("right-chevron"), "center-center", 60);
    
         
     #bore cross
-    m.boreCross = m.root.createChild("path")
-      .setColor(m.myGreen)
-      .moveTo(-20, 0)
-      .horiz(40)
-      .moveTo(0, -20)
-      .vert(40)
-      .setStrokeLineWidth(m.myLineWidth*4);
+    m.boreCross = style_path(m.svgRoot.getElementById("bore-cross"), m.myLineWidth*4);
                    
                    
     #WP cross
-    m.WaypointCross = m.root.createChild("path")
-      .setColor(m.myGreen)
-      .moveTo(-20, 0)
-      .horiz(12)
-      .moveTo(8, 0)
-      .horiz(12)
-      .moveTo(0, -20)
-      .vert(12)
-      .moveTo(0, 8)
-      .vert(12)
-      .setStrokeLineWidth(m.myLineWidth*4);
+    m.WaypointCross = style_path(m.svgRoot.getElementById("waypoint-cross"), m.myLineWidth*4);
                    
 
                    
@@ -369,220 +333,87 @@ var HUD = {
                    
        
     #This is the inverted T that is present in at -13 and putting this line on the horizon will keep the aircraft at 13 which is the perfect angle to take off and to land
-    m.InvertedT = m.root.createChild("path")
-      .setColor(m.myGreen)
-      .moveTo(-m.maxladderspan/2, 0)
-      .horiz(m.maxladderspan)
-      .moveTo(0, 0)
-      .vert(-m.maxladderspan/15*2)
-      .setStrokeLineWidth(m.myLineWidth*6);
+    m.InvertedT = style_path(m.svgRoot.getElementById("inverted-t"), m.myLineWidth*6);
   
               
     m.headScaleTickSpacing = 45;           
     m.headScaleVerticalPlace = -475;
-    m.headingStuff = m.root.createChild("group");
-    m.headingScaleGroup = m.headingStuff.createChild("group");
+    m.headingStuff = m.svgRoot.getElementById("heading-stuff");
+    m.headingScaleGroup = m.svgRoot.getElementById("heading-scale-group");
 
     
      m.headingStuff.set("clip-frame", canvas.Element.LOCAL);
      m.headingStuff.set("clip", "rect(-600px, 150px, -400px, -150px)");# top,right,bottom,left
     
     
-    m.head_scale = m.headingScaleGroup.createChild("path")
-    .setColor(m.myGreen)
-    .moveTo(-m.headScaleTickSpacing*2, m.headScaleVerticalPlace)
-    .vert(-15)
-    .moveTo(0, m.headScaleVerticalPlace)
-    .vert(-15)
-    .moveTo(m.headScaleTickSpacing*2, m.headScaleVerticalPlace)
-    .vert(-15)
-    .moveTo(m.headScaleTickSpacing*4, m.headScaleVerticalPlace)
-    .vert(-15)
-    .moveTo(-m.headScaleTickSpacing, m.headScaleVerticalPlace)
-    .vert(-5)
-    .moveTo(m.headScaleTickSpacing, m.headScaleVerticalPlace)
-    .vert(-5)
-    .moveTo(-m.headScaleTickSpacing*3, m.headScaleVerticalPlace)
-    .vert(-5)
-    .moveTo(m.headScaleTickSpacing*3, m.headScaleVerticalPlace)
-    .vert(-5)
-    .setStrokeLineWidth(m.myLineWidth*5)
-    .show();
+    m.head_scale = style_path(m.svgRoot.getElementById("head-scale"), m.myLineWidth*5);
+    m.head_scale.show();
     
     #Heading middle number on horizon line
-    me.hdgMH = m.headingScaleGroup.createChild("text")
-      .setColor(m.myGreen)
-      .setTranslation(0,m.headScaleVerticalPlace -15)
-      .setDouble("character-size",m.myFontSize* 50)
-      .setAlignment("center-bottom")
-      .setText("0"); 
+    me.hdgMH = style_text(m.svgRoot.getElementById("hdgMH"), "center-bottom", 50);
                    
 #     # Heading left number on horizon line
-      me.hdgLH = m.headingScaleGroup.createChild("text")
-        .setColor(m.myGreen)
-        .setTranslation(-m.headScaleTickSpacing*2,m.headScaleVerticalPlace -15)
-        .setDouble("character-size",m.myFontSize* 50)
-        .setAlignment("center-bottom")
-        .setText("350");           
+      me.hdgLH = style_text(m.svgRoot.getElementById("hdgLH"), "center-bottom", 50);
 
 #     # Heading right number on horizon line
-      me.hdgRH = m.headingScaleGroup.createChild("text")
-        .setColor(m.myGreen)
-        .setTranslation(m.headScaleTickSpacing*2,m.headScaleVerticalPlace -15)
-        .setDouble("character-size",m.myFontSize* 50)
-        .setAlignment("center-bottom")
-        .setText("10");    
+      me.hdgRH = style_text(m.svgRoot.getElementById("hdgRH"), "center-bottom", 50);
           
       # Heading right right number on horizon line
-      me.hdgRRH = m.headingScaleGroup.createChild("text")
-        .setColor(m.myGreen)
-        .setTranslation(m.headScaleTickSpacing*4,m.headScaleVerticalPlace -15)
-        .setDouble("character-size",m.myFontSize* 50)
-        .setAlignment("center-bottom")
-        .setText("20");          
+      me.hdgRRH = style_text(m.svgRoot.getElementById("hdgRRH"), "center-bottom", 50);
 
     
       
     #Point the The Selected Route. it's at the middle of the HUD
     m.TriangleSize = 4;
-    m.head_scale_route_pointer = m.headingStuff.createChild("path")
-      .setColor(m.myGreen)
-      .setStrokeLineWidth(m.myLineWidth*3)
-      .moveTo(0, m.headScaleVerticalPlace)
-      .lineTo(m.TriangleSize*-5/2, (m.headScaleVerticalPlace)+(m.TriangleSize*5))
-      .lineTo(m.TriangleSize*5/2,(m.headScaleVerticalPlace)+(m.TriangleSize*5))
-      .lineTo(0, m.headScaleVerticalPlace);
+    m.head_scale_route_pointer = style_path(m.svgRoot.getElementById("head-scale-route-pointer"), m.myLineWidth*3);
     
     
 
     #a line representthe middle and the actual heading
-    m.heading_pointer_line = m.headingStuff.createChild("path")
-      .setColor(m.myGreen)
-      .setStrokeLineWidth(m.myLineWidth*4)
-      .moveTo(0, m.headScaleVerticalPlace + 2)
-      .vert(20);
+    m.heading_pointer_line = style_path(m.svgRoot.getElementById("heading-pointer-line"), m.myLineWidth*4);
     
 
-     m.speedAltGroup = m.root.createChild("group");
-     # Heading right right number on horizon line
-    me.Speed = m.speedAltGroup.createChild("text")
-      .setColor(m.myGreen)
-      .setTranslation(- m.maxladderspan-150,m.headScaleVerticalPlace)
-      .setDouble("character-size",m.myFontSize* 35)
-      .setAlignment("right-bottom")
-      .setText("0"); 
-          
-    me.Speed_Mach = m.speedAltGroup.createChild("text")
-      .setColor(m.myGreen)
-      .setTranslation(- m.maxladderspan+100,m.headScaleVerticalPlace+25)
-      .setDouble("character-size",m.myFontSize* 30)
-      .setAlignment("right-bottom")
-      .setText("0"); 
-          
-
-     # Heading right right number on horizon line
-     me.hundred_feet_Alt = m.speedAltGroup.createChild("text")
-          .setTranslation(m.maxladderspan+275 ,m.headScaleVerticalPlace)
-          .setDouble("character-size",m.myFontSize* 35)
-          .setAlignment("right-bottom")
-          .setText("0");   
+     m.speedAltGroup = m.svgRoot.getElementById("speed-alt-group");
+     me.Speed = style_text(m.svgRoot.getElementById("speed"), "right-bottom", 35);
+     me.Speed_Mach = style_text(m.svgRoot.getElementById("speed-mach"), "right-bottom", 30);
+     me.hundred_feet_Alt = style_text(m.svgRoot.getElementById("hundred-feet-alt"), "right-bottom", 35);
       
           
-    m.alphaGroup = m.root.createChild("group");      
-  
-    #alpha
-    m.alpha = m.alphaGroup.createChild("text")
-      .setColor(m.myGreen)
-      .setTranslation(- m.maxladderspan-70,m.headScaleVerticalPlace+50)
-      .setDouble("character-size",m.myFontSize* 40)
-      .setAlignment("right-center")
-      .setText("α");
-          
-    #aoa 
-    m.aoa = m.alphaGroup.createChild("text")
-      .setColor(m.myGreen)
-      .setTranslation(- m.maxladderspan-50,m.headScaleVerticalPlace+50)
-      .setDouble("character-size",m.myFontSize* 30)
-      .setAlignment("left-center")
-      .setText("0.0");
+    m.alphaGroup = m.svgRoot.getElementById("alpha-group");
+    m.alpha = style_text(m.svgRoot.getElementById("alpha-symbol"), "right-center", 40);
+    m.aoa = style_text(m.svgRoot.getElementById("aoa"), "left-center", 30);
     
       
-    m.alphaGloadGroup = m.root.createChild("group");  
-    m.gload_Text = m.alphaGloadGroup.createChild("text")
-      .setColor(m.myGreen)
-      .setTranslation(-375,-400)
-      .setDouble("character-size",m.myFontSize* 35)
-      .setAlignment("left-center")
-      .setText("0.0");
-      
-    m.alpha_Text = m.alphaGloadGroup.createChild("text")
-      .setColor(m.myGreen)
-      .setTranslation(- m.maxladderspan-50,-90)
-      .setDouble("character-size",m.myFontSize* 35)
-      .setAlignment("right-center")
-      .setText("0.0");  
+    m.alphaGloadGroup = m.svgRoot.getElementById("alpha-gload-group");
+    m.gload_Text = style_text(m.svgRoot.getElementById("gload-text"), "left-center", 35);
+    m.alpha_Text = style_text(m.svgRoot.getElementById("alpha-text"), "right-center", 35);
       
       m.alphaGloadGroup.hide();
       
-    m.loads_Type_text = m.root.createChild("text")
-      .setColor(m.myGreen)
-      .setTranslation(- m.maxladderspan-125,-10)
-      .setDouble("character-size",m.myFontSize* 25)
-      .setAlignment("right-center")
-      .setText("0.0");  
+    m.loads_Type_text = style_text(m.svgRoot.getElementById("loads-type-text"), "right-center", 25);
     m.loads_Type_text.hide();
     
     
     # Bullet count when 30mm is selected
-    m.bullet_CountGroup = m.root.createChild("group");  
-    m.Bullet_Count = m.bullet_CountGroup.createChild("text")
-      .setColor(m.myGreen)
-      .setTranslation(m.minladderspan-125,25)
-      .setDouble("character-size",m.myFontSize* 25)
-      .setFont("A10-HUD.ttf")
-      .setAlignment("right-center")
-      .setText("0.0");  
+    m.bullet_CountGroup = m.svgRoot.getElementById("bullet-count-group");
+    m.Bullet_Count = style_text(m.svgRoot.getElementById("bullet-count"), "right-center", 25);
     m.bullet_CountGroup.hide();
     
       #Betty Altitude to call - GCAS
-      m.GCASGroup = m.root.createChild("group");  
+      m.GCASGroup = m.svgRoot.getElementById("gcas-group");  
         
-      m.warnAlt = m.GCASGroup.createChild("text")
-      .setColor(m.myGreen)
-      .setTranslation(0,0)
-      .setDouble("character-size",m.myFontSize* 35)
-      .setAlignment("center-center")
-      .setText("0000"); 
+      m.warnAlt = style_text(m.svgRoot.getElementById("warn-alt"), "center-center", 35);
       
-      m.altBoxLine = m.GCASGroup.createChild("path")
-        .setColor(m.myGreen)
-        .moveTo(-70, -25)
-        .horiz(140)
-        .vert(50)
-        .horiz(-140)
-        .vert(-50)
-        .setStrokeLineWidth(m.myLineWidth*4);         
-      m.GCASGroup.setTranslation(0,m.headScaleVerticalPlace*2/5);
+      m.altBoxLine = style_path(m.svgRoot.getElementById("alt-box-line"), m.myLineWidth*4);
+      m.GCASGroup.setTranslation(0,-190);
 
-      m.fpa = m.root.createChild("text")
-        .setColor(m.myGreen)
-        .setTranslation(m.maxladderspan+265 ,m.headScaleVerticalPlace+340)
-        .setDouble("character-size",m.myFontSize* 30)
-        .setAlignment("right-bottom")
-        .setText("FPA");
+      m.fpa = style_text(m.svgRoot.getElementById("fpa"), "right-bottom", 30);
       
-      m.hudRAlt = m.root.createChild("text")
-        .setColor(m.myGreen)
-        .setTranslation(m.maxladderspan+200 ,25)
-        .setDouble("character-size",m.myFontSize* 25)
-        .setAlignment("right-bottom")
-        .setText("0RALT");
+      m.hudRAlt = style_text(m.svgRoot.getElementById("hud-ralt"), "right-bottom", 25);
           
       #Waypoint Group
-      m.waypointGroup = m.root.createChild("group");
-
-      
-      m.waypointSimpleGroup = m.root.createChild("group");
+      m.waypointGroup = m.svgRoot.getElementById("waypoint-group");
+      m.waypointSimpleGroup = m.svgRoot.getElementById("waypoint-simple-group");
 
       # #Distance to active Waypoint
       # m.waypointDistAlt = m.waypointSimpleGroup.createChild("text")
@@ -593,31 +424,14 @@ var HUD = {
       #   .setText("0");    
 
       #active Waypoint NUMBER
-      m.waypointDistAlt = m.waypointSimpleGroup.createChild("text")
-        .setColor(m.myGreen)
-        .setTranslation( m.maxladderspan +93 ,85)
-        .setDouble("character-size",m.myFontSize* 25)
-        .setAlignment("left-bottom")
-        .setText("00"); 
-
-      m.stptInfo = m.waypointSimpleGroup.createChild("text")
-        .setColor(m.myGreen)
-        .setTranslation(m.maxladderspan+93 ,55) #+25 for font size + 5 for gap
-        .setDouble("character-size",m.myFontSize* 25)
-        .setAlignment("left-bottom")
-        .setText("stptInfo");
-
-      m.utcTime = m.waypointSimpleGroup.createChild("text")
-        .setColor(m.myGreen)
-        .setTranslation(m.maxladderspan+93 ,115)
-        .setDouble("character-size",m.myFontSize* 25)
-        .setAlignment("left-bottom")
-        .setText("00:00:00");
+      m.waypointDistAlt = style_text(m.svgRoot.getElementById("waypoint-dist-alt"), "left-bottom", 25);
+      m.stptInfo = style_text(m.svgRoot.getElementById("stpt-info"), "left-bottom", 25);
+      m.utcTime = style_text(m.svgRoot.getElementById("utc-time"), "left-bottom", 25);
 
       
       
                    
-    m.radarStuffGroup = m.root.createChild("group");
+    m.radarStuffGroup = m.svgRoot.getElementById("radar-stuff-group");
     
     
     #SSLC snake gun sight: (not LCOS, SNAP or EEGS)
@@ -652,34 +466,22 @@ var HUD = {
     
    ##################################### Target Circle ####################################
     m.targetArray = [];
-    m.circle_group2 = m.radarStuffGroup.createChild("group");
-    for(var i = 1; i <= m.MaxTarget; i += 1){
-      myCircle = m.circle_group2.createChild("path")
-        .setColor(m.myGreen)
-        .moveTo(25, 0)
-        .arcSmallCW(25,25, 0, -50, 0)
-        .arcSmallCW(25,25, 0, 50, 0)
-        .setStrokeLineWidth(m.myLineWidth*5)
-        .hide()
-        ;
+    m.circle_group2 = m.svgRoot.getElementById("circle-group2");
+    for(var i = 0; i < m.MaxTarget; i += 1){
+      myCircle = m.svgRoot.getElementById("target-circle-" ~ i);
+      myCircle.hide();
       append(m.targetArray, myCircle);
     }
     m.targetrot   = m.circle_group2.createTransform();
   
     ####################### Info Text ########################################
     m.TextInfoArray = [];
-    m.TextInfoGroup = m.radarStuffGroup.createChild("group");
+    m.TextInfoGroup = m.svgRoot.getElementById("text-info-group");
     
-    for(var i = 1; i <= m.MaxTarget; i += 1){
-        text_info = m.TextInfoGroup.createChild("text", "infos")
-          .setColor(m.myGreen)
-          .setTranslation(15, -10)
-          .setAlignment("left-center")
-          .setFont("A10-HUD.ttf")
-          .setFontSize(m.myFontSize*26)
-          .setColor(0,180,0,0.9)
-          .hide()
-          .setText("VOID");
+    for(var i = 0; i < m.MaxTarget; i += 1){
+        text_info = style_text(m.svgRoot.getElementById("target-info-" ~ i), "left-center", 26);
+        text_info.setColor(0,180,0,0.9);
+        text_info.hide();
         append(m.TextInfoArray, text_info);
     }
     m.Textrot   = m.TextInfoGroup.createTransform();
@@ -689,95 +491,44 @@ var HUD = {
     #######################  Triangles ##########################################
     
     var TriangleSize = 30;
-    m.TriangleGroupe = m.radarStuffGroup.createChild("group");
+    m.TriangleGroupe = m.svgRoot.getElementById("triangle-group");
     
 
     # le triangle donne le cap relatif
-        m.triangle = m.TriangleGroupe.createChild("path")
-          .setColor(m.myGreen)
-          .setStrokeLineWidth(m.myLineWidth*3)
-          .moveTo(0, TriangleSize*-1)
-          .lineTo(TriangleSize*0.866, TriangleSize*0.5)
-          .lineTo(TriangleSize*-0.866, TriangleSize*0.5)
-          .lineTo(0, TriangleSize*-1);
+        m.triangle = style_path(m.svgRoot.getElementById("triangle"), m.myLineWidth*3);
     TriangleSize = TriangleSize*0.7;
     
-        m.triangle2 = m.TriangleGroupe.createChild("path")
-          .setColor(m.myGreen)
-          .setStrokeLineWidth(m.myLineWidth*3)
-          .moveTo(0, TriangleSize*-1)
-          .lineTo(TriangleSize*0.866, TriangleSize*0.5)
-          .lineTo(TriangleSize*-0.866, TriangleSize*0.5)
-          .lineTo(0, TriangleSize*-1.1);
+        m.triangle2 = style_path(m.svgRoot.getElementById("triangle2"), m.myLineWidth*3);
          m.triangleRot =  m.TriangleGroupe.createTransform();
          
     m.TriangleGroupe.hide();
     
     
-    m.Square_Group = m.radarStuffGroup.createChild("group");
+    m.Square_Group = m.svgRoot.getElementById("square-group");
      
-    m.Locked_Square  = m.Square_Group.createChild("path")
-      .setColor(m.myGreen)
-      .move(-25,-25)
-      .vert(50)
-      .horiz(50)
-      .vert(-50)
-      .horiz(-50)
-      .setStrokeLineWidth(m.myLineWidth*6);
+    m.Locked_Square  = style_path(m.svgRoot.getElementById("locked-square"), m.myLineWidth*6);
       
-    m.Locked_Square_Dash  = m.Square_Group.createChild("path")
-      .setColor(m.myGreen)
-      .move(-25,-25)
-      .vert(50)
-      .horiz(50)
-      .vert(-50)
-      .horiz(-50)
-      .setStrokeDashArray([10,10])
-      .setStrokeLineWidth(m.myLineWidth*5);  
+    m.Locked_Square_Dash  = style_path(m.svgRoot.getElementById("locked-square-dash"), m.myLineWidth*5);
+    m.Locked_Square_Dash.setStrokeDashArray([10,10]);
     m.Square_Group.hide();    
       
     
     
-    m.missileFireRange = m.root.createChild("group");
-    m.MaxFireRange = m.missileFireRange.createChild("path")
-      .setColor(m.myGreen)
-      .moveTo(210,0)
-      .horiz(-30)
-      .setStrokeLineWidth(m.myLineWidth*6); 
-    m.MinFireRange = m.missileFireRange.createChild("path")
-      .setColor(m.myGreen)
-      .moveTo(210,0)
-      .horiz(-30)
-      .setStrokeLineWidth(m.myLineWidth*6); 
-    m.NEZFireRange = m.missileFireRange.createChild("path")
-      .setColor(m.myGreen)
-      .moveTo(215,0)
-      .horiz(-40)
-      .setStrokeLineWidth(m.myLineWidth*4);   
+    m.missileFireRange = m.svgRoot.getElementById("missile-fire-range");
+    m.MaxFireRange = style_path(m.svgRoot.getElementById("max-fire-range"), m.myLineWidth*6);
+    m.MinFireRange = style_path(m.svgRoot.getElementById("min-fire-range"), m.myLineWidth*6);
+    m.NEZFireRange = style_path(m.svgRoot.getElementById("nez-fire-range"), m.myLineWidth*4);
     m.missileFireRange.hide();
       
-    m.pullUp = m.root.createChild("path")
-      .setColor(m.myGreen)
-      .moveTo(200,200)
-      .lineTo(-200,-200)
-      .moveTo(-200,200)
-      .lineTo(200,-200)
-      .hide()
-      .setStrokeLineWidth(m.myLineWidth*4);
+    m.pullUp = style_path(m.svgRoot.getElementById("pull-up"), m.myLineWidth*4);
+    m.pullUp.hide();
     
-    m.distanceToTargetLineGroup = m.root.createChild("group");
+    m.distanceToTargetLineGroup = m.svgRoot.getElementById("distance-target-line-group");
     m.distanceToTargetLineMin = -100;
     m.distanceToTargetLineMax = 100;
-    m.distanceToTargetLine = m.distanceToTargetLineGroup.createChild("path")
-      .setColor(m.myGreen)
-      .moveTo(200,m.distanceToTargetLineMin)
-      .horiz(30)
-      .moveTo(200,m.distanceToTargetLineMin)
-      .vert(m.distanceToTargetLineMax-m.distanceToTargetLineMin)
-      .horiz(30)
-      .setStrokeLineWidth(m.myLineWidth*5); 
+    m.distanceToTargetLine = style_path(m.svgRoot.getElementById("distance-target-line"), m.myLineWidth*5);
     
-    m.distanceToTargetLineTextGroup = m.distanceToTargetLineGroup.createChild("group");
+    m.distanceToTargetLineTextGroup = m.svgRoot.getElementById("distance-target-line-text-group");
       
     m.distanceToTargetLineChevron = m.distanceToTargetLineTextGroup.createChild("text")
       .setColor(m.myGreen)
@@ -1354,9 +1105,9 @@ var HUD = {
     }
     
     # if (me.input.MasterArm.getValue()) {
-    me.headingStuff.setTranslation(0,700);
+    me.headingStuff.setTranslation(0,0);
     #me.speedAltGroup.setTranslation(0, math.min(375,math.max(-300,me.fpvCalc[1]))+356);
-    me.speedAltGroup.setTranslation(0, 300)
+    me.speedAltGroup.setTranslation(0, 0)
     # } else {
     #   me.headingStuff.setTranslation(0,math.min(300,math.max(-356,me.fpvCalc[1]))+612);
     #   me.speedAltGroup.setTranslation(0, math.min(375,math.max(-356,me.fpvCalc[1]))+356);
@@ -2152,5 +1903,3 @@ var deviation_normdeg = func(our_heading, target_bearing) {
     dev_norm=geo.normdeg180(dev_norm);
   return dev_norm;
 };
-
-

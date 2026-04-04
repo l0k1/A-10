@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1024"
+   height="1024"
+   viewBox="0 0 1024 1024"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="HUD.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.81206794"
+     inkscape:cx="281.99611"
+     inkscape:cy="475.32969"
+     inkscape:window-width="2560"
+     inkscape:window-height="1387"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="hud-root" />
+  <g
+     id="hud-root"
+     transform="translate(512 512)"
+     font-family="OCR-B">
+    <g
+       fill="none"
+       stroke="#00ff00"
+       stroke-width="5"
+       id="g1"
+       style="display:inline;stroke-width:5;stroke-dasharray:none">
+      <path
+         id="fpv"
+         d="M 15,0 H 55 M 15,0 A 15,15 0 1 1 -15,0 15,15 0 1 1 15,0 M -15,0 H -55 M 0,-15 v -15"
+         style="stroke-width:5;stroke-dasharray:none" />
+      <path
+         id="heading-house"
+         d="m -12.5,0 a 12.5,12.5 0 1 1 25,0 12.5,12.5 0 1 1 -25,0 M 0,-12.5 v -35"
+         style="stroke-width:5;stroke-dasharray:none" />
+      <path
+         id="bore-cross"
+         d="M -20,0 H 20 M 0,-20 v 40"
+         style="stroke-width:5;stroke-dasharray:none" />
+      <path
+         id="waypoint-cross"
+         d="M -20,0 H -8 M 8,0 H 20 M 0,-20 V -8 M 0,8 v 12"
+         style="stroke-width:5;stroke-dasharray:none" />
+      <path
+         id="inverted-t"
+         d="M -100,0 H 100 M 0,0 v -26.6667"
+         stroke-width="8.4"
+         style="stroke-width:5;stroke-dasharray:none" />
+      <path
+         id="pull-up"
+         d="M 509.44068,253.18956 -508.20927,-509.32576 m 0,762.51532 1017.64995,-762.51532"
+         style="stroke-width:5;stroke-dasharray:none" />
+    </g>
+    <text
+       id="fpv-label"
+       x="0"
+       y="0"
+       fill="#00ff00"
+       font-size="42"
+       text-anchor="start">L</text>
+    <text
+       id="autopilot-star"
+       x="150"
+       y="0"
+       fill="#00ff00"
+       font-size="50"
+       text-anchor="middle">*</text>
+    <g
+       id="chevron-group">
+      <text
+         id="left-chevron"
+         x="-150"
+         y="0"
+         fill="#00ff00"
+         font-size="60"
+         text-anchor="middle">&gt;</text>
+      <text
+         id="right-chevron"
+         x="150"
+         y="0"
+         fill="#00ff00"
+         font-size="60"
+         text-anchor="middle">&lt;</text>
+    </g>
+    <g
+       id="heading-stuff"
+       transform="translate(0 700)">
+      <g
+         id="heading-scale-group">
+        <path
+           id="head-scale"
+           d="M-90 -475 V-490 M0 -475 V-490 M90 -475 V-490 M180 -475 V-490 M-45 -475 V-480 M45 -475 V-480 M-135 -475 V-480 M135 -475 V-480"
+           fill="none"
+           stroke="#00ff00"
+           stroke-width="7" />
+        <text
+           id="hdgMH"
+           x="0"
+           y="-490"
+           fill="#00ff00"
+           font-size="50"
+           text-anchor="middle">0</text>
+        <text
+           id="hdgLH"
+           x="-90"
+           y="-490"
+           fill="#00ff00"
+           font-size="50"
+           text-anchor="middle">350</text>
+        <text
+           id="hdgRH"
+           x="90"
+           y="-490"
+           fill="#00ff00"
+           font-size="50"
+           text-anchor="middle">10</text>
+        <text
+           id="hdgRRH"
+           x="180"
+           y="-490"
+           fill="#00ff00"
+           font-size="50"
+           text-anchor="middle">20</text>
+      </g>
+      <path
+         id="head-scale-route-pointer"
+         d="M0 -475 L-10 -455 L10 -455 Z"
+         fill="none"
+         stroke="#00ff00"
+         stroke-width="4.2" />
+      <path
+         id="heading-pointer-line"
+         d="M0 -473 V-453"
+         fill="none"
+         stroke="#00ff00"
+         stroke-width="7" />
+    </g>
+    <g
+       id="speed-alt-group"
+       transform="translate(0 300)">
+      <text
+         id="speed"
+         x="-350"
+         y="-475"
+         fill="#00ff00"
+         font-size="35"
+         text-anchor="end">0</text>
+      <text
+         id="speed-mach"
+         x="-100"
+         y="-450"
+         fill="#00ff00"
+         font-size="30"
+         text-anchor="end">0</text>
+      <text
+         id="hundred-feet-alt"
+         x="475"
+         y="-475"
+         fill="#00ff00"
+         font-size="35"
+         text-anchor="end">0</text>
+    </g>
+    <g
+       id="alpha-group">
+      <text
+         id="alpha-symbol"
+         x="-270"
+         y="-425"
+         fill="#00ff00"
+         font-size="40"
+         text-anchor="end">α</text>
+      <text
+         id="aoa"
+         x="-250"
+         y="-425"
+         fill="#00ff00"
+         font-size="30"
+         text-anchor="start">0.0</text>
+    </g>
+    <g
+       id="alpha-gload-group">
+      <text
+         id="gload-text"
+         x="-375"
+         y="-400"
+         fill="#00ff00"
+         font-size="35"
+         text-anchor="start">0.0</text>
+      <text
+         id="alpha-text"
+         x="-250"
+         y="-90"
+         fill="#00ff00"
+         font-size="35"
+         text-anchor="end">0.0</text>
+    </g>
+    <text
+       id="loads-type-text"
+       x="-325"
+       y="-10"
+       fill="#00ff00"
+       font-size="25"
+       text-anchor="end">0.0</text>
+    <g
+       id="bullet-count-group">
+      <text
+         id="bullet-count"
+         x="-325"
+         y="25"
+         fill="#00ff00"
+         font-size="25"
+         text-anchor="end">0.0</text>
+    </g>
+    <g
+       id="gcas-group"
+       transform="translate(2.6613106,-122.35075)">
+      <path
+         id="alt-box-line"
+         d="M -70,-25 H 70 V 25 H -70 Z"
+         fill="none"
+         stroke="#00ff00"
+         stroke-width="5.6" />
+      <text
+         id="warn-alt"
+         x="0.87074828"
+         y="16.544218"
+         fill="#00ff00"
+         font-size="35px"
+         text-anchor="middle">0000</text>
+    </g>
+    <text
+       id="fpa"
+       x="465"
+       y="-135"
+       fill="#00ff00"
+       font-size="30"
+       text-anchor="end">FPA</text>
+    <text
+       id="hud-ralt"
+       x="400"
+       y="25"
+       fill="#00ff00"
+       font-size="25"
+       text-anchor="end">0RALT</text>
+    <g
+       id="waypoint-group" />
+    <g
+       id="waypoint-simple-group">
+      <text
+         id="waypoint-dist-alt"
+         x="293"
+         y="85"
+         fill="#00ff00"
+         font-size="25"
+         text-anchor="start">00</text>
+      <text
+         id="stpt-info"
+         x="293"
+         y="55"
+         fill="#00ff00"
+         font-size="25"
+         text-anchor="start">stptInfo</text>
+      <text
+         id="utc-time"
+         x="293"
+         y="115"
+         fill="#00ff00"
+         font-size="25"
+         text-anchor="start">00:00:00</text>
+    </g>
+    <g
+       id="radar-stuff-group"
+       style="display:inline">
+      <g
+         id="circle-group2"
+         fill="none"
+         stroke="#00ff00"
+         stroke-width="7">
+        <circle
+           id="target-circle-0"
+           cx="0"
+           cy="0"
+           r="25"
+           style="stroke-width:7;stroke-dasharray:none" />
+        <circle
+           id="target-circle-1"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-2"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-3"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-4"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-5"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-6"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-7"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-8"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-9"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-10"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-11"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-12"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-13"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-14"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-15"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-16"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-17"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-18"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-19"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-20"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-21"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-22"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-23"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-24"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-25"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-26"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-27"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-28"
+           cx="0"
+           cy="0"
+           r="25" />
+        <circle
+           id="target-circle-29"
+           cx="0"
+           cy="0"
+           r="25" />
+      </g>
+      <g
+         id="text-info-group">
+        <text
+           id="target-info-0"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-1"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-2"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-3"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-4"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-5"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-6"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-7"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-8"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-9"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-10"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-11"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-12"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-13"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-14"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-15"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-16"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-17"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-18"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-19"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-20"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-21"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-22"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-23"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-24"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-25"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-26"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-27"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-28"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+        <text
+           id="target-info-29"
+           x="15"
+           y="-10"
+           fill="#00b400"
+           font-size="26px"
+           text-anchor="start">VOID</text>
+      </g>
+      <g
+         id="triangle-group"
+         fill="none"
+         stroke="#00ff00">
+        <path
+           id="triangle"
+           d="M 0,-30 25.98,15 H -25.98 Z"
+           stroke-width="4.2" />
+        <path
+           id="triangle2"
+           d="M 0,-21 18.186,10.5 H -18.186 L 0,-23.1 Z"
+           stroke-width="4.2" />
+      </g>
+      <g
+         id="square-group"
+         fill="none"
+         stroke="#00ff00">
+        <path
+           id="locked-square"
+           d="M -25,-25 V 25 H 25 V -25 Z"
+           stroke-width="8.4" />
+        <path
+           id="locked-square-dash"
+           d="M -25,-25 V 25 H 25 V -25 Z"
+           stroke-width="7"
+           stroke-dasharray="10, 10" />
+      </g>
+    </g>
+    <g
+       id="missile-fire-range"
+       fill="none"
+       stroke="#00ff00">
+      <path
+         id="max-fire-range"
+         d="M210 0 H180"
+         stroke-width="8.4" />
+      <path
+         id="min-fire-range"
+         d="M210 0 H180"
+         stroke-width="8.4" />
+      <path
+         id="nez-fire-range"
+         d="M215 0 H175"
+         stroke-width="5.6" />
+    </g>
+    <g
+       id="distance-target-line-group"
+       fill="none"
+       stroke="#00ff00"
+       stroke-width="7">
+      <path
+         id="distance-target-line"
+         d="M200 -100 H230 M200 -100 V100 H230" />
+      <g
+         id="distance-target-line-text-group" />
+    </g>
+  </g>
+</svg>
