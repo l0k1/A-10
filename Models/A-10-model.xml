@@ -367,7 +367,7 @@
 
 
 	<!-- 3D panels for hot-spots -->
-	<panel>
+	<!-- <panel>
 		<name>Panel-C</name>
 		<path>Aircraft/A-10/Models/Cockpit/A-10-panel-C-hotspot.xml</path>
 		<bottom-left>
@@ -445,9 +445,9 @@
 			<y-m>-0.4885</y-m>
 			<z-m>1.3153</z-m>
 		</top-left>
-	</panel>
+	</panel> -->
 	<!-- fuel panel -->
-	<panel>
+	<!-- <panel>
 		<name>Panel-l1</name>
 		<path>Aircraft/A-10/Models/Cockpit/A-10-panel-l1-hotspot.xml</path>
 		<bottom-left>
@@ -465,7 +465,7 @@
 			<y-m>-0.4353</y-m>
 			<z-m>0.8580</z-m>
 		</top-left>
-	</panel>
+	</panel> -->
 
 <!-- 	<panel>
 		<name>Panel-l2</name>
@@ -486,7 +486,7 @@
 			<z-m>0.7178</z-m>
 		</top-left>
 	</panel> -->
-
+<!-- 
 	<panel>
 		<name>Panel-l4</name>
 		<path>Aircraft/A-10/Models/Cockpit/A-10-panel-l4-hotspot.xml</path>
@@ -505,10 +505,10 @@
 			<y-m>-0.5914</y-m>
 			<z-m>0.8538</z-m>
 		</top-left>
-	</panel>
+	</panel> -->
 
 	<!-- ILS panel -->
-	<panel>
+	<!-- <panel>
 		<name>Panel-r1</name>
 		<path>Aircraft/A-10/Models/Cockpit/A-10-panel-r1-hotspot.xml</path>
 		<bottom-left>
@@ -526,10 +526,10 @@
 			<y-m>0.2685</y-m>
 			<z-m>0.8545</z-m>
 		</top-left>
-	</panel>
+	</panel> -->
 
 	<!-- TACAN panel -->
-	<panel>
+	<!-- <panel>
 		<name>Panel-r2</name>
 		<path>Aircraft/A-10/Models/Cockpit/A-10-panel-r2-hotspot.xml</path>
 		<bottom-left>
@@ -547,10 +547,10 @@
 			<y-m>0.2785</y-m>
 			<z-m>0.7146</z-m>
 		</top-left>
-	</panel>
+	</panel> -->
 
 	<!-- cockpit switch -->
-	<panel>
+	<!-- <panel>
 		<name>Panel-r5</name>
 		<path>Aircraft/A-10/Models/Cockpit/A-10-panel-r5-hotspot.xml</path>
 		<bottom-left>
@@ -568,7 +568,7 @@
 			<y-m>0.4237</y-m>
 			<z-m>0.9273</z-m>
 		</top-left>
-	</panel>
+	</panel> -->
 
 
 <!-- instruments-->
