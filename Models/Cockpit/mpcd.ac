@@ -30,7 +30,7 @@ name "laser_arm_sw"
 data 10
 Switch.247
 crease 40.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 545
 2.40732 1.11181 -0.32662
 2.40826 1.11136 -0.32661
@@ -4151,7 +4151,7 @@ name "laser_arm_sw_base"
 data 13
 SwitchNut.003
 crease 40.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 72
 2.40473 1.11917 -0.32393
 2.40595 1.11339 -0.33369
@@ -4658,7 +4658,7 @@ name "MPCD_base"
 data 8
 Cube.001
 crease 40.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 368
 2.39195 1.08307 -0.16574
 2.40148 1.21866 -0.26965
@@ -6690,7 +6690,7 @@ name "MPCD_BRT+"
 data 8
 Cube.040
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.23936 -0.20888
 2.40102 1.23778 -0.20718
@@ -6902,7 +6902,7 @@ name "MPCD_BRT-"
 data 8
 Cube.038
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.22781 -0.20888
 2.40102 1.22623 -0.20718
@@ -7114,7 +7114,7 @@ name "MPCD_CNT+"
 data 8
 Cube.039
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.23936 -0.19215
 2.40102 1.23778 -0.19045
@@ -7326,7 +7326,7 @@ name "MPCD_CNT-"
 data 8
 Cube.037
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.22781 -0.19215
 2.40102 1.22623 -0.19045
@@ -7538,7 +7538,7 @@ name "MPCD_OSB1"
 data 8
 Cube.009
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.18949 -0.17076
 2.40102 1.19119 -0.16918
@@ -7750,7 +7750,7 @@ name "MPCD_OSB10"
 data 8
 Cube.018
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.13603 -0.30218
 2.40102 1.13773 -0.3006
@@ -7962,7 +7962,7 @@ name "MPCD_OSB11"
 data 8
 Cube.019
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.11809 -0.30218
 2.40102 1.11979 -0.3006
@@ -8174,7 +8174,7 @@ name "MPCD_OSB12"
 data 8
 Cube.020
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.1002 -0.30218
 2.40102 1.1019 -0.3006
@@ -8386,7 +8386,7 @@ name "MPCD_OSB13"
 data 8
 Cube.030
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.21006 -0.19215
 2.40102 1.20848 -0.19045
@@ -8598,7 +8598,7 @@ name "MPCD_OSB14"
 data 8
 Cube.031
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.21006 -0.20888
 2.40102 1.20848 -0.20718
@@ -8810,7 +8810,7 @@ name "MPCD_OSB15"
 data 8
 Cube.032
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.21006 -0.22563
 2.40102 1.20848 -0.22393
@@ -9022,7 +9022,7 @@ name "MPCD_OSB16"
 data 8
 Cube.033
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.21006 -0.24211
 2.40102 1.20848 -0.24041
@@ -9234,7 +9234,7 @@ name "MPCD_OSB17"
 data 8
 Cube.034
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.21006 -0.25884
 2.40102 1.20848 -0.25714
@@ -9446,7 +9446,7 @@ name "MPCD_OSB18"
 data 8
 Cube.035
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.21006 -0.27559
 2.40102 1.20848 -0.27389
@@ -9658,7 +9658,7 @@ name "MPCD_OSB19"
 data 8
 Cube.036
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.21006 -0.29235
 2.40102 1.20848 -0.29065
@@ -9870,7 +9870,7 @@ name "MPCD_OSB2"
 data 8
 Cube.010
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.17156 -0.17076
 2.40102 1.17325 -0.16918
@@ -10082,7 +10082,7 @@ name "MPCD_OSB20"
 data 8
 Cube.022
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.08823 -0.19215
 2.40102 1.08665 -0.19045
@@ -10294,7 +10294,7 @@ name "MPCD_OSB21"
 data 8
 Cube.023
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.08823 -0.20888
 2.40102 1.08665 -0.20718
@@ -10506,7 +10506,7 @@ name "MPCD_OSB22"
 data 8
 Cube.024
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.08823 -0.22563
 2.40102 1.08665 -0.22393
@@ -10718,7 +10718,7 @@ name "MPCD_OSB23"
 data 8
 Cube.025
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.08823 -0.24211
 2.40102 1.08665 -0.24041
@@ -10930,7 +10930,7 @@ name "MPCD_OSB24"
 data 8
 Cube.026
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.08823 -0.25884
 2.40102 1.08665 -0.25714
@@ -11142,7 +11142,7 @@ name "MPCD_OSB25"
 data 8
 Cube.027
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.08823 -0.27559
 2.40102 1.08665 -0.27389
@@ -11354,7 +11354,7 @@ name "MPCD_OSB26"
 data 8
 Cube.028
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.08823 -0.29235
 2.40102 1.08665 -0.29065
@@ -11566,7 +11566,7 @@ name "MPCD_OSB3"
 data 8
 Cube.011
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.15366 -0.17076
 2.40102 1.15536 -0.16918
@@ -11778,7 +11778,7 @@ name "MPCD_OSB4"
 data 8
 Cube.012
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.13603 -0.17076
 2.40102 1.13773 -0.16918
@@ -11990,7 +11990,7 @@ name "MPCD_OSB5"
 data 8
 Cube.013
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.11809 -0.17076
 2.40102 1.11979 -0.16918
@@ -12202,7 +12202,7 @@ name "MPCD_OSB6"
 data 8
 Cube.014
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.1002 -0.17076
 2.40102 1.1019 -0.16918
@@ -12414,7 +12414,7 @@ name "MPCD_OSB7"
 data 8
 Cube.015
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.18949 -0.30218
 2.40102 1.19119 -0.3006
@@ -12626,7 +12626,7 @@ name "MPCD_OSB8"
 data 8
 Cube.016
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.17156 -0.30218
 2.40102 1.17325 -0.3006
@@ -12838,7 +12838,7 @@ name "MPCD_OSB9"
 data 8
 Cube.017
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.15366 -0.30218
 2.40102 1.15536 -0.3006
@@ -13050,7 +13050,7 @@ name "MPCD_SYM+"
 data 8
 Cube.042
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.23936 -0.26739
 2.40102 1.23778 -0.26569
@@ -13262,7 +13262,7 @@ name "MPCD_SYM-"
 data 8
 Cube.041
 crease 30.0
-texture "A-10A+PFD.png"
+texture "A-10AAPFD.png"
 numvert 40
 2.40102 1.22781 -0.26739
 2.40102 1.22623 -0.26569

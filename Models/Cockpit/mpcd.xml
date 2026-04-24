@@ -532,7 +532,7 @@
     </animation>
 
 	<animation>
-        <!-- MPCD A-10A+-->
+        <!-- MPCD A-10AA-->
         <object-name>MPCD_base</object-name>
         <object-name>MPCD_buttons</object-name>
         <object-name>laser_arm_sw</object-name>

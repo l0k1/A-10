@@ -252,7 +252,7 @@ var AIToNasal = {
         } else {
         	me.callsign = me.callsign.getValue();
         }
-        if(damage.isIgnoredNode(me.prop_ai)) {
+        if(me.callsign != nil and multiplayer.ignore[me.callsign] == 1) {
         	me.nextReadTreeFrame();
 		    return;
 		}

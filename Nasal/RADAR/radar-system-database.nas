@@ -32,6 +32,7 @@ var Database = {
 
 	"default": BaseEntry,
 # Small aircraft (emesary enabled)
+	"UN":                 {isDetectable:1,hasAirRadar:1, killZone:15, rwrCode:"UN", baseThreat:defaultFighterThreat},
 	"AI":                     {rwrCode:"AI"},
     "A-10":                   {killZone: 15, baseThreat:defaultFighterThreat},
     "A-10-modelB":            {killZone: 15, baseThreat:defaultFighterThreat},
@@ -279,7 +280,7 @@ var getDBEntry = func (model) {
 		entry = Database[model];
 	}
 	if (entry == nil) {
-		entry = Database.default;
+		entry = Database["UN"];  
 	}
 	return entry;
 }

@@ -82,7 +82,7 @@
         <object-name>Oxy_Screw1</object-name>
         <object-name>Oxy_Screw2</object-name>
         <object-name>Oxy_Window</object-name>
-        <!-- MPCD A-10A+-->
+        <!-- MPCD A-10AA-->
         <object-name>MPCD_base</object-name>
 		<type>material</type>
 		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
