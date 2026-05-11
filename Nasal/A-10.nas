@@ -1,5 +1,6 @@
 _setlistener("/sim/signals/fdm-initialized", func {
     rtExec_loop();
+    hack.init();
     # This loads displays/displays.nas as a module. This can sometimes be buggy, please disable when not needed for development and add to -set
 var hmd = modules.Module.new("displays");
 hmd.setDebug(0); # From previous testing this causes FG to crash, So if you use this and FG crashes, check this is at 0
