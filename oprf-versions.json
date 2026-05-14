@@ -4,11 +4,11 @@
     "path": "Nasal/vector.nas"
   },
   "missile-code": {
-    "version": "1.2.3",
+    "version": "1.2.4",
     "path": "Nasal/missile-code.nas"
   },
   "radar-system": {
-    "version": "2.0.9",
+    "version": "2.0.10",
     "path": "Nasal/RADAR/radar-system.nas"
   },
   "rcs-mand": {
