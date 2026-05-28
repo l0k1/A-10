@@ -20,6 +20,19 @@
 		</center>
 		<axis> <y>-1</y></axis>
 	</animation>
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>apu-start-switch</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>apu.toggle_off_start_switch()</script>
+			</binding>
+		</action>
+	</animation>
 	<!-- L engine operation switch -->
 	<animation>
 		<object-name>l-eng-oper-switch</object-name>
@@ -35,6 +48,22 @@
 			<z-m>0.0031</z-m>
 		</center>
 		<axis><y>-1</y> </axis>
+	</animation>
+	<animation>
+		<type>slider</type>
+		<object-name>l-eng-oper-switch</object-name>
+		<action>
+			<binding>
+				<command>nasal</command>
+				<script>A10engines.eng_oper_switch_move(0, 1)</script>
+			</binding>
+		</action>
+		<shift-action>
+			<binding>
+				<command>nasal</command>
+				<script>A10engines.eng_oper_switch_move(0, 0)</script>
+			</binding>
+		</shift-action>
 	</animation>
 	<!-- R engine operation switch -->
 	<animation>
@@ -52,6 +81,22 @@
 		</center>
 		<axis><y>-1</y></axis>
 	</animation>
+	<animation>
+		<type>slider</type>
+		<object-name>r-eng-oper-switch</object-name>
+		<action>
+			<binding>
+				<command>nasal</command>
+				<script>A10engines.eng_oper_switch_move(1, 1)</script>
+			</binding>
+		</action>
+		<shift-action>
+			<binding>
+				<command>nasal</command>
+				<script>A10engines.eng_oper_switch_move(1, 0)</script>
+			</binding>
+		</shift-action>
+	</animation>
 
 
 	<!-- Throttles -->
@@ -66,6 +111,19 @@
 		</center>
 		<axis><y>-1</y></axis>
 	</animation>
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>r-throttle</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>A10engines.throttle_cutoff_mov(1)</script>
+			</binding>
+		</action>
+	</animation>
 
 	<animation> 
 		<object-name>l-throttle</object-name>
@@ -77,6 +135,19 @@
 			<z-m>-0.0852</z-m>
 		</center>
 		<axis><y>-1</y></axis>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>l-throttle</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>A10engines.throttle_cutoff_mov(0)</script>
+			</binding>
+		</action>
 	</animation>
 
 

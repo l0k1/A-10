@@ -387,26 +387,6 @@
 			<z-m>1.3153</z-m>
 		</top-left>
 	</panel>
-	<!-- fuel panel -->
-	<panel>
-		<name>Panel-l1</name>
-		<path>Aircraft/A-10/Models/Cockpit/A-10-panel-l1-hotspot.xml</path>
-		<bottom-left>
-			<x-m>2.7752</x-m>
-			<y-m>-0.4353</y-m>
-			<z-m>0.7140</z-m>
-		</bottom-left>
-		<bottom-right>
-			<x-m>2.7752</x-m>
-			<y-m>-0.2751</y-m>
-			<z-m>0.7140</z-m>
-		</bottom-right>
-		<top-left>
-			<x-m>2.4344</x-m>
-			<y-m>-0.4353</y-m>
-			<z-m>0.8580</z-m>
-		</top-left>
-	</panel>
 
 <!-- 	<panel>
 		<name>Panel-l2</name>
