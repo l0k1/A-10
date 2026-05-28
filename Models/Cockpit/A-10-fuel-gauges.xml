@@ -50,6 +50,22 @@
 		</center>
 		<axis><x>-1</x></axis>
 	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>knob</object-name>
+		<increase>
+			<binding>
+				<command>nasal</command>
+				<script>A10fuel.fuel_sel_knob_move(1)</script>
+			</binding>
+		</increase>
+		<decrease>
+			<binding>
+				<command>nasal</command>
+				<script>A10fuel.fuel_sel_knob_move(-1)</script>
+			</binding>
+		</decrease>
+	</animation>
 
 	<!-- fuel test indicator -->
 	<animation>
@@ -58,6 +74,19 @@
 		<property>sim/model/A-10/controls/fuel/fuel-test-ind</property>
 		<factor>-0.005</factor>
 		<axis><x>1</x></axis>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>test-button</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/model/A-10/controls/fuel/fuel-test-ind</property>
+			</binding>
+		</action>
 	</animation>
 
 
