@@ -72,8 +72,9 @@
 
 
 	<!-- aux-lg-ext-handle -->
+
 	<animation>
-		<type>translate</type>
+		<type>slider</type>
 		<object-name>aux-lg-ext-handle</object-name>
 		<property>sim/model/A-10/controls/gear/aux-lg-ext</property>
 		<factor>0.04</factor>
@@ -82,6 +83,12 @@
 			<y>0.00</y>
 			<z>0.0232</z>
 		</axis>
+		<action>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/model/A-10/controls/gear/aux-lg-ext</property>
+            </binding>
+        </action>
 	</animation>
 
 	<animation>
