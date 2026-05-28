@@ -142,6 +142,46 @@
 		</center>
 		<axis><z>1</z></axis>
 	</animation>
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>ptr-switch</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/model/A-10/A-10-nav/selector-ptr</property>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>ILS-btn</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>nav_scripts.nav_mode_selector(5)</script>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>TCN-btn</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>nav_scripts.nav_mode_selector(6)</script>
+			</binding>
+		</action>
+	</animation>
 
 
 	<!-- lighting -->

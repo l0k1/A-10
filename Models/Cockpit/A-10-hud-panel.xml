@@ -28,6 +28,54 @@
 			</binding>
 		</action>		
 	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>depr-knob</object-name>
+		<increase>
+			<binding>
+				<command>property-adjust</command>
+				<property>sim/model/A-10/controls/hud/depr</property>
+				<step>-0.05</step>
+				<min>-1.0</min>
+				<max>1.0</max>
+				<wrap>false</wrap>
+			</binding>
+		</increase>
+		<decrease>
+			<binding>
+				<command>property-adjust</command>
+				<property>sim/model/A-10/controls/hud/depr</property>
+				<step>0.05</step>
+				<min>-1.0</min>
+				<max>1.0</max>
+				<wrap>false</wrap>
+			</binding>
+		</decrease>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>inten-knob</object-name>
+		<increase>
+			<binding>
+				<command>property-adjust</command>
+				<property>sim/model/A-10/controls/hud/intens</property>
+				<step>-0.1</step>
+				<min>0.0</min>
+				<max>1.0</max>
+				<wrap>false</wrap>
+			</binding>
+		</increase>
+		<decrease>
+			<binding>
+				<command>property-adjust</command>
+				<property>sim/model/A-10/controls/hud/intens</property>
+				<step>0.1</step>
+				<min>0.0</min>
+				<max>1.0</max>
+				<wrap>false</wrap>
+			</binding>
+		</decrease>
+	</animation>
 
 <!-- lighting -->
 

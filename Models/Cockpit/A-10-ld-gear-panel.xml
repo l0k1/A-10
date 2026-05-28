@@ -163,6 +163,22 @@
 		</center>
 		<axis><y>-1</y></axis>
 	</animation>
+	<animation>
+		<type>slider</type>
+		<object-name>light-land-switch</object-name>
+		<action>
+			<binding>
+				<command>nasal</command>
+				<script>electrical.land_lights_switcher(1)</script>
+			</binding>
+		</action>
+		<shift-action>
+			<binding>
+				<command>nasal</command>
+				<script>electrical.land_lights_switcher(-1)</script>
+			</binding>
+		</shift-action>
+	</animation>
 
 
 	<!-- lighting -->

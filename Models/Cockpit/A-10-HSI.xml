@@ -141,6 +141,82 @@
 	</center>
 	<axis><x>-1</x></axis>
 	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>course-knob</object-name>
+		<increase>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/nav[1]/radials/selected-deg</property>
+				<step>1</step>
+				<min>0</min>
+				<max>360</max>
+				<wrap>true</wrap>
+			</binding>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/nav[2]/radials/selected-deg</property>
+				<step>1</step>
+				<min>0</min>
+				<max>360</max>
+				<wrap>true</wrap>
+			</binding>
+		</increase>
+		<decrease>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/nav[1]/radials/selected-deg</property>
+				<step>-1</step>
+				<min>0</min>
+				<max>360</max>
+				<wrap>true</wrap>
+			</binding>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/nav[2]/radials/selected-deg</property>
+				<step>-1</step>
+				<min>0</min>
+				<max>360</max>
+				<wrap>true</wrap>
+			</binding>
+		</decrease>
+		<shift-increase>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/nav[1]/radials/selected-deg</property>
+				<step>5</step>
+				<min>0</min>
+				<max>360</max>
+				<wrap>true</wrap>
+			</binding>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/nav[2]/radials/selected-deg</property>
+				<step>5</step>
+				<min>0</min>
+				<max>360</max>
+				<wrap>true</wrap>
+			</binding>
+		</shift-increase>
+		<shift-decrease>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/nav[1]/radials/selected-deg</property>
+				<step>-5</step>
+				<min>0</min>
+				<max>360</max>
+				<wrap>true</wrap>
+			</binding>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/nav[2]/radials/selected-deg</property>
+				<step>-5</step>
+				<min>0</min>
+				<max>360</max>
+				<wrap>true</wrap>
+			</binding>
+		</shift-decrease>
+	</animation>
 
 	<animation>
 	<type>rotate</type>
@@ -151,6 +227,50 @@
 		<z-m>-0.0413</z-m>
 	</center>
 	<axis><x>-1</x></axis>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>heading-set-knob</object-name>
+		<increase>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/heading-indicator-fg/offset-deg</property>
+				<step>1</step>
+				<min>-180</min>
+				<max>180</max>
+				<wrap>true</wrap>
+			</binding>
+		</increase>
+		<decrease>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/heading-indicator-fg/offset-deg</property>
+				<step>-1</step>
+				<min>-180</min>
+				<max>180</max>
+				<wrap>true</wrap>
+			</binding>
+		</decrease>
+		<shift-increase>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/heading-indicator-fg/offset-deg</property>
+				<step>5</step>
+				<min>-180</min>
+				<max>180</max>
+				<wrap>true</wrap>
+			</binding>
+		</shift-increase>
+		<shift-decrease>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/heading-indicator-fg/offset-deg</property>
+				<step>-5</step>
+				<min>-180</min>
+				<max>180</max>
+				<wrap>true</wrap>
+			</binding>
+		</shift-decrease>
 	</animation>
 
 
