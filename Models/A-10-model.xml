@@ -368,26 +368,6 @@
 
 	<!-- 3D panels for hot-spots -->o
 
-	<panel>
-		<name>Panel-L</name>
-		<path>Aircraft/A-10/Models/Cockpit/A-10-panel-L-hotspot.xml</path>
-		<bottom-left>
-			<x-m>2.4354</x-m>
-			<y-m>-0.4885</y-m>
-			<z-m>0.8445</z-m>
-		</bottom-left>
-		<bottom-right>
-			<x-m>2.4354</x-m>
-			<y-m>-0.0690</y-m>
-			<z-m>0.8445</z-m>
-		</bottom-right>
-		<top-left>
-			<x-m>2.4019</x-m>
-			<y-m>-0.4885</y-m>
-			<z-m>1.3153</z-m>
-		</top-left>
-	</panel>
-
 <!-- 	<panel>
 		<name>Panel-l2</name>
 		<path>Aircraft/A-10/Models/Cockpit/A-10-panel-l2-hotspot.xml</path>
