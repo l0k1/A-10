@@ -429,27 +429,6 @@
 		</top-left>
 	</panel>
 
-	<!-- TACAN panel -->
-	<panel>
-		<name>Panel-r2</name>
-		<path>Aircraft/A-10/Models/Cockpit/A-10-panel-r2-hotspot.xml</path>
-		<bottom-left>
-			<x-m>3.2029</x-m>
-			<y-m>0.2785</y-m>
-			<z-m>0.7146</z-m>
-		</bottom-left>
-		<bottom-right>
-			<x-m>3.2029</x-m>
-			<y-m>0.4327</y-m>
-			<z-m>0.7146</z-m>
-		</bottom-right>
-		<top-left>
-			<x-m>2.6823</x-m>
-			<y-m>0.2785</y-m>
-			<z-m>0.7146</z-m>
-		</top-left>
-	</panel>
-
 	<!-- cockpit switch -->
 	<panel>
 		<name>Panel-r5</name>
@@ -815,15 +794,6 @@
 			<y-m>0.5070</y-m>
 			<z-m>0.7298</z-m>
 			<roll-deg>14</roll-deg>
-		</offsets>
-	</model>
-
-	<model>
-		<path>Aircraft/A-10/Models/Cockpit/A-10-tacan.xml</path>
-		<offsets>
-			<x-m>2.8500</x-m>
-			<y-m>0.3542</y-m>
-			<z-m>0.7110</z-m>
 		</offsets>
 	</model>
 

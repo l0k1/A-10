@@ -9,27 +9,43 @@ var ils_freq_sel     = ils_freq.getNode("selected-mhz", 1);
 var ils_freq_sel_fmt = ils_freq.getNode("selected-mhz-fmt", 1);
 var ils_btn          = props.globals.getNode("sim/model/A-10/A-10-nav/selector-ils");
 
-
-# update selected-mhz with translated decimals
-
 var nav0_freq_update = func {
 	var test = getprop("instrumentation/nav[0]/frequencies/selected-mhz");
-	if (! test) {
-		setprop("sim/model/A-10/instrumentation/nav[0]/frequencies/freq-whole", 0);
+	setprop("sim/model/A-10/instrumentation/nav[0]/frequencies/freq-whole", test * 100);
+}
+
+# Adjust ILS selected frequency:
+# mode = "units" or "decimal"
+var nav0_ils_adjust = func {
+	var step = int(arg[0]); if (step == 0) return;
+	var mode = arg[1];
+	var f = getprop("instrumentation/nav[0]/frequencies/selected-mhz");
+	var whole = int(f);
+	var dec = int(((f - whole) * 100) + 0.5);
+
+	if (mode == "units") {
+		whole += step;
+		if (whole < 107) whole = 111;
+		if (whole > 111) whole = 108;
 	} else {
-		setprop("sim/model/A-10/instrumentation/nav[0]/frequencies/freq-whole", test * 100);
+		var tick = int((dec / 5.0) + 0.5); # 0..19
+		tick += step;
+		if (tick < 0) tick = 19;
+		if (tick > 19) tick = 0;
+		dec = tick * 5;
 	}
+
+	if (whole == 108 and dec < 10) dec = 10;
+	if (whole == 111 and dec > 95) dec = 95;
+	setprop("instrumentation/nav[0]/frequencies/selected-mhz", whole + (dec / 100.0));
+	nav0_freq_update();
 }
 
 
 # TACAN: nav[1]
 # ------------- 
 var nav1_back = 0;
-var launched = 0; # Used to avoid to setlisteners more than once.
-if (! launched) {
-	setlistener( "instrumentation/tacan/switch-position", func {nav1_freq_update();} );
-	launched = 1;
-}
+var nav1_using_tacan = 0;
 
 var tc              = props.globals.getNode("instrumentation/tacan/");
 var tc_sw_pos       = tc.getNode("switch-position");
@@ -62,36 +78,25 @@ var tacan_offset_apply = func {
 
 var nav1_freq_update = func {
 	if ( tc_sw_pos.getValue() == 1 ) {
-		#print("nav1_freq_updat etc_sw_pos = 1");
 		var tacan_freq = getprop( "instrumentation/tacan/frequencies/selected-mhz" );
-		var nav1_freq = getprop( "instrumentation/nav[1]/frequencies/selected-mhz" );
-		var nav1_back = nav1_freq;
+		if (! nav1_using_tacan) {
+			nav1_back = getprop( "instrumentation/nav[1]/frequencies/selected-mhz" );
+			nav1_using_tacan = 1;
+		}
 		setprop("instrumentation/nav[1]/frequencies/selected-mhz", tacan_freq);
 	} else {
-	setprop("instrumentation/nav[1]/frequencies/selected-mhz", nav1_back);
+		if (nav1_using_tacan) {
+			setprop("instrumentation/nav[1]/frequencies/selected-mhz", nav1_back);
+			nav1_using_tacan = 0;
+		}
 	}
 }
 
-var tacan_XYtoggle = func {
-	var xy_sign = tc_freq.getNode("selected-channel[4]");
-	var s = xy_sign.getValue();
-	if ( s == "X" ) {
-		xy_sign.setValue( "Y" );
-	} else {
-		xy_sign.setValue( "X" );
-	}
-}
-
-var tacan_tenth_adjust = func {
-	var tenths = getprop( "instrumentation/tacan/frequencies/selected-channel[2]" );
-	var hundreds = getprop( "instrumentation/tacan/frequencies/selected-channel[1]" );
-	var value = (10 * tenths) + (100 * hundreds);
-	var adjust = arg[0];
-	var new_value = value + adjust;
-	var new_hundreds = int(new_value/100);
-	var new_tenths = (new_value - (new_hundreds*100))/10;
-	setprop( "instrumentation/tacan/frequencies/selected-channel[1]", new_hundreds );
-	setprop( "instrumentation/tacan/frequencies/selected-channel[2]", new_tenths );
+var launched = 0; # Used to avoid setting listeners more than once.
+if (! launched) {
+	setlistener("instrumentation/tacan/switch-position", func { nav1_freq_update(); });
+	setlistener("instrumentation/tacan/frequencies/selected-mhz", func { nav1_freq_update(); });
+	launched = 1;
 }
 
 # TACAN on HSI's Course Deviation Indicator
@@ -235,9 +240,8 @@ var freq_startup = func {
 	aircraft.data.add(ils_freq_sel);
 	aircraft.data.add(ils_freq_sel_fmt);
 	## nav[1] - TACAN
-	foreach (var f_tc; tc_freq.getChildren()) {
-		aircraft.data.add(f_tc);
-	}
+	aircraft.data.add("instrumentation/tacan/frequencies/selected-channel");
+	aircraft.data.add("instrumentation/tacan/frequencies/selected-channel[4]");
 	## comm[0] and nav[2] - VHF
 	change_preset(0);
 	# add all the restored pressets to a new aircraft data file
