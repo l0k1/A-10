@@ -7,7 +7,7 @@
 	<!-- apu-gen-power -->
 	<animation>
 		<object-name>apu-gen-pwr-switch</object-name>
-		<type>rotate</type>
+		<type>knob</type>
 		<property>controls/APU/generator</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>-30</dep></entry>
@@ -18,14 +18,7 @@
 			<z-m>0.0031</z-m>
 		</center>
 		<axis><y>-1</y></axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<visible>true</visible>
-		<object-name>apu-gen-pwr</object-name>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>controls/APU/generator</property>
@@ -37,7 +30,7 @@
 	<!-- inverter-stby -->
 	<animation>
 		<object-name>inverter-stby-switch</object-name>
-		<type>rotate</type>
+		<type>knob</type>
 		<property>sim/model/A-10/controls/switches/inverter</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>-30</dep></entry>
@@ -49,30 +42,10 @@
 			<z-m>0.0031</z-m>
 		</center>
 		<axis><y>-1</y></axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<visible>true</visible>
-		<object-name>inverter-stby-up</object-name>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<command>nasal</command>
-				<script>electrical.inverter_switch(1)</script>
-			</binding>
-		</action>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<visible>true</visible>
-		<object-name>inverter-stby-down</object-name>
-		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
-			<binding>
-				<command>nasal</command>
-				<script>electrical.inverter_switch(-1)</script>
+				<script>electrical.inverter_switch(cmdarg().getNode("offset").getValue())</script>
 			</binding>
 		</action>
 	</animation>
@@ -81,7 +54,7 @@
 	<!-- l-ac-gen-power -->
 	<animation>
 		<object-name>l-ac-gen-switch</object-name>
-		<type>rotate</type>
+		<type>knob</type>
 		<property>controls/electric/engine[0]/generator</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>-30</dep></entry>
@@ -92,14 +65,7 @@
 			<z-m>0.0031</z-m>
 		</center>
 		<axis><y>-1</y></axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<visible>true</visible>
-		<object-name>l-ac-gen</object-name>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>controls/electric/engine[0]/generator</property>
@@ -110,7 +76,7 @@
 	<!-- r-ac-gen-pwr -->
 	<animation>
 		<object-name>r-ac-gen-switch</object-name>
-		<type>rotate</type>
+		<type>knob</type>
 		<property>controls/electric/engine[1]/generator</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>-30</dep></entry>
@@ -121,14 +87,7 @@
 			<z-m>0.0031</z-m>
 		</center>
 		<axis><y>-1</y></axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<visible>true</visible>
-		<object-name>r-ac-gen</object-name>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>controls/electric/engine[1]/generator</property>
@@ -139,7 +98,7 @@
 	<!-- battery-pwr -->
 	<animation>
 		<object-name>battery-pwr-switch</object-name>
-		<type>rotate</type>
+		<type>knob</type>
 		<property>controls/electric/battery-switch</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>-30</dep></entry>
@@ -150,14 +109,7 @@
 			<z-m>0.0031</z-m>
 		</center>
 		<axis><y>-1</y></axis>
-	</animation>
-	<animation>
-		<type>pick</type>
-		<visible>true</visible>
-		<object-name>battery-pwr</object-name>
 		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>controls/electric/battery-switch</property>

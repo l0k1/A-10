@@ -620,16 +620,6 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/Cockpit/A-10-fuel-control.xml</path>
-		<offsets>
-			<x-m>2.5232</x-m>
-			<y-m>-0.3572</y-m>
-			<z-m>0.8150</z-m>
-			<pitch-deg>22.75</pitch-deg>
-		</offsets>
-	</model>
-
-	<model>
 		<path>Aircraft/A-10/Models/Cockpit/A-10-throttle.xml</path>
 		<offsets>
 			<x-m>2.6942</x-m>

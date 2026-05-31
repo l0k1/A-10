@@ -4,6 +4,9 @@
 
 	<name>cockpit</name>
 	<path>cockpit.ac</path>
+	<defaults>
+		<axis-animation-vertex-order-xyz/>
+	</defaults>
 
 	<!--LASTE PANEL-->	
 
@@ -483,7 +486,6 @@
 			</interpolation>
 			<axis>
 				<object-name>lx_strobe-switch-axis</object-name>
-				<swap-axis-direction/>
 			</axis>
 		</animation>
 
@@ -512,7 +514,6 @@
 			</interpolation>
 			<axis>
 				<object-name>lx_nav-flash-switch-axis</object-name>
-				<swap-axis-direction/>
 			</axis>
 		</animation>
 
@@ -947,10 +948,10 @@
 			</decrease>
 		</animation>
 
-	<animation>
-			<type>knob</type>
-			<visible>true</visible>
-			<object-name>Tcn_digit-knob</object-name>
+		<animation>
+				<type>knob</type>
+				<visible>true</visible>
+				<object-name>Tcn_digit-knob</object-name>
 			<property>instrumentation/tacan/frequencies/selected-channel[3]</property>
 			<factor>36</factor>
 			<axis>
@@ -975,12 +976,303 @@
 					<max>9</max>
 					<wrap>true</wrap>
 				</binding>
+				</decrease>
+			</animation>
+
+
+		<!-- Migrated From A-10-fuel-control.xml -->
+
+		<!-- AAR receiver lever -->
+		<animation>
+			<type>knob</type>
+			<object-name>rcvr-handle</object-name>
+			<property>systems/refuel/receiver-lever</property>
+			<interpolation>
+				<entry>
+					<ind>0</ind>
+					<dep>30</dep>
+				</entry>
+				<entry>
+					<ind>1</ind>
+					<dep>-30</dep>
+				</entry>
+			</interpolation>
+			<axis>
+				<object-name>rcvr-handle-axis</object-name>
+			</axis>
+			<increase>
+				<binding>
+					<command>nasal</command>
+					<script>A10fuel.aar_receiver_lever(1)</script>
+				</binding>
+			</increase>
+			<decrease>
+				<binding>
+					<command>nasal</command>
+					<script>A10fuel.aar_receiver_lever(0)</script>
+				</binding>
 			</decrease>
+		</animation>
+
+		<!-- External tank switches -->
+		<animation>
+			<type>knob</type>
+			<object-name>ext-tks-wing-switch</object-name>
+			<property>controls/fuel/tank[4]/boost-pump[0]</property>
+			<factor>60</factor>
+			<axis>
+				<object-name>ext-tks-wing-switch-axis</object-name>
+			</axis>
+			<action>
+				<binding>
+					<command>property-toggle</command>
+					<property>controls/fuel/tank[4]/boost-pump[0]</property>
+				</binding>
+			</action>
+		</animation>
+
+		<animation>
+			<type>knob</type>
+			<object-name>ext-tks-fus-switch</object-name>
+			<property>controls/fuel/tank[5]/boost-pump[0]</property>
+			<factor>60</factor>
+			<axis>
+				<object-name>ext-tks-fus-switch-axis</object-name>
+			</axis>
+			<action>
+				<binding>
+					<command>property-toggle</command>
+					<property>controls/fuel/tank[5]/boost-pump[0]</property>
+				</binding>
+			</action>
+		</animation>
+
+		<!-- Tank gate and cross-feed switches -->
+		<animation>
+			<type>knob</type>
+			<object-name>tk-gate-switch</object-name>
+			<property>sim/model/A-10/controls/fuel/tk-gate-switch</property>
+			<factor>60</factor>
+			<axis>
+				<object-name>tk-gate-switch-axis</object-name>
+			</axis>
+			<action>
+				<binding>
+					<command>property-toggle</command>
+					<property>sim/model/A-10/controls/fuel/tk-gate-switch</property>
+				</binding>
+			</action>
+		</animation>
+
+		<animation>
+			<type>knob</type>
+			<object-name>cross-feed-switch</object-name>
+			<property>sim/model/A-10/controls/fuel/cross-feed-sw</property>
+			<factor>60</factor>
+			<axis>
+				<object-name>cross-feed-switch-axis</object-name>
+			</axis>
+			<action>
+				<binding>
+					<command>property-toggle</command>
+					<property>sim/model/A-10/controls/fuel/cross-feed-sw</property>
+				</binding>
+			</action>
+		</animation>
+
+		<!-- Boost pump switches -->
+		<animation>
+			<type>knob</type>
+			<object-name>boost-pump-wing-l-switch</object-name>
+			<property>controls/fuel/tank[0]/boost-pump[0]</property>
+			<factor>60</factor>
+			<axis>
+				<object-name>boost-pump-wing-l-switch-axis</object-name>
+			</axis>
+			<action>
+				<binding>
+					<command>property-toggle</command>
+					<property>controls/fuel/tank[0]/boost-pump[0]</property>
+				</binding>
+			</action>
+		</animation>
+
+		<animation>
+			<type>knob</type>
+			<object-name>boost-pump-wing-r-switch</object-name>
+			<property>controls/fuel/tank[3]/boost-pump[0]</property>
+			<factor>60</factor>
+			<axis>
+				<object-name>boost-pump-wing-r-switch-axis</object-name>
+			</axis>
+			<action>
+				<binding>
+					<command>property-toggle</command>
+					<property>controls/fuel/tank[3]/boost-pump[0]</property>
+				</binding>
+			</action>
+		</animation>
+
+		<animation>
+			<type>knob</type>
+			<object-name>boost-pump-main-l-switch</object-name>
+			<property>controls/fuel/tank[1]/boost-pump[0]</property>
+			<factor>60</factor>
+			<axis>
+				<object-name>boost-pump-main-l-switch-axis</object-name>
+			</axis>
+			<action>
+				<binding>
+					<command>property-toggle</command>
+					<property>controls/fuel/tank[1]/boost-pump[0]</property>
+				</binding>
+			</action>
+		</animation>
+
+		<animation>
+			<type>knob</type>
+			<object-name>boost-pump-main-r-switch</object-name>
+			<property>controls/fuel/tank[2]/boost-pump[0]</property>
+			<factor>60</factor>
+			<axis>
+				<object-name>boost-pump-main-r-switch-axis</object-name>
+			</axis>
+			<action>
+				<binding>
+					<command>property-toggle</command>
+					<property>controls/fuel/tank[2]/boost-pump[0]</property>
+				</binding>
+			</action>
+		</animation>
+
+		<!-- Fill-disable push buttons -->
+		<animation>
+			<type>translate</type>
+			<object-name>fill-disable-wing-l-button</object-name>
+			<property>controls/fuel/tank[0]/fill-dis</property>
+			<factor>0.08</factor>
+			<axis>
+				<object-name>fill-disable-wing-l-button-axis</object-name>
+				<swap-axis-direction/>
+			</axis>
+		</animation>
+
+		<animation>
+			<type>pick</type>
+			<visible>true</visible>
+			<object-name>fill-disable-wing-l-button</object-name>
+			<action>
+				<button>0</button>
+				<repeatable>false</repeatable>
+				<binding>
+					<command>nasal</command>
+					<script>A10fuel.fill_dis_toggle(0)</script>
+				</binding>
+			</action>
+		</animation>
+
+		<animation>
+			<type>translate</type>
+			<object-name>fill-disable-wing-r-button</object-name>
+			<property>controls/fuel/tank[3]/fill-dis</property>
+			<factor>0.08</factor>
+			<axis>
+				<object-name>fill-disable-wing-r-button-axis</object-name>
+				<swap-axis-direction/>
+			</axis>
+		</animation>
+
+		<animation>
+			<type>pick</type>
+			<visible>true</visible>
+			<object-name>fill-disable-wing-r-button</object-name>
+			<action>
+				<button>0</button>
+				<repeatable>false</repeatable>
+				<binding>
+					<command>nasal</command>
+					<script>A10fuel.fill_dis_toggle(3)</script>
+				</binding>
+			</action>
+		</animation>
+
+		<animation>
+			<type>translate</type>
+			<object-name>fill-disable-main-l-button</object-name>
+			<property>controls/fuel/tank[1]/fill-dis</property>
+			<factor>0.08</factor>
+			<axis>
+				<object-name>fill-disable-main-l-button-axis</object-name>
+				<swap-axis-direction/>
+			</axis>
+		</animation>
+
+		<animation>
+			<type>pick</type>
+			<visible>true</visible>
+			<object-name>fill-disable-main-l-button</object-name>
+			<action>
+				<button>0</button>
+				<repeatable>false</repeatable>
+				<binding>
+					<command>nasal</command>
+					<script>A10fuel.fill_dis_toggle(1)</script>
+				</binding>
+			</action>
+		</animation>
+
+		<animation>
+			<type>translate</type>
+			<object-name>fill-disable-main-r-button</object-name>
+			<property>controls/fuel/tank[2]/fill-dis</property>
+			<factor>0.08</factor>
+			<axis>
+				<object-name>fill-disable-main-r-button-axis</object-name>
+				<swap-axis-direction/>
+			</axis>
+		</animation>
+
+		<animation>
+			<type>pick</type>
+			<visible>true</visible>
+			<object-name>fill-disable-main-r-button</object-name>
+			<action>
+				<button>0</button>
+				<repeatable>false</repeatable>
+				<binding>
+					<command>nasal</command>
+					<script>A10fuel.fill_dis_toggle(2)</script>
+				</binding>
+			</action>
+		</animation>
+
+		<!-- Fuel-control lighting -->
+		<effect>
+			<inherits-from>Aircraft/A-10/Models/Effects/interior/panel</inherits-from>
+			<parameters>
+				<implicit-lightmap-threshold-low type="float">0.2</implicit-lightmap-threshold-low>
+				<implicit-lightmap-threshold-high type="float">1.2</implicit-lightmap-threshold-high>
+				<lightmap-factor n="0"><use>controls/lighting/panel-int</use></lightmap-factor>
+			</parameters>
+			<object-name>fuelCtrl-base</object-name>
+		</effect>
+
+		<animation>
+			<type>material</type>
+			<object-name>fuelCtrl-base</object-name>
+			<object-name>fuelCtrl-bkg</object-name>
+			<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+			<emission>
+				<factor-prop>controls/lighting/panel-norm</factor-prop>
+				<red>0.385</red>
+				<green>0.168</green>
+				<blue>0.07</blue>
+			</emission>
 		</animation>
 
 
 
-	<!-- Migrated From A-10-warn-panel.xml -->
+		<!-- Migrated From A-10-warn-panel.xml -->
 
 	<animation>
 			<type>select</type>
