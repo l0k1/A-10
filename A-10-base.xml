@@ -13,6 +13,7 @@ Fairchild A-10 simulation config.
 	<sim>
 		<author>Lee Elliott, Alexis Bory, David Bastien, Pinto, Steve Brown, J Maverick 16, Zorka, SammySkycrafts</author>
 		<status>production</status>
+		<minimum-fg-version>2024.1.1</minimum-fg-version>
 		<rating>
 			<FDM type="int">4</FDM>
 			<systems type="int">5</systems>
@@ -41,6 +42,11 @@ Fairchild A-10 simulation config.
 			<tag>jet</tag>
 			<tag>twin-engine</tag>
 		</tags>
+		<urls>
+			<code-repository>https://github.com/l0k1/A-10</code-repository>
+			<community>https://discord.gg/7gNFHsKvBf</community>
+			<wikipedia>https://en.wikipedia.org/wiki/Fairchild_Republic_A-10_Thunderbolt_II</wikipedia>
+		</urls>
 
 		<previews>
 		    <preview>
