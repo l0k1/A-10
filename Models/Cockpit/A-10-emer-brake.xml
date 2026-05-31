@@ -7,7 +7,7 @@
 
 	<animation>
 		<object-name>emer-brake</object-name>
-		<type>translate</type>
+		<type>slider</type>
 		<property>controls/gear/brake-parking</property>
 		<factor>0.05</factor>
 		<center>
@@ -16,6 +16,12 @@
 			<z-m>0.8366</z-m>
 		</center>
 		<axis><x>1</x></axis>
+		<action>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/gear/brake-parking</property>
+			</binding>
+		</action>
 	</animation>
 
 
