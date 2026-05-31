@@ -82,6 +82,9 @@
         <object-name>Oxy_Screw1</object-name>
         <object-name>Oxy_Screw2</object-name>
         <object-name>Oxy_Window</object-name>
+        <!--CanopySwitch-->
+        <object-name>canopy-mount</object-name>
+        <object-name>canopy-pos-switch</object-name>
         <!-- MPCD A-10A+-->
         <object-name>MPCD_base</object-name>
 		<type>material</type>
@@ -102,12 +105,13 @@
 			<lightmap-factor n="0"><use>controls/lighting/panel-int</use></lightmap-factor>
 		</parameters>
 		<object-name>LASTE_Base</object-name>
-		<object-name>TV_Base</object-name>
-		<object-name>VHF1_Base</object-name>
-		<object-name>UHF_Base</object-name>
-		<object-name>VHF2_Base</object-name>
-		<object-name>KY58_Base</object-name>
-	</effect>
+			<object-name>TV_Base</object-name>
+			<object-name>VHF1_Base</object-name>
+			<object-name>UHF_Base</object-name>
+			<object-name>VHF2_Base</object-name>
+			<object-name>KY58_Base</object-name>
+			<object-name>canopy-mount</object-name>
+		</effect>
 
     <effect>
         <inherits-from>Aircraft/A-10/Models/Effects/interior/panel-nvis</inherits-from>
@@ -120,7 +124,31 @@
         <object-name>MPCF_buttons</object-name>
     </effect>
 
-	<!-- VHF1 (AN/ARC-186 replacement) interactions -->
+	<!-- Canopy position switch -->
+	<animation>
+		<type>knob</type>
+		<object-name>canopy-pos-switch</object-name>
+		<property>sim/model/A-10/controls/canopy/canopy-switch</property>
+		<factor>30</factor>
+		<offset-deg>-60</offset-deg>
+		<axis>
+			<object-name>canopy-pos-switch-axis</object-name>
+		</axis>
+		<action>
+			<binding>
+				<command>nasal</command>
+				<script>canopy.canopy_switch(cmdarg().getNode("offset").getValue())</script>
+			</binding>
+		</action>
+		<release>
+			<binding>
+				<command>nasal</command>
+				<script>canopy.canopy_hold()</script>
+			</binding>
+		</release>
+	</animation>
+
+		<!-- VHF1 (AN/ARC-186 replacement) interactions -->
 	<animation>
 		<type>knob</type>
 		<visible>true</visible>
