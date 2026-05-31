@@ -1,5 +1,5 @@
 # used to the animation of the canopy switch and the canopy move
-# toggle keystroke or 2 position switch
+# switch positions: 1 = close, 2 = hold, 3 = open
 
 var cnpy = aircraft.door.new("canopy", 10);
 var switch = props.globals.getNode("sim/model/A-10/controls/canopy/canopy-switch", 1);
@@ -28,6 +28,13 @@ var canopy_switch = func(v) {
 	}
 }
 
+var canopy_hold = func {
+	if (switch.getValue() == 1) {
+		switch.setValue(2);
+		cnpy.stop();
+	}
+}
+
 # fixes cockpit when use of ac_state.nas #####
 var cockpit_state = func {
 	var switch = getprop("sim/model/A-10/controls/canopy/canopy-switch");
@@ -35,4 +42,3 @@ var cockpit_state = func {
 		setprop("canopy/position-norm", 0);
 	}
 }
-

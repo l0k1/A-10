@@ -650,16 +650,7 @@
 		</offsets>
 	</model>
 
-<!-- right console -->
-	<model>
-		<path>Aircraft/A-10/Models/Cockpit/A-10-canopy-switch.xml</path>
-		<offsets>
-			<x-m>0.0000</x-m>
-			<y-m>0.0000</y-m>
-			<z-m>0.0000</z-m>
-		</offsets>
-	</model>
-
+	<!-- right console -->
 	<model>
 		<path>Aircraft/A-10/Models/Cockpit/A-10-elec-pwr-ctrl.xml</path>
 		<offsets>
