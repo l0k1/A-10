@@ -156,7 +156,7 @@
 	<animation>
 		<object-name>mount</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition><not><property>/sim/rendering/rembrandt/enabled</property></not></condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.45</red>
@@ -168,7 +168,7 @@
 	<animation>
 		<object-name>gun-steering-marker-canopy</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition><not><property>/sim/rendering/rembrandt/enabled</property></not></condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.45</red>
@@ -182,7 +182,7 @@
 		<object-name>knobs</object-name>
 		<object-name>mount</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition><not><property>/sim/rendering/rembrandt/enabled</property></not></condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.30</red>

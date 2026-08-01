@@ -33,7 +33,7 @@
 	<animation> 
 		<object-name>consoles</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition><not><property>/sim/rendering/rembrandt/enabled</property></not></condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.225</red>
@@ -44,7 +44,7 @@
 	<animation>
 		<object-name>CPT-fake-panel</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition><not><property>/sim/rendering/rembrandt/enabled</property></not></condition>
 		<emission>
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
 			<red>0.50</red>

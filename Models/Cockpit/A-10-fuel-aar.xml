@@ -55,7 +55,7 @@
 	<animation> 
 		<object-name>refuel-none</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition><not><property>/sim/rendering/rembrandt/enabled</property></not></condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.11</red>

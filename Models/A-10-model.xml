@@ -354,7 +354,7 @@
 		<condition>
 			<not>
 				<equals>
-					<property>sim/current-view/name</property>
+					<property>/sim/current-view/name</property>
 					<value>Cockpit View</value>
 				</equals>
 			</not>
@@ -781,7 +781,7 @@
 		<condition>
 			<not>
 				<equals>
-					<property>sim/current-view/view-number</property>
+					<property>/sim/current-view/view-number</property>
 					<value>0</value>
 				</equals>
 			</not>
@@ -805,7 +805,7 @@
 			<and>
 				<property>sim/model/A-10/canopy-safe</property>
 				<not-equals>
-					<property>sim/current-view/view-number</property>
+					<property>/sim/current-view/view-number</property>
 					<value>0</value>
 				</not-equals>
 			</and>
@@ -1203,7 +1203,7 @@
 			</greater-than>
 			<not>
 				<equals>
-					<property>sim/current-view/view-number</property>
+					<property>/sim/current-view/view-number</property>
 					<value>0</value>
 				</equals>
 			</not>
@@ -1512,7 +1512,7 @@
 		<type>select</type>
 		<object-name>UC-NoseStrutSteerRing-light-on</object-name>
 		<condition>
-			<property>sim/rendering/rembrandt/enabled</property>
+			<property>/sim/rendering/rembrandt/enabled</property>
 			<equals>
 				<property>gear/gear[0]/position-norm</property>
 				<value>1</value>
@@ -1540,7 +1540,7 @@
 		<type>select</type>
 		<object-name>UC-NoseStrutTop-light-on</object-name>
 		<condition>
-			<property>sim/rendering/rembrandt/enabled</property>
+			<property>/sim/rendering/rembrandt/enabled</property>
 			<equals>
 				<property>gear/gear[0]/position-norm</property>
 				<value>1</value>

@@ -297,7 +297,7 @@
 	<animation> 
 		<object-name>mount</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition><not><property>/sim/rendering/rembrandt/enabled</property></not></condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.45</red>
@@ -309,7 +309,7 @@
 	<animation>
 		<object-name>face</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition><not><property>/sim/rendering/rembrandt/enabled</property></not></condition>
 		<emission>
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
 			<red>0.50</red>
@@ -321,7 +321,7 @@
 	<animation>
 		<object-name>needles</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition><not><property>/sim/rendering/rembrandt/enabled</property></not></condition>
 		<emission>
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
 			<red>0.70</red>

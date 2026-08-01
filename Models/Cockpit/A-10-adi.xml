@@ -8,7 +8,7 @@
 		<object-name>off-flag</object-name>
 		<condition>
 			<less-than>
-				<property>sim/current-view/name</property>
+				<property>/sim/current-view/name</property>
 				<value>24</value>
 			</less-than>
 		</condition>
@@ -334,7 +334,7 @@
 	<animation>
 		<object-name>ext</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition><not><property>/sim/rendering/rembrandt/enabled</property></not></condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.385</red>
@@ -346,7 +346,7 @@
 	<animation>
 		<object-name>instr</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition><not><property>/sim/rendering/rembrandt/enabled</property></not></condition>
 		<emission>
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
 			<red>0.55</red>

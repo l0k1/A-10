@@ -91,7 +91,7 @@
         <!-- MPCD A-10A+-->
         <object-name>MPCD_base</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition><not><property>/sim/rendering/rembrandt/enabled</property></not></condition>
 		<emission> 
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.385</red>
@@ -447,7 +447,7 @@
 	<animation>
 			<object-name>ILS_panel</object-name>
 			<type>material</type>
-			<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+			<condition><not><property>/sim/rendering/rembrandt/enabled</property></not></condition>
 			<emission>
 				<factor-prop>controls/lighting/panel-norm</factor-prop>
 				<red>0.385</red>
@@ -459,7 +459,7 @@
 	<animation>
 			<object-name>ILS_digits</object-name>
 			<type>material</type>
-			<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+			<condition><not><property>/sim/rendering/rembrandt/enabled</property></not></condition>
 			<emission>
 				<factor-prop>controls/lighting/instruments-norm</factor-prop>
 				<red>0.55</red>
@@ -643,7 +643,7 @@
 			<object-name>Lx_aux-inst-adjustable</object-name>
 			<object-name>Lx_flood-adjustable</object-name>
 			<type>material</type>
-			<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+			<condition><not><property>/sim/rendering/rembrandt/enabled</property></not></condition>
 			<emission>
 				<factor-prop>controls/lighting/panel-norm</factor-prop>
 				<red>0.385</red>
@@ -846,7 +846,7 @@
 	<animation>
 			<object-name>Tcn_tacan</object-name>
 			<type>material</type>
-			<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+			<condition><not><property>/sim/rendering/rembrandt/enabled</property></not></condition>
 			<emission>
 				<factor-prop>controls/lighting/panel-norm</factor-prop>
 				<red>0.385</red>
@@ -858,7 +858,7 @@
 	<animation>
 			<type>material</type>
 			<object-name>Tcn_test-lamp</object-name>
-			<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+			<condition><not><property>/sim/rendering/rembrandt/enabled</property></not></condition>
 			<emission>
 				<factor-prop>controls/lighting/panel-norm</factor-prop>
 				<red>0.275</red>
@@ -870,7 +870,7 @@
 	<animation>
 			<object-name>Tcn_drums</object-name>
 			<type>material</type>
-			<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+			<condition><not><property>/sim/rendering/rembrandt/enabled</property></not></condition>
 			<emission>
 				<factor-prop>controls/lighting/instruments-norm</factor-prop>
 				<red>0.55</red>
@@ -1261,7 +1261,7 @@
 			<type>material</type>
 			<object-name>fuelCtrl-base</object-name>
 			<object-name>fuelCtrl-bkg</object-name>
-			<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+			<condition><not><property>/sim/rendering/rembrandt/enabled</property></not></condition>
 			<emission>
 				<factor-prop>controls/lighting/panel-norm</factor-prop>
 				<red>0.385</red>
@@ -1779,7 +1779,7 @@
 	<animation>
 			<object-name>Lx_Base</object-name>
 			<type>material</type>
-			<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+			<condition><not><property>/sim/rendering/rembrandt/enabled</property></not></condition>
 			<emission>
 				<factor-prop>controls/lighting/panel-norm</factor-prop>
 				<red>0.385</red>
@@ -1805,7 +1805,7 @@
 	        <object-name>Oxy_Supply_Switch</object-name>
 	        <!--<object-name>Oxy_Flow_Screen</object-name>-->
 			<type>material</type>
-			<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+			<condition><not><property>/sim/rendering/rembrandt/enabled</property></not></condition>
 			<emission>
 				<factor-prop>controls/lighting/panel-norm</factor-prop>
 				<red>0.385</red>
