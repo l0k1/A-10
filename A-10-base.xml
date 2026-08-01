@@ -311,6 +311,7 @@ Fairchild A-10 simulation config.
 
 		<model>
 			<path>Aircraft/A-10/Models/A-10-model.xml</path>
+			<fallback-model-index>501</fallback-model-index>
 			<livery>
 				<file type="string"/>
 			</livery>

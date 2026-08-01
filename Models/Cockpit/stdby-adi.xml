@@ -8,7 +8,7 @@
 		<object-name>stdby-adi</object-name>
 		<condition>
 			<equals>
-				<property>sim/current-view/name</property>
+				<property>/sim/current-view/name</property>
 				<value>Cockpit View</value>
 			</equals>
 		</condition>
@@ -85,7 +85,7 @@
 	<animation>
 		<object-name>panel</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition><not><property>/sim/rendering/rembrandt/enabled</property></not></condition>
 		<emission>
 			<factor-prop>controls/lighting/panel-norm</factor-prop>
 			<red>0.55</red>
@@ -97,7 +97,7 @@
 	<animation>
 		<object-name>instrument</object-name>
 		<type>material</type>
-		<condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+		<condition><not><property>/sim/rendering/rembrandt/enabled</property></not></condition>
 		<emission>
 			<factor-prop>controls/lighting/instruments-norm</factor-prop>
 			<red>0.55</red>

@@ -55,16 +55,13 @@
 	</animation>	
 
 
-	<!-- De-select when in view 0 -->
+	<!-- De-select when in internal view -->
 	<animation>
 		<type>select</type>
 		<object-name>Pilot</object-name>
 		<condition>
 			<not>
-				<equals>
-					<property>sim/current-view/view-number</property>
-					<value>0</value>
-				</equals>
+				<property>/sim/current-view/internal</property>
 			</not>
 		</condition>
 	</animation>

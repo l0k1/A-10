@@ -18,7 +18,7 @@
 
 	<animation>
 		<type>select</type>
-		<condition><property>sim/rendering/rembrandt/enabled</property></condition>
+		<condition><property>/sim/rendering/rembrandt/enabled</property></condition>
 		<object-name>taxi-light-cone</object-name>
 		<object-name>taxi-halo-sphere</object-name>
 	</animation>
@@ -387,7 +387,7 @@
 		<object-name>Taxi-halo</object-name>
 		<condition>
 			<not>
-				<property>sim/rendering/rembrandt/enabled</property>
+				<property>/sim/rendering/rembrandt/enabled</property>
 			</not>
 			<equals>
 				<property>gear/gear[0]/position-norm</property>
@@ -477,7 +477,7 @@
 		<condition>
 			<not>
 				<equals>
-					<property>sim/current-view/name</property>
+					<property>/sim/current-view/name</property>
 					<value>Cockpit View</value>
 				</equals>
 			</not>
@@ -515,7 +515,7 @@
 		<object-name>Landing-halo</object-name>
 		<condition>
 			<not>
-				<property>sim/rendering/rembrandt/enabled</property>
+				<property>/sim/rendering/rembrandt/enabled</property>
 			</not>
 			<equals>
 				<property>gear/gear[0]/position-norm</property>
