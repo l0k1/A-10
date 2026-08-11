@@ -654,16 +654,6 @@
 	</model>
 
 	<model>
-		<path>Aircraft/A-10/Models/Cockpit/A-10-CMSP.xml</path>
-		<offsets>
-			<x-m>2.479</x-m>
-			<y-m>0.348</y-m>
-			<z-m>0.825</z-m>
-			<pitch-deg>30.00</pitch-deg>
-		</offsets>
-	</model>
-
-	<model>
 		<path>Aircraft/A-10/Models/Cockpit/A-10-warn-panel.xml</path>
 		<offsets>
 			<x-m>2.6</x-m>

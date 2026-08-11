@@ -151,6 +151,145 @@
 		</release>
 	</animation>
 
+	<!-- Countermeasures Set Control Panel (CMSP) -->
+	<animation>
+		<type>knob</type>
+		<visible>true</visible>
+		<object-name>CMSP_DISP_switch</object-name>
+		<property>A-10/avionics/ew-disp-switch</property>
+		<factor>30</factor>
+		<offset-deg>-30</offset-deg>
+		<drag-direction>vertical</drag-direction>
+		<axis>
+			<object-name>CMSP_DISP_switch-axis</object-name>
+		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>A-10/avionics/ew-disp-switch</property>
+				<factor>1</factor>
+				<min>0</min>
+				<max>1</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>knob</type>
+		<visible>true</visible>
+		<object-name>CMSP_RWR_switch</object-name>
+		<property>A-10/avionics/ew-rwr-switch</property>
+		<factor>30</factor>
+		<offset-deg>-30</offset-deg>
+		<drag-direction>vertical</drag-direction>
+		<axis>
+			<object-name>CMSP_DISP_switch-axis</object-name>
+		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>A-10/avionics/ew-rwr-switch</property>
+				<factor>1</factor>
+				<min>0</min>
+				<max>1</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>knob</type>
+		<visible>true</visible>
+		<object-name>CMSP_JMR_switch</object-name>
+		<property>A-10/avionics/ew-jmr-switch</property>
+		<factor>30</factor>
+		<offset-deg>-30</offset-deg>
+		<drag-direction>vertical</drag-direction>
+		<axis>
+			<object-name>CMSP_DISP_switch-axis</object-name>
+		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>A-10/avionics/ew-jmr-switch</property>
+				<factor>1</factor>
+				<min>0</min>
+				<max>1</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>knob</type>
+		<visible>true</visible>
+		<object-name>CMSP_MWS_switch</object-name>
+		<property>A-10/avionics/ew-mws-switch</property>
+		<factor>30</factor>
+		<offset-deg>-30</offset-deg>
+		<drag-direction>vertical</drag-direction>
+		<axis>
+			<object-name>CMSP_DISP_switch-axis</object-name>
+		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>A-10/avionics/ew-mws-switch</property>
+				<factor>1</factor>
+				<min>0</min>
+				<max>1</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>knob</type>
+		<visible>true</visible>
+		<object-name>CMSP_JETT_switch</object-name>
+		<property>A-10/avionics/ew-cms-jett-switch</property>
+		<factor>60</factor>
+		<offset-deg>-30</offset-deg>
+		<drag-direction>vertical</drag-direction>
+		<axis>
+			<object-name>CMSP_JETT_switch-axis</object-name>
+		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>A-10/avionics/ew-cms-jett-switch</property>
+				<factor>1</factor>
+				<min>0</min>
+				<max>1</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>knob</type>
+		<visible>true</visible>
+		<object-name>CMSP_KNOB_MODE</object-name>
+		<property>A-10/avionics/ew-mode-knob</property>
+		<factor>65</factor>
+		<offset-deg>-65</offset-deg>
+		<drag-direction>vertical</drag-direction>
+		<axis>
+			<object-name>CMSP_KNOB_MODE-axis</object-name>
+		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>A-10/avionics/ew-mode-knob</property>
+				<factor>1</factor>
+				<min>0</min>
+				<max>1</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+	</animation>
+
 		<!-- VHF1 (AN/ARC-186 replacement) interactions -->
 	<animation>
 		<type>knob</type>
