@@ -42,6 +42,13 @@
 	<animation>
 		<type>knob</type>
 		<object-name>knob</object-name>
+		<property>sim/model/A-10/controls/fuel/fuel-dsp-sel</property>
+		<factor>45</factor>
+		<center>
+			<y-m>-0.0123</y-m>
+			<z-m>-0.0801</z-m>
+		</center>
+		<axis><x>-1</x></axis>
 		<increase>
 			<binding>
 				<command>nasal</command>
