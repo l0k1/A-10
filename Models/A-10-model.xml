@@ -402,10 +402,6 @@
 	</animation>
 
 	<model>
-		<path>Aircraft/A-10/Models/Cockpit/oxygenRegulator.xml</path>
-	</model>
-
-	<model>
 		<path>Aircraft/A-10/Models/Cockpit/A-10-hud.xml</path>
 		<offsets>
 			<x-m>2.2800</x-m>
@@ -650,36 +646,6 @@
 			<roll-deg>11</roll-deg>
 			<pitch-deg>32.00</pitch-deg>
 			<heading-deg>-6.00</heading-deg>
-		</offsets>
-	</model>
-
-	<model>
-		<path>Aircraft/A-10/Models/Cockpit/A-10-warn-panel.xml</path>
-		<offsets>
-			<x-m>2.6</x-m>
-			<y-m>0.3542</y-m>
-			<z-m>0.76</z-m>
-			<pitch-deg>30.00</pitch-deg>
-		</offsets>
-	</model>
-
-	<model>
-		<path>Aircraft/A-10/Models/Cockpit/A-10-ils.xml</path>
-		<offsets>
-			<x-m>2.707</x-m>
-			<y-m>0.3512</y-m>
-			<z-m>0.7110</z-m>
-		</offsets>
-	</model>
-
-	<model>
-		<object-name>Panel-r3</object-name>
-		<path>Aircraft/A-10/Models/Cockpit/A-10-panel-r3.xml</path>
-		<offsets>
-			<x-m>3.0335</x-m>
-			<y-m>0.5070</y-m>
-			<z-m>0.7298</z-m>
-			<roll-deg>14</roll-deg>
 		</offsets>
 	</model>
 
