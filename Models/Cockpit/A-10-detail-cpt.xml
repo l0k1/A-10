@@ -63,7 +63,7 @@
             </greater-than-equals>
         </condition>
         <emission>
-            <factor-prop>A-10/displays/cmsc/cmsc-disp-int</factor-prop>
+            <factor-prop>sim/model/A-10/controls/hud/intens</factor-prop>
             <red>  1</red>
             <green>1</green>
             <blue> 1</blue>
