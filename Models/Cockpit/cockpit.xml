@@ -573,6 +573,103 @@
 			<axis><y>-1</y></axis>
 		</animation>
 
+	<!--
+		These TACAN knobs must precede the material/range animations below.
+		The exported scene hierarchy places two of them under ILS_panel;
+		installing their knob animations later duplicates their motion.
+		See https://wiki.flightgear.org/Knob_and_Slider_Duplication
+	-->
+	<animation>
+		<type>knob</type>
+		<visible>true</visible>
+		<object-name>Tcn_XY-knob</object-name>
+		<property>instrumentation/tacan/frequencies/selected-channel[4]</property>
+		<factor>90</factor>
+		<axis>
+			<object-name>Tcn_XY-knob-axis</object-name>
+		</axis>
+		<increase>
+			<binding>
+				<command>property-cycle</command>
+				<property>instrumentation/tacan/frequencies/selected-channel[4]</property>
+				<value>X</value>
+				<value>Y</value>
+				<wrap>true</wrap>
+			</binding>
+		</increase>
+		<decrease>
+			<binding>
+				<command>property-cycle</command>
+				<property>instrumentation/tacan/frequencies/selected-channel[4]</property>
+				<value>X</value>
+				<value>Y</value>
+				<wrap>true</wrap>
+			</binding>
+		</decrease>
+	</animation>
+
+	<animation>
+		<type>knob</type>
+		<visible>true</visible>
+		<object-name>Tcn_tenth-knob</object-name>
+		<property>instrumentation/tacan/frequencies/selected-channel[2]</property>
+		<factor>36</factor>
+		<axis>
+			<object-name>Tcn_tenth-knob-axis</object-name>
+		</axis>
+		<increase>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/tacan/frequencies/selected-channel</property>
+				<step>10</step>
+				<min>1</min>
+				<max>126</max>
+				<wrap>false</wrap>
+			</binding>
+		</increase>
+		<decrease>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/tacan/frequencies/selected-channel</property>
+				<step>-10</step>
+				<min>1</min>
+				<max>126</max>
+				<wrap>false</wrap>
+			</binding>
+		</decrease>
+	</animation>
+
+	<animation>
+		<type>knob</type>
+		<visible>true</visible>
+		<object-name>Tcn_digit-knob</object-name>
+		<property>instrumentation/tacan/frequencies/selected-channel[3]</property>
+		<factor>36</factor>
+		<axis>
+			<object-name>Tcn_digit-knob-axis</object-name>
+		</axis>
+		<increase>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/tacan/frequencies/selected-channel[3]</property>
+				<step>1</step>
+				<min>0</min>
+				<max>9</max>
+				<wrap>true</wrap>
+			</binding>
+		</increase>
+		<decrease>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/tacan/frequencies/selected-channel[3]</property>
+				<step>-1</step>
+				<min>0</min>
+				<max>9</max>
+				<wrap>true</wrap>
+			</binding>
+		</decrease>
+	</animation>
+
 	<effect>
 			<inherits-from>Aircraft/A-10/Models/Effects/interior/panel</inherits-from>
 			<parameters>
@@ -1023,102 +1120,6 @@
 			<min-m>0</min-m>
 			<max-m>5</max-m>
 		</animation>
-
-
-
-	<animation>
-			<type>knob</type>
-			<visible>true</visible>
-			<object-name>Tcn_XY-knob</object-name>
-			<property>instrumentation/tacan/frequencies/selected-channel[4]</property>
-			<factor>90</factor>
-			<axis>
-				<object-name>Tcn_XY-knob-axis</object-name>
-			</axis>
-			<increase>
-				<binding>
-					<command>property-cycle</command>
-					<property>instrumentation/tacan/frequencies/selected-channel[4]</property>
-					<value>X</value>
-					<value>Y</value>
-					<wrap>true</wrap>
-				</binding>
-			</increase>
-			<decrease>
-				<binding>
-					<command>property-cycle</command>
-					<property>instrumentation/tacan/frequencies/selected-channel[4]</property>
-					<value>X</value>
-					<value>Y</value>
-					<wrap>true</wrap>
-				</binding>
-			</decrease>
-		</animation>
-
-
-	<animation>
-			<type>knob</type>
-			<visible>true</visible>
-			<object-name>Tcn_tenth-knob</object-name>
-			<property>instrumentation/tacan/frequencies/selected-channel[2]</property>
-			<factor>36</factor>
-			<axis>
-				<object-name>Tcn_tenth-knob-axis</object-name>
-			</axis>
-			<increase>
-				<binding>
-					<command>property-adjust</command>
-					<property>instrumentation/tacan/frequencies/selected-channel</property>
-					<step>10</step>
-					<min>1</min>
-					<max>126</max>
-					<wrap>false</wrap>
-				</binding>
-			</increase>
-			<decrease>
-				<binding>
-					<command>property-adjust</command>
-					<property>instrumentation/tacan/frequencies/selected-channel</property>
-					<step>-10</step>
-					<min>1</min>
-					<max>126</max>
-					<wrap>false</wrap>
-				</binding>
-			</decrease>
-		</animation>
-
-		<animation>
-				<type>knob</type>
-				<visible>true</visible>
-				<object-name>Tcn_digit-knob</object-name>
-			<property>instrumentation/tacan/frequencies/selected-channel[3]</property>
-			<factor>36</factor>
-			<axis>
-				<object-name>Tcn_digit-knob-axis</object-name>
-			</axis>
-			<increase>
-				<binding>
-					<command>property-adjust</command>
-					<property>instrumentation/tacan/frequencies/selected-channel[3]</property>
-					<step>1</step>
-					<min>0</min>
-					<max>9</max>
-					<wrap>true</wrap>
-				</binding>
-			</increase>
-			<decrease>
-				<binding>
-					<command>property-adjust</command>
-					<property>instrumentation/tacan/frequencies/selected-channel[3]</property>
-					<step>-1</step>
-					<min>0</min>
-					<max>9</max>
-					<wrap>true</wrap>
-				</binding>
-				</decrease>
-			</animation>
-
-
 		<!-- Migrated From A-10-fuel-control.xml -->
 
 		<!-- AAR receiver lever -->
