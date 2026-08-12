@@ -8,6 +8,33 @@
 		<axis-animation-vertex-order-xyz/>
 	</defaults>
 
+	<!--
+		Install this knob before the material animation that also targets the
+		canopy switch, avoiding duplicated scene-graph animation paths.
+	-->
+	<animation>
+		<type>knob</type>
+		<object-name>canopy-pos-switch</object-name>
+		<property>sim/model/A-10/controls/canopy/canopy-switch</property>
+		<factor>30</factor>
+		<offset-deg>-60</offset-deg>
+		<axis>
+			<object-name>canopy-pos-switch-axis</object-name>
+		</axis>
+		<action>
+			<binding>
+				<command>nasal</command>
+				<script>canopy.canopy_switch(cmdarg().getNode("offset").getValue())</script>
+			</binding>
+		</action>
+		<release>
+			<binding>
+				<command>nasal</command>
+				<script>canopy.canopy_hold()</script>
+			</binding>
+		</release>
+	</animation>
+
 	<!--LASTE PANEL-->	
 
 	<animation>
@@ -126,30 +153,6 @@
         <object-name>MPCD_base</object-name>
         <object-name>MPCF_buttons</object-name>
     </effect>
-
-	<!-- Canopy position switch -->
-	<animation>
-		<type>knob</type>
-		<object-name>canopy-pos-switch</object-name>
-		<property>sim/model/A-10/controls/canopy/canopy-switch</property>
-		<factor>30</factor>
-		<offset-deg>-60</offset-deg>
-		<axis>
-			<object-name>canopy-pos-switch-axis</object-name>
-		</axis>
-		<action>
-			<binding>
-				<command>nasal</command>
-				<script>canopy.canopy_switch(cmdarg().getNode("offset").getValue())</script>
-			</binding>
-		</action>
-		<release>
-			<binding>
-				<command>nasal</command>
-				<script>canopy.canopy_hold()</script>
-			</binding>
-		</release>
-	</animation>
 
 	<!-- Countermeasures Set Control Panel (CMSP) -->
 	<animation>
@@ -670,6 +673,109 @@
 		</decrease>
 	</animation>
 
+	<!-- ILS knobs must be installed before the ILS_panel material animation. -->
+	<animation>
+		<type>knob</type>
+		<visible>true</visible>
+		<object-name>ILS_units-knob</object-name>
+		<property>instrumentation/nav[0]/frequencies/selected-mhz</property>
+		<factor>36</factor>
+		<axis>
+			<object-name>ILS_units-knob-axis</object-name>
+		</axis>
+		<increase>
+			<binding>
+				<command>nasal</command>
+				<script>nav_scripts.nav0_ils_adjust(1, "units")</script>
+			</binding>
+		</increase>
+		<decrease>
+			<binding>
+				<command>nasal</command>
+				<script>nav_scripts.nav0_ils_adjust(-1, "units")</script>
+			</binding>
+		</decrease>
+	</animation>
+
+	<animation>
+		<type>knob</type>
+		<visible>true</visible>
+		<object-name>ILS_deci-knob</object-name>
+		<property>instrumentation/nav[0]/frequencies/selected-mhz</property>
+		<factor>360</factor>
+		<axis>
+			<object-name>ILS_deci-knob-axis</object-name>
+		</axis>
+		<increase>
+			<binding>
+				<command>nasal</command>
+				<script>nav_scripts.nav0_ils_adjust(1, "decimal")</script>
+			</binding>
+		</increase>
+		<decrease>
+			<binding>
+				<command>nasal</command>
+				<script>nav_scripts.nav0_ils_adjust(-1, "decimal")</script>
+			</binding>
+		</decrease>
+	</animation>
+
+	<animation>
+		<type>knob</type>
+		<visible>true</visible>
+		<object-name>ILS_power-knob</object-name>
+		<property>instrumentation/nav/power-btn</property>
+		<factor>35</factor>
+		<axis>
+			<object-name>ILS_power-knob-axis</object-name>
+		</axis>
+		<increase>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/nav/power-btn</property>
+				<value>true</value>
+			</binding>
+		</increase>
+		<decrease>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/nav/power-btn</property>
+				<value>false</value>
+			</binding>
+		</decrease>
+	</animation>
+
+	<animation>
+		<type>knob</type>
+		<visible>true</visible>
+		<object-name>ILS_vol-knob</object-name>
+		<property>instrumentation/nav/volume</property>
+		<factor>130</factor>
+		<axis>
+			<object-name>ILS_vol-knob-axis</object-name>
+		</axis>
+		<increase>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/nav/volume</property>
+				<step>0.1</step>
+				<min>0</min>
+				<max>1</max>
+				<wrap>false</wrap>
+			</binding>
+		</increase>
+		<decrease>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/nav/volume</property>
+				<step>-0.1</step>
+				<min>0</min>
+				<max>1</max>
+				<wrap>false</wrap>
+			</binding>
+		</decrease>
+	</animation>
+
 	<effect>
 			<inherits-from>Aircraft/A-10/Models/Effects/interior/panel</inherits-from>
 			<parameters>
@@ -902,108 +1008,6 @@
 			<type>range</type>
 			<min-m>0</min-m>
 			<max-m>5</max-m>
-		</animation>
-
-	<animation>
-			<type>knob</type>
-			<visible>true</visible>
-			<object-name>ILS_units-knob</object-name>
-			<property>instrumentation/nav[0]/frequencies/selected-mhz</property>
-			<factor>36</factor>
-			<axis>
-				<object-name>ILS_units-knob-axis</object-name>
-			</axis>
-			<increase>
-				<binding>
-					<command>nasal</command>
-					<script>nav_scripts.nav0_ils_adjust(1, "units")</script>
-				</binding>
-			</increase>
-			<decrease>
-				<binding>
-					<command>nasal</command>
-					<script>nav_scripts.nav0_ils_adjust(-1, "units")</script>
-				</binding>
-			</decrease>
-		</animation>
-
-	<animation>
-			<type>knob</type>
-			<visible>true</visible>
-			<object-name>ILS_deci-knob</object-name>
-			<property>instrumentation/nav[0]/frequencies/selected-mhz</property>
-			<factor>360</factor>
-			<axis>
-				<object-name>ILS_deci-knob-axis</object-name>
-			</axis>
-			<increase>
-				<binding>
-					<command>nasal</command>
-					<script>nav_scripts.nav0_ils_adjust(1, "decimal")</script>
-				</binding>
-			</increase>
-			<decrease>
-				<binding>
-					<command>nasal</command>
-					<script>nav_scripts.nav0_ils_adjust(-1, "decimal")</script>
-				</binding>
-			</decrease>
-		</animation>
-
-	<animation>
-			<type>knob</type>
-			<visible>true</visible>
-			<object-name>ILS_power-knob</object-name>
-			<property>instrumentation/nav/power-btn</property>
-			<factor>35</factor>
-			<axis>
-				<object-name>ILS_power-knob-axis</object-name>
-			</axis>
-			<increase>
-				<binding>
-					<command>property-assign</command>
-					<property>instrumentation/nav/power-btn</property>
-					<value>true</value>
-				</binding>
-			</increase>
-			<decrease>
-				<binding>
-					<command>property-assign</command>
-					<property>instrumentation/nav/power-btn</property>
-					<value>false</value>
-				</binding>
-			</decrease>
-		</animation>
-
-	<animation>
-			<type>knob</type>
-			<visible>true</visible>
-			<object-name>ILS_vol-knob</object-name>
-			<property>instrumentation/nav/volume</property>
-			<factor>130</factor>
-			<axis>
-				<object-name>ILS_vol-knob-axis</object-name>
-			</axis>
-			<increase>
-				<binding>
-					<command>property-adjust</command>
-					<property>instrumentation/nav/volume</property>
-					<step>0.1</step>
-					<min>0</min>
-					<max>1</max>
-					<wrap>false</wrap>
-				</binding>
-			</increase>
-			<decrease>
-				<binding>
-					<command>property-adjust</command>
-					<property>instrumentation/nav/volume</property>
-					<step>-0.1</step>
-					<min>0</min>
-					<max>1</max>
-					<wrap>false</wrap>
-				</binding>
-			</decrease>
 		</animation>
 
 	<!-- Migrated From A-10-tacan.xml -->
