@@ -888,6 +888,7 @@
 			<factor>274</factor>
 			<axis>
 				<object-name>Lx_console-adjustable-axis</object-name>
+				<swap-axis-direction/>
 			</axis>
 			<action>
 				<binding>
@@ -908,6 +909,7 @@
 			<factor>274</factor>
 			<axis>
 				<object-name>Lx_flood-adjustable-axis</object-name>
+				<swap-axis-direction/>
 			</axis>
 			<increase>
 				<binding>
@@ -933,6 +935,7 @@
 			<factor>274</factor>
 			<axis>
 				<object-name>lx_fly-inst-knob-axis</object-name>
+				<swap-axis-direction/>
 			</axis>
 			<increase>
 				<binding>
