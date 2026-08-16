@@ -784,6 +784,8 @@ var HUD = {
     me.showFire_GBU = 0;
     
     me.low = 0;
+    me.targetArray[0].hide();
+    me.rootLine.hide();
     if((me.selectedWeap != nil and me.input.MasterArm.getValue()) and (me.input.HUDMode.getValue()==3)){
       if ((me.selectedWeap.type == "MK-82" or me.selectedWeap.type == "MK-82AIR" or me.selectedWeap.type == "MK-84" or me.selectedWeap.type == "CBU-87") and (!me.input.AirToAir.getValue())) {
         var ccip = me.selectedWeap.getCCIPadv(16,0.1);
@@ -826,8 +828,8 @@ var HUD = {
           me.targetArray[0].hide();
           me.rootLine.hide();
         }        
-      } elsif(me.selectedWeap.type != "30mm Cannon" and me.selectedWeap.type != "LAU-68"){
-        #Doing the math only for bombs
+      } elsif(me.selectedWeap.parents[0] == armament.AIM){ # parents[0] returns armament.AIM or stations.Dummy/FuelTank etc
+        #Doing the math only for AIM
         if(me.selectedWeap.stage_1_duration+me.selectedWeap.stage_2_duration == 0){
           
           #print("Class of Load:" ~ me.selectedWeap.class);     
@@ -848,14 +850,9 @@ var HUD = {
         }
         me.targetArray[0].hide();
         me.rootLine.hide();
-      } else {
-        me.targetArray[0].hide();
-        me.rootLine.hide();
-        me.eegsShow=me.input.MasterArm.getValue();
-      }      
-    } else {
-          me.targetArray[0].hide();
-          me.rootLine.hide();
+      } elsif (me.selectedWeap.type == "30mm Cannon" or me.selectedWeap.type == "LAU-68") {
+        me.eegsShow = me.input.MasterArm.getValue();
+      }
     }
     
     me.Fire_GBU.setVisible(me.showFire_GBU);
@@ -1308,7 +1305,7 @@ var HUD = {
     if(me.selectedWeap != nil and me.input.MasterArm.getValue()){
         
         #Testings
-        if(me.selectedWeap.type != "30mm Cannon" and me.selectedWeap.type != "LAU-68"){ 
+        if(me.selectedWeap.parents[0] == armament.AIM){ 
             if(me.selectedWeap.class == "A" and me.selectedWeap.parents[0] == armament.AIM){
             #Taking back the DLZ
             
