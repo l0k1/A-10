@@ -548,6 +548,12 @@
 	</animation>
 
 
+
+
+
+
+	<!-- Backlighting effects -->
+
     <effect>
         <inherits-from>Aircraft/A-10/Models/Effects/interior/panel-nvis</inherits-from>
         <parameters>
@@ -558,7 +564,5 @@
         <object-name>MPCD_base</object-name>
         <object-name>MPCD_buttons</object-name>
     </effect>
-
-
 
 </PropertyList>
