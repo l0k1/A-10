@@ -159,7 +159,7 @@
 		<object-name>pave-peny-body</object-name>
 		<property-base>sim/model/livery</property-base>
 		<texture-prop>texture-main</texture-prop>
-		<texture>Liveries/default.png</texture>
+		<texture>A-10-000.png</texture>
 	</animation>
 
 	<animation>
