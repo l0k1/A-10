@@ -438,6 +438,10 @@
 				<value>0</value>
 			</greater-than>
 			<property>A-10/stations/station[2]/selected</property>
+			<not>
+				<property>A-10/stores/tgp-mounted-left</property>
+				<value>true</value>
+			</not>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -485,10 +489,16 @@
 		<condition>
 			<property>controls/armament/master-arm</property>
 			<property>A-10/stations/station[2]/selected</property>
-			<equals>
-				<property>payload/armament/station/id-2-count</property>
-				<value>0</value>
-			</equals>
+			<or>
+				<equals>
+					<property>payload/armament/station/id-2-count</property>
+					<value>0</value>
+				</equals>
+				<equals>
+					<property>A-10/stores/tgp-mounted-left</property>
+					<value>1</value>
+				</equals>
+			</or>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -880,6 +890,10 @@
 				<value>0</value>
 			</greater-than>
 			<property>A-10/stations/station[8]/selected</property>
+			<not>
+				<property>A-10/stores/tgp-mounted-right</property>
+				<value>true</value>
+			</not>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -927,10 +941,16 @@
 		<condition>
 			<property>controls/armament/master-arm</property>
 			<property>A-10/stations/station[8]/selected</property>
-			<equals>
-				<property>payload/armament/station/id-8-count</property>
-				<value>0</value>
-			</equals>
+			<or>
+				<equals>
+					<property>payload/armament/station/id-8-count</property>
+					<value>0</value>
+				</equals>
+				<equals>
+					<property>A-10/stores/tgp-mounted-right</property>
+					<value>1</value>
+				</equals>
+			</or>
 			<greater-than>
 				<property>systems/electrical/R-AC-volts</property>
 				<value>24</value>
@@ -1237,15 +1257,6 @@
 		</emission>
 	</animation>
 
-	<effect>
-		<inherits-from>Aircraft/A-10/Models/Effects/interior/panel</inherits-from>
-		<parameters>
-			<implicit-lightmap-threshold-low type="float">0.2</implicit-lightmap-threshold-low>
-			<implicit-lightmap-threshold-high type="float">1.2</implicit-lightmap-threshold-high>
-			<lightmap-factor n="0"><use>controls/lighting/panel-int</use></lightmap-factor>
-		</parameters>
-		<object-name>mount</object-name>
-	</effect>
 
 
 	<!--rds counter
@@ -1282,5 +1293,18 @@
 		<min-m>0</min-m>
 		<max-m>5</max-m>
 	</animation>
+
+
+	<!-- Backlighting effects -->
+
+	<effect>
+		<inherits-from>Aircraft/A-10/Models/Effects/interior/panel</inherits-from>
+		<parameters>
+			<implicit-lightmap-threshold-low type="float">0.2</implicit-lightmap-threshold-low>
+			<implicit-lightmap-threshold-high type="float">1.2</implicit-lightmap-threshold-high>
+			<lightmap-factor n="0"><use>controls/lighting/panel-int</use></lightmap-factor>
+		</parameters>
+		<object-name>mount</object-name>
+	</effect>
 
 </PropertyList>
