@@ -5,6 +5,15 @@
 	<name>altitude autopilot</name>
 	<path>A-10-alt-ap.ac</path>
 
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>50</max-m>
+	</animation>
+
+
+	<!-- Backlighting effects -->
+
 	<effect>
 		<inherits-from>Aircraft/A-10/Models/Effects/interior/panel</inherits-from>
 		<parameters>
@@ -14,10 +23,5 @@
 		</parameters>
 		<object-name>mount</object-name>
 	</effect>
-	<animation>
-		<type>range</type>
-		<min-m>0</min-m>
-		<max-m>50</max-m>
-	</animation>
 
 </PropertyList>
