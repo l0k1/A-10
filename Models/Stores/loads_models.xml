@@ -117,16 +117,6 @@
         </offsets>
     </model>
 
-    <model>
-        <name>AN-AAQ-28-1</name>
-        <path>Aircraft/A-10/Models/Stores/Ext-Stores/AN_AAQ-28/AN-AAQ-28.xml</path>
-        <offsets>
-         <x-m>7.8</x-m>
-         <y-m>-4.84</y-m>
-         <z-m>-0.43</z-m>
-         <pitch-deg>-3</pitch-deg>
-        </offsets>
-    </model>
 
 
     <!-- =============================================================================================================  --> 
@@ -229,6 +219,17 @@
             <y-m>-3.62648</y-m>
             <z-m>-0.63</z-m>
             <pitch-deg>-3.5</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>AN-AAQ-28-2</name>
+        <path>Aircraft/A-10/Models/Stores/Ext-Stores/AN_AAQ-28/AN-AAQ-28.xml</path>
+        <offsets>
+            <x-m>7.95812</x-m>
+            <y-m>-3.62179</y-m>
+            <z-m>-0.56171</z-m>
+            <pitch-deg>-3</pitch-deg>
         </offsets>
     </model>
 
@@ -631,6 +632,17 @@
         </offsets>
     </model>
 
+    <model>
+        <name>AN-AAQ-28-8</name>
+        <path>Aircraft/A-10/Models/Stores/Ext-Stores/AN_AAQ-28/AN-AAQ-28.xml</path>
+        <offsets>
+            <x-m>7.95812</x-m>
+            <y-m>3.62179</y-m>
+            <z-m>-0.56171</z-m>
+            <pitch-deg>-2.3</pitch-deg>
+        </offsets>
+    </model>
+
     <!-- =============================================================================================================  --> 
     <!-- =========================================== Station 9 =======================================================  -->
     <!-- =============================================================================================================  --> 
@@ -679,16 +691,6 @@
         </offsets>
     </model>
 
-    <model>
-        <name>AN-AAQ-28-9</name>
-        <path>Aircraft/A-10/Models/Stores/Ext-Stores/AN_AAQ-28/AN-AAQ-28.xml</path>
-        <offsets>
-         <x-m>7.8</x-m>
-         <y-m>4.84</y-m>
-         <z-m>-0.43</z-m>
-         <pitch-deg>-3</pitch-deg>
-        </offsets>
-    </model>
     
     
     <!-- =============================================================================================================  --> 

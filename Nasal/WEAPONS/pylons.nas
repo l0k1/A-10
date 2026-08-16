@@ -122,15 +122,15 @@ if (variant == 1) {
 } else if(variant == 2) {
     print("VARIANT 2 SET");
     pylon1set = [pylonSets.empty, pylonSets.Daim9, pylonSets.mk82, pylonSets.mk82air, pylonSets.cbu87, pylonSets.alq131L, pylonSets.alq184L];
-    pylon2set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.cbu87, pylonSets.lau681, pylonSets.liteningAT_L];
-    pylon3set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk84, pylonSets.cbu87, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.agm65tri, pylonSets.lau682, pylonSets.cargo];
+    pylon2set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.cbu87, pylonSets.lau681];
+    pylon3set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk84, pylonSets.cbu87, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.agm65tri, pylonSets.lau682, pylonSets.liteningAT_L, pylonSets.cargo];
     pylon4set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk84, pylonSets.cbu87, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.lau683, pylonSets.left600, pylonSets.cargo];
     pylon5set = [pylonSets.empty, pylonSets.mk82air, pylonSets.mk82, pylonSets.mk84, pylonSets.cbu87];
     pylon6set = [pylonSets.empty, pylonSets.center600, pylonSets.cargo];
     pylon7set = [pylonSets.empty, pylonSets.mk82air, pylonSets.mk82, pylonSets.mk84, pylonSets.cbu87];
     pylon8set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk84, pylonSets.cbu87, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.lau687, pylonSets.right600, pylonSets.cargo];
-    pylon9set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk84, pylonSets.cbu87, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.agm65tri, pylonSets.lau688, pylonSets.cargo];
-    pylon10set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.cbu87, pylonSets.lau689, pylonSets.liteningAT_R];
+    pylon9set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.mk84, pylonSets.cbu87, pylonSets.mk82tri, pylonSets.mk82atri, pylonSets.agm65tri, pylonSets.lau688, pylonSets.liteningAT_R, pylonSets.cargo];
+    pylon10set = [pylonSets.empty, pylonSets.mk82, pylonSets.mk82air, pylonSets.cbu87, pylonSets.lau689];
     pylon11set = [pylonSets.empty, pylonSets.Daim9, pylonSets.mk82, pylonSets.mk82air, pylonSets.cbu87, pylonSets.alq131R, pylonSets.alq184R];
 }
 
