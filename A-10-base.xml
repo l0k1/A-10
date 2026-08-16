@@ -363,6 +363,9 @@ Fairchild A-10 simulation config.
 						<ld-gear-handle-anim type="double">-1.0</ld-gear-handle-anim>
 						<aux-lg-ext type="bool">false</aux-lg-ext><!-- Auxiliary landing gear extend -->
 					</gear>
+					<hud>
+						<intens type="double">0.8</intens>
+					</hud>
 					<lighting>
 						<nav-lights-switch type="int">1</nav-lights-switch>
 						<nav-lights-flash type="bool">false</nav-lights-flash>
