@@ -24,7 +24,12 @@ var msgA = "If you need to repair now, then use Menu-Location-SelectAirport inst
 var msgB = "Please land before changing payload.";
 var msgC = "Please land before refueling.";
 
-var cannon = stations.SubModelWeapon.new("30mm Cannon", 0.254, 1174, [1], [], props.globals.getNode("controls/armament/trigger-gun",1), 0, nil,0);
+var GAU8_MAX_AMMO = 1174;
+var GAU8_ROUND_MASS_LB = 0.9369635;
+var gau8_ammo_count = "/ai/submodels/submodel[1]/count";
+var a10_ammo_weight = "/yasim/weights/ammunition-weight-lbs";
+
+var cannon = stations.SubModelWeapon.new("30mm Cannon", GAU8_ROUND_MASS_LB, GAU8_MAX_AMMO, [1], [], props.globals.getNode("controls/armament/trigger-gun",1), 0, nil,0);
 cannon.typeShort = "GUN";
 cannon.brevity = "Guns guns";
 var hyd701 = stations.SubModelWeapon.new("LAU-68", 23.6, 7, [5], [], props.globals.getNode("controls/armament/trigger-hydra-1",1), 1, func{return getprop("payload/armament/fire-control/serviceable") and getprop("controls/armament/master-arm") == 1;},1);
@@ -135,7 +140,7 @@ if (variant == 1) {
 }
 
 # pylons
-pylonI = stations.InternalStation.new("Internal gun mount", 11, [pylonSets.mm20], props.globals.getNode("sim/weight[11]/weight-lb",1),func{return getprop("payload/armament/fire-control/serviceable") and getprop("systems/electrical/outputs/gau-8")>20;},func{return getprop("A-10/stations/station[11]/selected");});
+pylonI = stations.InternalStation.new("Internal gun mount", 11, [pylonSets.mm20], props.globals.getNode(a10_ammo_weight,1),func{return getprop("payload/armament/fire-control/serviceable") and getprop("systems/electrical/outputs/gau-8")>20;},func{return getprop("A-10/stations/station[11]/selected");});
 pylon1 = stations.Pylon.new("Pylon 1", 0, [7.53, -5.93, -0.22], pylon1set,  0, props.globals.getNode("sim/weight[0]/weight-lb",1),props.globals.getNode("sim/drag[0]/dragarea-sqft",1),func{return getprop("payload/armament/fire-control/serviceable") and getprop("systems/electrical/outputs/gau-8")>20;},func{return getprop("A-10/stations/station[0]/selected");});
 pylon2 = stations.Pylon.new("Pylon 2", 1, [7.70, -4.86, -0.38], pylon2set,  1, props.globals.getNode("sim/weight[1]/weight-lb",1),props.globals.getNode("sim/drag[1]/dragarea-sqft",1),func{return getprop("payload/armament/fire-control/serviceable") and getprop("systems/electrical/outputs/gau-8")>20;},func{return getprop("A-10/stations/station[1]/selected");});
 pylon3 = stations.Pylon.new("Pylon 3", 2, [7.65, -3.61, -0.52], pylon3set,  2, props.globals.getNode("sim/weight[2]/weight-lb",1),props.globals.getNode("sim/drag[2]/dragarea-sqft",1),func{return getprop("payload/armament/fire-control/serviceable") and getprop("systems/electrical/outputs/gau-8")>20;},func{return getprop("A-10/stations/station[2]/selected");});
@@ -171,14 +176,22 @@ var getDLZ = func {
     return nil;
 }
 
-var gau8_ammo_count="/ai/submodels/submodel[1]/count";
-var a10_ammo_weight="/yasim/weights/ammunition-weight-lbs";
+var updateCannonMass = func {
+    var rounds = getprop(gau8_ammo_count);
+    if (rounds == nil or rounds < 0) {
+        rounds = 0;
+    }
+    cannon.weight_launch_lbm = rounds * GAU8_ROUND_MASS_LB;
+    pylonI.calculateMass();
+}
+
+setlistener(gau8_ammo_count, updateCannonMass);
+updateCannonMass();
+
 var reloadCannon = func {
     if (getprop("velocities/groundspeed-kt") < 5) {
-        setprop (gau8_ammo_count, 1174);
-        var bweight=1174*0.9369635;
-        setprop(a10_ammo_weight, bweight);
-        gui.popupTip ("GAU-8/A reloaded with 1174 rounds", 5);    
+        setprop(gau8_ammo_count, GAU8_MAX_AMMO);
+        gui.popupTip("GAU-8/A reloaded with " ~ GAU8_MAX_AMMO ~ " rounds", 5);
     } else {
         gui.popupTip(msgB, 5);
     }

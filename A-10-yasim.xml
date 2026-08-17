@@ -253,8 +253,5 @@
   <weight x="-7.56" y="-5.9"   z="0.00"
       size="0.25"
       mass-prop="sim/weight[10]/weight-lb"/><!-- #11 extern R-->
-  <weight x="-7.56" y="-5.9"   z="0.00"
-      size="0.25"
-      mass-prop="sim/weight[11]/weight-lb"/><!-- #11 extern R-->
 
 </airplane>
