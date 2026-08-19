@@ -103,51 +103,63 @@ setlistener("controls/armament/trigger",mavUpdate);
 
 # AIM-9 Cooling
 
-var heatCooling = func {
-    if (pylons.fcs != nil and getprop("controls/armament/master-arm")) {
+var setCooling = func (c){
+    if (pylons.fcs != nil) {
         foreach(var w;pylons.fcs.getAllOfType("AIM-9M")) {
-            w.setCooling(1);
-            setprop("A-10/stores/aim9-light", 1);
+            if (w.isCooling() != c) {
+                w.setCooling(c);
+            }
         }
     }
-
+    setprop("A-10/stores/aim9-light", c);
 };
 
-var heatCoolOff = func {
-    if (pylons.fcs != nil and getprop("controls/armament/master-arm")) {
+var setAim9Power = func (p){
+    if (pylons.fcs != nil) {
         foreach(var w;pylons.fcs.getAllOfType("AIM-9M")) {
-            w.setCooling(0);
-            setprop("A-10/stores/aim9-light", 0);
+            if (w.isPowerOn() != p) {
+                w.setPowerOn(p);
+            }
         }
     }
-
 };
 
-var weapPowerToggle = func {
-    if (pylons.fcs != nil and getprop("controls/armament/master-arm")) {
-        foreach(var w;pylons.fcs.getAllOfType("AIM-9M")) {
-            w.togglePowerOn();
+var stnHasAim9 = func (stn) {
+    foreach(var w;pylons.pylons[stn].getWeapons()) {
+        if (w != nil and w.type == "AIM-9M") {
+            return 1;
         }
     }
-
+    return 0;
 };
 
-var aaModeKnob = func {
-    k = getprop("controls/armament/aim9-knob");
-    if (k > 0) {
-        heatCooling();
-    } else {
-        heatCoolOff();
-        weapPowerToggle();
+var selectAim9Pylons = func {
+    var aim9Loaded = 0;
+    if (pylons.fcs != nil) {
+        foreach (var stnIndex; [0,10]) { # Station 1 and 11 are the only possible stations for AIM-9
+            if (stnHasAim9(stnIndex)){
+                setprop("A-10/stations/station[" ~ stnIndex ~ "]/selected",1);
+                aim9Loaded = 1;
+            }
+        }
+        if (aim9Loaded) {pylons.fcs.selectWeapon("AIM-9M");};
     }
-    if (k == 2) {
-        setprop("/A-10/hud/air-to-air-mode",1);
-        setprop('controls/hud/m-sel',3);
-        weapPowerToggle();
-    } else {
-        setprop("/A-10/hud/air-to-air-mode",0);
-    }
-
 };
 
-setlistener("controls/armament/aim9-knob",aaModeKnob);
+var aim9Knob = func {
+    var k = getprop("controls/armament/aim9-knob");
+    var coolingActive = (k > 0);
+    var sel = (k == 2);
+
+    setCooling(coolingActive);
+    setAim9Power(sel);
+
+    if (sel) {
+        selectAim9Pylons();
+    }
+
+    setprop("/A-10/hud/air-to-air-mode",sel);
+};
+
+setlistener("controls/armament/aim9-knob",aim9Knob);
+aim9Knob(); #init knob on reload
