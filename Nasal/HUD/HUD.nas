@@ -742,20 +742,23 @@ var HUD = {
   update: func()
   {
 
+    me.actualHudMode = me.input.AirToAir.getValue() ? 3 : me.input.HUDMode.getValue(); # If AirToAir is True, actualHudMode=3 else it equals HUDMode
+
     if(me.input.HUDPower.getValue()<23){
       me.root.setVisible(0);
     }else{
-      if (me.input.HUDMode.getValue()==1){
+      if (me.actualHudMode == 1){
         me.menu.setVisible(1);
       } else {
         me.menu.setVisible(0);
       }
-      if (me.input.HUDMode.getValue()>=2){
+      if (me.actualHudMode >= 2){
             me.root.setVisible(1);
       } else {
         me.root.setVisible(0);
       }
     }
+
 
     me.hydra = 0;
     me.strf = me.input.AirToAir.getValue()==1?0:1; #A/G Gun symbology based on HUD mode
@@ -786,7 +789,7 @@ var HUD = {
     me.low = 0;
     me.targetArray[0].hide();
     me.rootLine.hide();
-    if((me.selectedWeap != nil and me.input.MasterArm.getValue()) and (me.input.HUDMode.getValue()==3)){
+    if((me.selectedWeap != nil and me.input.MasterArm.getValue()) and (me.actualHudMode==3)){
       if ((me.selectedWeap.type == "MK-82" or me.selectedWeap.type == "MK-82AIR" or me.selectedWeap.type == "MK-84" or me.selectedWeap.type == "CBU-87") and (!me.input.AirToAir.getValue())) {
         var ccip = me.selectedWeap.getCCIPadv(16,0.1);
         if (ccip != nil) {
@@ -1235,7 +1238,7 @@ var HUD = {
   },
   
   display_loadsType:func{
-    if (me.input.HUDMode.getValue() == 3){
+    if (me.actualHudMode == 3){
       if(me.input.MasterArm.getValue() and me.selectedWeap != nil){
   #       print(me.loads_hash[me.selectedWeap.type]);
         me.loads_Type_text.setText(me.loads_hash[me.selectedWeap.type]);
@@ -1249,7 +1252,7 @@ var HUD = {
   },
   
   display_BulletCount:func{
-    if (me.input.HUDMode.getValue() == 3){
+    if (me.actualHudMode == 3){
       if(me.input.MasterArm.getValue() and me.selectedWeap != nil){
   #       print("Test");
   #       print("Test:" ~ me.loads_hash[me.selectedWeap.type] ~ " : " ~ pylons.fcs.getAmmo());
