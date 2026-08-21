@@ -76,8 +76,10 @@ file, these values will be used (they are hardcoded).
   </marker-beacon>
   
   <heading-indicator-fg>
-	  <name>heading-indicator-fg</name>
-	  <number>0</number>
+    <name>heading-indicator-fg</name>
+    <number>0</number>
+    <power-supply>/systems/electrical/outputs/hsi</power-supply>
+    <minimum-supply-volts>24</minimum-supply-volts>
   </heading-indicator-fg>
 
   <KT-70>
