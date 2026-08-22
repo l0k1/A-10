@@ -389,16 +389,10 @@
 			<not>
 				<property>/sim/rendering/rembrandt/enabled</property>
 			</not>
-			<equals>
-				<property>gear/gear[0]/position-norm</property>
-				<value>1</value>
-			</equals>
-			<not>
-				<equals>
-					<property>sim/model/A-10/controls/lighting/land-lights-switch</property>
-					<value>1</value>
-				</equals>
-			</not>
+			<greater-than>
+				<property>systems/electrical/outputs/taxi-light</property>
+				<value>0.01</value>
+			</greater-than>
 		</condition>
 	</animation>
 
@@ -443,14 +437,10 @@
 		<type>select</type>
 		<object-name>taxi-light-cone</object-name>
 		<condition>
-			<equals>
-				<property>gear/gear[0]/position-norm</property>
-				<value>1</value>
-			</equals>
-			<equals>
-				<property>sim/model/A-10/controls/lighting/land-lights-switch</property>
-				<value>2</value>
-			</equals>
+			<greater-than>
+				<property>systems/electrical/outputs/taxi-light</property>
+				<value>0.01</value>
+			</greater-than>
 		</condition>
 	</animation>
 	<animation>
@@ -481,14 +471,10 @@
 					<value>Cockpit View</value>
 				</equals>
 			</not>
-			<equals>
-				<property>gear/gear[0]/position-norm</property>
-				<value>1</value>
-			</equals>
-			<equals>
-				<property>sim/model/A-10/controls/lighting/land-lights-switch</property>
-				<value>2</value>
-			</equals>
+			<greater-than>
+				<property>systems/electrical/outputs/taxi-light</property>
+				<value>0.01</value>
+			</greater-than>
 		</condition>
 	</animation>
 	<animation>
@@ -517,14 +503,10 @@
 			<not>
 				<property>/sim/rendering/rembrandt/enabled</property>
 			</not>
-			<equals>
-				<property>gear/gear[0]/position-norm</property>
-				<value>1</value>
-			</equals>
-			<equals>
-				<property>sim/model/A-10/controls/lighting/land-lights-switch</property>
-				<value>2</value>
-			</equals>
+			<greater-than>
+				<property>systems/electrical/outputs/landing-light</property>
+				<value>0.01</value>
+			</greater-than>
 		</condition>
 	</animation>
 

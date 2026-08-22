@@ -522,7 +522,15 @@ var R_AC_bus = func() {
 	setprop("systems/electrical/outputs/cadc", R_AC_bus_volts);
 	setprop("systems/electrical/outputs/nav-mode", R_AC_bus_volts);
 	setprop("systems/electrical/outputs/aoa-indexer", R_AC_bus_volts);
-    setprop("systems/electrical/outputs/landing-light", R_AC_bus_volts/30);
+
+	# landing / taxi lights are available only with the nose gear fully down.
+	# Switch positions: 0 = TAXI, 1 = OFF, 2 = LAND
+	var nose_gear_down = getprop("gear/gear[0]/position-norm") > 0.99;
+	var exterior_light_mode = getprop("sim/model/A-10/controls/lighting/land-lights-switch");
+	var exterior_light_power = R_AC_bus_volts / 30;
+	setprop("systems/electrical/outputs/landing-light", nose_gear_down and exterior_light_mode == 2 ? exterior_light_power : 0);
+	setprop("systems/electrical/outputs/taxi-light", nose_gear_down and exterior_light_mode != 1 ? exterior_light_power : 0);
+
     setprop("systems/electrical/outputs/hud", R_AC_bus_volts);
 	setprop("instrumentation/attitude-indicator/spin", R_AC_bus_volts/30);
 	setprop("instrumentation/turn-indicator/spin", R_AC_bus_volts/30);
@@ -664,4 +672,9 @@ var land_lights_switcher = func {
             s_pos.setIntValue(0);
         }
     }
+}
+
+var toggle_landing_light = func {
+    var s_pos = props.globals.getNode("sim/model/A-10/controls/lighting/land-lights-switch", 1);
+    s_pos.setIntValue(s_pos.getValue() == 2 ? 1 : 2);
 }

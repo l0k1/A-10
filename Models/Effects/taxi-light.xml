@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<!-- Compositor spotlight for the lower light on the nose strut. -->
+	<light>
+		<name>TaxiLight</name>
+		<type>spot</type>
+		<position>
+			<x-m>2.797</x-m>
+			<y-m>0.351</y-m>
+			<z-m>-1.284</z-m>
+		</position>
+		<direction>
+			<pitch-deg>85</pitch-deg>
+			<roll-deg>0</roll-deg>
+			<heading-deg>0</heading-deg>
+		</direction>
+		<ambient>
+			<r>0.03</r>
+			<g>0.03</g>
+			<b>0.03</b>
+			<a>1</a>
+		</ambient>
+		<diffuse>
+			<r>0.95</r>
+			<g>0.9</g>
+			<b>0.8</b>
+			<a>1</a>
+		</diffuse>
+		<specular>
+			<r>0.95</r>
+			<g>0.9</g>
+			<b>0.8</b>
+			<a>1</a>
+		</specular>
+		<attenuation>
+			<c>0.05</c>
+			<l>0.00045</l>
+			<q>0.000075</q>
+		</attenuation>
+		<spot-exponent>30</spot-exponent>
+		<spot-cutoff>30</spot-cutoff>
+		<range-m>100</range-m>
+		<dim-factor>
+			<property>systems/electrical/outputs/taxi-light</property>
+		</dim-factor>
+	</light>
+</PropertyList>

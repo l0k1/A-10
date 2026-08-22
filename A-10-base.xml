@@ -890,8 +890,8 @@ Fairchild A-10 simulation config.
         			<name>l</name>
         			<desc>Landing Light</desc>
         			<binding>
-            				<command>property-toggle</command>
-            				<property>fdm/jsbsim/electric/switches/landinglight</property>
+						<command>nasal</command>
+						<script>electrical.toggle_landing_light()</script>
         			</binding>
     			</key>
 			
