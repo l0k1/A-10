@@ -262,6 +262,11 @@
         	</offsets>
     	</model>
 
+	<model>
+		<name>taxiLight</name>
+		<path>Aircraft/A-10/Models/Effects/taxi-light.xml</path>
+	</model>
+
 	<multiplay>
 		<refuel>
 			<offset-x-m type="double">0.9612</offset-x-m>
@@ -1469,26 +1474,22 @@
 		<object-name>UC-NoseStrutSteerRing-light-on</object-name>
 		<condition>
 			<property>/sim/rendering/rembrandt/enabled</property>
-			<equals>
-				<property>gear/gear[0]/position-norm</property>
-				<value>1</value>
-			</equals>
-			<not>
-				<equals>
-					<property>sim/model/A-10/controls/lighting/land-lights-switch</property>
-					<value>1</value>
-				</equals>
-			</not>
+			<greater-than>
+				<property>systems/electrical/outputs/taxi-light</property>
+				<value>0.01</value>
+			</greater-than>
 		</condition>
 	</animation>
 	<animation>
 		<type>select</type>
 		<object-name>UC-NoseStrutSteerRing-light-off</object-name>
 		<condition>
-			<equals>
-				<property>sim/model/A-10/controls/lighting/land-lights-switch</property>
-				<value>1</value>
-			</equals>
+			<not>
+				<greater-than>
+					<property>systems/electrical/outputs/taxi-light</property>
+					<value>0.01</value>
+				</greater-than>
+			</not>
 		</condition>
 	</animation>
 
@@ -1497,14 +1498,10 @@
 		<object-name>UC-NoseStrutTop-light-on</object-name>
 		<condition>
 			<property>/sim/rendering/rembrandt/enabled</property>
-			<equals>
-				<property>gear/gear[0]/position-norm</property>
-				<value>1</value>
-			</equals>
-			<equals>
-				<property>sim/model/A-10/controls/lighting/land-lights-switch</property>
-				<value>2</value>
-			</equals>
+			<greater-than>
+				<property>systems/electrical/outputs/landing-light</property>
+				<value>0.01</value>
+			</greater-than>
 		</condition>
 	</animation>
 	<animation>
@@ -1512,10 +1509,10 @@
 		<object-name>UC-NoseStrutTop-light-off</object-name>
 		<condition>
 			<not>
-				<equals>
-					<property>sim/model/A-10/controls/lighting/land-lights-switch</property>
-					<value>2</value>
-				</equals>
+				<greater-than>
+					<property>systems/electrical/outputs/landing-light</property>
+					<value>0.01</value>
+				</greater-than>
 			</not>
 		</condition>
 	</animation>
