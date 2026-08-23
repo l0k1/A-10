@@ -632,7 +632,7 @@
 				<property>instrumentation/tacan/frequencies/selected-channel[3]</property>
 				<step>1</step>
 				<min>0</min>
-				<max>9</max>
+				<max>10</max>
 				<wrap>true</wrap>
 			</binding>
 		</increase>
@@ -642,7 +642,7 @@
 				<property>instrumentation/tacan/frequencies/selected-channel[3]</property>
 				<step>-1</step>
 				<min>0</min>
-				<max>9</max>
+				<max>10</max>
 				<wrap>true</wrap>
 			</binding>
 		</decrease>
