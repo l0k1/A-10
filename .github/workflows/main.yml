@@ -25,22 +25,109 @@ on:
           - "minor"
           - "patch"
           - "none"
+      release_branches:
+        description: 'Release branches as a JSON array; blank uses the OPRF_RELEASE_BRANCHES repository variable'
+        required: false
+        default: ""
+
+concurrency:
+  group: oprf-asset-updater
+  cancel-in-progress: false
 
 jobs:
-  update:
+  update-master:
     # Needs to be a UNIX system
     runs-on: ubuntu-latest
     # Needs permission to write files to update them
     permissions:
       contents: write
+    outputs:
+      master-sha: ${{ steps.updated-master.outputs.sha }}
     steps:
       - name: "Manual Update"
         uses: BobDotCom/OPRFAssetUpdater@v0.12
         if: "${{ github.event_name == 'workflow_dispatch' }}"
         with:
+          branch: master
           include: ${{ inputs.include }}
           exclude: ${{ inputs.exclude }}
           compatibility: ${{ inputs.compatibility }}
       - name: "Scheduled Update"
         uses: BobDotCom/OPRFAssetUpdater@v0.12
         if: "${{ github.event_name != 'workflow_dispatch' }}"
+        with:
+          branch: master
+
+      - name: "Record Updated Master Commit"
+        id: updated-master
+        shell: bash
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+  update-release:
+    needs: update-master
+    name: Update ${{ matrix.release_branch }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        release_branch: ${{ fromJSON(inputs.release_branches || vars.OPRF_RELEASE_BRANCHES || '["release/fgaddon-2024"]') }}
+    env:
+      RELEASE_BRANCH: release/fgaddon-2024
+      RELEASE_BRANCH: ${{ matrix.release_branch }}
+      MASTER_SHA: ${{ needs.update-master.outputs.master-sha }}
+    steps:
+      - name: "Check Release Branch"
+        id: release-branch
+        shell: bash
+        run: |
+          if git ls-remote --exit-code --heads \
+              "https://github.com/${GITHUB_REPOSITORY}.git" \
+              "refs/heads/${RELEASE_BRANCH}" >/dev/null; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::${RELEASE_BRANCH} does not exist; skipping release update"
+          fi
+
+      - name: "Checkout Release Branch"
+        if: steps.release-branch.outputs.exists == 'true'
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ env.RELEASE_BRANCH }}
+          fetch-depth: 0
+
+      - name: "Mirror OPRF Assets From Master"
+        if: steps.release-branch.outputs.exists == 'true'
+        shell: bash
+        run: |
+          git fetch --no-tags origin master
+          git cat-file -e "${MASTER_SHA}^{commit}"
+
+          paths_file="${RUNNER_TEMP}/oprf-managed-paths.txt"
+          {
+            jq -r '.data[]?.path' oprf-versions.json
+            git show "${MASTER_SHA}:oprf-versions.json" | jq -r '.data[]?.path'
+          } | sort -u > "$paths_file"
+
+          while IFS= read -r asset_path; do
+            if test -z "$asset_path"; then
+              continue
+            fi
+
+            if git cat-file -e "${MASTER_SHA}:${asset_path}" 2>/dev/null; then
+              git checkout "$MASTER_SHA" -- "$asset_path"
+            else
+              git rm -f --ignore-unmatch -- "$asset_path"
+            fi
+          done < "$paths_file"
+
+          git checkout "$MASTER_SHA" -- oprf-versions.json
+
+      - name: "Commit Release Update"
+        if: steps.release-branch.outputs.exists == 'true'
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "Auto-Update Shared Files from master"
+          commit_author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
