@@ -699,7 +699,7 @@
 		<type>knob</type>
 		<visible>true</visible>
 		<object-name>ILS_power-knob</object-name>
-		<property>instrumentation/nav/power-btn</property>
+		<property>instrumentation/nav[0]/power-btn</property>
 		<factor>35</factor>
 		<axis>
 			<object-name>ILS_power-knob-axis</object-name>
@@ -707,14 +707,14 @@
 		<increase>
 			<binding>
 				<command>property-assign</command>
-				<property>instrumentation/nav/power-btn</property>
+				<property>instrumentation/nav[0]/power-btn</property>
 				<value>true</value>
 			</binding>
 		</increase>
 		<decrease>
 			<binding>
 				<command>property-assign</command>
-				<property>instrumentation/nav/power-btn</property>
+				<property>instrumentation/nav[0]/power-btn</property>
 				<value>false</value>
 			</binding>
 		</decrease>

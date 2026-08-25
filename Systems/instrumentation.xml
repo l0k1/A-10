@@ -93,6 +93,8 @@ file, these values will be used (they are hardcoded).
   </magnetic-compass>
 
   <nav-radio>
+    <power-supply>/systems/electrical/outputs/ils</power-supply>
+    <minimum-supply-volts>24</minimum-supply-volts>
     <name>nav</name>
     <number>0</number>
   </nav-radio>

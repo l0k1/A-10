@@ -251,6 +251,8 @@ var freq_startup = func {
 	## HSI
 	aircraft.data.add("instrumentation/heading-indicator-fg/offset-deg",
 		"instrumentation/nav[1]/radials/selected-deg");
+	nav1_freq_update();
+	tacan_offset_apply();
 }
 
 # Homing deviations computing loop
