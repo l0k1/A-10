@@ -25,7 +25,7 @@ var nav0_ils_adjust = func {
 
 	if (mode == "units") {
 		whole += step;
-		if (whole < 107) whole = 111;
+		if (whole < 108) whole = 111;
 		if (whole > 111) whole = 108;
 	} else {
 		var tick = int((dec / 5.0) + 0.5); # 0..19
