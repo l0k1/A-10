@@ -474,10 +474,11 @@ var L_DC_bus = func() {
 
 var R_DC_bus = func() {
     load = 0.0;
+    var ils_on = getprop("instrumentation/nav[0]/power-btn") == 1;
     setprop("systems/electrical/outputs/uhf-adf", R_DC_bus_volts);
     setprop("systems/electrical/outputs/vhf-comm", R_DC_bus_volts);
     setprop("systems/electrical/outputs/vhf-fm", R_DC_bus_volts);
-    setprop("systems/electrical/outputs/ils", R_DC_bus_volts);
+    setprop("systems/electrical/outputs/ils", ils_on ? R_DC_bus_volts : 0);
     setprop("systems/electrical/outputs/gau-8", R_DC_bus_volts);
     return load;
 }

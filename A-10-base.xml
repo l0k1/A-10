@@ -1048,7 +1048,7 @@ Fairchild A-10 simulation config.
 		<g-meter>
 			<g-max type="float">1</g-max>
 			<g-min type="float">1</g-min>
-		</g-meter>
+		</g-meter>i
 		<iff>
 		    <power_prop type="string">instrumentation/iff/power</power_prop>
 		    <channel_prop
@@ -1068,6 +1068,9 @@ Fairchild A-10 simulation config.
 			<symbology-lighting-intens type="double">1</symbology-lighting-intens>
             <serviceable type="bool">1</serviceable>
 		</rwr>
+		<nav n="0">
+		<power-btn type="bool">true</power-btn>
+		</nav>
 		<nav n="2">
 			<radials>
 				<selected-deg type="double">029.0</selected-deg>
