@@ -9,10 +9,10 @@
 		<type>rotate</type>
 		<object-name>hsi</object-name>
 		<condition>
-			<greater-than>
+			<greater-than-equals>
 				<property>systems/electrical/outputs/hsi</property>
 				<value>24</value>
-			</greater-than>
+			</greater-than-equals>
 		</condition>
 		<property>instrumentation/heading-indicator-fg/indicated-heading-deg</property>
 		<axis><x>1</x></axis>
@@ -21,10 +21,10 @@
 		<type>rotate</type>
 		<object-name>cdi</object-name>
 		<condition>
-			<greater-than>
+			<greater-than-equals>
 				<property>systems/electrical/outputs/hsi</property>
 				<value>24</value>
-			</greater-than>
+			</greater-than-equals>
 		</condition>
 		<property>instrumentation/heading-indicator-fg/indicated-heading-deg</property>
 		<axis><x>1</x></axis>
@@ -34,10 +34,10 @@
 		<type>rotate</type>
 		<object-name>bearing-needle-1</object-name>
 		<condition>
-			<greater-than>
+			<greater-than-equals>
 				<property>systems/electrical/outputs/hsi</property>
 				<value>24</value>
-			</greater-than>
+			</greater-than-equals>
 		</condition>
 		<property>sim/model/A-10/instrumentation/tacan/indicated-bearing-mag-deg</property>
 		<axis><x>-1</x></axis>
@@ -401,10 +401,10 @@
 				<property>instrumentation/nav[0]/to-flag</property>
 				<value>true</value>
 			</equals>
-			<greater-than>
+			<greater-than-equals>
 				<property>systems/electrical/outputs/hsi</property>
 				<value>24</value>
-			</greater-than>
+			</greater-than-equals>
 			<equals>
 				<property>sim/model/A-10/A-10-nav/selector-ils</property>
 				<value>true</value>
@@ -426,10 +426,10 @@
 				<property>instrumentation/nav[0]/from-flag</property>
 				<value>true</value>
 			</equals>
-			<greater-than>
+			<greater-than-equals>
 				<property>systems/electrical/outputs/hsi</property>
 				<value>24</value>
-			</greater-than>
+			</greater-than-equals>
 			<equals>
 				<property>sim/model/A-10/A-10-nav/selector-ils</property>
 				<value>true</value>
@@ -457,10 +457,10 @@
 				<property>instrumentation/tacan/switch-position</property>
 				<value>1</value>
 			</equals>
-			<greater-than>
+			<greater-than-equals>
 				<property>systems/electrical/outputs/hsi</property>
 				<value>24</value>
-			</greater-than>
+			</greater-than-equals>
 		</condition>
 	</animation>
 	<animation>
@@ -489,10 +489,10 @@
 				<property>sim/model/A-10/instrumentation/cdi/to-flag</property>
 				<value>true</value>
 			</equals>
-			<greater-than>
+			<greater-than-equals>
 				<property>systems/electrical/outputs/hsi</property>
 				<value>24</value>
-			</greater-than>
+			</greater-than-equals>
 			<equals>
 				<property>instrumentation/tacan/switch-position</property>
 				<value>1</value>
@@ -514,10 +514,10 @@
 				<property>sim/model/A-10/instrumentation/cdi/from-flag</property>
 				<value>true</value>
 			</equals>
-			<greater-than>
+			<greater-than-equals>
 				<property>systems/electrical/outputs/hsi</property>
 				<value>24</value>
-			</greater-than>
+			</greater-than-equals>
 			<equals>
 				<property>instrumentation/tacan/switch-position</property>
 				<value>1</value>
