@@ -74,7 +74,6 @@ jobs:
       matrix:
         release_branch: ${{ fromJSON(inputs.release_branches || vars.OPRF_RELEASE_BRANCHES || '["release/fgaddon-2024"]') }}
     env:
-      RELEASE_BRANCH: release/fgaddon-2024
       RELEASE_BRANCH: ${{ matrix.release_branch }}
       MASTER_SHA: ${{ needs.update-master.outputs.master-sha }}
     steps:
