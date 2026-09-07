@@ -29,7 +29,7 @@ var GAU8_ROUND_MASS_LB = 0.9369635;
 var gau8_ammo_count = "/ai/submodels/submodel[1]/count";
 var a10_ammo_weight = "/yasim/weights/ammunition-weight-lbs";
 
-var cannon = stations.SubModelWeapon.new("30mm Cannon", GAU8_ROUND_MASS_LB, GAU8_MAX_AMMO, [1], [], props.globals.getNode("controls/armament/trigger-gun",1), 0, nil,0);
+var cannon = stations.SubModelWeapon.new("30mm Cannon", GAU8_ROUND_MASS_LB, GAU8_MAX_AMMO, [1], [], props.globals.getNode("controls/armament/trigger-gun",1), 0, func{return getprop("payload/armament/fire-control/serviceable") and getprop("systems/electrical/outputs/gau-8") > 20 and getprop("controls/armament/master-arm") == 1;},0);
 cannon.typeShort = "GUN";
 cannon.brevity = "Guns guns";
 var hyd701 = stations.SubModelWeapon.new("LAU-68", 23.6, 7, [5], [], props.globals.getNode("controls/armament/trigger-hydra-1",1), 1, func{return getprop("payload/armament/fire-control/serviceable") and getprop("controls/armament/master-arm") == 1;},1);
