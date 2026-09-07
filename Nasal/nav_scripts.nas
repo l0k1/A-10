@@ -28,14 +28,15 @@ var nav0_ils_adjust = func {
 		if (whole < 108) whole = 111;
 		if (whole > 111) whole = 108;
 	} else {
-		var tick = int((dec / 5.0) + 0.5); # 0..19
+		var tick = int((dec / 5.0) + 0.5);
 		tick += step;
 		if (tick < 0) tick = 19;
 		if (tick > 19) tick = 0;
 		dec = tick * 5;
 	}
 
-	if (whole == 108 and dec < 10) dec = 10;
+	if (whole == 108 and dec < 10) {
+    dec = (mode != "units" and step < 0) ? 95 : 10;}
 	if (whole == 111 and dec > 95) dec = 95;
 	setprop("instrumentation/nav[0]/frequencies/selected-mhz", whole + (dec / 100.0));
 	nav0_freq_update();
