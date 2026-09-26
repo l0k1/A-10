@@ -1,12 +1,14 @@
 _setlistener("/sim/signals/fdm-initialized", func {
     rtExec_loop();
     hack.init();
-    # This loads displays/displays.nas as a module. This can sometimes be buggy, please disable when not needed for development and add to -set
-var hmd = modules.Module.new("displays");
-hmd.setDebug(0); # From previous testing this causes FG to crash, So if you use this and FG crashes, check this is at 0
-hmd.setFilePath(getprop("/sim/aircraft-dir")~"/Nasal");
-hmd.setMainFile("displays.nas");
-hmd.load();
+    if (getprop("/sim/variant-id") == 2) { # A-10A+
+        # Load the modular display system for the A-10A+.
+        var hmd = modules.Module.new("displays");
+        hmd.setDebug(0); # From previous testing this causes FG to crash, So if you use this and FG crashes, check this is at 0
+        hmd.setFilePath(getprop("/sim/aircraft-dir")~"/Nasal/displays");
+        hmd.setMainFile("main.nas");
+        hmd.load();
+    }
 });
 
 var ownship_pos = geo.Coord.new();
@@ -476,4 +478,3 @@ var eject = func{
   damage.fail_systems(1);
 
 }
-
