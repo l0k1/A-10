@@ -12,7 +12,7 @@ io.include("core/device.nas");
 io.include("pages/Common/PageOSB.nas");
 io.include("pages/A10/PageSADLCode.nas");
 io.include("pages/A10/PageSADLBase.nas");
-io.include("pages/A10/PageAngryBirds.nas");
+io.include("pages/A10/PageShootThePig.nas");
 io.include("pages/A10/PageTac.nas");
 
 var flyupTime = 0;

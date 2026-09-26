@@ -64,7 +64,7 @@ var PageSADLBase = {
 			"OSB16": "PageSADLCode",
 			"OSB20": "PageSADLBase",
 			"OSB21": "PageTac",
-			"OSB22": "PageAngryBirds",
+			"OSB22": "PageShootThePig",
 		},
 		layers: [],
 };

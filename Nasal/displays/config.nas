@@ -418,7 +418,7 @@ var DISPLAY_PAGES = {
 	sadl: "PageSADLBase",
 	sadlCode: "PageSADLCode",
 	tad: "PageTac",
-	angryBirds: "PageAngryBirds",
+	shootThePig: "PageShootThePig",
 };
 
 var DISPLAY_PAGE_IDS = [
@@ -426,13 +426,13 @@ var DISPLAY_PAGE_IDS = [
 	DISPLAY_PAGES.sadl,
 	DISPLAY_PAGES.sadlCode,
 	DISPLAY_PAGES.tad,
-	DISPLAY_PAGES.angryBirds,
+	DISPLAY_PAGES.shootThePig,
 ];
 var DISPLAY_INITIAL_PAGE_IDS = [
 	DISPLAY_PAGES.sadl,
 	DISPLAY_PAGES.sadlCode,
 	DISPLAY_PAGES.tad,
-	DISPLAY_PAGES.angryBirds,
+	DISPLAY_PAGES.shootThePig,
 ];
 var DISPLAY_LAYER_IDS = [];
 var DISPLAY_PAGE_SELECTOR = {

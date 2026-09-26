@@ -184,9 +184,9 @@ var DisplayDevice = {
 	},
 
 	setSOI: func (soi) {
-		# Angry Birds uses the entire Canvas, including the outer cue area.
+		# Shoot the Pig uses the entire Canvas, including the outer cue area.
 		var pageAllowsCue = me.system["currPage"] == nil
-			or me.system.currPage.name != DISPLAY_PAGES.angryBirds;
+			or me.system.currPage.name != DISPLAY_PAGES.shootThePig;
 		var selected = soi == 1 and pageAllowsCue;
 		me.soiGlow.setVisible(selected);
 		me.soiLine.setVisible(selected);

@@ -1,11 +1,11 @@
-var PageAngryBirds = {
-		name: "PageAngryBirds",
+var PageShootThePig = {
+		name: "PageShootThePig",
 		isNew: 1,
 		supportSOI: 0,
 		needGroup: 1,
 		showFrame: 0,
 		new: func {
-			var page = {parents:[PageAngryBirds]};
+			var page = {parents:[PageShootThePig]};
 			page.group = nil;
 			return page;
 		},
@@ -29,12 +29,12 @@ var PageAngryBirds = {
 				.setText(value);
 		},
 		setup: func {
-			# Use the supplied loading image unchanged for the two-second splash.
+			# Show the supplied Shoot the Pig art for the two-second splash.
 			me.splash = me.group.createChild("group");
 			me.splash.createChild("image")
-				.setFile("Aircraft/A-10/Nasal/displays/angry-birds-loading.png")
-				.setTranslation(0, 170)
-				.setSize(1024, 683);
+				.setFile("Aircraft/A-10/Nasal/displays/shoot-the-pig-loading.png")
+				.setTranslation(0, 128)
+				.setSize(1024, 768);
 			me.game = me.group.createChild("group");
 			me.game.createChild("path")
 				.moveTo(0, 0).lineTo(1024, 0).lineTo(1024, 1024)
@@ -44,7 +44,7 @@ var PageAngryBirds = {
 				.moveTo(0, 865).lineTo(1024, 865).lineTo(1024, 1024)
 				.lineTo(0, 1024).close()
 				.setColorFill([0.37, 0.68, 0.22]);
-			me.title = me.label(me.game, 512, 90, 32, "ANGRY BIRDS: A-10 EDITION", [1, 1, 1]);
+			me.title = me.label(me.game, 512, 90, 32, "SHOOT THE PIG! A-10 EDITION", [1, 1, 1]);
 			me.status = me.label(me.game, 512, 170, 27, "AIM, SET PULL, THEN FIRE", [1, 1, 1]);
 			me.scoreText = me.label(me.game, 512, 820, 28, "PIGS: 0/3", [1, 1, 1]);
 			# The launch point moves back from the rail as the sling is pulled.
@@ -134,7 +134,7 @@ var PageAngryBirds = {
 				me.game.show();
 				# Text created before the hidden game group is shown can miss its first
 				# Canvas redraw. Refresh it on the visible frame.
-				me.title.setText("ANGRY BIRDS: A-10 EDITION");
+				me.title.setText("SHOOT THE PIG! A-10 EDITION");
 				me.status.setText("AIM, SET PULL, THEN FIRE");
 				me.scoreText.setText("PIGS: 0/3");
 				me.device.controls["OSB3"].setControlText("UP");
