@@ -127,7 +127,7 @@ var zIndex = {
 		contacts: 9,
 		grid: 3,
 		gridText: 4,
-		attribution: 4,
+		attribution: 10,
 		rangeRings: 7,
 		lines: 8,
 	},
@@ -239,13 +239,15 @@ var FACH3 = variantID == 4 or variantID >= 6;#MLU Tape M4.3
 var tile_size = 256;
 var type = "light_nolabels";
 var meterPerPixel = [156412,78206,39103,19551,9776,4888,2444,1222,610.984,305.492,152.746,76.373,38.187,19.093,9.547,4.773,2.387,1.193,0.596,0.298];# at equator
-var zooms      = [6, 7, 8, 9, 10, 11, 13];
-var zoomLevels = [320, 160, 80, 40, 20, 10, 2.5];
+var zooms      = [6, 7, 8, 9, 10, 11, 12, 13];
+var zoomLevels = [320, 160, 80, 40, 20, 10, 5, 2.5];
 var zoomsONC      = [7, 7, 8, 9, 10, 10]; #These are fpr arcgis_onc only, because there is a much more limited range of tile levels
 var zoomLevelsONC = [320, 160, 80, 40, 20, 10];
 var zoom_init = 2;
 var zoom_curr  = zoom_init;
 var zoom = zooms[zoom_curr];
+var tile_zoom = zoom;
+var tile_scale = 1;
 var M2TEX = 1/(meterPerPixel[zoom]*math.cos(getprop('/position/latitude-deg')*D2R));
 var maps_base = getprop("/sim/fg-home") ~ '/cache/mapsA10';
 
@@ -267,26 +269,30 @@ var providers = {
                 templateLoad: "https://services.arcgisonline.com/arcgis/rest/services/Specialty/World_Navigation_Charts/MapServer/tile/{z}/{y}/{x}",
                 templateStore: "/onc/{z}/{y}/{x}.jpg",
                 attribution: "",
-                min: 8, max: 10},                
+                min: 8, max: 10},
+    mapproject_tpc: {
+                templateLoad: "https://fgfs-a10-tiles.b-cdn.net/uk-tpc-onc-v1-20260925/{z}/{x}/{y}.png",
+                templateStore: "/fgfs-a10-tiles/{z}/{y}/{x}.png",
+                attribution: "(C) OPENSTREETMAP CONTRIBUTORS\nOPENAIP / MAPZEN-TILEZEN TERRAIN\nNATURAL EARTH / OURAIRPORTS\nSIMULATION ONLY",
+                min: 7, max: 11},
 };
 
 var providerOption = 1;
 var providerOptionLast = providerOption;
-var providerOptionTags = ["TOPO ","PHOTO ","VFR_US ","ONC "];
+var providerOptionTags = ["TOPO ","PHOTO ","VFR_US ","ONC ","TPC "];
 var providerOptions = [
 # This one works on Linux and Windows only
-["arcgis_topo","arcgis_topo","arcgis_topo","arcgis_topo","arcgis_topo","arcgis_topo","arcgis_topo"],
+["arcgis_topo","arcgis_topo","arcgis_topo","arcgis_topo","arcgis_topo","arcgis_topo","arcgis_topo","arcgis_topo"],
 # This one works on MacOS also, so is default
-["arcgis_terrain","arcgis_terrain","arcgis_terrain","arcgis_terrain","arcgis_terrain","arcgis_terrain","arcgis_terrain"],
-["arcgis_vfr","arcgis_vfr","arcgis_vfr","arcgis_vfr","arcgis_vfr","arcgis_vfr","arcgis_vfr"],
-["arcgis_onc","arcgis_onc","arcgis_onc","arcgis_onc","arcgis_onc","arcgis_onc","arcgis_onc"]
+["arcgis_terrain","arcgis_terrain","arcgis_terrain","arcgis_terrain","arcgis_terrain","arcgis_terrain","arcgis_terrain","arcgis_terrain"],
+["arcgis_vfr","arcgis_vfr","arcgis_vfr","arcgis_vfr","arcgis_vfr","arcgis_vfr","arcgis_vfr","arcgis_vfr"],
+["arcgis_onc","arcgis_onc","arcgis_onc","arcgis_onc","arcgis_onc","arcgis_onc","arcgis_onc","arcgis_onc"],
+["mapproject_tpc","mapproject_tpc","mapproject_tpc","mapproject_tpc","mapproject_tpc","mapproject_tpc","mapproject_tpc","mapproject_tpc"]
 ];
 
 var zoom_provider = providerOptions[providerOption];
 
 var makeUrl   = string.compileTemplate(providers[zoom_provider[zoom_curr]].templateLoad);
-#var makeUrl   = string.compileTemplate('https://cartodb-basemaps-c.global.ssl.fastly.net/{type}/{z}/{x}/{y}.png');
-#var makePath  = string.compileTemplate(maps_base ~ '/cartoL/{z}/{x}/{y}.png');
 var makePath  = string.compileTemplate(maps_base ~ providers[zoom_provider[zoom_curr]].templateStore);
 var num_tiles = [7, 7];# must be uneven, 7x7 will ensure we never see edge of map tiles when canvas is 1024px high.
 
@@ -1866,20 +1872,47 @@ var DisplaySystem = {
 	        }
 	    },
 	    setupAttr: func {
-	        me.attrText = me.group.createChild("text")
+	        me.attrProvider = nil;
+	        me.attrSince = 0;
+	        # Fixed to the display, above the bottom OSBs and clear of the ownship.
+	        # Hide the backing and text together; keep both above the map overlays.
+	        me.attrGroup = me.group.createChild("group")
 	            .set("z-index",zIndex.tad.attribution)
-	            .setColor(COLOR_WHITE)
-	            .setFontSize(font.device.main, 1.0)
+	            .setTranslation(me.max_x*0.5,me.max_y*0.84)
+	            .hide();
+	        me.attrGroup.createChild("path")
+	            .set("z-index",0)
+	            .moveTo(-me.max_x*0.45,-84)
+	            .horiz(me.max_x*0.9)
+	            .vert(168)
+	            .horiz(-me.max_x*0.9)
+	            .close()
+	            .setColorFill(me.device.colorBack)
+	            .setStrokeLineWidth(0);
+	        me.attrText = me.attrGroup.createChild("text")
+	            .set("z-index",1)
+	            .setColor(me.device.colorFront)
+	            .setFontSize(font.device.osbLabels*0.9, 1.1)
+	            .set("line-height",1.3)
 	            .setText("")
 	            .setAlignment("center-center")
-	            .setTranslation(me.max_x*0.5,me.max_y*0.5)
-	            .setFont("NotoMono-Regular.ttf");
+	            .setFont("A10-HUD.ttf");
 	    },
 
 	    updateAttr: func {
-	        # every once in a while display attribution for 4 seconds.
-	        me.attrText.setText(providers[zoom_provider[zoom_curr]].attribution);
-	        me.attrText.setVisible(math.mod(int(me.input.timeElapsed.getValue()*0.25), 120) == 0)
+	        var provider = zoom_provider[zoom_curr];
+	        var now = me.input.timeElapsed.getValue();
+	        # Credit on selection/page entry, not only at a global eight-minute tick.
+	        # Range changes within the same provider do not restart the notice.
+	        if (me.attrProvider != provider or now < me.attrSince) {
+	            me.attrProvider = provider;
+	            me.attrSince = now;
+	        }
+	        var credit = providers[provider].attribution;
+	        var elapsed = now - me.attrSince;
+	        me.attrText.setText(credit);
+	        me.attrGroup.setVisible(credit != "" and
+	            (elapsed < 8 or math.fmod(elapsed, 480) < 4));
 	    },
 		zoomIn: func() {
 	        zoom_curr += 1;
@@ -1898,24 +1931,23 @@ var DisplaySystem = {
 	    },
 
 	    checkZoom: func {
-	        if(providers[providerOptions[providerOption][zoom_curr]]["max"] != nil) {
-	            while(zooms[zoom_curr] > providers[providerOptions[providerOption][zoom_curr]]["max"]) {
-	                zoom_curr -= 1;
-	            }
-	        }
 	        if(providers[providerOptions[providerOption][zoom_curr]]["min"] != nil) {
 	            while(zooms[zoom_curr] < providers[providerOptions[providerOption][zoom_curr]]["min"]) {
 	                zoom_curr += 1;
 	            }
 	        }
 	        zoom = zooms[zoom_curr];
+	        tile_zoom = zoom;
+	        if(providers[providerOptions[providerOption][zoom_curr]]["max"] != nil and tile_zoom > providers[providerOptions[providerOption][zoom_curr]]["max"]) {
+	            tile_zoom = providers[providerOptions[providerOption][zoom_curr]]["max"];
+	        }
+	        tile_scale = math.pow(2, zoom - tile_zoom);
 	        M2TEX = 1/(meterPerPixel[zoom]*math.cos(getprop('/position/latitude-deg')*D2R));
 	        me.setRangeInfo();
 	    },
 
 	    toggleMap: func {
 	        providerOption += 1;
-	        # print(providerOption);
 	        if (providerOption > size(providerOptions)-1) providerOption = 0;
 	        zoom_provider = providerOptions[providerOption];
 	        me.changeProvider();
@@ -2255,9 +2287,7 @@ var DisplaySystem = {
 	    updateMap: func {
 	        me.rootCenter.setVisible(1);
 	        me.mapCentrum.setVisible(1);
-	        if (!1) {
-	            return;
-	        }
+	        me.mapFinal.setScale(tile_scale);
 	        # update the map
 	        if (lastDay != me.day or providerOptionLast != providerOption)  {
 	            me.setupMap();
@@ -2276,7 +2306,7 @@ var DisplaySystem = {
 	        }
 	        me.mapCentrum.setTranslation(me.max_x/2, me.rootCenterY);
 
-	        me.n = math.pow(2, zoom);
+	        me.n = math.pow(2, tile_zoom);
 	        me.center_tile_float = [
 	            me.n * ((me.lon + 180) / 360),
 	            (1 - math.ln(math.tan(me.lat * D2R) + 1 / math.cos(me.lat * D2R)) / math.pi) / 2 * me.n
@@ -2286,7 +2316,6 @@ var DisplaySystem = {
 
 	        me.center_tile_fraction_x = me.center_tile_float[0] - me.center_tile_int[0];
 	        me.center_tile_fraction_y = me.center_tile_float[1] - me.center_tile_int[1];
-	        #printf("\ncentertile: %d,%d fraction %.2f,%.2f",me.center_tile_int[0],me.center_tile_int[1],me.center_tile_fraction_x,me.center_tile_fraction_y);
 	        me.tile_offset = [math.floor(num_tiles[0]/2), math.floor(num_tiles[1]/2)];
 
 	        # 3x3 example: (same for both canvas-tiles and map-tiles)
@@ -2306,18 +2335,9 @@ var DisplaySystem = {
 	        # me.center_tile_fraction is where in that tile we are located (normalized)
 	        # me.tile_offset is the negative buffer so that we show tiles all around us instead of only in x,y positive direction
 
-	#print();
-	#var posx = 0;
-	#var posy = 0;
 	        for(var xxx = 0; xxx < num_tiles[0]; xxx += 1) {
 	            for(var yyy = 0; yyy < num_tiles[1]; yyy += 1) {
 	                tiles[xxx][yyy].setTranslation(-math.floor((me.center_tile_fraction_x - xxx+me.tile_offset[0]) * tile_size), -math.floor((me.center_tile_fraction_y - yyy+me.tile_offset[1]) * tile_size));
-	#var xxxx = posx -math.floor((me.center_tile_fraction_x - xxx+me.tile_offset[0]) * tile_size);
-	#var yyyy = posy -math.floor((me.center_tile_fraction_y - yyy+me.tile_offset[1]) * tile_size);
-	#printf("Pos %d,%d  (%d,%d)", -math.floor((me.center_tile_fraction_x - xxx+me.tile_offset[0]) * tile_size), -math.floor((me.center_tile_fraction_y - yyy+me.tile_offset[1]) * tile_size),xxxx,yyyy);                
-	#printf("  center_tile_fraction_x(%.3f)-xxx(%d)+tile_offset(%.3f) =%.3f  [*tile_size=%.3f]",me.center_tile_fraction_x,xxx,me.tile_offset[0],me.center_tile_fraction_x - xxx+me.tile_offset[0],(me.center_tile_fraction_x - xxx+me.tile_offset[0]) * tile_size);
-	#posx = math.floor((me.center_tile_fraction_x - xxx+me.tile_offset[0]) * tile_size);
-	#posy = math.floor((me.center_tile_fraction_y - yyy+me.tile_offset[1]) * tile_size);
 	            }
 	        }
 
@@ -2336,7 +2356,7 @@ var DisplaySystem = {
 	                        xx = xx - me.n;#print(xx~" from "~(xx+me.n));
 	                    }
 	                    var pos = {
-	                        z: zoom,
+	                        z: tile_zoom,
 	                        x: xx,
 	                        y: me.center_tile_int[1] + y - me.tile_offset[1],
 	                        type: type
@@ -2345,24 +2365,18 @@ var DisplaySystem = {
 	                    (func {# generator function
 	                        var img_path = makePath(pos);
 	                        var tile = tiles[x][y];
-	                        logprint(LOG_DEBUG, 'showing ' ~ img_path);
 	                        if( io.stat(img_path) == nil and me.liveMap == 1) { # image not found, save in $FG_HOME
 	                            var img_url = makeUrl(pos);
-	                            logprint(LOG_DEBUG, 'requesting ' ~ img_url);
 	                            http.save(img_url, img_path)
 	                                .done(func(r) {
-	                                    logprint(LOG_DEBUG, 'received image ' ~ img_path~" " ~ r.status ~ " " ~ r.reason);
-	                                    logprint(LOG_DEBUG, ""~(io.stat(img_path) != nil));
-	                                    tile.set("src", img_path);# this sometimes fails with: 'Cannot find image file' if use me. instead of var.
+	                                    tile.set("src", img_path);
 	                                    tile.update();
 	                                    })
-	                              #.done(func {logprint(LOG_DEBUG, 'received image ' ~ img_path); tile.set("src", img_path);})
 	                              .fail(func (r) {logprint(LOG_INFO, 'Failed to get image ' ~ img_path ~ ' ' ~ r.status ~ ': ' ~ r.reason);
 	                                            tile.set("src", "Aircraft/A-10/Nasal/displays/emptyTile.png");
 	                                            tile.update();
 	                                            });
 	                        } elsif (io.stat(img_path) != nil) {# cached image found, reusing
-	                            logprint(LOG_DEBUG, 'loading ' ~ img_path);
 	                            tile.set("src", img_path);
 	                            tile.update();
 	                        } else {
@@ -2403,6 +2417,8 @@ var DisplaySystem = {
 			me.device.controls["OSB16"].setControlText("MAP\nUP");
 			me.device.controls["OSB20"].setControlText("SADL");
 			me.device.controls["OSB21"].setControlText("TAD");
+			me.attrProvider = nil;
+			me.updateAttr();
 			if (me.tadInit == 1){
 				me.loopTimer.start();
 			};
